@@ -5,15 +5,19 @@ name: Generate Next Release
 on:
   workflow_dispatch:
 
+env:
+  PACKAGE_DIR: equinix_metal
+  DIST_DIR: equinix_metal/dist
 jobs:
   release:
-    name: Release
+    name: Build and publish package
     runs-on: ubuntu-latest
+
     steps:
-      - name: Install Go
-        uses: actions/setup-go@v5
+      - name: Install Python
+        uses: actions/setup-python@v5
         with:
-          go-version: 1.19.x
+          python-version: 3.8
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,7 +25,17 @@ jobs:
           fetch-depth: 0
           ssh-key: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Release
+      - name: Install dependencies
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          python -m pip install --upgrade build
+
+      - name: Install pyaml for patching script
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          python -m pip install pyaml
+
+      - name: Create GitHub release
         uses: cycjimmy/semantic-release-action@v4
         with:
           semantic_version: 19.0.5
@@ -36,3 +50,15 @@ jobs:
           GIT_COMMITTER_NAME: equinix-labs@auto-commit-workflow
           GIT_COMMITTER_EMAIL: bot@equinix.noreply.github.com
           RELEASE_REQUESTER: "@${{ github.event.sender.login }}"
+
+      - name: Build package
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          python -m build --sdist --wheel --outdir dist/ .
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          packages-dir: ${{ env.DIST_DIR }}
