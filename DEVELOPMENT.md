@@ -8,7 +8,7 @@
 - `spec/services/<service>/oas3.patched` a directory of the latest patched OpenAPI spec for a single service
 - `spec/services/<service>/patches/*.patch` patch files to apply against the fetched OpenAPI spec for a single service
 - `examples/` hand crafted examples to demonstrate usage
-- `services/<service>` generated Go client for a single service
+- `equinix/services/<service>` generated Python client for a single service
 
 ## Build
 
@@ -32,9 +32,9 @@ The onboarding proces will automatically attempt to download the spec and genera
 
 ## Adding custom openapi-generator templates for a service
 
-This repo uses [`openapi-generator`](https://github.com/OpenAPITools/openapi-generator) to generate Go code.  When necessary, we can provide custom templates to the generator in order to change the generated code.
+This repo uses [`openapi-generator`](https://github.com/OpenAPITools/openapi-generator) to generate Python code.  When necessary, we can provide custom templates to the generator in order to change the generated code.
 
-When a service is onboarded, an empty `templates/services/<service>/` directory is created. To modify generated code, you can put a custom template in this directory.  Templates that are known to the generator can be seen here: https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/go
+When a service is onboarded, an empty `templates/services/<service>/` directory is created. To modify generated code, you can put a custom template in this directory.  Templates that are known to the generator can be seen here: https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator/src/main/resources/python
 
 Before adding custom templates for a service, review [the `openapi-generator` docs for templating](https://openapi-generator.tech/docs/templating).
 

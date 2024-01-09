@@ -6,7 +6,8 @@ PACKAGE_NAME=__PACKAGE_NAME__
 SPEC_BASE_URL:=__SPEC_BASE_URL__
 SPEC_ROOT_FILE:=__SPEC_ROOT_FILE__
 
-CODE_DIR=${CODE_BASE_DIR}/${PACKAGE_NAME}
+QUALIFIED_PACKAGE_NAME=equinix.services.${PACKAGE_NAME}
+CODE_DIR=equinix/services/${PACKAGE_NAME}
 TEMPLATE_DIR=${TEMPLATE_BASE_DIR}/${PACKAGE_NAME}
 SPEC_FETCHED_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/oas3.fetched
 SPEC_PATCH_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/patches
@@ -14,7 +15,7 @@ SPEC_PATCHED_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/oas3.patched
 
 all: pull fetch patch generate stage
 
-generate: clean codegen remove-unused mod patch-post fmt test
+generate: clean codegen patch-post fmt test
 
 pull:
 	${CRI} pull ${OPENAPI_IMAGE}
@@ -40,26 +41,18 @@ clean:
 	rm -rf $(CODE_DIR)
 
 codegen:
-	${OPENAPI_GENERATOR} generate -g go \
-		--package-name ${PACKAGE_NAME} \
+	${OPENAPI_GENERATOR} generate -g python \
+		--package-name ${QUALIFIED_PACKAGE_NAME} \
 		--http-user-agent "${USER_AGENT}" \
 		-p packageVersion=${PACKAGE_VERSION} \
 		--git-user-id ${GIT_ORG} \
-		--git-repo-id ${GIT_REPO}/services \
+		--git-repo-id ${GIT_REPO} \
 		-c /local/config/openapi-generator.json \
 		-t /local/${TEMPLATE_DIR} \
-		-o /local/${CODE_DIR} \
+		-o /local/ \
 		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
 
 validate:
 	${OPENAPI_GENERATOR} validate \
 		--recommend \
-		-i /local/${SPEC_PATCHED_DIR}
-
-remove-unused:
-	rm -rf ${CODE_DIR}/api \
-		${CODE_DIR}/.travis.yml \
-		${CODE_DIR}/git_push.sh \
-		${CODE_DIR}/.openapi-generator \
-		${CODE_DIR}/go.mod \
-		${CODE_DIR}/go.sum
+		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
