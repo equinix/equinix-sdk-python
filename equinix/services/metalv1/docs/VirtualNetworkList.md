@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.virtual_network_list import VirtualNetworkList
+from equinix.services.metalv1.models.virtual_network_list import VirtualNetworkList
 
 # TODO update the JSON string below
 json = "{}"

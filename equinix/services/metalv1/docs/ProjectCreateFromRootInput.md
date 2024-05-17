@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.project_create_from_root_input import ProjectCreateFromRootInput
+from equinix.services.metalv1.models.project_create_from_root_input import ProjectCreateFromRootInput
 
 # TODO update the JSON string below
 json = "{}"

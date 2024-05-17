@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_metal_gateway_create_input import VrfMetalGatewayCreateInput
+from equinix.services.metalv1.models.vrf_metal_gateway_create_input import VrfMetalGatewayCreateInput
 
 # TODO update the JSON string below
 json = "{}"

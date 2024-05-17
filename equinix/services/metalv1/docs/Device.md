@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.device import Device
+from equinix.services.metalv1.models.device import Device
 
 # TODO update the JSON string below
 json = "{}"

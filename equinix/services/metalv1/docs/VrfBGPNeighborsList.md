@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_bgp_neighbors_list import VrfBGPNeighborsList
+from equinix.services.metalv1.models.vrf_bgp_neighbors_list import VrfBGPNeighborsList
 
 # TODO update the JSON string below
 json = "{}"

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_metal_gateway import VrfMetalGateway
+from equinix.services.metalv1.models.vrf_metal_gateway import VrfMetalGateway
 
 # TODO update the JSON string below
 json = "{}"

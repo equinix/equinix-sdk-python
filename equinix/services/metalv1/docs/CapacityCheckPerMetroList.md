@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
+from equinix.services.metalv1.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
 
 # TODO update the JSON string below
 json = "{}"

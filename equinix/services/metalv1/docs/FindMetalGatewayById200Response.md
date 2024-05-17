@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.find_metal_gateway_by_id200_response import FindMetalGatewayById200Response
+from equinix.services.metalv1.models.find_metal_gateway_by_id200_response import FindMetalGatewayById200Response
 
 # TODO update the JSON string below
 json = "{}"

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.firmware_set_response import FirmwareSetResponse
+from equinix.services.metalv1.models.firmware_set_response import FirmwareSetResponse
 
 # TODO update the JSON string below
 json = "{}"

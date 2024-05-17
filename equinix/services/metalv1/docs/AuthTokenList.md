@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.auth_token_list import AuthTokenList
+from equinix.services.metalv1.models.auth_token_list import AuthTokenList
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.spot_market_request_list import SpotMarketRequestList
+from equinix.services.metalv1.models.spot_market_request_list import SpotMarketRequestList
 
 # TODO update the JSON string below
 json = "{}"

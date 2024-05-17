@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.virtual_network_create_input import VirtualNetworkCreateInput
+from equinix.services.metalv1.models.virtual_network_create_input import VirtualNetworkCreateInput
 
 # TODO update the JSON string below
 json = "{}"

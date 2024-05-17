@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.instances_batch_create_input_batches_inner import InstancesBatchCreateInputBatchesInner
+from equinix.services.metalv1.models.instances_batch_create_input_batches_inner import InstancesBatchCreateInputBatchesInner
 
 # TODO update the JSON string below
 json = "{}"

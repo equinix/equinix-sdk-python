@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.ip_assignment_input import IPAssignmentInput
+from equinix.services.metalv1.models.ip_assignment_input import IPAssignmentInput
 
 # TODO update the JSON string below
 json = "{}"

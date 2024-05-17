@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_learned_routes_list import VrfLearnedRoutesList
+from equinix.services.metalv1.models.vrf_learned_routes_list import VrfLearnedRoutesList
 
 # TODO update the JSON string below
 json = "{}"

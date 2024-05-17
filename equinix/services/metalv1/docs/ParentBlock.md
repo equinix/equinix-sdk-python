@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.parent_block import ParentBlock
+from equinix.services.metalv1.models.parent_block import ParentBlock
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.global_bgp_range import GlobalBgpRange
+from equinix.services.metalv1.models.global_bgp_range import GlobalBgpRange
 
 # TODO update the JSON string below
 json = "{}"

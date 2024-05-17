@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.metro import Metro
+from equinix.services.metalv1.models.metro import Metro
 
 # TODO update the JSON string below
 json = "{}"

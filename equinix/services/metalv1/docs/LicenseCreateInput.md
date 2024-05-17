@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.license_create_input import LicenseCreateInput
+from equinix.services.metalv1.models.license_create_input import LicenseCreateInput
 
 # TODO update the JSON string below
 json = "{}"

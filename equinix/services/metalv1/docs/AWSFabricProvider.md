@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.aws_fabric_provider import AWSFabricProvider
+from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 
 # TODO update the JSON string below
 json = "{}"

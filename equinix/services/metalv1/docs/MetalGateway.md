@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.metal_gateway import MetalGateway
+from equinix.services.metalv1.models.metal_gateway import MetalGateway
 
 # TODO update the JSON string below
 json = "{}"

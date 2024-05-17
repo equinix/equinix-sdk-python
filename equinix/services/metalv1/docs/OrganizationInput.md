@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.organization_input import OrganizationInput
+from equinix.services.metalv1.models.organization_input import OrganizationInput
 
 # TODO update the JSON string below
 json = "{}"

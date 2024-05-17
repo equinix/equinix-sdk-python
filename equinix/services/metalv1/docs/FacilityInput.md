@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.facility_input import FacilityInput
+from equinix.services.metalv1.models.facility_input import FacilityInput
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# equinix_metal.InterconnectionsApi
+# equinix.services.metalv1.InterconnectionsApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -36,15 +36,15 @@ Create a new Virtual Circuit on a Dedicated Port. To create a regular Virtual Ci
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit import VirtualCircuit
-from equinix_metal.models.virtual_circuit_create_input import VirtualCircuitCreateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.models.virtual_circuit_create_input import VirtualCircuitCreateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -60,12 +60,12 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | UUID of the interconnection
     port_id = 'port_id_example' # str | UUID of the interconnection port
-    virtual_circuit_create_input = equinix_metal.VirtualCircuitCreateInput() # VirtualCircuitCreateInput | Virtual Circuit details
+    virtual_circuit_create_input = equinix.services.metalv1.VirtualCircuitCreateInput() # VirtualCircuitCreateInput | Virtual Circuit details
 
     try:
         # Create a new Virtual Circuit
@@ -121,15 +121,15 @@ Creates a new interconnection request. A Project ID must be specified in the req
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -145,11 +145,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     organization_id = 'organization_id_example' # str | UUID of the organization
-    create_organization_interconnection_request = equinix_metal.CreateOrganizationInterconnectionRequest() # CreateOrganizationInterconnectionRequest | Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. 
+    create_organization_interconnection_request = equinix.services.metalv1.CreateOrganizationInterconnectionRequest() # CreateOrganizationInterconnectionRequest | Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. 
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 
@@ -209,15 +209,15 @@ Creates a new interconnection request
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -233,11 +233,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     project_id = 'project_id_example' # str | UUID of the project
-    create_organization_interconnection_request = equinix_metal.CreateOrganizationInterconnectionRequest() # CreateOrganizationInterconnectionRequest | Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. 
+    create_organization_interconnection_request = equinix.services.metalv1.CreateOrganizationInterconnectionRequest() # CreateOrganizationInterconnectionRequest | Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. 
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 
@@ -296,14 +296,14 @@ Delete a interconnection, its associated ports and virtual circuits.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -319,9 +319,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Interconnection UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -380,14 +380,14 @@ Delete a virtual circuit from a Dedicated Port.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit import VirtualCircuit
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -403,9 +403,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     id = 'id_example' # str | Virtual Circuit UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -464,14 +464,14 @@ Get the details of a interconnection
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -487,9 +487,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Interconnection UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -548,14 +548,14 @@ Displays which providers you can connect to directly from Equinix Metal Metros.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_metro_list import InterconnectionMetroList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_metro_list import InterconnectionMetroList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -571,9 +571,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
 
     try:
         # Get connectivity to network provider by metro
@@ -624,14 +624,14 @@ Get the details of an interconnection port.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_port import InterconnectionPort
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -647,9 +647,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | UUID of the interconnection
     id = 'id_example' # str | Port UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
@@ -710,14 +710,14 @@ Displays pricing information for connecting to networks outside of Equinix.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_pricing_list import InterconnectionPricingList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_pricing_list import InterconnectionPricingList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -733,9 +733,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
 
     try:
         # Get Interconnection Pricing
@@ -786,14 +786,14 @@ Get the details of a virtual circuit
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit import VirtualCircuit
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -809,9 +809,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     id = 'id_example' # str | Virtual Circuit UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -870,14 +870,14 @@ List the virtual circuit record(s) associatiated with a particular interconnecti
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit_list import VirtualCircuitList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit_list import VirtualCircuitList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -893,9 +893,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | UUID of the interconnection
     port_id = 'port_id_example' # str | UUID of the interconnection port
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
@@ -956,14 +956,14 @@ List the ports associated to an interconnection.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_port_list import InterconnectionPortList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_port_list import InterconnectionPortList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -979,9 +979,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | UUID of the interconnection
 
     try:
@@ -1036,14 +1036,14 @@ List the virtual circuit record(s) associated with a particular interconnection 
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit_list import VirtualCircuitList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit_list import VirtualCircuitList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -1059,9 +1059,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | UUID of the interconnection
 
     try:
@@ -1116,14 +1116,14 @@ List the connections belonging to the organization
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_list import InterconnectionList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_list import InterconnectionList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -1139,9 +1139,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     organization_id = 'organization_id_example' # str | UUID of the organization
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -1200,14 +1200,14 @@ List the connections belonging to the project
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection_list import InterconnectionList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection_list import InterconnectionList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -1223,9 +1223,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     project_id = 'project_id_example' # str | UUID of the project
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -1291,15 +1291,15 @@ Update the details of a interconnection
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.models.interconnection_update_input import InterconnectionUpdateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.models.interconnection_update_input import InterconnectionUpdateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -1315,11 +1315,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Interconnection UUID
-    interconnection_update_input = equinix_metal.InterconnectionUpdateInput() # InterconnectionUpdateInput | Updated interconnection details
+    interconnection_update_input = equinix.services.metalv1.InterconnectionUpdateInput() # InterconnectionUpdateInput | Updated interconnection details
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 
@@ -1378,15 +1378,15 @@ Update the details of a virtual circuit.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.virtual_circuit import VirtualCircuit
-from equinix_metal.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -1402,11 +1402,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InterconnectionsApi(api_client)
+    api_instance = equinix.services.metalv1.InterconnectionsApi(api_client)
     id = 'id_example' # str | Virtual Circuit UUID
-    virtual_circuit_update_input = equinix_metal.VirtualCircuitUpdateInput() # VirtualCircuitUpdateInput | Updated Virtual Circuit details
+    virtual_circuit_update_input = equinix.services.metalv1.VirtualCircuitUpdateInput() # VirtualCircuitUpdateInput | Updated Virtual Circuit details
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 

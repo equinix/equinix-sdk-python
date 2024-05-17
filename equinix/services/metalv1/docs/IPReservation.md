@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.ip_reservation import IPReservation
+from equinix.services.metalv1.models.ip_reservation import IPReservation
 
 # TODO update the JSON string below
 json = "{}"

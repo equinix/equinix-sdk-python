@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.virtual_network_update_input import VirtualNetworkUpdateInput
+from equinix.services.metalv1.models.virtual_network_update_input import VirtualNetworkUpdateInput
 
 # TODO update the JSON string below
 json = "{}"
