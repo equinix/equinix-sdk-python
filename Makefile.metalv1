@@ -11,7 +11,7 @@ TEMPLATE_DIR=${TEMPLATE_BASE_DIR}/${PACKAGE_NAME}
 SPEC_FETCHED_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/oas3.fetched
 SPEC_PATCH_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/patches
 SPEC_PATCHED_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/oas3.patched
-
+SPEC_STITCHED_DIR=${SPEC_BASE_DIR}/${PACKAGE_NAME}/oas3.stitched
 all: pull fetch patch generate stage
 
 generate: clean codegen patch-post fmt test
@@ -29,6 +29,12 @@ patch:
 	for diff in $(shell set -x; find ${SPEC_PATCH_DIR} -name '*.patch' | sort -n); do \
 		patch --no-backup-if-mismatch -N -t -p1 -i $$diff; \
 	done
+	
+	${OPENAPI_GENERATOR} generate \
+		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
+		-g openapi-yaml \
+		-p skipOperationExample=true -p outputFile=${SPEC_ROOT_FILE} \
+		-o /local/${SPEC_STITCHED_DIR}
 
 patch-post:
 	# patch is idempotent, always starting with the generated files
@@ -50,7 +56,7 @@ codegen:
 		--inline-schema-options RESOLVE_INLINE_ENUMS=false \
 		-t /local/${TEMPLATE_DIR} \
 		-o /local/ \
-		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
+		-i /local/${SPEC_STITCHED_DIR}/${SPEC_ROOT_FILE}
 
 validate:
 	${OPENAPI_GENERATOR} validate \
