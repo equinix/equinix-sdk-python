@@ -13,8 +13,4 @@ properties:
     type: string
   zip_code:
     type: string
-required:
-- address
-- zip_code
-- country
 type: object

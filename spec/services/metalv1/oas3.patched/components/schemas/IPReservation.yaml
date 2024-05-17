@@ -1,4 +1,4 @@
-properties:
+eroperties:
   addon:
     type: boolean
   address:
@@ -7,7 +7,7 @@ properties:
     type: integer
   assignments:
     items:
-      $ref: './IPAssignment.yaml'
+      $ref: './Href.yaml'
     type: array
   available:
     type: string

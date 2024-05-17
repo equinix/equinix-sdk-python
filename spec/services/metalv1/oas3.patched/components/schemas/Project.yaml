@@ -1,4 +1,6 @@
 properties:
+  backend_transfer_enabled:
+    type: boolean
   bgp_config:
     $ref: './Href.yaml'
   created_at:
@@ -37,7 +39,7 @@ properties:
   network_status:
     type: object
   organization:
-    $ref: './Organization.yaml'
+    $ref: './Href.yaml'
   payment_method:
     $ref: './Href.yaml'
   ssh_keys:
