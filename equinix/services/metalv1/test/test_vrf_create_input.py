@@ -36,11 +36,10 @@ class TestVrfCreateInput(unittest.TestCase):
         model = VrfCreateInput()
         if include_optional:
             return VrfCreateInput(
-                bgp_dynamic_neighbors_bfd_enabled = True,
                 bgp_dynamic_neighbors_enabled = True,
                 bgp_dynamic_neighbors_export_route_map = True,
+                bgp_dynamic_neighbors_bfd_enabled = True,
                 description = '',
-                href = '',
                 ip_ranges = [
                     ''
                     ],

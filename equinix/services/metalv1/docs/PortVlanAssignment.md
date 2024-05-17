@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **native** | **bool** |  | [optional] 
 **port** | [**Href**](Href.md) |  | [optional] 

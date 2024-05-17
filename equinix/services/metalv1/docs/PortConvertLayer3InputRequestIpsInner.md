@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_family** | **int** |  | [optional] 
-**href** | **str** |  | [optional] 
 **public** | **bool** |  | [optional] 
 
 ## Example

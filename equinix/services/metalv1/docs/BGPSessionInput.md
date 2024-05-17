@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address_family** | **str** | Address family for BGP session. | [optional] 
 **default_route** | **bool** | Set the default route policy. | [optional] [default to False]
-**href** | **str** |  | [optional] 
 
 ## Example
 

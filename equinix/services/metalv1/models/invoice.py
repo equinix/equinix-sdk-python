@@ -37,7 +37,6 @@ class Invoice(BaseModel):
     credits_applied: Optional[Union[StrictFloat, StrictInt]] = None
     currency: Optional[StrictStr] = None
     due_on: Optional[date] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     items: Optional[List[LineItem]] = None
     number: Optional[StrictStr] = None
@@ -46,7 +45,7 @@ class Invoice(BaseModel):
     status: Optional[StrictStr] = None
     target_date: Optional[date] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["amount", "balance", "created_on", "credit_amount", "credits_applied", "currency", "due_on", "href", "id", "items", "number", "project", "reference_number", "status", "target_date"]
+    __properties: ClassVar[List[str]] = ["amount", "balance", "created_on", "credit_amount", "credits_applied", "currency", "due_on", "id", "items", "number", "project", "reference_number", "status", "target_date"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,7 +122,6 @@ class Invoice(BaseModel):
             "credits_applied": obj.get("credits_applied"),
             "currency": obj.get("currency"),
             "due_on": obj.get("due_on"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "items": [LineItem.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None,
             "number": obj.get("number"),

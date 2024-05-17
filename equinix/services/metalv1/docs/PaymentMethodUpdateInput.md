@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **default** | **bool** |  | [optional] 
 **expiration_month** | **str** |  | [optional] 
 **expiration_year** | **int** |  | [optional] 
-**href** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 
 ## Example

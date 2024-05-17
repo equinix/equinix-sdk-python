@@ -36,7 +36,6 @@ class TestMoveHardwareReservationRequest(unittest.TestCase):
         model = MoveHardwareReservationRequest()
         if include_optional:
             return MoveHardwareReservationRequest(
-                href = '',
                 project_id = ''
             )
         else:

@@ -27,14 +27,13 @@ class InvitationInput(BaseModel):
     """
     InvitationInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     invitee: StrictStr
     message: Optional[StrictStr] = None
     organization_id: Optional[StrictStr] = None
     projects_ids: Optional[List[StrictStr]] = None
     roles: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "invitee", "message", "organization_id", "projects_ids", "roles"]
+    __properties: ClassVar[List[str]] = ["invitee", "message", "organization_id", "projects_ids", "roles"]
 
     @field_validator('roles')
     def roles_validate_enum(cls, value):
@@ -105,7 +104,6 @@ class InvitationInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "invitee": obj.get("invitee"),
             "message": obj.get("message"),
             "organization_id": obj.get("organization_id"),

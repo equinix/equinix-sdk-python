@@ -28,11 +28,10 @@ class PaymentMethodCreateInput(BaseModel):
     PaymentMethodCreateInput
     """ # noqa: E501
     default: Optional[StrictBool] = None
-    href: Optional[StrictStr] = None
     name: StrictStr
     nonce: StrictStr
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["default", "href", "name", "nonce"]
+    __properties: ClassVar[List[str]] = ["default", "name", "nonce"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class PaymentMethodCreateInput(BaseModel):
 
         _obj = cls.model_validate({
             "default": obj.get("default"),
-            "href": obj.get("href"),
             "name": obj.get("name"),
             "nonce": obj.get("nonce")
         })

@@ -37,32 +37,22 @@ class TestSpotPricesPerFacility(unittest.TestCase):
         if include_optional:
             return SpotPricesPerFacility(
                 baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_2 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_2a = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_2a2 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_3 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 baremetal_s = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
                 c2_medium_x86 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, ),
-                href = '',
                 m2_xlarge_x86 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
                     price = 1.337, )
             )
         else:

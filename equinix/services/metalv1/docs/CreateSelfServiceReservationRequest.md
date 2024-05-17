@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **item** | [**List[SelfServiceReservationItemRequest]**](SelfServiceReservationItemRequest.md) |  | [optional] 
 **notes** | **str** |  | [optional] 
 **period** | [**CreateSelfServiceReservationRequestPeriod**](CreateSelfServiceReservationRequestPeriod.md) |  | [optional] 

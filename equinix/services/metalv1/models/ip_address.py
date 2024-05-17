@@ -29,11 +29,10 @@ class IPAddress(BaseModel):
     """ # noqa: E501
     address_family: Optional[StrictInt] = Field(default=None, description="Address Family for IP Address")
     cidr: Optional[StrictInt] = Field(default=None, description="Cidr Size for the IP Block created. Valid values depends on the operating system being provisioned. (28..32 for IPv4 addresses, 124..127 for IPv6 addresses)")
-    href: Optional[StrictStr] = None
     ip_reservations: Optional[List[StrictStr]] = Field(default=None, description="UUIDs of any IP reservations to use when assigning IPs")
     public: Optional[StrictBool] = Field(default=True, description="Address Type for IP Address")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address_family", "cidr", "href", "ip_reservations", "public"]
+    __properties: ClassVar[List[str]] = ["address_family", "cidr", "ip_reservations", "public"]
 
     @field_validator('address_family')
     def address_family_validate_enum(cls, value):
@@ -105,7 +104,6 @@ class IPAddress(BaseModel):
         _obj = cls.model_validate({
             "address_family": obj.get("address_family"),
             "cidr": obj.get("cidr"),
-            "href": obj.get("href"),
             "ip_reservations": obj.get("ip_reservations"),
             "public": obj.get("public") if obj.get("public") is not None else True
         })

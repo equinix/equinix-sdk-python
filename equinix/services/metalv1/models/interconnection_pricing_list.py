@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner import InterconnectionPricingListProviderPricingInner
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class InterconnectionPricingList(BaseModel):
     """
     InterconnectionPricingList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     provider_pricing: Optional[List[InterconnectionPricingListProviderPricingInner]] = Field(default=None, description="Pricing information per connection provider.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "provider_pricing"]
+    __properties: ClassVar[List[str]] = ["provider_pricing"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class InterconnectionPricingList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "provider_pricing": [InterconnectionPricingListProviderPricingInner.from_dict(_item) for _item in obj["provider_pricing"]] if obj.get("provider_pricing") is not None else None
         })
         # store additional fields in additional_properties

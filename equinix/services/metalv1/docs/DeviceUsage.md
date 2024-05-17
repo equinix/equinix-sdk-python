@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **quantity** | **str** |  | [optional] 
 **total** | **str** |  | [optional] 
 **unit** | **str** |  | [optional] 

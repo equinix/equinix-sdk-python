@@ -30,13 +30,12 @@ class VrfIpReservationCreateInput(BaseModel):
     cidr: StrictInt = Field(description="The size of the VRF IP Reservation's subnet")
     customdata: Optional[Dict[str, Any]] = None
     details: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     network: StrictStr = Field(description="The starting address for this VRF IP Reservation's subnet")
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="Must be set to 'vrf'")
     vrf_id: StrictStr = Field(description="The ID of the VRF in which this VRF IP Reservation is created. The VRF must have an existing IP Range that contains the requested subnet. This field may be aliased as just 'vrf'.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["cidr", "customdata", "details", "href", "network", "tags", "type", "vrf_id"]
+    __properties: ClassVar[List[str]] = ["cidr", "customdata", "details", "network", "tags", "type", "vrf_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +98,6 @@ class VrfIpReservationCreateInput(BaseModel):
             "cidr": obj.get("cidr"),
             "customdata": obj.get("customdata"),
             "details": obj.get("details"),
-            "href": obj.get("href"),
             "network": obj.get("network"),
             "tags": obj.get("tags"),
             "type": obj.get("type"),

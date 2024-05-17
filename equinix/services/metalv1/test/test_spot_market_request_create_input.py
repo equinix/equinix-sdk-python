@@ -42,7 +42,6 @@ class TestSpotMarketRequestCreateInput(unittest.TestCase):
                 facilities = [
                     ''
                     ],
-                href = '',
                 instance_parameters = equinix.services.metalv1.models.spot_market_request_create_input_instance_parameters.SpotMarketRequestCreateInput_instance_parameters(
                     always_pxe = True, 
                     billing_cycle = '', 
@@ -55,7 +54,6 @@ class TestSpotMarketRequestCreateInput(unittest.TestCase):
                     hostnames = [
                         ''
                         ], 
-                    href = '', 
                     locked = True, 
                     no_ssh_keys = True, 
                     operating_system = '', 

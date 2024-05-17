@@ -28,11 +28,10 @@ class LicenseCreateInput(BaseModel):
     LicenseCreateInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     licensee_product_id: Optional[StrictStr] = None
     size: Optional[Union[StrictFloat, StrictInt]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "licensee_product_id", "size"]
+    __properties: ClassVar[List[str]] = ["description", "licensee_product_id", "size"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class LicenseCreateInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "licensee_product_id": obj.get("licensee_product_id"),
             "size": obj.get("size")
         })

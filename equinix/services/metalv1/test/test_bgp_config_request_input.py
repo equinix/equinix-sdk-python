@@ -38,7 +38,6 @@ class TestBgpConfigRequestInput(unittest.TestCase):
             return BgpConfigRequestInput(
                 asn = 65000,
                 deployment_type = 'local',
-                href = '',
                 md5 = 'jUR,rZ#UM/?R,Fp^l6$ARjeJk C>i H'qT\\{<?'es#)#iK.YM{Rag2/!KB!k@5oXh.:Ts\";mGL,i&z5[P@M\"lzfB+Y,Twzfu~N^z\"mfqecVU{SE{QA<Y8XX0<}J;Krm9W'g~?)DvDDL7BlwpCDcpNjORpuEG',
                 use_case = ''
             )

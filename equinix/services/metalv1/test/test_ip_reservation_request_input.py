@@ -41,7 +41,6 @@ class TestIPReservationRequestInput(unittest.TestCase):
                 details = '',
                 facility = '',
                 fail_on_approval_required = True,
-                href = '',
                 metro = 'SV',
                 quantity = 56,
                 tags = [

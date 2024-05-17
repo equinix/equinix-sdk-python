@@ -39,32 +39,26 @@ class TestPlanSpecs(unittest.TestCase):
                 cpus = [
                     equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                         count = 56, 
-                        href = '', 
                         type = '', )
                     ],
+                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                    total = '', ),
                 drives = [
                     equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                        category = 'boot', 
                         count = 56, 
-                        href = '', 
+                        type = '', 
                         size = '3.84TB', 
-                        type = '', )
+                        category = 'boot', )
                     ],
-                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                    href = '', 
-                    raid = True, 
-                    txt = True, 
-                    uefi = True, ),
-                href = '',
-                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                    href = '', 
-                    total = '', ),
                 nics = [
                     equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                         count = 2, 
-                        href = '', 
                         type = '', )
-                    ]
+                    ],
+                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                    raid = True, 
+                    txt = True, 
+                    uefi = True, )
             )
         else:
             return PlanSpecs(

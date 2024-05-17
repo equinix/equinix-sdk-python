@@ -33,16 +33,15 @@ class PortVlanAssignmentBatch(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     error_messages: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     port: Optional[Port] = None
-    project: Optional[Href] = None
     quantity: Optional[StrictInt] = None
     state: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     vlan_assignments: Optional[List[PortVlanAssignmentBatchVlanAssignmentsInner]] = None
+    project: Optional[Href] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "error_messages", "href", "id", "port", "project", "quantity", "state", "updated_at", "vlan_assignments"]
+    __properties: ClassVar[List[str]] = ["created_at", "error_messages", "id", "port", "quantity", "state", "updated_at", "vlan_assignments", "project"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -98,9 +97,6 @@ class PortVlanAssignmentBatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of port
         if self.port:
             _dict['port'] = self.port.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of project
-        if self.project:
-            _dict['project'] = self.project.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in vlan_assignments (list)
         _items = []
         if self.vlan_assignments:
@@ -108,6 +104,9 @@ class PortVlanAssignmentBatch(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['vlan_assignments'] = _items
+        # override the default output from pydantic by calling `to_dict()` of project
+        if self.project:
+            _dict['project'] = self.project.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -127,14 +126,13 @@ class PortVlanAssignmentBatch(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "error_messages": obj.get("error_messages"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "port": Port.from_dict(obj["port"]) if obj.get("port") is not None else None,
-            "project": Href.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "quantity": obj.get("quantity"),
             "state": obj.get("state"),
             "updated_at": obj.get("updated_at"),
-            "vlan_assignments": [PortVlanAssignmentBatchVlanAssignmentsInner.from_dict(_item) for _item in obj["vlan_assignments"]] if obj.get("vlan_assignments") is not None else None
+            "vlan_assignments": [PortVlanAssignmentBatchVlanAssignmentsInner.from_dict(_item) for _item in obj["vlan_assignments"]] if obj.get("vlan_assignments") is not None else None,
+            "project": Href.from_dict(obj["project"]) if obj.get("project") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

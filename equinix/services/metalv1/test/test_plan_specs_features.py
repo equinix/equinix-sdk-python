@@ -36,7 +36,6 @@ class TestPlanSpecsFeatures(unittest.TestCase):
         model = PlanSpecsFeatures()
         if include_optional:
             return PlanSpecsFeatures(
-                href = '',
                 raid = True,
                 txt = True,
                 uefi = True

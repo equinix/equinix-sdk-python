@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **licenses** | [**List[License]**](License.md) |  | [optional] 
 
 ## Example

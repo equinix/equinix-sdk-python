@@ -37,7 +37,6 @@ class TestBgpRoute(unittest.TestCase):
         if include_optional:
             return BgpRoute(
                 exact = True,
-                href = '',
                 route = '10.32.16.0/31'
             )
         else:

@@ -37,7 +37,6 @@ class TestVirtualCircuitUpdateInput(unittest.TestCase):
         if include_optional:
             return VirtualCircuitUpdateInput(
                 description = '',
-                href = '',
                 name = '',
                 speed = '',
                 tags = [

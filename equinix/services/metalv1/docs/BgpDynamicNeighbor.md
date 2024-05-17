@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **str** | The unique identifier for the resource | [optional] [readonly] 
 **bgp_neighbor_asn** | **int** | The ASN of the dynamic BGP neighbor | [optional] 
 **bgp_neighbor_range** | **str** | Network range of the dynamic BGP neighbor in CIDR format | [optional] 
-**created_at** | **datetime** |  | [optional] [readonly] 
-**created_by** | [**UserLimited**](UserLimited.md) |  | [optional] 
-**href** | **str** |  | [optional] [readonly] 
-**id** | **str** | The unique identifier for the resource | [optional] [readonly] 
 **metal_gateway** | [**VrfMetalGateway**](VrfMetalGateway.md) |  | [optional] 
 **state** | **str** |  | [optional] [readonly] 
-**tags** | **List[str]** |  | [optional] 
+**href** | **str** |  | [optional] [readonly] 
+**created_at** | **datetime** |  | [optional] [readonly] 
+**created_by** | [**UserLimited**](UserLimited.md) |  | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
+**tags** | **List[str]** |  | [optional] 
 
 ## Example
 

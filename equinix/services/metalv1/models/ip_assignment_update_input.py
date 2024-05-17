@@ -27,12 +27,11 @@ class IPAssignmentUpdateInput(BaseModel):
     """
     IPAssignmentUpdateInput
     """ # noqa: E501
-    customdata: Optional[Dict[str, Any]] = None
     details: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
+    customdata: Optional[Dict[str, Any]] = None
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["customdata", "details", "href", "tags"]
+    __properties: ClassVar[List[str]] = ["details", "customdata", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,9 +91,8 @@ class IPAssignmentUpdateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "customdata": obj.get("customdata"),
             "details": obj.get("details"),
-            "href": obj.get("href"),
+            "customdata": obj.get("customdata"),
             "tags": obj.get("tags")
         })
         # store additional fields in additional_properties

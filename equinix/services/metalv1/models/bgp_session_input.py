@@ -29,9 +29,8 @@ class BGPSessionInput(BaseModel):
     """ # noqa: E501
     address_family: Optional[StrictStr] = Field(default=None, description="Address family for BGP session.")
     default_route: Optional[StrictBool] = Field(default=False, description="Set the default route policy.")
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address_family", "default_route", "href"]
+    __properties: ClassVar[List[str]] = ["address_family", "default_route"]
 
     @field_validator('address_family')
     def address_family_validate_enum(cls, value):
@@ -102,8 +101,7 @@ class BGPSessionInput(BaseModel):
 
         _obj = cls.model_validate({
             "address_family": obj.get("address_family"),
-            "default_route": obj.get("default_route") if obj.get("default_route") is not None else False,
-            "href": obj.get("href")
+            "default_route": obj.get("default_route") if obj.get("default_route") is not None else False
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

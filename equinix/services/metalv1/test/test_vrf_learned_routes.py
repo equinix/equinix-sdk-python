@@ -36,11 +36,10 @@ class TestVrfLearnedRoutes(unittest.TestCase):
         model = VrfLearnedRoutes()
         if include_optional:
             return VrfLearnedRoutes(
-                href = '',
                 learned_routes = [
                     equinix.services.metalv1.models.vrf_learned_routes_learned_routes_inner.VrfLearnedRoutes_learned_routes_inner(
-                        origin_as = 65000, 
-                        prefix = '8.8.8.0/24', )
+                        prefix = '8.8.8.0/24', 
+                        origin_as = 65000, )
                     ]
             )
         else:

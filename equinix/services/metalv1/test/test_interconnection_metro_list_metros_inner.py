@@ -38,23 +38,21 @@ class TestInterconnectionMetroListMetrosInner(unittest.TestCase):
             return InterconnectionMetroListMetrosInner(
                 code = '',
                 country = '',
-                href = '',
                 id = '',
                 name = '',
                 providers = [
                     equinix.services.metalv1.models.interconnection_metro_list_metros_inner_all_of_providers_inner.InterconnectionMetroList_metros_inner_allOf_providers_inner(
+                        type = 'CSP_AWS', 
+                        name = 'AWS Direct Connect', 
+                        locations = [
+                            'us-east-1'
+                            ], 
                         bandwidths = [
                             50
                             ], 
                         features = [
                             'high capacity'
-                            ], 
-                        href = '', 
-                        locations = [
-                            'us-east-1'
-                            ], 
-                        name = 'AWS Direct Connect', 
-                        type = 'CSP_AWS', )
+                            ], )
                     ]
             )
         else:

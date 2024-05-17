@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** |  | 
 **default** | **bool** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

@@ -27,12 +27,11 @@ class SSHKeyInput(BaseModel):
     """
     SSHKeyInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     key: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "key", "label", "tags"]
+    __properties: ClassVar[List[str]] = ["key", "label", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class SSHKeyInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "key": obj.get("key"),
             "label": obj.get("label"),
             "tags": obj.get("tags")

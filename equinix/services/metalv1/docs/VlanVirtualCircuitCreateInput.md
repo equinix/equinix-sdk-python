@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **nni_vlan** | **int** |  | [optional] 
 **project_id** | **str** |  | 

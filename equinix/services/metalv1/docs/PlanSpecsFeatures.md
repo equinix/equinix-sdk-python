@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **raid** | **bool** |  | [optional] 
 **txt** | **bool** |  | [optional] 
 **uefi** | **bool** |  | [optional] 

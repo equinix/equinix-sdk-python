@@ -38,7 +38,6 @@ class TestIPAddress(unittest.TestCase):
             return IPAddress(
                 address_family = 4,
                 cidr = 28,
-                href = '',
                 ip_reservations = [
                     ''
                     ],

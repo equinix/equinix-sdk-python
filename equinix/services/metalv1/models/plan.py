@@ -35,9 +35,8 @@ class Plan(BaseModel):
     available_in_metros: Optional[List[PlanAvailableInMetrosInner]] = Field(default=None, description="Shows which metros the plan is available in, and the metro-based price if it is different from the default price.")
     categories: Optional[List[StrictStr]] = Field(default=None, description="Categories of the plan, like compute or storage. A Plan can belong to multiple categories.")
     var_class: Optional[StrictStr] = Field(default=None, alias="class")
-    deployment_types: Optional[Annotated[List[StrictStr], Field(min_length=0)]] = None
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
+    deployment_types: Optional[Annotated[List[StrictStr], Field(min_length=0)]] = None
     id: Optional[StrictStr] = None
     legacy: Optional[StrictBool] = Field(default=None, description="Deprecated. Always return false")
     line: Optional[StrictStr] = None
@@ -47,7 +46,7 @@ class Plan(BaseModel):
     specs: Optional[PlanSpecs] = None
     type: Optional[StrictStr] = Field(default=None, description="The plan type")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["available_in", "available_in_metros", "categories", "class", "deployment_types", "description", "href", "id", "legacy", "line", "name", "pricing", "slug", "specs", "type"]
+    __properties: ClassVar[List[str]] = ["available_in", "available_in_metros", "categories", "class", "description", "deployment_types", "id", "legacy", "line", "name", "pricing", "slug", "specs", "type"]
 
     @field_validator('deployment_types')
     def deployment_types_validate_enum(cls, value):
@@ -149,9 +148,8 @@ class Plan(BaseModel):
             "available_in_metros": [PlanAvailableInMetrosInner.from_dict(_item) for _item in obj["available_in_metros"]] if obj.get("available_in_metros") is not None else None,
             "categories": obj.get("categories"),
             "class": obj.get("class"),
-            "deployment_types": obj.get("deployment_types"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
+            "deployment_types": obj.get("deployment_types"),
             "id": obj.get("id"),
             "legacy": obj.get("legacy"),
             "line": obj.get("line"),

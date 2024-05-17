@@ -31,20 +31,20 @@ class VrfRoute(BaseModel):
     """
     VrfRoute
     """ # noqa: E501
-    created_at: Optional[datetime] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="The unique identifier for the newly-created resource")
-    metal_gateway: Optional[VrfMetalGateway] = None
-    next_hop: Optional[StrictStr] = Field(default=None, description="The next-hop IPv4 address for the route")
-    prefix: Optional[StrictStr] = Field(default=None, description="The IPv4 prefix for the route, in CIDR-style notation")
     status: Optional[StrictStr] = Field(default=None, description="The status of the route. Potential values are \"pending\", \"active\", \"deleting\", and \"error\", representing various lifecycle states of the route and whether or not it has been successfully configured on the network")
-    tags: Optional[List[StrictStr]] = None
+    prefix: Optional[StrictStr] = Field(default=None, description="The IPv4 prefix for the route, in CIDR-style notation")
+    next_hop: Optional[StrictStr] = Field(default=None, description="The next-hop IPv4 address for the route")
     type: Optional[StrictStr] = Field(default=None, description="VRF route type, like 'bgp', 'connected', and 'static'. Currently, only static routes are supported")
+    created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+    metal_gateway: Optional[VrfMetalGateway] = None
     virtual_network: Optional[VirtualNetwork] = None
     vrf: Optional[Vrf] = None
+    href: Optional[StrictStr] = None
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "href", "id", "metal_gateway", "next_hop", "prefix", "status", "tags", "type", "updated_at", "virtual_network", "vrf"]
+    __properties: ClassVar[List[str]] = ["id", "status", "prefix", "next_hop", "type", "created_at", "updated_at", "metal_gateway", "virtual_network", "vrf", "href", "tags"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -105,12 +105,12 @@ class VrfRoute(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "created_at",
-            "href",
             "id",
             "status",
             "type",
+            "created_at",
             "updated_at",
+            "href",
             "additional_properties",
         ])
 
@@ -145,18 +145,18 @@ class VrfRoute(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
-            "metal_gateway": VrfMetalGateway.from_dict(obj["metal_gateway"]) if obj.get("metal_gateway") is not None else None,
-            "next_hop": obj.get("next_hop"),
-            "prefix": obj.get("prefix"),
             "status": obj.get("status"),
-            "tags": obj.get("tags"),
+            "prefix": obj.get("prefix"),
+            "next_hop": obj.get("next_hop"),
             "type": obj.get("type"),
+            "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at"),
+            "metal_gateway": VrfMetalGateway.from_dict(obj["metal_gateway"]) if obj.get("metal_gateway") is not None else None,
             "virtual_network": VirtualNetwork.from_dict(obj["virtual_network"]) if obj.get("virtual_network") is not None else None,
-            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
+            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None,
+            "href": obj.get("href"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -36,7 +36,6 @@ class TestMetroInput(unittest.TestCase):
         model = MetroInput()
         if include_optional:
             return MetroInput(
-                href = '',
                 metro = 'sv'
             )
         else:

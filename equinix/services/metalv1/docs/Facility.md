@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **address** | [**Address**](Address.md) |  | [optional] 
 **code** | **str** |  | [optional] 
 **features** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **ip_ranges** | **List[str]** | IP ranges registered in facility. Can be used for GeoIP location | [optional] 
 **metro** | [**DeviceMetro**](DeviceMetro.md) |  | [optional] 

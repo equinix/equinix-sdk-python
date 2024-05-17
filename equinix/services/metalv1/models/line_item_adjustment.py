@@ -29,9 +29,8 @@ class LineItemAdjustment(BaseModel):
     """ # noqa: E501
     amount: Optional[Union[StrictFloat, StrictInt]] = None
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["amount", "description", "href"]
+    __properties: ClassVar[List[str]] = ["amount", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +91,7 @@ class LineItemAdjustment(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
-            "description": obj.get("description"),
-            "href": obj.get("href")
+            "description": obj.get("description")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

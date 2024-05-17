@@ -37,7 +37,6 @@ class TestServerInfo(unittest.TestCase):
         if include_optional:
             return ServerInfo(
                 facility = '',
-                href = '',
                 metro = '',
                 plan = '',
                 quantity = ''

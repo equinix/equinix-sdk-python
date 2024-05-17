@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **ports** | [**List[InterconnectionPort]**](InterconnectionPort.md) |  | [optional] 
 
 ## Example

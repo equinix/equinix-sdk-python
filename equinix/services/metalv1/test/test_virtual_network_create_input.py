@@ -38,12 +38,11 @@ class TestVirtualNetworkCreateInput(unittest.TestCase):
             return VirtualNetworkCreateInput(
                 description = '',
                 facility = '',
-                href = '',
                 metro = '',
+                vxlan = 1099,
                 tags = [
                     ''
-                    ],
-                vxlan = 1099
+                    ]
             )
         else:
             return VirtualNetworkCreateInput(

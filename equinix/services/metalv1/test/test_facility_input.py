@@ -36,8 +36,7 @@ class TestFacilityInput(unittest.TestCase):
         model = FacilityInput()
         if include_optional:
             return FacilityInput(
-                facility = None,
-                href = ''
+                facility = None
             )
         else:
             return FacilityInput(

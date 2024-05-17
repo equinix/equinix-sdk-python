@@ -37,7 +37,6 @@ class TestLicenseCreateInput(unittest.TestCase):
         if include_optional:
             return LicenseCreateInput(
                 description = '',
-                href = '',
                 licensee_product_id = '',
                 size = 1.337
             )

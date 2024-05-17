@@ -36,7 +36,6 @@ class TestIPAssignmentList(unittest.TestCase):
         model = IPAssignmentList()
         if include_optional:
             return IPAssignmentList(
-                href = '',
                 ip_addresses = [
                     equinix.services.metalv1.models.ip_assignment.IPAssignment(
                         address = '', 
@@ -55,14 +54,14 @@ class TestIPAssignmentList(unittest.TestCase):
                         metro = null, 
                         netmask = '', 
                         network = '', 
-                        next_hop = '', 
                         parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                             cidr = 56, 
                             href = '', 
                             netmask = '', 
                             network = '', ), 
                         public = True, 
-                        state = 'pending', )
+                        state = 'pending', 
+                        next_hop = '', )
                     ]
             )
         else:

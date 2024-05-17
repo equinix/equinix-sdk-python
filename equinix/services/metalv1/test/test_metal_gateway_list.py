@@ -36,22 +36,20 @@ class TestMetalGatewayList(unittest.TestCase):
         model = MetalGatewayList()
         if include_optional:
             return MetalGatewayList(
-                href = '',
+                metal_gateways = [
+                    null
+                    ],
                 meta = equinix.services.metalv1.models.meta.Meta(
-                    current_page = 56, 
                     first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
-                    href = '', 
                     last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
-                    last_page = 56, 
                     next = , 
                     previous = , 
                     self = , 
-                    total = 56, ),
-                metal_gateways = [
-                    null
-                    ]
+                    total = 56, 
+                    current_page = 56, 
+                    last_page = 56, )
             )
         else:
             return MetalGatewayList(

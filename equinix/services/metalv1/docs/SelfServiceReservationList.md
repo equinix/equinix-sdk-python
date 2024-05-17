@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **reservations** | [**List[SelfServiceReservationResponse]**](SelfServiceReservationResponse.md) |  | [optional] 
 
 ## Example

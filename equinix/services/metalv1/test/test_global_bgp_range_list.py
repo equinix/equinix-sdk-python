@@ -44,8 +44,7 @@ class TestGlobalBgpRangeList(unittest.TestCase):
                         project = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         range = '', )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return GlobalBgpRangeList(

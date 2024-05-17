@@ -37,7 +37,6 @@ class TestSelfServiceReservationItemResponse(unittest.TestCase):
         if include_optional:
             return SelfServiceReservationItemResponse(
                 amount = 1.337,
-                href = '',
                 id = '',
                 metro_code = '',
                 metro_id = '',
@@ -47,8 +46,7 @@ class TestSelfServiceReservationItemResponse(unittest.TestCase):
                         equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                             href = '', 
                             price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                hour = 1.23, 
-                                href = '', ), )
+                                hour = 1.23, ), )
                         ], 
                     available_in_metros = [
                         equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -58,11 +56,10 @@ class TestSelfServiceReservationItemResponse(unittest.TestCase):
                         ''
                         ], 
                     class = 'm3.large.x86', 
+                    description = '', 
                     deployment_types = [
                         'on_demand'
                         ], 
-                    description = '', 
-                    href = '', 
                     id = '', 
                     legacy = True, 
                     line = '', 
@@ -73,39 +70,33 @@ class TestSelfServiceReservationItemResponse(unittest.TestCase):
                         cpus = [
                             equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                 count = 56, 
-                                href = '', 
                                 type = '', )
                             ], 
+                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                            total = '', ), 
                         drives = [
                             equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                category = 'boot', 
                                 count = 56, 
-                                href = '', 
+                                type = '', 
                                 size = '3.84TB', 
-                                type = '', )
+                                category = 'boot', )
                             ], 
-                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                            href = '', 
-                            raid = True, 
-                            txt = True, 
-                            uefi = True, ), 
-                        href = '', 
-                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                            href = '', 
-                            total = '', ), 
                         nics = [
                             equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                 count = 2, 
-                                href = '', 
                                 type = '', )
-                            ], ), 
+                            ], 
+                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                            raid = True, 
+                            txt = True, 
+                            uefi = True, ), ), 
                     type = 'standard', ),
-                plan_categories = [
-                    ''
-                    ],
                 plan_id = '',
                 plan_name = '',
                 plan_slug = '',
+                plan_categories = [
+                    ''
+                    ],
                 quantity = 56,
                 term = ''
             )

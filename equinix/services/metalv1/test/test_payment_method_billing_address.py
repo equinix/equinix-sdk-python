@@ -37,7 +37,6 @@ class TestPaymentMethodBillingAddress(unittest.TestCase):
         if include_optional:
             return PaymentMethodBillingAddress(
                 country_code_alpha2 = '',
-                href = '',
                 postal_code = '',
                 street_address = ''
             )

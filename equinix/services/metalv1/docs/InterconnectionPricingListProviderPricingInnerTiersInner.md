@@ -6,9 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bandwidth** | **int** | Bandwidth tier in Mbps | [optional] 
-**billing_cycle** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **price** | **float** |  | [optional] 
+**billing_cycle** | **str** |  | [optional] 
 
 ## Example
 

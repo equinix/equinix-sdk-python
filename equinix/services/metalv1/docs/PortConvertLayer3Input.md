@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **request_ips** | [**List[PortConvertLayer3InputRequestIpsInner]**](PortConvertLayer3InputRequestIpsInner.md) |  | [optional] 
 
 ## Example

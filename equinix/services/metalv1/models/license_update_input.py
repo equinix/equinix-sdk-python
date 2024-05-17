@@ -28,10 +28,9 @@ class LicenseUpdateInput(BaseModel):
     LicenseUpdateInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     size: Optional[Union[StrictFloat, StrictInt]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "size"]
+    __properties: ClassVar[List[str]] = ["description", "size"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class LicenseUpdateInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "size": obj.get("size")
         })
         # store additional fields in additional_properties

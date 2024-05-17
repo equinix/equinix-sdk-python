@@ -38,7 +38,6 @@ class TestSpotMarketRequestMetro(unittest.TestCase):
             return SpotMarketRequestMetro(
                 code = '',
                 country = '',
-                href = '',
                 id = '',
                 name = ''
             )

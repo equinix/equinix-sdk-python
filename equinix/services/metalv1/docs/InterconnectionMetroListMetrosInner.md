@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **providers** | [**List[InterconnectionMetroListMetrosInnerAllOfProvidersInner]**](InterconnectionMetroListMetrosInnerAllOfProvidersInner.md) | A list of providers and their equivalent regions available for connecting to the provider network. | [optional] 

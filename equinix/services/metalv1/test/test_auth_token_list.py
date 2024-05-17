@@ -40,15 +40,13 @@ class TestAuthTokenList(unittest.TestCase):
                     equinix.services.metalv1.models.auth_token.AuthToken(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
-                        href = '', 
                         id = '', 
                         project = null, 
                         read_only = True, 
                         token = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         user = null, )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return AuthTokenList(

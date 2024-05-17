@@ -28,10 +28,10 @@ class VrfLearnedRoutesLearnedRoutesInner(BaseModel):
     """
     VrfLearnedRoutesLearnedRoutesInner
     """ # noqa: E501
-    origin_as: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The ASN of the peer that advertised the prefix.")
     prefix: Optional[StrictStr] = None
+    origin_as: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The ASN of the peer that advertised the prefix.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["origin_as", "prefix"]
+    __properties: ClassVar[List[str]] = ["prefix", "origin_as"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,8 +91,8 @@ class VrfLearnedRoutesLearnedRoutesInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "origin_as": obj.get("origin_as"),
-            "prefix": obj.get("prefix")
+            "prefix": obj.get("prefix"),
+            "origin_as": obj.get("origin_as")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

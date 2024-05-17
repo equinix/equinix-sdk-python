@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **cidr** | **int** | The size of the VRF IP Reservation&#39;s subnet | 
 **customdata** | **object** |  | [optional] 
 **details** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **network** | **str** | The starting address for this VRF IP Reservation&#39;s subnet | 
 **tags** | **List[str]** |  | [optional] 
 **type** | **str** | Must be set to &#39;vrf&#39; | 

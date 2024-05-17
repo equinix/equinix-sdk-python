@@ -27,10 +27,9 @@ class RecoveryCodeList(BaseModel):
     """
     RecoveryCodeList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     recovery_codes: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "recovery_codes"]
+    __properties: ClassVar[List[str]] = ["recovery_codes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class RecoveryCodeList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "recovery_codes": obj.get("recovery_codes")
         })
         # store additional fields in additional_properties

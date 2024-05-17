@@ -36,10 +36,8 @@ class TestPortVlanAssignmentBatchCreateInput(unittest.TestCase):
         model = PortVlanAssignmentBatchCreateInput()
         if include_optional:
             return PortVlanAssignmentBatchCreateInput(
-                href = '',
                 vlan_assignments = [
                     equinix.services.metalv1.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner.PortVlanAssignmentBatchCreateInput_vlan_assignments_inner(
-                        href = '', 
                         native = True, 
                         state = 'assigned', 
                         vlan = '', )

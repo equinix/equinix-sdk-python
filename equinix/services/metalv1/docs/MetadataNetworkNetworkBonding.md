@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **link_aggregation** | **str** |  | [optional] 
 **mac** | **str** |  | [optional] 
 **mode** | **int** |  | [optional] 

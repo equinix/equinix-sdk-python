@@ -36,7 +36,6 @@ class TestDeviceUsage(unittest.TestCase):
         model = DeviceUsage()
         if include_optional:
             return DeviceUsage(
-                href = '',
                 quantity = '',
                 total = '',
                 unit = ''

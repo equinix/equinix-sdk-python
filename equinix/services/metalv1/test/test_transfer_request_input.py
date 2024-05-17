@@ -36,7 +36,6 @@ class TestTransferRequestInput(unittest.TestCase):
         model = TransferRequestInput()
         if include_optional:
             return TransferRequestInput(
-                href = '',
                 target_organization_id = ''
             )
         else:

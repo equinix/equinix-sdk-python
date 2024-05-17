@@ -19,7 +19,6 @@ Method | HTTP request | Description
 [**list_interconnection_virtual_circuits**](InterconnectionsApi.md#list_interconnection_virtual_circuits) | **GET** /connections/{connection_id}/virtual-circuits | List a interconnection&#39;s virtual circuits
 [**organization_list_interconnections**](InterconnectionsApi.md#organization_list_interconnections) | **GET** /organizations/{organization_id}/connections | List organization connections
 [**project_list_interconnections**](InterconnectionsApi.md#project_list_interconnections) | **GET** /projects/{project_id}/connections | List project connections
-[**project_list_interconnections_all_pages**](InterconnectionsApi.md#project_list_interconnections_all_pages) | **GET** /projects/{project_id}/connections | List project connections, fetches all the pages
 [**update_interconnection**](InterconnectionsApi.md#update_interconnection) | **PUT** /connections/{connection_id} | Update interconnection
 [**update_virtual_circuit**](InterconnectionsApi.md#update_virtual_circuit) | **PUT** /virtual-circuits/{id} | Update a virtual circuit
 
@@ -1276,9 +1275,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **project_list_interconnections_all_pages**
-> InterconnectionList project_list_interconnections_all_pages(project_id, include=include, exclude=exclude, per_page=per_page)
-Just like [**project_list_interconnections**](InterconnectionsApi.md#project_list_interconnections) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**project_list_interconnections**](InterconnectionsApi.md#project_list_interconnections).
 # **update_interconnection**
 > Interconnection update_interconnection(connection_id, interconnection_update_input, include=include, exclude=exclude)
 

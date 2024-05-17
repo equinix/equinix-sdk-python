@@ -27,10 +27,9 @@ class Userdata(BaseModel):
     """
     Userdata
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     userdata: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "userdata"]
+    __properties: ClassVar[List[str]] = ["userdata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class Userdata(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "userdata": obj.get("userdata")
         })
         # store additional fields in additional_properties

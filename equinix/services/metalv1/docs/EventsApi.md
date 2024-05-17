@@ -5,17 +5,12 @@ All URIs are relative to *https://api.equinix.com/metal/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**find_device_events**](EventsApi.md#find_device_events) | **GET** /devices/{id}/events | Retrieve device&#39;s events
-[**find_device_events_all_pages**](EventsApi.md#find_device_events_all_pages) | **GET** /devices/{id}/events | Retrieve device&#39;s events, fetches all the pages
 [**find_event_by_id**](EventsApi.md#find_event_by_id) | **GET** /events/{id} | Retrieve an event
 [**find_events**](EventsApi.md#find_events) | **GET** /events | Retrieve current user&#39;s events
-[**find_events_all_pages**](EventsApi.md#find_events_all_pages) | **GET** /events | Retrieve current user&#39;s events, fetches all the pages
 [**find_interconnection_events**](EventsApi.md#find_interconnection_events) | **GET** /connections/{connection_id}/events | Retrieve interconnection events
-[**find_interconnection_events_all_pages**](EventsApi.md#find_interconnection_events_all_pages) | **GET** /connections/{connection_id}/events | Retrieve interconnection events, fetches all the pages
 [**find_interconnection_port_events**](EventsApi.md#find_interconnection_port_events) | **GET** /connections/{connection_id}/ports/{id}/events | Retrieve interconnection port events
 [**find_organization_events**](EventsApi.md#find_organization_events) | **GET** /organizations/{id}/events | Retrieve organization&#39;s events
-[**find_organization_events_all_pages**](EventsApi.md#find_organization_events_all_pages) | **GET** /organizations/{id}/events | Retrieve organization&#39;s events, fetches all the pages
 [**find_project_events**](EventsApi.md#find_project_events) | **GET** /projects/{id}/events | Retrieve project&#39;s events
-[**find_project_events_all_pages**](EventsApi.md#find_project_events_all_pages) | **GET** /projects/{id}/events | Retrieve project&#39;s events, fetches all the pages
 [**find_virtual_circuit_events**](EventsApi.md#find_virtual_circuit_events) | **GET** /virtual-circuits/{id}/events | Retrieve virtual circuit events
 [**find_vrf_route_events**](EventsApi.md#find_vrf_route_events) | **GET** /routes/{id}/events | Retrieve VRF route events
 
@@ -109,9 +104,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_device_events_all_pages**
-> EventList find_device_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_device_events**](EventsApi.md#find_device_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_device_events**](EventsApi.md#find_device_events).
 # **find_event_by_id**
 > Event find_event_by_id(id, include=include, exclude=exclude)
 
@@ -282,9 +274,6 @@ Name | Type | Description  | Notes
 **401** | unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_events_all_pages**
-> EventList find_events_all_pages(include=include, exclude=exclude, per_page=per_page)
-Just like [**find_events**](EventsApi.md#find_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_events**](EventsApi.md#find_events).
 # **find_interconnection_events**
 > EventList find_interconnection_events(connection_id, include=include, exclude=exclude, page=page, per_page=per_page)
 
@@ -374,9 +363,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_interconnection_events_all_pages**
-> EventList find_interconnection_events_all_pages(connection_id, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_interconnection_events**](EventsApi.md#find_interconnection_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_interconnection_events**](EventsApi.md#find_interconnection_events).
 # **find_interconnection_port_events**
 > Event find_interconnection_port_events(connection_id, id, include=include, exclude=exclude, page=page, per_page=per_page)
 
@@ -557,9 +543,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_organization_events_all_pages**
-> EventList find_organization_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_organization_events**](EventsApi.md#find_organization_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_organization_events**](EventsApi.md#find_organization_events).
 # **find_project_events**
 > EventList find_project_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 
@@ -649,9 +632,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_project_events_all_pages**
-> EventList find_project_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_project_events**](EventsApi.md#find_project_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_project_events**](EventsApi.md#find_project_events).
 # **find_virtual_circuit_events**
 > Event find_virtual_circuit_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 

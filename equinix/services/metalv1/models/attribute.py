@@ -29,13 +29,12 @@ class Attribute(BaseModel):
     """
     Attribute
     """ # noqa: E501
-    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
-    data: Optional[AttributeData] = None
-    href: Optional[StrictStr] = None
     namespace: Optional[StrictStr] = Field(default=None, description="Attribute namespace")
+    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
     updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
+    data: Optional[AttributeData] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "data", "href", "namespace", "updated_at"]
+    __properties: ClassVar[List[str]] = ["namespace", "created_at", "updated_at", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,8 +72,8 @@ class Attribute(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "created_at",
             "namespace",
+            "created_at",
             "updated_at",
             "additional_properties",
         ])
@@ -104,11 +103,10 @@ class Attribute(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
-            "data": AttributeData.from_dict(obj["data"]) if obj.get("data") is not None else None,
-            "href": obj.get("href"),
             "namespace": obj.get("namespace"),
-            "updated_at": obj.get("updated_at")
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at"),
+            "data": AttributeData.from_dict(obj["data"]) if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

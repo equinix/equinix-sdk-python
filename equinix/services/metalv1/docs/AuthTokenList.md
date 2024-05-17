@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_keys** | [**List[AuthToken]**](AuthToken.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

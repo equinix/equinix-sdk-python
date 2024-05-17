@@ -5,24 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**adjustments** | [**List[LineItemAdjustment]**](LineItemAdjustment.md) | Adjustments for the line item | [optional] 
 **amount** | **float** |  | [optional] 
 **currency** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **details** | **str** |  | [optional] 
-**end_date** | **date** |  | [optional] 
-**hostname** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
-**item_type** | **str** |  | [optional] 
-**location** | **str** |  | [optional] 
 **plan** | [**Plan**](Plan.md) |  | [optional] 
-**plan_id** | **str** |  | [optional] 
-**project** | [**ProjectIdName**](ProjectIdName.md) |  | [optional] 
-**project_id** | **str** |  | [optional] 
-**service_id** | **str** |  | [optional] 
-**start_date** | **date** |  | [optional] 
 **unit** | **str** |  | [optional] 
 **unit_price** | **float** |  | [optional] 
+**hostname** | **str** |  | [optional] 
+**location** | **str** |  | [optional] 
+**item_type** | **str** |  | [optional] 
+**service_id** | **str** |  | [optional] 
+**start_date** | **date** |  | [optional] 
+**end_date** | **date** |  | [optional] 
+**project_id** | **str** |  | [optional] 
+**plan_id** | **str** |  | [optional] 
+**project** | [**ProjectIdName**](ProjectIdName.md) |  | [optional] 
+**adjustments** | [**List[LineItemAdjustment]**](LineItemAdjustment.md) | Adjustments for the line item | [optional] 
 
 ## Example
 

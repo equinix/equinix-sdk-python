@@ -27,11 +27,10 @@ class Coordinates(BaseModel):
     """
     Coordinates
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     latitude: Optional[StrictStr] = None
     longitude: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "latitude", "longitude"]
+    __properties: ClassVar[List[str]] = ["latitude", "longitude"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +90,6 @@ class Coordinates(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "latitude": obj.get("latitude"),
             "longitude": obj.get("longitude")
         })

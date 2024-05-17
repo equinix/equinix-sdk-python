@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **facilities** | [**List[Facility]**](Facility.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.capacity_check_per_metro_info import CapacityCheckPerMetroInfo
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class CapacityCheckPerMetroList(BaseModel):
     """
     CapacityCheckPerMetroList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     servers: Optional[List[CapacityCheckPerMetroInfo]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "servers"]
+    __properties: ClassVar[List[str]] = ["servers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class CapacityCheckPerMetroList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "servers": [CapacityCheckPerMetroInfo.from_dict(_item) for _item in obj["servers"]] if obj.get("servers") is not None else None
         })
         # store additional fields in additional_properties

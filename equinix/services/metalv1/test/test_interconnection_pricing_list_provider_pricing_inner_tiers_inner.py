@@ -37,9 +37,8 @@ class TestInterconnectionPricingListProviderPricingInnerTiersInner(unittest.Test
         if include_optional:
             return InterconnectionPricingListProviderPricingInnerTiersInner(
                 bandwidth = 500,
-                billing_cycle = 'monthly',
-                href = '',
-                price = 10.04
+                price = 10.04,
+                billing_cycle = 'monthly'
             )
         else:
             return InterconnectionPricingListProviderPricingInnerTiersInner(

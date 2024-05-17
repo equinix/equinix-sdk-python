@@ -36,13 +36,10 @@ class TestOperatingSystemList(unittest.TestCase):
         model = OperatingSystemList()
         if include_optional:
             return OperatingSystemList(
-                href = '',
                 operating_systems = [
                     equinix.services.metalv1.models.operating_system.OperatingSystem(
-                        default_operating_system = True, 
                         distro = '', 
                         distro_label = '', 
-                        href = '', 
                         id = '', 
                         licensed = True, 
                         name = '', 
@@ -52,7 +49,8 @@ class TestOperatingSystemList(unittest.TestCase):
                             ''
                             ], 
                         slug = '', 
-                        version = '', )
+                        version = '', 
+                        default_operating_system = True, )
                     ]
             )
         else:

@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addresses** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **interfaces** | **List[object]** |  | [optional] 
 **network** | [**MetadataNetworkNetwork**](MetadataNetworkNetwork.md) |  | [optional] 
 

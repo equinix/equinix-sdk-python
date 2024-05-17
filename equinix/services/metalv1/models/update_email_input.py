@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,8 @@ class UpdateEmailInput(BaseModel):
     UpdateEmailInput
     """ # noqa: E501
     default: Optional[StrictBool] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["default", "href"]
+    __properties: ClassVar[List[str]] = ["default"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +89,7 @@ class UpdateEmailInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "default": obj.get("default"),
-            "href": obj.get("href")
+            "default": obj.get("default")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

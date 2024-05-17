@@ -36,7 +36,6 @@ class TestPartition(unittest.TestCase):
         model = Partition()
         if include_optional:
             return Partition(
-                href = '',
                 label = '',
                 number = 56,
                 size = ''

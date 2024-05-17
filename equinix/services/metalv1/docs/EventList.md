@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **events** | [**List[Event]**](Event.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example

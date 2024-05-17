@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **provider** | **str** |  | [optional] 
 **tiers** | [**List[InterconnectionPricingListProviderPricingInnerTiersInner]**](InterconnectionPricingListProviderPricingInnerTiersInner.md) |  | [optional] 
 

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customdata** | **object** |  | [optional] 
 **first_name** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 

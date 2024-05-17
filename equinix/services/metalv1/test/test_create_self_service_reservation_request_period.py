@@ -37,7 +37,6 @@ class TestCreateSelfServiceReservationRequestPeriod(unittest.TestCase):
         if include_optional:
             return CreateSelfServiceReservationRequestPeriod(
                 count = 12,
-                href = '',
                 unit = 'monthly'
             )
         else:

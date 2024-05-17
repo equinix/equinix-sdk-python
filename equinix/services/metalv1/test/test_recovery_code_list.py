@@ -36,7 +36,6 @@ class TestRecoveryCodeList(unittest.TestCase):
         model = RecoveryCodeList()
         if include_optional:
             return RecoveryCodeList(
-                href = '',
                 recovery_codes = [
                     ''
                     ]

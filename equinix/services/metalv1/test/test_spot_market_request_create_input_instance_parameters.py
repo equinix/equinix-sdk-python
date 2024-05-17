@@ -47,7 +47,6 @@ class TestSpotMarketRequestCreateInputInstanceParameters(unittest.TestCase):
                 hostnames = [
                     ''
                     ],
-                href = '',
                 locked = True,
                 no_ssh_keys = True,
                 operating_system = '',

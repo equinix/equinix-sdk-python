@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ended_at** | **datetime** |  | 
-**href** | **str** |  | [optional] 
 **started_at** | **datetime** |  | 
 
 ## Example

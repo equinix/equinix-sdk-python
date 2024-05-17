@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
 **description** | **str** | Available only for API keys | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **project** | [**AuthTokenProject**](AuthTokenProject.md) |  | [optional] 
 **read_only** | **bool** |  | [optional] 

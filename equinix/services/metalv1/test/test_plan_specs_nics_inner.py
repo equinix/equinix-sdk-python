@@ -37,7 +37,6 @@ class TestPlanSpecsNicsInner(unittest.TestCase):
         if include_optional:
             return PlanSpecsNicsInner(
                 count = 2,
-                href = '',
                 type = ''
             )
         else:

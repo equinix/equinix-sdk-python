@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bonded** | **bool** | Bonded is true for NetworkPort ports in a bond and NetworkBondPort ports that are active | [optional] 
-**href** | **str** |  | [optional] 
 **mac** | **str** | MAC address is set for NetworkPort ports | [optional] 
+**bonded** | **bool** | Bonded is true for NetworkPort ports in a bond and NetworkBondPort ports that are active | [optional] 
 
 ## Example
 

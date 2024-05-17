@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
-**href** | **str** |  | [optional] 
 **item** | [**List[SelfServiceReservationItemResponse]**](SelfServiceReservationItemResponse.md) |  | [optional] 
 **notes** | **str** |  | [optional] 
 **organization** | **str** |  | [optional] 

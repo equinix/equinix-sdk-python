@@ -36,17 +36,14 @@ class TestInterconnectionPricingList(unittest.TestCase):
         model = InterconnectionPricingList()
         if include_optional:
             return InterconnectionPricingList(
-                href = '',
                 provider_pricing = [
                     equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner.InterconnectionPricingList_provider_pricing_inner(
-                        href = '', 
                         provider = 'CSP_AWS', 
                         tiers = [
                             equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner.InterconnectionPricingList_provider_pricing_inner_tiers_inner(
                                 bandwidth = 500, 
-                                billing_cycle = 'monthly', 
-                                href = '', 
-                                price = 10.04, )
+                                price = 10.04, 
+                                billing_cycle = 'monthly', )
                             ], )
                     ]
             )

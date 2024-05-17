@@ -27,15 +27,14 @@ class DeviceActionInput(BaseModel):
     """
     DeviceActionInput
     """ # noqa: E501
-    deprovision_fast: Optional[StrictBool] = Field(default=None, description="When type is `reinstall`, enabling fast deprovisioning will bypass full disk wiping.")
-    force_delete: Optional[StrictBool] = Field(default=None, description="May be required to perform actions under certain conditions")
-    href: Optional[StrictStr] = None
-    ipxe_script_url: Optional[StrictStr] = Field(default=None, description="When type is `reinstall`, use this `ipxe_script_url` (`operating_system` must be `custom_ipxe`, defaults to the current `ipxe_script_url`)")
-    operating_system: Optional[StrictStr] = Field(default=None, description="When type is `reinstall`, use this `operating_system` (defaults to the current `operating system`)")
-    preserve_data: Optional[StrictBool] = Field(default=None, description="When type is `reinstall`, preserve the existing data on all disks except the operating-system disk.")
     type: StrictStr = Field(description="Action to perform. See Device.actions for possible actions.")
+    force_delete: Optional[StrictBool] = Field(default=None, description="May be required to perform actions under certain conditions")
+    deprovision_fast: Optional[StrictBool] = Field(default=None, description="When type is `reinstall`, enabling fast deprovisioning will bypass full disk wiping.")
+    preserve_data: Optional[StrictBool] = Field(default=None, description="When type is `reinstall`, preserve the existing data on all disks except the operating-system disk.")
+    operating_system: Optional[StrictStr] = Field(default=None, description="When type is `reinstall`, use this `operating_system` (defaults to the current `operating system`)")
+    ipxe_script_url: Optional[StrictStr] = Field(default=None, description="When type is `reinstall`, use this `ipxe_script_url` (`operating_system` must be `custom_ipxe`, defaults to the current `ipxe_script_url`)")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["deprovision_fast", "force_delete", "href", "ipxe_script_url", "operating_system", "preserve_data", "type"]
+    __properties: ClassVar[List[str]] = ["type", "force_delete", "deprovision_fast", "preserve_data", "operating_system", "ipxe_script_url"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -102,13 +101,12 @@ class DeviceActionInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "deprovision_fast": obj.get("deprovision_fast"),
+            "type": obj.get("type"),
             "force_delete": obj.get("force_delete"),
-            "href": obj.get("href"),
-            "ipxe_script_url": obj.get("ipxe_script_url"),
-            "operating_system": obj.get("operating_system"),
+            "deprovision_fast": obj.get("deprovision_fast"),
             "preserve_data": obj.get("preserve_data"),
-            "type": obj.get("type")
+            "operating_system": obj.get("operating_system"),
+            "ipxe_script_url": obj.get("ipxe_script_url")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

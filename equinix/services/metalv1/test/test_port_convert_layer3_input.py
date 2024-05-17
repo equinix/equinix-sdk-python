@@ -36,11 +36,9 @@ class TestPortConvertLayer3Input(unittest.TestCase):
         model = PortConvertLayer3Input()
         if include_optional:
             return PortConvertLayer3Input(
-                href = '',
                 request_ips = [
                     equinix.services.metalv1.models.port_convert_layer3_input_request_ips_inner.PortConvertLayer3Input_request_ips_inner(
                         address_family = 56, 
-                        href = '', 
                         public = True, )
                     ]
             )

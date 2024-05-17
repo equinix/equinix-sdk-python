@@ -27,11 +27,10 @@ class BondPortData(BaseModel):
     """
     BondPortData
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="ID of the bonding port")
     name: Optional[StrictStr] = Field(default=None, description="Name of the port interface for the bond (\"bond0\")")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "id", "name"]
+    __properties: ClassVar[List[str]] = ["id", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +90,6 @@ class BondPortData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "name": obj.get("name")
         })

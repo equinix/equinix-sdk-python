@@ -38,7 +38,6 @@ class TestPaymentMethod(unittest.TestCase):
             return PaymentMethod(
                 billing_address = equinix.services.metalv1.models.payment_method_billing_address.PaymentMethodBillingAddress(
                     country_code_alpha2 = '', 
-                    href = '', 
                     postal_code = '', 
                     street_address = '', ),
                 card_type = '',
@@ -50,7 +49,6 @@ class TestPaymentMethod(unittest.TestCase):
                 email = '',
                 expiration_month = '',
                 expiration_year = '',
-                href = '',
                 id = '',
                 name = '',
                 organization = equinix.services.metalv1.models.href.Href(

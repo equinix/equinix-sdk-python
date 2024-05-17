@@ -36,8 +36,8 @@ class TestVrfLearnedRoutesLearnedRoutesInner(unittest.TestCase):
         model = VrfLearnedRoutesLearnedRoutesInner()
         if include_optional:
             return VrfLearnedRoutesLearnedRoutesInner(
-                origin_as = 65000,
-                prefix = '8.8.8.0/24'
+                prefix = '8.8.8.0/24',
+                origin_as = 65000
             )
         else:
             return VrfLearnedRoutesLearnedRoutesInner(

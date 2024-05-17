@@ -33,32 +33,32 @@ class VrfIpReservation(BaseModel):
     """
     VrfIpReservation
     """ # noqa: E501
-    address: Optional[StrictStr] = None
     address_family: Optional[StrictInt] = None
-    bill: Optional[StrictBool] = None
     cidr: Optional[StrictInt] = None
     created_at: Optional[datetime] = None
     created_by: Optional[Href] = None
-    customdata: Optional[Dict[str, Any]] = None
     details: Optional[StrictStr] = None
-    gateway: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    manageable: Optional[StrictBool] = None
-    management: Optional[StrictBool] = None
     metal_gateway: Optional[MetalGatewayLite] = None
-    metro: Optional[Metro] = None
     netmask: Optional[StrictStr] = None
     network: Optional[StrictStr] = None
     project: Optional[Project] = None
-    project_lite: Optional[Project] = None
-    public: Optional[StrictBool] = None
     state: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     type: StrictStr
     vrf: Vrf
+    public: Optional[StrictBool] = None
+    management: Optional[StrictBool] = None
+    manageable: Optional[StrictBool] = None
+    customdata: Optional[Dict[str, Any]] = None
+    bill: Optional[StrictBool] = None
+    project_lite: Optional[Project] = None
+    address: Optional[StrictStr] = None
+    gateway: Optional[StrictStr] = None
+    metro: Optional[Metro] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "address_family", "bill", "cidr", "created_at", "created_by", "customdata", "details", "gateway", "href", "id", "manageable", "management", "metal_gateway", "metro", "netmask", "network", "project", "project_lite", "public", "state", "tags", "type", "vrf"]
+    __properties: ClassVar[List[str]] = ["address_family", "cidr", "created_at", "created_by", "details", "href", "id", "metal_gateway", "netmask", "network", "project", "state", "tags", "type", "vrf", "public", "management", "manageable", "customdata", "bill", "project_lite", "address", "gateway", "metro"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -114,18 +114,18 @@ class VrfIpReservation(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of metal_gateway
         if self.metal_gateway:
             _dict['metal_gateway'] = self.metal_gateway.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of metro
-        if self.metro:
-            _dict['metro'] = self.metro.to_dict()
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of project_lite
-        if self.project_lite:
-            _dict['project_lite'] = self.project_lite.to_dict()
         # override the default output from pydantic by calling `to_dict()` of vrf
         if self.vrf:
             _dict['vrf'] = self.vrf.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of project_lite
+        if self.project_lite:
+            _dict['project_lite'] = self.project_lite.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metro
+        if self.metro:
+            _dict['metro'] = self.metro.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -143,30 +143,30 @@ class VrfIpReservation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "address": obj.get("address"),
             "address_family": obj.get("address_family"),
-            "bill": obj.get("bill"),
             "cidr": obj.get("cidr"),
             "created_at": obj.get("created_at"),
             "created_by": Href.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
-            "customdata": obj.get("customdata"),
             "details": obj.get("details"),
-            "gateway": obj.get("gateway"),
             "href": obj.get("href"),
             "id": obj.get("id"),
-            "manageable": obj.get("manageable"),
-            "management": obj.get("management"),
             "metal_gateway": MetalGatewayLite.from_dict(obj["metal_gateway"]) if obj.get("metal_gateway") is not None else None,
-            "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
             "netmask": obj.get("netmask"),
             "network": obj.get("network"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "project_lite": Project.from_dict(obj["project_lite"]) if obj.get("project_lite") is not None else None,
-            "public": obj.get("public"),
             "state": obj.get("state"),
             "tags": obj.get("tags"),
             "type": obj.get("type"),
-            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
+            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None,
+            "public": obj.get("public"),
+            "management": obj.get("management"),
+            "manageable": obj.get("manageable"),
+            "customdata": obj.get("customdata"),
+            "bill": obj.get("bill"),
+            "project_lite": Project.from_dict(obj["project_lite"]) if obj.get("project_lite") is not None else None,
+            "address": obj.get("address"),
+            "gateway": obj.get("gateway"),
+            "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

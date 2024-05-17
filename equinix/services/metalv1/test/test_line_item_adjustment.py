@@ -37,8 +37,7 @@ class TestLineItemAdjustment(unittest.TestCase):
         if include_optional:
             return LineItemAdjustment(
                 amount = 1.337,
-                description = '',
-                href = ''
+                description = ''
             )
         else:
             return LineItemAdjustment(

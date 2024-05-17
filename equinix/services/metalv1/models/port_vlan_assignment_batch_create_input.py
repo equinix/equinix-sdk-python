@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner import PortVlanAssignmentBatchCreateInputVlanAssignmentsInner
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class PortVlanAssignmentBatchCreateInput(BaseModel):
     """
     PortVlanAssignmentBatchCreateInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     vlan_assignments: Optional[List[PortVlanAssignmentBatchCreateInputVlanAssignmentsInner]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "vlan_assignments"]
+    __properties: ClassVar[List[str]] = ["vlan_assignments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class PortVlanAssignmentBatchCreateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "vlan_assignments": [PortVlanAssignmentBatchCreateInputVlanAssignmentsInner.from_dict(_item) for _item in obj["vlan_assignments"]] if obj.get("vlan_assignments") is not None else None
         })
         # store additional fields in additional_properties

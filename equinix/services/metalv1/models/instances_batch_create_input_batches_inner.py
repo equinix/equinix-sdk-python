@@ -34,14 +34,13 @@ class InstancesBatchCreateInputBatchesInner(BaseModel):
     """ # noqa: E501
     hostnames: Optional[List[StrictStr]] = None
     quantity: Optional[StrictInt] = Field(default=None, description="The number of devices to create in this batch. The hostname may contain an `{{index}}` placeholder, which will be replaced with the index of the device in the batch. For example, if the hostname is `device-{{index}}`, the first device in the batch will have the hostname `device-01`, the second device will have the hostname `device-02`, and so on.")
-    href: Optional[StrictStr] = None
     metro: StrictStr = Field(description="Metro code or ID of where the device should be provisioned in, or it can be instructed to create the device in the best available metro with `{ \"metro\": \"any\" }`. The special metro value of any means anywhere, any metro. When any is chosen in the request, the metro location is picked per our scheduling algorithms that favor the following factors: hardware reservation location (if requesting reserved hardware), ip reservations, spot instances, etc. The any keyword *does not* optimize for cost, this means that usage costs (instance, transfer, other features dependent on location) will vary. Please check metro value in response to see where the device was created. Either metro or facility must be provided.")
-    always_pxe: Optional[StrictBool] = Field(default=None, description="When true, devices with a `custom_ipxe` OS will always boot to iPXE. The default setting of false ensures that iPXE will be used on only the first boot.")
+    always_pxe: Optional[StrictBool] = Field(default=False, description="When true, devices with a `custom_ipxe` OS will always boot to iPXE. The default setting of false ensures that iPXE will be used on only the first boot.")
     billing_cycle: Optional[StrictStr] = Field(default=None, description="The billing cycle of the device.")
     customdata: Optional[Dict[str, Any]] = Field(default=None, description="Customdata is an arbitrary JSON value that can be accessed via the metadata service.")
     description: Optional[StrictStr] = Field(default=None, description="Any description of the device or how it will be used. This may be used to inform other API consumers with project access.")
     features: Optional[List[StrictStr]] = Field(default=None, description="The features attribute allows you to optionally specify what features your server should have.  In the API shorthand syntax, all features listed are `required`:  ``` { \"features\": [\"tpm\"] } ```  Alternatively, if you do not require a certain feature, but would prefer to be assigned a server with that feature if there are any available, you may specify that feature with a `preferred` value. The request will not fail if we have no servers with that feature in our inventory. The API offers an alternative syntax for mixing preferred and required features:  ``` { \"features\": { \"tpm\": \"required\", \"raid\": \"preferred\" } } ```  The request will only fail if there are no available servers matching the required `tpm` criteria.")
-    hardware_reservation_id: Optional[StrictStr] = Field(default=None, description="The Hardware Reservation UUID to provision. Alternatively, `next-available` can be specified to select from any of the available hardware reservations. An error will be returned if the requested reservation option is not available.  See [Reserved Hardware](https://metal.equinix.com/developers/docs/deploy/reserved/) for more details.")
+    hardware_reservation_id: Optional[StrictStr] = Field(default='', description="The Hardware Reservation UUID to provision. Alternatively, `next-available` can be specified to select from any of the available hardware reservations. An error will be returned if the requested reservation option is not available.  See [Reserved Hardware](https://metal.equinix.com/developers/docs/deploy/reserved/) for more details.")
     hostname: Optional[StrictStr] = Field(default=None, description="The hostname to use within the operating system. The same hostname may be used on multiple devices within a project.")
     ip_addresses: Optional[List[IPAddress]] = Field(default=None, description="The `ip_addresses attribute will allow you to specify the addresses you want created with your device.  The default value configures public IPv4, public IPv6, and private IPv4.  Private IPv4 address is required. When specifying `ip_addresses`, one of the array items must enable private IPv4.  Some operating systems require public IPv4 address. In those cases you will receive an error message if public IPv4 is not enabled.  For example, to only configure your server with a private IPv4 address, you can send `{ \"ip_addresses\": [{ \"address_family\": 4, \"public\": false }] }`.  It is possible to request a subnet size larger than a `/30` by assigning addresses using the UUID(s) of ip_reservations in your project.  For example, `{ \"ip_addresses\": [..., {\"address_family\": 4, \"public\": true, \"ip_reservations\": [\"uuid1\", \"uuid2\"]}] }`  To access a server without public IPs, you can use our Out-of-Band console access (SOS) or proxy through another server in the project with public IPs enabled.")
     ipxe_script_url: Optional[StrictStr] = Field(default=None, description="When set, the device will chainload an iPXE Script at boot fetched from the supplied URL.  See [Custom iPXE](https://metal.equinix.com/developers/docs/operating-systems/custom-ipxe/) for more details.")
@@ -63,7 +62,7 @@ class InstancesBatchCreateInputBatchesInner(BaseModel):
     userdata: Optional[StrictStr] = Field(default=None, description="The userdata presented in the metadata service for this device.  Userdata is fetched and interpreted by the operating system installed on the device. Acceptable formats are determined by the operating system, with the exception of a special iPXE enabling syntax which is handled before the operating system starts.  See [Server User Data](https://metal.equinix.com/developers/docs/servers/user-data/) and [Provisioning with Custom iPXE](https://metal.equinix.com/developers/docs/operating-systems/custom-ipxe/#provisioning-with-custom-ipxe) for more details.")
     facility: FacilityInputFacility
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["hostnames", "quantity", "href", "metro", "always_pxe", "billing_cycle", "customdata", "description", "features", "hardware_reservation_id", "hostname", "ip_addresses", "ipxe_script_url", "locked", "network_frozen", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "spot_instance", "spot_price_max", "ssh_keys", "storage", "tags", "termination_time", "user_ssh_keys", "userdata", "facility"]
+    __properties: ClassVar[List[str]] = ["hostnames", "quantity", "metro", "always_pxe", "billing_cycle", "customdata", "description", "features", "hardware_reservation_id", "hostname", "ip_addresses", "ipxe_script_url", "locked", "network_frozen", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "spot_instance", "spot_price_max", "ssh_keys", "storage", "tags", "termination_time", "user_ssh_keys", "userdata", "facility"]
 
     @field_validator('billing_cycle')
     def billing_cycle_validate_enum(cls, value):
@@ -155,14 +154,13 @@ class InstancesBatchCreateInputBatchesInner(BaseModel):
         _obj = cls.model_validate({
             "hostnames": obj.get("hostnames"),
             "quantity": obj.get("quantity"),
-            "href": obj.get("href"),
             "metro": obj.get("metro"),
-            "always_pxe": obj.get("always_pxe"),
+            "always_pxe": obj.get("always_pxe") if obj.get("always_pxe") is not None else False,
             "billing_cycle": obj.get("billing_cycle"),
             "customdata": obj.get("customdata"),
             "description": obj.get("description"),
             "features": obj.get("features"),
-            "hardware_reservation_id": obj.get("hardware_reservation_id"),
+            "hardware_reservation_id": obj.get("hardware_reservation_id") if obj.get("hardware_reservation_id") is not None else '',
             "hostname": obj.get("hostname"),
             "ip_addresses": [IPAddress.from_dict(_item) for _item in obj["ip_addresses"]] if obj.get("ip_addresses") is not None else None,
             "ipxe_script_url": obj.get("ipxe_script_url"),

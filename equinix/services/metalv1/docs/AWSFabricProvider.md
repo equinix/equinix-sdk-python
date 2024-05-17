@@ -5,10 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** | AWS Account ID | 
-**href** | **str** |  | [optional] 
-**location** | **str** |  | [optional] 
 **type** | **str** |  | 
+**account_id** | **str** | AWS Account ID | 
+**location** | **str** |  | [optional] 
 
 ## Example
 

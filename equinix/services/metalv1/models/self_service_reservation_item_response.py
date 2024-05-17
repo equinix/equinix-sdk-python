@@ -29,20 +29,19 @@ class SelfServiceReservationItemResponse(BaseModel):
     SelfServiceReservationItemResponse
     """ # noqa: E501
     amount: Optional[Union[StrictFloat, StrictInt]] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     metro_code: Optional[StrictStr] = None
     metro_id: Optional[StrictStr] = None
     metro_name: Optional[StrictStr] = None
     plan: Optional[Plan] = None
-    plan_categories: Optional[List[StrictStr]] = None
     plan_id: Optional[StrictStr] = None
     plan_name: Optional[StrictStr] = None
     plan_slug: Optional[StrictStr] = None
+    plan_categories: Optional[List[StrictStr]] = None
     quantity: Optional[StrictInt] = None
     term: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["amount", "href", "id", "metro_code", "metro_id", "metro_name", "plan", "plan_categories", "plan_id", "plan_name", "plan_slug", "quantity", "term"]
+    __properties: ClassVar[List[str]] = ["amount", "id", "metro_code", "metro_id", "metro_name", "plan", "plan_id", "plan_name", "plan_slug", "plan_categories", "quantity", "term"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,16 +105,15 @@ class SelfServiceReservationItemResponse(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "metro_code": obj.get("metro_code"),
             "metro_id": obj.get("metro_id"),
             "metro_name": obj.get("metro_name"),
             "plan": Plan.from_dict(obj["plan"]) if obj.get("plan") is not None else None,
-            "plan_categories": obj.get("plan_categories"),
             "plan_id": obj.get("plan_id"),
             "plan_name": obj.get("plan_name"),
             "plan_slug": obj.get("plan_slug"),
+            "plan_categories": obj.get("plan_categories"),
             "quantity": obj.get("quantity"),
             "term": obj.get("term")
         })

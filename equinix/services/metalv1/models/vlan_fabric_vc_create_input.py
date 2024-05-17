@@ -30,7 +30,6 @@ class VlanFabricVcCreateInput(BaseModel):
     contact_email: Optional[StrictStr] = Field(default=None, description="The preferred email used for communication and notifications about the Equinix Fabric interconnection. Required when using a Project API key. Optional and defaults to the primary user email address when using a User API key.")
     description: Optional[StrictStr] = None
     facility_id: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     metro: StrictStr = Field(description="A Metro ID or code. When creating Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed), or shared connections, this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here.")
     name: StrictStr
     project: Optional[StrictStr] = None
@@ -41,7 +40,7 @@ class VlanFabricVcCreateInput(BaseModel):
     type: StrictStr = Field(description="When requesting for a Fabric VC, the value of this field should be 'shared'.")
     vlans: List[StrictInt] = Field(description="A list of one or two metro-based VLANs that will be set on the virtual circuits of primary and/or secondary (if redundant) interconnections respectively when creating Fabric VCs. VLANs can also be set after the interconnection is created, but are required to fully activate the virtual circuits.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["contact_email", "description", "facility_id", "href", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vlans"]
+    __properties: ClassVar[List[str]] = ["contact_email", "description", "facility_id", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vlans"]
 
     @field_validator('service_token_type')
     def service_token_type_validate_enum(cls, value):
@@ -118,7 +117,6 @@ class VlanFabricVcCreateInput(BaseModel):
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
             "facility_id": obj.get("facility_id"),
-            "href": obj.get("href"),
             "metro": obj.get("metro"),
             "name": obj.get("name"),
             "project": obj.get("project"),

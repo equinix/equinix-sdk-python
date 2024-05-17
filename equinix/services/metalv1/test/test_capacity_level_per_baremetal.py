@@ -36,7 +36,6 @@ class TestCapacityLevelPerBaremetal(unittest.TestCase):
         model = CapacityLevelPerBaremetal()
         if include_optional:
             return CapacityLevelPerBaremetal(
-                href = '',
                 level = ''
             )
         else:

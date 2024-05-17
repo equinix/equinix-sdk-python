@@ -6,9 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** | An IP address (or IP Address range) contained within one of the project&#39;s IP Reservations | 
-**customdata** | **Dict[str, object]** | Optional User-defined JSON object value. | [optional] 
-**href** | **str** |  | [optional] 
 **next_hop** | **str** | An IP address contained within the Metal Gateways&#39; IP Reservation range. | 
+**customdata** | **Dict[str, object]** | Optional User-defined JSON object value. | [optional] 
 **tags** | **List[str]** | Optional list of User-defined tags. Can be used by users to provide additional details or context regarding the purpose or usage of this resource. | [optional] 
 
 ## Example

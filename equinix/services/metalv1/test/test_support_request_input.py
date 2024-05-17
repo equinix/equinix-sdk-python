@@ -37,7 +37,6 @@ class TestSupportRequestInput(unittest.TestCase):
         if include_optional:
             return SupportRequestInput(
                 device_id = '',
-                href = '',
                 message = '',
                 priority = 'urgent',
                 project_id = '',

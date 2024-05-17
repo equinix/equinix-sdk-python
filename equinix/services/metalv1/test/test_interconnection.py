@@ -36,36 +36,28 @@ class TestInterconnection(unittest.TestCase):
         model = Interconnection()
         if include_optional:
             return Interconnection(
-                authorization_code = '',
                 contact_email = '',
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
-                fabric_provider = None,
                 facility = equinix.services.metalv1.models.facility.Facility(
                     address = equinix.services.metalv1.models.address.Address(
                         address2 = '', 
                         city = '', 
                         coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                            href = '', 
                             latitude = '', 
                             longitude = '', ), 
                         country = '', 
-                        href = '', 
                         state = '', 
                         zip_code = '', ), 
                     code = '', 
                     features = ["baremetal","backend_transfer","global_ipv4"], 
-                    href = '', 
                     id = '', 
                     ip_ranges = ["2604:1380::/36","147.75.192.0/21"], 
                     metro = null, 
                     name = '', ),
-                href = '',
                 id = '',
                 metro = equinix.services.metalv1.models.metro.Metro(
                     code = '', 
                     country = '', 
-                    href = '', 
                     id = '', 
                     name = '', ),
                 mode = 'standard',
@@ -75,18 +67,15 @@ class TestInterconnection(unittest.TestCase):
                         address2 = '', 
                         city = '', 
                         coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                            href = '', 
                             latitude = '', 
                             longitude = '', ), 
                         country = '', 
-                        href = '', 
                         state = '', 
                         zip_code = '', ), 
                     billing_address = equinix.services.metalv1.models.address.Address(
                         address2 = '', 
                         city = '', 
                         country = '', 
-                        href = '', 
                         state = '', 
                         zip_code = '', ), 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -94,7 +83,6 @@ class TestInterconnection(unittest.TestCase):
                     customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     description = '', 
                     enforce_2fa_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    href = '', 
                     id = '', 
                     logo = '', 
                     members = [
@@ -115,19 +103,19 @@ class TestInterconnection(unittest.TestCase):
                     website = '', ),
                 ports = [
                     equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
-                        href = '', 
                         id = '', 
-                        link_status = '', 
-                        name = '', 
                         organization = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         role = 'primary', 
-                        speed = 56, 
                         status = 'requested', 
                         switch_id = '', 
                         virtual_circuits = [
                             null
-                            ], )
+                            ], 
+                        name = '', 
+                        speed = 56, 
+                        link_status = '', 
+                        href = '', )
                     ],
                 project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
@@ -158,28 +146,26 @@ class TestInterconnection(unittest.TestCase):
                     ssh_keys = [
                         
                         ], 
-                    tags = [
-                        ''
-                        ], 
-                    type = 'default', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     url = '', 
                     volumes = [
                         
+                        ], 
+                    type = 'default', 
+                    tags = [
+                        ''
                         ], ),
                 redundancy = 'primary',
-                requested_by = equinix.services.metalv1.models.href.Href(
-                    href = '', ),
                 service_tokens = [
                     equinix.services.metalv1.models.fabric_service_token.FabricServiceToken(
                         expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        href = '', 
                         id = '', 
                         max_allowed_speed = 10000000000, 
                         role = 'primary', 
                         service_token_type = 'a_side', 
                         state = 'inactive', )
                     ],
+                authorization_code = '',
                 speed = 10000000000,
                 status = '',
                 tags = [
@@ -187,7 +173,11 @@ class TestInterconnection(unittest.TestCase):
                     ],
                 token = '',
                 type = 'shared',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                fabric_provider = None,
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                requested_by = equinix.services.metalv1.models.href.Href(
+                    href = '', )
             )
         else:
             return Interconnection(

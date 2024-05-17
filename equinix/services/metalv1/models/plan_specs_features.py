@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,12 +27,11 @@ class PlanSpecsFeatures(BaseModel):
     """
     PlanSpecsFeatures
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     raid: Optional[StrictBool] = None
     txt: Optional[StrictBool] = None
     uefi: Optional[StrictBool] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "raid", "txt", "uefi"]
+    __properties: ClassVar[List[str]] = ["raid", "txt", "uefi"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class PlanSpecsFeatures(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "raid": obj.get("raid"),
             "txt": obj.get("txt"),
             "uefi": obj.get("uefi")

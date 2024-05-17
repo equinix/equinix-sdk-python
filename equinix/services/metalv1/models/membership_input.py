@@ -27,10 +27,9 @@ class MembershipInput(BaseModel):
     """
     MembershipInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     role: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "role"]
+    __properties: ClassVar[List[str]] = ["role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class MembershipInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "role": obj.get("role")
         })
         # store additional fields in additional_properties

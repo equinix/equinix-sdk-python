@@ -37,8 +37,7 @@ class TestIPAssignmentInput(unittest.TestCase):
         if include_optional:
             return IPAssignmentInput(
                 address = '',
-                customdata = None,
-                href = ''
+                customdata = None
             )
         else:
             return IPAssignmentInput(

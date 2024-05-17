@@ -40,61 +40,6 @@ class EventsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
     @validate_call
-    def find_device_events_all_pages(self, id : Annotated[StrictStr, Field(description="Device UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
-        """Retrieve device's events  # noqa: E501
-
-        This method is the same as find_device_events, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_device_events(}id, , }include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param id: Device UUID (required)
-        :type id: str
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: EventList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_device_events(id, include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.events.extend(page_response.events)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
-
-    @validate_call
     def find_device_events(
         self,
         id: Annotated[StrictStr, Field(description="Device UUID")],
@@ -731,58 +676,6 @@ class EventsApi:
 
 
     @validate_call
-    def find_events_all_pages(self, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
-        """Retrieve current user's events  # noqa: E501
-
-        This method is the same as find_events, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_events(}include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: EventList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_events(include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.events.extend(page_response.events)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
-
-    @validate_call
     def find_events(
         self,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
@@ -1095,61 +988,6 @@ class EventsApi:
             _request_auth=_request_auth
         )
 
-
-    @validate_call
-    def find_interconnection_events_all_pages(self, connection_id : Annotated[StrictStr, Field(description="Interconnection UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
-        """Retrieve interconnection events  # noqa: E501
-
-        This method is the same as find_interconnection_events, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_interconnection_events(}connection_id, , }include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param connection_id: Interconnection UUID (required)
-        :type connection_id: str
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: EventList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_interconnection_events(connection_id, include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.events.extend(page_response.events)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
 
     @validate_call
     def find_interconnection_events(
@@ -1837,61 +1675,6 @@ class EventsApi:
 
 
     @validate_call
-    def find_organization_events_all_pages(self, id : Annotated[StrictStr, Field(description="Organization UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
-        """Retrieve organization's events  # noqa: E501
-
-        This method is the same as find_organization_events, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_organization_events(}id, , }include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param id: Organization UUID (required)
-        :type id: str
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: EventList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_organization_events(id, include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.events.extend(page_response.events)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
-
-    @validate_call
     def find_organization_events(
         self,
         id: Annotated[StrictStr, Field(description="Organization UUID")],
@@ -2225,61 +2008,6 @@ class EventsApi:
             _request_auth=_request_auth
         )
 
-
-    @validate_call
-    def find_project_events_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
-        """Retrieve project's events  # noqa: E501
-
-        This method is the same as find_project_events, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_project_events(}id, , }include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param id: Project UUID (required)
-        :type id: str
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: EventList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_project_events(id, include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.events.extend(page_response.events)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
 
     @validate_call
     def find_project_events(

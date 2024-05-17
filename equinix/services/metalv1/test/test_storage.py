@@ -39,37 +39,31 @@ class TestStorage(unittest.TestCase):
                 disks = [
                     equinix.services.metalv1.models.disk.Disk(
                         device = '', 
-                        href = '', 
+                        wipe_table = True, 
                         partitions = [
                             equinix.services.metalv1.models.partition.Partition(
-                                href = '', 
                                 label = '', 
                                 number = 56, 
                                 size = '', )
-                            ], 
-                        wipe_table = True, )
+                            ], )
                     ],
-                filesystems = [
-                    equinix.services.metalv1.models.filesystem.Filesystem(
-                        href = '', 
-                        mount = equinix.services.metalv1.models.mount.Mount(
-                            device = '', 
-                            format = '', 
-                            href = '', 
-                            options = [
-                                ''
-                                ], 
-                            point = '', ), )
-                    ],
-                href = '',
                 raid = [
                     equinix.services.metalv1.models.raid.Raid(
                         devices = [
                             ''
                             ], 
-                        href = '', 
                         level = '', 
                         name = '', )
+                    ],
+                filesystems = [
+                    equinix.services.metalv1.models.filesystem.Filesystem(
+                        mount = equinix.services.metalv1.models.mount.Mount(
+                            device = '', 
+                            format = '', 
+                            point = '', 
+                            options = [
+                                ''
+                                ], ), )
                     ]
             )
         else:

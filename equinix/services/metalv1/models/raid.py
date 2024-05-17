@@ -28,11 +28,10 @@ class Raid(BaseModel):
     Raid
     """ # noqa: E501
     devices: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     level: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["devices", "href", "level", "name"]
+    __properties: ClassVar[List[str]] = ["devices", "level", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class Raid(BaseModel):
 
         _obj = cls.model_validate({
             "devices": obj.get("devices"),
-            "href": obj.get("href"),
             "level": obj.get("level"),
             "name": obj.get("name")
         })

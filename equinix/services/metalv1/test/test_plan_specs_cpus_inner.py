@@ -37,7 +37,6 @@ class TestPlanSpecsCpusInner(unittest.TestCase):
         if include_optional:
             return PlanSpecsCpusInner(
                 count = 56,
-                href = '',
                 type = ''
             )
         else:

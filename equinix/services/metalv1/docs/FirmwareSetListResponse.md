@@ -6,13 +6,12 @@ Represents collection of Firmware Sets
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
+**page_size** | **int** | Max number of items returned in a page | [optional] 
 **page** | **int** | Page returned | [optional] 
 **page_count** | **int** | Items returned in current page | [optional] 
-**page_size** | **int** | Max number of items returned in a page | [optional] 
-**records** | [**List[FirmwareSet]**](FirmwareSet.md) | Represents a list of FirmwareSets | [optional] 
 **total_pages** | **int** | Total count of pages | [optional] 
 **total_record_count** | **int** | Total count of items | [optional] 
+**records** | [**List[FirmwareSet]**](FirmwareSet.md) | Represents a list of FirmwareSets | [optional] 
 
 ## Example
 

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **invoices** | [**List[Invoice]**](Invoice.md) |  | [optional] 
 
 ## Example

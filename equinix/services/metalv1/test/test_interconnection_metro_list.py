@@ -36,22 +36,20 @@ class TestInterconnectionMetroList(unittest.TestCase):
         model = InterconnectionMetroList()
         if include_optional:
             return InterconnectionMetroList(
-                href = '',
+                metros = [
+                    null
+                    ],
                 meta = equinix.services.metalv1.models.meta.Meta(
-                    current_page = 56, 
                     first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
-                    href = '', 
                     last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
-                    last_page = 56, 
                     next = , 
                     previous = , 
                     self = , 
-                    total = 56, ),
-                metros = [
-                    null
-                    ]
+                    total = 56, 
+                    current_page = 56, 
+                    last_page = 56, )
             )
         else:
             return InterconnectionMetroList(

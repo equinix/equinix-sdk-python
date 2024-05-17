@@ -5,30 +5,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | **str** |  | [optional] 
 **address_family** | **int** |  | [optional] 
-**bill** | **bool** |  | [optional] 
 **cidr** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **created_by** | [**Href**](Href.md) |  | [optional] 
-**customdata** | **object** |  | [optional] 
 **details** | **str** |  | [optional] 
-**gateway** | **str** |  | [optional] 
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**manageable** | **bool** |  | [optional] 
-**management** | **bool** |  | [optional] 
 **metal_gateway** | [**MetalGatewayLite**](MetalGatewayLite.md) |  | [optional] 
-**metro** | [**Metro**](Metro.md) |  | [optional] 
 **netmask** | **str** |  | [optional] 
 **network** | **str** |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
-**project_lite** | [**Project**](Project.md) |  | [optional] 
-**public** | **bool** |  | [optional] 
 **state** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **type** | **str** |  | 
 **vrf** | [**Vrf**](Vrf.md) |  | 
+**public** | **bool** |  | [optional] 
+**management** | **bool** |  | [optional] 
+**manageable** | **bool** |  | [optional] 
+**customdata** | **object** |  | [optional] 
+**bill** | **bool** |  | [optional] 
+**project_lite** | [**Project**](Project.md) |  | [optional] 
+**address** | **str** |  | [optional] 
+**gateway** | **str** |  | [optional] 
+**metro** | [**Metro**](Metro.md) |  | [optional] 
 
 ## Example
 

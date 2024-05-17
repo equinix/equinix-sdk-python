@@ -30,7 +30,6 @@ class PortVlanAssignment(BaseModel):
     PortVlanAssignment
     """ # noqa: E501
     created_at: Optional[datetime] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     native: Optional[StrictBool] = None
     port: Optional[Href] = None
@@ -39,7 +38,7 @@ class PortVlanAssignment(BaseModel):
     virtual_network: Optional[Href] = None
     vlan: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "href", "id", "native", "port", "state", "updated_at", "virtual_network", "vlan"]
+    __properties: ClassVar[List[str]] = ["created_at", "id", "native", "port", "state", "updated_at", "virtual_network", "vlan"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -116,7 +115,6 @@ class PortVlanAssignment(BaseModel):
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "native": obj.get("native"),
             "port": Href.from_dict(obj["port"]) if obj.get("port") is not None else None,

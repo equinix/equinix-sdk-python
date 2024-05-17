@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
-**data** | [**AttributeData**](AttributeData.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **namespace** | **str** | Attribute namespace | [optional] [readonly] 
+**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
 **updated_at** | **datetime** | Datetime when the block was updated. | [optional] [readonly] 
+**data** | [**AttributeData**](AttributeData.md) |  | [optional] 
 
 ## Example
 

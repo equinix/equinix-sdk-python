@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class VirtualCircuitList(BaseModel):
     """
     VirtualCircuitList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     virtual_circuits: Optional[List[VirtualCircuit]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "virtual_circuits"]
+    __properties: ClassVar[List[str]] = ["virtual_circuits"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VirtualCircuitList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "virtual_circuits": [VirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None
         })
         # store additional fields in additional_properties

@@ -36,9 +36,8 @@ class TestVrfRouteUpdateInput(unittest.TestCase):
         model = VrfRouteUpdateInput()
         if include_optional:
             return VrfRouteUpdateInput(
-                href = '',
-                next_hop = '192.168.1.254',
                 prefix = '0.0.0.0/0',
+                next_hop = '192.168.1.254',
                 tags = [
                     ''
                     ]

@@ -31,7 +31,6 @@ class SelfServiceReservationResponse(BaseModel):
     SelfServiceReservationResponse
     """ # noqa: E501
     created_at: Optional[datetime] = None
-    href: Optional[StrictStr] = None
     item: Optional[List[SelfServiceReservationItemResponse]] = None
     notes: Optional[StrictStr] = None
     organization: Optional[StrictStr] = None
@@ -43,7 +42,7 @@ class SelfServiceReservationResponse(BaseModel):
     status: Optional[StrictStr] = None
     total_cost: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "href", "item", "notes", "organization", "organization_id", "period", "project", "project_id", "start_date", "status", "total_cost"]
+    __properties: ClassVar[List[str]] = ["created_at", "item", "notes", "organization", "organization_id", "period", "project", "project_id", "start_date", "status", "total_cost"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,7 +113,6 @@ class SelfServiceReservationResponse(BaseModel):
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
-            "href": obj.get("href"),
             "item": [SelfServiceReservationItemResponse.from_dict(_item) for _item in obj["item"]] if obj.get("item") is not None else None,
             "notes": obj.get("notes"),
             "organization": obj.get("organization"),

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **payment_methods** | [**List[PaymentMethod]**](PaymentMethod.md) |  | [optional] 
 
 ## Example

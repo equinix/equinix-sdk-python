@@ -52,14 +52,14 @@ class TestIPAssignment(unittest.TestCase):
                 metro = None,
                 netmask = '',
                 network = '',
-                next_hop = '',
                 parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                     cidr = 56, 
                     href = '', 
                     netmask = '', 
                     network = '', ),
                 public = True,
-                state = 'pending'
+                state = 'pending',
+                next_hop = ''
             )
         else:
             return IPAssignment(

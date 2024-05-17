@@ -27,10 +27,9 @@ class PortAssignInput(BaseModel):
     """
     PortAssignInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     vnid: Optional[StrictStr] = Field(default=None, description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself. ")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "vnid"]
+    __properties: ClassVar[List[str]] = ["vnid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class PortAssignInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "vnid": obj.get("vnid")
         })
         # store additional fields in additional_properties

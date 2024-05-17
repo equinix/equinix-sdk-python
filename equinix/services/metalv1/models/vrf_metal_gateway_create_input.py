@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +27,10 @@ class VrfMetalGatewayCreateInput(BaseModel):
     """
     VrfMetalGatewayCreateInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     ip_reservation_id: StrictStr = Field(description="The UUID an a VRF IP Reservation that belongs to the same project as the one in which the Metal Gateway is to be created. Additionally, the VRF IP Reservation and the Virtual Network must reside in the same Metro.")
     virtual_network_id: StrictStr = Field(description="THe UUID of a Metro Virtual Network that belongs to the same project as the one in which the Metal Gateway is to be created. Additionally, the Virtual Network and the VRF IP Reservation must reside in the same metro.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "ip_reservation_id", "virtual_network_id"]
+    __properties: ClassVar[List[str]] = ["ip_reservation_id", "virtual_network_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +90,6 @@ class VrfMetalGatewayCreateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "ip_reservation_id": obj.get("ip_reservation_id"),
             "virtual_network_id": obj.get("virtual_network_id")
         })

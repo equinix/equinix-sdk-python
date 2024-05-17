@@ -36,9 +36,8 @@ class TestPortData(unittest.TestCase):
         model = PortData()
         if include_optional:
             return PortData(
-                bonded = True,
-                href = '',
-                mac = ''
+                mac = '',
+                bonded = True
             )
         else:
             return PortData(

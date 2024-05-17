@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**find_project_invitations**](ProjectsApi.md#find_project_invitations) | **GET** /projects/{project_id}/invitations | Retrieve project invitations
 [**find_project_memberships**](ProjectsApi.md#find_project_memberships) | **GET** /projects/{project_id}/memberships | Retrieve project memberships
 [**find_projects**](ProjectsApi.md#find_projects) | **GET** /projects | Retrieve all projects
-[**find_projects_all_pages**](ProjectsApi.md#find_projects_all_pages) | **GET** /projects | Retrieve all projects, fetches all the pages
 [**update_project**](ProjectsApi.md#update_project) | **PUT** /projects/{id} | Update the project
 
 
@@ -861,9 +860,6 @@ Name | Type | Description  | Notes
 **401** | unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_projects_all_pages**
-> ProjectList find_projects_all_pages(name=name, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_projects**](ProjectsApi.md#find_projects) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_projects**](ProjectsApi.md#find_projects).
 # **update_project**
 > Project update_project(id, project_update_input, include=include, exclude=exclude)
 

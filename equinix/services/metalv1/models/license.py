@@ -29,14 +29,13 @@ class License(BaseModel):
     License
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     license_key: Optional[StrictStr] = None
     licensee_product: Optional[Href] = None
     project: Optional[Href] = None
     size: Optional[Union[StrictFloat, StrictInt]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "id", "license_key", "licensee_product", "project", "size"]
+    __properties: ClassVar[List[str]] = ["description", "id", "license_key", "licensee_product", "project", "size"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,7 +102,6 @@ class License(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "license_key": obj.get("license_key"),
             "licensee_product": Href.from_dict(obj["licensee_product"]) if obj.get("licensee_product") is not None else None,

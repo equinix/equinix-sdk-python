@@ -28,10 +28,9 @@ class BgpRoute(BaseModel):
     BgpRoute
     """ # noqa: E501
     exact: Optional[StrictBool] = None
-    href: Optional[StrictStr] = None
     route: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["exact", "href", "route"]
+    __properties: ClassVar[List[str]] = ["exact", "route"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class BgpRoute(BaseModel):
 
         _obj = cls.model_validate({
             "exact": obj.get("exact"),
-            "href": obj.get("href"),
             "route": obj.get("route")
         })
         # store additional fields in additional_properties

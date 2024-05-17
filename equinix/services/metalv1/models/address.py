@@ -33,11 +33,10 @@ class Address(BaseModel):
     city: Optional[StrictStr] = None
     coordinates: Optional[Coordinates] = None
     country: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     state: Optional[StrictStr] = None
     zip_code: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "address2", "city", "coordinates", "country", "href", "state", "zip_code"]
+    __properties: ClassVar[List[str]] = ["address", "address2", "city", "coordinates", "country", "state", "zip_code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,7 +104,6 @@ class Address(BaseModel):
             "city": obj.get("city"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "country": obj.get("country"),
-            "href": obj.get("href"),
             "state": obj.get("state"),
             "zip_code": obj.get("zip_code")
         })

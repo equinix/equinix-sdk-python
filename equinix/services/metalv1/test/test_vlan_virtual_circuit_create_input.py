@@ -37,7 +37,6 @@ class TestVlanVirtualCircuitCreateInput(unittest.TestCase):
         if include_optional:
             return VlanVirtualCircuitCreateInput(
                 description = '',
-                href = '',
                 name = '',
                 nni_vlan = 2,
                 project_id = '',

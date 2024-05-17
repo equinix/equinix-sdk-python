@@ -28,10 +28,9 @@ class PlanSpecsNicsInner(BaseModel):
     PlanSpecsNicsInner
     """ # noqa: E501
     count: Optional[StrictInt] = None
-    href: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["count", "href", "type"]
+    __properties: ClassVar[List[str]] = ["count", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class PlanSpecsNicsInner(BaseModel):
 
         _obj = cls.model_validate({
             "count": obj.get("count"),
-            "href": obj.get("href"),
             "type": obj.get("type")
         })
         # store additional fields in additional_properties

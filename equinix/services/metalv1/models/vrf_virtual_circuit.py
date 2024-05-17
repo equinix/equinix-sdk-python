@@ -30,27 +30,26 @@ class VrfVirtualCircuit(BaseModel):
     """
     VrfVirtualCircuit
     """ # noqa: E501
-    created_at: Optional[datetime] = None
     customer_ip: Optional[StrictStr] = Field(default=None, description="An IP address from the subnet that will be used on the Customer side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet as the Metal IP. By default, the last usable IP address in the subnet will be used.")
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     md5: Optional[StrictStr] = Field(default=None, description="The MD5 password for the BGP peering in plaintext (not a checksum).")
     metal_ip: Optional[StrictStr] = Field(default=None, description="An IP address from the subnet that will be used on the Metal side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet as the Customer IP. By default, the first usable IP address in the subnet will be used.")
     name: Optional[StrictStr] = None
+    port: Optional[InterconnectionPort] = None
     nni_vlan: Optional[StrictInt] = None
     peer_asn: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The peer ASN that will be used with the VRF on the Virtual Circuit.")
-    port: Optional[InterconnectionPort] = None
     project: Optional[Project] = None
     speed: Optional[StrictInt] = Field(default=None, description="integer representing bps speed")
     status: Optional[StrictStr] = Field(default=None, description="The status changes of a VRF virtual circuit are generally the same as Virtual Circuits that aren't in a VRF. However, for VRF Virtual Circuits on Fabric VCs, the status will change to 'waiting_on_peering_details' once the Fabric service token associated with the virtual circuit has been redeemed on Fabric, and Metal has found the associated Fabric connection. At this point, users can update the subnet, MD5 password, customer IP and/or metal IP accordingly. For VRF Virtual Circuits on Dedicated Ports, we require all peering details to be set on creation of a VRF Virtual Circuit. The status will change to `changing_peering_details` whenever an active VRF Virtual Circuit has any of its peering details updated.")
     subnet: Optional[StrictStr] = Field(default=None, description="The /30 or /31 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IP and Customer IP must be IPs from this subnet. For /30 subnets, the network and broadcast IPs cannot be used as the Metal or Customer IP.")
     tags: Optional[List[StrictStr]] = None
     type: Optional[StrictStr] = None
-    updated_at: Optional[datetime] = None
     vrf: Vrf
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "customer_ip", "description", "href", "id", "md5", "metal_ip", "name", "nni_vlan", "peer_asn", "port", "project", "speed", "status", "subnet", "tags", "type", "updated_at", "vrf"]
+    __properties: ClassVar[List[str]] = ["customer_ip", "description", "id", "md5", "metal_ip", "name", "port", "nni_vlan", "peer_asn", "project", "speed", "status", "subnet", "tags", "type", "vrf", "created_at", "updated_at"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -139,25 +138,24 @@ class VrfVirtualCircuit(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
             "customer_ip": obj.get("customer_ip"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "md5": obj.get("md5"),
             "metal_ip": obj.get("metal_ip"),
             "name": obj.get("name"),
+            "port": InterconnectionPort.from_dict(obj["port"]) if obj.get("port") is not None else None,
             "nni_vlan": obj.get("nni_vlan"),
             "peer_asn": obj.get("peer_asn"),
-            "port": InterconnectionPort.from_dict(obj["port"]) if obj.get("port") is not None else None,
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "speed": obj.get("speed"),
             "status": obj.get("status"),
             "subnet": obj.get("subnet"),
             "tags": obj.get("tags"),
             "type": obj.get("type"),
-            "updated_at": obj.get("updated_at"),
-            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
+            "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None,
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

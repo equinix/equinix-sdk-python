@@ -43,30 +43,27 @@ class TestUserCreateInput(unittest.TestCase):
                 emails = [
                     equinix.services.metalv1.models.email_input.EmailInput(
                         address = '', 
-                        default = True, 
-                        href = '', )
+                        default = True, )
                     ],
                 first_name = '',
-                href = '',
-                invitation_id = '',
                 last_name = '',
                 level = '',
-                nonce = '',
                 password = '',
                 phone_number = '',
                 social_accounts = None,
                 timezone = '',
                 title = '',
                 two_factor_auth = '',
-                verified_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                verified_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                invitation_id = '',
+                nonce = ''
             )
         else:
             return UserCreateInput(
                 emails = [
                     equinix.services.metalv1.models.email_input.EmailInput(
                         address = '', 
-                        default = True, 
-                        href = '', )
+                        default = True, )
                     ],
                 first_name = '',
                 last_name = '',

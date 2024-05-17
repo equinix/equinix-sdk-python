@@ -35,22 +35,12 @@ class Port(BaseModel):
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
-    native_virtual_network: Optional[VirtualNetwork] = None
-    network_type: Optional[StrictStr] = Field(default=None, description="Composite network type of the bond")
     type: Optional[StrictStr] = Field(default=None, description="Type is either \"NetworkBondPort\" for bond ports or \"NetworkPort\" for bondable ethernet ports")
+    network_type: Optional[StrictStr] = Field(default=None, description="Composite network type of the bond")
+    native_virtual_network: Optional[VirtualNetwork] = None
     virtual_networks: Optional[List[VirtualNetwork]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bond", "data", "disbond_operation_supported", "href", "id", "name", "native_virtual_network", "network_type", "type", "virtual_networks"]
-
-    @field_validator('network_type')
-    def network_type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['layer2-bonded', 'layer2-individual', 'layer3', 'hybrid', 'hybrid-bonded']):
-            raise ValueError("must be one of enum values ('layer2-bonded', 'layer2-individual', 'layer3', 'hybrid', 'hybrid-bonded')")
-        return value
+    __properties: ClassVar[List[str]] = ["bond", "data", "disbond_operation_supported", "href", "id", "name", "type", "network_type", "native_virtual_network", "virtual_networks"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -60,6 +50,16 @@ class Port(BaseModel):
 
         if value not in set(['NetworkPort', 'NetworkBondPort']):
             raise ValueError("must be one of enum values ('NetworkPort', 'NetworkBondPort')")
+        return value
+
+    @field_validator('network_type')
+    def network_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['layer2-bonded', 'layer2-individual', 'layer3', 'hybrid', 'hybrid-bonded']):
+            raise ValueError("must be one of enum values ('layer2-bonded', 'layer2-individual', 'layer3', 'hybrid', 'hybrid-bonded')")
         return value
 
     model_config = ConfigDict(
@@ -142,9 +142,9 @@ class Port(BaseModel):
             "href": obj.get("href"),
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "native_virtual_network": VirtualNetwork.from_dict(obj["native_virtual_network"]) if obj.get("native_virtual_network") is not None else None,
-            "network_type": obj.get("network_type"),
             "type": obj.get("type"),
+            "network_type": obj.get("network_type"),
+            "native_virtual_network": VirtualNetwork.from_dict(obj["native_virtual_network"]) if obj.get("native_virtual_network") is not None else None,
             "virtual_networks": [VirtualNetwork.from_dict(_item) for _item in obj["virtual_networks"]] if obj.get("virtual_networks") is not None else None
         })
         # store additional fields in additional_properties

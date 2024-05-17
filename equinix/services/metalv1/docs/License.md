@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **license_key** | **str** |  | [optional] 
 **licensee_product** | [**Href**](Href.md) |  | [optional] 

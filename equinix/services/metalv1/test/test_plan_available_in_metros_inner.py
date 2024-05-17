@@ -38,8 +38,7 @@ class TestPlanAvailableInMetrosInner(unittest.TestCase):
             return PlanAvailableInMetrosInner(
                 href = '',
                 price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                    hour = 1.23, 
-                    href = '', )
+                    hour = 1.23, )
             )
         else:
             return PlanAvailableInMetrosInner(

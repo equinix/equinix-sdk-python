@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hardware_reservations** | [**List[HardwareReservation]**](HardwareReservation.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example

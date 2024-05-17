@@ -36,20 +36,19 @@ class TestComponent(unittest.TestCase):
         model = Component()
         if include_optional:
             return Component(
-                checksum = '',
-                component = 'bmc',
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                filename = '',
-                href = '',
+                uuid = '0516463a-47ee-4809-9a66-ece8c740eed9',
+                vendor = 'equinix',
                 model = [
                     'romed8hm3'
                     ],
-                repository_url = '',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                filename = '',
+                version = '1.5.0',
+                component = 'bmc',
+                checksum = '',
                 upstream_url = '',
-                uuid = '0516463a-47ee-4809-9a66-ece8c740eed9',
-                vendor = 'equinix',
-                version = '1.5.0'
+                repository_url = '',
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return Component(

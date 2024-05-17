@@ -27,10 +27,9 @@ class TransferRequestInput(BaseModel):
     """
     TransferRequestInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     target_organization_id: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "target_organization_id"]
+    __properties: ClassVar[List[str]] = ["target_organization_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class TransferRequestInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "target_organization_id": obj.get("target_organization_id")
         })
         # store additional fields in additional_properties

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **vlan_assignments** | [**List[PortVlanAssignment]**](PortVlanAssignment.md) |  | [optional] 
 
 ## Example

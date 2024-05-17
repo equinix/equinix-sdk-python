@@ -7,9 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device** | **str** |  | [optional] 
 **format** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
-**options** | **List[str]** |  | [optional] 
 **point** | **str** |  | [optional] 
+**options** | **List[str]** |  | [optional] 
 
 ## Example
 

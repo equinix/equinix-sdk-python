@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **servers** | [**List[CapacityCheckPerFacilityInfo]**](CapacityCheckPerFacilityInfo.md) |  | [optional] 
 
 ## Example

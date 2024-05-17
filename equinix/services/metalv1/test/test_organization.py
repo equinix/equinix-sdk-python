@@ -40,11 +40,9 @@ class TestOrganization(unittest.TestCase):
                     address2 = '', 
                     city = '', 
                     coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                        href = '', 
                         latitude = '', 
                         longitude = '', ), 
                     country = '', 
-                    href = '', 
                     state = '', 
                     zip_code = '', ),
                 billing_address = equinix.services.metalv1.models.address.Address(
@@ -52,11 +50,9 @@ class TestOrganization(unittest.TestCase):
                     address2 = '', 
                     city = '', 
                     coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                        href = '', 
                         latitude = '', 
                         longitude = '', ), 
                     country = '', 
-                    href = '', 
                     state = '', 
                     zip_code = '', ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
@@ -64,7 +60,6 @@ class TestOrganization(unittest.TestCase):
                 customdata = equinix.services.metalv1.models.customdata.customdata(),
                 description = '',
                 enforce_2fa_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                href = '',
                 id = '',
                 logo = '',
                 members = [

@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **devices_min** | **int** |  | [optional] 
 **end_at** | **datetime** |  | [optional] 
 **facilities** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **instance_parameters** | [**SpotMarketRequestCreateInputInstanceParameters**](SpotMarketRequestCreateInputInstanceParameters.md) |  | [optional] 
 **max_bid_price** | **float** |  | [optional] 
 **metro** | **str** | The metro ID or code the spot market request will be created in. | [optional] 

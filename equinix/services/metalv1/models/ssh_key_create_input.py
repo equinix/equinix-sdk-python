@@ -27,13 +27,12 @@ class SSHKeyCreateInput(BaseModel):
     """
     SSHKeyCreateInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     instances_ids: Optional[List[StrictStr]] = Field(default=None, description="List of instance UUIDs to associate SSH key with, when empty array is sent all instances belonging       to entity will be included")
     key: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "instances_ids", "key", "label", "tags"]
+    __properties: ClassVar[List[str]] = ["instances_ids", "key", "label", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class SSHKeyCreateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "instances_ids": obj.get("instances_ids"),
             "key": obj.get("key"),
             "label": obj.get("label"),

@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **features** | **List[str]** |  | [optional] 
 **hostname** | **str** |  | [optional] 
 **hostnames** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **locked** | **bool** | Whether the device should be locked, preventing accidental deletion. | [optional] 
 **no_ssh_keys** | **bool** |  | [optional] 
 **operating_system** | **str** |  | [optional] 

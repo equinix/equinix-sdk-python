@@ -36,17 +36,16 @@ class TestVrfRouteCreateInput(unittest.TestCase):
         model = VrfRouteCreateInput()
         if include_optional:
             return VrfRouteCreateInput(
-                href = '',
-                next_hop = '192.168.1.254',
                 prefix = '0.0.0.0/0',
+                next_hop = '192.168.1.254',
                 tags = [
                     ''
                     ]
             )
         else:
             return VrfRouteCreateInput(
-                next_hop = '192.168.1.254',
                 prefix = '0.0.0.0/0',
+                next_hop = '192.168.1.254',
         )
         """
 

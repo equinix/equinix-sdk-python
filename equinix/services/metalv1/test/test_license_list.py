@@ -36,11 +36,9 @@ class TestLicenseList(unittest.TestCase):
         model = LicenseList()
         if include_optional:
             return LicenseList(
-                href = '',
                 licenses = [
                     equinix.services.metalv1.models.license.License(
                         description = '', 
-                        href = '', 
                         id = '', 
                         license_key = '', 
                         licensee_product = equinix.services.metalv1.models.href.Href(

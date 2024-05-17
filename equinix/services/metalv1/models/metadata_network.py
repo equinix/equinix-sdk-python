@@ -29,11 +29,10 @@ class MetadataNetwork(BaseModel):
     MetadataNetwork
     """ # noqa: E501
     addresses: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     interfaces: Optional[List[Dict[str, Any]]] = None
     network: Optional[MetadataNetworkNetwork] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["addresses", "href", "interfaces", "network"]
+    __properties: ClassVar[List[str]] = ["addresses", "interfaces", "network"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +96,6 @@ class MetadataNetwork(BaseModel):
 
         _obj = cls.model_validate({
             "addresses": obj.get("addresses"),
-            "href": obj.get("href"),
             "interfaces": obj.get("interfaces"),
             "network": MetadataNetworkNetwork.from_dict(obj["network"]) if obj.get("network") is not None else None
         })

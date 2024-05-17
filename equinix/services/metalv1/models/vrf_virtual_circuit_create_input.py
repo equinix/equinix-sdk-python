@@ -30,7 +30,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
     """ # noqa: E501
     customer_ip: Optional[StrictStr] = Field(default=None, description="An IP address from the subnet that will be used on the Customer side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet as the Metal IP. By default, the last usable IP address in the subnet will be used.")
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     md5: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The plaintext BGP peering password shared by neighbors as an MD5 checksum: * must be 10-20 characters long * may not include punctuation * must be a combination of numbers and letters * must contain at least one lowercase, uppercase, and digit character ")
     metal_ip: Optional[StrictStr] = Field(default=None, description="An IP address from the subnet that will be used on the Metal side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet as the Customer IP. By default, the first usable IP address in the subnet will be used.")
     name: Optional[StrictStr] = None
@@ -42,7 +41,7 @@ class VrfVirtualCircuitCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     vrf: StrictStr = Field(description="The UUID of the VRF that will be associated with the Virtual Circuit.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["customer_ip", "description", "href", "md5", "metal_ip", "name", "nni_vlan", "peer_asn", "project_id", "speed", "subnet", "tags", "vrf"]
+    __properties: ClassVar[List[str]] = ["customer_ip", "description", "md5", "metal_ip", "name", "nni_vlan", "peer_asn", "project_id", "speed", "subnet", "tags", "vrf"]
 
     @field_validator('md5')
     def md5_validate_regular_expression(cls, value):
@@ -119,7 +118,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
         _obj = cls.model_validate({
             "customer_ip": obj.get("customer_ip"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "md5": obj.get("md5"),
             "metal_ip": obj.get("metal_ip"),
             "name": obj.get("name"),

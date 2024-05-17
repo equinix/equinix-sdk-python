@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List
 from equinix.services.metalv1.models.facility_input_facility import FacilityInputFacility
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,9 +29,8 @@ class FacilityInput(BaseModel):
     FacilityInput
     """ # noqa: E501
     facility: FacilityInputFacility
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["facility", "href"]
+    __properties: ClassVar[List[str]] = ["facility"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,8 +93,7 @@ class FacilityInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "facility": FacilityInputFacility.from_dict(obj["facility"]) if obj.get("facility") is not None else None,
-            "href": obj.get("href")
+            "facility": FacilityInputFacility.from_dict(obj["facility"]) if obj.get("facility") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **city** | **str** |  | [optional] 
 **coordinates** | [**Coordinates**](Coordinates.md) |  | [optional] 
 **country** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **state** | **str** |  | [optional] 
 **zip_code** | **str** |  | [optional] 
 

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **invitee** | **str** |  | 
 **message** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 

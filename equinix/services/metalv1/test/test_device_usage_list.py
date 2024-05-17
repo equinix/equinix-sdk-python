@@ -36,10 +36,8 @@ class TestDeviceUsageList(unittest.TestCase):
         model = DeviceUsageList()
         if include_optional:
             return DeviceUsageList(
-                href = '',
                 usages = [
                     equinix.services.metalv1.models.device_usage.DeviceUsage(
-                        href = '', 
                         quantity = '', 
                         total = '', 
                         unit = '', )

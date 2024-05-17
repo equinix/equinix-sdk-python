@@ -36,7 +36,6 @@ class TestSpotPricesPerBaremetal(unittest.TestCase):
         model = SpotPricesPerBaremetal()
         if include_optional:
             return SpotPricesPerBaremetal(
-                href = '',
                 price = 1.337
             )
         else:

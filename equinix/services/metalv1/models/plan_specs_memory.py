@@ -27,10 +27,9 @@ class PlanSpecsMemory(BaseModel):
     """
     PlanSpecsMemory
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     total: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "total"]
+    __properties: ClassVar[List[str]] = ["total"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class PlanSpecsMemory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "total": obj.get("total")
         })
         # store additional fields in additional_properties

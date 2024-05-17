@@ -36,12 +36,10 @@ class TestCapacityCheckPerFacilityList(unittest.TestCase):
         model = CapacityCheckPerFacilityList()
         if include_optional:
             return CapacityCheckPerFacilityList(
-                href = '',
                 servers = [
                     equinix.services.metalv1.models.capacity_check_per_facility_info.CapacityCheckPerFacilityInfo(
                         available = True, 
                         facility = '', 
-                        href = '', 
                         plan = '', 
                         quantity = '', )
                     ]

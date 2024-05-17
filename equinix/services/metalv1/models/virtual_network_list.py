@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.virtual_network import VirtualNetwork
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class VirtualNetworkList(BaseModel):
     """
     VirtualNetworkList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     virtual_networks: Optional[List[VirtualNetwork]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "virtual_networks"]
+    __properties: ClassVar[List[str]] = ["virtual_networks"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VirtualNetworkList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "virtual_networks": [VirtualNetwork.from_dict(_item) for _item in obj["virtual_networks"]] if obj.get("virtual_networks") is not None else None
         })
         # store additional fields in additional_properties

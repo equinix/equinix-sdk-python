@@ -36,15 +36,13 @@ class TestFilesystem(unittest.TestCase):
         model = Filesystem()
         if include_optional:
             return Filesystem(
-                href = '',
                 mount = equinix.services.metalv1.models.mount.Mount(
                     device = '', 
                     format = '', 
-                    href = '', 
+                    point = '', 
                     options = [
                         ''
-                        ], 
-                    point = '', )
+                        ], )
             )
         else:
             return Filesystem(

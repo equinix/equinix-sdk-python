@@ -36,11 +36,9 @@ class TestPortVlanAssignmentList(unittest.TestCase):
         model = PortVlanAssignmentList()
         if include_optional:
             return PortVlanAssignmentList(
-                href = '',
                 vlan_assignments = [
                     equinix.services.metalv1.models.port_vlan_assignment.PortVlanAssignment(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        href = '', 
                         id = '', 
                         native = True, 
                         port = equinix.services.metalv1.models.href.Href(

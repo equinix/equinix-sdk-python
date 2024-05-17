@@ -38,7 +38,6 @@ class TestMetro(unittest.TestCase):
             return Metro(
                 code = '',
                 country = '',
-                href = '',
                 id = '',
                 name = ''
             )

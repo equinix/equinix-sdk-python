@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.firmware_set import FirmwareSet
 from typing import Optional, Set
@@ -28,15 +28,14 @@ class FirmwareSetListResponse(BaseModel):
     """
     Represents collection of Firmware Sets
     """ # noqa: E501
-    href: Optional[StrictStr] = None
+    page_size: Optional[StrictInt] = Field(default=None, description="Max number of items returned in a page")
     page: Optional[StrictInt] = Field(default=None, description="Page returned")
     page_count: Optional[StrictInt] = Field(default=None, description="Items returned in current page")
-    page_size: Optional[StrictInt] = Field(default=None, description="Max number of items returned in a page")
-    records: Optional[List[FirmwareSet]] = Field(default=None, description="Represents a list of FirmwareSets")
     total_pages: Optional[StrictInt] = Field(default=None, description="Total count of pages")
     total_record_count: Optional[StrictInt] = Field(default=None, description="Total count of items")
+    records: Optional[List[FirmwareSet]] = Field(default=None, description="Represents a list of FirmwareSets")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "page", "page_count", "page_size", "records", "total_pages", "total_record_count"]
+    __properties: ClassVar[List[str]] = ["page_size", "page", "page_count", "total_pages", "total_record_count", "records"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,13 +102,12 @@ class FirmwareSetListResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
+            "page_size": obj.get("page_size"),
             "page": obj.get("page"),
             "page_count": obj.get("page_count"),
-            "page_size": obj.get("page_size"),
-            "records": [FirmwareSet.from_dict(_item) for _item in obj["records"]] if obj.get("records") is not None else None,
             "total_pages": obj.get("total_pages"),
-            "total_record_count": obj.get("total_record_count")
+            "total_record_count": obj.get("total_record_count"),
+            "records": [FirmwareSet.from_dict(_item) for _item in obj["records"]] if obj.get("records") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

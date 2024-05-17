@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.bgp_neighbor_data import BgpNeighborData
 from typing import Optional, Set
@@ -29,9 +29,8 @@ class BgpSessionNeighbors(BaseModel):
     BgpSessionNeighbors
     """ # noqa: E501
     bgp_neighbors: Optional[List[BgpNeighborData]] = Field(default=None, description="A list of BGP session neighbor data")
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_neighbors", "href"]
+    __properties: ClassVar[List[str]] = ["bgp_neighbors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,8 +97,7 @@ class BgpSessionNeighbors(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bgp_neighbors": [BgpNeighborData.from_dict(_item) for _item in obj["bgp_neighbors"]] if obj.get("bgp_neighbors") is not None else None,
-            "href": obj.get("href")
+            "bgp_neighbors": [BgpNeighborData.from_dict(_item) for _item in obj["bgp_neighbors"]] if obj.get("bgp_neighbors") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -36,11 +36,9 @@ class TestCapacityInput(unittest.TestCase):
         model = CapacityInput()
         if include_optional:
             return CapacityInput(
-                href = '',
                 servers = [
                     equinix.services.metalv1.models.server_info.ServerInfo(
                         facility = '', 
-                        href = '', 
                         metro = '', 
                         plan = '', 
                         quantity = '', )

@@ -39,7 +39,6 @@ class TestRaid(unittest.TestCase):
                 devices = [
                     ''
                     ],
-                href = '',
                 level = '',
                 name = ''
             )

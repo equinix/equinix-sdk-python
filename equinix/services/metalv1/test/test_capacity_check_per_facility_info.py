@@ -38,7 +38,6 @@ class TestCapacityCheckPerFacilityInfo(unittest.TestCase):
             return CapacityCheckPerFacilityInfo(
                 available = True,
                 facility = '',
-                href = '',
                 plan = '',
                 quantity = ''
             )

@@ -36,7 +36,6 @@ class TestNewPassword(unittest.TestCase):
         model = NewPassword()
         if include_optional:
             return NewPassword(
-                href = '',
                 new_password = ''
             )
         else:

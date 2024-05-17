@@ -29,9 +29,8 @@ class EmailInput(BaseModel):
     """ # noqa: E501
     address: StrictStr
     default: Optional[StrictBool] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "default", "href"]
+    __properties: ClassVar[List[str]] = ["address", "default"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +91,7 @@ class EmailInput(BaseModel):
 
         _obj = cls.model_validate({
             "address": obj.get("address"),
-            "default": obj.get("default"),
-            "href": obj.get("href")
+            "default": obj.get("default")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

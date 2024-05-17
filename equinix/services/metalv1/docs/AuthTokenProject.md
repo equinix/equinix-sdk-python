@@ -21,11 +21,11 @@ Name | Type | Description | Notes
 **organization** | [**Href**](Href.md) |  | [optional] 
 **payment_method** | [**Href**](Href.md) |  | [optional] 
 **ssh_keys** | [**List[Href]**](Href.md) |  | [optional] 
-**tags** | **List[str]** |  | [optional] 
-**type** | **str** | The type of the project. Projects of type &#x60;vmce&#x60; are part of an in development feature and not available to all customers. | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 **url** | **str** |  | [optional] 
 **volumes** | [**List[Href]**](Href.md) |  | [optional] 
+**type** | **str** | The type of the project. Projects of type &#x60;vmce&#x60; are part of an in development feature and not available to all customers. | [optional] 
+**tags** | **List[str]** |  | [optional] 
 
 ## Example
 

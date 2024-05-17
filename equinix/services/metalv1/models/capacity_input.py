@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.server_info import ServerInfo
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class CapacityInput(BaseModel):
     """
     CapacityInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     servers: Optional[List[ServerInfo]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "servers"]
+    __properties: ClassVar[List[str]] = ["servers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class CapacityInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "servers": [ServerInfo.from_dict(_item) for _item in obj["servers"]] if obj.get("servers") is not None else None
         })
         # store additional fields in additional_properties

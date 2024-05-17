@@ -30,13 +30,12 @@ class CreateSelfServiceReservationRequest(BaseModel):
     """
     CreateSelfServiceReservationRequest
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     item: Optional[List[SelfServiceReservationItemRequest]] = None
     notes: Optional[StrictStr] = None
     period: Optional[CreateSelfServiceReservationRequestPeriod] = None
     start_date: Optional[datetime] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "item", "notes", "period", "start_date"]
+    __properties: ClassVar[List[str]] = ["item", "notes", "period", "start_date"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,7 +105,6 @@ class CreateSelfServiceReservationRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "item": [SelfServiceReservationItemRequest.from_dict(_item) for _item in obj["item"]] if obj.get("item") is not None else None,
             "notes": obj.get("notes"),
             "period": CreateSelfServiceReservationRequestPeriod.from_dict(obj["period"]) if obj.get("period") is not None else None,

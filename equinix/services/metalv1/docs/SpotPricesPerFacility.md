@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **baremetal_3** | [**SpotPricesPerBaremetal**](SpotPricesPerBaremetal.md) |  | [optional] 
 **baremetal_s** | [**SpotPricesPerBaremetal**](SpotPricesPerBaremetal.md) |  | [optional] 
 **c2_medium_x86** | [**SpotPricesPerBaremetal**](SpotPricesPerBaremetal.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **m2_xlarge_x86** | [**SpotPricesPerBaremetal**](SpotPricesPerBaremetal.md) |  | [optional] 
 
 ## Example

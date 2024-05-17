@@ -36,17 +36,16 @@ class TestBgpDynamicNeighborCreateInput(unittest.TestCase):
         model = BgpDynamicNeighborCreateInput()
         if include_optional:
             return BgpDynamicNeighborCreateInput(
-                bgp_neighbor_asn = 12345,
                 bgp_neighbor_range = '192.168.1.0/25',
-                href = '',
+                bgp_neighbor_asn = 12345,
                 tags = [
                     ''
                     ]
             )
         else:
             return BgpDynamicNeighborCreateInput(
-                bgp_neighbor_asn = 12345,
                 bgp_neighbor_range = '192.168.1.0/25',
+                bgp_neighbor_asn = 12345,
         )
         """
 

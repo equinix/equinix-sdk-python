@@ -36,8 +36,7 @@ class TestActivateHardwareReservationRequest(unittest.TestCase):
         model = ActivateHardwareReservationRequest()
         if include_optional:
             return ActivateHardwareReservationRequest(
-                description = '',
-                href = ''
+                description = ''
             )
         else:
             return ActivateHardwareReservationRequest(

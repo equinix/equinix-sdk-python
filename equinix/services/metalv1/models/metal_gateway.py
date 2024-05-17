@@ -22,7 +22,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.href import Href
-from equinix.services.metalv1.models.ip_reservation import IPReservation
 from equinix.services.metalv1.models.project import Project
 from equinix.services.metalv1.models.virtual_network import VirtualNetwork
 from typing import Optional, Set
@@ -36,7 +35,7 @@ class MetalGateway(BaseModel):
     created_by: Optional[Href] = None
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    ip_reservation: Optional[IPReservation] = None
+    ip_reservation: Optional[Dict[str, Any]] = None
     project: Optional[Project] = None
     state: Optional[StrictStr] = Field(default=None, description="The current state of the Metal Gateway. 'Ready' indicates the gateway record has been configured, but is currently not active on the network. 'Active' indicates the gateway has been configured on the network. 'Deleting' is a temporary state used to indicate that the gateway is in the process of being un-configured from the network, after which the gateway record will be deleted.")
     updated_at: Optional[datetime] = None
@@ -98,9 +97,6 @@ class MetalGateway(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of created_by
         if self.created_by:
             _dict['created_by'] = self.created_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of ip_reservation
-        if self.ip_reservation:
-            _dict['ip_reservation'] = self.ip_reservation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
@@ -128,7 +124,7 @@ class MetalGateway(BaseModel):
             "created_by": Href.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
             "href": obj.get("href"),
             "id": obj.get("id"),
-            "ip_reservation": IPReservation.from_dict(obj["ip_reservation"]) if obj.get("ip_reservation") is not None else None,
+            "ip_reservation": obj.get("ip_reservation"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "state": obj.get("state"),
             "updated_at": obj.get("updated_at"),

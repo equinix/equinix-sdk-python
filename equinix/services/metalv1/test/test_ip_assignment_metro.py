@@ -38,7 +38,6 @@ class TestIPAssignmentMetro(unittest.TestCase):
             return IPAssignmentMetro(
                 code = '',
                 country = '',
-                href = '',
                 id = '',
                 name = ''
             )

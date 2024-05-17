@@ -38,7 +38,6 @@ class TestInterconnectionUpdateInput(unittest.TestCase):
             return InterconnectionUpdateInput(
                 contact_email = '',
                 description = '',
-                href = '',
                 mode = 'standard',
                 name = '',
                 tags = [

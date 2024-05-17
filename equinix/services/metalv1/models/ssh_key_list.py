@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.ssh_key import SSHKey
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class SSHKeyList(BaseModel):
     """
     SSHKeyList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     ssh_keys: Optional[List[SSHKey]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "ssh_keys"]
+    __properties: ClassVar[List[str]] = ["ssh_keys"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class SSHKeyList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "ssh_keys": [SSHKey.from_dict(_item) for _item in obj["ssh_keys"]] if obj.get("ssh_keys") is not None else None
         })
         # store additional fields in additional_properties

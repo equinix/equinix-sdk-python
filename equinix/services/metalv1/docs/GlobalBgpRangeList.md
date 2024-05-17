@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **global_bgp_ranges** | [**List[GlobalBgpRange]**](GlobalBgpRange.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

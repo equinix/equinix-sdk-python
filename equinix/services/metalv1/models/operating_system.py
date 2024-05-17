@@ -27,10 +27,8 @@ class OperatingSystem(BaseModel):
     """
     OperatingSystem
     """ # noqa: E501
-    default_operating_system: Optional[StrictBool] = Field(default=None, description="Default operating system for the distro.")
     distro: Optional[StrictStr] = None
     distro_label: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     licensed: Optional[StrictBool] = Field(default=None, description="Licenced OS is priced according to pricing property")
     name: Optional[StrictStr] = None
@@ -39,8 +37,9 @@ class OperatingSystem(BaseModel):
     provisionable_on: Optional[List[StrictStr]] = None
     slug: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
+    default_operating_system: Optional[StrictBool] = Field(default=None, description="Default operating system for the distro.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["default_operating_system", "distro", "distro_label", "href", "id", "licensed", "name", "preinstallable", "pricing", "provisionable_on", "slug", "version"]
+    __properties: ClassVar[List[str]] = ["distro", "distro_label", "id", "licensed", "name", "preinstallable", "pricing", "provisionable_on", "slug", "version", "default_operating_system"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,10 +101,8 @@ class OperatingSystem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "default_operating_system": obj.get("default_operating_system"),
             "distro": obj.get("distro"),
             "distro_label": obj.get("distro_label"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "licensed": obj.get("licensed"),
             "name": obj.get("name"),
@@ -113,7 +110,8 @@ class OperatingSystem(BaseModel):
             "pricing": obj.get("pricing"),
             "provisionable_on": obj.get("provisionable_on"),
             "slug": obj.get("slug"),
-            "version": obj.get("version")
+            "version": obj.get("version"),
+            "default_operating_system": obj.get("default_operating_system")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

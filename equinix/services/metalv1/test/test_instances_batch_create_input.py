@@ -38,8 +38,7 @@ class TestInstancesBatchCreateInput(unittest.TestCase):
             return InstancesBatchCreateInput(
                 batches = [
                     null
-                    ],
-                href = ''
+                    ]
             )
         else:
             return InstancesBatchCreateInput(

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **memberships** | [**List[Membership]**](Membership.md) |  | [optional] 
 
 ## Example

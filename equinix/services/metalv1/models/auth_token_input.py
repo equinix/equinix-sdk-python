@@ -28,10 +28,9 @@ class AuthTokenInput(BaseModel):
     AuthTokenInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     read_only: Optional[StrictBool] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "read_only"]
+    __properties: ClassVar[List[str]] = ["description", "read_only"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class AuthTokenInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "read_only": obj.get("read_only")
         })
         # store additional fields in additional_properties

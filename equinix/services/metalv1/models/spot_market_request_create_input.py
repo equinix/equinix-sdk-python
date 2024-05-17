@@ -33,12 +33,11 @@ class SpotMarketRequestCreateInput(BaseModel):
     devices_min: Optional[StrictInt] = None
     end_at: Optional[datetime] = None
     facilities: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     instance_parameters: Optional[SpotMarketRequestCreateInputInstanceParameters] = None
     max_bid_price: Optional[Union[StrictFloat, StrictInt]] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro ID or code the spot market request will be created in.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["devices_max", "devices_min", "end_at", "facilities", "href", "instance_parameters", "max_bid_price", "metro"]
+    __properties: ClassVar[List[str]] = ["devices_max", "devices_min", "end_at", "facilities", "instance_parameters", "max_bid_price", "metro"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,7 +104,6 @@ class SpotMarketRequestCreateInput(BaseModel):
             "devices_min": obj.get("devices_min"),
             "end_at": obj.get("end_at"),
             "facilities": obj.get("facilities"),
-            "href": obj.get("href"),
             "instance_parameters": SpotMarketRequestCreateInputInstanceParameters.from_dict(obj["instance_parameters"]) if obj.get("instance_parameters") is not None else None,
             "max_bid_price": obj.get("max_bid_price"),
             "metro": obj.get("metro")

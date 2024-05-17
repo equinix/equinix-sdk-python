@@ -46,13 +46,13 @@ class AuthTokenProject(BaseModel):
     organization: Optional[Href] = None
     payment_method: Optional[Href] = None
     ssh_keys: Optional[List[Href]] = None
-    tags: Optional[List[StrictStr]] = None
-    type: Optional[StrictStr] = Field(default=None, description="The type of the project. Projects of type `vmce` are part of an in development feature and not available to all customers.")
     updated_at: Optional[datetime] = None
     url: Optional[StrictStr] = None
     volumes: Optional[List[Href]] = None
+    type: Optional[StrictStr] = Field(default=None, description="The type of the project. Projects of type `vmce` are part of an in development feature and not available to all customers.")
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["backend_transfer_enabled", "bgp_config", "created_at", "customdata", "devices", "href", "id", "invitations", "max_devices", "members", "memberships", "name", "network_status", "organization", "payment_method", "ssh_keys", "tags", "type", "updated_at", "url", "volumes"]
+    __properties: ClassVar[List[str]] = ["backend_transfer_enabled", "bgp_config", "created_at", "customdata", "devices", "href", "id", "invitations", "max_devices", "members", "memberships", "name", "network_status", "organization", "payment_method", "ssh_keys", "updated_at", "url", "volumes", "type", "tags"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -189,11 +189,11 @@ class AuthTokenProject(BaseModel):
             "organization": Href.from_dict(obj["organization"]) if obj.get("organization") is not None else None,
             "payment_method": Href.from_dict(obj["payment_method"]) if obj.get("payment_method") is not None else None,
             "ssh_keys": [Href.from_dict(_item) for _item in obj["ssh_keys"]] if obj.get("ssh_keys") is not None else None,
-            "tags": obj.get("tags"),
-            "type": obj.get("type"),
             "updated_at": obj.get("updated_at"),
             "url": obj.get("url"),
-            "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None
+            "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None,
+            "type": obj.get("type"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

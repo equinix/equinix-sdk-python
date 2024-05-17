@@ -36,9 +36,8 @@ class TestIPAssignmentUpdateInput(unittest.TestCase):
         model = IPAssignmentUpdateInput()
         if include_optional:
             return IPAssignmentUpdateInput(
-                customdata = None,
                 details = '',
-                href = '',
+                customdata = None,
                 tags = [
                     ''
                     ]

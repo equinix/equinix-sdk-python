@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class InterconnectionPortList(BaseModel):
     """
     InterconnectionPortList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     ports: Optional[List[InterconnectionPort]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "ports"]
+    __properties: ClassVar[List[str]] = ["ports"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class InterconnectionPortList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "ports": [InterconnectionPort.from_dict(_item) for _item in obj["ports"]] if obj.get("ports") is not None else None
         })
         # store additional fields in additional_properties

@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bgp_dynamic_neighbors** | [**List[BgpDynamicNeighbor]**](BgpDynamicNeighbor.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example

@@ -38,26 +38,24 @@ class TestVlanVirtualCircuit(unittest.TestCase):
             return VlanVirtualCircuit(
                 bill = True,
                 bill_type = 'metal_billed',
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
-                href = '',
                 id = '',
                 name = '',
                 nni_vlan = 56,
                 port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
-                    href = '', 
                     id = '', 
-                    link_status = '', 
-                    name = '', 
                     organization = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     role = 'primary', 
-                    speed = 56, 
                     status = 'requested', 
                     switch_id = '', 
                     virtual_circuits = [
                         null
-                        ], ),
+                        ], 
+                    name = '', 
+                    speed = 56, 
+                    link_status = '', 
+                    href = '', ),
                 project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
                     bgp_config = equinix.services.metalv1.models.href.Href(
@@ -87,26 +85,27 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                     ssh_keys = [
                         
                         ], 
-                    tags = [
-                        ''
-                        ], 
-                    type = 'default', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     url = '', 
                     volumes = [
                         
+                        ], 
+                    type = 'default', 
+                    tags = [
+                        ''
                         ], ),
-                provider_connection_id = 'dxcon-fggxx63k',
                 speed = 56,
                 status = 'pending',
+                provider_connection_id = 'dxcon-fggxx63k',
                 tags = [
                     ''
                     ],
                 type = 'vlan',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 virtual_network = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                vnid = 56
+                vnid = 56,
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return VlanVirtualCircuit(

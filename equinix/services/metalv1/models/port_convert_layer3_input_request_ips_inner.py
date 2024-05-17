@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,10 +28,9 @@ class PortConvertLayer3InputRequestIpsInner(BaseModel):
     PortConvertLayer3InputRequestIpsInner
     """ # noqa: E501
     address_family: Optional[StrictInt] = None
-    href: Optional[StrictStr] = None
     public: Optional[StrictBool] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address_family", "href", "public"]
+    __properties: ClassVar[List[str]] = ["address_family", "public"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class PortConvertLayer3InputRequestIpsInner(BaseModel):
 
         _obj = cls.model_validate({
             "address_family": obj.get("address_family"),
-            "href": obj.get("href"),
             "public": obj.get("public")
         })
         # store additional fields in additional_properties

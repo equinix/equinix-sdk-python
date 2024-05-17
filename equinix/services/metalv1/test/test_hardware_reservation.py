@@ -39,12 +39,6 @@ class TestHardwareReservation(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 custom_rate = 1050.5,
                 device = equinix.services.metalv1.models.device.Device(
-                    actions = [
-                        equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
-                            href = '', 
-                            name = '', 
-                            type = '', )
-                        ], 
                     always_pxe = True, 
                     billing_cycle = '', 
                     bonding_mode = 56, 
@@ -57,16 +51,13 @@ class TestHardwareReservation(unittest.TestCase):
                             address2 = '', 
                             city = '', 
                             coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                                href = '', 
                                 latitude = '', 
                                 longitude = '', ), 
                             country = '', 
-                            href = '', 
                             state = '', 
                             zip_code = '', ), 
                         code = '', 
                         features = ["baremetal","backend_transfer","global_ipv4"], 
-                        href = '', 
                         id = '', 
                         ip_ranges = ["2604:1380::/36","147.75.192.0/21"], 
                         metro = null, 
@@ -83,8 +74,7 @@ class TestHardwareReservation(unittest.TestCase):
                                 equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                     href = '', 
                                     price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                        hour = 1.23, 
-                                        href = '', ), )
+                                        hour = 1.23, ), )
                                 ], 
                             available_in_metros = [
                                 equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -94,11 +84,10 @@ class TestHardwareReservation(unittest.TestCase):
                                 ''
                                 ], 
                             class = 'm3.large.x86', 
+                            description = '', 
                             deployment_types = [
                                 'on_demand'
                                 ], 
-                            description = '', 
-                            href = '', 
                             id = '', 
                             legacy = True, 
                             line = '', 
@@ -109,32 +98,26 @@ class TestHardwareReservation(unittest.TestCase):
                                 cpus = [
                                     equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                         count = 56, 
-                                        href = '', 
                                         type = '', )
                                     ], 
+                                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                                    total = '', ), 
                                 drives = [
                                     equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                        category = 'boot', 
                                         count = 56, 
-                                        href = '', 
+                                        type = '', 
                                         size = '3.84TB', 
-                                        type = '', )
+                                        category = 'boot', )
                                     ], 
-                                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                                    href = '', 
-                                    raid = True, 
-                                    txt = True, 
-                                    uefi = True, ), 
-                                href = '', 
-                                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                                    href = '', 
-                                    total = '', ), 
                                 nics = [
                                     equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                         count = 2, 
-                                        href = '', 
                                         type = '', )
-                                    ], ), 
+                                    ], 
+                                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                                    raid = True, 
+                                    txt = True, 
+                                    uefi = True, ), ), 
                             type = 'standard', ), 
                         project = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
@@ -164,14 +147,14 @@ class TestHardwareReservation(unittest.TestCase):
                             ssh_keys = [
                                 
                                 ], 
-                            tags = [
-                                ''
-                                ], 
-                            type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             url = '', 
                             volumes = [
                                 
+                                ], 
+                            type = 'default', 
+                            tags = [
+                                ''
                                 ], ), 
                         provisionable = True, 
                         short_id = '', 
@@ -197,14 +180,14 @@ class TestHardwareReservation(unittest.TestCase):
                             management = True, 
                             netmask = '', 
                             network = '', 
-                            next_hop = '', 
                             parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                 cidr = 56, 
                                 href = '', 
                                 netmask = '', 
                                 network = '', ), 
                             public = True, 
-                            state = 'pending', )
+                            state = 'pending', 
+                            next_hop = '', )
                         ], 
                     ipxe_script_url = '', 
                     iqn = '', 
@@ -214,22 +197,22 @@ class TestHardwareReservation(unittest.TestCase):
                     network_ports = [
                         equinix.services.metalv1.models.port.Port(
                             bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
-                                href = '', 
                                 id = '', 
                                 name = '', ), 
                             data = equinix.services.metalv1.models.port_data.PortData(
-                                bonded = True, 
-                                href = '', 
-                                mac = '', ), 
+                                mac = '', 
+                                bonded = True, ), 
                             disbond_operation_supported = True, 
                             href = '', 
                             id = '', 
                             name = 'bond0', 
+                            type = 'NetworkPort', 
+                            network_type = 'layer2-bonded', 
                             native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                 assigned_to_virtual_circuit = True, 
-                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 description = '', 
                                 href = '', 
+                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 id = '', 
                                 instances = [
                                     equinix.services.metalv1.models.device.Device(
@@ -248,10 +231,8 @@ class TestHardwareReservation(unittest.TestCase):
                                         locked = True, 
                                         network_frozen = True, 
                                         operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                                            default_operating_system = True, 
                                             distro = '', 
                                             distro_label = '', 
-                                            href = '', 
                                             id = '', 
                                             licensed = True, 
                                             name = '', 
@@ -261,7 +242,13 @@ class TestHardwareReservation(unittest.TestCase):
                                                 ''
                                                 ], 
                                             slug = '', 
-                                            version = '', ), 
+                                            version = '', 
+                                            default_operating_system = True, ), 
+                                        actions = [
+                                            equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                                                type = '', 
+                                                name = '', )
+                                            ], 
                                         project_lite = null, 
                                         provisioning_events = [
                                             equinix.services.metalv1.models.event.Event(
@@ -270,57 +257,51 @@ class TestHardwareReservation(unittest.TestCase):
                                                 href = '', 
                                                 id = '', 
                                                 interpolated = '', 
-                                                ip = '', 
-                                                modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                                 relationships = [
                                                     
                                                     ], 
                                                 state = '', 
-                                                type = '', )
+                                                type = '', 
+                                                modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                                                ip = '', )
                                             ], 
                                         provisioning_percentage = 1.337, 
                                         root_password = '', 
                                         short_id = '', 
-                                        sos = '', 
                                         spot_instance = True, 
                                         spot_price_max = 1.337, 
                                         state = 'queued', 
                                         storage = equinix.services.metalv1.models.storage.Storage(
                                             disks = [
                                                 equinix.services.metalv1.models.disk.Disk(
-                                                    href = '', 
+                                                    wipe_table = True, 
                                                     partitions = [
                                                         equinix.services.metalv1.models.partition.Partition(
-                                                            href = '', 
                                                             label = '', 
                                                             number = 56, 
                                                             size = '', )
-                                                        ], 
-                                                    wipe_table = True, )
+                                                        ], )
+                                                ], 
+                                            raid = [
+                                                equinix.services.metalv1.models.raid.Raid(
+                                                    level = '', 
+                                                    name = '', )
                                                 ], 
                                             filesystems = [
                                                 equinix.services.metalv1.models.filesystem.Filesystem(
-                                                    href = '', 
                                                     mount = equinix.services.metalv1.models.mount.Mount(
                                                         format = '', 
-                                                        href = '', 
+                                                        point = '', 
                                                         options = [
                                                             ''
-                                                            ], 
-                                                        point = '', ), )
-                                                ], 
-                                            href = '', 
-                                            raid = [
-                                                equinix.services.metalv1.models.raid.Raid(
-                                                    href = '', 
-                                                    level = '', 
-                                                    name = '', )
+                                                            ], ), )
                                                 ], ), 
                                         switch_uuid = '', 
-                                        termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                        termination_time = '2021-09-03T16:32+03:00', 
                                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         user = '', 
-                                        userdata = '', )
+                                        userdata = '', 
+                                        sos = '', )
                                     ], 
                                 metal_gateways = [
                                     equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
@@ -334,35 +315,36 @@ class TestHardwareReservation(unittest.TestCase):
                                     ], 
                                 metro_code = '', 
                                 vxlan = 56, ), 
-                            network_type = 'layer2-bonded', 
-                            type = 'NetworkPort', 
                             virtual_networks = [
                                 equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                     assigned_to_virtual_circuit = True, 
-                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     description = '', 
                                     href = '', 
+                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     id = '', 
                                     metro_code = '', 
                                     vxlan = 56, )
                                 ], )
                         ], 
                     operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                        default_operating_system = True, 
                         distro = '', 
                         distro_label = '', 
-                        href = '', 
                         id = '', 
                         licensed = True, 
                         name = '', 
                         preinstallable = True, 
                         pricing = equinix.services.metalv1.models.pricing.pricing(), 
                         slug = '', 
-                        version = '', ), 
+                        version = '', 
+                        default_operating_system = True, ), 
+                    actions = [
+                        equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                            type = '', 
+                            name = '', )
+                        ], 
                     plan = equinix.services.metalv1.models.plan.Plan(
                         class = 'm3.large.x86', 
                         description = '', 
-                        href = '', 
                         id = '', 
                         legacy = True, 
                         line = '', 
@@ -378,9 +360,9 @@ class TestHardwareReservation(unittest.TestCase):
                         max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         name = '0', 
                         network_status = equinix.services.metalv1.models.network_status.network_status(), 
-                        type = 'default', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        url = '', ), 
+                        url = '', 
+                        type = 'default', ), 
                     project_lite = null, 
                     provisioning_events = [
                         equinix.services.metalv1.models.event.Event(
@@ -389,49 +371,45 @@ class TestHardwareReservation(unittest.TestCase):
                             href = '', 
                             id = '', 
                             interpolated = '', 
-                            ip = '', 
-                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                             state = '', 
-                            type = '', )
+                            type = '', 
+                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                            ip = '', )
                         ], 
                     provisioning_percentage = 1.337, 
                     root_password = '', 
                     short_id = '', 
-                    sos = '', 
                     spot_instance = True, 
                     spot_price_max = 1.337, 
                     ssh_keys = [
                         
                         ], 
                     state = 'queued', 
-                    storage = equinix.services.metalv1.models.storage.Storage(
-                        href = '', ), 
+                    storage = equinix.services.metalv1.models.storage.Storage(), 
                     switch_uuid = '', 
                     tags = [
                         ''
                         ], 
-                    termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    termination_time = '2021-09-03T16:32+03:00', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     user = '', 
                     userdata = '', 
                     volumes = [
                         
-                        ], ),
+                        ], 
+                    sos = '', ),
                 facility = equinix.services.metalv1.models.facility.Facility(
                     address = equinix.services.metalv1.models.address.Address(
                         address2 = '', 
                         city = '', 
                         coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                            href = '', 
                             latitude = '', 
                             longitude = '', ), 
                         country = '', 
-                        href = '', 
                         state = '', 
                         zip_code = '', ), 
                     code = '', 
                     features = ["baremetal","backend_transfer","global_ipv4"], 
-                    href = '', 
                     id = '', 
                     ip_ranges = ["2604:1380::/36","147.75.192.0/21"], 
                     metro = null, 
@@ -444,8 +422,7 @@ class TestHardwareReservation(unittest.TestCase):
                         equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                             href = '', 
                             price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                hour = 1.23, 
-                                href = '', ), )
+                                hour = 1.23, ), )
                         ], 
                     available_in_metros = [
                         equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -455,11 +432,10 @@ class TestHardwareReservation(unittest.TestCase):
                         ''
                         ], 
                     class = 'm3.large.x86', 
+                    description = '', 
                     deployment_types = [
                         'on_demand'
                         ], 
-                    description = '', 
-                    href = '', 
                     id = '', 
                     legacy = True, 
                     line = '', 
@@ -470,32 +446,26 @@ class TestHardwareReservation(unittest.TestCase):
                         cpus = [
                             equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                 count = 56, 
-                                href = '', 
                                 type = '', )
                             ], 
+                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                            total = '', ), 
                         drives = [
                             equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                category = 'boot', 
                                 count = 56, 
-                                href = '', 
+                                type = '', 
                                 size = '3.84TB', 
-                                type = '', )
+                                category = 'boot', )
                             ], 
-                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                            href = '', 
-                            raid = True, 
-                            txt = True, 
-                            uefi = True, ), 
-                        href = '', 
-                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                            href = '', 
-                            total = '', ), 
                         nics = [
                             equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                 count = 2, 
-                                href = '', 
                                 type = '', )
-                            ], ), 
+                            ], 
+                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                            raid = True, 
+                            txt = True, 
+                            uefi = True, ), ), 
                     type = 'standard', ),
                 project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
@@ -526,14 +496,14 @@ class TestHardwareReservation(unittest.TestCase):
                     ssh_keys = [
                         
                         ], 
-                    tags = [
-                        ''
-                        ], 
-                    type = 'default', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     url = '', 
                     volumes = [
                         
+                        ], 
+                    type = 'default', 
+                    tags = [
+                        ''
                         ], ),
                 provisionable = True,
                 short_id = '',

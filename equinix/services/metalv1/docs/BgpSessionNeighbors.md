@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bgp_neighbors** | [**List[BgpNeighborData]**](BgpNeighborData.md) | A list of BGP session neighbor data | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

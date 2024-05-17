@@ -39,7 +39,6 @@ class PaymentMethod(BaseModel):
     email: Optional[StrictStr] = None
     expiration_month: Optional[StrictStr] = None
     expiration_year: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization: Optional[Href] = None
@@ -47,7 +46,7 @@ class PaymentMethod(BaseModel):
     type: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["billing_address", "card_type", "cardholder_name", "created_at", "created_by_user", "default", "email", "expiration_month", "expiration_year", "href", "id", "name", "organization", "projects", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["billing_address", "card_type", "cardholder_name", "created_at", "created_by_user", "default", "email", "expiration_month", "expiration_year", "id", "name", "organization", "projects", "type", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,7 +131,6 @@ class PaymentMethod(BaseModel):
             "email": obj.get("email"),
             "expiration_month": obj.get("expiration_month"),
             "expiration_year": obj.get("expiration_year"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "name": obj.get("name"),
             "organization": Href.from_dict(obj["organization"]) if obj.get("organization") is not None else None,

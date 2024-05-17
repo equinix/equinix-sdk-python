@@ -36,7 +36,6 @@ class TestVrfMetalGatewayCreateInput(unittest.TestCase):
         model = VrfMetalGatewayCreateInput()
         if include_optional:
             return VrfMetalGatewayCreateInput(
-                href = '',
                 ip_reservation_id = '',
                 virtual_network_id = ''
             )

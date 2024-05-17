@@ -31,7 +31,6 @@ class DedicatedPortCreateInput(BaseModel):
     contact_email: Optional[StrictStr] = Field(default=None, description="The preferred email used for communication and notifications about the Equinix Fabric interconnection. Required when using a Project API key. Optional and defaults to the primary user email address when using a User API key.")
     description: Optional[StrictStr] = None
     facility_id: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     metro: StrictStr = Field(description="A Metro ID or code. For interconnections with Dedicated Ports, this will be the location of the issued Dedicated Ports.")
     mode: Optional[StrictStr] = Field(default=None, description="The mode of the interconnection (only relevant to Dedicated Ports). Fabric VCs won't have this field. Can be either 'standard' or 'tunnel'.   The default mode of an interconnection on a Dedicated Port is 'standard'. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances.")
     name: StrictStr
@@ -42,7 +41,7 @@ class DedicatedPortCreateInput(BaseModel):
     type: StrictStr = Field(description="When requesting for a dedicated port, the value of this field should be 'dedicated'.")
     use_case: Optional[StrictStr] = Field(default=None, description="The intended use case of the dedicated port.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["billing_account_name", "contact_email", "description", "facility_id", "href", "metro", "mode", "name", "project", "redundancy", "speed", "tags", "type", "use_case"]
+    __properties: ClassVar[List[str]] = ["billing_account_name", "contact_email", "description", "facility_id", "metro", "mode", "name", "project", "redundancy", "speed", "tags", "type", "use_case"]
 
     @field_validator('mode')
     def mode_validate_enum(cls, value):
@@ -123,7 +122,6 @@ class DedicatedPortCreateInput(BaseModel):
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
             "facility_id": obj.get("facility_id"),
-            "href": obj.get("href"),
             "metro": obj.get("metro"),
             "mode": obj.get("mode"),
             "name": obj.get("name"),

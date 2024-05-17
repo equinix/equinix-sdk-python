@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

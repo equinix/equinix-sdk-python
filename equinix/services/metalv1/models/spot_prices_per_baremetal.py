@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,10 +27,9 @@ class SpotPricesPerBaremetal(BaseModel):
     """
     SpotPricesPerBaremetal
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     price: Optional[Union[StrictFloat, StrictInt]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "price"]
+    __properties: ClassVar[List[str]] = ["price"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class SpotPricesPerBaremetal(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "price": obj.get("price")
         })
         # store additional fields in additional_properties

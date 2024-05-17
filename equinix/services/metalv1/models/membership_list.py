@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.membership import Membership
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class MembershipList(BaseModel):
     """
     MembershipList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     memberships: Optional[List[Membership]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "memberships"]
+    __properties: ClassVar[List[str]] = ["memberships"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class MembershipList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "memberships": [Membership.from_dict(_item) for _item in obj["memberships"]] if obj.get("memberships") is not None else None
         })
         # store additional fields in additional_properties

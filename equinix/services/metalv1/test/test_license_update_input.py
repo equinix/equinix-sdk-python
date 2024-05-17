@@ -37,7 +37,6 @@ class TestLicenseUpdateInput(unittest.TestCase):
         if include_optional:
             return LicenseUpdateInput(
                 description = '',
-                href = '',
                 size = 1.337
             )
         else:

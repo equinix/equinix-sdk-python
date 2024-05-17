@@ -37,7 +37,6 @@ class Organization(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
     enforce_2fa_at: Optional[datetime] = Field(default=None, description="Force to all members to have enabled the two factor authentication after that date, unless the value is null")
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     logo: Optional[StrictStr] = None
     members: Optional[List[Href]] = None
@@ -49,7 +48,7 @@ class Organization(BaseModel):
     updated_at: Optional[datetime] = None
     website: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "billing_address", "created_at", "credit_amount", "customdata", "description", "enforce_2fa_at", "href", "id", "logo", "members", "memberships", "name", "projects", "terms", "twitter", "updated_at", "website"]
+    __properties: ClassVar[List[str]] = ["address", "billing_address", "created_at", "credit_amount", "customdata", "description", "enforce_2fa_at", "id", "logo", "members", "memberships", "name", "projects", "terms", "twitter", "updated_at", "website"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -143,7 +142,6 @@ class Organization(BaseModel):
             "customdata": obj.get("customdata"),
             "description": obj.get("description"),
             "enforce_2fa_at": obj.get("enforce_2fa_at"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "logo": obj.get("logo"),
             "members": [Href.from_dict(_item) for _item in obj["members"]] if obj.get("members") is not None else None,

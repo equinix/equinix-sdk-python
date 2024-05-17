@@ -36,7 +36,6 @@ class TestMetadataNetworkNetworkBonding(unittest.TestCase):
         model = MetadataNetworkNetworkBonding()
         if include_optional:
             return MetadataNetworkNetworkBonding(
-                href = '',
                 link_aggregation = '',
                 mac = '',
                 mode = 56

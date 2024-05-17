@@ -62,13 +62,6 @@ class TestMetalGatewaysApi(unittest.TestCase):
         """
         pass
 
-    def test_find_metal_gateways_by_project_all_pages(self):
-        """Test case for find_metal_gateways_by_project_all_pages
-
-        Returns all metal gateways for a project  # noqa: E501
-        """
-        pass
-
     def test_get_metal_gateway_elastic_ips(self) -> None:
         """Test case for get_metal_gateway_elastic_ips
 

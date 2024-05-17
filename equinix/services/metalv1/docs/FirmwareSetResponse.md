@@ -6,7 +6,6 @@ Represents single Firmware set response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **record** | [**FirmwareSet**](FirmwareSet.md) |  | [optional] 
 
 ## Example

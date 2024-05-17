@@ -19,8 +19,8 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,10 +29,9 @@ class FindTrafficTimeframeParameter(BaseModel):
     FindTrafficTimeframeParameter
     """ # noqa: E501
     ended_at: datetime
-    href: Optional[StrictStr] = None
     started_at: datetime
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["ended_at", "href", "started_at"]
+    __properties: ClassVar[List[str]] = ["ended_at", "started_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class FindTrafficTimeframeParameter(BaseModel):
 
         _obj = cls.model_validate({
             "ended_at": obj.get("ended_at"),
-            "href": obj.get("href"),
             "started_at": obj.get("started_at")
         })
         # store additional fields in additional_properties

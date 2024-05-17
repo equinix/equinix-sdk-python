@@ -37,7 +37,6 @@ class TestPortConvertLayer3InputRequestIpsInner(unittest.TestCase):
         if include_optional:
             return PortConvertLayer3InputRequestIpsInner(
                 address_family = 56,
-                href = '',
                 public = True
             )
         else:

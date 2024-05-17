@@ -37,7 +37,6 @@ class TestFabricServiceToken(unittest.TestCase):
         if include_optional:
             return FabricServiceToken(
                 expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                href = '',
                 id = '',
                 max_allowed_speed = 10000000000,
                 role = 'primary',

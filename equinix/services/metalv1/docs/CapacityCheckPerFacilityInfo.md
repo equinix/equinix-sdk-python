@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **available** | **bool** |  | [optional] 
 **facility** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **plan** | **str** |  | [optional] 
 **quantity** | **str** |  | [optional] 
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.capacity_level_per_baremetal import CapacityLevelPerBaremetal
 from typing import Optional, Set
@@ -29,9 +29,8 @@ class CapacityList(BaseModel):
     CapacityList
     """ # noqa: E501
     capacity: Optional[Dict[str, Dict[str, CapacityLevelPerBaremetal]]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["capacity", "href"]
+    __properties: ClassVar[List[str]] = ["capacity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,8 +108,7 @@ class CapacityList(BaseModel):
                 for _k, _v in obj.get("capacity").items()
             )
             if obj.get("capacity") is not None
-            else None,
-            "href": obj.get("href")
+            else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

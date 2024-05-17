@@ -6,9 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
-**partitions** | [**List[Partition]**](Partition.md) |  | [optional] 
 **wipe_table** | **bool** |  | [optional] 
+**partitions** | [**List[Partition]**](Partition.md) |  | [optional] 
 
 ## Example
 

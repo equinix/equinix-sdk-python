@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actions** | [**List[DeviceActionsInner]**](DeviceActionsInner.md) | Actions supported by the device instance. | [optional] 
 **always_pxe** | **bool** |  | [optional] 
 **billing_cycle** | **str** |  | [optional] 
 **bonding_mode** | **int** |  | [optional] 
@@ -28,6 +27,7 @@ Name | Type | Description | Notes
 **network_frozen** | **bool** | Whether network mode changes such as converting to/from Layer2 or Layer3 networking, bonding or disbonding network interfaces are permitted for the device. | [optional] 
 **network_ports** | [**List[Port]**](Port.md) | By default, servers at Equinix Metal are configured in a “bonded” mode using LACP (Link Aggregation Control Protocol). Each 2-NIC server is configured with a single bond (namely bond0) with both interfaces eth0 and eth1 as members of the bond in a default Layer 3 mode. Some device plans may have a different number of ports and bonds available. | [optional] 
 **operating_system** | [**OperatingSystem**](OperatingSystem.md) |  | [optional] 
+**actions** | [**List[DeviceActionsInner]**](DeviceActionsInner.md) | Actions supported by the device instance. | [optional] 
 **plan** | [**Plan**](Plan.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
 **project_lite** | [**DeviceProjectLite**](DeviceProjectLite.md) |  | [optional] 
@@ -35,7 +35,6 @@ Name | Type | Description | Notes
 **provisioning_percentage** | **float** | Only visible while device provisioning | [optional] 
 **root_password** | **str** | Root password is automatically generated when server is provisioned and it is removed after 24 hours | [optional] 
 **short_id** | **str** |  | [optional] 
-**sos** | **str** | Hostname used to connect to the instance via the SOS (Serial over SSH) out-of-band console. | [optional] 
 **spot_instance** | **bool** | Whether or not the device is a spot instance. | [optional] 
 **spot_price_max** | **float** | The maximum price per hour you are willing to pay to keep this spot instance.  If you are outbid, the termination will be set allowing two minutes before shutdown. | [optional] 
 **ssh_keys** | [**List[Href]**](Href.md) |  | [optional] 
@@ -48,6 +47,7 @@ Name | Type | Description | Notes
 **user** | **str** |  | [optional] 
 **userdata** | **str** |  | [optional] 
 **volumes** | [**List[Href]**](Href.md) |  | [optional] 
+**sos** | **str** | Hostname used to connect to the instance via the SOS (Serial over SSH) out-of-band console. | [optional] 
 
 ## Example
 

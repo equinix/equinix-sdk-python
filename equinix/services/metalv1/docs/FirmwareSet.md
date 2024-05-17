@@ -6,13 +6,12 @@ Represents a Firmware Set
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **str** | Firmware Set UUID | [readonly] 
+**name** | **str** | Firmware Set Name | [readonly] 
+**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
+**updated_at** | **datetime** | Datetime when the block was updated. | [optional] [readonly] 
 **attributes** | [**List[Attribute]**](Attribute.md) | Represents a list of attributes | [optional] 
 **component_firmware** | [**List[Component]**](Component.md) | List of components versions | [optional] 
-**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
-**href** | **str** |  | [optional] 
-**name** | **str** | Firmware Set Name | [readonly] 
-**updated_at** | **datetime** | Datetime when the block was updated. | [optional] [readonly] 
-**uuid** | **str** | Firmware Set UUID | [readonly] 
 
 ## Example
 

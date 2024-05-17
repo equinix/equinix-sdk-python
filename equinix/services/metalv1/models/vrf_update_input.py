@@ -27,17 +27,16 @@ class VrfUpdateInput(BaseModel):
     """
     VrfUpdateInput
     """ # noqa: E501
-    bgp_dynamic_neighbors_bfd_enabled: Optional[StrictBool] = Field(default=None, description="Toggle BFD on dynamic bgp neighbors sessions")
     bgp_dynamic_neighbors_enabled: Optional[StrictBool] = Field(default=None, description="Toggle to enable the dynamic bgp neighbors feature on the VRF")
     bgp_dynamic_neighbors_export_route_map: Optional[StrictBool] = Field(default=None, description="Toggle to export the VRF route-map to the dynamic bgp neighbors")
+    bgp_dynamic_neighbors_bfd_enabled: Optional[StrictBool] = Field(default=None, description="Toggle BFD on dynamic bgp neighbors sessions")
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="A list of CIDR network addresses. Like [\"10.0.0.0/16\", \"2001:d78::/56\"]. IPv4 blocks must be between /8 and /29 in size. IPv6 blocks must be between /56 and /64. A VRF\\'s IP ranges must be defined in order to create VRF IP Reservations, which can then be used for Metal Gateways or Virtual Circuits. Adding a new CIDR address to the list will result in the creation of a new IP Range for this VRF. Removal of an existing CIDR address from the list will result in the deletion of an existing IP Range for this VRF. Deleting an IP Range will result in the deletion of any VRF IP Reservations contained within the IP Range, as well as the VRF IP Reservation\\'s associated Metal Gateways or Virtual Circuits. If you do not wish to add or remove IP Ranges, either include the full existing list of IP Ranges in the update request, or do not specify the `ip_ranges` field in the update request. Specifying a value of `[]` will remove all existing IP Ranges from the VRF.")
     local_asn: Optional[StrictInt] = Field(default=None, description="The new `local_asn` value for the VRF. This field cannot be updated when there are active Interconnection Virtual Circuits associated to the VRF, or if any of the VLANs of the VRF's metal gateway has been assigned on an instance.")
     name: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_dynamic_neighbors_bfd_enabled", "bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "description", "href", "ip_ranges", "local_asn", "name", "tags"]
+    __properties: ClassVar[List[str]] = ["bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "bgp_dynamic_neighbors_bfd_enabled", "description", "ip_ranges", "local_asn", "name", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,11 +96,10 @@ class VrfUpdateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
             "bgp_dynamic_neighbors_enabled": obj.get("bgp_dynamic_neighbors_enabled"),
             "bgp_dynamic_neighbors_export_route_map": obj.get("bgp_dynamic_neighbors_export_route_map"),
+            "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "ip_ranges": obj.get("ip_ranges"),
             "local_asn": obj.get("local_asn"),
             "name": obj.get("name"),

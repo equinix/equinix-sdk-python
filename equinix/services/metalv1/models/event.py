@@ -34,13 +34,13 @@ class Event(BaseModel):
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     interpolated: Optional[StrictStr] = None
-    ip: Optional[StrictStr] = None
-    modified_by: Optional[Dict[str, Any]] = None
     relationships: Optional[List[Href]] = None
     state: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
+    modified_by: Optional[Dict[str, Any]] = None
+    ip: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["body", "created_at", "href", "id", "interpolated", "ip", "modified_by", "relationships", "state", "type"]
+    __properties: ClassVar[List[str]] = ["body", "created_at", "href", "id", "interpolated", "relationships", "state", "type", "modified_by", "ip"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,11 +112,11 @@ class Event(BaseModel):
             "href": obj.get("href"),
             "id": obj.get("id"),
             "interpolated": obj.get("interpolated"),
-            "ip": obj.get("ip"),
-            "modified_by": obj.get("modified_by"),
             "relationships": [Href.from_dict(_item) for _item in obj["relationships"]] if obj.get("relationships") is not None else None,
             "state": obj.get("state"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "modified_by": obj.get("modified_by"),
+            "ip": obj.get("ip")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | [optional] 
 **count** | **int** |  | [optional] 
-**href** | **str** |  | [optional] 
-**size** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**size** | **str** |  | [optional] 
+**category** | **str** |  | [optional] 
 
 ## Example
 

@@ -39,7 +39,7 @@ class TestUser(unittest.TestCase):
                 avatar_thumb_url = '',
                 avatar_url = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                customdata = equinix.services.metalv1.models.customdata.customdata(),
+                customdata = None,
                 default_organization_id = '',
                 default_project_id = '',
                 email = '',

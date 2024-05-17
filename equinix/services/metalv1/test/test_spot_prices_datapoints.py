@@ -40,8 +40,7 @@ class TestSpotPricesDatapoints(unittest.TestCase):
                     [
                         1.337
                         ]
-                    ],
-                href = ''
+                    ]
             )
         else:
             return SpotPricesDatapoints(

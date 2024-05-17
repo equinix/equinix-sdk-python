@@ -36,12 +36,10 @@ class TestPaymentMethodList(unittest.TestCase):
         model = PaymentMethodList()
         if include_optional:
             return PaymentMethodList(
-                href = '',
                 payment_methods = [
                     equinix.services.metalv1.models.payment_method.PaymentMethod(
                         billing_address = equinix.services.metalv1.models.payment_method_billing_address.PaymentMethodBillingAddress(
                             country_code_alpha2 = '', 
-                            href = '', 
                             postal_code = '', 
                             street_address = '', ), 
                         card_type = '', 
@@ -53,7 +51,6 @@ class TestPaymentMethodList(unittest.TestCase):
                         email = '', 
                         expiration_month = '', 
                         expiration_year = '', 
-                        href = '', 
                         id = '', 
                         name = '', 
                         organization = equinix.services.metalv1.models.href.Href(

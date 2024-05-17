@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.firmware_set import FirmwareSet
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class FirmwareSetResponse(BaseModel):
     """
     Represents single Firmware set response
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     record: Optional[FirmwareSet] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "record"]
+    __properties: ClassVar[List[str]] = ["record"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +93,6 @@ class FirmwareSetResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "record": FirmwareSet.from_dict(obj["record"]) if obj.get("record") is not None else None
         })
         # store additional fields in additional_properties

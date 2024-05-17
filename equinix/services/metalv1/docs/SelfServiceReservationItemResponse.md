@@ -6,16 +6,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **float** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **metro_code** | **str** |  | [optional] 
 **metro_id** | **str** |  | [optional] 
 **metro_name** | **str** |  | [optional] 
 **plan** | [**Plan**](Plan.md) |  | [optional] 
-**plan_categories** | **List[str]** |  | [optional] 
 **plan_id** | **str** |  | [optional] 
 **plan_name** | **str** |  | [optional] 
 **plan_slug** | **str** |  | [optional] 
+**plan_categories** | **List[str]** |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **term** | **str** |  | [optional] 
 

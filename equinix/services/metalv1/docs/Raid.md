@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **devices** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **level** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 

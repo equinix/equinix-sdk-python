@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **baremetal_1e** | [**SpotPricesPerBaremetal**](SpotPricesPerBaremetal.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

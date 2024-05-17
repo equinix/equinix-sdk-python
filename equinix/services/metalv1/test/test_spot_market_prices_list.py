@@ -36,14 +36,11 @@ class TestSpotMarketPricesList(unittest.TestCase):
         model = SpotMarketPricesList()
         if include_optional:
             return SpotMarketPricesList(
-                href = '',
                 spot_market_prices = equinix.services.metalv1.models.spot_prices_report.SpotPricesReport(
                     ams1 = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
                         baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                            href = '', 
                             price = 1.337, ), 
                         baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                            href = '', 
                             price = 1.337, ), 
                         baremetal_2 = , 
                         baremetal_2a = , 
@@ -51,17 +48,12 @@ class TestSpotMarketPricesList(unittest.TestCase):
                         baremetal_3 = , 
                         baremetal_s = , 
                         c2/medium/x86 = , 
-                        href = '', 
                         m2/xlarge/x86 = , ), 
                     atl1 = equinix.services.metalv1.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
-                        baremetal_1e = , 
-                        href = '', ), 
-                    dfw1 = equinix.services.metalv1.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
-                        href = '', ), 
-                    ewr1 = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
-                        href = '', ), 
+                        baremetal_1e = , ), 
+                    dfw1 = equinix.services.metalv1.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(), 
+                    ewr1 = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(), 
                     fra1 = , 
-                    href = '', 
                     iad1 = , 
                     lax1 = , 
                     nrt1 = , 

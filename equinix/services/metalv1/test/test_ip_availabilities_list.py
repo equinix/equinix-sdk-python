@@ -38,8 +38,7 @@ class TestIPAvailabilitiesList(unittest.TestCase):
             return IPAvailabilitiesList(
                 available = [
                     ''
-                    ],
-                href = ''
+                    ]
             )
         else:
             return IPAvailabilitiesList(

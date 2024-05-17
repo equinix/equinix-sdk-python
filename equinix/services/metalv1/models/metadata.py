@@ -32,7 +32,6 @@ class Metadata(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     facility: Optional[StrictStr] = Field(default=None, description="The facility code of the instance")
     hostname: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     iqn: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro code of the instance")
@@ -43,12 +42,12 @@ class Metadata(BaseModel):
     reserved: Optional[StrictBool] = None
     specs: Optional[Dict[str, Any]] = Field(default=None, description="The specs of the plan version of the instance")
     ssh_keys: Optional[List[StrictStr]] = None
-    state: Optional[StrictStr] = Field(default=None, description="The current state the instance is in.  * When an instance is initially created it will be in the `queued` state until it is picked up by the provisioner. * Once provisioning has begun on the instance it's state will move to `provisioning`. * When an instance is deleted, it will move to `deprovisioning` state until the deprovision is completed and the instance state moves to `deleted`. * If an instance fails to provision or deprovision it will move to `failed` state. * Once an instance has completed provisioning it will move to `active` state. * If an instance is currently powering off or powering on it will move to `powering_off` or `powering_on` states respectively.  * When the instance is powered off completely it will move to the `inactive` state. * When an instance is powered on completely it will move to the `active` state. * Using the reinstall action to install a new OS on the instance will cause the instance state to change to `reinstalling`. * When the reinstall action is complete the instance will move to `active` state.")
     switch_short_id: Optional[StrictStr] = None
+    state: Optional[StrictStr] = Field(default=None, description="The current state the instance is in.  * When an instance is initially created it will be in the `queued` state until it is picked up by the provisioner. * Once provisioning has begun on the instance it's state will move to `provisioning`. * When an instance is deleted, it will move to `deprovisioning` state until the deprovision is completed and the instance state moves to `deleted`. * If an instance fails to provision or deprovision it will move to `failed` state. * Once an instance has completed provisioning it will move to `active` state. * If an instance is currently powering off or powering on it will move to `powering_off` or `powering_on` states respectively.  * When the instance is powered off completely it will move to the `inactive` state. * When an instance is powered on completely it will move to the `active` state. * Using the reinstall action to install a new OS on the instance will cause the instance state to change to `reinstalling`. * When the reinstall action is complete the instance will move to `active` state.")
     tags: Optional[List[StrictStr]] = None
     volumes: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["class", "customdata", "facility", "hostname", "href", "id", "iqn", "metro", "network", "operating_system", "plan", "private_subnets", "reserved", "specs", "ssh_keys", "state", "switch_short_id", "tags", "volumes"]
+    __properties: ClassVar[List[str]] = ["class", "customdata", "facility", "hostname", "id", "iqn", "metro", "network", "operating_system", "plan", "private_subnets", "reserved", "specs", "ssh_keys", "switch_short_id", "state", "tags", "volumes"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -125,7 +124,6 @@ class Metadata(BaseModel):
             "customdata": obj.get("customdata"),
             "facility": obj.get("facility"),
             "hostname": obj.get("hostname"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "iqn": obj.get("iqn"),
             "metro": obj.get("metro"),
@@ -136,8 +134,8 @@ class Metadata(BaseModel):
             "reserved": obj.get("reserved"),
             "specs": obj.get("specs"),
             "ssh_keys": obj.get("ssh_keys"),
-            "state": obj.get("state"),
             "switch_short_id": obj.get("switch_short_id"),
+            "state": obj.get("state"),
             "tags": obj.get("tags"),
             "volumes": obj.get("volumes")
         })

@@ -27,12 +27,11 @@ class DeviceUsage(BaseModel):
     """
     DeviceUsage
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     quantity: Optional[StrictStr] = None
     total: Optional[StrictStr] = None
     unit: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "quantity", "total", "unit"]
+    __properties: ClassVar[List[str]] = ["quantity", "total", "unit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class DeviceUsage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "quantity": obj.get("quantity"),
             "total": obj.get("total"),
             "unit": obj.get("unit")

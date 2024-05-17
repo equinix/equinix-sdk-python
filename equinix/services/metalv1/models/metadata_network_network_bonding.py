@@ -27,12 +27,11 @@ class MetadataNetworkNetworkBonding(BaseModel):
     """
     MetadataNetworkNetworkBonding
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     link_aggregation: Optional[StrictStr] = None
     mac: Optional[StrictStr] = None
     mode: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "link_aggregation", "mac", "mode"]
+    __properties: ClassVar[List[str]] = ["link_aggregation", "mac", "mode"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class MetadataNetworkNetworkBonding(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "link_aggregation": obj.get("link_aggregation"),
             "mac": obj.get("mac"),
             "mode": obj.get("mode")

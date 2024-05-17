@@ -37,11 +37,9 @@ class TestMetadataNetworkNetwork(unittest.TestCase):
         if include_optional:
             return MetadataNetworkNetwork(
                 bonding = equinix.services.metalv1.models.metadata_network_network_bonding.Metadata_network_network_bonding(
-                    href = '', 
                     link_aggregation = '', 
                     mac = '', 
-                    mode = 56, ),
-                href = ''
+                    mode = 56, )
             )
         else:
             return MetadataNetworkNetwork(

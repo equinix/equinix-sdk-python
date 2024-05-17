@@ -36,14 +36,12 @@ class TestSpotPricesHistoryReport(unittest.TestCase):
         model = SpotPricesHistoryReport()
         if include_optional:
             return SpotPricesHistoryReport(
-                href = '',
                 prices_history = equinix.services.metalv1.models.spot_prices_datapoints.SpotPricesDatapoints(
                     datapoints = [
                         [
                             1.337
                             ]
-                        ], 
-                    href = '', )
+                        ], )
             )
         else:
             return SpotPricesHistoryReport(

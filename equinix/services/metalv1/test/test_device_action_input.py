@@ -36,13 +36,12 @@ class TestDeviceActionInput(unittest.TestCase):
         model = DeviceActionInput()
         if include_optional:
             return DeviceActionInput(
-                deprovision_fast = True,
+                type = 'power_on',
                 force_delete = True,
-                href = '',
-                ipxe_script_url = '',
-                operating_system = 'ubuntu_22_04',
+                deprovision_fast = True,
                 preserve_data = True,
-                type = 'power_on'
+                operating_system = 'ubuntu_22_04',
+                ipxe_script_url = ''
             )
         else:
             return DeviceActionInput(

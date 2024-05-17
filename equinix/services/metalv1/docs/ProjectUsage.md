@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **facility** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **plan** | **str** |  | [optional] 
 **plan_version** | **str** |  | [optional] 

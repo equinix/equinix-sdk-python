@@ -69,13 +69,6 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
-    def test_find_users_all_pages(self):
-        """Test case for find_users_all_pages
-
-        Retrieve all users  # noqa: E501
-        """
-        pass
-
     def test_update_current_user(self) -> None:
         """Test case for update_current_user
 

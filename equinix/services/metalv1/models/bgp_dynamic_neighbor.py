@@ -31,18 +31,18 @@ class BgpDynamicNeighbor(BaseModel):
     """
     BgpDynamicNeighbor
     """ # noqa: E501
+    id: Optional[StrictStr] = Field(default=None, description="The unique identifier for the resource")
     bgp_neighbor_asn: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The ASN of the dynamic BGP neighbor")
     bgp_neighbor_range: Optional[StrictStr] = Field(default=None, description="Network range of the dynamic BGP neighbor in CIDR format")
-    created_at: Optional[datetime] = None
-    created_by: Optional[UserLimited] = None
-    href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = Field(default=None, description="The unique identifier for the resource")
     metal_gateway: Optional[VrfMetalGateway] = None
     state: Optional[StrictStr] = None
-    tags: Optional[List[StrictStr]] = None
+    href: Optional[StrictStr] = None
+    created_at: Optional[datetime] = None
+    created_by: Optional[UserLimited] = None
     updated_at: Optional[datetime] = None
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_neighbor_asn", "bgp_neighbor_range", "created_at", "created_by", "href", "id", "metal_gateway", "state", "tags", "updated_at"]
+    __properties: ClassVar[List[str]] = ["id", "bgp_neighbor_asn", "bgp_neighbor_range", "metal_gateway", "state", "href", "created_at", "created_by", "updated_at", "tags"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -92,10 +92,10 @@ class BgpDynamicNeighbor(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "created_at",
-            "href",
             "id",
             "state",
+            "href",
+            "created_at",
             "updated_at",
             "additional_properties",
         ])
@@ -105,12 +105,12 @@ class BgpDynamicNeighbor(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of created_by
-        if self.created_by:
-            _dict['created_by'] = self.created_by.to_dict()
         # override the default output from pydantic by calling `to_dict()` of metal_gateway
         if self.metal_gateway:
             _dict['metal_gateway'] = self.metal_gateway.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of created_by
+        if self.created_by:
+            _dict['created_by'] = self.created_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -128,16 +128,16 @@ class BgpDynamicNeighbor(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
             "bgp_neighbor_asn": obj.get("bgp_neighbor_asn"),
             "bgp_neighbor_range": obj.get("bgp_neighbor_range"),
-            "created_at": obj.get("created_at"),
-            "created_by": UserLimited.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
-            "href": obj.get("href"),
-            "id": obj.get("id"),
             "metal_gateway": VrfMetalGateway.from_dict(obj["metal_gateway"]) if obj.get("metal_gateway") is not None else None,
             "state": obj.get("state"),
-            "tags": obj.get("tags"),
-            "updated_at": obj.get("updated_at")
+            "href": obj.get("href"),
+            "created_at": obj.get("created_at"),
+            "created_by": UserLimited.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
+            "updated_at": obj.get("updated_at"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

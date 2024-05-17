@@ -37,9 +37,7 @@ class TestSpotPricesPerNewFacility(unittest.TestCase):
         if include_optional:
             return SpotPricesPerNewFacility(
                 baremetal_1e = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                    href = '', 
-                    price = 1.337, ),
-                href = ''
+                    price = 1.337, )
             )
         else:
             return SpotPricesPerNewFacility(

@@ -28,9 +28,8 @@ class ActivateHardwareReservationRequest(BaseModel):
     ActivateHardwareReservationRequest
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href"]
+    __properties: ClassVar[List[str]] = ["description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +89,7 @@ class ActivateHardwareReservationRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "description": obj.get("description"),
-            "href": obj.get("href")
+            "description": obj.get("description")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

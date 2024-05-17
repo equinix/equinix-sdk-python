@@ -28,9 +28,8 @@ class IPAvailabilitiesList(BaseModel):
     IPAvailabilitiesList
     """ # noqa: E501
     available: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["available", "href"]
+    __properties: ClassVar[List[str]] = ["available"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +89,7 @@ class IPAvailabilitiesList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "available": obj.get("available"),
-            "href": obj.get("href")
+            "available": obj.get("available")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

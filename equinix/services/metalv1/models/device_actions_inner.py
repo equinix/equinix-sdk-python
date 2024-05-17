@@ -27,11 +27,10 @@ class DeviceActionsInner(BaseModel):
     """
     DeviceActionsInner
     """ # noqa: E501
-    href: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "name", "type"]
+    __properties: ClassVar[List[str]] = ["type", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,9 +90,8 @@ class DeviceActionsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
-            "name": obj.get("name"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "name": obj.get("name")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

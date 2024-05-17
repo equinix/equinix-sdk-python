@@ -37,7 +37,6 @@ class TestAuthTokenInput(unittest.TestCase):
         if include_optional:
             return AuthTokenInput(
                 description = '',
-                href = '',
                 read_only = True
             )
         else:

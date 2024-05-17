@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] 
 **devices** | [**List[Href]**](Href.md) |  | [optional] 
 **error_messages** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **project** | [**Href**](Href.md) |  | [optional] 
 **quantity** | **int** |  | [optional] 

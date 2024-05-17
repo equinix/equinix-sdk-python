@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.vrf_bgp_neighbors_bgp_neighbors_inner import VrfBGPNeighborsBgpNeighborsInner
 from typing import Optional, Set
@@ -29,9 +29,8 @@ class VrfBGPNeighbors(BaseModel):
     VrfBGPNeighbors
     """ # noqa: E501
     bgp_neighbors: Optional[List[VrfBGPNeighborsBgpNeighborsInner]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_neighbors", "href"]
+    __properties: ClassVar[List[str]] = ["bgp_neighbors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,8 +97,7 @@ class VrfBGPNeighbors(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bgp_neighbors": [VrfBGPNeighborsBgpNeighborsInner.from_dict(_item) for _item in obj["bgp_neighbors"]] if obj.get("bgp_neighbors") is not None else None,
-            "href": obj.get("href")
+            "bgp_neighbors": [VrfBGPNeighborsBgpNeighborsInner.from_dict(_item) for _item in obj["bgp_neighbors"]] if obj.get("bgp_neighbors") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

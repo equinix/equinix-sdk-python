@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **dfw1** | [**SpotPricesPerNewFacility**](SpotPricesPerNewFacility.md) |  | [optional] 
 **ewr1** | [**SpotPricesPerFacility**](SpotPricesPerFacility.md) |  | [optional] 
 **fra1** | [**SpotPricesPerNewFacility**](SpotPricesPerNewFacility.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **iad1** | [**SpotPricesPerNewFacility**](SpotPricesPerNewFacility.md) |  | [optional] 
 **lax1** | [**SpotPricesPerNewFacility**](SpotPricesPerNewFacility.md) |  | [optional] 
 **nrt1** | [**SpotPricesPerFacility**](SpotPricesPerFacility.md) |  | [optional] 

@@ -34,19 +34,19 @@ class VirtualNetwork(BaseModel):
     """ # noqa: E501
     assigned_to: Optional[Project] = None
     assigned_to_virtual_circuit: Optional[StrictBool] = Field(default=None, description="True if the virtual network is attached to a virtual circuit. False if not.")
-    created_at: Optional[datetime] = None
     description: Optional[StrictStr] = None
     facility: Optional[Href] = None
     href: Optional[StrictStr] = None
+    created_at: Optional[datetime] = None
     id: Optional[StrictStr] = None
     instances: Optional[List[Device]] = Field(default=None, description="A list of instances with ports currently associated to this Virtual Network.")
     metal_gateways: Optional[List[MetalGatewayLite]] = Field(default=None, description="A list of metal gateways currently associated to this Virtual Network.")
     metro: Optional[Metro] = None
     metro_code: Optional[StrictStr] = Field(default=None, description="The Metro code of the metro in which this Virtual Network is defined.")
-    tags: Optional[List[StrictStr]] = None
     vxlan: Optional[StrictInt] = None
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["assigned_to", "assigned_to_virtual_circuit", "created_at", "description", "facility", "href", "id", "instances", "metal_gateways", "metro", "metro_code", "tags", "vxlan"]
+    __properties: ClassVar[List[str]] = ["assigned_to", "assigned_to_virtual_circuit", "description", "facility", "href", "created_at", "id", "instances", "metal_gateways", "metro", "metro_code", "vxlan", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,17 +131,17 @@ class VirtualNetwork(BaseModel):
         _obj = cls.model_validate({
             "assigned_to": Project.from_dict(obj["assigned_to"]) if obj.get("assigned_to") is not None else None,
             "assigned_to_virtual_circuit": obj.get("assigned_to_virtual_circuit"),
-            "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "facility": Href.from_dict(obj["facility"]) if obj.get("facility") is not None else None,
             "href": obj.get("href"),
+            "created_at": obj.get("created_at"),
             "id": obj.get("id"),
             "instances": [Device.from_dict(_item) for _item in obj["instances"]] if obj.get("instances") is not None else None,
             "metal_gateways": [MetalGatewayLite.from_dict(_item) for _item in obj["metal_gateways"]] if obj.get("metal_gateways") is not None else None,
             "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
             "metro_code": obj.get("metro_code"),
-            "tags": obj.get("tags"),
-            "vxlan": obj.get("vxlan")
+            "vxlan": obj.get("vxlan"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

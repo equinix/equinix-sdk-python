@@ -39,7 +39,6 @@ class TestVlanFabricVcCreateInput(unittest.TestCase):
                 contact_email = '',
                 description = '',
                 facility_id = '',
-                href = '',
                 metro = '',
                 name = '',
                 project = '',

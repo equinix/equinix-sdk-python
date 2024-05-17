@@ -29,9 +29,8 @@ class IPAssignmentInput(BaseModel):
     """ # noqa: E501
     address: StrictStr
     customdata: Optional[Dict[str, Any]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "customdata", "href"]
+    __properties: ClassVar[List[str]] = ["address", "customdata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +91,7 @@ class IPAssignmentInput(BaseModel):
 
         _obj = cls.model_validate({
             "address": obj.get("address"),
-            "customdata": obj.get("customdata"),
-            "href": obj.get("href")
+            "customdata": obj.get("customdata")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

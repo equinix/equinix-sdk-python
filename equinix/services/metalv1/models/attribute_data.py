@@ -27,13 +27,12 @@ class AttributeData(BaseModel):
     """
     AttributeData
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     latest: Optional[StrictBool] = Field(default=None, description="Boolean flag to know if the firmware set is the latest for the model and vendor")
     model: Optional[StrictStr] = Field(default=None, description="Model on which this firmware set can be applied")
-    plan: Optional[StrictStr] = Field(default=None, description="Plan where the firmware set can be applied")
     vendor: Optional[StrictStr] = Field(default=None, description="Vendor on which this firmware set can be applied")
+    plan: Optional[StrictStr] = Field(default=None, description="Plan where the firmware set can be applied")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "latest", "model", "plan", "vendor"]
+    __properties: ClassVar[List[str]] = ["latest", "model", "vendor", "plan"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,8 +73,8 @@ class AttributeData(BaseModel):
         excluded_fields: Set[str] = set([
             "latest",
             "model",
-            "plan",
             "vendor",
+            "plan",
             "additional_properties",
         ])
 
@@ -101,11 +100,10 @@ class AttributeData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "latest": obj.get("latest"),
             "model": obj.get("model"),
-            "plan": obj.get("plan"),
-            "vendor": obj.get("vendor")
+            "vendor": obj.get("vendor"),
+            "plan": obj.get("plan")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

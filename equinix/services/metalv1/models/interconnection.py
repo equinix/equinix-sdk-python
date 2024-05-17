@@ -36,13 +36,9 @@ class Interconnection(BaseModel):
     """
     Interconnection
     """ # noqa: E501
-    authorization_code: Optional[StrictStr] = Field(default=None, description="For Fabric VCs (Metal Billed), this allows Fabric to connect the Metal network to any connection Fabric facilitates. Fabric uses this token to be able to give more detailed information about the Metal end of the network, when viewing resources from within Fabric.")
     contact_email: Optional[StrictStr] = None
-    created_at: Optional[datetime] = None
     description: Optional[StrictStr] = None
-    fabric_provider: Optional[InterconnectionFabricProvider] = None
     facility: Optional[Facility] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     metro: Optional[Metro] = Field(default=None, description="The location of where the shared or Dedicated Port is located. For interconnections with Dedicated Ports,   this will be the location of the Dedicated Ports. For Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports   as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed),    this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here.")
     mode: Optional[StrictStr] = Field(default=None, description="The mode of the interconnection (only relevant to Dedicated Ports). Shared connections won't have this field. Can be either 'standard' or 'tunnel'.   The default mode of an interconnection on a Dedicated Port is 'standard'. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances.")
@@ -51,16 +47,19 @@ class Interconnection(BaseModel):
     ports: Optional[List[InterconnectionPort]] = Field(default=None, description="For Fabric VCs, these represent Virtual Port(s) created for the interconnection. For dedicated interconnections, these represent the Dedicated Port(s).")
     project: Optional[Project] = None
     redundancy: Optional[StrictStr] = Field(default=None, description="Either 'primary', meaning a single interconnection, or 'redundant', meaning a redundant interconnection.")
-    requested_by: Optional[Href] = None
     service_tokens: Optional[List[FabricServiceToken]] = Field(default=None, description="For Fabric VCs (Metal Billed), this will show details of the A-Side service tokens issued for the interconnection. For Fabric VCs (Fabric Billed), this will show the details of the Z-Side service tokens issued for the interconnection. Dedicated interconnections will not have any service tokens issued. There will be one per interconnection, so for redundant interconnections, there should be two service tokens issued.")
+    authorization_code: Optional[StrictStr] = Field(default=None, description="For Fabric VCs (Metal Billed), this allows Fabric to connect the Metal network to any connection Fabric facilitates. Fabric uses this token to be able to give more detailed information about the Metal end of the network, when viewing resources from within Fabric.")
     speed: Optional[StrictInt] = Field(default=None, description="For interconnections on Dedicated Ports and shared connections, this represents the interconnection's speed in bps. For Fabric VCs, this field refers to the maximum speed of the interconnection in bps. This value will default to 10Gbps for Fabric VCs (Fabric Billed).")
     status: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     token: Optional[StrictStr] = Field(default=None, description="This token is used for shared interconnections to be used as the Fabric Token. This field is entirely deprecated.")
     type: Optional[StrictStr] = Field(default=None, description="The 'shared' type of interconnection refers to shared connections, or later also known as Fabric Virtual Connections (or Fabric VCs). The 'dedicated' type of interconnection refers to interconnections created with Dedicated Ports. The 'shared_port_vlan' type of interconnection refers to shared connections created without service tokens. The 'shared_port_vlan_to_csp' type of interconnection refers to connections created directly to a supported cloud service provider.")
+    fabric_provider: Optional[InterconnectionFabricProvider] = None
+    created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
+    requested_by: Optional[Href] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["authorization_code", "contact_email", "created_at", "description", "fabric_provider", "facility", "href", "id", "metro", "mode", "name", "organization", "ports", "project", "redundancy", "requested_by", "service_tokens", "speed", "status", "tags", "token", "type", "updated_at"]
+    __properties: ClassVar[List[str]] = ["contact_email", "description", "facility", "id", "metro", "mode", "name", "organization", "ports", "project", "redundancy", "service_tokens", "authorization_code", "speed", "status", "tags", "token", "type", "fabric_provider", "created_at", "updated_at", "requested_by"]
 
     @field_validator('mode')
     def mode_validate_enum(cls, value):
@@ -133,9 +132,6 @@ class Interconnection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of fabric_provider
-        if self.fabric_provider:
-            _dict['fabric_provider'] = self.fabric_provider.to_dict()
         # override the default output from pydantic by calling `to_dict()` of facility
         if self.facility:
             _dict['facility'] = self.facility.to_dict()
@@ -155,9 +151,6 @@ class Interconnection(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of requested_by
-        if self.requested_by:
-            _dict['requested_by'] = self.requested_by.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in service_tokens (list)
         _items = []
         if self.service_tokens:
@@ -165,6 +158,12 @@ class Interconnection(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['service_tokens'] = _items
+        # override the default output from pydantic by calling `to_dict()` of fabric_provider
+        if self.fabric_provider:
+            _dict['fabric_provider'] = self.fabric_provider.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of requested_by
+        if self.requested_by:
+            _dict['requested_by'] = self.requested_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -182,13 +181,9 @@ class Interconnection(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "authorization_code": obj.get("authorization_code"),
             "contact_email": obj.get("contact_email"),
-            "created_at": obj.get("created_at"),
             "description": obj.get("description"),
-            "fabric_provider": InterconnectionFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
             "facility": Facility.from_dict(obj["facility"]) if obj.get("facility") is not None else None,
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
             "mode": obj.get("mode"),
@@ -197,14 +192,17 @@ class Interconnection(BaseModel):
             "ports": [InterconnectionPort.from_dict(_item) for _item in obj["ports"]] if obj.get("ports") is not None else None,
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "redundancy": obj.get("redundancy"),
-            "requested_by": Href.from_dict(obj["requested_by"]) if obj.get("requested_by") is not None else None,
             "service_tokens": [FabricServiceToken.from_dict(_item) for _item in obj["service_tokens"]] if obj.get("service_tokens") is not None else None,
+            "authorization_code": obj.get("authorization_code"),
             "speed": obj.get("speed"),
             "status": obj.get("status"),
             "tags": obj.get("tags"),
             "token": obj.get("token"),
             "type": obj.get("type"),
-            "updated_at": obj.get("updated_at")
+            "fabric_provider": InterconnectionFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at"),
+            "requested_by": Href.from_dict(obj["requested_by"]) if obj.get("requested_by") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

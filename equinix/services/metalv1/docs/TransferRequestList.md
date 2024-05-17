@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **transfers** | [**List[TransferRequest]**](TransferRequest.md) |  | [optional] 
 
 ## Example

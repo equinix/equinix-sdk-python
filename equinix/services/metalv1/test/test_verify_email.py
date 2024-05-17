@@ -36,7 +36,6 @@ class TestVerifyEmail(unittest.TestCase):
         model = VerifyEmail()
         if include_optional:
             return VerifyEmail(
-                href = '',
                 user_token = ''
             )
         else:

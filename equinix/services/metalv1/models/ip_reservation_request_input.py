@@ -32,13 +32,12 @@ class IPReservationRequestInput(BaseModel):
     details: Optional[StrictStr] = None
     facility: Optional[StrictStr] = None
     fail_on_approval_required: Optional[StrictBool] = None
-    href: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The code of the metro you are requesting the IP reservation in.")
     quantity: StrictInt
     tags: Optional[List[StrictStr]] = None
     type: StrictStr
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["comments", "customdata", "details", "facility", "fail_on_approval_required", "href", "metro", "quantity", "tags", "type"]
+    __properties: ClassVar[List[str]] = ["comments", "customdata", "details", "facility", "fail_on_approval_required", "metro", "quantity", "tags", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,7 +102,6 @@ class IPReservationRequestInput(BaseModel):
             "details": obj.get("details"),
             "facility": obj.get("facility"),
             "fail_on_approval_required": obj.get("fail_on_approval_required"),
-            "href": obj.get("href"),
             "metro": obj.get("metro"),
             "quantity": obj.get("quantity"),
             "tags": obj.get("tags"),

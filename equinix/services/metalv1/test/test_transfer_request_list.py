@@ -36,7 +36,6 @@ class TestTransferRequestList(unittest.TestCase):
         model = TransferRequestList()
         if include_optional:
             return TransferRequestList(
-                href = '',
                 transfers = [
                     equinix.services.metalv1.models.transfer_request.TransferRequest(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

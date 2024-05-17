@@ -19,29 +19,28 @@ import json
 import pprint
 import re  # noqa: F401
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Optional
-from equinix.services.metalv1.models.ip_reservation import IPReservation
+from typing import Any, Dict, Optional
 from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
-IPRESERVATIONLISTIPADDRESSESINNER_ANY_OF_SCHEMAS = ["IPReservation", "VrfIpReservation"]
+IPRESERVATIONLISTIPADDRESSESINNER_ANY_OF_SCHEMAS = ["VrfIpReservation", "object"]
 
 class IPReservationListIpAddressesInner(BaseModel):
     """
     IPReservationListIpAddressesInner
     """
 
-    # data type: IPReservation
-    anyof_schema_1_validator: Optional[IPReservation] = None
+    # data type: object
+    anyof_schema_1_validator: Optional[Dict[str, Any]] = None
     # data type: VrfIpReservation
     anyof_schema_2_validator: Optional[VrfIpReservation] = None
     if TYPE_CHECKING:
-        actual_instance: Optional[Union[IPReservation, VrfIpReservation]] = None
+        actual_instance: Optional[Union[VrfIpReservation, object]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["IPReservation", "VrfIpReservation"])
+    any_of_schemas: List[str] = Field(default=Literal["VrfIpReservation", "object"])
 
     model_config = {
         "validate_assignment": True,
@@ -62,12 +61,12 @@ class IPReservationListIpAddressesInner(BaseModel):
     def actual_instance_must_validate_anyof(cls, v):
         instance = IPReservationListIpAddressesInner.model_construct()
         error_messages = []
-        # validate data type: IPReservation
-        if not isinstance(v, IPReservation):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `IPReservation`")
-        else:
+        # validate data type: object
+        try:
+            instance.anyof_schema_1_validator = v
             return v
-
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: VrfIpReservation
         if not isinstance(v, VrfIpReservation):
             error_messages.append(f"Error! Input type `{type(v)}` is not `VrfIpReservation`")
@@ -76,7 +75,7 @@ class IPReservationListIpAddressesInner(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in IPReservationListIpAddressesInner with anyOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in IPReservationListIpAddressesInner with anyOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -89,12 +88,15 @@ class IPReservationListIpAddressesInner(BaseModel):
         """Returns the object represented by the json string"""
         instance = cls.model_construct()
         error_messages = []
-        # anyof_schema_1_validator: Optional[IPReservation] = None
+        # deserialize data into object
         try:
-            instance.actual_instance = IPReservation.from_json(json_str)
+            # validation
+            instance.anyof_schema_1_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.anyof_schema_1_validator
             return instance
         except (ValidationError, ValueError) as e:
-             error_messages.append(str(e))
+            error_messages.append(str(e))
         # anyof_schema_2_validator: Optional[VrfIpReservation] = None
         try:
             instance.actual_instance = VrfIpReservation.from_json(json_str)
@@ -104,7 +106,7 @@ class IPReservationListIpAddressesInner(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into IPReservationListIpAddressesInner with anyOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into IPReservationListIpAddressesInner with anyOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -118,7 +120,7 @@ class IPReservationListIpAddressesInner(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], IPReservation, VrfIpReservation]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], VrfIpReservation, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

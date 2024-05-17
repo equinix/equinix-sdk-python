@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.spot_prices_per_facility import SpotPricesPerFacility
 from typing import Optional, Set
@@ -31,13 +31,12 @@ class SpotMarketPricesPerMetroReport(BaseModel):
     am: Optional[SpotPricesPerFacility] = None
     ch: Optional[SpotPricesPerFacility] = None
     da: Optional[SpotPricesPerFacility] = None
-    href: Optional[StrictStr] = None
     la: Optional[SpotPricesPerFacility] = None
     ny: Optional[SpotPricesPerFacility] = None
     sg: Optional[SpotPricesPerFacility] = None
     sv: Optional[SpotPricesPerFacility] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["am", "ch", "da", "href", "la", "ny", "sg", "sv"]
+    __properties: ClassVar[List[str]] = ["am", "ch", "da", "la", "ny", "sg", "sv"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,7 +120,6 @@ class SpotMarketPricesPerMetroReport(BaseModel):
             "am": SpotPricesPerFacility.from_dict(obj["am"]) if obj.get("am") is not None else None,
             "ch": SpotPricesPerFacility.from_dict(obj["ch"]) if obj.get("ch") is not None else None,
             "da": SpotPricesPerFacility.from_dict(obj["da"]) if obj.get("da") is not None else None,
-            "href": obj.get("href"),
             "la": SpotPricesPerFacility.from_dict(obj["la"]) if obj.get("la") is not None else None,
             "ny": SpotPricesPerFacility.from_dict(obj["ny"]) if obj.get("ny") is not None else None,
             "sg": SpotPricesPerFacility.from_dict(obj["sg"]) if obj.get("sg") is not None else None,

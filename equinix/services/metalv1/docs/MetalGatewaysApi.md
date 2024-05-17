@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**delete_metal_gateway**](MetalGatewaysApi.md#delete_metal_gateway) | **DELETE** /metal-gateways/{id} | Deletes the metal gateway
 [**find_metal_gateway_by_id**](MetalGatewaysApi.md#find_metal_gateway_by_id) | **GET** /metal-gateways/{id} | Returns the metal gateway
 [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project) | **GET** /projects/{project_id}/metal-gateways | Returns all metal gateways for a project
-[**find_metal_gateways_by_project_all_pages**](MetalGatewaysApi.md#find_metal_gateways_by_project_all_pages) | **GET** /projects/{project_id}/metal-gateways | Returns all metal gateways for a project, fetches all the pages
 [**get_metal_gateway_elastic_ips**](MetalGatewaysApi.md#get_metal_gateway_elastic_ips) | **GET** /metal-gateways/{id}/ips | List Metal Gateway Elastic IPs
 
 
@@ -450,9 +449,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_metal_gateways_by_project_all_pages**
-> MetalGatewayList find_metal_gateways_by_project_all_pages(project_id, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project).
 # **get_metal_gateway_elastic_ips**
 > IPAssignmentList get_metal_gateway_elastic_ips(id, include=include, exclude=exclude)
 

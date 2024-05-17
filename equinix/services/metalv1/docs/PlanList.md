@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **plans** | [**List[Plan]**](Plan.md) |  | [optional] 
 
 ## Example

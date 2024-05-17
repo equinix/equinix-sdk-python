@@ -28,18 +28,18 @@ class InterconnectionPort(BaseModel):
     """
     InterconnectionPort
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    link_status: Optional[StrictStr] = None
-    name: Optional[StrictStr] = None
     organization: Optional[Href] = None
     role: Optional[StrictStr] = Field(default=None, description="Either 'primary' or 'secondary'.")
-    speed: Optional[StrictInt] = None
     status: Optional[StrictStr] = Field(default=None, description="For both Fabric VCs and Dedicated Ports, this will be 'requested' on creation and 'deleting' on deletion. Once the Fabric VC has found its corresponding Fabric connection, this will turn to 'active'. For Dedicated Ports, once the dedicated port is associated, this will also turn to 'active'. For Fabric VCs, this can turn into an 'expired' state if the service token associated is expired.")
     switch_id: Optional[StrictStr] = Field(default=None, description="A switch 'short ID'")
     virtual_circuits: Optional[List[VirtualCircuit]] = None
+    name: Optional[StrictStr] = None
+    speed: Optional[StrictInt] = None
+    link_status: Optional[StrictStr] = None
+    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "id", "link_status", "name", "organization", "role", "speed", "status", "switch_id", "virtual_circuits"]
+    __properties: ClassVar[List[str]] = ["id", "organization", "role", "status", "switch_id", "virtual_circuits", "name", "speed", "link_status", "href"]
 
     @field_validator('role')
     def role_validate_enum(cls, value):
@@ -129,16 +129,16 @@ class InterconnectionPort(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "id": obj.get("id"),
-            "link_status": obj.get("link_status"),
-            "name": obj.get("name"),
             "organization": Href.from_dict(obj["organization"]) if obj.get("organization") is not None else None,
             "role": obj.get("role"),
-            "speed": obj.get("speed"),
             "status": obj.get("status"),
             "switch_id": obj.get("switch_id"),
-            "virtual_circuits": [VirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None
+            "virtual_circuits": [VirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None,
+            "name": obj.get("name"),
+            "speed": obj.get("speed"),
+            "link_status": obj.get("link_status"),
+            "href": obj.get("href")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

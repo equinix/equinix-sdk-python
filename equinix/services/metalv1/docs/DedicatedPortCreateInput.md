@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **contact_email** | **str** | The preferred email used for communication and notifications about the Equinix Fabric interconnection. Required when using a Project API key. Optional and defaults to the primary user email address when using a User API key. | [optional] 
 **description** | **str** |  | [optional] 
 **facility_id** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **metro** | **str** | A Metro ID or code. For interconnections with Dedicated Ports, this will be the location of the issued Dedicated Ports. | 
 **mode** | **str** | The mode of the interconnection (only relevant to Dedicated Ports). Fabric VCs won&#39;t have this field. Can be either &#39;standard&#39; or &#39;tunnel&#39;.   The default mode of an interconnection on a Dedicated Port is &#39;standard&#39;. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances. | [optional] 
 **name** | **str** |  | 

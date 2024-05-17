@@ -30,15 +30,14 @@ class FirmwareSet(BaseModel):
     """
     Represents a Firmware Set
     """ # noqa: E501
+    uuid: StrictStr = Field(description="Firmware Set UUID")
+    name: StrictStr = Field(description="Firmware Set Name")
+    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
+    updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
     attributes: Optional[List[Attribute]] = Field(default=None, description="Represents a list of attributes")
     component_firmware: Optional[List[Component]] = Field(default=None, description="List of components versions")
-    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
-    href: Optional[StrictStr] = None
-    name: StrictStr = Field(description="Firmware Set Name")
-    updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
-    uuid: StrictStr = Field(description="Firmware Set UUID")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["attributes", "component_firmware", "created_at", "href", "name", "updated_at", "uuid"]
+    __properties: ClassVar[List[str]] = ["uuid", "name", "created_at", "updated_at", "attributes", "component_firmware"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,10 +76,10 @@ class FirmwareSet(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "created_at",
-            "name",
-            "updated_at",
             "uuid",
+            "name",
+            "created_at",
+            "updated_at",
             "additional_properties",
         ])
 
@@ -120,13 +119,12 @@ class FirmwareSet(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "attributes": [Attribute.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
-            "component_firmware": [Component.from_dict(_item) for _item in obj["component_firmware"]] if obj.get("component_firmware") is not None else None,
-            "created_at": obj.get("created_at"),
-            "href": obj.get("href"),
+            "uuid": obj.get("uuid"),
             "name": obj.get("name"),
+            "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at"),
-            "uuid": obj.get("uuid")
+            "attributes": [Attribute.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
+            "component_firmware": [Component.from_dict(_item) for _item in obj["component_firmware"]] if obj.get("component_firmware") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

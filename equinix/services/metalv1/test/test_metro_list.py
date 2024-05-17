@@ -36,12 +36,10 @@ class TestMetroList(unittest.TestCase):
         model = MetroList()
         if include_optional:
             return MetroList(
-                href = '',
                 metros = [
                     equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
-                        href = '', 
                         id = '', 
                         name = '', )
                     ]

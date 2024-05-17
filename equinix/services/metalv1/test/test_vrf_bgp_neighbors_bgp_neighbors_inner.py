@@ -36,8 +36,8 @@ class TestVrfBGPNeighborsBgpNeighborsInner(unittest.TestCase):
         model = VrfBGPNeighborsBgpNeighborsInner()
         if include_optional:
             return VrfBGPNeighborsBgpNeighborsInner(
-                peer_as = 65000,
                 peer_ip = '8.8.8.8',
+                peer_as = 65000,
                 state = 'up'
             )
         else:

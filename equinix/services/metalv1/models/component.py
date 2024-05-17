@@ -28,20 +28,19 @@ class Component(BaseModel):
     """
     Component
     """ # noqa: E501
-    checksum: Optional[StrictStr] = Field(default=None, description="File checksum")
-    component: Optional[StrictStr] = Field(default=None, description="Component type")
-    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
-    filename: Optional[StrictStr] = Field(default=None, description="name of the file")
-    href: Optional[StrictStr] = None
-    model: Optional[List[StrictStr]] = Field(default=None, description="List of models where this component version can be applied")
-    repository_url: Optional[StrictStr] = Field(default=None, description="Location of the file in the repository")
-    updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
-    upstream_url: Optional[StrictStr] = Field(default=None, description="Location of the file")
     uuid: Optional[StrictStr] = Field(default=None, description="Component UUID")
     vendor: Optional[StrictStr] = Field(default=None, description="Component vendor")
+    model: Optional[List[StrictStr]] = Field(default=None, description="List of models where this component version can be applied")
+    filename: Optional[StrictStr] = Field(default=None, description="name of the file")
     version: Optional[StrictStr] = Field(default=None, description="Version of the component")
+    component: Optional[StrictStr] = Field(default=None, description="Component type")
+    checksum: Optional[StrictStr] = Field(default=None, description="File checksum")
+    upstream_url: Optional[StrictStr] = Field(default=None, description="Location of the file")
+    repository_url: Optional[StrictStr] = Field(default=None, description="Location of the file in the repository")
+    created_at: Optional[datetime] = Field(default=None, description="Datetime when the block was created.")
+    updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["checksum", "component", "created_at", "filename", "href", "model", "repository_url", "updated_at", "upstream_url", "uuid", "vendor", "version"]
+    __properties: ClassVar[List[str]] = ["uuid", "vendor", "model", "filename", "version", "component", "checksum", "upstream_url", "repository_url", "created_at", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,17 +86,17 @@ class Component(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "checksum",
-            "component",
-            "created_at",
-            "filename",
-            "model",
-            "repository_url",
-            "updated_at",
-            "upstream_url",
             "uuid",
             "vendor",
+            "model",
+            "filename",
             "version",
+            "component",
+            "checksum",
+            "upstream_url",
+            "repository_url",
+            "created_at",
+            "updated_at",
             "additional_properties",
         ])
 
@@ -123,18 +122,17 @@ class Component(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "checksum": obj.get("checksum"),
-            "component": obj.get("component"),
-            "created_at": obj.get("created_at"),
-            "filename": obj.get("filename"),
-            "href": obj.get("href"),
-            "model": obj.get("model"),
-            "repository_url": obj.get("repository_url"),
-            "updated_at": obj.get("updated_at"),
-            "upstream_url": obj.get("upstream_url"),
             "uuid": obj.get("uuid"),
             "vendor": obj.get("vendor"),
-            "version": obj.get("version")
+            "model": obj.get("model"),
+            "filename": obj.get("filename"),
+            "version": obj.get("version"),
+            "component": obj.get("component"),
+            "checksum": obj.get("checksum"),
+            "upstream_url": obj.get("upstream_url"),
+            "repository_url": obj.get("repository_url"),
+            "created_at": obj.get("created_at"),
+            "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

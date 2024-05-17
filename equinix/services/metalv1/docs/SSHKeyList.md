@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **ssh_keys** | [**List[SSHKey]**](SSHKey.md) |  | [optional] 
 
 ## Example

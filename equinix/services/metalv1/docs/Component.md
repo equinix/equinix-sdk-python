@@ -5,18 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**checksum** | **str** | File checksum | [optional] [readonly] 
-**component** | **str** | Component type | [optional] [readonly] 
-**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
-**filename** | **str** | name of the file | [optional] [readonly] 
-**href** | **str** |  | [optional] 
-**model** | **List[str]** | List of models where this component version can be applied | [optional] [readonly] 
-**repository_url** | **str** | Location of the file in the repository | [optional] [readonly] 
-**updated_at** | **datetime** | Datetime when the block was updated. | [optional] [readonly] 
-**upstream_url** | **str** | Location of the file | [optional] [readonly] 
 **uuid** | **str** | Component UUID | [optional] [readonly] 
 **vendor** | **str** | Component vendor | [optional] [readonly] 
+**model** | **List[str]** | List of models where this component version can be applied | [optional] [readonly] 
+**filename** | **str** | name of the file | [optional] [readonly] 
 **version** | **str** | Version of the component | [optional] [readonly] 
+**component** | **str** | Component type | [optional] [readonly] 
+**checksum** | **str** | File checksum | [optional] [readonly] 
+**upstream_url** | **str** | Location of the file | [optional] [readonly] 
+**repository_url** | **str** | Location of the file in the repository | [optional] [readonly] 
+**created_at** | **datetime** | Datetime when the block was created. | [optional] [readonly] 
+**updated_at** | **datetime** | Datetime when the block was updated. | [optional] [readonly] 
 
 ## Example
 

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.spot_prices_per_facility import SpotPricesPerFacility
 from equinix.services.metalv1.models.spot_prices_per_new_facility import SpotPricesPerNewFacility
@@ -34,7 +34,6 @@ class SpotPricesReport(BaseModel):
     dfw1: Optional[SpotPricesPerNewFacility] = None
     ewr1: Optional[SpotPricesPerFacility] = None
     fra1: Optional[SpotPricesPerNewFacility] = None
-    href: Optional[StrictStr] = None
     iad1: Optional[SpotPricesPerNewFacility] = None
     lax1: Optional[SpotPricesPerNewFacility] = None
     nrt1: Optional[SpotPricesPerFacility] = None
@@ -45,7 +44,7 @@ class SpotPricesReport(BaseModel):
     syd1: Optional[SpotPricesPerNewFacility] = None
     yyz1: Optional[SpotPricesPerNewFacility] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["ams1", "atl1", "dfw1", "ewr1", "fra1", "href", "iad1", "lax1", "nrt1", "ord1", "sea1", "sin1", "sjc1", "syd1", "yyz1"]
+    __properties: ClassVar[List[str]] = ["ams1", "atl1", "dfw1", "ewr1", "fra1", "iad1", "lax1", "nrt1", "ord1", "sea1", "sin1", "sjc1", "syd1", "yyz1"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -152,7 +151,6 @@ class SpotPricesReport(BaseModel):
             "dfw1": SpotPricesPerNewFacility.from_dict(obj["dfw1"]) if obj.get("dfw1") is not None else None,
             "ewr1": SpotPricesPerFacility.from_dict(obj["ewr1"]) if obj.get("ewr1") is not None else None,
             "fra1": SpotPricesPerNewFacility.from_dict(obj["fra1"]) if obj.get("fra1") is not None else None,
-            "href": obj.get("href"),
             "iad1": SpotPricesPerNewFacility.from_dict(obj["iad1"]) if obj.get("iad1") is not None else None,
             "lax1": SpotPricesPerNewFacility.from_dict(obj["lax1"]) if obj.get("lax1") is not None else None,
             "nrt1": SpotPricesPerFacility.from_dict(obj["nrt1"]) if obj.get("nrt1") is not None else None,

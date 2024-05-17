@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.spot_prices_per_baremetal import SpotPricesPerBaremetal
 from typing import Optional, Set
@@ -36,10 +36,9 @@ class SpotPricesPerFacility(BaseModel):
     baremetal_3: Optional[SpotPricesPerBaremetal] = None
     baremetal_s: Optional[SpotPricesPerBaremetal] = None
     c2_medium_x86: Optional[SpotPricesPerBaremetal] = Field(default=None, alias="c2.medium.x86")
-    href: Optional[StrictStr] = None
     m2_xlarge_x86: Optional[SpotPricesPerBaremetal] = Field(default=None, alias="m2.xlarge.x86")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["baremetal_0", "baremetal_1", "baremetal_2", "baremetal_2a", "baremetal_2a2", "baremetal_3", "baremetal_s", "c2.medium.x86", "href", "m2.xlarge.x86"]
+    __properties: ClassVar[List[str]] = ["baremetal_0", "baremetal_1", "baremetal_2", "baremetal_2a", "baremetal_2a2", "baremetal_3", "baremetal_s", "c2.medium.x86", "m2.xlarge.x86"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,7 +133,6 @@ class SpotPricesPerFacility(BaseModel):
             "baremetal_3": SpotPricesPerBaremetal.from_dict(obj["baremetal_3"]) if obj.get("baremetal_3") is not None else None,
             "baremetal_s": SpotPricesPerBaremetal.from_dict(obj["baremetal_s"]) if obj.get("baremetal_s") is not None else None,
             "c2.medium.x86": SpotPricesPerBaremetal.from_dict(obj["c2.medium.x86"]) if obj.get("c2.medium.x86") is not None else None,
-            "href": obj.get("href"),
             "m2.xlarge.x86": SpotPricesPerBaremetal.from_dict(obj["m2.xlarge.x86"]) if obj.get("m2.xlarge.x86") is not None else None
         })
         # store additional fields in additional_properties

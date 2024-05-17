@@ -36,10 +36,8 @@ class TestOperatingSystem(unittest.TestCase):
         model = OperatingSystem()
         if include_optional:
             return OperatingSystem(
-                default_operating_system = True,
                 distro = '',
                 distro_label = '',
-                href = '',
                 id = '',
                 licensed = True,
                 name = '',
@@ -49,7 +47,8 @@ class TestOperatingSystem(unittest.TestCase):
                     ''
                     ],
                 slug = '',
-                version = ''
+                version = '',
+                default_operating_system = True
             )
         else:
             return OperatingSystem(

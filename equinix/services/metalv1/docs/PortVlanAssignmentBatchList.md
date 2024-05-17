@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batches** | [**List[PortVlanAssignmentBatch]**](PortVlanAssignmentBatch.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

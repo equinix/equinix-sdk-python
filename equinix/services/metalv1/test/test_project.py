@@ -70,15 +70,15 @@ class TestProject(unittest.TestCase):
                     equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
-                tags = [
-                    ''
-                    ],
-                type = 'default',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 url = '',
                 volumes = [
                     equinix.services.metalv1.models.href.Href(
                         href = '', )
+                    ],
+                type = 'default',
+                tags = [
+                    ''
                     ]
             )
         else:

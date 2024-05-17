@@ -36,8 +36,7 @@ class TestPlanAvailableInInnerPrice(unittest.TestCase):
         model = PlanAvailableInInnerPrice()
         if include_optional:
             return PlanAvailableInInnerPrice(
-                hour = 1.23,
-                href = ''
+                hour = 1.23
             )
         else:
             return PlanAvailableInInnerPrice(

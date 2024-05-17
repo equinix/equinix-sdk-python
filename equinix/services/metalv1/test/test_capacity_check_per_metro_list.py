@@ -36,11 +36,9 @@ class TestCapacityCheckPerMetroList(unittest.TestCase):
         model = CapacityCheckPerMetroList()
         if include_optional:
             return CapacityCheckPerMetroList(
-                href = '',
                 servers = [
                     equinix.services.metalv1.models.capacity_check_per_metro_info.CapacityCheckPerMetroInfo(
                         available = True, 
-                        href = '', 
                         metro = '', 
                         plan = '', 
                         quantity = '', )

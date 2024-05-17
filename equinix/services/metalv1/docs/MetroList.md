@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **metros** | [**List[Metro]**](Metro.md) |  | [optional] 
 
 ## Example

@@ -36,7 +36,6 @@ class TestInvitationInput(unittest.TestCase):
         model = InvitationInput()
         if include_optional:
             return InvitationInput(
-                href = '',
                 invitee = '',
                 message = '',
                 organization_id = '',

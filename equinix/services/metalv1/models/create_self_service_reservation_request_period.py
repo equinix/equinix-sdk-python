@@ -28,10 +28,9 @@ class CreateSelfServiceReservationRequestPeriod(BaseModel):
     CreateSelfServiceReservationRequestPeriod
     """ # noqa: E501
     count: Optional[StrictInt] = None
-    href: Optional[StrictStr] = None
     unit: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["count", "href", "unit"]
+    __properties: ClassVar[List[str]] = ["count", "unit"]
 
     @field_validator('count')
     def count_validate_enum(cls, value):
@@ -112,7 +111,6 @@ class CreateSelfServiceReservationRequestPeriod(BaseModel):
 
         _obj = cls.model_validate({
             "count": obj.get("count"),
-            "href": obj.get("href"),
             "unit": obj.get("unit")
         })
         # store additional fields in additional_properties

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.global_bgp_range import GlobalBgpRange
 from typing import Optional, Set
@@ -29,9 +29,8 @@ class GlobalBgpRangeList(BaseModel):
     GlobalBgpRangeList
     """ # noqa: E501
     global_bgp_ranges: Optional[List[GlobalBgpRange]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["global_bgp_ranges", "href"]
+    __properties: ClassVar[List[str]] = ["global_bgp_ranges"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,8 +97,7 @@ class GlobalBgpRangeList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "global_bgp_ranges": [GlobalBgpRange.from_dict(_item) for _item in obj["global_bgp_ranges"]] if obj.get("global_bgp_ranges") is not None else None,
-            "href": obj.get("href")
+            "global_bgp_ranges": [GlobalBgpRange.from_dict(_item) for _item in obj["global_bgp_ranges"]] if obj.get("global_bgp_ranges") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

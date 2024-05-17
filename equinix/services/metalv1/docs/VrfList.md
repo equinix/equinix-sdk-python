@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **vrfs** | [**List[Vrf]**](Vrf.md) |  | [optional] 
 
 ## Example

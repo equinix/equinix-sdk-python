@@ -39,11 +39,9 @@ class TestCapacityList(unittest.TestCase):
                 capacity = {
                     'key' : {
                         'key' : equinix.services.metalv1.models.capacity_level_per_baremetal.CapacityLevelPerBaremetal(
-                            href = '', 
                             level = '', )
                         }
-                    },
-                href = ''
+                    }
             )
         else:
             return CapacityList(

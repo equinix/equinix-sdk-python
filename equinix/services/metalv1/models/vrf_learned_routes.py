@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.vrf_learned_routes_learned_routes_inner import VrfLearnedRoutesLearnedRoutesInner
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class VrfLearnedRoutes(BaseModel):
     """
     VrfLearnedRoutes
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     learned_routes: Optional[List[VrfLearnedRoutesLearnedRoutesInner]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "learned_routes"]
+    __properties: ClassVar[List[str]] = ["learned_routes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VrfLearnedRoutes(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "learned_routes": [VrfLearnedRoutesLearnedRoutesInner.from_dict(_item) for _item in obj["learned_routes"]] if obj.get("learned_routes") is not None else None
         })
         # store additional fields in additional_properties

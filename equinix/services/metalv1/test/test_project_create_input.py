@@ -37,13 +37,12 @@ class TestProjectCreateInput(unittest.TestCase):
         if include_optional:
             return ProjectCreateInput(
                 customdata = None,
-                href = '',
                 name = '0',
                 payment_method_id = '',
+                type = 'default',
                 tags = [
                     ''
-                    ],
-                type = 'default'
+                    ]
             )
         else:
             return ProjectCreateInput(

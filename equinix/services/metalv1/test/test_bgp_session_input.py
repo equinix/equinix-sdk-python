@@ -37,8 +37,7 @@ class TestBGPSessionInput(unittest.TestCase):
         if include_optional:
             return BGPSessionInput(
                 address_family = 'ipv4',
-                default_route = True,
-                href = ''
+                default_route = True
             )
         else:
             return BGPSessionInput(

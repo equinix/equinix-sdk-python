@@ -29,11 +29,10 @@ class CapacityCheckPerFacilityInfo(BaseModel):
     """ # noqa: E501
     available: Optional[StrictBool] = None
     facility: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     plan: Optional[StrictStr] = None
     quantity: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["available", "facility", "href", "plan", "quantity"]
+    __properties: ClassVar[List[str]] = ["available", "facility", "plan", "quantity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +94,6 @@ class CapacityCheckPerFacilityInfo(BaseModel):
         _obj = cls.model_validate({
             "available": obj.get("available"),
             "facility": obj.get("facility"),
-            "href": obj.get("href"),
             "plan": obj.get("plan"),
             "quantity": obj.get("quantity")
         })

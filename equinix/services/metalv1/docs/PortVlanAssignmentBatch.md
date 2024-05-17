@@ -7,14 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created_at** | **datetime** |  | [optional] 
 **error_messages** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **port** | [**Port**](Port.md) |  | [optional] 
-**project** | [**Href**](Href.md) |  | [optional] 
 **quantity** | **int** |  | [optional] 
 **state** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 **vlan_assignments** | [**List[PortVlanAssignmentBatchVlanAssignmentsInner]**](PortVlanAssignmentBatchVlanAssignmentsInner.md) |  | [optional] 
+**project** | [**Href**](Href.md) |  | [optional] 
 
 ## Example
 

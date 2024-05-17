@@ -36,7 +36,6 @@ class TestPortAssignInput(unittest.TestCase):
         model = PortAssignInput()
         if include_optional:
             return PortAssignInput(
-                href = '',
                 vnid = '1001'
             )
         else:

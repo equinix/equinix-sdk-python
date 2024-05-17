@@ -17,25 +17,24 @@ from __future__ import annotations
 import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
-from typing import Any, List, Optional
-from equinix.services.metalv1.models.ip_reservation import IPReservation
+from typing import Any, Dict, List, Optional
 from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self
 
-REQUESTIPRESERVATION201RESPONSE_ONE_OF_SCHEMAS = ["IPReservation", "VrfIpReservation"]
+REQUESTIPRESERVATION201RESPONSE_ONE_OF_SCHEMAS = ["VrfIpReservation", "object"]
 
 class RequestIPReservation201Response(BaseModel):
     """
     RequestIPReservation201Response
     """
-    # data type: IPReservation
-    oneof_schema_1_validator: Optional[IPReservation] = None
+    # data type: object
+    oneof_schema_1_validator: Optional[Dict[str, Any]] = None
     # data type: VrfIpReservation
     oneof_schema_2_validator: Optional[VrfIpReservation] = None
-    actual_instance: Optional[Union[IPReservation, VrfIpReservation]] = None
-    one_of_schemas: List[str] = Field(default=Literal["IPReservation", "VrfIpReservation"])
+    actual_instance: Optional[Union[VrfIpReservation, object]] = None
+    one_of_schemas: List[str] = Field(default=Literal["VrfIpReservation", "object"])
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -58,11 +57,12 @@ class RequestIPReservation201Response(BaseModel):
         instance = RequestIPReservation201Response.model_construct()
         error_messages = []
         match = 0
-        # validate data type: IPReservation
-        if not isinstance(v, IPReservation):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `IPReservation`")
-        else:
+        # validate data type: object
+        try:
+            instance.oneof_schema_1_validator = v
             match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
         # validate data type: VrfIpReservation
         if not isinstance(v, VrfIpReservation):
             error_messages.append(f"Error! Input type `{type(v)}` is not `VrfIpReservation`")
@@ -70,10 +70,10 @@ class RequestIPReservation201Response(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in RequestIPReservation201Response with oneOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in RequestIPReservation201Response with oneOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in RequestIPReservation201Response with oneOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in RequestIPReservation201Response with oneOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -88,9 +88,12 @@ class RequestIPReservation201Response(BaseModel):
         error_messages = []
         match = 0
 
-        # deserialize data into IPReservation
+        # deserialize data into object
         try:
-            instance.actual_instance = IPReservation.from_json(json_str)
+            # validation
+            instance.oneof_schema_1_validator = json.loads(json_str)
+            # assign value to actual_instance
+            instance.actual_instance = instance.oneof_schema_1_validator
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -103,10 +106,10 @@ class RequestIPReservation201Response(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into RequestIPReservation201Response with oneOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into RequestIPReservation201Response with oneOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into RequestIPReservation201Response with oneOf schemas: IPReservation, VrfIpReservation. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into RequestIPReservation201Response with oneOf schemas: VrfIpReservation, object. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -120,7 +123,7 @@ class RequestIPReservation201Response(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], IPReservation, VrfIpReservation]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], VrfIpReservation, object]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

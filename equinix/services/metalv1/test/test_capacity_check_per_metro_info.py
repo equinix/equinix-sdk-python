@@ -37,7 +37,6 @@ class TestCapacityCheckPerMetroInfo(unittest.TestCase):
         if include_optional:
             return CapacityCheckPerMetroInfo(
                 available = True,
-                href = '',
                 metro = '',
                 plan = '',
                 quantity = ''

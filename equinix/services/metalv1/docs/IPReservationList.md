@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **ip_addresses** | [**List[IPReservationListIpAddressesInner]**](IPReservationListIpAddressesInner.md) |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 

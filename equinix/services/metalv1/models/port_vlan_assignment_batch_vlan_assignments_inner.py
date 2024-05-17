@@ -27,13 +27,12 @@ class PortVlanAssignmentBatchVlanAssignmentsInner(BaseModel):
     """
     PortVlanAssignmentBatchVlanAssignmentsInner
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     native: Optional[StrictBool] = None
     state: Optional[StrictStr] = None
     vlan: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "id", "native", "state", "vlan"]
+    __properties: ClassVar[List[str]] = ["id", "native", "state", "vlan"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -103,7 +102,6 @@ class PortVlanAssignmentBatchVlanAssignmentsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "native": obj.get("native"),
             "state": obj.get("state"),

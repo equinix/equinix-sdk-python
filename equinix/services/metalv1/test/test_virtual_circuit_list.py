@@ -36,7 +36,6 @@ class TestVirtualCircuitList(unittest.TestCase):
         model = VirtualCircuitList()
         if include_optional:
             return VirtualCircuitList(
-                href = '',
                 virtual_circuits = [
                     null
                     ]

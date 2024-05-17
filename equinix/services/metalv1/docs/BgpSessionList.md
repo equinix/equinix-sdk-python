@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bgp_sessions** | [**List[BgpSession]**](BgpSession.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

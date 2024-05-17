@@ -38,7 +38,6 @@ class TestUserUpdateInput(unittest.TestCase):
             return UserUpdateInput(
                 customdata = None,
                 first_name = '',
-                href = '',
                 last_name = '',
                 password = '',
                 phone_number = '',

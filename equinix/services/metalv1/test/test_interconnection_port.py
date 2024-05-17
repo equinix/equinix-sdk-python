@@ -36,19 +36,19 @@ class TestInterconnectionPort(unittest.TestCase):
         model = InterconnectionPort()
         if include_optional:
             return InterconnectionPort(
-                href = '',
                 id = '',
-                link_status = '',
-                name = '',
                 organization = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 role = 'primary',
-                speed = 56,
                 status = 'requested',
                 switch_id = '',
                 virtual_circuits = [
                     null
-                    ]
+                    ],
+                name = '',
+                speed = 56,
+                link_status = '',
+                href = ''
             )
         else:
             return InterconnectionPort(

@@ -27,10 +27,9 @@ class MoveHardwareReservationRequest(BaseModel):
     """
     MoveHardwareReservationRequest
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     project_id: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "project_id"]
+    __properties: ClassVar[List[str]] = ["project_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class MoveHardwareReservationRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "project_id": obj.get("project_id")
         })
         # store additional fields in additional_properties

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **servers** | [**List[ServerInfo]**](ServerInfo.md) |  | [optional] 
 
 ## Example

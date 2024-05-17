@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **latest** | **bool** | Boolean flag to know if the firmware set is the latest for the model and vendor | [optional] [readonly] 
 **model** | **str** | Model on which this firmware set can be applied | [optional] [readonly] 
-**plan** | **str** | Plan where the firmware set can be applied | [optional] [readonly] 
 **vendor** | **str** | Vendor on which this firmware set can be applied | [optional] [readonly] 
+**plan** | **str** | Plan where the firmware set can be applied | [optional] [readonly] 
 
 ## Example
 

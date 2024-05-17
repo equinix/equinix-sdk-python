@@ -37,8 +37,7 @@ class TestEmailInput(unittest.TestCase):
         if include_optional:
             return EmailInput(
                 address = '',
-                default = True,
-                href = ''
+                default = True
             )
         else:
             return EmailInput(

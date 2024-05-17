@@ -38,26 +38,25 @@ class TestVlanCSPConnectionCreateInput(unittest.TestCase):
             return VlanCSPConnectionCreateInput(
                 contact_email = '',
                 description = '',
-                fabric_provider = None,
-                href = '',
-                metro = '',
                 name = '',
                 project = '',
+                metro = '',
                 speed = '10000000000',
                 tags = [
                     ''
                     ],
                 type = 'shared_port_vlan_to_csp',
-                vlans = [1000,1001]
+                vlans = [1000,1001],
+                fabric_provider = None
             )
         else:
             return VlanCSPConnectionCreateInput(
-                fabric_provider = None,
-                metro = '',
                 name = '',
                 project = '',
+                metro = '',
                 type = 'shared_port_vlan_to_csp',
                 vlans = [1000,1001],
+                fabric_provider = None,
         )
         """
 

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **spot_market_requests** | [**List[SpotMarketRequest]**](SpotMarketRequest.md) |  | [optional] 
 
 ## Example

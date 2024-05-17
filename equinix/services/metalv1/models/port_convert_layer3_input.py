@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.port_convert_layer3_input_request_ips_inner import PortConvertLayer3InputRequestIpsInner
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class PortConvertLayer3Input(BaseModel):
     """
     PortConvertLayer3Input
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     request_ips: Optional[List[PortConvertLayer3InputRequestIpsInner]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "request_ips"]
+    __properties: ClassVar[List[str]] = ["request_ips"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class PortConvertLayer3Input(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "request_ips": [PortConvertLayer3InputRequestIpsInner.from_dict(_item) for _item in obj["request_ips"]] if obj.get("request_ips") is not None else None
         })
         # store additional fields in additional_properties

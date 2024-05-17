@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **virtual_networks** | [**List[VirtualNetwork]**](VirtualNetwork.md) |  | [optional] 
 
 ## Example

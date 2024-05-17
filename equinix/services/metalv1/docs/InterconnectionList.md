@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **interconnections** | [**List[Interconnection]**](Interconnection.md) |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 

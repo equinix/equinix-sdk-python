@@ -36,15 +36,14 @@ class TestAWSFabricProvider(unittest.TestCase):
         model = AWSFabricProvider()
         if include_optional:
             return AWSFabricProvider(
+                type = 'CSP_AWS',
                 account_id = '123412341234',
-                href = '',
-                location = 'us-west-1',
-                type = 'CSP_AWS'
+                location = 'us-west-1'
             )
         else:
             return AWSFabricProvider(
-                account_id = '123412341234',
                 type = 'CSP_AWS',
+                account_id = '123412341234',
         )
         """
 

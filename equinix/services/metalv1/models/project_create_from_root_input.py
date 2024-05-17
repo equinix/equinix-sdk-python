@@ -29,14 +29,13 @@ class ProjectCreateFromRootInput(BaseModel):
     ProjectCreateFromRootInput
     """ # noqa: E501
     customdata: Optional[Dict[str, Any]] = None
-    href: Optional[StrictStr] = None
     name: Annotated[str, Field(min_length=1, strict=True, max_length=80)] = Field(description="The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis.")
     organization_id: Optional[StrictStr] = None
     payment_method_id: Optional[StrictStr] = None
-    tags: Optional[List[StrictStr]] = None
     type: Optional[StrictStr] = Field(default=None, description="The type of the project. If no type is specified the project type will automatically be `default` Projects of type 'vmce' are part of an in development feature and not available to all customers.")
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["customdata", "href", "name", "organization_id", "payment_method_id", "tags", "type"]
+    __properties: ClassVar[List[str]] = ["customdata", "name", "organization_id", "payment_method_id", "type", "tags"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -107,12 +106,11 @@ class ProjectCreateFromRootInput(BaseModel):
 
         _obj = cls.model_validate({
             "customdata": obj.get("customdata"),
-            "href": obj.get("href"),
             "name": obj.get("name"),
             "organization_id": obj.get("organization_id"),
             "payment_method_id": obj.get("payment_method_id"),
-            "tags": obj.get("tags"),
-            "type": obj.get("type")
+            "type": obj.get("type"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

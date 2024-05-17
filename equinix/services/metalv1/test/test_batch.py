@@ -44,7 +44,6 @@ class TestBatch(unittest.TestCase):
                 error_messages = [
                     ''
                     ],
-                href = '',
                 id = '',
                 project = equinix.services.metalv1.models.href.Href(
                     href = '', ),

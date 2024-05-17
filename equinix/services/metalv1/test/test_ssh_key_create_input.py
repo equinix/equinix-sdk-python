@@ -36,7 +36,6 @@ class TestSSHKeyCreateInput(unittest.TestCase):
         model = SSHKeyCreateInput()
         if include_optional:
             return SSHKeyCreateInput(
-                href = '',
                 instances_ids = [
                     ''
                     ],

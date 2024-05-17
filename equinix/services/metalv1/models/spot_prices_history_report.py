@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.spot_prices_datapoints import SpotPricesDatapoints
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class SpotPricesHistoryReport(BaseModel):
     """
     SpotPricesHistoryReport
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     prices_history: Optional[SpotPricesDatapoints] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "prices_history"]
+    __properties: ClassVar[List[str]] = ["prices_history"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +93,6 @@ class SpotPricesHistoryReport(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "prices_history": SpotPricesDatapoints.from_dict(obj["prices_history"]) if obj.get("prices_history") is not None else None
         })
         # store additional fields in additional_properties

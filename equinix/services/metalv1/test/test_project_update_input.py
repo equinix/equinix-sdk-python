@@ -38,7 +38,6 @@ class TestProjectUpdateInput(unittest.TestCase):
             return ProjectUpdateInput(
                 backend_transfer_enabled = True,
                 customdata = None,
-                href = '',
                 name = '0',
                 payment_method_id = '',
                 tags = [

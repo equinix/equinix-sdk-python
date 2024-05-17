@@ -1335,61 +1335,6 @@ class MetalGatewaysApi:
 
 
     @validate_call
-    def find_metal_gateways_by_project_all_pages(self, project_id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> MetalGatewayList:  # noqa: E501
-        """Returns all metal gateways for a project  # noqa: E501
-
-        This method is the same as find_metal_gateways_by_project, but fetches resources from all the pages.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.find_metal_gateways_by_project(}project_id, , }include, , }exclude, , }, }per_page, , async_req=True)
-        >>> result = thread.get()
-
- 
-        :param project_id: Project UUID (required)
-        :type project_id: str
- 
-        :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
-        :type include: List[str]
- 
-        :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
-        :type exclude: List[str]
-  
-        :param per_page: Items returned per page
-        :type per_page: int
-
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param _request_timeout: timeout setting for a single page request.
-                                 If one number provided, it will be single 
-                                 page request timeout. It can also be a pair
-                                 (tuple) of (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: MetalGatewayList
-
-        """
-        all_pages = None
-
-        page = 1
-        while True:
-            # Template comment: here we set var "page" to page number and then
-            # we call the base method with all the parameters listed (including
-            # page).
-            page_response = self.find_metal_gateways_by_project(project_id, include, exclude, page, per_page, **kwargs)  # noqa: E501
-            if all_pages is None:
-                all_pages = page_response
-            else:
-                all_pages.metal_gateways.extend(page_response.metal_gateways)
-            if page_response.meta.next is None:
-                break
-            page += 1
-
-        return all_pages
-
-    @validate_call
     def find_metal_gateways_by_project(
         self,
         project_id: Annotated[StrictStr, Field(description="Project UUID")],

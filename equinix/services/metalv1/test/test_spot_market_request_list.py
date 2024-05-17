@@ -36,7 +36,6 @@ class TestSpotMarketRequestList(unittest.TestCase):
         model = SpotMarketRequestList()
         if include_optional:
             return SpotMarketRequestList(
-                href = '',
                 spot_market_requests = [
                     equinix.services.metalv1.models.spot_market_request.SpotMarketRequest(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

@@ -37,7 +37,6 @@ class TestProjectUsage(unittest.TestCase):
         if include_optional:
             return ProjectUsage(
                 facility = '',
-                href = '',
                 name = '',
                 plan = '',
                 plan_version = '',

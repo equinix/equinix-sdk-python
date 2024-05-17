@@ -38,11 +38,10 @@ class TestVrfBGPNeighbors(unittest.TestCase):
             return VrfBGPNeighbors(
                 bgp_neighbors = [
                     equinix.services.metalv1.models.vrf_bgp_neighbors_bgp_neighbors_inner.VrfBGPNeighbors_bgp_neighbors_inner(
-                        peer_as = 65000, 
                         peer_ip = '8.8.8.8', 
+                        peer_as = 65000, 
                         state = 'up', )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return VrfBGPNeighbors(

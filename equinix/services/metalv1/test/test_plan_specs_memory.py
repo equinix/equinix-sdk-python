@@ -36,7 +36,6 @@ class TestPlanSpecsMemory(unittest.TestCase):
         model = PlanSpecsMemory()
         if include_optional:
             return PlanSpecsMemory(
-                href = '',
                 total = ''
             )
         else:

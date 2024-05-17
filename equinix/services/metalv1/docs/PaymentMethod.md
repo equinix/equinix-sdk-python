@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **email** | **str** |  | [optional] 
 **expiration_month** | **str** |  | [optional] 
 **expiration_year** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization** | [**Href**](Href.md) |  | [optional] 

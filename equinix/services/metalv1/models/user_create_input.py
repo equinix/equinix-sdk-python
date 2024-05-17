@@ -35,11 +35,8 @@ class UserCreateInput(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     emails: List[EmailInput]
     first_name: StrictStr
-    href: Optional[StrictStr] = None
-    invitation_id: Optional[StrictStr] = None
     last_name: StrictStr
     level: Optional[StrictStr] = None
-    nonce: Optional[StrictStr] = None
     password: Optional[StrictStr] = None
     phone_number: Optional[StrictStr] = None
     social_accounts: Optional[Dict[str, Any]] = None
@@ -47,8 +44,10 @@ class UserCreateInput(BaseModel):
     title: Optional[StrictStr] = None
     two_factor_auth: Optional[StrictStr] = None
     verified_at: Optional[datetime] = None
+    invitation_id: Optional[StrictStr] = None
+    nonce: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["avatar", "company_name", "company_url", "customdata", "emails", "first_name", "href", "invitation_id", "last_name", "level", "nonce", "password", "phone_number", "social_accounts", "timezone", "title", "two_factor_auth", "verified_at"]
+    __properties: ClassVar[List[str]] = ["avatar", "company_name", "company_url", "customdata", "emails", "first_name", "last_name", "level", "password", "phone_number", "social_accounts", "timezone", "title", "two_factor_auth", "verified_at", "invitation_id", "nonce"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,18 +120,17 @@ class UserCreateInput(BaseModel):
             "customdata": obj.get("customdata"),
             "emails": [EmailInput.from_dict(_item) for _item in obj["emails"]] if obj.get("emails") is not None else None,
             "first_name": obj.get("first_name"),
-            "href": obj.get("href"),
-            "invitation_id": obj.get("invitation_id"),
             "last_name": obj.get("last_name"),
             "level": obj.get("level"),
-            "nonce": obj.get("nonce"),
             "password": obj.get("password"),
             "phone_number": obj.get("phone_number"),
             "social_accounts": obj.get("social_accounts"),
             "timezone": obj.get("timezone"),
             "title": obj.get("title"),
             "two_factor_auth": obj.get("two_factor_auth"),
-            "verified_at": obj.get("verified_at")
+            "verified_at": obj.get("verified_at"),
+            "invitation_id": obj.get("invitation_id"),
+            "nonce": obj.get("nonce")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

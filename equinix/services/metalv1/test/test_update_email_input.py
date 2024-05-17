@@ -36,8 +36,7 @@ class TestUpdateEmailInput(unittest.TestCase):
         model = UpdateEmailInput()
         if include_optional:
             return UpdateEmailInput(
-                default = True,
-                href = ''
+                default = True
             )
         else:
             return UpdateEmailInput(

@@ -32,14 +32,13 @@ class Batch(BaseModel):
     created_at: Optional[datetime] = None
     devices: Optional[List[Href]] = None
     error_messages: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     project: Optional[Href] = None
     quantity: Optional[StrictInt] = None
     state: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "devices", "error_messages", "href", "id", "project", "quantity", "state", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "devices", "error_messages", "id", "project", "quantity", "state", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,7 +111,6 @@ class Batch(BaseModel):
             "created_at": obj.get("created_at"),
             "devices": [Href.from_dict(_item) for _item in obj["devices"]] if obj.get("devices") is not None else None,
             "error_messages": obj.get("error_messages"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "project": Href.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "quantity": obj.get("quantity"),

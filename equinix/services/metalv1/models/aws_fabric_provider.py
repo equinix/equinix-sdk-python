@@ -28,25 +28,24 @@ class AWSFabricProvider(BaseModel):
     """
     AWSFabricProvider
     """ # noqa: E501
-    account_id: Annotated[str, Field(strict=True)] = Field(description="AWS Account ID")
-    href: Optional[StrictStr] = None
-    location: Optional[StrictStr] = None
     type: StrictStr
+    account_id: Annotated[str, Field(strict=True)] = Field(description="AWS Account ID")
+    location: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["account_id", "href", "location", "type"]
-
-    @field_validator('account_id')
-    def account_id_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^\d{12}$", value):
-            raise ValueError(r"must validate the regular expression /^\d{12}$/")
-        return value
+    __properties: ClassVar[List[str]] = ["type", "account_id", "location"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
         """Validates the enum"""
         if value not in set(['CSP_AWS']):
             raise ValueError("must be one of enum values ('CSP_AWS')")
+        return value
+
+    @field_validator('account_id')
+    def account_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if not re.match(r"^\d{12}$", value):
+            raise ValueError(r"must validate the regular expression /^\d{12}$/")
         return value
 
     model_config = ConfigDict(
@@ -107,10 +106,9 @@ class AWSFabricProvider(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "type": obj.get("type"),
             "account_id": obj.get("account_id"),
-            "href": obj.get("href"),
-            "location": obj.get("location"),
-            "type": obj.get("type")
+            "location": obj.get("location")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

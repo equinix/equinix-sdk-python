@@ -46,12 +46,12 @@ class IPAssignment(BaseModel):
     metro: Optional[IPAssignmentMetro] = None
     netmask: Optional[StrictStr] = None
     network: Optional[StrictStr] = None
-    next_hop: Optional[StrictStr] = Field(default=None, description="Only set when this is a Metal Gateway Elastic IP Assignment.  The IP address within the Metal Gateway to which requests to the Elastic IP are forwarded. ")
     parent_block: Optional[ParentBlock] = None
     public: Optional[StrictBool] = None
     state: Optional[StrictStr] = Field(default=None, description="Only set when this is a Metal Gateway Elastic IP Assignment.  Describes the current configuration state of this IP on the network. ")
+    next_hop: Optional[StrictStr] = Field(default=None, description="Only set when this is a Metal Gateway Elastic IP Assignment.  The IP address within the Metal Gateway to which requests to the Elastic IP are forwarded. ")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "address_family", "assigned_to", "cidr", "created_at", "enabled", "gateway", "global_ip", "href", "id", "manageable", "management", "metro", "netmask", "network", "next_hop", "parent_block", "public", "state"]
+    __properties: ClassVar[List[str]] = ["address", "address_family", "assigned_to", "cidr", "created_at", "enabled", "gateway", "global_ip", "href", "id", "manageable", "management", "metro", "netmask", "network", "parent_block", "public", "state", "next_hop"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -145,10 +145,10 @@ class IPAssignment(BaseModel):
             "metro": IPAssignmentMetro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
             "netmask": obj.get("netmask"),
             "network": obj.get("network"),
-            "next_hop": obj.get("next_hop"),
             "parent_block": ParentBlock.from_dict(obj["parent_block"]) if obj.get("parent_block") is not None else None,
             "public": obj.get("public"),
-            "state": obj.get("state")
+            "state": obj.get("state"),
+            "next_hop": obj.get("next_hop")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

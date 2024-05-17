@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **virtual_circuits** | [**List[VirtualCircuit]**](VirtualCircuit.md) |  | [optional] 
 
 ## Example

@@ -29,14 +29,13 @@ class FabricServiceToken(BaseModel):
     FabricServiceToken
     """ # noqa: E501
     expires_at: Optional[datetime] = Field(default=None, description="The expiration date and time of the Fabric service token. Once a service token is expired, it is no longer redeemable.")
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = Field(default=None, description="The UUID that can be used on the Fabric Portal to redeem either an A-Side or Z-Side Service Token. For Fabric VCs (Metal Billed), this UUID will represent an A-Side Service Token, which will allow interconnections to be made from Equinix Metal to other Service Providers on Fabric. For Fabric VCs (Fabric Billed), this UUID will represent a Z-Side Service Token, which will allow interconnections to be made to connect an owned Fabric Port or  Virtual Device to Equinix Metal.")
     max_allowed_speed: Optional[StrictInt] = Field(default=None, description="The maximum speed that can be selected on the Fabric Portal when configuring a interconnection with either  an A-Side or Z-Side Service Token. For Fabric VCs (Metal Billed), this is what the billing is based off of, and can be one of the following options, '50mbps', '200mbps', '500mbps', '1gbps', '2gbps', '5gbps' or '10gbps'. For Fabric VCs (Fabric Billed), this will default to 10Gbps.")
     role: Optional[StrictStr] = Field(default=None, description="Either primary or secondary, depending on which interconnection the service token is associated to.")
     service_token_type: Optional[StrictStr] = Field(default=None, description="Either 'a_side' or 'z_side', depending on which type of Fabric VC was requested.")
     state: Optional[StrictStr] = Field(default=None, description="The state of the service token that corresponds with the service token state on Fabric. An 'inactive' state refers to a token that has not been redeemed yet on the Fabric side, an 'active' state refers to a token that has already been redeemed, and an 'expired' state refers to a token that has reached its expiry time.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["expires_at", "href", "id", "max_allowed_speed", "role", "service_token_type", "state"]
+    __properties: ClassVar[List[str]] = ["expires_at", "id", "max_allowed_speed", "role", "service_token_type", "state"]
 
     @field_validator('role')
     def role_validate_enum(cls, value):
@@ -127,7 +126,6 @@ class FabricServiceToken(BaseModel):
 
         _obj = cls.model_validate({
             "expires_at": obj.get("expires_at"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "max_allowed_speed": obj.get("max_allowed_speed"),
             "role": obj.get("role"),

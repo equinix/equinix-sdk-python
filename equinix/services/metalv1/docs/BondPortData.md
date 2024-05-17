@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **id** | **str** | ID of the bonding port | [optional] 
 **name** | **str** | Name of the port interface for the bond (\&quot;bond0\&quot;) | [optional] 
 

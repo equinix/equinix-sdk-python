@@ -28,13 +28,12 @@ class SelfServiceReservationItemRequest(BaseModel):
     SelfServiceReservationItemRequest
     """ # noqa: E501
     amount: Optional[Union[StrictFloat, StrictInt]] = None
-    href: Optional[StrictStr] = None
     metro_id: Optional[StrictStr] = None
     plan_id: Optional[StrictStr] = None
     quantity: Optional[StrictInt] = None
     term: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["amount", "href", "metro_id", "plan_id", "quantity", "term"]
+    __properties: ClassVar[List[str]] = ["amount", "metro_id", "plan_id", "quantity", "term"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +94,6 @@ class SelfServiceReservationItemRequest(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
-            "href": obj.get("href"),
             "metro_id": obj.get("metro_id"),
             "plan_id": obj.get("plan_id"),
             "quantity": obj.get("quantity"),

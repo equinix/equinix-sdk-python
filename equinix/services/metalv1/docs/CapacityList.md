@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **capacity** | **Dict[str, Dict[str, CapacityLevelPerBaremetal]]** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

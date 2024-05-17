@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
-**meta** | [**Meta**](Meta.md) |  | [optional] 
 **metros** | [**List[InterconnectionMetroListMetrosInner]**](InterconnectionMetroListMetrosInner.md) |  | [optional] 
+**meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example
 

@@ -28,12 +28,11 @@ class CapacityCheckPerMetroInfo(BaseModel):
     CapacityCheckPerMetroInfo
     """ # noqa: E501
     available: Optional[StrictBool] = Field(default=None, description="Returns true if there is enough capacity in the metro to fulfill the quantity set. Returns false if there is not enough.")
-    href: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro ID or code sent to check capacity.")
     plan: Optional[StrictStr] = Field(default=None, description="The plan ID or slug sent to check capacity.")
     quantity: Optional[StrictStr] = Field(default=None, description="The number of servers sent to check capacity.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["available", "href", "metro", "plan", "quantity"]
+    __properties: ClassVar[List[str]] = ["available", "metro", "plan", "quantity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +93,6 @@ class CapacityCheckPerMetroInfo(BaseModel):
 
         _obj = cls.model_validate({
             "available": obj.get("available"),
-            "href": obj.get("href"),
             "metro": obj.get("metro"),
             "plan": obj.get("plan"),
             "quantity": obj.get("quantity")

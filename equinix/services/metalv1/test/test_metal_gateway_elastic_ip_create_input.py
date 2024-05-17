@@ -37,9 +37,8 @@ class TestMetalGatewayElasticIpCreateInput(unittest.TestCase):
         if include_optional:
             return MetalGatewayElasticIpCreateInput(
                 address = '147.75.234.8/31',
-                customdata = { },
-                href = '',
                 next_hop = '192.168.12.13',
+                customdata = { },
                 tags = ["NY","prod","public"]
             )
         else:

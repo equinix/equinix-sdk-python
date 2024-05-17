@@ -36,15 +36,12 @@ class TestSelfServiceReservationList(unittest.TestCase):
         model = SelfServiceReservationList()
         if include_optional:
             return SelfServiceReservationList(
-                href = '',
                 reservations = [
                     equinix.services.metalv1.models.self_service_reservation_response.SelfServiceReservationResponse(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        href = '', 
                         item = [
                             equinix.services.metalv1.models.self_service_reservation_item_response.SelfServiceReservationItemResponse(
                                 amount = 1.337, 
-                                href = '', 
                                 id = '', 
                                 metro_code = '', 
                                 metro_id = '', 
@@ -54,8 +51,7 @@ class TestSelfServiceReservationList(unittest.TestCase):
                                         equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                             href = '', 
                                             price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                                hour = 1.23, 
-                                                href = '', ), )
+                                                hour = 1.23, ), )
                                         ], 
                                     available_in_metros = [
                                         equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -65,11 +61,10 @@ class TestSelfServiceReservationList(unittest.TestCase):
                                         ''
                                         ], 
                                     class = 'm3.large.x86', 
+                                    description = '', 
                                     deployment_types = [
                                         'on_demand'
                                         ], 
-                                    description = '', 
-                                    href = '', 
                                     id = '', 
                                     legacy = True, 
                                     line = '', 
@@ -80,39 +75,33 @@ class TestSelfServiceReservationList(unittest.TestCase):
                                         cpus = [
                                             equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                 count = 56, 
-                                                href = '', 
                                                 type = '', )
                                             ], 
+                                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                                            total = '', ), 
                                         drives = [
                                             equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                                category = 'boot', 
                                                 count = 56, 
-                                                href = '', 
+                                                type = '', 
                                                 size = '3.84TB', 
-                                                type = '', )
+                                                category = 'boot', )
                                             ], 
-                                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                                            href = '', 
-                                            raid = True, 
-                                            txt = True, 
-                                            uefi = True, ), 
-                                        href = '', 
-                                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                                            href = '', 
-                                            total = '', ), 
                                         nics = [
                                             equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                 count = 2, 
-                                                href = '', 
                                                 type = '', )
-                                            ], ), 
+                                            ], 
+                                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                                            raid = True, 
+                                            txt = True, 
+                                            uefi = True, ), ), 
                                     type = 'standard', ), 
-                                plan_categories = [
-                                    ''
-                                    ], 
                                 plan_id = '', 
                                 plan_name = '', 
                                 plan_slug = '', 
+                                plan_categories = [
+                                    ''
+                                    ], 
                                 quantity = 56, 
                                 term = '', )
                             ], 
@@ -121,7 +110,6 @@ class TestSelfServiceReservationList(unittest.TestCase):
                         organization_id = '', 
                         period = equinix.services.metalv1.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
                             count = 12, 
-                            href = '', 
                             unit = 'monthly', ), 
                         project = '', 
                         project_id = '', 

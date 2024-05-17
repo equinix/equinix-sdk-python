@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bgp_neighbors** | [**List[VrfBGPNeighborsBgpNeighborsInner]**](VrfBGPNeighborsBgpNeighborsInner.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

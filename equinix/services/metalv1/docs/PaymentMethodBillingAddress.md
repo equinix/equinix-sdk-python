@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **country_code_alpha2** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **postal_code** | **str** |  | [optional] 
 **street_address** | **str** |  | [optional] 
 

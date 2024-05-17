@@ -27,11 +27,10 @@ class PortData(BaseModel):
     """
     PortData
     """ # noqa: E501
-    bonded: Optional[StrictBool] = Field(default=None, description="Bonded is true for NetworkPort ports in a bond and NetworkBondPort ports that are active")
-    href: Optional[StrictStr] = None
     mac: Optional[StrictStr] = Field(default=None, description="MAC address is set for NetworkPort ports")
+    bonded: Optional[StrictBool] = Field(default=None, description="Bonded is true for NetworkPort ports in a bond and NetworkBondPort ports that are active")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bonded", "href", "mac"]
+    __properties: ClassVar[List[str]] = ["mac", "bonded"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,9 +90,8 @@ class PortData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bonded": obj.get("bonded"),
-            "href": obj.get("href"),
-            "mac": obj.get("mac")
+            "mac": obj.get("mac"),
+            "bonded": obj.get("bonded")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

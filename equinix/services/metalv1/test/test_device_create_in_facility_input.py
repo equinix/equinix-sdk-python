@@ -37,7 +37,6 @@ class TestDeviceCreateInFacilityInput(unittest.TestCase):
         if include_optional:
             return DeviceCreateInFacilityInput(
                 facility = None,
-                href = '',
                 always_pxe = True,
                 billing_cycle = 'hourly',
                 customdata = { },
@@ -45,13 +44,12 @@ class TestDeviceCreateInFacilityInput(unittest.TestCase):
                 features = [
                     ''
                     ],
-                hardware_reservation_id = 'next-available',
+                hardware_reservation_id = '',
                 hostname = '',
                 ip_addresses = [
                     equinix.services.metalv1.models.ip_address.IPAddress(
                         address_family = 4, 
                         cidr = 28, 
-                        href = '', 
                         ip_reservations = [
                             ''
                             ], 
@@ -72,7 +70,6 @@ class TestDeviceCreateInFacilityInput(unittest.TestCase):
                 spot_price_max = 1.23,
                 ssh_keys = [
                     equinix.services.metalv1.models.ssh_key_input.SSHKeyInput(
-                        href = '', 
                         key = '', 
                         label = '', 
                         tags = [
@@ -83,42 +80,36 @@ class TestDeviceCreateInFacilityInput(unittest.TestCase):
                     disks = [
                         equinix.services.metalv1.models.disk.Disk(
                             device = '', 
-                            href = '', 
+                            wipe_table = True, 
                             partitions = [
                                 equinix.services.metalv1.models.partition.Partition(
-                                    href = '', 
                                     label = '', 
                                     number = 56, 
                                     size = '', )
-                                ], 
-                            wipe_table = True, )
+                                ], )
                         ], 
-                    filesystems = [
-                        equinix.services.metalv1.models.filesystem.Filesystem(
-                            href = '', 
-                            mount = equinix.services.metalv1.models.mount.Mount(
-                                device = '', 
-                                format = '', 
-                                href = '', 
-                                options = [
-                                    ''
-                                    ], 
-                                point = '', ), )
-                        ], 
-                    href = '', 
                     raid = [
                         equinix.services.metalv1.models.raid.Raid(
                             devices = [
                                 ''
                                 ], 
-                            href = '', 
                             level = '', 
                             name = '', )
+                        ], 
+                    filesystems = [
+                        equinix.services.metalv1.models.filesystem.Filesystem(
+                            mount = equinix.services.metalv1.models.mount.Mount(
+                                device = '', 
+                                format = '', 
+                                point = '', 
+                                options = [
+                                    ''
+                                    ], ), )
                         ], ),
                 tags = [
                     ''
                     ],
-                termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                termination_time = '2021-09-03T16:32+03:00',
                 user_ssh_keys = [
                     ''
                     ],

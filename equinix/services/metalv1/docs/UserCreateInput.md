@@ -11,11 +11,8 @@ Name | Type | Description | Notes
 **customdata** | **object** |  | [optional] 
 **emails** | [**List[EmailInput]**](EmailInput.md) |  | 
 **first_name** | **str** |  | 
-**href** | **str** |  | [optional] 
-**invitation_id** | **str** |  | [optional] 
 **last_name** | **str** |  | 
 **level** | **str** |  | [optional] 
-**nonce** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **social_accounts** | **object** |  | [optional] 
@@ -23,6 +20,8 @@ Name | Type | Description | Notes
 **title** | **str** |  | [optional] 
 **two_factor_auth** | **str** |  | [optional] 
 **verified_at** | **datetime** |  | [optional] 
+**invitation_id** | **str** |  | [optional] 
+**nonce** | **str** |  | [optional] 
 
 ## Example
 

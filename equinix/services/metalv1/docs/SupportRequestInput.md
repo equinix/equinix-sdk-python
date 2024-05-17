@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **device_id** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **message** | **str** |  | 
 **priority** | **str** |  | [optional] 
 **project_id** | **str** |  | [optional] 

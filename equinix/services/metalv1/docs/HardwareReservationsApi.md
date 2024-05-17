@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**activate_hardware_reservation**](HardwareReservationsApi.md#activate_hardware_reservation) | **POST** /hardware-reservations/{id}/activate | Activate a spare hardware reservation
 [**find_hardware_reservation_by_id**](HardwareReservationsApi.md#find_hardware_reservation_by_id) | **GET** /hardware-reservations/{id} | Retrieve a hardware reservation
 [**find_project_hardware_reservations**](HardwareReservationsApi.md#find_project_hardware_reservations) | **GET** /projects/{id}/hardware-reservations | Retrieve all hardware reservations for a given project
-[**find_project_hardware_reservations_all_pages**](HardwareReservationsApi.md#find_project_hardware_reservations_all_pages) | **GET** /projects/{id}/hardware-reservations | Retrieve all hardware reservations for a given project, fetches all the pages
 [**move_hardware_reservation**](HardwareReservationsApi.md#move_hardware_reservation) | **POST** /hardware-reservations/{id}/move | Move a hardware reservation
 
 
@@ -279,9 +278,6 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_project_hardware_reservations_all_pages**
-> HardwareReservationList find_project_hardware_reservations_all_pages(id, query=query, state=state, provisionable=provisionable, include=include, exclude=exclude, per_page=per_page)
-Just like [**find_project_hardware_reservations**](HardwareReservationsApi.md#find_project_hardware_reservations) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_project_hardware_reservations**](HardwareReservationsApi.md#find_project_hardware_reservations).
 # **move_hardware_reservation**
 > HardwareReservation move_hardware_reservation(id, move_hardware_reservation_request, include=include, exclude=exclude)
 

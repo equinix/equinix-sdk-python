@@ -5,37 +5,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addon** | **bool** |  | [optional] 
-**address** | **str** |  | [optional] 
 **address_family** | **int** |  | [optional] 
-**assignments** | [**List[Href]**](Href.md) |  | [optional] 
-**available** | **str** |  | [optional] 
-**bill** | **bool** |  | [optional] 
 **cidr** | **int** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
-**customdata** | **object** |  | [optional] 
+**created_by** | [**Href**](Href.md) |  | [optional] 
 **details** | **str** |  | [optional] 
-**enabled** | **bool** |  | [optional] 
-**facility** | [**IPReservationFacility**](IPReservationFacility.md) |  | [optional] 
-**gateway** | **str** |  | [optional] 
-**global_ip** | **bool** |  | [optional] 
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**manageable** | **bool** |  | [optional] 
-**management** | **bool** |  | [optional] 
 **metal_gateway** | [**MetalGatewayLite**](MetalGatewayLite.md) |  | [optional] 
-**metro** | [**Metro**](Metro.md) |  | [optional] 
 **netmask** | **str** |  | [optional] 
 **network** | **str** |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
-**project_lite** | [**Project**](Project.md) |  | [optional] 
-**public** | **bool** |  | [optional] 
-**requested_by** | [**Href**](Href.md) |  | [optional] 
 **state** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 **type** | **str** |  | 
-**created_by** | [**Href**](Href.md) |  | [optional] 
 **vrf** | [**Vrf**](Vrf.md) |  | 
+**public** | **bool** |  | [optional] 
+**management** | **bool** |  | [optional] 
+**manageable** | **bool** |  | [optional] 
+**customdata** | **object** |  | [optional] 
+**bill** | **bool** |  | [optional] 
+**project_lite** | [**Project**](Project.md) |  | [optional] 
+**address** | **str** |  | [optional] 
+**gateway** | **str** |  | [optional] 
+**metro** | [**Metro**](Metro.md) |  | [optional] 
 
 ## Example
 

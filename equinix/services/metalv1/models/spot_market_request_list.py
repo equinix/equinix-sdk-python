@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.spot_market_request import SpotMarketRequest
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class SpotMarketRequestList(BaseModel):
     """
     SpotMarketRequestList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     spot_market_requests: Optional[List[SpotMarketRequest]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "spot_market_requests"]
+    __properties: ClassVar[List[str]] = ["spot_market_requests"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class SpotMarketRequestList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "spot_market_requests": [SpotMarketRequest.from_dict(_item) for _item in obj["spot_market_requests"]] if obj.get("spot_market_requests") is not None else None
         })
         # store additional fields in additional_properties

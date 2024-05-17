@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.event import Event
 from equinix.services.metalv1.models.meta import Meta
@@ -30,10 +30,9 @@ class EventList(BaseModel):
     EventList
     """ # noqa: E501
     events: Optional[List[Event]] = None
-    href: Optional[StrictStr] = None
     meta: Optional[Meta] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["events", "href", "meta"]
+    __properties: ClassVar[List[str]] = ["events", "meta"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +103,6 @@ class EventList(BaseModel):
 
         _obj = cls.model_validate({
             "events": [Event.from_dict(_item) for _item in obj["events"]] if obj.get("events") is not None else None,
-            "href": obj.get("href"),
             "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
         })
         # store additional fields in additional_properties

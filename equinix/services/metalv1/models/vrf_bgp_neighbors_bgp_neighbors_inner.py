@@ -28,11 +28,11 @@ class VrfBGPNeighborsBgpNeighborsInner(BaseModel):
     """
     VrfBGPNeighborsBgpNeighborsInner
     """ # noqa: E501
-    peer_as: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The ASN of the peer that advertised the prefix.")
     peer_ip: Optional[StrictStr] = None
+    peer_as: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="The ASN of the peer that advertised the prefix.")
     state: Optional[StrictStr] = Field(default=None, description="The current status of the connection to the BGP peer. State is either up or down.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["peer_as", "peer_ip", "state"]
+    __properties: ClassVar[List[str]] = ["peer_ip", "peer_as", "state"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +92,8 @@ class VrfBGPNeighborsBgpNeighborsInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "peer_as": obj.get("peer_as"),
             "peer_ip": obj.get("peer_ip"),
+            "peer_as": obj.get("peer_as"),
             "state": obj.get("state")
         })
         # store additional fields in additional_properties

@@ -31,9 +31,8 @@ class DeviceUpdateInput(BaseModel):
     billing_cycle: Optional[StrictStr] = None
     customdata: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
-    firmware_set_id: Optional[StrictStr] = None
     hostname: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
+    firmware_set_id: Optional[StrictStr] = None
     ipxe_script_url: Optional[StrictStr] = None
     locked: Optional[StrictBool] = Field(default=None, description="Whether the device should be locked, preventing accidental deletion.")
     network_frozen: Optional[StrictBool] = Field(default=None, description="If true, this instance can not be converted to a different network type.")
@@ -41,7 +40,7 @@ class DeviceUpdateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     userdata: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "firmware_set_id", "hostname", "href", "ipxe_script_url", "locked", "network_frozen", "spot_instance", "tags", "userdata"]
+    __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "hostname", "firmware_set_id", "ipxe_script_url", "locked", "network_frozen", "spot_instance", "tags", "userdata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,9 +104,8 @@ class DeviceUpdateInput(BaseModel):
             "billing_cycle": obj.get("billing_cycle"),
             "customdata": obj.get("customdata"),
             "description": obj.get("description"),
-            "firmware_set_id": obj.get("firmware_set_id"),
             "hostname": obj.get("hostname"),
-            "href": obj.get("href"),
+            "firmware_set_id": obj.get("firmware_set_id"),
             "ipxe_script_url": obj.get("ipxe_script_url"),
             "locked": obj.get("locked"),
             "network_frozen": obj.get("network_frozen"),

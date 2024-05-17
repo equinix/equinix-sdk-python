@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
@@ -28,17 +28,16 @@ class Meta(BaseModel):
     """
     Meta
     """ # noqa: E501
-    current_page: Optional[StrictInt] = None
     first: Optional[Href] = None
-    href: Optional[StrictStr] = None
     last: Optional[Href] = None
-    last_page: Optional[StrictInt] = None
     next: Optional[Href] = None
     previous: Optional[Href] = None
     var_self: Optional[Href] = Field(default=None, alias="self")
     total: Optional[StrictInt] = None
+    current_page: Optional[StrictInt] = None
+    last_page: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["current_page", "first", "href", "last", "last_page", "next", "previous", "self", "total"]
+    __properties: ClassVar[List[str]] = ["first", "last", "next", "previous", "self", "total", "current_page", "last_page"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,15 +112,14 @@ class Meta(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "current_page": obj.get("current_page"),
             "first": Href.from_dict(obj["first"]) if obj.get("first") is not None else None,
-            "href": obj.get("href"),
             "last": Href.from_dict(obj["last"]) if obj.get("last") is not None else None,
-            "last_page": obj.get("last_page"),
             "next": Href.from_dict(obj["next"]) if obj.get("next") is not None else None,
             "previous": Href.from_dict(obj["previous"]) if obj.get("previous") is not None else None,
             "self": Href.from_dict(obj["self"]) if obj.get("self") is not None else None,
-            "total": obj.get("total")
+            "total": obj.get("total"),
+            "current_page": obj.get("current_page"),
+            "last_page": obj.get("last_page")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

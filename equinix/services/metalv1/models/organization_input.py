@@ -34,13 +34,12 @@ class OrganizationInput(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
     enforce_2fa_at: Optional[datetime] = Field(default=None, description="Force to all members to have enabled the two factor authentication after that date, unless the value is null")
-    href: Optional[StrictStr] = None
     logo: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="The logo for the organization; must be base64-encoded image data")
     name: Optional[StrictStr] = None
     twitter: Optional[StrictStr] = None
     website: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "billing_address", "customdata", "description", "enforce_2fa_at", "href", "logo", "name", "twitter", "website"]
+    __properties: ClassVar[List[str]] = ["address", "billing_address", "customdata", "description", "enforce_2fa_at", "logo", "name", "twitter", "website"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +110,6 @@ class OrganizationInput(BaseModel):
             "customdata": obj.get("customdata"),
             "description": obj.get("description"),
             "enforce_2fa_at": obj.get("enforce_2fa_at"),
-            "href": obj.get("href"),
             "logo": obj.get("logo"),
             "name": obj.get("name"),
             "twitter": obj.get("twitter"),

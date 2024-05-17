@@ -29,11 +29,10 @@ class Disk(BaseModel):
     Disk
     """ # noqa: E501
     device: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
-    partitions: Optional[List[Partition]] = None
     wipe_table: Optional[StrictBool] = Field(default=None, alias="wipeTable")
+    partitions: Optional[List[Partition]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device", "href", "partitions", "wipeTable"]
+    __properties: ClassVar[List[str]] = ["device", "wipeTable", "partitions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -101,9 +100,8 @@ class Disk(BaseModel):
 
         _obj = cls.model_validate({
             "device": obj.get("device"),
-            "href": obj.get("href"),
-            "partitions": [Partition.from_dict(_item) for _item in obj["partitions"]] if obj.get("partitions") is not None else None,
-            "wipeTable": obj.get("wipeTable")
+            "wipeTable": obj.get("wipeTable"),
+            "partitions": [Partition.from_dict(_item) for _item in obj["partitions"]] if obj.get("partitions") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

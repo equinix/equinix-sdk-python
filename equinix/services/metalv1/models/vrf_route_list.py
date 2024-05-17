@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.meta import Meta
 from equinix.services.metalv1.models.vrf_route import VrfRoute
@@ -29,11 +29,10 @@ class VrfRouteList(BaseModel):
     """
     VrfRouteList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
-    meta: Optional[Meta] = None
     routes: Optional[List[VrfRoute]] = None
+    meta: Optional[Meta] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "meta", "routes"]
+    __properties: ClassVar[List[str]] = ["routes", "meta"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,9 +75,6 @@ class VrfRouteList(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of meta
-        if self.meta:
-            _dict['meta'] = self.meta.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in routes (list)
         _items = []
         if self.routes:
@@ -86,6 +82,9 @@ class VrfRouteList(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['routes'] = _items
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -103,9 +102,8 @@ class VrfRouteList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
-            "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
-            "routes": [VrfRoute.from_dict(_item) for _item in obj["routes"]] if obj.get("routes") is not None else None
+            "routes": [VrfRoute.from_dict(_item) for _item in obj["routes"]] if obj.get("routes") is not None else None,
+            "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -36,11 +36,9 @@ class TestCreateSelfServiceReservationRequest(unittest.TestCase):
         model = CreateSelfServiceReservationRequest()
         if include_optional:
             return CreateSelfServiceReservationRequest(
-                href = '',
                 item = [
                     equinix.services.metalv1.models.self_service_reservation_item_request.SelfServiceReservationItemRequest(
                         amount = 1.337, 
-                        href = '', 
                         metro_id = '', 
                         plan_id = '', 
                         quantity = 56, 
@@ -49,7 +47,6 @@ class TestCreateSelfServiceReservationRequest(unittest.TestCase):
                 notes = '',
                 period = equinix.services.metalv1.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
                     count = 12, 
-                    href = '', 
                     unit = 'monthly', ),
                 start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )

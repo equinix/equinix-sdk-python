@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **recovery_codes** | **List[str]** |  | [optional] 
 
 ## Example

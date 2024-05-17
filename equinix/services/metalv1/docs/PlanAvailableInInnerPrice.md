@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hour** | **float** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

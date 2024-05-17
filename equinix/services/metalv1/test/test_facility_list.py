@@ -42,22 +42,18 @@ class TestFacilityList(unittest.TestCase):
                             address2 = '', 
                             city = '', 
                             coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                                href = '', 
                                 latitude = '', 
                                 longitude = '', ), 
                             country = '', 
-                            href = '', 
                             state = '', 
                             zip_code = '', ), 
                         code = '', 
                         features = ["baremetal","backend_transfer","global_ipv4"], 
-                        href = '', 
                         id = '', 
                         ip_ranges = ["2604:1380::/36","147.75.192.0/21"], 
                         metro = null, 
                         name = '', )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return FacilityList(

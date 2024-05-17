@@ -32,7 +32,6 @@ class AuthToken(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     description: Optional[StrictStr] = Field(default=None, description="Available only for API keys")
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     project: Optional[AuthTokenProject] = None
     read_only: Optional[StrictBool] = None
@@ -40,7 +39,7 @@ class AuthToken(BaseModel):
     updated_at: Optional[datetime] = None
     user: Optional[AuthTokenUser] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "description", "href", "id", "project", "read_only", "token", "updated_at", "user"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "project", "read_only", "token", "updated_at", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,7 +107,6 @@ class AuthToken(BaseModel):
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "project": AuthTokenProject.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "read_only": obj.get("read_only"),

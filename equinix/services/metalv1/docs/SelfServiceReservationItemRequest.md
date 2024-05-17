@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **float** |  | [optional] 
-**href** | **str** |  | [optional] 
 **metro_id** | **str** |  | [optional] 
 **plan_id** | **str** |  | [optional] 
 **quantity** | **int** |  | [optional] 

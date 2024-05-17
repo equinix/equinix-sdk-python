@@ -28,12 +28,11 @@ class MetalGatewayElasticIpCreateInput(BaseModel):
     MetalGatewayElasticIpCreateInput
     """ # noqa: E501
     address: StrictStr = Field(description="An IP address (or IP Address range) contained within one of the project's IP Reservations")
-    customdata: Optional[Dict[str, Any]] = Field(default=None, description="Optional User-defined JSON object value.")
-    href: Optional[StrictStr] = None
     next_hop: StrictStr = Field(description="An IP address contained within the Metal Gateways' IP Reservation range.")
+    customdata: Optional[Dict[str, Any]] = Field(default=None, description="Optional User-defined JSON object value.")
     tags: Optional[List[StrictStr]] = Field(default=None, description="Optional list of User-defined tags. Can be used by users to provide additional details or context regarding the purpose or usage of this resource.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "customdata", "href", "next_hop", "tags"]
+    __properties: ClassVar[List[str]] = ["address", "next_hop", "customdata", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,9 +93,8 @@ class MetalGatewayElasticIpCreateInput(BaseModel):
 
         _obj = cls.model_validate({
             "address": obj.get("address"),
-            "customdata": obj.get("customdata"),
-            "href": obj.get("href"),
             "next_hop": obj.get("next_hop"),
+            "customdata": obj.get("customdata"),
             "tags": obj.get("tags")
         })
         # store additional fields in additional_properties

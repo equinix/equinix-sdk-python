@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **latitude** | **str** |  | [optional] 
 **longitude** | **str** |  | [optional] 
 

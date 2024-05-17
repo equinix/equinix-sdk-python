@@ -28,11 +28,10 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
     """
     InterconnectionPricingListProviderPricingInner
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     provider: Optional[StrictStr] = None
     tiers: Optional[List[InterconnectionPricingListProviderPricingInnerTiersInner]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "provider", "tiers"]
+    __properties: ClassVar[List[str]] = ["provider", "tiers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +98,6 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "provider": obj.get("provider"),
             "tiers": [InterconnectionPricingListProviderPricingInnerTiersInner.from_dict(_item) for _item in obj["tiers"]] if obj.get("tiers") is not None else None
         })

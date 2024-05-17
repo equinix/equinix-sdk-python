@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **vnid** | **str** | Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself.  | [optional] 
 
 ## Example

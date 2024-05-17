@@ -28,12 +28,11 @@ class BgpDynamicNeighborCreateInput(BaseModel):
     """
     BgpDynamicNeighborCreateInput
     """ # noqa: E501
-    bgp_neighbor_asn: Annotated[int, Field(le=4294967295, strict=True, ge=0)] = Field(description="The ASN of the dynamic BGP neighbor")
     bgp_neighbor_range: StrictStr = Field(description="Network range of the dynamic BGP neighbor in CIDR format")
-    href: Optional[StrictStr] = None
+    bgp_neighbor_asn: Annotated[int, Field(le=4294967295, strict=True, ge=0)] = Field(description="The ASN of the dynamic BGP neighbor")
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_neighbor_asn", "bgp_neighbor_range", "href", "tags"]
+    __properties: ClassVar[List[str]] = ["bgp_neighbor_range", "bgp_neighbor_asn", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +92,8 @@ class BgpDynamicNeighborCreateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bgp_neighbor_asn": obj.get("bgp_neighbor_asn"),
             "bgp_neighbor_range": obj.get("bgp_neighbor_range"),
-            "href": obj.get("href"),
+            "bgp_neighbor_asn": obj.get("bgp_neighbor_asn"),
             "tags": obj.get("tags")
         })
         # store additional fields in additional_properties

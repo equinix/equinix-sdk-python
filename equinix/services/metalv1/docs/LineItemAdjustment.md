@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **float** |  | [optional] 
 **description** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

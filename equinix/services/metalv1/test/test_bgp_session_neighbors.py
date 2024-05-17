@@ -41,7 +41,6 @@ class TestBgpSessionNeighbors(unittest.TestCase):
                         address_family = 4, 
                         customer_as = 65000, 
                         customer_ip = '10.32.16.1 (IPv4) or 2604:1380:4111:2700::1 (IPv6)', 
-                        href = '', 
                         md5_enabled = True, 
                         md5_password = '', 
                         multihop = True, 
@@ -49,8 +48,7 @@ class TestBgpSessionNeighbors(unittest.TestCase):
                         peer_ips = ["169.254.255.1","169.254.255.2"], 
                         routes_in = [{"exact":true,"route":"10.32.16.0/31"}], 
                         routes_out = [{"exact":true,"route":"0.0.0.0/0"}], )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return BgpSessionNeighbors(

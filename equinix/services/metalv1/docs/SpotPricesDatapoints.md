@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **datapoints** | **List[List[float]]** |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

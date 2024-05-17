@@ -27,12 +27,11 @@ class VrfRouteUpdateInput(BaseModel):
     """
     VrfRouteUpdateInput
     """ # noqa: E501
-    href: Optional[StrictStr] = None
-    next_hop: Optional[StrictStr] = Field(default=None, description="The IPv4 address within the VRF of the host that will handle this route")
     prefix: Optional[StrictStr] = Field(default=None, description="The IPv4 prefix for the route, in CIDR-style notation. For a static default route, this will always be \"0.0.0.0/0\"")
+    next_hop: Optional[StrictStr] = Field(default=None, description="The IPv4 address within the VRF of the host that will handle this route")
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "next_hop", "prefix", "tags"]
+    __properties: ClassVar[List[str]] = ["prefix", "next_hop", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,9 +91,8 @@ class VrfRouteUpdateInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
-            "next_hop": obj.get("next_hop"),
             "prefix": obj.get("prefix"),
+            "next_hop": obj.get("next_hop"),
             "tags": obj.get("tags")
         })
         # store additional fields in additional_properties

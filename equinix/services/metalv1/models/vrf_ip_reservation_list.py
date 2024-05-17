@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class VrfIpReservationList(BaseModel):
     """
     VrfIpReservationList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     ip_addresses: Optional[List[VrfIpReservation]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "ip_addresses"]
+    __properties: ClassVar[List[str]] = ["ip_addresses"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VrfIpReservationList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "ip_addresses": [VrfIpReservation.from_dict(_item) for _item in obj["ip_addresses"]] if obj.get("ip_addresses") is not None else None
         })
         # store additional fields in additional_properties

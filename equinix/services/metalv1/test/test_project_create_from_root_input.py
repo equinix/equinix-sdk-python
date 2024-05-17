@@ -37,14 +37,13 @@ class TestProjectCreateFromRootInput(unittest.TestCase):
         if include_optional:
             return ProjectCreateFromRootInput(
                 customdata = None,
-                href = '',
                 name = '0',
                 organization_id = '',
                 payment_method_id = '',
+                type = 'default',
                 tags = [
                     ''
-                    ],
-                type = 'default'
+                    ]
             )
         else:
             return ProjectCreateFromRootInput(

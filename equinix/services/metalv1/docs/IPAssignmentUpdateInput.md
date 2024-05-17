@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customdata** | **object** |  | [optional] 
 **details** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
+**customdata** | **object** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
 
 ## Example

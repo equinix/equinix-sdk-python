@@ -36,15 +36,14 @@ class TestInterconnectionFabricProvider(unittest.TestCase):
         model = InterconnectionFabricProvider()
         if include_optional:
             return InterconnectionFabricProvider(
+                type = 'CSP_AWS',
                 account_id = '123412341234',
-                href = '',
-                location = 'us-west-1',
-                type = 'CSP_AWS'
+                location = 'us-west-1'
             )
         else:
             return InterconnectionFabricProvider(
-                account_id = '123412341234',
                 type = 'CSP_AWS',
+                account_id = '123412341234',
         )
         """
 

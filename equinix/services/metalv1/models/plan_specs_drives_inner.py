@@ -27,13 +27,12 @@ class PlanSpecsDrivesInner(BaseModel):
     """
     PlanSpecsDrivesInner
     """ # noqa: E501
-    category: Optional[StrictStr] = None
     count: Optional[StrictInt] = None
-    href: Optional[StrictStr] = None
-    size: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
+    size: Optional[StrictStr] = None
+    category: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["category", "count", "href", "size", "type"]
+    __properties: ClassVar[List[str]] = ["count", "type", "size", "category"]
 
     @field_validator('category')
     def category_validate_enum(cls, value):
@@ -103,11 +102,10 @@ class PlanSpecsDrivesInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "category": obj.get("category"),
             "count": obj.get("count"),
-            "href": obj.get("href"),
+            "type": obj.get("type"),
             "size": obj.get("size"),
-            "type": obj.get("type")
+            "category": obj.get("category")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

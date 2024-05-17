@@ -37,15 +37,13 @@ class TestDisk(unittest.TestCase):
         if include_optional:
             return Disk(
                 device = '',
-                href = '',
+                wipe_table = True,
                 partitions = [
                     equinix.services.metalv1.models.partition.Partition(
-                        href = '', 
                         label = '', 
                         number = 56, 
                         size = '', )
-                    ],
-                wipe_table = True
+                    ]
             )
         else:
             return Disk(

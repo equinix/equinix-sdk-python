@@ -29,9 +29,8 @@ class Error(BaseModel):
     """ # noqa: E501
     error: Optional[StrictStr] = Field(default=None, description="A description of the error that caused the request to fail.")
     errors: Optional[List[StrictStr]] = Field(default=None, description="A list of errors that contributed to the request failing.")
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["error", "errors", "href"]
+    __properties: ClassVar[List[str]] = ["error", "errors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,8 +91,7 @@ class Error(BaseModel):
 
         _obj = cls.model_validate({
             "error": obj.get("error"),
-            "errors": obj.get("errors"),
-            "href": obj.get("href")
+            "errors": obj.get("errors")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

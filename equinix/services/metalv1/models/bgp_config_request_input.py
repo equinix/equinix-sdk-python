@@ -30,11 +30,10 @@ class BgpConfigRequestInput(BaseModel):
     """ # noqa: E501
     asn: Annotated[int, Field(le=4294967295, strict=True, ge=0)] = Field(description="Autonomous System Number for local BGP deployment.")
     deployment_type: StrictStr = Field(description="Wether the BGP deployment is local or global. Local deployments are configured immediately. Global deployments will need to be reviewed by Equinix Metal engineers.")
-    href: Optional[StrictStr] = None
     md5: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, description="The plaintext password to share between BGP neighbors as an MD5 checksum: * must be 10-20 characters long * may not include punctuation * must be a combination of numbers and letters * must contain at least one lowercase, uppercase, and digit character ")
     use_case: Optional[StrictStr] = Field(default=None, description="A use case explanation (necessary for global BGP request review).")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["asn", "deployment_type", "href", "md5", "use_case"]
+    __properties: ClassVar[List[str]] = ["asn", "deployment_type", "md5", "use_case"]
 
     @field_validator('deployment_type')
     def deployment_type_validate_enum(cls, value):
@@ -113,7 +112,6 @@ class BgpConfigRequestInput(BaseModel):
         _obj = cls.model_validate({
             "asn": obj.get("asn"),
             "deployment_type": obj.get("deployment_type"),
-            "href": obj.get("href"),
             "md5": obj.get("md5"),
             "use_case": obj.get("use_case")
         })

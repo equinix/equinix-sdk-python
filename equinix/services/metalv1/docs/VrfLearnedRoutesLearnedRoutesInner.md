@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**origin_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
 **prefix** | **str** |  | [optional] 
+**origin_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
 
 ## Example
 

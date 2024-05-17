@@ -38,7 +38,6 @@ class TestDeviceMetro(unittest.TestCase):
             return DeviceMetro(
                 code = '',
                 country = '',
-                href = '',
                 id = '',
                 name = ''
             )

@@ -39,7 +39,6 @@ class TestVrfIpReservationCreateInput(unittest.TestCase):
                 cidr = 16,
                 customdata = None,
                 details = '',
-                href = '',
                 network = '10.1.2.0',
                 tags = [
                     ''

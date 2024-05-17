@@ -7,7 +7,6 @@ Represents a Device Health Status
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **health_rollup** | **str** | Health Status | [optional] [readonly] 
-**href** | **str** |  | [optional] 
 **updated_at** | **datetime** | Last update of health status. | [optional] [readonly] 
 
 ## Example

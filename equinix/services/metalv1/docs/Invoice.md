@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **credits_applied** | **float** |  | [optional] 
 **currency** | **str** |  | [optional] 
 **due_on** | **date** |  | [optional] 
-**href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **items** | [**List[LineItem]**](LineItem.md) |  | [optional] 
 **number** | **str** |  | [optional] 

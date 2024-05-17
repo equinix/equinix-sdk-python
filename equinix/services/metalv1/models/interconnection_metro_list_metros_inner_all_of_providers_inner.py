@@ -27,14 +27,13 @@ class InterconnectionMetroListMetrosInnerAllOfProvidersInner(BaseModel):
     """
     InterconnectionMetroListMetrosInnerAllOfProvidersInner
     """ # noqa: E501
+    type: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    locations: Optional[List[StrictStr]] = None
     bandwidths: Optional[List[StrictInt]] = None
     features: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
-    locations: Optional[List[StrictStr]] = None
-    name: Optional[StrictStr] = None
-    type: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bandwidths", "features", "href", "locations", "name", "type"]
+    __properties: ClassVar[List[str]] = ["type", "name", "locations", "bandwidths", "features"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,12 +93,11 @@ class InterconnectionMetroListMetrosInnerAllOfProvidersInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bandwidths": obj.get("bandwidths"),
-            "features": obj.get("features"),
-            "href": obj.get("href"),
-            "locations": obj.get("locations"),
+            "type": obj.get("type"),
             "name": obj.get("name"),
-            "type": obj.get("type")
+            "locations": obj.get("locations"),
+            "bandwidths": obj.get("bandwidths"),
+            "features": obj.get("features")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

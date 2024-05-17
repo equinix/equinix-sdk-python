@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 **users** | [**List[User]**](User.md) |  | [optional] 
 

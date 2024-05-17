@@ -28,13 +28,12 @@ class VlanVirtualCircuitUpdateInput(BaseModel):
     VlanVirtualCircuitUpdateInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     speed: Optional[StrictStr] = Field(default=None, description="Speed can be changed only if it is an interconnection on a Dedicated Port")
     tags: Optional[List[StrictStr]] = None
     vnid: Optional[StrictStr] = Field(default=None, description="A Virtual Network record UUID or the VNID of a Metro Virtual Network in your project.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "name", "speed", "tags", "vnid"]
+    __properties: ClassVar[List[str]] = ["description", "name", "speed", "tags", "vnid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +94,6 @@ class VlanVirtualCircuitUpdateInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "name": obj.get("name"),
             "speed": obj.get("speed"),
             "tags": obj.get("tags"),

@@ -36,18 +36,17 @@ class TestInterconnectionMetroListMetrosInnerAllOfProvidersInner(unittest.TestCa
         model = InterconnectionMetroListMetrosInnerAllOfProvidersInner()
         if include_optional:
             return InterconnectionMetroListMetrosInnerAllOfProvidersInner(
+                type = 'CSP_AWS',
+                name = 'AWS Direct Connect',
+                locations = [
+                    'us-east-1'
+                    ],
                 bandwidths = [
                     50
                     ],
                 features = [
                     'high capacity'
-                    ],
-                href = '',
-                locations = [
-                    'us-east-1'
-                    ],
-                name = 'AWS Direct Connect',
-                type = 'CSP_AWS'
+                    ]
             )
         else:
             return InterconnectionMetroListMetrosInnerAllOfProvidersInner(

@@ -36,11 +36,10 @@ class TestAttributeData(unittest.TestCase):
         model = AttributeData()
         if include_optional:
             return AttributeData(
-                href = '',
                 latest = True,
                 model = '',
-                plan = '',
-                vendor = ''
+                vendor = '',
+                plan = ''
             )
         else:
             return AttributeData(

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.plan_specs_cpus_inner import PlanSpecsCpusInner
 from equinix.services.metalv1.models.plan_specs_drives_inner import PlanSpecsDrivesInner
@@ -33,13 +33,12 @@ class PlanSpecs(BaseModel):
     PlanSpecs
     """ # noqa: E501
     cpus: Optional[List[PlanSpecsCpusInner]] = None
-    drives: Optional[List[PlanSpecsDrivesInner]] = None
-    features: Optional[PlanSpecsFeatures] = None
-    href: Optional[StrictStr] = None
     memory: Optional[PlanSpecsMemory] = None
+    drives: Optional[List[PlanSpecsDrivesInner]] = None
     nics: Optional[List[PlanSpecsNicsInner]] = None
+    features: Optional[PlanSpecsFeatures] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["cpus", "drives", "features", "href", "memory", "nics"]
+    __properties: ClassVar[List[str]] = ["cpus", "memory", "drives", "nics", "features"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +88,9 @@ class PlanSpecs(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['cpus'] = _items
+        # override the default output from pydantic by calling `to_dict()` of memory
+        if self.memory:
+            _dict['memory'] = self.memory.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in drives (list)
         _items = []
         if self.drives:
@@ -96,12 +98,6 @@ class PlanSpecs(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['drives'] = _items
-        # override the default output from pydantic by calling `to_dict()` of features
-        if self.features:
-            _dict['features'] = self.features.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of memory
-        if self.memory:
-            _dict['memory'] = self.memory.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in nics (list)
         _items = []
         if self.nics:
@@ -109,6 +105,9 @@ class PlanSpecs(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['nics'] = _items
+        # override the default output from pydantic by calling `to_dict()` of features
+        if self.features:
+            _dict['features'] = self.features.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -127,11 +126,10 @@ class PlanSpecs(BaseModel):
 
         _obj = cls.model_validate({
             "cpus": [PlanSpecsCpusInner.from_dict(_item) for _item in obj["cpus"]] if obj.get("cpus") is not None else None,
-            "drives": [PlanSpecsDrivesInner.from_dict(_item) for _item in obj["drives"]] if obj.get("drives") is not None else None,
-            "features": PlanSpecsFeatures.from_dict(obj["features"]) if obj.get("features") is not None else None,
-            "href": obj.get("href"),
             "memory": PlanSpecsMemory.from_dict(obj["memory"]) if obj.get("memory") is not None else None,
-            "nics": [PlanSpecsNicsInner.from_dict(_item) for _item in obj["nics"]] if obj.get("nics") is not None else None
+            "drives": [PlanSpecsDrivesInner.from_dict(_item) for _item in obj["drives"]] if obj.get("drives") is not None else None,
+            "nics": [PlanSpecsNicsInner.from_dict(_item) for _item in obj["nics"]] if obj.get("nics") is not None else None,
+            "features": PlanSpecsFeatures.from_dict(obj["features"]) if obj.get("features") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

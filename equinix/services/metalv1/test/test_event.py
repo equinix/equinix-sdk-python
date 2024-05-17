@@ -41,14 +41,14 @@ class TestEvent(unittest.TestCase):
                 href = '',
                 id = '',
                 interpolated = '',
-                ip = '',
-                modified_by = equinix.services.metalv1.models.modified_by.modified_by(),
                 relationships = [
                     equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 state = '',
-                type = ''
+                type = '',
+                modified_by = equinix.services.metalv1.models.modified_by.modified_by(),
+                ip = ''
             )
         else:
             return Event(

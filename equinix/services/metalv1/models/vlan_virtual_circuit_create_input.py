@@ -29,7 +29,6 @@ class VlanVirtualCircuitCreateInput(BaseModel):
     VlanVirtualCircuitCreateInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     nni_vlan: Optional[Annotated[int, Field(le=4094, strict=True, ge=2)]] = None
     project_id: StrictStr
@@ -37,7 +36,7 @@ class VlanVirtualCircuitCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     vnid: Optional[StrictStr] = Field(default=None, description="A Virtual Network record UUID or the VNID of a Metro Virtual Network in your project (sent as integer).")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["description", "href", "name", "nni_vlan", "project_id", "speed", "tags", "vnid"]
+    __properties: ClassVar[List[str]] = ["description", "name", "nni_vlan", "project_id", "speed", "tags", "vnid"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VlanVirtualCircuitCreateInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "name": obj.get("name"),
             "nni_vlan": obj.get("nni_vlan"),
             "project_id": obj.get("project_id"),

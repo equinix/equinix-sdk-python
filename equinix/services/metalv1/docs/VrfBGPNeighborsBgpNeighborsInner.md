@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**peer_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
 **peer_ip** | **str** |  | [optional] 
+**peer_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
 **state** | **str** | The current status of the connection to the BGP peer. State is either up or down. | [optional] 
 
 ## Example

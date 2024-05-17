@@ -37,7 +37,6 @@ class TestSelfServiceReservationItemRequest(unittest.TestCase):
         if include_optional:
             return SelfServiceReservationItemRequest(
                 amount = 1.337,
-                href = '',
                 metro_id = '',
                 plan_id = '',
                 quantity = 56,

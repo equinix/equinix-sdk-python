@@ -37,7 +37,6 @@ class TestVlanVirtualCircuitUpdateInput(unittest.TestCase):
         if include_optional:
             return VlanVirtualCircuitUpdateInput(
                 description = '',
-                href = '',
                 name = '',
                 speed = '',
                 tags = [

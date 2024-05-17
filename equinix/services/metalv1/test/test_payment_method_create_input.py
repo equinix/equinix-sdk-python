@@ -37,7 +37,6 @@ class TestPaymentMethodCreateInput(unittest.TestCase):
         if include_optional:
             return PaymentMethodCreateInput(
                 default = True,
-                href = '',
                 name = '',
                 nonce = ''
             )

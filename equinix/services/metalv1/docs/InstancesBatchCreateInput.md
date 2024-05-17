@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batches** | [**List[InstancesBatchCreateInputBatchesInner]**](InstancesBatchCreateInputBatchesInner.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

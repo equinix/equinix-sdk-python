@@ -36,7 +36,6 @@ class TestProjectIdName(unittest.TestCase):
         model = ProjectIdName()
         if include_optional:
             return ProjectIdName(
-                href = '',
                 id = '',
                 name = ''
             )

@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.ip_reservation_list_ip_addresses_inner import IPReservationListIpAddressesInner
 from equinix.services.metalv1.models.meta import Meta
@@ -29,11 +29,10 @@ class IPReservationList(BaseModel):
     """
     IPReservationList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     ip_addresses: Optional[List[IPReservationListIpAddressesInner]] = None
     meta: Optional[Meta] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "ip_addresses", "meta"]
+    __properties: ClassVar[List[str]] = ["ip_addresses", "meta"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,7 +102,6 @@ class IPReservationList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "ip_addresses": [IPReservationListIpAddressesInner.from_dict(_item) for _item in obj["ip_addresses"]] if obj.get("ip_addresses") is not None else None,
             "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
         })

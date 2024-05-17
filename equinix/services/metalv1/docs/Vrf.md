@@ -5,23 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bgp_dynamic_neighbors_bfd_enabled** | **bool** | Toggle BFD on dynamic bgp neighbors sessions | [optional] 
+**id** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**description** | **str** | Optional field that can be set to describe the VRF | [optional] 
+**bill** | **bool** | True if the VRF is being billed. Usage will start when the first VRF Virtual Circuit is active, and will only stop when the VRF has been deleted. | [optional] [default to False]
 **bgp_dynamic_neighbors_enabled** | **bool** | Toggle to enable the dynamic bgp neighbors feature on the VRF | [optional] 
 **bgp_dynamic_neighbors_export_route_map** | **bool** | Toggle to export the VRF route-map to the dynamic bgp neighbors | [optional] 
-**bill** | **bool** | True if the VRF is being billed. Usage will start when the first VRF Virtual Circuit is active, and will only stop when the VRF has been deleted. | [optional] [default to False]
-**created_at** | **datetime** |  | [optional] 
-**created_by** | [**User**](User.md) |  | [optional] 
-**description** | **str** | Optional field that can be set to describe the VRF | [optional] 
-**href** | **str** |  | [optional] 
-**id** | **str** |  | [optional] 
-**ip_ranges** | **List[str]** | A list of CIDR network addresses. Like [\&quot;10.0.0.0/16\&quot;, \&quot;2001:d78::/56\&quot;]. | [optional] 
+**bgp_dynamic_neighbors_bfd_enabled** | **bool** | Toggle BFD on dynamic bgp neighbors sessions | [optional] 
 **local_asn** | **int** | A 4-byte ASN associated with the VRF. | [optional] 
-**metro** | [**Metro**](Metro.md) |  | [optional] 
-**name** | **str** |  | [optional] 
-**project** | [**Project**](Project.md) |  | [optional] 
-**tags** | **List[str]** |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
 **virtual_circuits** | [**List[VrfVirtualCircuit]**](VrfVirtualCircuit.md) | Virtual circuits that are in the VRF | [optional] 
+**ip_ranges** | **List[str]** | A list of CIDR network addresses. Like [\&quot;10.0.0.0/16\&quot;, \&quot;2001:d78::/56\&quot;]. | [optional] 
+**project** | [**Project**](Project.md) |  | [optional] 
+**metro** | [**Metro**](Metro.md) |  | [optional] 
+**created_by** | [**User**](User.md) |  | [optional] 
+**href** | **str** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
 
 ## Example
 

@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bonding** | [**MetadataNetworkNetworkBonding**](MetadataNetworkNetworkBonding.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

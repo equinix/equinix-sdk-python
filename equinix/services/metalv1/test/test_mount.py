@@ -38,11 +38,10 @@ class TestMount(unittest.TestCase):
             return Mount(
                 device = '',
                 format = '',
-                href = '',
+                point = '',
                 options = [
                     ''
-                    ],
-                point = ''
+                    ]
             )
         else:
             return Mount(

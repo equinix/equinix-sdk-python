@@ -39,7 +39,6 @@ class TestBgpNeighborData(unittest.TestCase):
                 address_family = 4,
                 customer_as = 65000,
                 customer_ip = '10.32.16.1 (IPv4) or 2604:1380:4111:2700::1 (IPv6)',
-                href = '',
                 md5_enabled = True,
                 md5_password = '',
                 multihop = True,

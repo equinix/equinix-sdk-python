@@ -27,11 +27,10 @@ class ProjectIdName(BaseModel):
     """
     ProjectIdName
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "id", "name"]
+    __properties: ClassVar[List[str]] = ["id", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +90,6 @@ class ProjectIdName(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "name": obj.get("name")
         })

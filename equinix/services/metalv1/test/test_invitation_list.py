@@ -36,7 +36,6 @@ class TestInvitationList(unittest.TestCase):
         model = InvitationList()
         if include_optional:
             return InvitationList(
-                href = '',
                 invitations = [
                     equinix.services.metalv1.models.membership.Membership(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

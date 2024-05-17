@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.mount import Mount
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class Filesystem(BaseModel):
     """
     Filesystem
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     mount: Optional[Mount] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "mount"]
+    __properties: ClassVar[List[str]] = ["mount"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +93,6 @@ class Filesystem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "mount": Mount.from_dict(obj["mount"]) if obj.get("mount") is not None else None
         })
         # store additional fields in additional_properties

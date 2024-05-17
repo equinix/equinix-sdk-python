@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
-**meta** | [**Meta**](Meta.md) |  | [optional] 
 **metal_gateways** | [**List[MetalGatewayListMetalGatewaysInner]**](MetalGatewayListMetalGatewaysInner.md) |  | [optional] 
+**meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example
 

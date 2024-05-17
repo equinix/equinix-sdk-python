@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batches** | [**List[Batch]**](Batch.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

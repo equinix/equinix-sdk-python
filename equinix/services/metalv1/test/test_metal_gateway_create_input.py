@@ -36,7 +36,6 @@ class TestMetalGatewayCreateInput(unittest.TestCase):
         model = MetalGatewayCreateInput()
         if include_optional:
             return MetalGatewayCreateInput(
-                href = '',
                 ip_reservation_id = '',
                 private_ipv4_subnet_size = 56,
                 virtual_network_id = ''

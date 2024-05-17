@@ -40,7 +40,6 @@ class TestDedicatedPortCreateInput(unittest.TestCase):
                 contact_email = '',
                 description = '',
                 facility_id = '',
-                href = '',
                 metro = '',
                 mode = 'standard',
                 name = '',

@@ -27,10 +27,9 @@ class CapacityLevelPerBaremetal(BaseModel):
     """
     CapacityLevelPerBaremetal
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     level: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "level"]
+    __properties: ClassVar[List[str]] = ["level"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class CapacityLevelPerBaremetal(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "level": obj.get("level")
         })
         # store additional fields in additional_properties

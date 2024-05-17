@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**native_virtual_network** | [**VirtualNetwork**](VirtualNetwork.md) |  | [optional] 
-**network_type** | **str** | Composite network type of the bond | [optional] 
 **type** | **str** | Type is either \&quot;NetworkBondPort\&quot; for bond ports or \&quot;NetworkPort\&quot; for bondable ethernet ports | [optional] 
+**network_type** | **str** | Composite network type of the bond | [optional] 
+**native_virtual_network** | [**VirtualNetwork**](VirtualNetwork.md) |  | [optional] 
 **virtual_networks** | [**List[VirtualNetwork]**](VirtualNetwork.md) |  | [optional] 
 
 ## Example

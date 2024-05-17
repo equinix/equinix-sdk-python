@@ -36,7 +36,6 @@ class TestMembershipInput(unittest.TestCase):
         model = MembershipInput()
         if include_optional:
             return MembershipInput(
-                href = '',
                 role = [
                     ''
                     ]

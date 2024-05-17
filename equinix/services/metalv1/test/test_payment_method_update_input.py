@@ -41,7 +41,6 @@ class TestPaymentMethodUpdateInput(unittest.TestCase):
                 default = True,
                 expiration_month = '',
                 expiration_year = 56,
-                href = '',
                 name = ''
             )
         else:

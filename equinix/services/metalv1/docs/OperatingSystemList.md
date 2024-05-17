@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **operating_systems** | [**List[OperatingSystem]**](OperatingSystem.md) |  | [optional] 
 
 ## Example

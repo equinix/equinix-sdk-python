@@ -27,10 +27,9 @@ class NewPassword(BaseModel):
     """
     NewPassword
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     new_password: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "new_password"]
+    __properties: ClassVar[List[str]] = ["new_password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +89,6 @@ class NewPassword(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "new_password": obj.get("new_password")
         })
         # store additional fields in additional_properties

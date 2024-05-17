@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
 **interpolated** | **str** |  | [optional] 
-**ip** | **str** |  | [optional] 
-**modified_by** | **object** |  | [optional] 
 **relationships** | [**List[Href]**](Href.md) |  | [optional] 
 **state** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
+**modified_by** | **object** |  | [optional] 
+**ip** | **str** |  | [optional] 
 
 ## Example
 

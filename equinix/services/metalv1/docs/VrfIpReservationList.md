@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **ip_addresses** | [**List[VrfIpReservation]**](VrfIpReservation.md) |  | [optional] 
 
 ## Example

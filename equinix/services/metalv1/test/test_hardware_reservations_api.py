@@ -48,13 +48,6 @@ class TestHardwareReservationsApi(unittest.TestCase):
         """
         pass
 
-    def test_find_project_hardware_reservations_all_pages(self):
-        """Test case for find_project_hardware_reservations_all_pages
-
-        Retrieve all hardware reservations for a given project  # noqa: E501
-        """
-        pass
-
     def test_move_hardware_reservation(self) -> None:
         """Test case for move_hardware_reservation
 

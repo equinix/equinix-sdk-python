@@ -29,12 +29,11 @@ class InterconnectionUpdateInput(BaseModel):
     """ # noqa: E501
     contact_email: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     mode: Optional[StrictStr] = Field(default=None, description="The mode of the interconnection (only relevant to Dedicated Ports). Shared connections won't have this field. Can be either 'standard' or 'tunnel'.   The default mode of an interconnection on a Dedicated Port is 'standard'. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances.")
     name: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["contact_email", "description", "href", "mode", "name", "tags"]
+    __properties: ClassVar[List[str]] = ["contact_email", "description", "mode", "name", "tags"]
 
     @field_validator('mode')
     def mode_validate_enum(cls, value):
@@ -106,7 +105,6 @@ class InterconnectionUpdateInput(BaseModel):
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
-            "href": obj.get("href"),
             "mode": obj.get("mode"),
             "name": obj.get("name"),
             "tags": obj.get("tags")

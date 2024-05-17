@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **learned_routes** | [**List[VrfLearnedRoutesLearnedRoutesInner]**](VrfLearnedRoutesLearnedRoutesInner.md) |  | [optional] 
 
 ## Example

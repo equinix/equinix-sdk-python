@@ -32,25 +32,25 @@ class Vrf(BaseModel):
     """
     Vrf
     """ # noqa: E501
-    bgp_dynamic_neighbors_bfd_enabled: Optional[StrictBool] = Field(default=None, description="Toggle BFD on dynamic bgp neighbors sessions")
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    description: Optional[StrictStr] = Field(default=None, description="Optional field that can be set to describe the VRF")
+    bill: Optional[StrictBool] = Field(default=False, description="True if the VRF is being billed. Usage will start when the first VRF Virtual Circuit is active, and will only stop when the VRF has been deleted.")
     bgp_dynamic_neighbors_enabled: Optional[StrictBool] = Field(default=None, description="Toggle to enable the dynamic bgp neighbors feature on the VRF")
     bgp_dynamic_neighbors_export_route_map: Optional[StrictBool] = Field(default=None, description="Toggle to export the VRF route-map to the dynamic bgp neighbors")
-    bill: Optional[StrictBool] = Field(default=False, description="True if the VRF is being billed. Usage will start when the first VRF Virtual Circuit is active, and will only stop when the VRF has been deleted.")
-    created_at: Optional[datetime] = None
-    created_by: Optional[User] = None
-    description: Optional[StrictStr] = Field(default=None, description="Optional field that can be set to describe the VRF")
-    href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
-    ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="A list of CIDR network addresses. Like [\"10.0.0.0/16\", \"2001:d78::/56\"].")
+    bgp_dynamic_neighbors_bfd_enabled: Optional[StrictBool] = Field(default=None, description="Toggle BFD on dynamic bgp neighbors sessions")
     local_asn: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="A 4-byte ASN associated with the VRF.")
-    metro: Optional[Metro] = None
-    name: Optional[StrictStr] = None
-    project: Optional[Project] = None
-    tags: Optional[List[StrictStr]] = None
-    updated_at: Optional[datetime] = None
     virtual_circuits: Optional[List[VrfVirtualCircuit]] = Field(default=None, description="Virtual circuits that are in the VRF")
+    ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="A list of CIDR network addresses. Like [\"10.0.0.0/16\", \"2001:d78::/56\"].")
+    project: Optional[Project] = None
+    metro: Optional[Metro] = None
+    created_by: Optional[User] = None
+    href: Optional[StrictStr] = None
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgp_dynamic_neighbors_bfd_enabled", "bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "bill", "created_at", "created_by", "description", "href", "id", "ip_ranges", "local_asn", "metro", "name", "project", "tags", "updated_at", "virtual_circuits"]
+    __properties: ClassVar[List[str]] = ["id", "name", "description", "bill", "bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "bgp_dynamic_neighbors_bfd_enabled", "local_asn", "virtual_circuits", "ip_ranges", "project", "metro", "created_by", "href", "created_at", "updated_at", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,15 +93,6 @@ class Vrf(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of created_by
-        if self.created_by:
-            _dict['created_by'] = self.created_by.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of metro
-        if self.metro:
-            _dict['metro'] = self.metro.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of project
-        if self.project:
-            _dict['project'] = self.project.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in virtual_circuits (list)
         _items = []
         if self.virtual_circuits:
@@ -109,6 +100,15 @@ class Vrf(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['virtual_circuits'] = _items
+        # override the default output from pydantic by calling `to_dict()` of project
+        if self.project:
+            _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metro
+        if self.metro:
+            _dict['metro'] = self.metro.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of created_by
+        if self.created_by:
+            _dict['created_by'] = self.created_by.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -126,23 +126,23 @@ class Vrf(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
+            "id": obj.get("id"),
+            "name": obj.get("name"),
+            "description": obj.get("description"),
+            "bill": obj.get("bill") if obj.get("bill") is not None else False,
             "bgp_dynamic_neighbors_enabled": obj.get("bgp_dynamic_neighbors_enabled"),
             "bgp_dynamic_neighbors_export_route_map": obj.get("bgp_dynamic_neighbors_export_route_map"),
-            "bill": obj.get("bill") if obj.get("bill") is not None else False,
-            "created_at": obj.get("created_at"),
-            "created_by": User.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
-            "description": obj.get("description"),
-            "href": obj.get("href"),
-            "id": obj.get("id"),
-            "ip_ranges": obj.get("ip_ranges"),
+            "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
             "local_asn": obj.get("local_asn"),
-            "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
-            "name": obj.get("name"),
+            "virtual_circuits": [VrfVirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None,
+            "ip_ranges": obj.get("ip_ranges"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "tags": obj.get("tags"),
+            "metro": Metro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
+            "created_by": User.from_dict(obj["created_by"]) if obj.get("created_by") is not None else None,
+            "href": obj.get("href"),
+            "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at"),
-            "virtual_circuits": [VrfVirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **usages** | [**List[ProjectUsage]**](ProjectUsage.md) |  | [optional] 
 
 ## Example

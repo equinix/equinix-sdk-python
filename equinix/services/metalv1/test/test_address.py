@@ -40,11 +40,9 @@ class TestAddress(unittest.TestCase):
                 address2 = '',
                 city = '',
                 coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
-                    href = '', 
                     latitude = '', 
                     longitude = '', ),
                 country = '',
-                href = '',
                 state = '',
                 zip_code = ''
             )

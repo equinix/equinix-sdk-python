@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **native** | **bool** |  | [optional] 
 **state** | **str** |  | [optional] 
 **vlan** | **str** |  | [optional] 

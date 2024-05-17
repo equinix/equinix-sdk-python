@@ -32,10 +32,9 @@ class PaymentMethodUpdateInput(BaseModel):
     default: Optional[StrictBool] = None
     expiration_month: Optional[StrictStr] = None
     expiration_year: Optional[StrictInt] = None
-    href: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["billing_address", "cardholder_name", "default", "expiration_month", "expiration_year", "href", "name"]
+    __properties: ClassVar[List[str]] = ["billing_address", "cardholder_name", "default", "expiration_month", "expiration_year", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,7 +99,6 @@ class PaymentMethodUpdateInput(BaseModel):
             "default": obj.get("default"),
             "expiration_month": obj.get("expiration_month"),
             "expiration_year": obj.get("expiration_year"),
-            "href": obj.get("href"),
             "name": obj.get("name")
         })
         # store additional fields in additional_properties

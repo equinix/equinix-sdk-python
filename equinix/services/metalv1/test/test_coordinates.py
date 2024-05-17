@@ -36,7 +36,6 @@ class TestCoordinates(unittest.TestCase):
         model = Coordinates()
         if include_optional:
             return Coordinates(
-                href = '',
                 latitude = '',
                 longitude = ''
             )

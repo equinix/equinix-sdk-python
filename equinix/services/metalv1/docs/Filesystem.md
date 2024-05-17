@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **mount** | [**Mount**](Mount.md) |  | [optional] 
 
 ## Example

@@ -28,13 +28,12 @@ class SupportRequestInput(BaseModel):
     SupportRequestInput
     """ # noqa: E501
     device_id: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     message: StrictStr
     priority: Optional[StrictStr] = None
     project_id: Optional[StrictStr] = None
     subject: StrictStr
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device_id", "href", "message", "priority", "project_id", "subject"]
+    __properties: ClassVar[List[str]] = ["device_id", "message", "priority", "project_id", "subject"]
 
     @field_validator('priority')
     def priority_validate_enum(cls, value):
@@ -105,7 +104,6 @@ class SupportRequestInput(BaseModel):
 
         _obj = cls.model_validate({
             "device_id": obj.get("device_id"),
-            "href": obj.get("href"),
             "message": obj.get("message"),
             "priority": obj.get("priority"),
             "project_id": obj.get("project_id"),

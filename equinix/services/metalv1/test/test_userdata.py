@@ -36,7 +36,6 @@ class TestUserdata(unittest.TestCase):
         model = Userdata()
         if include_optional:
             return Userdata(
-                href = '',
                 userdata = ''
             )
         else:

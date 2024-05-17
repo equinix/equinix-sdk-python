@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
-**href** | **str** |  | [optional] 
 **unit** | **str** |  | [optional] 
 
 ## Example

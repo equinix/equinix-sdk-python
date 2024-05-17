@@ -32,13 +32,12 @@ class Facility(BaseModel):
     address: Optional[Address] = None
     code: Optional[StrictStr] = None
     features: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="IP ranges registered in facility. Can be used for GeoIP location")
     metro: Optional[DeviceMetro] = None
     name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "code", "features", "href", "id", "ip_ranges", "metro", "name"]
+    __properties: ClassVar[List[str]] = ["address", "code", "features", "id", "ip_ranges", "metro", "name"]
 
     @field_validator('features')
     def features_validate_enum(cls, value):
@@ -118,7 +117,6 @@ class Facility(BaseModel):
             "address": Address.from_dict(obj["address"]) if obj.get("address") is not None else None,
             "code": obj.get("code"),
             "features": obj.get("features"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "ip_ranges": obj.get("ip_ranges"),
             "metro": DeviceMetro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,

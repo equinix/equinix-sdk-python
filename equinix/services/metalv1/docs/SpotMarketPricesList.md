@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **spot_market_prices** | [**SpotPricesReport**](SpotPricesReport.md) |  | [optional] 
 
 ## Example

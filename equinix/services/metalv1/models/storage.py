@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.disk import Disk
 from equinix.services.metalv1.models.filesystem import Filesystem
@@ -31,11 +31,10 @@ class Storage(BaseModel):
     Storage
     """ # noqa: E501
     disks: Optional[List[Disk]] = None
-    filesystems: Optional[List[Filesystem]] = None
-    href: Optional[StrictStr] = None
     raid: Optional[List[Raid]] = None
+    filesystems: Optional[List[Filesystem]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["disks", "filesystems", "href", "raid"]
+    __properties: ClassVar[List[str]] = ["disks", "raid", "filesystems"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,13 +84,6 @@ class Storage(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['disks'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in filesystems (list)
-        _items = []
-        if self.filesystems:
-            for _item in self.filesystems:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['filesystems'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in raid (list)
         _items = []
         if self.raid:
@@ -99,6 +91,13 @@ class Storage(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['raid'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in filesystems (list)
+        _items = []
+        if self.filesystems:
+            for _item in self.filesystems:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['filesystems'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -117,9 +116,8 @@ class Storage(BaseModel):
 
         _obj = cls.model_validate({
             "disks": [Disk.from_dict(_item) for _item in obj["disks"]] if obj.get("disks") is not None else None,
-            "filesystems": [Filesystem.from_dict(_item) for _item in obj["filesystems"]] if obj.get("filesystems") is not None else None,
-            "href": obj.get("href"),
-            "raid": [Raid.from_dict(_item) for _item in obj["raid"]] if obj.get("raid") is not None else None
+            "raid": [Raid.from_dict(_item) for _item in obj["raid"]] if obj.get("raid") is not None else None,
+            "filesystems": [Filesystem.from_dict(_item) for _item in obj["filesystems"]] if obj.get("filesystems") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

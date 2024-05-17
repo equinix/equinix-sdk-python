@@ -5,15 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**current_page** | **int** |  | [optional] 
 **first** | [**Href**](Href.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **last** | [**Href**](Href.md) |  | [optional] 
-**last_page** | **int** |  | [optional] 
 **next** | [**Href**](Href.md) |  | [optional] 
 **previous** | [**Href**](Href.md) |  | [optional] 
 **var_self** | [**Href**](Href.md) |  | [optional] 
 **total** | **int** |  | [optional] 
+**current_page** | **int** |  | [optional] 
+**last_page** | **int** |  | [optional] 
 
 ## Example
 

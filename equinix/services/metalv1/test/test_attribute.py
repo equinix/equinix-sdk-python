@@ -36,16 +36,14 @@ class TestAttribute(unittest.TestCase):
         model = Attribute()
         if include_optional:
             return Attribute(
+                namespace = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 data = equinix.services.metalv1.models.attribute_data.AttributeData(
-                    href = '', 
                     latest = True, 
                     model = '', 
-                    plan = '', 
-                    vendor = '', ),
-                href = '',
-                namespace = '',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                    vendor = '', 
+                    plan = '', )
             )
         else:
             return Attribute(

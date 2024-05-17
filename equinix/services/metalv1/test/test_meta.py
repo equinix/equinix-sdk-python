@@ -36,20 +36,19 @@ class TestMeta(unittest.TestCase):
         model = Meta()
         if include_optional:
             return Meta(
-                current_page = 56,
                 first = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                href = '',
                 last = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                last_page = 56,
                 next = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 previous = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 var_self = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                total = 56
+                total = 56,
+                current_page = 56,
+                last_page = 56
             )
         else:
             return Meta(

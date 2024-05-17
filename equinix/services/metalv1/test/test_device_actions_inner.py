@@ -36,9 +36,8 @@ class TestDeviceActionsInner(unittest.TestCase):
         model = DeviceActionsInner()
         if include_optional:
             return DeviceActionsInner(
-                href = '',
-                name = '',
-                type = ''
+                type = '',
+                name = ''
             )
         else:
             return DeviceActionsInner(

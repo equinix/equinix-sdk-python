@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **error** | **str** | A description of the error that caused the request to fail. | [optional] 
 **errors** | **List[str]** | A list of errors that contributed to the request failing. | [optional] 
-**href** | **str** |  | [optional] 
 
 ## Example
 

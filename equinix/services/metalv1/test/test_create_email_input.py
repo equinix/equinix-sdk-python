@@ -36,8 +36,7 @@ class TestCreateEmailInput(unittest.TestCase):
         model = CreateEmailInput()
         if include_optional:
             return CreateEmailInput(
-                address = '',
-                href = ''
+                address = ''
             )
         else:
             return CreateEmailInput(

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **backend_transfer_enabled** | **bool** |  | [optional] 
 **customdata** | **object** |  | [optional] 
-**href** | **str** |  | [optional] 
 **name** | **str** | The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis. | [optional] 
 **payment_method_id** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 

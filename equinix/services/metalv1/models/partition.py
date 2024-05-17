@@ -27,12 +27,11 @@ class Partition(BaseModel):
     """
     Partition
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     number: Optional[StrictInt] = None
     size: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "label", "number", "size"]
+    __properties: ClassVar[List[str]] = ["label", "number", "size"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +91,6 @@ class Partition(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "label": obj.get("label"),
             "number": obj.get("number"),
             "size": obj.get("size")

@@ -100,11 +100,8 @@ from equinix.services.metalv1.models.ip_assignment_list import IPAssignmentList
 from equinix.services.metalv1.models.ip_assignment_metro import IPAssignmentMetro
 from equinix.services.metalv1.models.ip_assignment_update_input import IPAssignmentUpdateInput
 from equinix.services.metalv1.models.ip_availabilities_list import IPAvailabilitiesList
-from equinix.services.metalv1.models.ip_reservation import IPReservation
-from equinix.services.metalv1.models.ip_reservation_facility import IPReservationFacility
 from equinix.services.metalv1.models.ip_reservation_list import IPReservationList
 from equinix.services.metalv1.models.ip_reservation_list_ip_addresses_inner import IPReservationListIpAddressesInner
-from equinix.services.metalv1.models.ip_reservation_metro import IPReservationMetro
 from equinix.services.metalv1.models.ip_reservation_request_input import IPReservationRequestInput
 from equinix.services.metalv1.models.instances_batch_create_input import InstancesBatchCreateInput
 from equinix.services.metalv1.models.instances_batch_create_input_batches_inner import InstancesBatchCreateInputBatchesInner

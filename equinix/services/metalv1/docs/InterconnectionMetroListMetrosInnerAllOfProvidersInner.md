@@ -5,12 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**locations** | **List[str]** |  | [optional] 
 **bandwidths** | **List[int]** |  | [optional] 
 **features** | **List[str]** |  | [optional] 
-**href** | **str** |  | [optional] 
-**locations** | **List[str]** |  | [optional] 
-**name** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
 
 ## Example
 

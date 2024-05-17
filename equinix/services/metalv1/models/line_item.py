@@ -31,26 +31,25 @@ class LineItem(BaseModel):
     """
     LineItem
     """ # noqa: E501
-    adjustments: Optional[List[LineItemAdjustment]] = Field(default=None, description="Adjustments for the line item")
     amount: Optional[Union[StrictFloat, StrictInt]] = None
     currency: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     details: Optional[StrictStr] = None
-    end_date: Optional[date] = None
-    hostname: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
-    item_type: Optional[StrictStr] = None
-    location: Optional[StrictStr] = None
     plan: Optional[Plan] = None
-    plan_id: Optional[StrictStr] = None
-    project: Optional[ProjectIdName] = None
-    project_id: Optional[StrictStr] = None
-    service_id: Optional[StrictStr] = None
-    start_date: Optional[date] = None
     unit: Optional[StrictStr] = None
     unit_price: Optional[Union[StrictFloat, StrictInt]] = None
+    hostname: Optional[StrictStr] = None
+    location: Optional[StrictStr] = None
+    item_type: Optional[StrictStr] = None
+    service_id: Optional[StrictStr] = None
+    start_date: Optional[date] = None
+    end_date: Optional[date] = None
+    project_id: Optional[StrictStr] = None
+    plan_id: Optional[StrictStr] = None
+    project: Optional[ProjectIdName] = None
+    adjustments: Optional[List[LineItemAdjustment]] = Field(default=None, description="Adjustments for the line item")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["adjustments", "amount", "currency", "description", "details", "end_date", "hostname", "href", "item_type", "location", "plan", "plan_id", "project", "project_id", "service_id", "start_date", "unit", "unit_price"]
+    __properties: ClassVar[List[str]] = ["amount", "currency", "description", "details", "plan", "unit", "unit_price", "hostname", "location", "item_type", "service_id", "start_date", "end_date", "project_id", "plan_id", "project", "adjustments"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,6 +92,12 @@ class LineItem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of plan
+        if self.plan:
+            _dict['plan'] = self.plan.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of project
+        if self.project:
+            _dict['project'] = self.project.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in adjustments (list)
         _items = []
         if self.adjustments:
@@ -100,12 +105,6 @@ class LineItem(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['adjustments'] = _items
-        # override the default output from pydantic by calling `to_dict()` of plan
-        if self.plan:
-            _dict['plan'] = self.plan.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of project
-        if self.project:
-            _dict['project'] = self.project.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -123,24 +122,23 @@ class LineItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "adjustments": [LineItemAdjustment.from_dict(_item) for _item in obj["adjustments"]] if obj.get("adjustments") is not None else None,
             "amount": obj.get("amount"),
             "currency": obj.get("currency"),
             "description": obj.get("description"),
             "details": obj.get("details"),
-            "end_date": obj.get("end_date"),
-            "hostname": obj.get("hostname"),
-            "href": obj.get("href"),
-            "item_type": obj.get("item_type"),
-            "location": obj.get("location"),
             "plan": Plan.from_dict(obj["plan"]) if obj.get("plan") is not None else None,
-            "plan_id": obj.get("plan_id"),
-            "project": ProjectIdName.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "project_id": obj.get("project_id"),
+            "unit": obj.get("unit"),
+            "unit_price": obj.get("unit_price"),
+            "hostname": obj.get("hostname"),
+            "location": obj.get("location"),
+            "item_type": obj.get("item_type"),
             "service_id": obj.get("service_id"),
             "start_date": obj.get("start_date"),
-            "unit": obj.get("unit"),
-            "unit_price": obj.get("unit_price")
+            "end_date": obj.get("end_date"),
+            "project_id": obj.get("project_id"),
+            "plan_id": obj.get("plan_id"),
+            "project": ProjectIdName.from_dict(obj["project"]) if obj.get("project") is not None else None,
+            "adjustments": [LineItemAdjustment.from_dict(_item) for _item in obj["adjustments"]] if obj.get("adjustments") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

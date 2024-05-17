@@ -36,11 +36,9 @@ class TestProjectUsageList(unittest.TestCase):
         model = ProjectUsageList()
         if include_optional:
             return ProjectUsageList(
-                href = '',
                 usages = [
                     equinix.services.metalv1.models.project_usage.ProjectUsage(
                         facility = '', 
-                        href = '', 
                         name = '', 
                         plan = '', 
                         plan_version = '', 

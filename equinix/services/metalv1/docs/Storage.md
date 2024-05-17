@@ -6,9 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **disks** | [**List[Disk]**](Disk.md) |  | [optional] 
-**filesystems** | [**List[Filesystem]**](Filesystem.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **raid** | [**List[Raid]**](Raid.md) |  | [optional] 
+**filesystems** | [**List[Filesystem]**](Filesystem.md) |  | [optional] 
 
 ## Example
 

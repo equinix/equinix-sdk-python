@@ -46,15 +46,13 @@ class TestBatchesList(unittest.TestCase):
                         error_messages = [
                             ''
                             ], 
-                        href = '', 
                         id = '', 
                         project = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         quantity = 56, 
                         state = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
-                href = ''
+                    ]
             )
         else:
             return BatchesList(

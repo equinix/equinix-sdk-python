@@ -28,11 +28,10 @@ class InterconnectionPricingListProviderPricingInnerTiersInner(BaseModel):
     InterconnectionPricingListProviderPricingInnerTiersInner
     """ # noqa: E501
     bandwidth: Optional[StrictInt] = Field(default=None, description="Bandwidth tier in Mbps")
-    billing_cycle: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     price: Optional[Union[StrictFloat, StrictInt]] = None
+    billing_cycle: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bandwidth", "billing_cycle", "href", "price"]
+    __properties: ClassVar[List[str]] = ["bandwidth", "price", "billing_cycle"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,9 +92,8 @@ class InterconnectionPricingListProviderPricingInnerTiersInner(BaseModel):
 
         _obj = cls.model_validate({
             "bandwidth": obj.get("bandwidth"),
-            "billing_cycle": obj.get("billing_cycle"),
-            "href": obj.get("href"),
-            "price": obj.get("price")
+            "price": obj.get("price"),
+            "billing_cycle": obj.get("billing_cycle")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

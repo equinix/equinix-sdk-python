@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **devices** | [**List[Device]**](Device.md) |  | [optional] 
-**href** | **str** |  | [optional] 
 **meta** | [**Meta**](Meta.md) |  | [optional] 
 
 ## Example

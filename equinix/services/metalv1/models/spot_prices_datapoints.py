@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,8 @@ class SpotPricesDatapoints(BaseModel):
     SpotPricesDatapoints
     """ # noqa: E501
     datapoints: Optional[List[List[Union[StrictFloat, StrictInt]]]] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["datapoints", "href"]
+    __properties: ClassVar[List[str]] = ["datapoints"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +89,7 @@ class SpotPricesDatapoints(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "datapoints": obj.get("datapoints"),
-            "href": obj.get("href")
+            "datapoints": obj.get("datapoints")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

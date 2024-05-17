@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
 from equinix.services.metalv1.models.meta import Meta
@@ -30,10 +30,9 @@ class HardwareReservationList(BaseModel):
     HardwareReservationList
     """ # noqa: E501
     hardware_reservations: Optional[List[HardwareReservation]] = None
-    href: Optional[StrictStr] = None
     meta: Optional[Meta] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["hardware_reservations", "href", "meta"]
+    __properties: ClassVar[List[str]] = ["hardware_reservations", "meta"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +103,6 @@ class HardwareReservationList(BaseModel):
 
         _obj = cls.model_validate({
             "hardware_reservations": [HardwareReservation.from_dict(_item) for _item in obj["hardware_reservations"]] if obj.get("hardware_reservations") is not None else None,
-            "href": obj.get("href"),
             "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None
         })
         # store additional fields in additional_properties

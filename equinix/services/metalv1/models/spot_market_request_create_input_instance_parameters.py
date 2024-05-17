@@ -35,7 +35,6 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
     features: Optional[List[StrictStr]] = None
     hostname: Optional[StrictStr] = None
     hostnames: Optional[List[StrictStr]] = None
-    href: Optional[StrictStr] = None
     locked: Optional[StrictBool] = Field(default=None, description="Whether the device should be locked, preventing accidental deletion.")
     no_ssh_keys: Optional[StrictBool] = None
     operating_system: Optional[StrictStr] = None
@@ -48,7 +47,7 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
     user_ssh_keys: Optional[List[StrictStr]] = Field(default=None, description="The UUIDs of users whose SSH keys should be included on the provisioned device.")
     userdata: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "features", "hostname", "hostnames", "href", "locked", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "tags", "termination_time", "user_ssh_keys", "userdata"]
+    __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "features", "hostname", "hostnames", "locked", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "tags", "termination_time", "user_ssh_keys", "userdata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,7 +114,6 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
             "features": obj.get("features"),
             "hostname": obj.get("hostname"),
             "hostnames": obj.get("hostnames"),
-            "href": obj.get("href"),
             "locked": obj.get("locked"),
             "no_ssh_keys": obj.get("no_ssh_keys"),
             "operating_system": obj.get("operating_system"),

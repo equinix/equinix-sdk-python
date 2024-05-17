@@ -36,23 +36,16 @@ class TestVrfIpReservationList(unittest.TestCase):
         model = VrfIpReservationList()
         if include_optional:
             return VrfIpReservationList(
-                href = '',
                 ip_addresses = [
                     equinix.services.metalv1.models.vrf_ip_reservation.VrfIpReservation(
-                        address = '', 
                         address_family = 56, 
-                        bill = True, 
                         cidr = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         created_by = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
-                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         details = '', 
-                        gateway = '', 
                         href = '', 
                         id = '', 
-                        manageable = True, 
-                        management = True, 
                         metal_gateway = equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             gateway_address = '10.1.2.1/27', 
@@ -61,12 +54,6 @@ class TestVrfIpReservationList(unittest.TestCase):
                             state = 'ready', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             vlan = 1001, ), 
-                        metro = equinix.services.metalv1.models.metro.Metro(
-                            code = '', 
-                            country = '', 
-                            href = '', 
-                            id = '', 
-                            name = '', ), 
                         netmask = '', 
                         network = '', 
                         project = equinix.services.metalv1.models.project.Project(
@@ -97,15 +84,91 @@ class TestVrfIpReservationList(unittest.TestCase):
                             ssh_keys = [
                                 
                                 ], 
-                            tags = [
-                                ''
-                                ], 
-                            type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             url = '', 
                             volumes = [
                                 
+                                ], 
+                            type = 'default', 
+                            tags = [
+                                ''
                                 ], ), 
+                        state = '', 
+                        tags = [
+                            ''
+                            ], 
+                        type = 'vrf', 
+                        vrf = equinix.services.metalv1.models.vrf.Vrf(
+                            id = '', 
+                            name = '', 
+                            description = '', 
+                            bill = True, 
+                            bgp_dynamic_neighbors_enabled = True, 
+                            bgp_dynamic_neighbors_export_route_map = True, 
+                            bgp_dynamic_neighbors_bfd_enabled = True, 
+                            local_asn = 65000, 
+                            virtual_circuits = [
+                                equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                                    customer_ip = '12.0.0.2', 
+                                    description = '', 
+                                    id = '', 
+                                    md5 = '', 
+                                    metal_ip = '12.0.0.1', 
+                                    name = '', 
+                                    port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
+                                        id = '', 
+                                        role = 'primary', 
+                                        status = 'requested', 
+                                        switch_id = '', 
+                                        name = '', 
+                                        speed = 56, 
+                                        link_status = '', 
+                                        href = '', ), 
+                                    nni_vlan = 56, 
+                                    peer_asn = 65000, 
+                                    speed = 56, 
+                                    status = 'pending', 
+                                    subnet = '12.0.0.0/30', 
+                                    type = 'vrf', 
+                                    vrf = equinix.services.metalv1.models.vrf.Vrf(
+                                        id = '', 
+                                        name = '', 
+                                        description = '', 
+                                        bill = True, 
+                                        bgp_dynamic_neighbors_enabled = True, 
+                                        bgp_dynamic_neighbors_export_route_map = True, 
+                                        bgp_dynamic_neighbors_bfd_enabled = True, 
+                                        local_asn = 65000, 
+                                        ip_ranges = [
+                                            ''
+                                            ], 
+                                        metro = equinix.services.metalv1.models.metro.Metro(
+                                            code = '', 
+                                            country = '', 
+                                            id = '', 
+                                            name = '', ), 
+                                        href = '', 
+                                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                                ], 
+                            ip_ranges = [
+                                ''
+                                ], 
+                            metro = equinix.services.metalv1.models.metro.Metro(
+                                code = '', 
+                                country = '', 
+                                id = '', 
+                                name = '', ), 
+                            href = '', 
+                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                        public = True, 
+                        management = True, 
+                        manageable = True, 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
+                        bill = True, 
                         project_lite = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -115,69 +178,12 @@ class TestVrfIpReservationList(unittest.TestCase):
                             max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                             name = '0', 
                             network_status = equinix.services.metalv1.models.network_status.network_status(), 
-                            type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            url = '', ), 
-                        public = True, 
-                        state = '', 
-                        tags = [
-                            ''
-                            ], 
-                        type = 'vrf', 
-                        vrf = equinix.services.metalv1.models.vrf.Vrf(
-                            bgp_dynamic_neighbors_bfd_enabled = True, 
-                            bgp_dynamic_neighbors_enabled = True, 
-                            bgp_dynamic_neighbors_export_route_map = True, 
-                            bill = True, 
-                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            description = '', 
-                            href = '', 
-                            id = '', 
-                            ip_ranges = [
-                                ''
-                                ], 
-                            local_asn = 65000, 
-                            name = '', 
-                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            virtual_circuits = [
-                                equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
-                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    customer_ip = '12.0.0.2', 
-                                    description = '', 
-                                    href = '', 
-                                    id = '', 
-                                    md5 = '', 
-                                    metal_ip = '12.0.0.1', 
-                                    name = '', 
-                                    nni_vlan = 56, 
-                                    peer_asn = 65000, 
-                                    port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
-                                        href = '', 
-                                        id = '', 
-                                        link_status = '', 
-                                        name = '', 
-                                        role = 'primary', 
-                                        speed = 56, 
-                                        status = 'requested', 
-                                        switch_id = '', ), 
-                                    speed = 56, 
-                                    status = 'pending', 
-                                    subnet = '12.0.0.0/30', 
-                                    type = 'vrf', 
-                                    updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    vrf = equinix.services.metalv1.models.vrf.Vrf(
-                                        bgp_dynamic_neighbors_bfd_enabled = True, 
-                                        bgp_dynamic_neighbors_enabled = True, 
-                                        bgp_dynamic_neighbors_export_route_map = True, 
-                                        bill = True, 
-                                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        description = '', 
-                                        href = '', 
-                                        id = '', 
-                                        local_asn = 65000, 
-                                        name = '', 
-                                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), )
-                                ], ), )
+                            url = '', 
+                            type = 'default', ), 
+                        address = '', 
+                        gateway = '', 
+                        metro = , )
                     ]
             )
         else:

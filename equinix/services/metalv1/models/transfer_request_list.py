@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.transfer_request import TransferRequest
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class TransferRequestList(BaseModel):
     """
     TransferRequestList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     transfers: Optional[List[TransferRequest]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "transfers"]
+    __properties: ClassVar[List[str]] = ["transfers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class TransferRequestList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "transfers": [TransferRequest.from_dict(_item) for _item in obj["transfers"]] if obj.get("transfers") is not None else None
         })
         # store additional fields in additional_properties

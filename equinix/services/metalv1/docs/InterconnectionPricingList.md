@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **provider_pricing** | [**List[InterconnectionPricingListProviderPricingInner]**](InterconnectionPricingListProviderPricingInner.md) | Pricing information per connection provider. | [optional] 
 
 ## Example

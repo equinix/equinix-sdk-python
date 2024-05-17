@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**find_user_by_id**](UsersApi.md#find_user_by_id) | **GET** /users/{id} | Retrieve a user
 [**find_user_customdata**](UsersApi.md#find_user_customdata) | **GET** /users/{id}/customdata | Retrieve the custom metadata of a user
 [**find_users**](UsersApi.md#find_users) | **GET** /users | Retrieve all users
-[**find_users_all_pages**](UsersApi.md#find_users_all_pages) | **GET** /users | Retrieve all users, fetches all the pages
 [**update_current_user**](UsersApi.md#update_current_user) | **PUT** /user | Update the current user
 
 
@@ -513,9 +512,6 @@ Name | Type | Description  | Notes
 **401** | unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_users_all_pages**
-> UserList find_users_all_pages(include=include, exclude=exclude, per_page=per_page)
-Just like [**find_users**](UsersApi.md#find_users) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_users**](UsersApi.md#find_users).
 # **update_current_user**
 > User update_current_user(user_update_input, include=include, exclude=exclude)
 

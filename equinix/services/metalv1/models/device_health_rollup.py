@@ -29,10 +29,9 @@ class DeviceHealthRollup(BaseModel):
     Represents a Device Health Status
     """ # noqa: E501
     health_rollup: Optional[StrictStr] = Field(default=None, description="Health Status")
-    href: Optional[StrictStr] = None
     updated_at: Optional[datetime] = Field(default=None, description="Last update of health status.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["health_rollup", "href", "updated_at"]
+    __properties: ClassVar[List[str]] = ["health_rollup", "updated_at"]
 
     @field_validator('health_rollup')
     def health_rollup_validate_enum(cls, value):
@@ -107,7 +106,6 @@ class DeviceHealthRollup(BaseModel):
 
         _obj = cls.model_validate({
             "health_rollup": obj.get("health_rollup"),
-            "href": obj.get("href"),
             "updated_at": obj.get("updated_at")
         })
         # store additional fields in additional_properties

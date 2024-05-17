@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
 **ip_addresses** | [**List[IPAssignment]**](IPAssignment.md) |  | [optional] 
 
 ## Example

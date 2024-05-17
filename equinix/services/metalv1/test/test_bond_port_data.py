@@ -36,7 +36,6 @@ class TestBondPortData(unittest.TestCase):
         model = BondPortData()
         if include_optional:
             return BondPortData(
-                href = '',
                 id = '',
                 name = ''
             )

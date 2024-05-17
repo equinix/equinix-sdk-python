@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.vrf import Vrf
 from typing import Optional, Set
@@ -28,10 +28,9 @@ class VrfList(BaseModel):
     """
     VrfList
     """ # noqa: E501
-    href: Optional[StrictStr] = None
     vrfs: Optional[List[Vrf]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "vrfs"]
+    __properties: ClassVar[List[str]] = ["vrfs"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,7 +97,6 @@ class VrfList(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "href": obj.get("href"),
             "vrfs": [Vrf.from_dict(_item) for _item in obj["vrfs"]] if obj.get("vrfs") is not None else None
         })
         # store additional fields in additional_properties

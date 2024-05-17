@@ -36,10 +36,10 @@ class SSHKey(BaseModel):
     id: Optional[StrictStr] = None
     key: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
-    tags: Optional[List[StrictStr]] = None
     updated_at: Optional[datetime] = None
+    tags: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["created_at", "entity", "fingerprint", "href", "id", "key", "label", "tags", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "entity", "fingerprint", "href", "id", "key", "label", "updated_at", "tags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,8 +109,8 @@ class SSHKey(BaseModel):
             "id": obj.get("id"),
             "key": obj.get("key"),
             "label": obj.get("label"),
-            "tags": obj.get("tags"),
-            "updated_at": obj.get("updated_at")
+            "updated_at": obj.get("updated_at"),
+            "tags": obj.get("tags")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

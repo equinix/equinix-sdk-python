@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **str** |  | [optional] 
-**href** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **speed** | **str** | Speed can be changed only if it is an interconnection on a Dedicated Port | [optional] 
 **tags** | **List[str]** |  | [optional] 

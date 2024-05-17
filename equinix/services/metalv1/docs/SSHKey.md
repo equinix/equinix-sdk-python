@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **key** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 
-**tags** | **List[str]** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 
+**tags** | **List[str]** |  | [optional] 
 
 ## Example
 

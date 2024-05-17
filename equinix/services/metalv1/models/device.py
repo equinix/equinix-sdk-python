@@ -40,7 +40,6 @@ class Device(BaseModel):
     """
     Device
     """ # noqa: E501
-    actions: Optional[List[DeviceActionsInner]] = Field(default=None, description="Actions supported by the device instance.")
     always_pxe: Optional[StrictBool] = None
     billing_cycle: Optional[StrictStr] = None
     bonding_mode: Optional[StrictInt] = None
@@ -63,6 +62,7 @@ class Device(BaseModel):
     network_frozen: Optional[StrictBool] = Field(default=None, description="Whether network mode changes such as converting to/from Layer2 or Layer3 networking, bonding or disbonding network interfaces are permitted for the device.")
     network_ports: Optional[List[Port]] = Field(default=None, description="By default, servers at Equinix Metal are configured in a “bonded” mode using LACP (Link Aggregation Control Protocol). Each 2-NIC server is configured with a single bond (namely bond0) with both interfaces eth0 and eth1 as members of the bond in a default Layer 3 mode. Some device plans may have a different number of ports and bonds available.")
     operating_system: Optional[OperatingSystem] = None
+    actions: Optional[List[DeviceActionsInner]] = Field(default=None, description="Actions supported by the device instance.")
     plan: Optional[Plan] = None
     project: Optional[Project] = None
     project_lite: Optional[DeviceProjectLite] = None
@@ -70,7 +70,6 @@ class Device(BaseModel):
     provisioning_percentage: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Only visible while device provisioning")
     root_password: Optional[StrictStr] = Field(default=None, description="Root password is automatically generated when server is provisioned and it is removed after 24 hours")
     short_id: Optional[StrictStr] = None
-    sos: Optional[StrictStr] = Field(default=None, description="Hostname used to connect to the instance via the SOS (Serial over SSH) out-of-band console.")
     spot_instance: Optional[StrictBool] = Field(default=None, description="Whether or not the device is a spot instance.")
     spot_price_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The maximum price per hour you are willing to pay to keep this spot instance.  If you are outbid, the termination will be set allowing two minutes before shutdown.")
     ssh_keys: Optional[List[Href]] = None
@@ -83,8 +82,9 @@ class Device(BaseModel):
     user: Optional[StrictStr] = None
     userdata: Optional[StrictStr] = None
     volumes: Optional[List[Href]] = None
+    sos: Optional[StrictStr] = Field(default=None, description="Hostname used to connect to the instance via the SOS (Serial over SSH) out-of-band console.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["actions", "always_pxe", "billing_cycle", "bonding_mode", "created_at", "created_by", "customdata", "description", "facility", "firmware_set_id", "hardware_reservation", "hostname", "href", "id", "image_url", "ip_addresses", "ipxe_script_url", "iqn", "locked", "metro", "network_frozen", "network_ports", "operating_system", "plan", "project", "project_lite", "provisioning_events", "provisioning_percentage", "root_password", "short_id", "sos", "spot_instance", "spot_price_max", "ssh_keys", "state", "storage", "switch_uuid", "tags", "termination_time", "updated_at", "user", "userdata", "volumes"]
+    __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "bonding_mode", "created_at", "created_by", "customdata", "description", "facility", "firmware_set_id", "hardware_reservation", "hostname", "href", "id", "image_url", "ip_addresses", "ipxe_script_url", "iqn", "locked", "metro", "network_frozen", "network_ports", "operating_system", "actions", "plan", "project", "project_lite", "provisioning_events", "provisioning_percentage", "root_password", "short_id", "spot_instance", "spot_price_max", "ssh_keys", "state", "storage", "switch_uuid", "tags", "termination_time", "updated_at", "user", "userdata", "volumes", "sos"]
 
     @field_validator('state')
     def state_validate_enum(cls, value):
@@ -137,13 +137,6 @@ class Device(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in actions (list)
-        _items = []
-        if self.actions:
-            for _item in self.actions:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['actions'] = _items
         # override the default output from pydantic by calling `to_dict()` of created_by
         if self.created_by:
             _dict['created_by'] = self.created_by.to_dict()
@@ -173,6 +166,13 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of operating_system
         if self.operating_system:
             _dict['operating_system'] = self.operating_system.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in actions (list)
+        _items = []
+        if self.actions:
+            for _item in self.actions:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['actions'] = _items
         # override the default output from pydantic by calling `to_dict()` of plan
         if self.plan:
             _dict['plan'] = self.plan.to_dict()
@@ -223,7 +223,6 @@ class Device(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "actions": [DeviceActionsInner.from_dict(_item) for _item in obj["actions"]] if obj.get("actions") is not None else None,
             "always_pxe": obj.get("always_pxe"),
             "billing_cycle": obj.get("billing_cycle"),
             "bonding_mode": obj.get("bonding_mode"),
@@ -246,6 +245,7 @@ class Device(BaseModel):
             "network_frozen": obj.get("network_frozen"),
             "network_ports": [Port.from_dict(_item) for _item in obj["network_ports"]] if obj.get("network_ports") is not None else None,
             "operating_system": OperatingSystem.from_dict(obj["operating_system"]) if obj.get("operating_system") is not None else None,
+            "actions": [DeviceActionsInner.from_dict(_item) for _item in obj["actions"]] if obj.get("actions") is not None else None,
             "plan": Plan.from_dict(obj["plan"]) if obj.get("plan") is not None else None,
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "project_lite": DeviceProjectLite.from_dict(obj["project_lite"]) if obj.get("project_lite") is not None else None,
@@ -253,7 +253,6 @@ class Device(BaseModel):
             "provisioning_percentage": obj.get("provisioning_percentage"),
             "root_password": obj.get("root_password"),
             "short_id": obj.get("short_id"),
-            "sos": obj.get("sos"),
             "spot_instance": obj.get("spot_instance"),
             "spot_price_max": obj.get("spot_price_max"),
             "ssh_keys": [Href.from_dict(_item) for _item in obj["ssh_keys"]] if obj.get("ssh_keys") is not None else None,
@@ -265,7 +264,8 @@ class Device(BaseModel):
             "updated_at": obj.get("updated_at"),
             "user": obj.get("user"),
             "userdata": obj.get("userdata"),
-            "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None
+            "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None,
+            "sos": obj.get("sos")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

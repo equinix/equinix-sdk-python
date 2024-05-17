@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **facility** | [**FacilityInputFacility**](FacilityInputFacility.md) |  | 
-**href** | **str** |  | [optional] 
 
 ## Example
 

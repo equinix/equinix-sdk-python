@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.metalv1.models.metadata_network_network_bonding import MetadataNetworkNetworkBonding
 from typing import Optional, Set
@@ -29,9 +29,8 @@ class MetadataNetworkNetwork(BaseModel):
     MetadataNetworkNetwork
     """ # noqa: E501
     bonding: Optional[MetadataNetworkNetworkBonding] = None
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bonding", "href"]
+    __properties: ClassVar[List[str]] = ["bonding"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,8 +93,7 @@ class MetadataNetworkNetwork(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bonding": MetadataNetworkNetworkBonding.from_dict(obj["bonding"]) if obj.get("bonding") is not None else None,
-            "href": obj.get("href")
+            "bonding": MetadataNetworkNetworkBonding.from_dict(obj["bonding"]) if obj.get("bonding") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -5,9 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
-**next_hop** | **str** | The IPv4 address within the VRF of the host that will handle this route | [optional] 
 **prefix** | **str** | The IPv4 prefix for the route, in CIDR-style notation. For a static default route, this will always be \&quot;0.0.0.0/0\&quot; | [optional] 
+**next_hop** | **str** | The IPv4 address within the VRF of the host that will handle this route | [optional] 
 **tags** | **List[str]** |  | [optional] 
 
 ## Example

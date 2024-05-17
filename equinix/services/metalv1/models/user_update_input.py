@@ -29,13 +29,12 @@ class UserUpdateInput(BaseModel):
     """ # noqa: E501
     customdata: Optional[Dict[str, Any]] = None
     first_name: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     last_name: Optional[StrictStr] = None
     password: Optional[StrictStr] = None
     phone_number: Optional[StrictStr] = None
     timezone: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["customdata", "first_name", "href", "last_name", "password", "phone_number", "timezone"]
+    __properties: ClassVar[List[str]] = ["customdata", "first_name", "last_name", "password", "phone_number", "timezone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +96,6 @@ class UserUpdateInput(BaseModel):
         _obj = cls.model_validate({
             "customdata": obj.get("customdata"),
             "first_name": obj.get("first_name"),
-            "href": obj.get("href"),
             "last_name": obj.get("last_name"),
             "password": obj.get("password"),
             "phone_number": obj.get("phone_number"),

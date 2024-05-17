@@ -39,8 +39,7 @@ class TestError(unittest.TestCase):
                 error = '',
                 errors = [
                     ''
-                    ],
-                href = ''
+                    ]
             )
         else:
             return Error(

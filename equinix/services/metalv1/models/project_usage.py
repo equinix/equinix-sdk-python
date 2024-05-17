@@ -28,7 +28,6 @@ class ProjectUsage(BaseModel):
     ProjectUsage
     """ # noqa: E501
     facility: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     plan: Optional[StrictStr] = None
     plan_version: Optional[StrictStr] = None
@@ -38,7 +37,7 @@ class ProjectUsage(BaseModel):
     type: Optional[StrictStr] = None
     unit: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["facility", "href", "name", "plan", "plan_version", "price", "quantity", "total", "type", "unit"]
+    __properties: ClassVar[List[str]] = ["facility", "name", "plan", "plan_version", "price", "quantity", "total", "type", "unit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +98,6 @@ class ProjectUsage(BaseModel):
 
         _obj = cls.model_validate({
             "facility": obj.get("facility"),
-            "href": obj.get("href"),
             "name": obj.get("name"),
             "plan": obj.get("plan"),
             "plan_version": obj.get("plan_version"),

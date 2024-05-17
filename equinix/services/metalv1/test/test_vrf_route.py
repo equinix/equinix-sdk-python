@@ -36,9 +36,13 @@ class TestVrfRoute(unittest.TestCase):
         model = VrfRoute()
         if include_optional:
             return VrfRoute(
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                href = '/routes/e1ff9c2b-051a-4688-965f-153e274f77e0',
                 id = 'e1ff9c2b-051a-4688-965f-153e274f77e0',
+                status = 'active',
+                prefix = '0.0.0.0/0',
+                next_hop = '192.168.1.254',
+                type = 'static',
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 metal_gateway = equinix.services.metalv1.models.vrf_metal_gateway.VrfMetalGateway(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     created_by = equinix.services.metalv1.models.href.Href(
@@ -46,18 +50,12 @@ class TestVrfRoute(unittest.TestCase):
                     href = '', 
                     id = '', 
                     ip_reservation = equinix.services.metalv1.models.vrf_ip_reservation.VrfIpReservation(
-                        address = '', 
                         address_family = 56, 
-                        bill = True, 
                         cidr = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         details = '', 
-                        gateway = '', 
                         href = '', 
                         id = '', 
-                        manageable = True, 
-                        management = True, 
                         metal_gateway = equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             gateway_address = '10.1.2.1/27', 
@@ -66,12 +64,6 @@ class TestVrfRoute(unittest.TestCase):
                             state = 'ready', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             vlan = 1001, ), 
-                        metro = equinix.services.metalv1.models.metro.Metro(
-                            code = '', 
-                            country = '', 
-                            href = '', 
-                            id = '', 
-                            name = '', ), 
                         netmask = '', 
                         network = '', 
                         project = equinix.services.metalv1.models.project.Project(
@@ -102,15 +94,91 @@ class TestVrfRoute(unittest.TestCase):
                             ssh_keys = [
                                 
                                 ], 
-                            tags = [
-                                ''
-                                ], 
-                            type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             url = '', 
                             volumes = [
                                 
+                                ], 
+                            type = 'default', 
+                            tags = [
+                                ''
                                 ], ), 
+                        state = '', 
+                        tags = [
+                            ''
+                            ], 
+                        type = 'vrf', 
+                        vrf = equinix.services.metalv1.models.vrf.Vrf(
+                            id = '', 
+                            name = '', 
+                            description = '', 
+                            bill = True, 
+                            bgp_dynamic_neighbors_enabled = True, 
+                            bgp_dynamic_neighbors_export_route_map = True, 
+                            bgp_dynamic_neighbors_bfd_enabled = True, 
+                            local_asn = 65000, 
+                            virtual_circuits = [
+                                equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                                    customer_ip = '12.0.0.2', 
+                                    description = '', 
+                                    id = '', 
+                                    md5 = '', 
+                                    metal_ip = '12.0.0.1', 
+                                    name = '', 
+                                    port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
+                                        id = '', 
+                                        role = 'primary', 
+                                        status = 'requested', 
+                                        switch_id = '', 
+                                        name = '', 
+                                        speed = 56, 
+                                        link_status = '', 
+                                        href = '', ), 
+                                    nni_vlan = 56, 
+                                    peer_asn = 65000, 
+                                    speed = 56, 
+                                    status = 'pending', 
+                                    subnet = '12.0.0.0/30', 
+                                    type = 'vrf', 
+                                    vrf = equinix.services.metalv1.models.vrf.Vrf(
+                                        id = '', 
+                                        name = '', 
+                                        description = '', 
+                                        bill = True, 
+                                        bgp_dynamic_neighbors_enabled = True, 
+                                        bgp_dynamic_neighbors_export_route_map = True, 
+                                        bgp_dynamic_neighbors_bfd_enabled = True, 
+                                        local_asn = 65000, 
+                                        ip_ranges = [
+                                            ''
+                                            ], 
+                                        metro = equinix.services.metalv1.models.metro.Metro(
+                                            code = '', 
+                                            country = '', 
+                                            id = '', 
+                                            name = '', ), 
+                                        href = '', 
+                                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                                ], 
+                            ip_ranges = [
+                                ''
+                                ], 
+                            metro = equinix.services.metalv1.models.metro.Metro(
+                                code = '', 
+                                country = '', 
+                                id = '', 
+                                name = '', ), 
+                            href = '', 
+                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                        public = True, 
+                        management = True, 
+                        manageable = True, 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
+                        bill = True, 
                         project_lite = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -120,88 +188,25 @@ class TestVrfRoute(unittest.TestCase):
                             max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                             name = '0', 
                             network_status = equinix.services.metalv1.models.network_status.network_status(), 
-                            type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            url = '', ), 
-                        public = True, 
-                        state = '', 
-                        tags = [
-                            ''
-                            ], 
-                        type = 'vrf', 
-                        vrf = equinix.services.metalv1.models.vrf.Vrf(
-                            bgp_dynamic_neighbors_bfd_enabled = True, 
-                            bgp_dynamic_neighbors_enabled = True, 
-                            bgp_dynamic_neighbors_export_route_map = True, 
-                            bill = True, 
-                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            description = '', 
-                            href = '', 
-                            id = '', 
-                            ip_ranges = [
-                                ''
-                                ], 
-                            local_asn = 65000, 
-                            name = '', 
-                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            virtual_circuits = [
-                                equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
-                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    customer_ip = '12.0.0.2', 
-                                    description = '', 
-                                    href = '', 
-                                    id = '', 
-                                    md5 = '', 
-                                    metal_ip = '12.0.0.1', 
-                                    name = '', 
-                                    nni_vlan = 56, 
-                                    peer_asn = 65000, 
-                                    port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
-                                        href = '', 
-                                        id = '', 
-                                        link_status = '', 
-                                        name = '', 
-                                        role = 'primary', 
-                                        speed = 56, 
-                                        status = 'requested', 
-                                        switch_id = '', ), 
-                                    speed = 56, 
-                                    status = 'pending', 
-                                    subnet = '12.0.0.0/30', 
-                                    type = 'vrf', 
-                                    updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    vrf = equinix.services.metalv1.models.vrf.Vrf(
-                                        bgp_dynamic_neighbors_bfd_enabled = True, 
-                                        bgp_dynamic_neighbors_enabled = True, 
-                                        bgp_dynamic_neighbors_export_route_map = True, 
-                                        bill = True, 
-                                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        description = '', 
-                                        href = '', 
-                                        id = '', 
-                                        local_asn = 65000, 
-                                        name = '', 
-                                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), )
-                                ], ), ), 
+                            url = '', 
+                            type = 'default', ), 
+                        address = '', 
+                        gateway = '', 
+                        metro = , ), 
                     project = , 
                     state = 'ready', 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                         assigned_to = , 
                         assigned_to_virtual_circuit = True, 
-                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         facility = , 
                         href = '', 
+                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         id = '', 
                         instances = [
                             equinix.services.metalv1.models.device.Device(
-                                actions = [
-                                    equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
-                                        href = '', 
-                                        name = '', 
-                                        type = '', )
-                                    ], 
                                 always_pxe = True, 
                                 billing_cycle = '', 
                                 bonding_mode = 56, 
@@ -239,14 +244,14 @@ class TestVrfRoute(unittest.TestCase):
                                                 management = True, 
                                                 netmask = '', 
                                                 network = '', 
-                                                next_hop = '', 
                                                 parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                                     cidr = 56, 
                                                     href = '', 
                                                     netmask = '', 
                                                     network = '', ), 
                                                 public = True, 
-                                                state = 'pending', )
+                                                state = 'pending', 
+                                                next_hop = '', )
                                             ], 
                                         ipxe_script_url = '', 
                                         iqn = '', 
@@ -255,22 +260,22 @@ class TestVrfRoute(unittest.TestCase):
                                         network_ports = [
                                             equinix.services.metalv1.models.port.Port(
                                                 bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
-                                                    href = '', 
                                                     id = '', 
                                                     name = '', ), 
                                                 data = equinix.services.metalv1.models.port_data.PortData(
-                                                    bonded = True, 
-                                                    href = '', 
-                                                    mac = '', ), 
+                                                    mac = '', 
+                                                    bonded = True, ), 
                                                 disbond_operation_supported = True, 
                                                 href = '', 
                                                 id = '', 
                                                 name = 'bond0', 
+                                                type = 'NetworkPort', 
+                                                network_type = 'layer2-bonded', 
                                                 native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                                     assigned_to_virtual_circuit = True, 
-                                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                     description = '', 
                                                     href = '', 
+                                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                     id = '', 
                                                     metal_gateways = [
                                                         equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
@@ -284,17 +289,13 @@ class TestVrfRoute(unittest.TestCase):
                                                         ], 
                                                     metro_code = '', 
                                                     vxlan = 56, ), 
-                                                network_type = 'layer2-bonded', 
-                                                type = 'NetworkPort', 
                                                 virtual_networks = [
                                                     
                                                     ], )
                                             ], 
                                         operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                                            default_operating_system = True, 
                                             distro = '', 
                                             distro_label = '', 
-                                            href = '', 
                                             id = '', 
                                             licensed = True, 
                                             name = '', 
@@ -304,14 +305,19 @@ class TestVrfRoute(unittest.TestCase):
                                                 ''
                                                 ], 
                                             slug = '', 
-                                            version = '', ), 
+                                            version = '', 
+                                            default_operating_system = True, ), 
+                                        actions = [
+                                            equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                                                type = '', 
+                                                name = '', )
+                                            ], 
                                         plan = equinix.services.metalv1.models.plan.Plan(
                                             available_in = [
                                                 equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                                     href = '', 
                                                     price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                                        hour = 1.23, 
-                                                        href = '', ), )
+                                                        hour = 1.23, ), )
                                                 ], 
                                             available_in_metros = [
                                                 equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -321,11 +327,10 @@ class TestVrfRoute(unittest.TestCase):
                                                 ''
                                                 ], 
                                             class = 'm3.large.x86', 
+                                            description = '', 
                                             deployment_types = [
                                                 'on_demand'
                                                 ], 
-                                            description = '', 
-                                            href = '', 
                                             id = '', 
                                             legacy = True, 
                                             line = '', 
@@ -336,32 +341,26 @@ class TestVrfRoute(unittest.TestCase):
                                                 cpus = [
                                                     equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                         count = 56, 
-                                                        href = '', 
                                                         type = '', )
                                                     ], 
+                                                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                                                    total = '', ), 
                                                 drives = [
                                                     equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                                        category = 'boot', 
                                                         count = 56, 
-                                                        href = '', 
+                                                        type = '', 
                                                         size = '3.84TB', 
-                                                        type = '', )
+                                                        category = 'boot', )
                                                     ], 
-                                                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                                                    href = '', 
-                                                    raid = True, 
-                                                    txt = True, 
-                                                    uefi = True, ), 
-                                                href = '', 
-                                                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                                                    href = '', 
-                                                    total = '', ), 
                                                 nics = [
                                                     equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                         count = 2, 
-                                                        href = '', 
                                                         type = '', )
-                                                    ], ), 
+                                                    ], 
+                                                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                                                    raid = True, 
+                                                    txt = True, 
+                                                    uefi = True, ), ), 
                                             type = 'standard', ), 
                                         provisioning_events = [
                                             equinix.services.metalv1.models.event.Event(
@@ -370,64 +369,57 @@ class TestVrfRoute(unittest.TestCase):
                                                 href = '', 
                                                 id = '', 
                                                 interpolated = '', 
-                                                ip = '', 
-                                                modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                                 relationships = [
                                                     
                                                     ], 
                                                 state = '', 
-                                                type = '', )
+                                                type = '', 
+                                                modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                                                ip = '', )
                                             ], 
                                         provisioning_percentage = 1.337, 
                                         root_password = '', 
                                         short_id = '', 
-                                        sos = '', 
                                         spot_instance = True, 
                                         spot_price_max = 1.337, 
                                         state = 'queued', 
                                         storage = equinix.services.metalv1.models.storage.Storage(
                                             disks = [
                                                 equinix.services.metalv1.models.disk.Disk(
-                                                    href = '', 
+                                                    wipe_table = True, 
                                                     partitions = [
                                                         equinix.services.metalv1.models.partition.Partition(
-                                                            href = '', 
                                                             label = '', 
                                                             number = 56, 
                                                             size = '', )
-                                                        ], 
-                                                    wipe_table = True, )
+                                                        ], )
+                                                ], 
+                                            raid = [
+                                                equinix.services.metalv1.models.raid.Raid(
+                                                    level = '', 
+                                                    name = '', )
                                                 ], 
                                             filesystems = [
                                                 equinix.services.metalv1.models.filesystem.Filesystem(
-                                                    href = '', 
                                                     mount = equinix.services.metalv1.models.mount.Mount(
                                                         format = '', 
-                                                        href = '', 
+                                                        point = '', 
                                                         options = [
                                                             ''
-                                                            ], 
-                                                        point = '', ), )
-                                                ], 
-                                            href = '', 
-                                            raid = [
-                                                equinix.services.metalv1.models.raid.Raid(
-                                                    href = '', 
-                                                    level = '', 
-                                                    name = '', )
+                                                            ], ), )
                                                 ], ), 
                                         switch_uuid = '', 
-                                        termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                        termination_time = '2021-09-03T16:32+03:00', 
                                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         user = '', 
-                                        userdata = '', ), 
+                                        userdata = '', 
+                                        sos = '', ), 
                                     href = '', 
                                     id = '', 
                                     need_of_service = True, 
                                     plan = equinix.services.metalv1.models.plan.Plan(
                                         class = 'm3.large.x86', 
                                         description = '', 
-                                        href = '', 
                                         id = '', 
                                         legacy = True, 
                                         line = '', 
@@ -460,9 +452,9 @@ class TestVrfRoute(unittest.TestCase):
                                         management = True, 
                                         netmask = '', 
                                         network = '', 
-                                        next_hop = '', 
                                         public = True, 
-                                        state = 'pending', )
+                                        state = 'pending', 
+                                        next_hop = '', )
                                     ], 
                                 ipxe_script_url = '', 
                                 iqn = '', 
@@ -474,21 +466,25 @@ class TestVrfRoute(unittest.TestCase):
                                         href = '', 
                                         id = '', 
                                         name = 'bond0', 
-                                        network_type = 'layer2-bonded', 
-                                        type = 'NetworkPort', )
+                                        type = 'NetworkPort', 
+                                        network_type = 'layer2-bonded', )
                                     ], 
                                 operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                                    default_operating_system = True, 
                                     distro = '', 
                                     distro_label = '', 
-                                    href = '', 
                                     id = '', 
                                     licensed = True, 
                                     name = '', 
                                     preinstallable = True, 
                                     pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                     slug = '', 
-                                    version = '', ), 
+                                    version = '', 
+                                    default_operating_system = True, ), 
+                                actions = [
+                                    equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                                        type = '', 
+                                        name = '', )
+                                    ], 
                                 plan = , 
                                 provisioning_events = [
                                     equinix.services.metalv1.models.event.Event(
@@ -497,25 +493,24 @@ class TestVrfRoute(unittest.TestCase):
                                         href = '', 
                                         id = '', 
                                         interpolated = '', 
-                                        ip = '', 
-                                        modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                         state = '', 
-                                        type = '', )
+                                        type = '', 
+                                        modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                                        ip = '', )
                                     ], 
                                 provisioning_percentage = 1.337, 
                                 root_password = '', 
                                 short_id = '', 
-                                sos = '', 
                                 spot_instance = True, 
                                 spot_price_max = 1.337, 
                                 state = 'queued', 
-                                storage = equinix.services.metalv1.models.storage.Storage(
-                                    href = '', ), 
+                                storage = equinix.services.metalv1.models.storage.Storage(), 
                                 switch_uuid = '', 
-                                termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                termination_time = '2021-09-03T16:32+03:00', 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 user = '', 
-                                userdata = '', )
+                                userdata = '', 
+                                sos = '', )
                             ], 
                         metal_gateways = [
                             
@@ -523,14 +518,6 @@ class TestVrfRoute(unittest.TestCase):
                         metro_code = '', 
                         vxlan = 56, ), 
                     vrf = , ),
-                next_hop = '192.168.1.254',
-                prefix = '0.0.0.0/0',
-                status = 'active',
-                tags = [
-                    ''
-                    ],
-                type = 'static',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                     assigned_to = equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
@@ -561,29 +548,23 @@ class TestVrfRoute(unittest.TestCase):
                         ssh_keys = [
                             
                             ], 
-                        tags = [
-                            ''
-                            ], 
-                        type = 'default', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         url = '', 
                         volumes = [
                             
+                            ], 
+                        type = 'default', 
+                        tags = [
+                            ''
                             ], ), 
                     assigned_to_virtual_circuit = True, 
-                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     description = '', 
                     facility = , 
                     href = '', 
+                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     id = '', 
                     instances = [
                         equinix.services.metalv1.models.device.Device(
-                            actions = [
-                                equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
-                                    href = '', 
-                                    name = '', 
-                                    type = '', )
-                                ], 
                             always_pxe = True, 
                             billing_cycle = '', 
                             bonding_mode = 56, 
@@ -623,14 +604,14 @@ class TestVrfRoute(unittest.TestCase):
                                             metro = null, 
                                             netmask = '', 
                                             network = '', 
-                                            next_hop = '', 
                                             parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                                 cidr = 56, 
                                                 href = '', 
                                                 netmask = '', 
                                                 network = '', ), 
                                             public = True, 
-                                            state = 'pending', )
+                                            state = 'pending', 
+                                            next_hop = '', )
                                         ], 
                                     ipxe_script_url = '', 
                                     iqn = '', 
@@ -640,22 +621,22 @@ class TestVrfRoute(unittest.TestCase):
                                     network_ports = [
                                         equinix.services.metalv1.models.port.Port(
                                             bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
-                                                href = '', 
                                                 id = '', 
                                                 name = '', ), 
                                             data = equinix.services.metalv1.models.port_data.PortData(
-                                                bonded = True, 
-                                                href = '', 
-                                                mac = '', ), 
+                                                mac = '', 
+                                                bonded = True, ), 
                                             disbond_operation_supported = True, 
                                             href = '', 
                                             id = '', 
                                             name = 'bond0', 
+                                            type = 'NetworkPort', 
+                                            network_type = 'layer2-bonded', 
                                             native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                                 assigned_to_virtual_circuit = True, 
-                                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 description = '', 
                                                 href = '', 
+                                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 id = '', 
                                                 metal_gateways = [
                                                     equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
@@ -669,17 +650,13 @@ class TestVrfRoute(unittest.TestCase):
                                                     ], 
                                                 metro_code = '', 
                                                 vxlan = 56, ), 
-                                            network_type = 'layer2-bonded', 
-                                            type = 'NetworkPort', 
                                             virtual_networks = [
                                                 
                                                 ], )
                                         ], 
                                     operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                                        default_operating_system = True, 
                                         distro = '', 
                                         distro_label = '', 
-                                        href = '', 
                                         id = '', 
                                         licensed = True, 
                                         name = '', 
@@ -689,14 +666,19 @@ class TestVrfRoute(unittest.TestCase):
                                             ''
                                             ], 
                                         slug = '', 
-                                        version = '', ), 
+                                        version = '', 
+                                        default_operating_system = True, ), 
+                                    actions = [
+                                        equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                                            type = '', 
+                                            name = '', )
+                                        ], 
                                     plan = equinix.services.metalv1.models.plan.Plan(
                                         available_in = [
                                             equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                                 href = '', 
                                                 price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
-                                                    hour = 1.23, 
-                                                    href = '', ), )
+                                                    hour = 1.23, ), )
                                             ], 
                                         available_in_metros = [
                                             equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
@@ -706,11 +688,10 @@ class TestVrfRoute(unittest.TestCase):
                                             ''
                                             ], 
                                         class = 'm3.large.x86', 
+                                        description = '', 
                                         deployment_types = [
                                             'on_demand'
                                             ], 
-                                        description = '', 
-                                        href = '', 
                                         id = '', 
                                         legacy = True, 
                                         line = '', 
@@ -721,32 +702,26 @@ class TestVrfRoute(unittest.TestCase):
                                             cpus = [
                                                 equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                     count = 56, 
-                                                    href = '', 
                                                     type = '', )
                                                 ], 
+                                            memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
+                                                total = '', ), 
                                             drives = [
                                                 equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
-                                                    category = 'boot', 
                                                     count = 56, 
-                                                    href = '', 
+                                                    type = '', 
                                                     size = '3.84TB', 
-                                                    type = '', )
+                                                    category = 'boot', )
                                                 ], 
-                                            features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
-                                                href = '', 
-                                                raid = True, 
-                                                txt = True, 
-                                                uefi = True, ), 
-                                            href = '', 
-                                            memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
-                                                href = '', 
-                                                total = '', ), 
                                             nics = [
                                                 equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                     count = 2, 
-                                                    href = '', 
                                                     type = '', )
-                                                ], ), 
+                                                ], 
+                                            features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
+                                                raid = True, 
+                                                txt = True, 
+                                                uefi = True, ), ), 
                                         type = 'standard', ), 
                                     project = equinix.services.metalv1.models.project.Project(
                                         backend_transfer_enabled = True, 
@@ -756,9 +731,9 @@ class TestVrfRoute(unittest.TestCase):
                                         max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                                         name = '0', 
                                         network_status = equinix.services.metalv1.models.network_status.network_status(), 
-                                        type = 'default', 
                                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        url = '', ), 
+                                        url = '', 
+                                        type = 'default', ), 
                                     project_lite = null, 
                                     provisioning_events = [
                                         equinix.services.metalv1.models.event.Event(
@@ -767,64 +742,57 @@ class TestVrfRoute(unittest.TestCase):
                                             href = '', 
                                             id = '', 
                                             interpolated = '', 
-                                            ip = '', 
-                                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                             relationships = [
                                                 
                                                 ], 
                                             state = '', 
-                                            type = '', )
+                                            type = '', 
+                                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                                            ip = '', )
                                         ], 
                                     provisioning_percentage = 1.337, 
                                     root_password = '', 
                                     short_id = '', 
-                                    sos = '', 
                                     spot_instance = True, 
                                     spot_price_max = 1.337, 
                                     state = 'queued', 
                                     storage = equinix.services.metalv1.models.storage.Storage(
                                         disks = [
                                             equinix.services.metalv1.models.disk.Disk(
-                                                href = '', 
+                                                wipe_table = True, 
                                                 partitions = [
                                                     equinix.services.metalv1.models.partition.Partition(
-                                                        href = '', 
                                                         label = '', 
                                                         number = 56, 
                                                         size = '', )
-                                                    ], 
-                                                wipe_table = True, )
+                                                    ], )
+                                            ], 
+                                        raid = [
+                                            equinix.services.metalv1.models.raid.Raid(
+                                                level = '', 
+                                                name = '', )
                                             ], 
                                         filesystems = [
                                             equinix.services.metalv1.models.filesystem.Filesystem(
-                                                href = '', 
                                                 mount = equinix.services.metalv1.models.mount.Mount(
                                                     format = '', 
-                                                    href = '', 
+                                                    point = '', 
                                                     options = [
                                                         ''
-                                                        ], 
-                                                    point = '', ), )
-                                            ], 
-                                        href = '', 
-                                        raid = [
-                                            equinix.services.metalv1.models.raid.Raid(
-                                                href = '', 
-                                                level = '', 
-                                                name = '', )
+                                                        ], ), )
                                             ], ), 
                                     switch_uuid = '', 
-                                    termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    termination_time = '2021-09-03T16:32+03:00', 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     user = '', 
-                                    userdata = '', ), 
+                                    userdata = '', 
+                                    sos = '', ), 
                                 href = '', 
                                 id = '', 
                                 need_of_service = True, 
                                 plan = equinix.services.metalv1.models.plan.Plan(
                                     class = 'm3.large.x86', 
                                     description = '', 
-                                    href = '', 
                                     id = '', 
                                     legacy = True, 
                                     line = '', 
@@ -858,9 +826,9 @@ class TestVrfRoute(unittest.TestCase):
                                     management = True, 
                                     netmask = '', 
                                     network = '', 
-                                    next_hop = '', 
                                     public = True, 
-                                    state = 'pending', )
+                                    state = 'pending', 
+                                    next_hop = '', )
                                 ], 
                             ipxe_script_url = '', 
                             iqn = '', 
@@ -873,21 +841,25 @@ class TestVrfRoute(unittest.TestCase):
                                     href = '', 
                                     id = '', 
                                     name = 'bond0', 
-                                    network_type = 'layer2-bonded', 
-                                    type = 'NetworkPort', )
+                                    type = 'NetworkPort', 
+                                    network_type = 'layer2-bonded', )
                                 ], 
                             operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
-                                default_operating_system = True, 
                                 distro = '', 
                                 distro_label = '', 
-                                href = '', 
                                 id = '', 
                                 licensed = True, 
                                 name = '', 
                                 preinstallable = True, 
                                 pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                 slug = '', 
-                                version = '', ), 
+                                version = '', 
+                                default_operating_system = True, ), 
+                            actions = [
+                                equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
+                                    type = '', 
+                                    name = '', )
+                                ], 
                             plan = , 
                             project = , 
                             project_lite = null, 
@@ -898,25 +870,24 @@ class TestVrfRoute(unittest.TestCase):
                                     href = '', 
                                     id = '', 
                                     interpolated = '', 
-                                    ip = '', 
-                                    modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                     state = '', 
-                                    type = '', )
+                                    type = '', 
+                                    modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
+                                    ip = '', )
                                 ], 
                             provisioning_percentage = 1.337, 
                             root_password = '', 
                             short_id = '', 
-                            sos = '', 
                             spot_instance = True, 
                             spot_price_max = 1.337, 
                             state = 'queued', 
-                            storage = equinix.services.metalv1.models.storage.Storage(
-                                href = '', ), 
+                            storage = equinix.services.metalv1.models.storage.Storage(), 
                             switch_uuid = '', 
-                            termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            termination_time = '2021-09-03T16:32+03:00', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             user = '', 
-                            userdata = '', )
+                            userdata = '', 
+                            sos = '', )
                         ], 
                     metal_gateways = [
                         equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
@@ -931,20 +902,154 @@ class TestVrfRoute(unittest.TestCase):
                     metro = equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
-                        href = '', 
                         id = '', 
                         name = '', ), 
                     metro_code = '', 
+                    vxlan = 56, 
                     tags = [
                         ''
-                        ], 
-                    vxlan = 56, ),
+                        ], ),
                 vrf = equinix.services.metalv1.models.vrf.Vrf(
-                    bgp_dynamic_neighbors_bfd_enabled = True, 
+                    id = '', 
+                    name = '', 
+                    description = '', 
+                    bill = True, 
                     bgp_dynamic_neighbors_enabled = True, 
                     bgp_dynamic_neighbors_export_route_map = True, 
-                    bill = True, 
-                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    bgp_dynamic_neighbors_bfd_enabled = True, 
+                    local_asn = 65000, 
+                    virtual_circuits = [
+                        equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                            customer_ip = '12.0.0.2', 
+                            description = '', 
+                            id = '', 
+                            md5 = '', 
+                            metal_ip = '12.0.0.1', 
+                            name = '', 
+                            port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
+                                id = '', 
+                                organization = equinix.services.metalv1.models.href.Href(
+                                    href = '', ), 
+                                role = 'primary', 
+                                status = 'requested', 
+                                switch_id = '', 
+                                name = '', 
+                                speed = 56, 
+                                link_status = '', 
+                                href = '', ), 
+                            nni_vlan = 56, 
+                            peer_asn = 65000, 
+                            project = equinix.services.metalv1.models.project.Project(
+                                backend_transfer_enabled = True, 
+                                bgp_config = equinix.services.metalv1.models.href.Href(
+                                    href = '', ), 
+                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                customdata = equinix.services.metalv1.models.customdata.customdata(), 
+                                devices = [
+                                    
+                                    ], 
+                                href = '', 
+                                id = '', 
+                                invitations = [
+                                    
+                                    ], 
+                                max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
+                                members = [
+                                    
+                                    ], 
+                                memberships = [
+                                    
+                                    ], 
+                                name = '0', 
+                                network_status = equinix.services.metalv1.models.network_status.network_status(), 
+                                payment_method = , 
+                                ssh_keys = [
+                                    
+                                    ], 
+                                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                url = '', 
+                                volumes = [
+                                    
+                                    ], 
+                                type = 'default', 
+                                tags = [
+                                    ''
+                                    ], ), 
+                            speed = 56, 
+                            status = 'pending', 
+                            subnet = '12.0.0.0/30', 
+                            tags = [
+                                ''
+                                ], 
+                            type = 'vrf', 
+                            vrf = equinix.services.metalv1.models.vrf.Vrf(
+                                id = '', 
+                                name = '', 
+                                description = '', 
+                                bill = True, 
+                                bgp_dynamic_neighbors_enabled = True, 
+                                bgp_dynamic_neighbors_export_route_map = True, 
+                                bgp_dynamic_neighbors_bfd_enabled = True, 
+                                local_asn = 65000, 
+                                ip_ranges = [
+                                    ''
+                                    ], 
+                                metro = equinix.services.metalv1.models.metro.Metro(
+                                    code = '', 
+                                    country = '', 
+                                    id = '', 
+                                    name = '', ), 
+                                created_by = equinix.services.metalv1.models.user.User(
+                                    avatar_thumb_url = '', 
+                                    avatar_url = '', 
+                                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
+                                    default_organization_id = '', 
+                                    default_project_id = '', 
+                                    email = '', 
+                                    emails = [
+                                        
+                                        ], 
+                                    first_name = '', 
+                                    fraud_score = '', 
+                                    full_name = '', 
+                                    href = '', 
+                                    id = '', 
+                                    last_login_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    last_name = '', 
+                                    max_organizations = 56, 
+                                    max_projects = 56, 
+                                    phone_number = '', 
+                                    short_id = '', 
+                                    timezone = '', 
+                                    two_factor_auth = '', 
+                                    updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                                href = '', 
+                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
+                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
+                        ], 
+                    ip_ranges = [
+                        ''
+                        ], 
+                    project = equinix.services.metalv1.models.project.Project(
+                        backend_transfer_enabled = True, 
+                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
+                        href = '', 
+                        id = '', 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
+                        name = '0', 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
+                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        url = '', 
+                        type = 'default', ), 
+                    metro = equinix.services.metalv1.models.metro.Metro(
+                        code = '', 
+                        country = '', 
+                        id = '', 
+                        name = '', ), 
                     created_by = equinix.services.metalv1.models.user.User(
                         avatar_thumb_url = '', 
                         avatar_url = '', 
@@ -953,10 +1058,6 @@ class TestVrfRoute(unittest.TestCase):
                         default_organization_id = '', 
                         default_project_id = '', 
                         email = '', 
-                        emails = [
-                            equinix.services.metalv1.models.href.Href(
-                                href = '', )
-                            ], 
                         first_name = '', 
                         fraud_score = '', 
                         full_name = '', 
@@ -971,100 +1072,14 @@ class TestVrfRoute(unittest.TestCase):
                         timezone = '', 
                         two_factor_auth = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                    description = '', 
                     href = '', 
-                    id = '', 
-                    ip_ranges = [
-                        ''
-                        ], 
-                    local_asn = 65000, 
-                    metro = equinix.services.metalv1.models.metro.Metro(
-                        code = '', 
-                        country = '', 
-                        href = '', 
-                        id = '', 
-                        name = '', ), 
-                    name = '', 
-                    project = equinix.services.metalv1.models.project.Project(
-                        backend_transfer_enabled = True, 
-                        bgp_config = equinix.services.metalv1.models.href.Href(
-                            href = '', ), 
-                        created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
-                        devices = [
-                            
-                            ], 
-                        href = '', 
-                        id = '', 
-                        invitations = [
-                            
-                            ], 
-                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
-                        members = [
-                            
-                            ], 
-                        memberships = [
-                            
-                            ], 
-                        name = '0', 
-                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
-                        organization = , 
-                        payment_method = , 
-                        ssh_keys = [
-                            
-                            ], 
-                        tags = [
-                            ''
-                            ], 
-                        type = 'default', 
-                        updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        url = '', 
-                        volumes = [
-                            
-                            ], ), 
-                    tags = [
-                        ''
-                        ], 
+                    created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    virtual_circuits = [
-                        equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
-                            created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            customer_ip = '12.0.0.2', 
-                            description = '', 
-                            href = '', 
-                            id = '', 
-                            md5 = '', 
-                            metal_ip = '12.0.0.1', 
-                            name = '', 
-                            nni_vlan = 56, 
-                            peer_asn = 65000, 
-                            port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
-                                href = '', 
-                                id = '', 
-                                link_status = '', 
-                                name = '', 
-                                role = 'primary', 
-                                speed = 56, 
-                                status = 'requested', 
-                                switch_id = '', ), 
-                            speed = 56, 
-                            status = 'pending', 
-                            subnet = '12.0.0.0/30', 
-                            type = 'vrf', 
-                            updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            vrf = equinix.services.metalv1.models.vrf.Vrf(
-                                bgp_dynamic_neighbors_bfd_enabled = True, 
-                                bgp_dynamic_neighbors_enabled = True, 
-                                bgp_dynamic_neighbors_export_route_map = True, 
-                                bill = True, 
-                                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                description = '', 
-                                href = '', 
-                                id = '', 
-                                local_asn = 65000, 
-                                name = '', 
-                                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), )
-                        ], )
+                    tags = , ),
+                href = '/routes/e1ff9c2b-051a-4688-965f-153e274f77e0',
+                tags = [
+                    ''
+                    ]
             )
         else:
             return VrfRoute(

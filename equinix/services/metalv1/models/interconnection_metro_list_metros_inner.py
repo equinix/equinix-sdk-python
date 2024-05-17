@@ -30,12 +30,11 @@ class InterconnectionMetroListMetrosInner(BaseModel):
     """ # noqa: E501
     code: Optional[StrictStr] = None
     country: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     providers: Optional[List[InterconnectionMetroListMetrosInnerAllOfProvidersInner]] = Field(default=None, description="A list of providers and their equivalent regions available for connecting to the provider network.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["code", "country", "href", "id", "name", "providers"]
+    __properties: ClassVar[List[str]] = ["code", "country", "id", "name", "providers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +103,6 @@ class InterconnectionMetroListMetrosInner(BaseModel):
         _obj = cls.model_validate({
             "code": obj.get("code"),
             "country": obj.get("country"),
-            "href": obj.get("href"),
             "id": obj.get("id"),
             "name": obj.get("name"),
             "providers": [InterconnectionMetroListMetrosInnerAllOfProvidersInner.from_dict(_item) for _item in obj["providers"]] if obj.get("providers") is not None else None

@@ -28,11 +28,10 @@ class PaymentMethodBillingAddress(BaseModel):
     PaymentMethodBillingAddress
     """ # noqa: E501
     country_code_alpha2: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
     postal_code: Optional[StrictStr] = None
     street_address: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["country_code_alpha2", "href", "postal_code", "street_address"]
+    __properties: ClassVar[List[str]] = ["country_code_alpha2", "postal_code", "street_address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +92,6 @@ class PaymentMethodBillingAddress(BaseModel):
 
         _obj = cls.model_validate({
             "country_code_alpha2": obj.get("country_code_alpha2"),
-            "href": obj.get("href"),
             "postal_code": obj.get("postal_code"),
             "street_address": obj.get("street_address")
         })

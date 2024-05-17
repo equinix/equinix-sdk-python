@@ -36,7 +36,6 @@ class TestPortVlanAssignmentBatchVlanAssignmentsInner(unittest.TestCase):
         model = PortVlanAssignmentBatchVlanAssignmentsInner()
         if include_optional:
             return PortVlanAssignmentBatchVlanAssignmentsInner(
-                href = '',
                 id = '',
                 native = True,
                 state = 'assigned',

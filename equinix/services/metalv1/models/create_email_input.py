@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,8 @@ class CreateEmailInput(BaseModel):
     CreateEmailInput
     """ # noqa: E501
     address: StrictStr
-    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "href"]
+    __properties: ClassVar[List[str]] = ["address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,8 +89,7 @@ class CreateEmailInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "address": obj.get("address"),
-            "href": obj.get("href")
+            "address": obj.get("address")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

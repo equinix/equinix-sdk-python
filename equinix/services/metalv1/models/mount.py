@@ -29,11 +29,10 @@ class Mount(BaseModel):
     """ # noqa: E501
     device: Optional[StrictStr] = None
     format: Optional[StrictStr] = None
-    href: Optional[StrictStr] = None
-    options: Optional[List[StrictStr]] = None
     point: Optional[StrictStr] = None
+    options: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["device", "format", "href", "options", "point"]
+    __properties: ClassVar[List[str]] = ["device", "format", "point", "options"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,9 +94,8 @@ class Mount(BaseModel):
         _obj = cls.model_validate({
             "device": obj.get("device"),
             "format": obj.get("format"),
-            "href": obj.get("href"),
-            "options": obj.get("options"),
-            "point": obj.get("point")
+            "point": obj.get("point"),
+            "options": obj.get("options")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

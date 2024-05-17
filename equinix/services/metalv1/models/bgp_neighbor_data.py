@@ -31,7 +31,6 @@ class BgpNeighborData(BaseModel):
     address_family: Optional[StrictInt] = Field(default=None, description="Address Family for IP Address. Accepted values are 4 or 6")
     customer_as: Optional[StrictInt] = Field(default=None, description="The customer's ASN. In a local BGP deployment, this will be an internal ASN used to route within the data center. For a global BGP deployment, this will be the your own ASN, configured when you set up BGP for your project.")
     customer_ip: Optional[StrictStr] = Field(default=None, description="The device's IP address. For an IPv4 BGP session, this is typically the private bond0 address for the device.")
-    href: Optional[StrictStr] = None
     md5_enabled: Optional[StrictBool] = Field(default=None, description="True if an MD5 password is configured for the project.")
     md5_password: Optional[StrictStr] = Field(default=None, description="The MD5 password configured for the project, if set.")
     multihop: Optional[StrictBool] = Field(default=None, description="True when the BGP session should be configured as multihop.")
@@ -40,7 +39,7 @@ class BgpNeighborData(BaseModel):
     routes_in: Optional[List[BgpRoute]] = Field(default=None, description="A list of project subnets")
     routes_out: Optional[List[BgpRoute]] = Field(default=None, description="A list of outgoing routes. Only populated if the BGP session has default route enabled.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address_family", "customer_as", "customer_ip", "href", "md5_enabled", "md5_password", "multihop", "peer_as", "peer_ips", "routes_in", "routes_out"]
+    __properties: ClassVar[List[str]] = ["address_family", "customer_as", "customer_ip", "md5_enabled", "md5_password", "multihop", "peer_as", "peer_ips", "routes_in", "routes_out"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,7 +116,6 @@ class BgpNeighborData(BaseModel):
             "address_family": obj.get("address_family"),
             "customer_as": obj.get("customer_as"),
             "customer_ip": obj.get("customer_ip"),
-            "href": obj.get("href"),
             "md5_enabled": obj.get("md5_enabled"),
             "md5_password": obj.get("md5_password"),
             "multihop": obj.get("multihop"),
