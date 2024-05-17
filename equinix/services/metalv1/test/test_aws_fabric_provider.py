@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.aws_fabric_provider import AWSFabricProvider
+from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 
 class TestAWSFabricProvider(unittest.TestCase):
     """AWSFabricProvider unit test stubs"""
@@ -36,14 +36,14 @@ class TestAWSFabricProvider(unittest.TestCase):
         model = AWSFabricProvider()
         if include_optional:
             return AWSFabricProvider(
-                account_id = '129312',
+                account_id = '123412341234',
                 href = '',
                 location = 'us-west-1',
                 type = 'CSP_AWS'
             )
         else:
             return AWSFabricProvider(
-                account_id = '129312',
+                account_id = '123412341234',
                 type = 'CSP_AWS',
         )
         """

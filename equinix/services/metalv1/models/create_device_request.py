@@ -18,8 +18,8 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from equinix_metal.models.device_create_in_facility_input import DeviceCreateInFacilityInput
-from equinix_metal.models.device_create_in_metro_input import DeviceCreateInMetroInput
+from equinix.services.metalv1.models.device_create_in_facility_input import DeviceCreateInFacilityInput
+from equinix.services.metalv1.models.device_create_in_metro_input import DeviceCreateInMetroInput
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self

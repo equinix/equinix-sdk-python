@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metadata_network import MetadataNetwork
+from equinix.services.metalv1.models.metadata_network import MetadataNetwork
 
 class TestMetadataNetwork(unittest.TestCase):
     """MetadataNetwork unit test stubs"""
@@ -43,8 +43,8 @@ class TestMetadataNetwork(unittest.TestCase):
                 interfaces = [
                     None
                     ],
-                network = equinix_metal.models.metadata_network_network.Metadata_network_network(
-                    bonding = equinix_metal.models.metadata_network_network_bonding.Metadata_network_network_bonding(
+                network = equinix.services.metalv1.models.metadata_network_network.Metadata_network_network(
+                    bonding = equinix.services.metalv1.models.metadata_network_network_bonding.Metadata_network_network_bonding(
                         href = '', 
                         link_aggregation = '', 
                         mac = '', 

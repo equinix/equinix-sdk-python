@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.self_service_reservation_list import SelfServiceReservationList
+from equinix.services.metalv1.models.self_service_reservation_list import SelfServiceReservationList
 
 class TestSelfServiceReservationList(unittest.TestCase):
     """SelfServiceReservationList unit test stubs"""
@@ -38,27 +38,27 @@ class TestSelfServiceReservationList(unittest.TestCase):
             return SelfServiceReservationList(
                 href = '',
                 reservations = [
-                    equinix_metal.models.self_service_reservation_response.SelfServiceReservationResponse(
+                    equinix.services.metalv1.models.self_service_reservation_response.SelfServiceReservationResponse(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         item = [
-                            equinix_metal.models.self_service_reservation_item_response.SelfServiceReservationItemResponse(
+                            equinix.services.metalv1.models.self_service_reservation_item_response.SelfServiceReservationItemResponse(
                                 amount = 1.337, 
                                 href = '', 
                                 id = '', 
                                 metro_code = '', 
                                 metro_id = '', 
                                 metro_name = '', 
-                                plan = equinix_metal.models.plan.Plan(
+                                plan = equinix.services.metalv1.models.plan.Plan(
                                     available_in = [
-                                        equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                                        equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                             href = '', 
-                                            price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                                            price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                                 hour = 1.23, 
                                                 href = '', ), )
                                         ], 
                                     available_in_metros = [
-                                        equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                                        equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                                             href = '', )
                                         ], 
                                     categories = [
@@ -74,34 +74,34 @@ class TestSelfServiceReservationList(unittest.TestCase):
                                     legacy = True, 
                                     line = '', 
                                     name = '', 
-                                    pricing = equinix_metal.models.pricing.pricing(), 
+                                    pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                     slug = 'm3.large.x86', 
-                                    specs = equinix_metal.models.plan_specs.Plan_specs(
+                                    specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                                         cpus = [
-                                            equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                                            equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                 count = 56, 
                                                 href = '', 
                                                 type = '', )
                                             ], 
                                         drives = [
-                                            equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                                            equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                                 category = 'boot', 
                                                 count = 56, 
                                                 href = '', 
                                                 size = '3.84TB', 
                                                 type = '', )
                                             ], 
-                                        features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                                             href = '', 
                                             raid = True, 
                                             txt = True, 
                                             uefi = True, ), 
                                         href = '', 
-                                        memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                                             href = '', 
                                             total = '', ), 
                                         nics = [
-                                            equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                                            equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                 count = 2, 
                                                 href = '', 
                                                 type = '', )
@@ -119,7 +119,7 @@ class TestSelfServiceReservationList(unittest.TestCase):
                         notes = '', 
                         organization = '', 
                         organization_id = '', 
-                        period = equinix_metal.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
+                        period = equinix.services.metalv1.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
                             count = 12, 
                             href = '', 
                             unit = 'monthly', ), 

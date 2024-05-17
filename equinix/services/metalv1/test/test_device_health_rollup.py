@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_health_rollup import DeviceHealthRollup
+from equinix.services.metalv1.models.device_health_rollup import DeviceHealthRollup
 
 class TestDeviceHealthRollup(unittest.TestCase):
     """DeviceHealthRollup unit test stubs"""

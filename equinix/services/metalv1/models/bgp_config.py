@@ -22,9 +22,9 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.bgp_session import BgpSession
-from equinix_metal.models.global_bgp_range import GlobalBgpRange
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.bgp_session import BgpSession
+from equinix.services.metalv1.models.global_bgp_range import GlobalBgpRange
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -45,6 +45,7 @@ class BgpConfig(BaseModel):
     route_object: Optional[StrictStr] = Field(default=None, description="Specifies AS-MACRO (aka AS-SET) to use when building client route filters")
     sessions: Optional[List[BgpSession]] = Field(default=None, description="The direct connections between neighboring routers that want to exchange routing information.")
     status: Optional[StrictStr] = Field(default=None, description="Status of the BGP Config. Status \"requested\" is valid only with the \"global\" deployment_type.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["asn", "created_at", "deployment_type", "href", "id", "max_prefix", "md5", "project", "ranges", "requested_at", "route_object", "sessions", "status"]
 
     @field_validator('deployment_type')
@@ -97,8 +98,10 @@ class BgpConfig(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -123,6 +126,11 @@ class BgpConfig(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sessions'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if md5 (nullable) is None
         # and model_fields_set contains the field
         if self.md5 is None and "md5" in self.model_fields_set:
@@ -154,6 +162,11 @@ class BgpConfig(BaseModel):
             "sessions": [BgpSession.from_dict(_item) for _item in obj["sessions"]] if obj.get("sessions") is not None else None,
             "status": obj.get("status")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -20,15 +20,15 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.bgp_config import BgpConfig
-from equinix_metal.models.bgp_config_request_input import BgpConfigRequestInput
-from equinix_metal.models.bgp_session import BgpSession
-from equinix_metal.models.bgp_session_list import BgpSessionList
-from equinix_metal.models.global_bgp_range_list import GlobalBgpRangeList
+from equinix.services.metalv1.models.bgp_config import BgpConfig
+from equinix.services.metalv1.models.bgp_config_request_input import BgpConfigRequestInput
+from equinix.services.metalv1.models.bgp_session import BgpSession
+from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
+from equinix.services.metalv1.models.global_bgp_range_list import GlobalBgpRangeList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class BGPApi:

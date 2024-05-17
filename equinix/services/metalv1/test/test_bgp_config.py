@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_config import BgpConfig
+from equinix.services.metalv1.models.bgp_config import BgpConfig
 
 class TestBgpConfig(unittest.TestCase):
     """BgpConfig unit test stubs"""
@@ -43,25 +43,25 @@ class TestBgpConfig(unittest.TestCase):
                 id = '',
                 max_prefix = 56,
                 md5 = '',
-                project = equinix_metal.models.href.Href(
+                project = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 ranges = [
-                    equinix_metal.models.global_bgp_range.GlobalBgpRange(
+                    equinix.services.metalv1.models.global_bgp_range.GlobalBgpRange(
                         address_family = 56, 
                         href = '', 
                         id = '', 
-                        project = equinix_metal.models.href.Href(
+                        project = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         range = '', )
                     ],
                 requested_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 route_object = '',
                 sessions = [
-                    equinix_metal.models.bgp_session.BgpSession(
+                    equinix.services.metalv1.models.bgp_session.BgpSession(
                         address_family = 'ipv4', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         default_route = True, 
-                        device = equinix_metal.models.href.Href(
+                        device = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         href = '', 
                         id = '', 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.verify_email import VerifyEmail
+from equinix.services.metalv1.models.verify_email import VerifyEmail
 
 class TestVerifyEmail(unittest.TestCase):
     """VerifyEmail unit test stubs"""

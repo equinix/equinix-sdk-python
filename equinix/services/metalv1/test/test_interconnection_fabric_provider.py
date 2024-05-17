@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_fabric_provider import InterconnectionFabricProvider
+from equinix.services.metalv1.models.interconnection_fabric_provider import InterconnectionFabricProvider
 
 class TestInterconnectionFabricProvider(unittest.TestCase):
     """InterconnectionFabricProvider unit test stubs"""

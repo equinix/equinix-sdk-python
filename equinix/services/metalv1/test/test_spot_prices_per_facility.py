@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_prices_per_facility import SpotPricesPerFacility
+from equinix.services.metalv1.models.spot_prices_per_facility import SpotPricesPerFacility
 
 class TestSpotPricesPerFacility(unittest.TestCase):
     """SpotPricesPerFacility unit test stubs"""
@@ -36,32 +36,32 @@ class TestSpotPricesPerFacility(unittest.TestCase):
         model = SpotPricesPerFacility()
         if include_optional:
             return SpotPricesPerFacility(
-                baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_2 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_2 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_2a = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_2a = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_2a2 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_2a2 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_3 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_3 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                baremetal_s = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_s = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
-                c2_medium_x86 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                c2_medium_x86 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
                 href = '',
-                m2_xlarge_x86 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                m2_xlarge_x86 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, )
             )

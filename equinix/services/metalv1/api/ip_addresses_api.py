@@ -20,16 +20,16 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.find_ip_address_by_id200_response import FindIPAddressById200Response
-from equinix_metal.models.ip_assignment_update_input import IPAssignmentUpdateInput
-from equinix_metal.models.ip_availabilities_list import IPAvailabilitiesList
-from equinix_metal.models.ip_reservation_list import IPReservationList
-from equinix_metal.models.request_ip_reservation201_response import RequestIPReservation201Response
-from equinix_metal.models.request_ip_reservation_request import RequestIPReservationRequest
+from equinix.services.metalv1.models.find_ip_address_by_id200_response import FindIPAddressById200Response
+from equinix.services.metalv1.models.ip_assignment_update_input import IPAssignmentUpdateInput
+from equinix.services.metalv1.models.ip_availabilities_list import IPAvailabilitiesList
+from equinix.services.metalv1.models.ip_reservation_list import IPReservationList
+from equinix.services.metalv1.models.request_ip_reservation201_response import RequestIPReservation201Response
+from equinix.services.metalv1.models.request_ip_reservation_request import RequestIPReservationRequest
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class IPAddressesApi:

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metadata_network_network_bonding import MetadataNetworkNetworkBonding
+from equinix.services.metalv1.models.metadata_network_network_bonding import MetadataNetworkNetworkBonding
 
 class TestMetadataNetworkNetworkBonding(unittest.TestCase):
     """MetadataNetworkNetworkBonding unit test stubs"""

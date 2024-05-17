@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
+from equinix.services.metalv1.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
 
 class TestSpotMarketPricesPerMetroList(unittest.TestCase):
     """SpotMarketPricesPerMetroList unit test stubs"""
@@ -37,12 +37,12 @@ class TestSpotMarketPricesPerMetroList(unittest.TestCase):
         if include_optional:
             return SpotMarketPricesPerMetroList(
                 href = '',
-                spot_market_prices = equinix_metal.models.spot_market_prices_per_metro_report.SpotMarketPricesPerMetroReport(
-                    am = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                        baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                spot_market_prices = equinix.services.metalv1.models.spot_market_prices_per_metro_report.SpotMarketPricesPerMetroReport(
+                    am = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                        baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                             href = '', 
                             price = 1.337, ), 
-                        baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                             href = '', 
                             price = 1.337, ), 
                         baremetal_2 = , 
@@ -53,7 +53,7 @@ class TestSpotMarketPricesPerMetroList(unittest.TestCase):
                         c2/medium/x86 = , 
                         href = '', 
                         m2/xlarge/x86 = , ), 
-                    ch = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    ch = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
                         href = '', ), 
                     da = , 
                     href = '', 

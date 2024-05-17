@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.server_info import ServerInfo
+from equinix.services.metalv1.models.server_info import ServerInfo
 
 class TestServerInfo(unittest.TestCase):
     """ServerInfo unit test stubs"""

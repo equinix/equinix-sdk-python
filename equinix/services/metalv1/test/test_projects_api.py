@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.projects_api import ProjectsApi
+from equinix.services.metalv1.api.projects_api import ProjectsApi
 
 
 class TestProjectsApi(unittest.TestCase):

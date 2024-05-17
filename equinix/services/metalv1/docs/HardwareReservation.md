@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.hardware_reservation import HardwareReservation
+from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
 
 # TODO update the JSON string below
 json = "{}"

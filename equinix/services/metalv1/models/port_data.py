@@ -30,6 +30,7 @@ class PortData(BaseModel):
     bonded: Optional[StrictBool] = Field(default=None, description="Bonded is true for NetworkPort ports in a bond and NetworkBondPort ports that are active")
     href: Optional[StrictStr] = None
     mac: Optional[StrictStr] = Field(default=None, description="MAC address is set for NetworkPort ports")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["bonded", "href", "mac"]
 
     model_config = ConfigDict(
@@ -62,8 +63,10 @@ class PortData(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -71,6 +74,11 @@ class PortData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -87,6 +95,11 @@ class PortData(BaseModel):
             "href": obj.get("href"),
             "mac": obj.get("mac")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

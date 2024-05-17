@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.batches_api import BatchesApi
+from equinix.services.metalv1.api.batches_api import BatchesApi
 
 
 class TestBatchesApi(unittest.TestCase):

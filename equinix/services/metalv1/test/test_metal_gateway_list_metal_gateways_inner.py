@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metal_gateway_list_metal_gateways_inner import MetalGatewayListMetalGatewaysInner
+from equinix.services.metalv1.models.metal_gateway_list_metal_gateways_inner import MetalGatewayListMetalGatewaysInner
 
 class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
     """MetalGatewayListMetalGatewaysInner unit test stubs"""
@@ -37,26 +37,26 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
         if include_optional:
             return MetalGatewayListMetalGatewaysInner(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                created_by = equinix_metal.models.href.Href(
+                created_by = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 href = '',
                 id = '',
-                ip_reservation = equinix_metal.models.vrf_ip_reservation.VrfIpReservation(
+                ip_reservation = equinix.services.metalv1.models.vrf_ip_reservation.VrfIpReservation(
                     address = '', 
                     address_family = 56, 
                     bill = True, 
                     cidr = 56, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    created_by = equinix_metal.models.href.Href(
+                    created_by = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     details = '', 
                     gateway = '', 
                     href = '', 
                     id = '', 
                     manageable = True, 
                     management = True, 
-                    metal_gateway = equinix_metal.models.metal_gateway_lite.MetalGatewayLite(
+                    metal_gateway = equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         gateway_address = '10.1.2.1/27', 
                         href = '', 
@@ -64,7 +64,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         state = 'ready', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         vlan = 1001, ), 
-                    metro = equinix_metal.models.metro.Metro(
+                    metro = equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
                         href = '', 
@@ -72,12 +72,12 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         name = '', ), 
                     netmask = '', 
                     network = '', 
-                    project = equinix_metal.models.project.Project(
+                    project = equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
-                        bgp_config = equinix_metal.models.href.Href(
+                        bgp_config = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         devices = [
                             
                             ], 
@@ -86,7 +86,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         invitations = [
                             
                             ], 
-                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         members = [
                             
                             ], 
@@ -94,7 +94,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             
                             ], 
                         name = '0', 
-                        network_status = equinix_metal.models.network_status.network_status(), 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                         organization = , 
                         payment_method = , 
                         ssh_keys = [
@@ -109,15 +109,15 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         volumes = [
                             
                             ], ), 
-                    project_lite = equinix_metal.models.project.Project(
+                    project_lite = equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         href = '', 
                         id = '', 
-                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         name = '0', 
-                        network_status = equinix_metal.models.network_status.network_status(), 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                         type = 'default', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         url = '', ), 
@@ -127,7 +127,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         ''
                         ], 
                     type = 'vrf', 
-                    vrf = equinix_metal.models.vrf.Vrf(
+                    vrf = equinix.services.metalv1.models.vrf.Vrf(
                         bgp_dynamic_neighbors_bfd_enabled = True, 
                         bgp_dynamic_neighbors_enabled = True, 
                         bgp_dynamic_neighbors_export_route_map = True, 
@@ -143,7 +143,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         name = '', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         virtual_circuits = [
-                            equinix_metal.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                            equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 customer_ip = '12.0.0.2', 
                                 description = '', 
@@ -154,7 +154,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                 name = '', 
                                 nni_vlan = 56, 
                                 peer_asn = 65000, 
-                                port = equinix_metal.models.interconnection_port.InterconnectionPort(
+                                port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
                                     href = '', 
                                     id = '', 
                                     link_status = '', 
@@ -168,7 +168,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                 subnet = '12.0.0.0/30', 
                                 type = 'vrf', 
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                vrf = equinix_metal.models.vrf.Vrf(
+                                vrf = equinix.services.metalv1.models.vrf.Vrf(
                                     bgp_dynamic_neighbors_bfd_enabled = True, 
                                     bgp_dynamic_neighbors_enabled = True, 
                                     bgp_dynamic_neighbors_export_route_map = True, 
@@ -181,14 +181,14 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     name = '', 
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), )
                             ], ), ),
-                project = equinix_metal.models.project.Project(
+                project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
-                    bgp_config = equinix_metal.models.href.Href(
+                    bgp_config = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     devices = [
-                        equinix_metal.models.href.Href(
+                        equinix.services.metalv1.models.href.Href(
                             href = '', )
                         ], 
                     href = '', 
@@ -196,7 +196,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                     invitations = [
                         
                         ], 
-                    max_devices = equinix_metal.models.max_devices.max_devices(), 
+                    max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                     members = [
                         
                         ], 
@@ -204,7 +204,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         
                         ], 
                     name = '0', 
-                    network_status = equinix_metal.models.network_status.network_status(), 
+                    network_status = equinix.services.metalv1.models.network_status.network_status(), 
                     organization = , 
                     payment_method = , 
                     ssh_keys = [
@@ -221,15 +221,15 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         ], ),
                 state = 'ready',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                virtual_network = equinix_metal.models.virtual_network.VirtualNetwork(
-                    assigned_to = equinix_metal.models.project.Project(
+                virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
+                    assigned_to = equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
-                        bgp_config = equinix_metal.models.href.Href(
+                        bgp_config = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         devices = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         href = '', 
@@ -237,7 +237,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         invitations = [
                             
                             ], 
-                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         members = [
                             
                             ], 
@@ -245,7 +245,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             
                             ], 
                         name = '0', 
-                        network_status = equinix_metal.models.network_status.network_status(), 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                         organization = , 
                         payment_method = , 
                         ssh_keys = [
@@ -267,9 +267,9 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                     href = '', 
                     id = '', 
                     instances = [
-                        equinix_metal.models.device.Device(
+                        equinix.services.metalv1.models.device.Device(
                             actions = [
-                                equinix_metal.models.device_actions_inner.Device_actions_inner(
+                                equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
                                     href = '', 
                                     name = '', 
                                     type = '', )
@@ -282,10 +282,10 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             customdata = { }, 
                             description = '', 
                             firmware_set_id = '', 
-                            hardware_reservation = equinix_metal.models.hardware_reservation.HardwareReservation(
+                            hardware_reservation = equinix.services.metalv1.models.hardware_reservation.HardwareReservation(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 custom_rate = 1050.5, 
-                                device = equinix_metal.models.device.Device(
+                                device = equinix.services.metalv1.models.device.Device(
                                     always_pxe = True, 
                                     billing_cycle = '', 
                                     bonding_mode = 56, 
@@ -297,7 +297,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     id = '', 
                                     image_url = '', 
                                     ip_addresses = [
-                                        equinix_metal.models.ip_assignment.IPAssignment(
+                                        equinix.services.metalv1.models.ip_assignment.IPAssignment(
                                             address = '', 
                                             address_family = 56, 
                                             assigned_to = , 
@@ -314,7 +314,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                             netmask = '', 
                                             network = '', 
                                             next_hop = '', 
-                                            parent_block = equinix_metal.models.parent_block.ParentBlock(
+                                            parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                                 cidr = 56, 
                                                 href = '', 
                                                 netmask = '', 
@@ -328,12 +328,12 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     metro = null, 
                                     network_frozen = True, 
                                     network_ports = [
-                                        equinix_metal.models.port.Port(
-                                            bond = equinix_metal.models.bond_port_data.BondPortData(
+                                        equinix.services.metalv1.models.port.Port(
+                                            bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
                                                 href = '', 
                                                 id = '', 
                                                 name = '', ), 
-                                            data = equinix_metal.models.port_data.PortData(
+                                            data = equinix.services.metalv1.models.port_data.PortData(
                                                 bonded = True, 
                                                 href = '', 
                                                 mac = '', ), 
@@ -341,14 +341,14 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                             href = '', 
                                             id = '', 
                                             name = 'bond0', 
-                                            native_virtual_network = equinix_metal.models.virtual_network.VirtualNetwork(
+                                            native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                                 assigned_to_virtual_circuit = True, 
                                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 description = '', 
                                                 href = '', 
                                                 id = '', 
                                                 metal_gateways = [
-                                                    equinix_metal.models.metal_gateway_lite.MetalGatewayLite(
+                                                    equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                         gateway_address = '10.1.2.1/27', 
                                                         href = '', 
@@ -365,7 +365,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                                 
                                                 ], )
                                         ], 
-                                    operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                                    operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                                         default_operating_system = True, 
                                         distro = '', 
                                         distro_label = '', 
@@ -374,22 +374,22 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                         licensed = True, 
                                         name = '', 
                                         preinstallable = True, 
-                                        pricing = equinix_metal.models.pricing.pricing(), 
+                                        pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                         provisionable_on = [
                                             ''
                                             ], 
                                         slug = '', 
                                         version = '', ), 
-                                    plan = equinix_metal.models.plan.Plan(
+                                    plan = equinix.services.metalv1.models.plan.Plan(
                                         available_in = [
-                                            equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                                            equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                                 href = '', 
-                                                price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                                                price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                                     hour = 1.23, 
                                                     href = '', ), )
                                             ], 
                                         available_in_metros = [
-                                            equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                                            equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                                                 href = '', )
                                             ], 
                                         categories = [
@@ -405,60 +405,60 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                         legacy = True, 
                                         line = '', 
                                         name = '', 
-                                        pricing = equinix_metal.models.pricing.pricing(), 
+                                        pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                         slug = 'm3.large.x86', 
-                                        specs = equinix_metal.models.plan_specs.Plan_specs(
+                                        specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                                             cpus = [
-                                                equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                                                equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                     count = 56, 
                                                     href = '', 
                                                     type = '', )
                                                 ], 
                                             drives = [
-                                                equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                                                equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                                     category = 'boot', 
                                                     count = 56, 
                                                     href = '', 
                                                     size = '3.84TB', 
                                                     type = '', )
                                                 ], 
-                                            features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                                            features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                                                 href = '', 
                                                 raid = True, 
                                                 txt = True, 
                                                 uefi = True, ), 
                                             href = '', 
-                                            memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                                            memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                                                 href = '', 
                                                 total = '', ), 
                                             nics = [
-                                                equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                                                equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                     count = 2, 
                                                     href = '', 
                                                     type = '', )
                                                 ], ), 
                                         type = 'standard', ), 
-                                    project = equinix_metal.models.project.Project(
+                                    project = equinix.services.metalv1.models.project.Project(
                                         backend_transfer_enabled = True, 
                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         href = '', 
                                         id = '', 
-                                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                                         name = '0', 
-                                        network_status = equinix_metal.models.network_status.network_status(), 
+                                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                                         type = 'default', 
                                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         url = '', ), 
                                     project_lite = null, 
                                     provisioning_events = [
-                                        equinix_metal.models.event.Event(
+                                        equinix.services.metalv1.models.event.Event(
                                             body = '', 
                                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                             href = '', 
                                             id = '', 
                                             interpolated = '', 
                                             ip = '', 
-                                            modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                             relationships = [
                                                 
                                                 ], 
@@ -472,12 +472,12 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     spot_instance = True, 
                                     spot_price_max = 1.337, 
                                     state = 'queued', 
-                                    storage = equinix_metal.models.storage.Storage(
+                                    storage = equinix.services.metalv1.models.storage.Storage(
                                         disks = [
-                                            equinix_metal.models.disk.Disk(
+                                            equinix.services.metalv1.models.disk.Disk(
                                                 href = '', 
                                                 partitions = [
-                                                    equinix_metal.models.partition.Partition(
+                                                    equinix.services.metalv1.models.partition.Partition(
                                                         href = '', 
                                                         label = '', 
                                                         number = 56, 
@@ -486,9 +486,9 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                                 wipe_table = True, )
                                             ], 
                                         filesystems = [
-                                            equinix_metal.models.filesystem.Filesystem(
+                                            equinix.services.metalv1.models.filesystem.Filesystem(
                                                 href = '', 
-                                                mount = equinix_metal.models.mount.Mount(
+                                                mount = equinix.services.metalv1.models.mount.Mount(
                                                     format = '', 
                                                     href = '', 
                                                     options = [
@@ -498,7 +498,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                             ], 
                                         href = '', 
                                         raid = [
-                                            equinix_metal.models.raid.Raid(
+                                            equinix.services.metalv1.models.raid.Raid(
                                                 href = '', 
                                                 level = '', 
                                                 name = '', )
@@ -511,7 +511,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                 href = '', 
                                 id = '', 
                                 need_of_service = True, 
-                                plan = equinix_metal.models.plan.Plan(
+                                plan = equinix.services.metalv1.models.plan.Plan(
                                     class = 'm3.large.x86', 
                                     description = '', 
                                     href = '', 
@@ -519,7 +519,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     legacy = True, 
                                     line = '', 
                                     name = '', 
-                                    pricing = equinix_metal.models.pricing.pricing(), 
+                                    pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                     slug = 'm3.large.x86', 
                                     type = 'standard', ), 
                                 project = , 
@@ -533,7 +533,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             id = '', 
                             image_url = '', 
                             ip_addresses = [
-                                equinix_metal.models.ip_assignment.IPAssignment(
+                                equinix.services.metalv1.models.ip_assignment.IPAssignment(
                                     address = '', 
                                     address_family = 56, 
                                     assigned_to = , 
@@ -558,7 +558,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             metro = null, 
                             network_frozen = True, 
                             network_ports = [
-                                equinix_metal.models.port.Port(
+                                equinix.services.metalv1.models.port.Port(
                                     disbond_operation_supported = True, 
                                     href = '', 
                                     id = '', 
@@ -566,7 +566,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                     network_type = 'layer2-bonded', 
                                     type = 'NetworkPort', )
                                 ], 
-                            operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                            operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                                 default_operating_system = True, 
                                 distro = '', 
                                 distro_label = '', 
@@ -575,21 +575,21 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                                 licensed = True, 
                                 name = '', 
                                 preinstallable = True, 
-                                pricing = equinix_metal.models.pricing.pricing(), 
+                                pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                 slug = '', 
                                 version = '', ), 
                             plan = , 
                             project = , 
                             project_lite = null, 
                             provisioning_events = [
-                                equinix_metal.models.event.Event(
+                                equinix.services.metalv1.models.event.Event(
                                     body = '', 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     href = '', 
                                     id = '', 
                                     interpolated = '', 
                                     ip = '', 
-                                    modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                    modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                     state = '', 
                                     type = '', )
                                 ], 
@@ -600,7 +600,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             spot_instance = True, 
                             spot_price_max = 1.337, 
                             state = 'queued', 
-                            storage = equinix_metal.models.storage.Storage(
+                            storage = equinix.services.metalv1.models.storage.Storage(
                                 href = '', ), 
                             switch_uuid = '', 
                             termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -609,7 +609,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             userdata = '', )
                         ], 
                     metal_gateways = [
-                        equinix_metal.models.metal_gateway_lite.MetalGatewayLite(
+                        equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             gateway_address = '10.1.2.1/27', 
                             href = '', 
@@ -618,7 +618,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             vlan = 1001, )
                         ], 
-                    metro = equinix_metal.models.metro.Metro(
+                    metro = equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
                         href = '', 
@@ -629,22 +629,22 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         ''
                         ], 
                     vxlan = 56, ),
-                vrf = equinix_metal.models.vrf.Vrf(
+                vrf = equinix.services.metalv1.models.vrf.Vrf(
                     bgp_dynamic_neighbors_bfd_enabled = True, 
                     bgp_dynamic_neighbors_enabled = True, 
                     bgp_dynamic_neighbors_export_route_map = True, 
                     bill = True, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    created_by = equinix_metal.models.user.User(
+                    created_by = equinix.services.metalv1.models.user.User(
                         avatar_thumb_url = '', 
                         avatar_url = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         default_organization_id = '', 
                         default_project_id = '', 
                         email = '', 
                         emails = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         first_name = '', 
@@ -668,19 +668,19 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         ''
                         ], 
                     local_asn = 65000, 
-                    metro = equinix_metal.models.metro.Metro(
+                    metro = equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
                         href = '', 
                         id = '', 
                         name = '', ), 
                     name = '', 
-                    project = equinix_metal.models.project.Project(
+                    project = equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
-                        bgp_config = equinix_metal.models.href.Href(
+                        bgp_config = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         devices = [
                             
                             ], 
@@ -689,7 +689,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         invitations = [
                             
                             ], 
-                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         members = [
                             
                             ], 
@@ -697,7 +697,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             
                             ], 
                         name = '0', 
-                        network_status = equinix_metal.models.network_status.network_status(), 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                         organization = , 
                         payment_method = , 
                         ssh_keys = [
@@ -717,7 +717,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                         ], 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     virtual_circuits = [
-                        equinix_metal.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                        equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             customer_ip = '12.0.0.2', 
                             description = '', 
@@ -728,7 +728,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             name = '', 
                             nni_vlan = 56, 
                             peer_asn = 65000, 
-                            port = equinix_metal.models.interconnection_port.InterconnectionPort(
+                            port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
                                 href = '', 
                                 id = '', 
                                 link_status = '', 
@@ -742,7 +742,7 @@ class TestMetalGatewayListMetalGatewaysInner(unittest.TestCase):
                             subnet = '12.0.0.0/30', 
                             type = 'vrf', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            vrf = equinix_metal.models.vrf.Vrf(
+                            vrf = equinix.services.metalv1.models.vrf.Vrf(
                                 bgp_dynamic_neighbors_bfd_enabled = True, 
                                 bgp_dynamic_neighbors_enabled = True, 
                                 bgp_dynamic_neighbors_export_route_map = True, 

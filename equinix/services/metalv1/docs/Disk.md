@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.disk import Disk
+from equinix.services.metalv1.models.disk import Disk
 
 # TODO update the JSON string below
 json = "{}"

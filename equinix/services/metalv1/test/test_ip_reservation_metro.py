@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_reservation_metro import IPReservationMetro
+from equinix.services.metalv1.models.ip_reservation_metro import IPReservationMetro
 
 class TestIPReservationMetro(unittest.TestCase):
     """IPReservationMetro unit test stubs"""

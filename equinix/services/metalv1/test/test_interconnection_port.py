@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_port import InterconnectionPort
+from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
 
 class TestInterconnectionPort(unittest.TestCase):
     """InterconnectionPort unit test stubs"""
@@ -40,7 +40,7 @@ class TestInterconnectionPort(unittest.TestCase):
                 id = '',
                 link_status = '',
                 name = '',
-                organization = equinix_metal.models.href.Href(
+                organization = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 role = 'primary',
                 speed = 56,

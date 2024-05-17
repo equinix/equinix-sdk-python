@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.firmware_set_list_response import FirmwareSetListResponse
+from equinix.services.metalv1.models.firmware_set_list_response import FirmwareSetListResponse
 
 class TestFirmwareSetListResponse(unittest.TestCase):
     """FirmwareSetListResponse unit test stubs"""
@@ -41,11 +41,11 @@ class TestFirmwareSetListResponse(unittest.TestCase):
                 page_count = 56,
                 page_size = 56,
                 records = [
-                    equinix_metal.models.firmware_set.FirmwareSet(
+                    equinix.services.metalv1.models.firmware_set.FirmwareSet(
                         attributes = [
-                            equinix_metal.models.attribute.Attribute(
+                            equinix.services.metalv1.models.attribute.Attribute(
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                data = equinix_metal.models.attribute_data.AttributeData(
+                                data = equinix.services.metalv1.models.attribute_data.AttributeData(
                                     href = '', 
                                     latest = True, 
                                     model = '', 
@@ -56,7 +56,7 @@ class TestFirmwareSetListResponse(unittest.TestCase):
                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                             ], 
                         component_firmware = [
-                            equinix_metal.models.component.Component(
+                            equinix.services.metalv1.models.component.Component(
                                 checksum = '', 
                                 component = 'bmc', 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

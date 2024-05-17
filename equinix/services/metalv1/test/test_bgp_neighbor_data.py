@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_neighbor_data import BgpNeighborData
+from equinix.services.metalv1.models.bgp_neighbor_data import BgpNeighborData
 
 class TestBgpNeighborData(unittest.TestCase):
     """BgpNeighborData unit test stubs"""

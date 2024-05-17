@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.address import Address
+from equinix.services.metalv1.models.address import Address
 
 class TestAddress(unittest.TestCase):
     """Address unit test stubs"""
@@ -39,7 +39,7 @@ class TestAddress(unittest.TestCase):
                 address = '',
                 address2 = '',
                 city = '',
-                coordinates = equinix_metal.models.coordinates.Coordinates(
+                coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                     href = '', 
                     latitude = '', 
                     longitude = '', ),

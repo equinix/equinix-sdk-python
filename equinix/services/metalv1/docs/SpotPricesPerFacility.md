@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.spot_prices_per_facility import SpotPricesPerFacility
+from equinix.services.metalv1.models.spot_prices_per_facility import SpotPricesPerFacility
 
 # TODO update the JSON string below
 json = "{}"

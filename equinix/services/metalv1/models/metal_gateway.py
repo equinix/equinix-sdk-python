@@ -21,10 +21,10 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.ip_reservation import IPReservation
-from equinix_metal.models.project import Project
-from equinix_metal.models.virtual_network import VirtualNetwork
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.ip_reservation import IPReservation
+from equinix.services.metalv1.models.project import Project
+from equinix.services.metalv1.models.virtual_network import VirtualNetwork
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,6 +41,7 @@ class MetalGateway(BaseModel):
     state: Optional[StrictStr] = Field(default=None, description="The current state of the Metal Gateway. 'Ready' indicates the gateway record has been configured, but is currently not active on the network. 'Active' indicates the gateway has been configured on the network. 'Deleting' is a temporary state used to indicate that the gateway is in the process of being un-configured from the network, after which the gateway record will be deleted.")
     updated_at: Optional[datetime] = None
     virtual_network: Optional[VirtualNetwork] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "created_by", "href", "id", "ip_reservation", "project", "state", "updated_at", "virtual_network"]
 
     @field_validator('state')
@@ -83,8 +84,10 @@ class MetalGateway(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -104,6 +107,11 @@ class MetalGateway(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of virtual_network
         if self.virtual_network:
             _dict['virtual_network'] = self.virtual_network.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -126,6 +134,11 @@ class MetalGateway(BaseModel):
             "updated_at": obj.get("updated_at"),
             "virtual_network": VirtualNetwork.from_dict(obj["virtual_network"]) if obj.get("virtual_network") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

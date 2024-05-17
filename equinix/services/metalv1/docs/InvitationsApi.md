@@ -1,4 +1,4 @@
-# equinix_metal.InvitationsApi
+# equinix.services.metalv1.InvitationsApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -21,14 +21,14 @@ Accept an invitation.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.membership import Membership
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.membership import Membership
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -44,9 +44,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InvitationsApi(api_client)
+    api_instance = equinix.services.metalv1.InvitationsApi(api_client)
     id = 'id_example' # str | Invitation UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -104,13 +104,13 @@ Decline an invitation.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -126,9 +126,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InvitationsApi(api_client)
+    api_instance = equinix.services.metalv1.InvitationsApi(api_client)
     id = 'id_example' # str | Invitation UUID
 
     try:
@@ -182,14 +182,14 @@ Returns a single invitation. (It include the `invitable` to maintain backward co
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.invitation import Invitation
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -205,9 +205,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.InvitationsApi(api_client)
+    api_instance = equinix.services.metalv1.InvitationsApi(api_client)
     id = 'id_example' # str | Invitation UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 

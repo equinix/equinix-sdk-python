@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metal_gateway_list import MetalGatewayList
+from equinix.services.metalv1.models.metal_gateway_list import MetalGatewayList
 
 class TestMetalGatewayList(unittest.TestCase):
     """MetalGatewayList unit test stubs"""
@@ -37,12 +37,12 @@ class TestMetalGatewayList(unittest.TestCase):
         if include_optional:
             return MetalGatewayList(
                 href = '',
-                meta = equinix_metal.models.meta.Meta(
+                meta = equinix.services.metalv1.models.meta.Meta(
                     current_page = 56, 
-                    first = equinix_metal.models.href.Href(
+                    first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     href = '', 
-                    last = equinix_metal.models.href.Href(
+                    last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     last_page = 56, 
                     next = , 

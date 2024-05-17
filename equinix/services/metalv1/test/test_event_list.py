@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.event_list import EventList
+from equinix.services.metalv1.models.event_list import EventList
 
 class TestEventList(unittest.TestCase):
     """EventList unit test stubs"""
@@ -37,28 +37,28 @@ class TestEventList(unittest.TestCase):
         if include_optional:
             return EventList(
                 events = [
-                    equinix_metal.models.event.Event(
+                    equinix.services.metalv1.models.event.Event(
                         body = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         id = '', 
                         interpolated = '', 
                         ip = '', 
-                        modified_by = equinix_metal.models.modified_by.modified_by(), 
+                        modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                         relationships = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         state = '', 
                         type = '', )
                     ],
                 href = '',
-                meta = equinix_metal.models.meta.Meta(
+                meta = equinix.services.metalv1.models.meta.Meta(
                     current_page = 56, 
-                    first = equinix_metal.models.href.Href(
+                    first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     href = '', 
-                    last = equinix_metal.models.href.Href(
+                    last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     last_page = 56, 
                     next = , 

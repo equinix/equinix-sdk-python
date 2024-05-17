@@ -20,12 +20,12 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
-from equinix_metal.models.device_usage_list import DeviceUsageList
-from equinix_metal.models.project_usage_list import ProjectUsageList
+from equinix.services.metalv1.models.device_usage_list import DeviceUsageList
+from equinix.services.metalv1.models.project_usage_list import ProjectUsageList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class UsagesApi:

@@ -41,6 +41,7 @@ class VrfVirtualCircuitCreateInput(BaseModel):
     subnet: StrictStr = Field(description="The /30 or /31 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IP and Customer IP must be IPs from this subnet. For /30 subnets, the network and broadcast IPs cannot be used as the Metal or Customer IP. The subnet specified must be contained within an already-defined IP Range for the VRF.")
     tags: Optional[List[StrictStr]] = None
     vrf: StrictStr = Field(description="The UUID of the VRF that will be associated with the Virtual Circuit.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["customer_ip", "description", "href", "md5", "metal_ip", "name", "nni_vlan", "peer_asn", "project_id", "speed", "subnet", "tags", "vrf"]
 
     @field_validator('md5')
@@ -83,8 +84,10 @@ class VrfVirtualCircuitCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -92,6 +95,11 @@ class VrfVirtualCircuitCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if md5 (nullable) is None
         # and model_fields_set contains the field
         if self.md5 is None and "md5" in self.model_fields_set:
@@ -123,6 +131,11 @@ class VrfVirtualCircuitCreateInput(BaseModel):
             "tags": obj.get("tags"),
             "vrf": obj.get("vrf")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

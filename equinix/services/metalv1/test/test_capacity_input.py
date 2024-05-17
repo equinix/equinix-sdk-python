@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.capacity_input import CapacityInput
+from equinix.services.metalv1.models.capacity_input import CapacityInput
 
 class TestCapacityInput(unittest.TestCase):
     """CapacityInput unit test stubs"""
@@ -38,7 +38,7 @@ class TestCapacityInput(unittest.TestCase):
             return CapacityInput(
                 href = '',
                 servers = [
-                    equinix_metal.models.server_info.ServerInfo(
+                    equinix.services.metalv1.models.server_info.ServerInfo(
                         facility = '', 
                         href = '', 
                         metro = '', 

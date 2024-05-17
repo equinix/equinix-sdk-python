@@ -19,14 +19,14 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
-from equinix_metal.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
-from equinix_metal.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
-from equinix_metal.models.capacity_input import CapacityInput
-from equinix_metal.models.capacity_list import CapacityList
+from equinix.services.metalv1.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
+from equinix.services.metalv1.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
+from equinix.services.metalv1.models.capacity_input import CapacityInput
+from equinix.services.metalv1.models.capacity_list import CapacityList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class CapacityApi:

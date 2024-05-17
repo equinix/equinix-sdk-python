@@ -21,7 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,6 +38,7 @@ class Batch(BaseModel):
     quantity: Optional[StrictInt] = None
     state: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "devices", "error_messages", "href", "id", "project", "quantity", "state", "updated_at"]
 
     model_config = ConfigDict(
@@ -70,8 +71,10 @@ class Batch(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -89,6 +92,11 @@ class Batch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -111,6 +119,11 @@ class Batch(BaseModel):
             "state": obj.get("state"),
             "updated_at": obj.get("updated_at")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

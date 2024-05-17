@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.devices_api import DevicesApi
+from equinix.services.metalv1.api.devices_api import DevicesApi
 
 
 class TestDevicesApi(unittest.TestCase):

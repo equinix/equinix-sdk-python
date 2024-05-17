@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
+from equinix.services.metalv1.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
 
 class TestVirtualCircuitUpdateInput(unittest.TestCase):
     """VirtualCircuitUpdateInput unit test stubs"""

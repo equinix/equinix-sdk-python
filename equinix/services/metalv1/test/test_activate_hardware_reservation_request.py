@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
+from equinix.services.metalv1.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
 
 class TestActivateHardwareReservationRequest(unittest.TestCase):
     """ActivateHardwareReservationRequest unit test stubs"""

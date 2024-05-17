@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
+from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_ip_reservation_create_input import VrfIpReservationCreateInput
+from equinix.services.metalv1.models.vrf_ip_reservation_create_input import VrfIpReservationCreateInput
 
 class TestVrfIpReservationCreateInput(unittest.TestCase):
     """VrfIpReservationCreateInput unit test stubs"""

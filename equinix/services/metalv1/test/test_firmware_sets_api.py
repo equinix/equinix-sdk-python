@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.firmware_sets_api import FirmwareSetsApi
+from equinix.services.metalv1.api.firmware_sets_api import FirmwareSetsApi
 
 
 class TestFirmwareSetsApi(unittest.TestCase):

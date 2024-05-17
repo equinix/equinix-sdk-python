@@ -22,7 +22,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.project import Project
+from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -49,6 +49,7 @@ class VrfVirtualCircuit(BaseModel):
     type: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     vrf: Vrf
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "customer_ip", "description", "href", "id", "md5", "metal_ip", "name", "nni_vlan", "peer_asn", "port", "project", "speed", "status", "subnet", "tags", "type", "updated_at", "vrf"]
 
     @field_validator('status')
@@ -101,8 +102,10 @@ class VrfVirtualCircuit(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -119,6 +122,11 @@ class VrfVirtualCircuit(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vrf
         if self.vrf:
             _dict['vrf'] = self.vrf.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -151,10 +159,15 @@ class VrfVirtualCircuit(BaseModel):
             "updated_at": obj.get("updated_at"),
             "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
-from equinix_metal.models.interconnection_port import InterconnectionPort
-from equinix_metal.models.vrf import Vrf
+from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
+from equinix.services.metalv1.models.vrf import Vrf
 # TODO: Rewrite to not use raise_errors
 VrfVirtualCircuit.model_rebuild(raise_errors=False)
 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.capacity_list import CapacityList
+from equinix.services.metalv1.models.capacity_list import CapacityList
 
 class TestCapacityList(unittest.TestCase):
     """CapacityList unit test stubs"""
@@ -38,7 +38,7 @@ class TestCapacityList(unittest.TestCase):
             return CapacityList(
                 capacity = {
                     'key' : {
-                        'key' : equinix_metal.models.capacity_level_per_baremetal.CapacityLevelPerBaremetal(
+                        'key' : equinix.services.metalv1.models.capacity_level_per_baremetal.CapacityLevelPerBaremetal(
                             href = '', 
                             level = '', )
                         }

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.bgp_api import BGPApi
+from equinix.services.metalv1.api.bgp_api import BGPApi
 
 
 class TestBGPApi(unittest.TestCase):

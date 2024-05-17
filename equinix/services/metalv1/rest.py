@@ -20,7 +20,7 @@ import ssl
 
 import urllib3
 
-from equinix_metal.exceptions import ApiException, ApiValueError
+from equinix.services.metalv1.exceptions import ApiException, ApiValueError
 
 SUPPORTED_SOCKS_PROXIES = {"socks5", "socks5h", "socks4", "socks4a"}
 RESTResponseType = urllib3.HTTPResponse

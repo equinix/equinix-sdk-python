@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_pricing_list_provider_pricing_inner import InterconnectionPricingListProviderPricingInner
+from equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner import InterconnectionPricingListProviderPricingInner
 
 class TestInterconnectionPricingListProviderPricingInner(unittest.TestCase):
     """InterconnectionPricingListProviderPricingInner unit test stubs"""
@@ -39,7 +39,7 @@ class TestInterconnectionPricingListProviderPricingInner(unittest.TestCase):
                 href = '',
                 provider = 'CSP_AWS',
                 tiers = [
-                    equinix_metal.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner.InterconnectionPricingList_provider_pricing_inner_tiers_inner(
+                    equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner.InterconnectionPricingList_provider_pricing_inner_tiers_inner(
                         bandwidth = 500, 
                         billing_cycle = 'monthly', 
                         href = '', 

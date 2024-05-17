@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metro_input import MetroInput
+from equinix.services.metalv1.models.metro_input import MetroInput
 
 class TestMetroInput(unittest.TestCase):
     """MetroInput unit test stubs"""

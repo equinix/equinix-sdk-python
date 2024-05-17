@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metal_gateway_lite import MetalGatewayLite
+from equinix.services.metalv1.models.metal_gateway_lite import MetalGatewayLite
 
 class TestMetalGatewayLite(unittest.TestCase):
     """MetalGatewayLite unit test stubs"""

@@ -18,11 +18,11 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from equinix_metal.models.dedicated_port_create_input import DedicatedPortCreateInput
-from equinix_metal.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
-from equinix_metal.models.vlan_csp_connection_create_input import VlanCSPConnectionCreateInput
-from equinix_metal.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
-from equinix_metal.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
+from equinix.services.metalv1.models.dedicated_port_create_input import DedicatedPortCreateInput
+from equinix.services.metalv1.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
+from equinix.services.metalv1.models.vlan_csp_connection_create_input import VlanCSPConnectionCreateInput
+from equinix.services.metalv1.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
+from equinix.services.metalv1.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self

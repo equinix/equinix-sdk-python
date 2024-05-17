@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.self_service_reservation_item_request import SelfServiceReservationItemRequest
+from equinix.services.metalv1.models.self_service_reservation_item_request import SelfServiceReservationItemRequest
 
 class TestSelfServiceReservationItemRequest(unittest.TestCase):
     """SelfServiceReservationItemRequest unit test stubs"""

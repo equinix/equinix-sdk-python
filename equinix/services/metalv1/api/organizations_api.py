@@ -20,25 +20,25 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.invitation import Invitation
-from equinix_metal.models.invitation_input import InvitationInput
-from equinix_metal.models.invitation_list import InvitationList
-from equinix_metal.models.operating_system_list import OperatingSystemList
-from equinix_metal.models.organization import Organization
-from equinix_metal.models.organization_input import OrganizationInput
-from equinix_metal.models.organization_list import OrganizationList
-from equinix_metal.models.payment_method import PaymentMethod
-from equinix_metal.models.payment_method_create_input import PaymentMethodCreateInput
-from equinix_metal.models.payment_method_list import PaymentMethodList
-from equinix_metal.models.plan_list import PlanList
-from equinix_metal.models.project import Project
-from equinix_metal.models.project_create_input import ProjectCreateInput
-from equinix_metal.models.project_list import ProjectList
-from equinix_metal.models.transfer_request_list import TransferRequestList
+from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation_input import InvitationInput
+from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.organization import Organization
+from equinix.services.metalv1.models.organization_input import OrganizationInput
+from equinix.services.metalv1.models.organization_list import OrganizationList
+from equinix.services.metalv1.models.payment_method import PaymentMethod
+from equinix.services.metalv1.models.payment_method_create_input import PaymentMethodCreateInput
+from equinix.services.metalv1.models.payment_method_list import PaymentMethodList
+from equinix.services.metalv1.models.plan_list import PlanList
+from equinix.services.metalv1.models.project import Project
+from equinix.services.metalv1.models.project_create_input import ProjectCreateInput
+from equinix.services.metalv1.models.project_list import ProjectList
+from equinix.services.metalv1.models.transfer_request_list import TransferRequestList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class OrganizationsApi:

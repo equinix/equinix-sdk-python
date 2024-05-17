@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ssh_key_list import SSHKeyList
+from equinix.services.metalv1.models.ssh_key_list import SSHKeyList
 
 class TestSSHKeyList(unittest.TestCase):
     """SSHKeyList unit test stubs"""
@@ -38,9 +38,9 @@ class TestSSHKeyList(unittest.TestCase):
             return SSHKeyList(
                 href = '',
                 ssh_keys = [
-                    equinix_metal.models.ssh_key.SSHKey(
+                    equinix.services.metalv1.models.ssh_key.SSHKey(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        entity = equinix_metal.models.href.Href(
+                        entity = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         fingerprint = '', 
                         href = '', 

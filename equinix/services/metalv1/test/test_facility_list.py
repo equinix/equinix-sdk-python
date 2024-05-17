@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.facility_list import FacilityList
+from equinix.services.metalv1.models.facility_list import FacilityList
 
 class TestFacilityList(unittest.TestCase):
     """FacilityList unit test stubs"""
@@ -37,11 +37,11 @@ class TestFacilityList(unittest.TestCase):
         if include_optional:
             return FacilityList(
                 facilities = [
-                    equinix_metal.models.facility.Facility(
-                        address = equinix_metal.models.address.Address(
+                    equinix.services.metalv1.models.facility.Facility(
+                        address = equinix.services.metalv1.models.address.Address(
                             address2 = '', 
                             city = '', 
-                            coordinates = equinix_metal.models.coordinates.Coordinates(
+                            coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                                 href = '', 
                                 latitude = '', 
                                 longitude = '', ), 

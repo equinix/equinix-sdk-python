@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.incidents_api import IncidentsApi
+from equinix.services.metalv1.api.incidents_api import IncidentsApi
 
 
 class TestIncidentsApi(unittest.TestCase):

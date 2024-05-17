@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.plan_available_in_inner_price import PlanAvailableInInnerPrice
+from equinix.services.metalv1.models.plan_available_in_inner_price import PlanAvailableInInnerPrice
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,6 +30,7 @@ class PlanAvailableInMetrosInner(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="href to the Metro")
     price: Optional[PlanAvailableInInnerPrice] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "price"]
 
     model_config = ConfigDict(
@@ -62,8 +63,10 @@ class PlanAvailableInMetrosInner(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -74,6 +77,11 @@ class PlanAvailableInMetrosInner(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of price
         if self.price:
             _dict['price'] = self.price.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -89,6 +97,11 @@ class PlanAvailableInMetrosInner(BaseModel):
             "href": obj.get("href"),
             "price": PlanAvailableInInnerPrice.from_dict(obj["price"]) if obj.get("price") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

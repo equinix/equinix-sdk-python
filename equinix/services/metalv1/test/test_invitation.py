@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation import Invitation
 
 class TestInvitation(unittest.TestCase):
     """Invitation unit test stubs"""
@@ -39,16 +39,16 @@ class TestInvitation(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 href = '',
                 id = '',
-                invitation = equinix_metal.models.href.Href(
+                invitation = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                invited_by = equinix_metal.models.href.Href(
+                invited_by = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 invitee = '',
                 nonce = '',
-                organization = equinix_metal.models.href.Href(
+                organization = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 projects = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 roles = [

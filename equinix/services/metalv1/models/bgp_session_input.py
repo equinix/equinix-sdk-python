@@ -30,6 +30,7 @@ class BGPSessionInput(BaseModel):
     address_family: Optional[StrictStr] = Field(default=None, description="Address family for BGP session.")
     default_route: Optional[StrictBool] = Field(default=False, description="Set the default route policy.")
     href: Optional[StrictStr] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["address_family", "default_route", "href"]
 
     @field_validator('address_family')
@@ -72,8 +73,10 @@ class BGPSessionInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -81,6 +84,11 @@ class BGPSessionInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -97,6 +105,11 @@ class BGPSessionInput(BaseModel):
             "default_route": obj.get("default_route") if obj.get("default_route") is not None else False,
             "href": obj.get("href")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_request_list import SpotMarketRequestList
+from equinix.services.metalv1.models.spot_market_request_list import SpotMarketRequestList
 
 class TestSpotMarketRequestList(unittest.TestCase):
     """SpotMarketRequestList unit test stubs"""
@@ -38,16 +38,16 @@ class TestSpotMarketRequestList(unittest.TestCase):
             return SpotMarketRequestList(
                 href = '',
                 spot_market_requests = [
-                    equinix_metal.models.spot_market_request.SpotMarketRequest(
+                    equinix.services.metalv1.models.spot_market_request.SpotMarketRequest(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         devices_max = 56, 
                         devices_min = 56, 
                         end_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        facilities = equinix_metal.models.href.Href(
+                        facilities = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         href = '', 
                         id = '', 
-                        instances = equinix_metal.models.href.Href(
+                        instances = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         max_bid_price = 1.337, 
                         metro = null, 

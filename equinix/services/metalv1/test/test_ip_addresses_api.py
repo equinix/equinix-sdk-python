@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.ip_addresses_api import IPAddressesApi
+from equinix.services.metalv1.api.ip_addresses_api import IPAddressesApi
 
 
 class TestIPAddressesApi(unittest.TestCase):

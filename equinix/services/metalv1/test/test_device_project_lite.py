@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_project_lite import DeviceProjectLite
+from equinix.services.metalv1.models.device_project_lite import DeviceProjectLite
 
 class TestDeviceProjectLite(unittest.TestCase):
     """DeviceProjectLite unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.create_metal_gateway_request import CreateMetalGatewayRequest
+from equinix.services.metalv1.models.create_metal_gateway_request import CreateMetalGatewayRequest
 
 class TestCreateMetalGatewayRequest(unittest.TestCase):
     """CreateMetalGatewayRequest unit test stubs"""

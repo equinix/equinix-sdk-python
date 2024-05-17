@@ -31,6 +31,7 @@ class DeviceHealthRollup(BaseModel):
     health_rollup: Optional[StrictStr] = Field(default=None, description="Health Status")
     href: Optional[StrictStr] = None
     updated_at: Optional[datetime] = Field(default=None, description="Last update of health status.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["health_rollup", "href", "updated_at"]
 
     @field_validator('health_rollup')
@@ -75,10 +76,12 @@ class DeviceHealthRollup(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "health_rollup",
             "updated_at",
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,6 +89,11 @@ class DeviceHealthRollup(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -102,6 +110,11 @@ class DeviceHealthRollup(BaseModel):
             "href": obj.get("href"),
             "updated_at": obj.get("updated_at")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

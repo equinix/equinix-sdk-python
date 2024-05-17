@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_create_input import DeviceCreateInput
+from equinix.services.metalv1.models.device_create_input import DeviceCreateInput
 
 class TestDeviceCreateInput(unittest.TestCase):
     """DeviceCreateInput unit test stubs"""
@@ -47,7 +47,7 @@ class TestDeviceCreateInput(unittest.TestCase):
                 hostname = '',
                 href = '',
                 ip_addresses = [
-                    equinix_metal.models.ip_address.IPAddress(
+                    equinix.services.metalv1.models.ip_address.IPAddress(
                         address_family = 4, 
                         cidr = 28, 
                         href = '', 
@@ -70,7 +70,7 @@ class TestDeviceCreateInput(unittest.TestCase):
                 spot_instance = True,
                 spot_price_max = 1.23,
                 ssh_keys = [
-                    equinix_metal.models.ssh_key_input.SSHKeyInput(
+                    equinix.services.metalv1.models.ssh_key_input.SSHKeyInput(
                         href = '', 
                         key = '', 
                         label = '', 
@@ -78,13 +78,13 @@ class TestDeviceCreateInput(unittest.TestCase):
                             ''
                             ], )
                     ],
-                storage = equinix_metal.models.storage.Storage(
+                storage = equinix.services.metalv1.models.storage.Storage(
                     disks = [
-                        equinix_metal.models.disk.Disk(
+                        equinix.services.metalv1.models.disk.Disk(
                             device = '', 
                             href = '', 
                             partitions = [
-                                equinix_metal.models.partition.Partition(
+                                equinix.services.metalv1.models.partition.Partition(
                                     href = '', 
                                     label = '', 
                                     number = 56, 
@@ -93,9 +93,9 @@ class TestDeviceCreateInput(unittest.TestCase):
                             wipe_table = True, )
                         ], 
                     filesystems = [
-                        equinix_metal.models.filesystem.Filesystem(
+                        equinix.services.metalv1.models.filesystem.Filesystem(
                             href = '', 
-                            mount = equinix_metal.models.mount.Mount(
+                            mount = equinix.services.metalv1.models.mount.Mount(
                                 device = '', 
                                 format = '', 
                                 href = '', 
@@ -106,7 +106,7 @@ class TestDeviceCreateInput(unittest.TestCase):
                         ], 
                     href = '', 
                     raid = [
-                        equinix_metal.models.raid.Raid(
+                        equinix.services.metalv1.models.raid.Raid(
                             devices = [
                                 ''
                                 ], 

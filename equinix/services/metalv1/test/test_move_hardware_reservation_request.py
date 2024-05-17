@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.move_hardware_reservation_request import MoveHardwareReservationRequest
+from equinix.services.metalv1.models.move_hardware_reservation_request import MoveHardwareReservationRequest
 
 class TestMoveHardwareReservationRequest(unittest.TestCase):
     """MoveHardwareReservationRequest unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.memberships_api import MembershipsApi
+from equinix.services.metalv1.api.memberships_api import MembershipsApi
 
 
 class TestMembershipsApi(unittest.TestCase):

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
+from equinix.services.metalv1.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
 
 # TODO update the JSON string below
 json = "{}"

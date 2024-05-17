@@ -21,9 +21,9 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from equinix_metal.models.line_item_adjustment import LineItemAdjustment
-from equinix_metal.models.plan import Plan
-from equinix_metal.models.project_id_name import ProjectIdName
+from equinix.services.metalv1.models.line_item_adjustment import LineItemAdjustment
+from equinix.services.metalv1.models.plan import Plan
+from equinix.services.metalv1.models.project_id_name import ProjectIdName
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -49,6 +49,7 @@ class LineItem(BaseModel):
     start_date: Optional[date] = None
     unit: Optional[StrictStr] = None
     unit_price: Optional[Union[StrictFloat, StrictInt]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["adjustments", "amount", "currency", "description", "details", "end_date", "hostname", "href", "item_type", "location", "plan", "plan_id", "project", "project_id", "service_id", "start_date", "unit", "unit_price"]
 
     model_config = ConfigDict(
@@ -81,8 +82,10 @@ class LineItem(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -103,6 +106,11 @@ class LineItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -134,6 +142,11 @@ class LineItem(BaseModel):
             "unit": obj.get("unit"),
             "unit_price": obj.get("unit_price")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -35,6 +35,7 @@ class VrfIpReservationCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="Must be set to 'vrf'")
     vrf_id: StrictStr = Field(description="The ID of the VRF in which this VRF IP Reservation is created. The VRF must have an existing IP Range that contains the requested subnet. This field may be aliased as just 'vrf'.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["cidr", "customdata", "details", "href", "network", "tags", "type", "vrf_id"]
 
     model_config = ConfigDict(
@@ -67,8 +68,10 @@ class VrfIpReservationCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -76,6 +79,11 @@ class VrfIpReservationCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -97,6 +105,11 @@ class VrfIpReservationCreateInput(BaseModel):
             "type": obj.get("type"),
             "vrf_id": obj.get("vrf_id")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

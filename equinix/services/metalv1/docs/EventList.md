@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.event_list import EventList
+from equinix.services.metalv1.models.event_list import EventList
 
 # TODO update the JSON string below
 json = "{}"

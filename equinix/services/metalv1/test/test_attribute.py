@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.attribute import Attribute
+from equinix.services.metalv1.models.attribute import Attribute
 
 class TestAttribute(unittest.TestCase):
     """Attribute unit test stubs"""
@@ -37,7 +37,7 @@ class TestAttribute(unittest.TestCase):
         if include_optional:
             return Attribute(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                data = equinix_metal.models.attribute_data.AttributeData(
+                data = equinix.services.metalv1.models.attribute_data.AttributeData(
                     href = '', 
                     latest = True, 
                     model = '', 

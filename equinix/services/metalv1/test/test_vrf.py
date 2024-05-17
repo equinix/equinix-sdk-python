@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf import Vrf
+from equinix.services.metalv1.models.vrf import Vrf
 
 class TestVrf(unittest.TestCase):
     """Vrf unit test stubs"""
@@ -41,16 +41,16 @@ class TestVrf(unittest.TestCase):
                 bgp_dynamic_neighbors_export_route_map = True,
                 bill = True,
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                created_by = equinix_metal.models.user.User(
+                created_by = equinix.services.metalv1.models.user.User(
                     avatar_thumb_url = '', 
                     avatar_url = '', 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     default_organization_id = '', 
                     default_project_id = '', 
                     email = '', 
                     emails = [
-                        equinix_metal.models.href.Href(
+                        equinix.services.metalv1.models.href.Href(
                             href = '', )
                         ], 
                     first_name = '', 
@@ -74,21 +74,21 @@ class TestVrf(unittest.TestCase):
                     ''
                     ],
                 local_asn = 65000,
-                metro = equinix_metal.models.metro.Metro(
+                metro = equinix.services.metalv1.models.metro.Metro(
                     code = '', 
                     country = '', 
                     href = '', 
                     id = '', 
                     name = '', ),
                 name = '',
-                project = equinix_metal.models.project.Project(
+                project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
-                    bgp_config = equinix_metal.models.href.Href(
+                    bgp_config = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     devices = [
-                        equinix_metal.models.href.Href(
+                        equinix.services.metalv1.models.href.Href(
                             href = '', )
                         ], 
                     href = '', 
@@ -96,7 +96,7 @@ class TestVrf(unittest.TestCase):
                     invitations = [
                         
                         ], 
-                    max_devices = equinix_metal.models.max_devices.max_devices(), 
+                    max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                     members = [
                         
                         ], 
@@ -104,7 +104,7 @@ class TestVrf(unittest.TestCase):
                         
                         ], 
                     name = '0', 
-                    network_status = equinix_metal.models.network_status.network_status(), 
+                    network_status = equinix.services.metalv1.models.network_status.network_status(), 
                     organization = , 
                     payment_method = , 
                     ssh_keys = [
@@ -124,7 +124,7 @@ class TestVrf(unittest.TestCase):
                     ],
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 virtual_circuits = [
-                    equinix_metal.models.vrf_virtual_circuit.VrfVirtualCircuit(
+                    equinix.services.metalv1.models.vrf_virtual_circuit.VrfVirtualCircuit(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         customer_ip = '12.0.0.2', 
                         description = '', 
@@ -135,23 +135,23 @@ class TestVrf(unittest.TestCase):
                         name = '', 
                         nni_vlan = 56, 
                         peer_asn = 65000, 
-                        port = equinix_metal.models.interconnection_port.InterconnectionPort(
+                        port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
                             href = '', 
                             id = '', 
                             link_status = '', 
                             name = '', 
-                            organization = equinix_metal.models.href.Href(
+                            organization = equinix.services.metalv1.models.href.Href(
                                 href = '', ), 
                             role = 'primary', 
                             speed = 56, 
                             status = 'requested', 
                             switch_id = '', ), 
-                        project = equinix_metal.models.project.Project(
+                        project = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
-                            bgp_config = equinix_metal.models.href.Href(
+                            bgp_config = equinix.services.metalv1.models.href.Href(
                                 href = '', ), 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            customdata = equinix_metal.models.customdata.customdata(), 
+                            customdata = equinix.services.metalv1.models.customdata.customdata(), 
                             devices = [
                                 
                                 ], 
@@ -160,7 +160,7 @@ class TestVrf(unittest.TestCase):
                             invitations = [
                                 
                                 ], 
-                            max_devices = equinix_metal.models.max_devices.max_devices(), 
+                            max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                             members = [
                                 
                                 ], 
@@ -168,7 +168,7 @@ class TestVrf(unittest.TestCase):
                                 
                                 ], 
                             name = '0', 
-                            network_status = equinix_metal.models.network_status.network_status(), 
+                            network_status = equinix.services.metalv1.models.network_status.network_status(), 
                             payment_method = , 
                             ssh_keys = [
                                 
@@ -190,17 +190,17 @@ class TestVrf(unittest.TestCase):
                             ], 
                         type = 'vrf', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        vrf = equinix_metal.models.vrf.Vrf(
+                        vrf = equinix.services.metalv1.models.vrf.Vrf(
                             bgp_dynamic_neighbors_bfd_enabled = True, 
                             bgp_dynamic_neighbors_enabled = True, 
                             bgp_dynamic_neighbors_export_route_map = True, 
                             bill = True, 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            created_by = equinix_metal.models.user.User(
+                            created_by = equinix.services.metalv1.models.user.User(
                                 avatar_thumb_url = '', 
                                 avatar_url = '', 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                customdata = equinix_metal.models.customdata.customdata(), 
+                                customdata = equinix.services.metalv1.models.customdata.customdata(), 
                                 default_organization_id = '', 
                                 default_project_id = '', 
                                 email = '', 
@@ -228,7 +228,7 @@ class TestVrf(unittest.TestCase):
                                 ''
                                 ], 
                             local_asn = 65000, 
-                            metro = equinix_metal.models.metro.Metro(
+                            metro = equinix.services.metalv1.models.metro.Metro(
                                 code = '', 
                                 country = '', 
                                 href = '', 

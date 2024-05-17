@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_address import IPAddress
+from equinix.services.metalv1.models.ip_address import IPAddress
 
 class TestIPAddress(unittest.TestCase):
     """IPAddress unit test stubs"""

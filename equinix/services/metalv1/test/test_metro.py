@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metro import Metro
+from equinix.services.metalv1.models.metro import Metro
 
 class TestMetro(unittest.TestCase):
     """Metro unit test stubs"""

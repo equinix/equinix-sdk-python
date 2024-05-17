@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
+from equinix.services.metalv1.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
 
 # TODO update the JSON string below
 json = "{}"

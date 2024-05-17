@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.ssh_keys_api import SSHKeysApi
+from equinix.services.metalv1.api.ssh_keys_api import SSHKeysApi
 
 
 class TestSSHKeysApi(unittest.TestCase):

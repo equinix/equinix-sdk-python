@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.virtual_circuit_list import VirtualCircuitList
+from equinix.services.metalv1.models.virtual_circuit_list import VirtualCircuitList
 
 class TestVirtualCircuitList(unittest.TestCase):
     """VirtualCircuitList unit test stubs"""

@@ -1,4 +1,4 @@
-# equinix_metal.HardwareReservationsApi
+# equinix.services.metalv1.HardwareReservationsApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -23,15 +23,15 @@ Activate a spare hardware reservation
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
-from equinix_metal.models.hardware_reservation import HardwareReservation
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
+from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -47,13 +47,13 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.HardwareReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.HardwareReservationsApi(api_client)
     id = 'id_example' # str | Hardware Reservation UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
-    activate_hardware_reservation_request = equinix_metal.ActivateHardwareReservationRequest() # ActivateHardwareReservationRequest | Note to attach to the reservation (optional)
+    activate_hardware_reservation_request = equinix.services.metalv1.ActivateHardwareReservationRequest() # ActivateHardwareReservationRequest | Note to attach to the reservation (optional)
 
     try:
         # Activate a spare hardware reservation
@@ -111,14 +111,14 @@ Returns a single hardware reservation
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.hardware_reservation import HardwareReservation
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -134,9 +134,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.HardwareReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.HardwareReservationsApi(api_client)
     id = 'id_example' # str | HardwareReservation UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
@@ -196,14 +196,14 @@ Provides a collection of hardware reservations for a given project.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.hardware_reservation_list import HardwareReservationList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.hardware_reservation_list import HardwareReservationList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -219,9 +219,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.HardwareReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.HardwareReservationsApi(api_client)
     id = 'id_example' # str | Project UUID
     query = 'query_example' # str | Search by facility code, plan name, project name, reservation short ID or device hostname (optional)
     state = 'state_example' # str | Filter by hardware reservation state (optional)
@@ -294,15 +294,15 @@ Move a hardware reservation to another project
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.hardware_reservation import HardwareReservation
-from equinix_metal.models.move_hardware_reservation_request import MoveHardwareReservationRequest
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
+from equinix.services.metalv1.models.move_hardware_reservation_request import MoveHardwareReservationRequest
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -318,11 +318,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.HardwareReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.HardwareReservationsApi(api_client)
     id = 'id_example' # str | Hardware Reservation UUID
-    move_hardware_reservation_request = equinix_metal.MoveHardwareReservationRequest() # MoveHardwareReservationRequest | Destination Project UUID
+    move_hardware_reservation_request = equinix.services.metalv1.MoveHardwareReservationRequest() # MoveHardwareReservationRequest | Destination Project UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_update_input import DeviceUpdateInput
+from equinix.services.metalv1.models.device_update_input import DeviceUpdateInput
 
 class TestDeviceUpdateInput(unittest.TestCase):
     """DeviceUpdateInput unit test stubs"""

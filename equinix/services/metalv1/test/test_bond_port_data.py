@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bond_port_data import BondPortData
+from equinix.services.metalv1.models.bond_port_data import BondPortData
 
 class TestBondPortData(unittest.TestCase):
     """BondPortData unit test stubs"""

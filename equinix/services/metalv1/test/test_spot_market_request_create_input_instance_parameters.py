@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_request_create_input_instance_parameters import SpotMarketRequestCreateInputInstanceParameters
+from equinix.services.metalv1.models.spot_market_request_create_input_instance_parameters import SpotMarketRequestCreateInputInstanceParameters
 
 class TestSpotMarketRequestCreateInputInstanceParameters(unittest.TestCase):
     """SpotMarketRequestCreateInputInstanceParameters unit test stubs"""
@@ -38,7 +38,7 @@ class TestSpotMarketRequestCreateInputInstanceParameters(unittest.TestCase):
             return SpotMarketRequestCreateInputInstanceParameters(
                 always_pxe = True,
                 billing_cycle = '',
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 description = '',
                 features = [
                     ''

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
+from equinix.services.metalv1.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
 
 class TestVrfFabricVcCreateInput(unittest.TestCase):
     """VrfFabricVcCreateInput unit test stubs"""

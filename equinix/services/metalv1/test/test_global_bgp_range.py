@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.global_bgp_range import GlobalBgpRange
+from equinix.services.metalv1.models.global_bgp_range import GlobalBgpRange
 
 class TestGlobalBgpRange(unittest.TestCase):
     """GlobalBgpRange unit test stubs"""
@@ -39,7 +39,7 @@ class TestGlobalBgpRange(unittest.TestCase):
                 address_family = 56,
                 href = '',
                 id = '',
-                project = equinix_metal.models.href.Href(
+                project = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 range = ''
             )

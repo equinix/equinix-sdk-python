@@ -20,27 +20,27 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.bgp_session_input import BGPSessionInput
-from equinix_metal.models.bgp_session import BgpSession
-from equinix_metal.models.bgp_session_list import BgpSessionList
-from equinix_metal.models.bgp_session_neighbors import BgpSessionNeighbors
-from equinix_metal.models.create_device_request import CreateDeviceRequest
-from equinix_metal.models.device import Device
-from equinix_metal.models.device_action_input import DeviceActionInput
-from equinix_metal.models.device_health_rollup import DeviceHealthRollup
-from equinix_metal.models.device_list import DeviceList
-from equinix_metal.models.device_update_input import DeviceUpdateInput
-from equinix_metal.models.find_traffic_timeframe_parameter import FindTrafficTimeframeParameter
-from equinix_metal.models.firmware_set_response import FirmwareSetResponse
-from equinix_metal.models.ip_assignment import IPAssignment
-from equinix_metal.models.ip_assignment_input import IPAssignmentInput
-from equinix_metal.models.ip_assignment_list import IPAssignmentList
-from equinix_metal.models.metadata import Metadata
-from equinix_metal.models.userdata import Userdata
+from equinix.services.metalv1.models.bgp_session_input import BGPSessionInput
+from equinix.services.metalv1.models.bgp_session import BgpSession
+from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
+from equinix.services.metalv1.models.bgp_session_neighbors import BgpSessionNeighbors
+from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
+from equinix.services.metalv1.models.device import Device
+from equinix.services.metalv1.models.device_action_input import DeviceActionInput
+from equinix.services.metalv1.models.device_health_rollup import DeviceHealthRollup
+from equinix.services.metalv1.models.device_list import DeviceList
+from equinix.services.metalv1.models.device_update_input import DeviceUpdateInput
+from equinix.services.metalv1.models.find_traffic_timeframe_parameter import FindTrafficTimeframeParameter
+from equinix.services.metalv1.models.firmware_set_response import FirmwareSetResponse
+from equinix.services.metalv1.models.ip_assignment import IPAssignment
+from equinix.services.metalv1.models.ip_assignment_input import IPAssignmentInput
+from equinix.services.metalv1.models.ip_assignment_list import IPAssignmentList
+from equinix.services.metalv1.models.metadata import Metadata
+from equinix.services.metalv1.models.userdata import Userdata
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class DevicesApi:

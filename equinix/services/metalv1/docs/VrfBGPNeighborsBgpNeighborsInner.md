@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_bgp_neighbors_bgp_neighbors_inner import VrfBGPNeighborsBgpNeighborsInner
+from equinix.services.metalv1.models.vrf_bgp_neighbors_bgp_neighbors_inner import VrfBGPNeighborsBgpNeighborsInner
 
 # TODO update the JSON string below
 json = "{}"

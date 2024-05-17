@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project_usage import ProjectUsage
+from equinix.services.metalv1.models.project_usage import ProjectUsage
 
 class TestProjectUsage(unittest.TestCase):
     """ProjectUsage unit test stubs"""

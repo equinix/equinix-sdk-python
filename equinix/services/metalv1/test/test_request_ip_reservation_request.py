@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.request_ip_reservation_request import RequestIPReservationRequest
+from equinix.services.metalv1.models.request_ip_reservation_request import RequestIPReservationRequest
 
 class TestRequestIPReservationRequest(unittest.TestCase):
     """RequestIPReservationRequest unit test stubs"""
@@ -37,7 +37,7 @@ class TestRequestIPReservationRequest(unittest.TestCase):
         if include_optional:
             return RequestIPReservationRequest(
                 comments = '',
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 details = '',
                 facility = '',
                 fail_on_approval_required = True,

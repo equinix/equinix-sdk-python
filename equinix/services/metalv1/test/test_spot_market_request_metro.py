@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_request_metro import SpotMarketRequestMetro
+from equinix.services.metalv1.models.spot_market_request_metro import SpotMarketRequestMetro
 
 class TestSpotMarketRequestMetro(unittest.TestCase):
     """SpotMarketRequestMetro unit test stubs"""

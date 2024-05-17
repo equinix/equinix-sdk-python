@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_prices_per_metro_report import SpotMarketPricesPerMetroReport
+from equinix.services.metalv1.models.spot_market_prices_per_metro_report import SpotMarketPricesPerMetroReport
 
 class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
     """SpotMarketPricesPerMetroReport unit test stubs"""
@@ -36,26 +36,11 @@ class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
         model = SpotMarketPricesPerMetroReport()
         if include_optional:
             return SpotMarketPricesPerMetroReport(
-                am = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                am = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                        href = '', 
-                        price = 1.337, ), 
-                    baremetal_2 = , 
-                    baremetal_2a = , 
-                    baremetal_2a2 = , 
-                    baremetal_3 = , 
-                    baremetal_s = , 
-                    c2/medium/x86 = , 
-                    href = '', 
-                    m2/xlarge/x86 = , ),
-                ch = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                        href = '', 
-                        price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
                     baremetal_2 = , 
@@ -66,11 +51,26 @@ class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
                     c2/medium/x86 = , 
                     href = '', 
                     m2/xlarge/x86 = , ),
-                da = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                ch = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        href = '', 
+                        price = 1.337, ), 
+                    baremetal_2 = , 
+                    baremetal_2a = , 
+                    baremetal_2a2 = , 
+                    baremetal_3 = , 
+                    baremetal_s = , 
+                    c2/medium/x86 = , 
+                    href = '', 
+                    m2/xlarge/x86 = , ),
+                da = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        href = '', 
+                        price = 1.337, ), 
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
                     baremetal_2 = , 
@@ -82,26 +82,11 @@ class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
                     href = '', 
                     m2/xlarge/x86 = , ),
                 href = '',
-                la = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                la = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                        href = '', 
-                        price = 1.337, ), 
-                    baremetal_2 = , 
-                    baremetal_2a = , 
-                    baremetal_2a2 = , 
-                    baremetal_3 = , 
-                    baremetal_s = , 
-                    c2/medium/x86 = , 
-                    href = '', 
-                    m2/xlarge/x86 = , ),
-                ny = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
-                        href = '', 
-                        price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
                     baremetal_2 = , 
@@ -112,11 +97,11 @@ class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
                     c2/medium/x86 = , 
                     href = '', 
                     m2/xlarge/x86 = , ),
-                sg = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                ny = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
                     baremetal_2 = , 
@@ -127,11 +112,26 @@ class TestSpotMarketPricesPerMetroReport(unittest.TestCase):
                     c2/medium/x86 = , 
                     href = '', 
                     m2/xlarge/x86 = , ),
-                sv = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                    baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                sg = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
-                    baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        href = '', 
+                        price = 1.337, ), 
+                    baremetal_2 = , 
+                    baremetal_2a = , 
+                    baremetal_2a2 = , 
+                    baremetal_3 = , 
+                    baremetal_s = , 
+                    c2/medium/x86 = , 
+                    href = '', 
+                    m2/xlarge/x86 = , ),
+                sv = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        href = '', 
+                        price = 1.337, ), 
+                    baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                         href = '', 
                         price = 1.337, ), 
                     baremetal_2 = , 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device import Device
+from equinix.services.metalv1.models.device import Device
 
 class TestDevice(unittest.TestCase):
     """Device unit test stubs"""
@@ -37,7 +37,7 @@ class TestDevice(unittest.TestCase):
         if include_optional:
             return Device(
                 actions = [
-                    equinix_metal.models.device_actions_inner.Device_actions_inner(
+                    equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
                         href = '', 
                         name = '', 
                         type = '', )
@@ -49,11 +49,11 @@ class TestDevice(unittest.TestCase):
                 created_by = None,
                 customdata = { },
                 description = '',
-                facility = equinix_metal.models.facility.Facility(
-                    address = equinix_metal.models.address.Address(
+                facility = equinix.services.metalv1.models.facility.Facility(
+                    address = equinix.services.metalv1.models.address.Address(
                         address2 = '', 
                         city = '', 
-                        coordinates = equinix_metal.models.coordinates.Coordinates(
+                        coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                             href = '', 
                             latitude = '', 
                             longitude = '', ), 
@@ -69,12 +69,12 @@ class TestDevice(unittest.TestCase):
                     metro = null, 
                     name = '', ),
                 firmware_set_id = '',
-                hardware_reservation = equinix_metal.models.hardware_reservation.HardwareReservation(
+                hardware_reservation = equinix.services.metalv1.models.hardware_reservation.HardwareReservation(
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     custom_rate = 1050.5, 
-                    device = equinix_metal.models.device.Device(
+                    device = equinix.services.metalv1.models.device.Device(
                         actions = [
-                            equinix_metal.models.device_actions_inner.Device_actions_inner(
+                            equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
                                 href = '', 
                                 name = '', 
                                 type = '', )
@@ -86,11 +86,11 @@ class TestDevice(unittest.TestCase):
                         created_by = null, 
                         customdata = { }, 
                         description = '', 
-                        facility = equinix_metal.models.facility.Facility(
-                            address = equinix_metal.models.address.Address(
+                        facility = equinix.services.metalv1.models.facility.Facility(
+                            address = equinix.services.metalv1.models.address.Address(
                                 address2 = '', 
                                 city = '', 
-                                coordinates = equinix_metal.models.coordinates.Coordinates(
+                                coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                                     href = '', 
                                     latitude = '', 
                                     longitude = '', ), 
@@ -111,9 +111,9 @@ class TestDevice(unittest.TestCase):
                         id = '', 
                         image_url = '', 
                         ip_addresses = [
-                            equinix_metal.models.ip_assignment.IPAssignment(
+                            equinix.services.metalv1.models.ip_assignment.IPAssignment(
                                 address_family = 56, 
-                                assigned_to = equinix_metal.models.href.Href(
+                                assigned_to = equinix.services.metalv1.models.href.Href(
                                     href = '', ), 
                                 cidr = 56, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -127,7 +127,7 @@ class TestDevice(unittest.TestCase):
                                 netmask = '', 
                                 network = '', 
                                 next_hop = '', 
-                                parent_block = equinix_metal.models.parent_block.ParentBlock(
+                                parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                     cidr = 56, 
                                     href = '', 
                                     netmask = '', 
@@ -141,12 +141,12 @@ class TestDevice(unittest.TestCase):
                         metro = null, 
                         network_frozen = True, 
                         network_ports = [
-                            equinix_metal.models.port.Port(
-                                bond = equinix_metal.models.bond_port_data.BondPortData(
+                            equinix.services.metalv1.models.port.Port(
+                                bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
                                     href = '', 
                                     id = '', 
                                     name = '', ), 
-                                data = equinix_metal.models.port_data.PortData(
+                                data = equinix.services.metalv1.models.port_data.PortData(
                                     bonded = True, 
                                     href = '', 
                                     mac = '', ), 
@@ -154,14 +154,14 @@ class TestDevice(unittest.TestCase):
                                 href = '', 
                                 id = '', 
                                 name = 'bond0', 
-                                native_virtual_network = equinix_metal.models.virtual_network.VirtualNetwork(
+                                native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                     assigned_to_virtual_circuit = True, 
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     description = '', 
                                     href = '', 
                                     id = '', 
                                     instances = [
-                                        equinix_metal.models.device.Device(
+                                        equinix.services.metalv1.models.device.Device(
                                             always_pxe = True, 
                                             billing_cycle = '', 
                                             bonding_mode = 56, 
@@ -176,7 +176,7 @@ class TestDevice(unittest.TestCase):
                                             iqn = '', 
                                             locked = True, 
                                             network_frozen = True, 
-                                            operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                                            operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                                                 default_operating_system = True, 
                                                 distro = '', 
                                                 distro_label = '', 
@@ -185,22 +185,22 @@ class TestDevice(unittest.TestCase):
                                                 licensed = True, 
                                                 name = '', 
                                                 preinstallable = True, 
-                                                pricing = equinix_metal.models.pricing.pricing(), 
+                                                pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                                 provisionable_on = [
                                                     ''
                                                     ], 
                                                 slug = '', 
                                                 version = '', ), 
-                                            plan = equinix_metal.models.plan.Plan(
+                                            plan = equinix.services.metalv1.models.plan.Plan(
                                                 available_in = [
-                                                    equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                                                    equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                                         href = '', 
-                                                        price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                                                        price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                                             hour = 1.23, 
                                                             href = '', ), )
                                                     ], 
                                                 available_in_metros = [
-                                                    equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                                                    equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                                                         href = '', )
                                                     ], 
                                                 categories = [
@@ -216,42 +216,42 @@ class TestDevice(unittest.TestCase):
                                                 legacy = True, 
                                                 line = '', 
                                                 name = '', 
-                                                pricing = equinix_metal.models.pricing.pricing(), 
+                                                pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                                 slug = 'm3.large.x86', 
-                                                specs = equinix_metal.models.plan_specs.Plan_specs(
+                                                specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                                                     cpus = [
-                                                        equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                                                        equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                             count = 56, 
                                                             href = '', 
                                                             type = '', )
                                                         ], 
                                                     drives = [
-                                                        equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                                                        equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                                             category = 'boot', 
                                                             count = 56, 
                                                             href = '', 
                                                             size = '3.84TB', 
                                                             type = '', )
                                                         ], 
-                                                    features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                                                    features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                                                         href = '', 
                                                         raid = True, 
                                                         txt = True, 
                                                         uefi = True, ), 
                                                     href = '', 
-                                                    memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                                                    memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                                                         href = '', 
                                                         total = '', ), 
                                                     nics = [
-                                                        equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                                                        equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                             count = 2, 
                                                             href = '', 
                                                             type = '', )
                                                         ], ), 
                                                 type = 'standard', ), 
-                                            project = equinix_metal.models.project.Project(
+                                            project = equinix.services.metalv1.models.project.Project(
                                                 backend_transfer_enabled = True, 
-                                                bgp_config = equinix_metal.models.href.Href(
+                                                bgp_config = equinix.services.metalv1.models.href.Href(
                                                     href = '', ), 
                                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 devices = [
@@ -262,7 +262,7 @@ class TestDevice(unittest.TestCase):
                                                 invitations = [
                                                     
                                                     ], 
-                                                max_devices = equinix_metal.models.max_devices.max_devices(), 
+                                                max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                                                 members = [
                                                     
                                                     ], 
@@ -270,7 +270,7 @@ class TestDevice(unittest.TestCase):
                                                     
                                                     ], 
                                                 name = '0', 
-                                                network_status = equinix_metal.models.network_status.network_status(), 
+                                                network_status = equinix.services.metalv1.models.network_status.network_status(), 
                                                 organization = , 
                                                 payment_method = , 
                                                 ssh_keys = [
@@ -287,14 +287,14 @@ class TestDevice(unittest.TestCase):
                                                     ], ), 
                                             project_lite = null, 
                                             provisioning_events = [
-                                                equinix_metal.models.event.Event(
+                                                equinix.services.metalv1.models.event.Event(
                                                     body = '', 
                                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                     href = '', 
                                                     id = '', 
                                                     interpolated = '', 
                                                     ip = '', 
-                                                    modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                                    modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                                     relationships = [
                                                         
                                                         ], 
@@ -311,12 +311,12 @@ class TestDevice(unittest.TestCase):
                                                 
                                                 ], 
                                             state = 'queued', 
-                                            storage = equinix_metal.models.storage.Storage(
+                                            storage = equinix.services.metalv1.models.storage.Storage(
                                                 disks = [
-                                                    equinix_metal.models.disk.Disk(
+                                                    equinix.services.metalv1.models.disk.Disk(
                                                         href = '', 
                                                         partitions = [
-                                                            equinix_metal.models.partition.Partition(
+                                                            equinix.services.metalv1.models.partition.Partition(
                                                                 href = '', 
                                                                 label = '', 
                                                                 number = 56, 
@@ -325,9 +325,9 @@ class TestDevice(unittest.TestCase):
                                                         wipe_table = True, )
                                                     ], 
                                                 filesystems = [
-                                                    equinix_metal.models.filesystem.Filesystem(
+                                                    equinix.services.metalv1.models.filesystem.Filesystem(
                                                         href = '', 
-                                                        mount = equinix_metal.models.mount.Mount(
+                                                        mount = equinix.services.metalv1.models.mount.Mount(
                                                             format = '', 
                                                             href = '', 
                                                             options = [
@@ -337,7 +337,7 @@ class TestDevice(unittest.TestCase):
                                                     ], 
                                                 href = '', 
                                                 raid = [
-                                                    equinix_metal.models.raid.Raid(
+                                                    equinix.services.metalv1.models.raid.Raid(
                                                         href = '', 
                                                         level = '', 
                                                         name = '', )
@@ -355,7 +355,7 @@ class TestDevice(unittest.TestCase):
                                                 ], )
                                         ], 
                                     metal_gateways = [
-                                        equinix_metal.models.metal_gateway_lite.MetalGatewayLite(
+                                        equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                             gateway_address = '10.1.2.1/27', 
                                             href = '', 
@@ -370,7 +370,7 @@ class TestDevice(unittest.TestCase):
                                 network_type = 'layer2-bonded', 
                                 type = 'NetworkPort', 
                                 virtual_networks = [
-                                    equinix_metal.models.virtual_network.VirtualNetwork(
+                                    equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                         assigned_to_virtual_circuit = True, 
                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         description = '', 
@@ -380,7 +380,7 @@ class TestDevice(unittest.TestCase):
                                         vxlan = 56, )
                                     ], )
                             ], 
-                        operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                        operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                             default_operating_system = True, 
                             distro = '', 
                             distro_label = '', 
@@ -389,10 +389,10 @@ class TestDevice(unittest.TestCase):
                             licensed = True, 
                             name = '', 
                             preinstallable = True, 
-                            pricing = equinix_metal.models.pricing.pricing(), 
+                            pricing = equinix.services.metalv1.models.pricing.pricing(), 
                             slug = '', 
                             version = '', ), 
-                        plan = equinix_metal.models.plan.Plan(
+                        plan = equinix.services.metalv1.models.plan.Plan(
                             class = 'm3.large.x86', 
                             description = '', 
                             href = '', 
@@ -400,30 +400,30 @@ class TestDevice(unittest.TestCase):
                             legacy = True, 
                             line = '', 
                             name = '', 
-                            pricing = equinix_metal.models.pricing.pricing(), 
+                            pricing = equinix.services.metalv1.models.pricing.pricing(), 
                             slug = 'm3.large.x86', 
                             type = 'standard', ), 
-                        project = equinix_metal.models.project.Project(
+                        project = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             href = '', 
                             id = '', 
-                            max_devices = equinix_metal.models.max_devices.max_devices(), 
+                            max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                             name = '0', 
-                            network_status = equinix_metal.models.network_status.network_status(), 
+                            network_status = equinix.services.metalv1.models.network_status.network_status(), 
                             type = 'default', 
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             url = '', ), 
                         project_lite = null, 
                         provisioning_events = [
-                            equinix_metal.models.event.Event(
+                            equinix.services.metalv1.models.event.Event(
                                 body = '', 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 href = '', 
                                 id = '', 
                                 interpolated = '', 
                                 ip = '', 
-                                modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                 state = '', 
                                 type = '', )
                             ], 
@@ -435,7 +435,7 @@ class TestDevice(unittest.TestCase):
                         spot_price_max = 1.337, 
                         ssh_keys = , 
                         state = 'queued', 
-                        storage = equinix_metal.models.storage.Storage(
+                        storage = equinix.services.metalv1.models.storage.Storage(
                             href = '', ), 
                         switch_uuid = '', 
                         tags = , 
@@ -444,7 +444,7 @@ class TestDevice(unittest.TestCase):
                         user = '', 
                         userdata = '', 
                         volumes = , ), 
-                    facility = equinix_metal.models.facility.Facility(
+                    facility = equinix.services.metalv1.models.facility.Facility(
                         code = '', 
                         href = '', 
                         id = '', 
@@ -465,10 +465,10 @@ class TestDevice(unittest.TestCase):
                 id = '',
                 image_url = '',
                 ip_addresses = [
-                    equinix_metal.models.ip_assignment.IPAssignment(
+                    equinix.services.metalv1.models.ip_assignment.IPAssignment(
                         address = '', 
                         address_family = 56, 
-                        assigned_to = equinix_metal.models.href.Href(
+                        assigned_to = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         cidr = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -483,7 +483,7 @@ class TestDevice(unittest.TestCase):
                         netmask = '', 
                         network = '', 
                         next_hop = '', 
-                        parent_block = equinix_metal.models.parent_block.ParentBlock(
+                        parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                             cidr = 56, 
                             href = '', 
                             netmask = '', 
@@ -497,12 +497,12 @@ class TestDevice(unittest.TestCase):
                 metro = None,
                 network_frozen = True,
                 network_ports = [
-                    equinix_metal.models.port.Port(
-                        bond = equinix_metal.models.bond_port_data.BondPortData(
+                    equinix.services.metalv1.models.port.Port(
+                        bond = equinix.services.metalv1.models.bond_port_data.BondPortData(
                             href = '', 
                             id = '', 
                             name = '', ), 
-                        data = equinix_metal.models.port_data.PortData(
+                        data = equinix.services.metalv1.models.port_data.PortData(
                             bonded = True, 
                             href = '', 
                             mac = '', ), 
@@ -510,15 +510,15 @@ class TestDevice(unittest.TestCase):
                         href = '', 
                         id = '', 
                         name = 'bond0', 
-                        native_virtual_network = equinix_metal.models.virtual_network.VirtualNetwork(
-                            assigned_to = equinix_metal.models.project.Project(
+                        native_virtual_network = equinix.services.metalv1.models.virtual_network.VirtualNetwork(
+                            assigned_to = equinix.services.metalv1.models.project.Project(
                                 backend_transfer_enabled = True, 
-                                bgp_config = equinix_metal.models.href.Href(
+                                bgp_config = equinix.services.metalv1.models.href.Href(
                                     href = '', ), 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                customdata = equinix_metal.models.customdata.customdata(), 
+                                customdata = equinix.services.metalv1.models.customdata.customdata(), 
                                 devices = [
-                                    equinix_metal.models.href.Href(
+                                    equinix.services.metalv1.models.href.Href(
                                         href = '', )
                                     ], 
                                 href = '', 
@@ -526,7 +526,7 @@ class TestDevice(unittest.TestCase):
                                 invitations = [
                                     
                                     ], 
-                                max_devices = equinix_metal.models.max_devices.max_devices(), 
+                                max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                                 members = [
                                     
                                     ], 
@@ -534,7 +534,7 @@ class TestDevice(unittest.TestCase):
                                     
                                     ], 
                                 name = '0', 
-                                network_status = equinix_metal.models.network_status.network_status(), 
+                                network_status = equinix.services.metalv1.models.network_status.network_status(), 
                                 organization = , 
                                 payment_method = , 
                                 ssh_keys = [
@@ -556,9 +556,9 @@ class TestDevice(unittest.TestCase):
                             href = '', 
                             id = '', 
                             instances = [
-                                equinix_metal.models.device.Device(
+                                equinix.services.metalv1.models.device.Device(
                                     actions = [
-                                        equinix_metal.models.device_actions_inner.Device_actions_inner(
+                                        equinix.services.metalv1.models.device_actions_inner.Device_actions_inner(
                                             href = '', 
                                             name = '', 
                                             type = '', )
@@ -571,10 +571,10 @@ class TestDevice(unittest.TestCase):
                                     customdata = { }, 
                                     description = '', 
                                     firmware_set_id = '', 
-                                    hardware_reservation = equinix_metal.models.hardware_reservation.HardwareReservation(
+                                    hardware_reservation = equinix.services.metalv1.models.hardware_reservation.HardwareReservation(
                                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         custom_rate = 1050.5, 
-                                        device = equinix_metal.models.device.Device(
+                                        device = equinix.services.metalv1.models.device.Device(
                                             always_pxe = True, 
                                             billing_cycle = '', 
                                             bonding_mode = 56, 
@@ -586,7 +586,7 @@ class TestDevice(unittest.TestCase):
                                             id = '', 
                                             image_url = '', 
                                             ip_addresses = [
-                                                equinix_metal.models.ip_assignment.IPAssignment(
+                                                equinix.services.metalv1.models.ip_assignment.IPAssignment(
                                                     address = '', 
                                                     address_family = 56, 
                                                     assigned_to = , 
@@ -603,7 +603,7 @@ class TestDevice(unittest.TestCase):
                                                     netmask = '', 
                                                     network = '', 
                                                     next_hop = '', 
-                                                    parent_block = equinix_metal.models.parent_block.ParentBlock(
+                                                    parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                                                         cidr = 56, 
                                                         href = '', 
                                                         netmask = '', 
@@ -616,7 +616,7 @@ class TestDevice(unittest.TestCase):
                                             locked = True, 
                                             metro = null, 
                                             network_frozen = True, 
-                                            operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                                            operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                                                 default_operating_system = True, 
                                                 distro = '', 
                                                 distro_label = '', 
@@ -625,22 +625,22 @@ class TestDevice(unittest.TestCase):
                                                 licensed = True, 
                                                 name = '', 
                                                 preinstallable = True, 
-                                                pricing = equinix_metal.models.pricing.pricing(), 
+                                                pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                                 provisionable_on = [
                                                     ''
                                                     ], 
                                                 slug = '', 
                                                 version = '', ), 
-                                            plan = equinix_metal.models.plan.Plan(
+                                            plan = equinix.services.metalv1.models.plan.Plan(
                                                 available_in = [
-                                                    equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                                                    equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                                         href = '', 
-                                                        price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                                                        price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                                             hour = 1.23, 
                                                             href = '', ), )
                                                     ], 
                                                 available_in_metros = [
-                                                    equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                                                    equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                                                         href = '', )
                                                     ], 
                                                 categories = [
@@ -656,60 +656,60 @@ class TestDevice(unittest.TestCase):
                                                 legacy = True, 
                                                 line = '', 
                                                 name = '', 
-                                                pricing = equinix_metal.models.pricing.pricing(), 
+                                                pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                                 slug = 'm3.large.x86', 
-                                                specs = equinix_metal.models.plan_specs.Plan_specs(
+                                                specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                                                     cpus = [
-                                                        equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                                                        equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                                             count = 56, 
                                                             href = '', 
                                                             type = '', )
                                                         ], 
                                                     drives = [
-                                                        equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                                                        equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                                             category = 'boot', 
                                                             count = 56, 
                                                             href = '', 
                                                             size = '3.84TB', 
                                                             type = '', )
                                                         ], 
-                                                    features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                                                    features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                                                         href = '', 
                                                         raid = True, 
                                                         txt = True, 
                                                         uefi = True, ), 
                                                     href = '', 
-                                                    memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                                                    memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                                                         href = '', 
                                                         total = '', ), 
                                                     nics = [
-                                                        equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                                                        equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                                             count = 2, 
                                                             href = '', 
                                                             type = '', )
                                                         ], ), 
                                                 type = 'standard', ), 
-                                            project = equinix_metal.models.project.Project(
+                                            project = equinix.services.metalv1.models.project.Project(
                                                 backend_transfer_enabled = True, 
                                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 href = '', 
                                                 id = '', 
-                                                max_devices = equinix_metal.models.max_devices.max_devices(), 
+                                                max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                                                 name = '0', 
-                                                network_status = equinix_metal.models.network_status.network_status(), 
+                                                network_status = equinix.services.metalv1.models.network_status.network_status(), 
                                                 type = 'default', 
                                                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                 url = '', ), 
                                             project_lite = null, 
                                             provisioning_events = [
-                                                equinix_metal.models.event.Event(
+                                                equinix.services.metalv1.models.event.Event(
                                                     body = '', 
                                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                                     href = '', 
                                                     id = '', 
                                                     interpolated = '', 
                                                     ip = '', 
-                                                    modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                                    modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                                     relationships = [
                                                         
                                                         ], 
@@ -723,12 +723,12 @@ class TestDevice(unittest.TestCase):
                                             spot_instance = True, 
                                             spot_price_max = 1.337, 
                                             state = 'queued', 
-                                            storage = equinix_metal.models.storage.Storage(
+                                            storage = equinix.services.metalv1.models.storage.Storage(
                                                 disks = [
-                                                    equinix_metal.models.disk.Disk(
+                                                    equinix.services.metalv1.models.disk.Disk(
                                                         href = '', 
                                                         partitions = [
-                                                            equinix_metal.models.partition.Partition(
+                                                            equinix.services.metalv1.models.partition.Partition(
                                                                 href = '', 
                                                                 label = '', 
                                                                 number = 56, 
@@ -737,9 +737,9 @@ class TestDevice(unittest.TestCase):
                                                         wipe_table = True, )
                                                     ], 
                                                 filesystems = [
-                                                    equinix_metal.models.filesystem.Filesystem(
+                                                    equinix.services.metalv1.models.filesystem.Filesystem(
                                                         href = '', 
-                                                        mount = equinix_metal.models.mount.Mount(
+                                                        mount = equinix.services.metalv1.models.mount.Mount(
                                                             format = '', 
                                                             href = '', 
                                                             options = [
@@ -749,7 +749,7 @@ class TestDevice(unittest.TestCase):
                                                     ], 
                                                 href = '', 
                                                 raid = [
-                                                    equinix_metal.models.raid.Raid(
+                                                    equinix.services.metalv1.models.raid.Raid(
                                                         href = '', 
                                                         level = '', 
                                                         name = '', )
@@ -762,7 +762,7 @@ class TestDevice(unittest.TestCase):
                                         href = '', 
                                         id = '', 
                                         need_of_service = True, 
-                                        plan = equinix_metal.models.plan.Plan(
+                                        plan = equinix.services.metalv1.models.plan.Plan(
                                             class = 'm3.large.x86', 
                                             description = '', 
                                             href = '', 
@@ -770,7 +770,7 @@ class TestDevice(unittest.TestCase):
                                             legacy = True, 
                                             line = '', 
                                             name = '', 
-                                            pricing = equinix_metal.models.pricing.pricing(), 
+                                            pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                             slug = 'm3.large.x86', 
                                             type = 'standard', ), 
                                         project = , 
@@ -784,7 +784,7 @@ class TestDevice(unittest.TestCase):
                                     id = '', 
                                     image_url = '', 
                                     ip_addresses = [
-                                        equinix_metal.models.ip_assignment.IPAssignment(
+                                        equinix.services.metalv1.models.ip_assignment.IPAssignment(
                                             address = '', 
                                             address_family = 56, 
                                             assigned_to = , 
@@ -808,7 +808,7 @@ class TestDevice(unittest.TestCase):
                                     locked = True, 
                                     metro = null, 
                                     network_frozen = True, 
-                                    operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                                    operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                                         default_operating_system = True, 
                                         distro = '', 
                                         distro_label = '', 
@@ -817,21 +817,21 @@ class TestDevice(unittest.TestCase):
                                         licensed = True, 
                                         name = '', 
                                         preinstallable = True, 
-                                        pricing = equinix_metal.models.pricing.pricing(), 
+                                        pricing = equinix.services.metalv1.models.pricing.pricing(), 
                                         slug = '', 
                                         version = '', ), 
                                     plan = , 
                                     project = , 
                                     project_lite = null, 
                                     provisioning_events = [
-                                        equinix_metal.models.event.Event(
+                                        equinix.services.metalv1.models.event.Event(
                                             body = '', 
                                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                             href = '', 
                                             id = '', 
                                             interpolated = '', 
                                             ip = '', 
-                                            modified_by = equinix_metal.models.modified_by.modified_by(), 
+                                            modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                                             state = '', 
                                             type = '', )
                                         ], 
@@ -842,7 +842,7 @@ class TestDevice(unittest.TestCase):
                                     spot_instance = True, 
                                     spot_price_max = 1.337, 
                                     state = 'queued', 
-                                    storage = equinix_metal.models.storage.Storage(
+                                    storage = equinix.services.metalv1.models.storage.Storage(
                                         href = '', ), 
                                     switch_uuid = '', 
                                     termination_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -851,7 +851,7 @@ class TestDevice(unittest.TestCase):
                                     userdata = '', )
                                 ], 
                             metal_gateways = [
-                                equinix_metal.models.metal_gateway_lite.MetalGatewayLite(
+                                equinix.services.metalv1.models.metal_gateway_lite.MetalGatewayLite(
                                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     gateway_address = '10.1.2.1/27', 
                                     href = '', 
@@ -860,7 +860,7 @@ class TestDevice(unittest.TestCase):
                                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     vlan = 1001, )
                                 ], 
-                            metro = equinix_metal.models.metro.Metro(
+                            metro = equinix.services.metalv1.models.metro.Metro(
                                 code = '', 
                                 country = '', 
                                 href = '', 
@@ -874,7 +874,7 @@ class TestDevice(unittest.TestCase):
                         network_type = 'layer2-bonded', 
                         type = 'NetworkPort', 
                         virtual_networks = [
-                            equinix_metal.models.virtual_network.VirtualNetwork(
+                            equinix.services.metalv1.models.virtual_network.VirtualNetwork(
                                 assigned_to_virtual_circuit = True, 
                                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 description = '', 
@@ -884,7 +884,7 @@ class TestDevice(unittest.TestCase):
                                 vxlan = 56, )
                             ], )
                     ],
-                operating_system = equinix_metal.models.operating_system.OperatingSystem(
+                operating_system = equinix.services.metalv1.models.operating_system.OperatingSystem(
                     default_operating_system = True, 
                     distro = '', 
                     distro_label = '', 
@@ -893,22 +893,22 @@ class TestDevice(unittest.TestCase):
                     licensed = True, 
                     name = '', 
                     preinstallable = True, 
-                    pricing = equinix_metal.models.pricing.pricing(), 
+                    pricing = equinix.services.metalv1.models.pricing.pricing(), 
                     provisionable_on = [
                         ''
                         ], 
                     slug = '', 
                     version = '', ),
-                plan = equinix_metal.models.plan.Plan(
+                plan = equinix.services.metalv1.models.plan.Plan(
                     available_in = [
-                        equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                        equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                             href = '', 
-                            price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                            price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                 hour = 1.23, 
                                 href = '', ), )
                         ], 
                     available_in_metros = [
-                        equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                        equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                             href = '', )
                         ], 
                     categories = [
@@ -924,47 +924,47 @@ class TestDevice(unittest.TestCase):
                     legacy = True, 
                     line = '', 
                     name = '', 
-                    pricing = equinix_metal.models.pricing.pricing(), 
+                    pricing = equinix.services.metalv1.models.pricing.pricing(), 
                     slug = 'm3.large.x86', 
-                    specs = equinix_metal.models.plan_specs.Plan_specs(
+                    specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                         cpus = [
-                            equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                            equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                 count = 56, 
                                 href = '', 
                                 type = '', )
                             ], 
                         drives = [
-                            equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                            equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                 category = 'boot', 
                                 count = 56, 
                                 href = '', 
                                 size = '3.84TB', 
                                 type = '', )
                             ], 
-                        features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                        features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                             href = '', 
                             raid = True, 
                             txt = True, 
                             uefi = True, ), 
                         href = '', 
-                        memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                        memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                             href = '', 
                             total = '', ), 
                         nics = [
-                            equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                            equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                 count = 2, 
                                 href = '', 
                                 type = '', )
                             ], ), 
                     type = 'standard', ),
-                project = equinix_metal.models.project.Project(
+                project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
-                    bgp_config = equinix_metal.models.href.Href(
+                    bgp_config = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     devices = [
-                        equinix_metal.models.href.Href(
+                        equinix.services.metalv1.models.href.Href(
                             href = '', )
                         ], 
                     href = '', 
@@ -972,7 +972,7 @@ class TestDevice(unittest.TestCase):
                     invitations = [
                         
                         ], 
-                    max_devices = equinix_metal.models.max_devices.max_devices(), 
+                    max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                     members = [
                         
                         ], 
@@ -980,7 +980,7 @@ class TestDevice(unittest.TestCase):
                         
                         ], 
                     name = '0', 
-                    network_status = equinix_metal.models.network_status.network_status(), 
+                    network_status = equinix.services.metalv1.models.network_status.network_status(), 
                     organization = , 
                     payment_method = , 
                     ssh_keys = [
@@ -997,16 +997,16 @@ class TestDevice(unittest.TestCase):
                         ], ),
                 project_lite = None,
                 provisioning_events = [
-                    equinix_metal.models.event.Event(
+                    equinix.services.metalv1.models.event.Event(
                         body = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         id = '', 
                         interpolated = '', 
                         ip = '', 
-                        modified_by = equinix_metal.models.modified_by.modified_by(), 
+                        modified_by = equinix.services.metalv1.models.modified_by.modified_by(), 
                         relationships = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         state = '', 
@@ -1019,17 +1019,17 @@ class TestDevice(unittest.TestCase):
                 spot_instance = True,
                 spot_price_max = 1.337,
                 ssh_keys = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 state = 'queued',
-                storage = equinix_metal.models.storage.Storage(
+                storage = equinix.services.metalv1.models.storage.Storage(
                     disks = [
-                        equinix_metal.models.disk.Disk(
+                        equinix.services.metalv1.models.disk.Disk(
                             device = '', 
                             href = '', 
                             partitions = [
-                                equinix_metal.models.partition.Partition(
+                                equinix.services.metalv1.models.partition.Partition(
                                     href = '', 
                                     label = '', 
                                     number = 56, 
@@ -1038,9 +1038,9 @@ class TestDevice(unittest.TestCase):
                             wipe_table = True, )
                         ], 
                     filesystems = [
-                        equinix_metal.models.filesystem.Filesystem(
+                        equinix.services.metalv1.models.filesystem.Filesystem(
                             href = '', 
-                            mount = equinix_metal.models.mount.Mount(
+                            mount = equinix.services.metalv1.models.mount.Mount(
                                 device = '', 
                                 format = '', 
                                 href = '', 
@@ -1051,7 +1051,7 @@ class TestDevice(unittest.TestCase):
                         ], 
                     href = '', 
                     raid = [
-                        equinix_metal.models.raid.Raid(
+                        equinix.services.metalv1.models.raid.Raid(
                             devices = [
                                 ''
                                 ], 
@@ -1068,7 +1068,7 @@ class TestDevice(unittest.TestCase):
                 user = '',
                 userdata = '',
                 volumes = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ]
             )

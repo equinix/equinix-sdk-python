@@ -19,11 +19,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field
 from typing_extensions import Annotated
-from equinix_metal.models.support_request_input import SupportRequestInput
+from equinix.services.metalv1.models.support_request_input import SupportRequestInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class SupportRequestApi:

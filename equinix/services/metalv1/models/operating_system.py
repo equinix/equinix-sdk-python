@@ -39,6 +39,7 @@ class OperatingSystem(BaseModel):
     provisionable_on: Optional[List[StrictStr]] = None
     slug: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["default_operating_system", "distro", "distro_label", "href", "id", "licensed", "name", "preinstallable", "pricing", "provisionable_on", "slug", "version"]
 
     model_config = ConfigDict(
@@ -72,9 +73,11 @@ class OperatingSystem(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "default_operating_system",
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -82,6 +85,11 @@ class OperatingSystem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -107,6 +115,11 @@ class OperatingSystem(BaseModel):
             "slug": obj.get("slug"),
             "version": obj.get("version")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

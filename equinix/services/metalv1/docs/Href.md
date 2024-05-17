@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 
 # TODO update the JSON string below
 json = "{}"

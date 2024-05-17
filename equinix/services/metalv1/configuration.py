@@ -69,7 +69,7 @@ class Configuration:
 
     You can programmatically set the cookie:
 
-conf = equinix_metal.Configuration(
+conf = equinix.services.metalv1.Configuration(
     api_key={'cookieAuth': 'abc123'}
     api_key_prefix={'cookieAuth': 'JSESSIONID'}
 )
@@ -130,7 +130,7 @@ conf = equinix_metal.Configuration(
         self.logger = {}
         """Logging Settings
         """
-        self.logger["package_logger"] = logging.getLogger("equinix_metal")
+        self.logger["package_logger"] = logging.getLogger("equinix.services.metalv1")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
         """Log format
@@ -400,7 +400,7 @@ conf = equinix_metal.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0.0\n"\
-               "SDK Package Version: 0.9.0".\
+               "SDK Package Version: 0.1.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

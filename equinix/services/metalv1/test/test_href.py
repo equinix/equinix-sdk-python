@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 
 class TestHref(unittest.TestCase):
     """Href unit test stubs"""

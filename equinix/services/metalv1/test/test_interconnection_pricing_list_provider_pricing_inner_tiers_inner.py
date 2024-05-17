@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner import InterconnectionPricingListProviderPricingInnerTiersInner
+from equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner import InterconnectionPricingListProviderPricingInnerTiersInner
 
 class TestInterconnectionPricingListProviderPricingInnerTiersInner(unittest.TestCase):
     """InterconnectionPricingListProviderPricingInnerTiersInner unit test stubs"""

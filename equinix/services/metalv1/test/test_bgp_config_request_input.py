@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_config_request_input import BgpConfigRequestInput
+from equinix.services.metalv1.models.bgp_config_request_input import BgpConfigRequestInput
 
 class TestBgpConfigRequestInput(unittest.TestCase):
     """BgpConfigRequestInput unit test stubs"""

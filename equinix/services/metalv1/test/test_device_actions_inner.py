@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_actions_inner import DeviceActionsInner
+from equinix.services.metalv1.models.device_actions_inner import DeviceActionsInner
 
 class TestDeviceActionsInner(unittest.TestCase):
     """DeviceActionsInner unit test stubs"""

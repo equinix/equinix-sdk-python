@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
+from equinix.services.metalv1.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
 
 class TestVlanFabricVcCreateInput(unittest.TestCase):
     """VlanFabricVcCreateInput unit test stubs"""

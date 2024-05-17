@@ -1,4 +1,4 @@
-# equinix_metal.SSHKeysApi
+# equinix.services.metalv1.SSHKeysApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -26,15 +26,15 @@ Creates a ssh key.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key import SSHKey
-from equinix_metal.models.ssh_key_create_input import SSHKeyCreateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key import SSHKey
+from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -50,11 +50,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | Project UUID
-    ssh_key_create_input = equinix_metal.SSHKeyCreateInput() # SSHKeyCreateInput | ssh key to create
+    ssh_key_create_input = equinix.services.metalv1.SSHKeyCreateInput() # SSHKeyCreateInput | ssh key to create
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
     try:
@@ -111,15 +111,15 @@ Creates a ssh key.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key import SSHKey
-from equinix_metal.models.ssh_key_create_input import SSHKeyCreateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key import SSHKey
+from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -135,10 +135,10 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
-    ssh_key_create_input = equinix_metal.SSHKeyCreateInput() # SSHKeyCreateInput | ssh key to create
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
+    ssh_key_create_input = equinix.services.metalv1.SSHKeyCreateInput() # SSHKeyCreateInput | ssh key to create
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
     try:
@@ -194,13 +194,13 @@ Deletes the ssh key.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -216,9 +216,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | ssh key UUID
 
     try:
@@ -272,14 +272,14 @@ Returns a collection of the device's ssh keys.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key_list import SSHKeyList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key_list import SSHKeyList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -295,9 +295,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | Project UUID
     search_string = 'search_string_example' # str | Search by key, label, or fingerprint (optional)
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
@@ -355,14 +355,14 @@ Returns a collection of the project's ssh keys.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key_list import SSHKeyList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key_list import SSHKeyList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -378,9 +378,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | Project UUID
     query = 'query_example' # str | Search by key, label, or fingerprint (optional)
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
@@ -438,14 +438,14 @@ Returns a single ssh key if the user has access
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key import SSHKey
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key import SSHKey
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -461,9 +461,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | SSH Key UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -521,14 +521,14 @@ Returns a collection of the user’s ssh keys.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key_list import SSHKeyList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key_list import SSHKeyList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -544,9 +544,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     search = 'search_example' # str | Search by key, label, or fingerprint (optional)
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -602,15 +602,15 @@ Updates the ssh key.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.ssh_key import SSHKey
-from equinix_metal.models.ssh_key_input import SSHKeyInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.ssh_key import SSHKey
+from equinix.services.metalv1.models.ssh_key_input import SSHKeyInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -626,11 +626,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SSHKeysApi(api_client)
+    api_instance = equinix.services.metalv1.SSHKeysApi(api_client)
     id = 'id_example' # str | SSH Key UUID
-    ssh_key_input = equinix_metal.SSHKeyInput() # SSHKeyInput | ssh key to update
+    ssh_key_input = equinix.services.metalv1.SSHKeyInput() # SSHKeyInput | ssh key to update
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
     try:

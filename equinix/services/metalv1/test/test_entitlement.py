@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.entitlement import Entitlement
+from equinix.services.metalv1.models.entitlement import Entitlement
 
 class TestEntitlement(unittest.TestCase):
     """Entitlement unit test stubs"""

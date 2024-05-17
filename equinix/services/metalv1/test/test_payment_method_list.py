@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.payment_method_list import PaymentMethodList
+from equinix.services.metalv1.models.payment_method_list import PaymentMethodList
 
 class TestPaymentMethodList(unittest.TestCase):
     """PaymentMethodList unit test stubs"""
@@ -38,8 +38,8 @@ class TestPaymentMethodList(unittest.TestCase):
             return PaymentMethodList(
                 href = '',
                 payment_methods = [
-                    equinix_metal.models.payment_method.PaymentMethod(
-                        billing_address = equinix_metal.models.payment_method_billing_address.PaymentMethodBillingAddress(
+                    equinix.services.metalv1.models.payment_method.PaymentMethod(
+                        billing_address = equinix.services.metalv1.models.payment_method_billing_address.PaymentMethodBillingAddress(
                             country_code_alpha2 = '', 
                             href = '', 
                             postal_code = '', 
@@ -47,7 +47,7 @@ class TestPaymentMethodList(unittest.TestCase):
                         card_type = '', 
                         cardholder_name = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        created_by_user = equinix_metal.models.href.Href(
+                        created_by_user = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         default = True, 
                         email = '', 
@@ -56,7 +56,7 @@ class TestPaymentMethodList(unittest.TestCase):
                         href = '', 
                         id = '', 
                         name = '', 
-                        organization = equinix_metal.models.href.Href(
+                        organization = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         projects = [
                             

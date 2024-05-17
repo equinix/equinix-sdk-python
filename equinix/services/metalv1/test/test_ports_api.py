@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.ports_api import PortsApi
+from equinix.services.metalv1.api.ports_api import PortsApi
 
 
 class TestPortsApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.dedicated_port_create_input import DedicatedPortCreateInput
+from equinix.services.metalv1.models.dedicated_port_create_input import DedicatedPortCreateInput
 
 class TestDedicatedPortCreateInput(unittest.TestCase):
     """DedicatedPortCreateInput unit test stubs"""

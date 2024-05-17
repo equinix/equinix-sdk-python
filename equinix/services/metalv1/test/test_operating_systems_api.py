@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.operating_systems_api import OperatingSystemsApi
+from equinix.services.metalv1.api.operating_systems_api import OperatingSystemsApi
 
 
 class TestOperatingSystemsApi(unittest.TestCase):

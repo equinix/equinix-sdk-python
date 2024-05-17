@@ -38,6 +38,7 @@ class VrfVirtualCircuitUpdateInput(BaseModel):
     speed: Optional[StrictStr] = Field(default=None, description="Speed can be changed only if it is an interconnection on a Dedicated Port")
     subnet: Optional[StrictStr] = Field(default=None, description="The /30 or /31 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IP and Customer IP must be IPs from this subnet. For /30 subnets, the network and broadcast IPs cannot be used as the Metal or Customer IP.")
     tags: Optional[List[StrictStr]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["customer_ip", "description", "href", "md5", "metal_ip", "name", "peer_asn", "speed", "subnet", "tags"]
 
     @field_validator('md5')
@@ -80,8 +81,10 @@ class VrfVirtualCircuitUpdateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -89,6 +92,11 @@ class VrfVirtualCircuitUpdateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -112,6 +120,11 @@ class VrfVirtualCircuitUpdateInput(BaseModel):
             "subnet": obj.get("subnet"),
             "tags": obj.get("tags")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

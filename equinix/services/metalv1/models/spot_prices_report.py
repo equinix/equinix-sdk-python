@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.spot_prices_per_facility import SpotPricesPerFacility
-from equinix_metal.models.spot_prices_per_new_facility import SpotPricesPerNewFacility
+from equinix.services.metalv1.models.spot_prices_per_facility import SpotPricesPerFacility
+from equinix.services.metalv1.models.spot_prices_per_new_facility import SpotPricesPerNewFacility
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -44,6 +44,7 @@ class SpotPricesReport(BaseModel):
     sjc1: Optional[SpotPricesPerFacility] = None
     syd1: Optional[SpotPricesPerNewFacility] = None
     yyz1: Optional[SpotPricesPerNewFacility] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["ams1", "atl1", "dfw1", "ewr1", "fra1", "href", "iad1", "lax1", "nrt1", "ord1", "sea1", "sin1", "sjc1", "syd1", "yyz1"]
 
     model_config = ConfigDict(
@@ -76,8 +77,10 @@ class SpotPricesReport(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -127,6 +130,11 @@ class SpotPricesReport(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of yyz1
         if self.yyz1:
             _dict['yyz1'] = self.yyz1.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -155,6 +163,11 @@ class SpotPricesReport(BaseModel):
             "syd1": SpotPricesPerNewFacility.from_dict(obj["syd1"]) if obj.get("syd1") is not None else None,
             "yyz1": SpotPricesPerNewFacility.from_dict(obj["yyz1"]) if obj.get("yyz1") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

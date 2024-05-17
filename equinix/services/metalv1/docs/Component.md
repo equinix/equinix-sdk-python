@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.component import Component
+from equinix.services.metalv1.models.component import Component
 
 # TODO update the JSON string below
 json = "{}"

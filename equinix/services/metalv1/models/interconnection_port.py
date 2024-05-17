@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,6 +38,7 @@ class InterconnectionPort(BaseModel):
     status: Optional[StrictStr] = Field(default=None, description="For both Fabric VCs and Dedicated Ports, this will be 'requested' on creation and 'deleting' on deletion. Once the Fabric VC has found its corresponding Fabric connection, this will turn to 'active'. For Dedicated Ports, once the dedicated port is associated, this will also turn to 'active'. For Fabric VCs, this can turn into an 'expired' state if the service token associated is expired.")
     switch_id: Optional[StrictStr] = Field(default=None, description="A switch 'short ID'")
     virtual_circuits: Optional[List[VirtualCircuit]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "id", "link_status", "name", "organization", "role", "speed", "status", "switch_id", "virtual_circuits"]
 
     @field_validator('role')
@@ -90,8 +91,10 @@ class InterconnectionPort(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -109,6 +112,11 @@ class InterconnectionPort(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['virtual_circuits'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -132,9 +140,14 @@ class InterconnectionPort(BaseModel):
             "switch_id": obj.get("switch_id"),
             "virtual_circuits": [VirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
-from equinix_metal.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
 # TODO: Rewrite to not use raise_errors
 InterconnectionPort.model_rebuild(raise_errors=False)
 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.license import License
+from equinix.services.metalv1.models.license import License
 
 class TestLicense(unittest.TestCase):
     """License unit test stubs"""
@@ -40,9 +40,9 @@ class TestLicense(unittest.TestCase):
                 href = '',
                 id = '',
                 license_key = '',
-                licensee_product = equinix_metal.models.href.Href(
+                licensee_product = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                project = equinix_metal.models.href.Href(
+                project = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 size = 1.337
             )

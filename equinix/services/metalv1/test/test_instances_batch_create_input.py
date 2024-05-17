@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.instances_batch_create_input import InstancesBatchCreateInput
+from equinix.services.metalv1.models.instances_batch_create_input import InstancesBatchCreateInput
 
 class TestInstancesBatchCreateInput(unittest.TestCase):
     """InstancesBatchCreateInput unit test stubs"""

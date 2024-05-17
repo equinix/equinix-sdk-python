@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.component import Component
+from equinix.services.metalv1.models.component import Component
 
 class TestComponent(unittest.TestCase):
     """Component unit test stubs"""

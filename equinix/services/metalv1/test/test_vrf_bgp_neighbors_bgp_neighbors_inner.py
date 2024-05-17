@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_bgp_neighbors_bgp_neighbors_inner import VrfBGPNeighborsBgpNeighborsInner
+from equinix.services.metalv1.models.vrf_bgp_neighbors_bgp_neighbors_inner import VrfBGPNeighborsBgpNeighborsInner
 
 class TestVrfBGPNeighborsBgpNeighborsInner(unittest.TestCase):
     """VrfBGPNeighborsBgpNeighborsInner unit test stubs"""

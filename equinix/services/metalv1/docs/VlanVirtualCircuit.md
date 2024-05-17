@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vlan_virtual_circuit import VlanVirtualCircuit
+from equinix.services.metalv1.models.vlan_virtual_circuit import VlanVirtualCircuit
 
 # TODO update the JSON string below
 json = "{}"

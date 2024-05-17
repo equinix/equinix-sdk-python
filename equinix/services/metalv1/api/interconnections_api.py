@@ -20,22 +20,22 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
-from equinix_metal.models.interconnection import Interconnection
-from equinix_metal.models.interconnection_list import InterconnectionList
-from equinix_metal.models.interconnection_metro_list import InterconnectionMetroList
-from equinix_metal.models.interconnection_port import InterconnectionPort
-from equinix_metal.models.interconnection_port_list import InterconnectionPortList
-from equinix_metal.models.interconnection_pricing_list import InterconnectionPricingList
-from equinix_metal.models.interconnection_update_input import InterconnectionUpdateInput
-from equinix_metal.models.virtual_circuit import VirtualCircuit
-from equinix_metal.models.virtual_circuit_create_input import VirtualCircuitCreateInput
-from equinix_metal.models.virtual_circuit_list import VirtualCircuitList
-from equinix_metal.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
+from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
+from equinix.services.metalv1.models.interconnection import Interconnection
+from equinix.services.metalv1.models.interconnection_list import InterconnectionList
+from equinix.services.metalv1.models.interconnection_metro_list import InterconnectionMetroList
+from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
+from equinix.services.metalv1.models.interconnection_port_list import InterconnectionPortList
+from equinix.services.metalv1.models.interconnection_pricing_list import InterconnectionPricingList
+from equinix.services.metalv1.models.interconnection_update_input import InterconnectionUpdateInput
+from equinix.services.metalv1.models.virtual_circuit import VirtualCircuit
+from equinix.services.metalv1.models.virtual_circuit_create_input import VirtualCircuitCreateInput
+from equinix.services.metalv1.models.virtual_circuit_list import VirtualCircuitList
+from equinix.services.metalv1.models.virtual_circuit_update_input import VirtualCircuitUpdateInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class InterconnectionsApi:

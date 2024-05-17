@@ -21,11 +21,11 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.ip_reservation_facility import IPReservationFacility
-from equinix_metal.models.ip_reservation_metro import IPReservationMetro
-from equinix_metal.models.metal_gateway_lite import MetalGatewayLite
-from equinix_metal.models.project import Project
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.ip_reservation_facility import IPReservationFacility
+from equinix.services.metalv1.models.ip_reservation_metro import IPReservationMetro
+from equinix.services.metalv1.models.metal_gateway_lite import MetalGatewayLite
+from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
 

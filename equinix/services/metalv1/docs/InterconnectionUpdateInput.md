@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.interconnection_update_input import InterconnectionUpdateInput
+from equinix.services.metalv1.models.interconnection_update_input import InterconnectionUpdateInput
 
 # TODO update the JSON string below
 json = "{}"

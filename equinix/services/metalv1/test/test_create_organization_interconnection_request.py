@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
+from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
 
 class TestCreateOrganizationInterconnectionRequest(unittest.TestCase):
     """CreateOrganizationInterconnectionRequest unit test stubs"""

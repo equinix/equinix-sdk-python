@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.capacity_api import CapacityApi
+from equinix.services.metalv1.api.capacity_api import CapacityApi
 
 
 class TestCapacityApi(unittest.TestCase):

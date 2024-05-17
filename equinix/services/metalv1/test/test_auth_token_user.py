@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.auth_token_user import AuthTokenUser
+from equinix.services.metalv1.models.auth_token_user import AuthTokenUser
 
 class TestAuthTokenUser(unittest.TestCase):
     """AuthTokenUser unit test stubs"""
@@ -39,12 +39,12 @@ class TestAuthTokenUser(unittest.TestCase):
                 avatar_thumb_url = '',
                 avatar_url = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 default_organization_id = '',
                 default_project_id = '',
                 email = '',
                 emails = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 first_name = '',

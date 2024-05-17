@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.coordinates import Coordinates
+from equinix.services.metalv1.models.coordinates import Coordinates
 
 class TestCoordinates(unittest.TestCase):
     """Coordinates unit test stubs"""

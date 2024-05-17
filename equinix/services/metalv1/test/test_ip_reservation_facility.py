@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_reservation_facility import IPReservationFacility
+from equinix.services.metalv1.models.ip_reservation_facility import IPReservationFacility
 
 class TestIPReservationFacility(unittest.TestCase):
     """IPReservationFacility unit test stubs"""
@@ -36,11 +36,11 @@ class TestIPReservationFacility(unittest.TestCase):
         model = IPReservationFacility()
         if include_optional:
             return IPReservationFacility(
-                address = equinix_metal.models.address.Address(
+                address = equinix.services.metalv1.models.address.Address(
                     address = '', 
                     address2 = '', 
                     city = '', 
-                    coordinates = equinix_metal.models.coordinates.Coordinates(
+                    coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                         href = '', 
                         latitude = '', 
                         longitude = '', ), 

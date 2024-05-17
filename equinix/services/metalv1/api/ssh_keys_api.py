@@ -20,14 +20,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.ssh_key import SSHKey
-from equinix_metal.models.ssh_key_create_input import SSHKeyCreateInput
-from equinix_metal.models.ssh_key_input import SSHKeyInput
-from equinix_metal.models.ssh_key_list import SSHKeyList
+from equinix.services.metalv1.models.ssh_key import SSHKey
+from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
+from equinix.services.metalv1.models.ssh_key_input import SSHKeyInput
+from equinix.services.metalv1.models.ssh_key_list import SSHKeyList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class SSHKeysApi:

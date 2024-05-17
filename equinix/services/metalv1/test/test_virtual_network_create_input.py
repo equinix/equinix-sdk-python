@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.virtual_network_create_input import VirtualNetworkCreateInput
+from equinix.services.metalv1.models.virtual_network_create_input import VirtualNetworkCreateInput
 
 class TestVirtualNetworkCreateInput(unittest.TestCase):
     """VirtualNetworkCreateInput unit test stubs"""

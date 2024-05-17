@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_convert_layer3_input import PortConvertLayer3Input
+from equinix.services.metalv1.models.port_convert_layer3_input import PortConvertLayer3Input
 
 class TestPortConvertLayer3Input(unittest.TestCase):
     """PortConvertLayer3Input unit test stubs"""
@@ -38,7 +38,7 @@ class TestPortConvertLayer3Input(unittest.TestCase):
             return PortConvertLayer3Input(
                 href = '',
                 request_ips = [
-                    equinix_metal.models.port_convert_layer3_input_request_ips_inner.PortConvertLayer3Input_request_ips_inner(
+                    equinix.services.metalv1.models.port_convert_layer3_input_request_ips_inner.PortConvertLayer3Input_request_ips_inner(
                         address_family = 56, 
                         href = '', 
                         public = True, )

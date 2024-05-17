@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_vlan_assignment_list import PortVlanAssignmentList
+from equinix.services.metalv1.models.port_vlan_assignment_list import PortVlanAssignmentList
 
 class TestPortVlanAssignmentList(unittest.TestCase):
     """PortVlanAssignmentList unit test stubs"""
@@ -38,16 +38,16 @@ class TestPortVlanAssignmentList(unittest.TestCase):
             return PortVlanAssignmentList(
                 href = '',
                 vlan_assignments = [
-                    equinix_metal.models.port_vlan_assignment.PortVlanAssignment(
+                    equinix.services.metalv1.models.port_vlan_assignment.PortVlanAssignment(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         id = '', 
                         native = True, 
-                        port = equinix_metal.models.href.Href(
+                        port = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         state = 'assigned', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        virtual_network = equinix_metal.models.href.Href(
+                        virtual_network = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         vlan = 56, )
                     ]

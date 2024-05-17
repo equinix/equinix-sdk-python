@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ssh_key_input import SSHKeyInput
+from equinix.services.metalv1.models.ssh_key_input import SSHKeyInput
 
 class TestSSHKeyInput(unittest.TestCase):
     """SSHKeyInput unit test stubs"""

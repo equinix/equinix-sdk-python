@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.two_factor_auth_api import TwoFactorAuthApi
+from equinix.services.metalv1.api.two_factor_auth_api import TwoFactorAuthApi
 
 
 class TestTwoFactorAuthApi(unittest.TestCase):

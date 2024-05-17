@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_market_prices_list import SpotMarketPricesList
+from equinix.services.metalv1.models.spot_market_prices_list import SpotMarketPricesList
 
 class TestSpotMarketPricesList(unittest.TestCase):
     """SpotMarketPricesList unit test stubs"""
@@ -37,12 +37,12 @@ class TestSpotMarketPricesList(unittest.TestCase):
         if include_optional:
             return SpotMarketPricesList(
                 href = '',
-                spot_market_prices = equinix_metal.models.spot_prices_report.SpotPricesReport(
-                    ams1 = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
-                        baremetal_0 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                spot_market_prices = equinix.services.metalv1.models.spot_prices_report.SpotPricesReport(
+                    ams1 = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
+                        baremetal_0 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                             href = '', 
                             price = 1.337, ), 
-                        baremetal_1 = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                        baremetal_1 = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                             href = '', 
                             price = 1.337, ), 
                         baremetal_2 = , 
@@ -53,12 +53,12 @@ class TestSpotMarketPricesList(unittest.TestCase):
                         c2/medium/x86 = , 
                         href = '', 
                         m2/xlarge/x86 = , ), 
-                    atl1 = equinix_metal.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
+                    atl1 = equinix.services.metalv1.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
                         baremetal_1e = , 
                         href = '', ), 
-                    dfw1 = equinix_metal.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
+                    dfw1 = equinix.services.metalv1.models.spot_prices_per_new_facility.SpotPricesPerNewFacility(
                         href = '', ), 
-                    ewr1 = equinix_metal.models.spot_prices_per_facility.SpotPricesPerFacility(
+                    ewr1 = equinix.services.metalv1.models.spot_prices_per_facility.SpotPricesPerFacility(
                         href = '', ), 
                     fra1 = , 
                     href = '', 

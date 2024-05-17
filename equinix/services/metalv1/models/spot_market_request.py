@@ -21,8 +21,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from equinix_metal.models.href import Href
-from equinix_metal.models.spot_market_request_metro import SpotMarketRequestMetro
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.spot_market_request_metro import SpotMarketRequestMetro
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,6 +41,7 @@ class SpotMarketRequest(BaseModel):
     max_bid_price: Optional[Union[StrictFloat, StrictInt]] = None
     metro: Optional[SpotMarketRequestMetro] = None
     project: Optional[Href] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "devices_max", "devices_min", "end_at", "facilities", "href", "id", "instances", "max_bid_price", "metro", "project"]
 
     model_config = ConfigDict(
@@ -73,8 +74,10 @@ class SpotMarketRequest(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -94,6 +97,11 @@ class SpotMarketRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -118,6 +126,11 @@ class SpotMarketRequest(BaseModel):
             "metro": SpotMarketRequestMetro.from_dict(obj["metro"]) if obj.get("metro") is not None else None,
             "project": Href.from_dict(obj["project"]) if obj.get("project") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

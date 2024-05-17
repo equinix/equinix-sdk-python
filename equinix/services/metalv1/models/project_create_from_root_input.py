@@ -35,6 +35,7 @@ class ProjectCreateFromRootInput(BaseModel):
     payment_method_id: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     type: Optional[StrictStr] = Field(default=None, description="The type of the project. If no type is specified the project type will automatically be `default` Projects of type 'vmce' are part of an in development feature and not available to all customers.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["customdata", "href", "name", "organization_id", "payment_method_id", "tags", "type"]
 
     @field_validator('type')
@@ -77,8 +78,10 @@ class ProjectCreateFromRootInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,6 +89,11 @@ class ProjectCreateFromRootInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -106,6 +114,11 @@ class ProjectCreateFromRootInput(BaseModel):
             "tags": obj.get("tags"),
             "type": obj.get("type")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

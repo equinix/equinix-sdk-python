@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.firmware_set_list_response import FirmwareSetListResponse
+from equinix.services.metalv1.models.firmware_set_list_response import FirmwareSetListResponse
 
 # TODO update the JSON string below
 json = "{}"

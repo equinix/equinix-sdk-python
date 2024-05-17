@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.user_limited import UserLimited
+from equinix.services.metalv1.models.user_limited import UserLimited
 
 # TODO update the JSON string below
 json = "{}"

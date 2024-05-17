@@ -1,4 +1,4 @@
-# equinix_metal.UserdataApi
+# equinix.services.metalv1.UserdataApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -19,13 +19,13 @@ Validates user data (Userdata)
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -41,9 +41,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.UserdataApi(api_client)
+    api_instance = equinix.services.metalv1.UserdataApi(api_client)
     userdata = 'userdata_example' # str | Userdata to validate (optional)
 
     try:

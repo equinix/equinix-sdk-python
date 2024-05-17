@@ -21,9 +21,9 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.ip_assignment_metro import IPAssignmentMetro
-from equinix_metal.models.parent_block import ParentBlock
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.ip_assignment_metro import IPAssignmentMetro
+from equinix.services.metalv1.models.parent_block import ParentBlock
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -50,6 +50,7 @@ class IPAssignment(BaseModel):
     parent_block: Optional[ParentBlock] = None
     public: Optional[StrictBool] = None
     state: Optional[StrictStr] = Field(default=None, description="Only set when this is a Metal Gateway Elastic IP Assignment.  Describes the current configuration state of this IP on the network. ")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["address", "address_family", "assigned_to", "cidr", "created_at", "enabled", "gateway", "global_ip", "href", "id", "manageable", "management", "metro", "netmask", "network", "next_hop", "parent_block", "public", "state"]
 
     @field_validator('state')
@@ -92,8 +93,10 @@ class IPAssignment(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -110,6 +113,11 @@ class IPAssignment(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of parent_block
         if self.parent_block:
             _dict['parent_block'] = self.parent_block.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -142,6 +150,11 @@ class IPAssignment(BaseModel):
             "public": obj.get("public"),
             "state": obj.get("state")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

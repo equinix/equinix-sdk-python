@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
+from equinix.services.metalv1.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
 
 class TestCreateSelfServiceReservationRequest(unittest.TestCase):
     """CreateSelfServiceReservationRequest unit test stubs"""
@@ -38,7 +38,7 @@ class TestCreateSelfServiceReservationRequest(unittest.TestCase):
             return CreateSelfServiceReservationRequest(
                 href = '',
                 item = [
-                    equinix_metal.models.self_service_reservation_item_request.SelfServiceReservationItemRequest(
+                    equinix.services.metalv1.models.self_service_reservation_item_request.SelfServiceReservationItemRequest(
                         amount = 1.337, 
                         href = '', 
                         metro_id = '', 
@@ -47,7 +47,7 @@ class TestCreateSelfServiceReservationRequest(unittest.TestCase):
                         term = '', )
                     ],
                 notes = '',
-                period = equinix_metal.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
+                period = equinix.services.metalv1.models.create_self_service_reservation_request_period.CreateSelfServiceReservationRequest_period(
                     count = 12, 
                     href = '', 
                     unit = 'monthly', ),

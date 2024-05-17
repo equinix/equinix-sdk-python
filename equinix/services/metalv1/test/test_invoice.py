@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.invoice import Invoice
+from equinix.services.metalv1.models.invoice import Invoice
 
 class TestInvoice(unittest.TestCase):
     """Invoice unit test stubs"""
@@ -46,22 +46,32 @@ class TestInvoice(unittest.TestCase):
                 href = '',
                 id = '',
                 items = [
-                    equinix_metal.models.line_item.LineItem(
+                    equinix.services.metalv1.models.line_item.LineItem(
+                        adjustments = [
+                            equinix.services.metalv1.models.line_item_adjustment.LineItemAdjustment(
+                                amount = 1.337, 
+                                description = '', 
+                                href = '', )
+                            ], 
                         amount = 1.337, 
                         currency = '', 
                         description = '', 
                         details = '', 
+                        end_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                        hostname = '', 
                         href = '', 
-                        plan = equinix_metal.models.plan.Plan(
+                        item_type = '', 
+                        location = '', 
+                        plan = equinix.services.metalv1.models.plan.Plan(
                             available_in = [
-                                equinix_metal.models.plan_available_in_inner.Plan_available_in_inner(
+                                equinix.services.metalv1.models.plan_available_in_inner.Plan_available_in_inner(
                                     href = '', 
-                                    price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                                    price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                                         hour = 1.23, 
                                         href = '', ), )
                                 ], 
                             available_in_metros = [
-                                equinix_metal.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
+                                equinix.services.metalv1.models.plan_available_in_metros_inner.Plan_available_in_metros_inner(
                                     href = '', )
                                 ], 
                             categories = [
@@ -77,44 +87,52 @@ class TestInvoice(unittest.TestCase):
                             legacy = True, 
                             line = '', 
                             name = '', 
-                            pricing = equinix_metal.models.pricing.pricing(), 
+                            pricing = equinix.services.metalv1.models.pricing.pricing(), 
                             slug = 'm3.large.x86', 
-                            specs = equinix_metal.models.plan_specs.Plan_specs(
+                            specs = equinix.services.metalv1.models.plan_specs.Plan_specs(
                                 cpus = [
-                                    equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                                    equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                                         count = 56, 
                                         href = '', 
                                         type = '', )
                                     ], 
                                 drives = [
-                                    equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                                    equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                                         category = 'boot', 
                                         count = 56, 
                                         href = '', 
                                         size = '3.84TB', 
                                         type = '', )
                                     ], 
-                                features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                                     href = '', 
                                     raid = True, 
                                     txt = True, 
                                     uefi = True, ), 
                                 href = '', 
-                                memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                                     href = '', 
                                     total = '', ), 
                                 nics = [
-                                    equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                                    equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                                         count = 2, 
                                         href = '', 
                                         type = '', )
                                     ], ), 
                             type = 'standard', ), 
+                        plan_id = '', 
+                        project = equinix.services.metalv1.models.project_id_name.ProjectIdName(
+                            href = '', 
+                            id = '', 
+                            name = '', ), 
+                        project_id = '', 
+                        service_id = '', 
+                        start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
                         unit = '', 
                         unit_price = 1.337, )
                     ],
                 number = '',
-                project = equinix_metal.models.project_id_name.ProjectIdName(
+                project = equinix.services.metalv1.models.project_id_name.ProjectIdName(
                     href = '', 
                     id = '', 
                     name = '', ),

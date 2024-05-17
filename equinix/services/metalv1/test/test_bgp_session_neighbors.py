@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_session_neighbors import BgpSessionNeighbors
+from equinix.services.metalv1.models.bgp_session_neighbors import BgpSessionNeighbors
 
 class TestBgpSessionNeighbors(unittest.TestCase):
     """BgpSessionNeighbors unit test stubs"""
@@ -37,7 +37,7 @@ class TestBgpSessionNeighbors(unittest.TestCase):
         if include_optional:
             return BgpSessionNeighbors(
                 bgp_neighbors = [
-                    equinix_metal.models.bgp_neighbor_data.BgpNeighborData(
+                    equinix.services.metalv1.models.bgp_neighbor_data.BgpNeighborData(
                         address_family = 4, 
                         customer_as = 65000, 
                         customer_ip = '10.32.16.1 (IPv4) or 2604:1380:4111:2700::1 (IPv6)', 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.organization import Organization
+from equinix.services.metalv1.models.organization import Organization
 
 class TestOrganization(unittest.TestCase):
     """Organization unit test stubs"""
@@ -36,10 +36,10 @@ class TestOrganization(unittest.TestCase):
         model = Organization()
         if include_optional:
             return Organization(
-                address = equinix_metal.models.address.Address(
+                address = equinix.services.metalv1.models.address.Address(
                     address2 = '', 
                     city = '', 
-                    coordinates = equinix_metal.models.coordinates.Coordinates(
+                    coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                         href = '', 
                         latitude = '', 
                         longitude = '', ), 
@@ -47,11 +47,11 @@ class TestOrganization(unittest.TestCase):
                     href = '', 
                     state = '', 
                     zip_code = '', ),
-                billing_address = equinix_metal.models.address.Address(
+                billing_address = equinix.services.metalv1.models.address.Address(
                     address = '', 
                     address2 = '', 
                     city = '', 
-                    coordinates = equinix_metal.models.coordinates.Coordinates(
+                    coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                         href = '', 
                         latitude = '', 
                         longitude = '', ), 
@@ -61,23 +61,23 @@ class TestOrganization(unittest.TestCase):
                     zip_code = '', ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 credit_amount = 1.337,
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 description = '',
                 enforce_2fa_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 href = '',
                 id = '',
                 logo = '',
                 members = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 memberships = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 name = '',
                 projects = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 terms = 56,

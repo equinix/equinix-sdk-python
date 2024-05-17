@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vlan_csp_connection_create_input import VlanCSPConnectionCreateInput
+from equinix.services.metalv1.models.vlan_csp_connection_create_input import VlanCSPConnectionCreateInput
 
 class TestVlanCSPConnectionCreateInput(unittest.TestCase):
     """VlanCSPConnectionCreateInput unit test stubs"""

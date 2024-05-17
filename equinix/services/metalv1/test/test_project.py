@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project import Project
+from equinix.services.metalv1.models.project import Project
 
 class TestProject(unittest.TestCase):
     """Project unit test stubs"""
@@ -37,37 +37,37 @@ class TestProject(unittest.TestCase):
         if include_optional:
             return Project(
                 backend_transfer_enabled = True,
-                bgp_config = equinix_metal.models.href.Href(
+                bgp_config = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 devices = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 href = '',
                 id = '',
                 invitations = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
-                max_devices = equinix_metal.models.max_devices.max_devices(),
+                max_devices = equinix.services.metalv1.models.max_devices.max_devices(),
                 members = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 memberships = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 name = '0',
-                network_status = equinix_metal.models.network_status.network_status(),
-                organization = equinix_metal.models.href.Href(
+                network_status = equinix.services.metalv1.models.network_status.network_status(),
+                organization = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                payment_method = equinix_metal.models.href.Href(
+                payment_method = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 ssh_keys = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 tags = [
@@ -77,7 +77,7 @@ class TestProject(unittest.TestCase):
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 url = '',
                 volumes = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ]
             )

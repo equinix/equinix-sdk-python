@@ -20,16 +20,16 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.spot_market_prices_list import SpotMarketPricesList
-from equinix_metal.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
-from equinix_metal.models.spot_market_request import SpotMarketRequest
-from equinix_metal.models.spot_market_request_create_input import SpotMarketRequestCreateInput
-from equinix_metal.models.spot_market_request_list import SpotMarketRequestList
-from equinix_metal.models.spot_prices_history_report import SpotPricesHistoryReport
+from equinix.services.metalv1.models.spot_market_prices_list import SpotMarketPricesList
+from equinix.services.metalv1.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
+from equinix.services.metalv1.models.spot_market_request import SpotMarketRequest
+from equinix.services.metalv1.models.spot_market_request_create_input import SpotMarketRequestCreateInput
+from equinix.services.metalv1.models.spot_market_request_list import SpotMarketRequestList
+from equinix.services.metalv1.models.spot_prices_history_report import SpotPricesHistoryReport
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class SpotMarketApi:

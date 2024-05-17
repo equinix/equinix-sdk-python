@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_specs_drives_inner import PlanSpecsDrivesInner
+from equinix.services.metalv1.models.plan_specs_drives_inner import PlanSpecsDrivesInner
 
 class TestPlanSpecsDrivesInner(unittest.TestCase):
     """PlanSpecsDrivesInner unit test stubs"""

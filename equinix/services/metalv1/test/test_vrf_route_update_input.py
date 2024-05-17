@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_route_update_input import VrfRouteUpdateInput
+from equinix.services.metalv1.models.vrf_route_update_input import VrfRouteUpdateInput
 
 class TestVrfRouteUpdateInput(unittest.TestCase):
     """VrfRouteUpdateInput unit test stubs"""

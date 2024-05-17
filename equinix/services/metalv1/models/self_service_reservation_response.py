@@ -21,8 +21,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.create_self_service_reservation_request_period import CreateSelfServiceReservationRequestPeriod
-from equinix_metal.models.self_service_reservation_item_response import SelfServiceReservationItemResponse
+from equinix.services.metalv1.models.create_self_service_reservation_request_period import CreateSelfServiceReservationRequestPeriod
+from equinix.services.metalv1.models.self_service_reservation_item_response import SelfServiceReservationItemResponse
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,6 +42,7 @@ class SelfServiceReservationResponse(BaseModel):
     start_date: Optional[datetime] = None
     status: Optional[StrictStr] = None
     total_cost: Optional[StrictInt] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "href", "item", "notes", "organization", "organization_id", "period", "project", "project_id", "start_date", "status", "total_cost"]
 
     model_config = ConfigDict(
@@ -74,8 +75,10 @@ class SelfServiceReservationResponse(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -93,6 +96,11 @@ class SelfServiceReservationResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of period
         if self.period:
             _dict['period'] = self.period.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -118,6 +126,11 @@ class SelfServiceReservationResponse(BaseModel):
             "status": obj.get("status"),
             "total_cost": obj.get("total_cost")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

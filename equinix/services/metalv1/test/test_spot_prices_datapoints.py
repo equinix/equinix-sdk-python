@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_prices_datapoints import SpotPricesDatapoints
+from equinix.services.metalv1.models.spot_prices_datapoints import SpotPricesDatapoints
 
 class TestSpotPricesDatapoints(unittest.TestCase):
     """SpotPricesDatapoints unit test stubs"""

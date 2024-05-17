@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
 
 class TestOperatingSystemList(unittest.TestCase):
     """OperatingSystemList unit test stubs"""
@@ -38,7 +38,7 @@ class TestOperatingSystemList(unittest.TestCase):
             return OperatingSystemList(
                 href = '',
                 operating_systems = [
-                    equinix_metal.models.operating_system.OperatingSystem(
+                    equinix.services.metalv1.models.operating_system.OperatingSystem(
                         default_operating_system = True, 
                         distro = '', 
                         distro_label = '', 
@@ -47,7 +47,7 @@ class TestOperatingSystemList(unittest.TestCase):
                         licensed = True, 
                         name = '', 
                         preinstallable = True, 
-                        pricing = equinix_metal.models.pricing.pricing(), 
+                        pricing = equinix.services.metalv1.models.pricing.pricing(), 
                         provisionable_on = [
                             ''
                             ], 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metadata import Metadata
+from equinix.services.metalv1.models.metadata import Metadata
 
 class TestMetadata(unittest.TestCase):
     """Metadata unit test stubs"""
@@ -44,7 +44,7 @@ class TestMetadata(unittest.TestCase):
                 id = '',
                 iqn = '',
                 metro = '',
-                network = equinix_metal.models.metadata_network.Metadata_network(
+                network = equinix.services.metalv1.models.metadata_network.Metadata_network(
                     addresses = [
                         ''
                         ], 
@@ -52,8 +52,8 @@ class TestMetadata(unittest.TestCase):
                     interfaces = [
                         None
                         ], 
-                    network = equinix_metal.models.metadata_network_network.Metadata_network_network(
-                        bonding = equinix_metal.models.metadata_network_network_bonding.Metadata_network_network_bonding(
+                    network = equinix.services.metalv1.models.metadata_network_network.Metadata_network_network(
+                        bonding = equinix.services.metalv1.models.metadata_network_network_bonding.Metadata_network_network_bonding(
                             href = '', 
                             link_aggregation = '', 
                             mac = '', 

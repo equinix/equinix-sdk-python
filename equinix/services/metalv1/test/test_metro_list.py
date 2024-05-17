@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metro_list import MetroList
+from equinix.services.metalv1.models.metro_list import MetroList
 
 class TestMetroList(unittest.TestCase):
     """MetroList unit test stubs"""
@@ -38,7 +38,7 @@ class TestMetroList(unittest.TestCase):
             return MetroList(
                 href = '',
                 metros = [
-                    equinix_metal.models.metro.Metro(
+                    equinix.services.metalv1.models.metro.Metro(
                         code = '', 
                         country = '', 
                         href = '', 

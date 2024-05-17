@@ -20,15 +20,15 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.invitation_list import InvitationList
-from equinix_metal.models.user import User
-from equinix_metal.models.user_create_input import UserCreateInput
-from equinix_metal.models.user_list import UserList
-from equinix_metal.models.user_update_input import UserUpdateInput
+from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.user import User
+from equinix.services.metalv1.models.user_create_input import UserCreateInput
+from equinix.services.metalv1.models.user_list import UserList
+from equinix.services.metalv1.models.user_update_input import UserUpdateInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class UsersApi:

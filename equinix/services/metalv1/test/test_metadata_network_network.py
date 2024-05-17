@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metadata_network_network import MetadataNetworkNetwork
+from equinix.services.metalv1.models.metadata_network_network import MetadataNetworkNetwork
 
 class TestMetadataNetworkNetwork(unittest.TestCase):
     """MetadataNetworkNetwork unit test stubs"""
@@ -36,7 +36,7 @@ class TestMetadataNetworkNetwork(unittest.TestCase):
         model = MetadataNetworkNetwork()
         if include_optional:
             return MetadataNetworkNetwork(
-                bonding = equinix_metal.models.metadata_network_network_bonding.Metadata_network_network_bonding(
+                bonding = equinix.services.metalv1.models.metadata_network_network_bonding.Metadata_network_network_bonding(
                     href = '', 
                     link_aggregation = '', 
                     mac = '', 

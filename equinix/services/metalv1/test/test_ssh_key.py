@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ssh_key import SSHKey
+from equinix.services.metalv1.models.ssh_key import SSHKey
 
 class TestSSHKey(unittest.TestCase):
     """SSHKey unit test stubs"""
@@ -37,7 +37,7 @@ class TestSSHKey(unittest.TestCase):
         if include_optional:
             return SSHKey(
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                entity = equinix_metal.models.href.Href(
+                entity = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 fingerprint = '',
                 href = '',

@@ -20,14 +20,14 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
-from equinix_metal.models.hardware_reservation import HardwareReservation
-from equinix_metal.models.hardware_reservation_list import HardwareReservationList
-from equinix_metal.models.move_hardware_reservation_request import MoveHardwareReservationRequest
+from equinix.services.metalv1.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
+from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
+from equinix.services.metalv1.models.hardware_reservation_list import HardwareReservationList
+from equinix.services.metalv1.models.move_hardware_reservation_request import MoveHardwareReservationRequest
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class HardwareReservationsApi:

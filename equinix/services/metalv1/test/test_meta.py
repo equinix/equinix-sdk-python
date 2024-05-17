@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.meta import Meta
+from equinix.services.metalv1.models.meta import Meta
 
 class TestMeta(unittest.TestCase):
     """Meta unit test stubs"""
@@ -37,17 +37,17 @@ class TestMeta(unittest.TestCase):
         if include_optional:
             return Meta(
                 current_page = 56,
-                first = equinix_metal.models.href.Href(
+                first = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 href = '',
-                last = equinix_metal.models.href.Href(
+                last = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 last_page = 56,
-                next = equinix_metal.models.href.Href(
+                next = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                previous = equinix_metal.models.href.Href(
+                previous = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                var_self = equinix_metal.models.href.Href(
+                var_self = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 total = 56
             )

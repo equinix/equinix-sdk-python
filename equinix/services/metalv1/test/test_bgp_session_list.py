@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_session_list import BgpSessionList
+from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
 
 class TestBgpSessionList(unittest.TestCase):
     """BgpSessionList unit test stubs"""
@@ -37,11 +37,11 @@ class TestBgpSessionList(unittest.TestCase):
         if include_optional:
             return BgpSessionList(
                 bgp_sessions = [
-                    equinix_metal.models.bgp_session.BgpSession(
+                    equinix.services.metalv1.models.bgp_session.BgpSession(
                         address_family = 'ipv4', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         default_route = True, 
-                        device = equinix_metal.models.href.Href(
+                        device = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         href = '', 
                         id = '', 

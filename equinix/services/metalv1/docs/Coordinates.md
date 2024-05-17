@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.coordinates import Coordinates
+from equinix.services.metalv1.models.coordinates import Coordinates
 
 # TODO update the JSON string below
 json = "{}"

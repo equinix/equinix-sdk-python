@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.hardware_reservations_api import HardwareReservationsApi
+from equinix.services.metalv1.api.hardware_reservations_api import HardwareReservationsApi
 
 
 class TestHardwareReservationsApi(unittest.TestCase):

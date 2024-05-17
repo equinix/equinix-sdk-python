@@ -25,11 +25,11 @@ import tempfile
 from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict
 
-from equinix_metal.configuration import Configuration
-from equinix_metal.api_response import ApiResponse, T as ApiResponseT
-import equinix_metal.models
-from equinix_metal import rest
-from equinix_metal.exceptions import (
+from equinix.services.metalv1.configuration import Configuration
+from equinix.services.metalv1.api_response import ApiResponse, T as ApiResponseT
+import equinix.services.metalv1.models
+from equinix.services.metalv1 import rest
+from equinix.services.metalv1.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -88,7 +88,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'metal-python/0.9.0'
+        self.user_agent = 'equinix-sdk-python/0.1.0'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -421,7 +421,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(equinix_metal.models, klass)
+                klass = getattr(equinix.services.metalv1.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

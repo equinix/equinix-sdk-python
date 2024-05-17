@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.mount import Mount
+from equinix.services.metalv1.models.mount import Mount
 
 class TestMount(unittest.TestCase):
     """Mount unit test stubs"""

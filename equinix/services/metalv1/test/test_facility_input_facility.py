@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.facility_input_facility import FacilityInputFacility
+from equinix.services.metalv1.models.facility_input_facility import FacilityInputFacility
 
 class TestFacilityInputFacility(unittest.TestCase):
     """FacilityInputFacility unit test stubs"""

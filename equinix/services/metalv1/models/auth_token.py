@@ -21,8 +21,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.auth_token_project import AuthTokenProject
-from equinix_metal.models.auth_token_user import AuthTokenUser
+from equinix.services.metalv1.models.auth_token_project import AuthTokenProject
+from equinix.services.metalv1.models.auth_token_user import AuthTokenUser
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,6 +39,7 @@ class AuthToken(BaseModel):
     token: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     user: Optional[AuthTokenUser] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "description", "href", "id", "project", "read_only", "token", "updated_at", "user"]
 
     model_config = ConfigDict(
@@ -71,8 +72,10 @@ class AuthToken(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,6 +89,11 @@ class AuthToken(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of user
         if self.user:
             _dict['user'] = self.user.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -108,6 +116,11 @@ class AuthToken(BaseModel):
             "updated_at": obj.get("updated_at"),
             "user": AuthTokenUser.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_prices_per_new_facility import SpotPricesPerNewFacility
+from equinix.services.metalv1.models.spot_prices_per_new_facility import SpotPricesPerNewFacility
 
 class TestSpotPricesPerNewFacility(unittest.TestCase):
     """SpotPricesPerNewFacility unit test stubs"""
@@ -36,7 +36,7 @@ class TestSpotPricesPerNewFacility(unittest.TestCase):
         model = SpotPricesPerNewFacility()
         if include_optional:
             return SpotPricesPerNewFacility(
-                baremetal_1e = equinix_metal.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
+                baremetal_1e = equinix.services.metalv1.models.spot_prices_per_baremetal.SpotPricesPerBaremetal(
                     href = '', 
                     price = 1.337, ),
                 href = ''

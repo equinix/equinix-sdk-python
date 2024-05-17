@@ -21,11 +21,11 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.project import Project
-from equinix_metal.models.virtual_network import VirtualNetwork
-from equinix_metal.models.vrf import Vrf
-from equinix_metal.models.vrf_ip_reservation import VrfIpReservation
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.project import Project
+from equinix.services.metalv1.models.virtual_network import VirtualNetwork
+from equinix.services.metalv1.models.vrf import Vrf
+from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -43,6 +43,7 @@ class VrfMetalGateway(BaseModel):
     updated_at: Optional[datetime] = None
     virtual_network: Optional[VirtualNetwork] = None
     vrf: Optional[Vrf] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "created_by", "href", "id", "ip_reservation", "project", "state", "updated_at", "virtual_network", "vrf"]
 
     @field_validator('state')
@@ -85,8 +86,10 @@ class VrfMetalGateway(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -109,6 +112,11 @@ class VrfMetalGateway(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vrf
         if self.vrf:
             _dict['vrf'] = self.vrf.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -132,6 +140,11 @@ class VrfMetalGateway(BaseModel):
             "virtual_network": VirtualNetwork.from_dict(obj["virtual_network"]) if obj.get("virtual_network") is not None else None,
             "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

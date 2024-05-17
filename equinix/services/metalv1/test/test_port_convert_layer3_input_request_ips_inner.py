@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_convert_layer3_input_request_ips_inner import PortConvertLayer3InputRequestIpsInner
+from equinix.services.metalv1.models.port_convert_layer3_input_request_ips_inner import PortConvertLayer3InputRequestIpsInner
 
 class TestPortConvertLayer3InputRequestIpsInner(unittest.TestCase):
     """PortConvertLayer3InputRequestIpsInner unit test stubs"""

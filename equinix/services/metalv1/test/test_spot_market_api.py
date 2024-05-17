@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.spot_market_api import SpotMarketApi
+from equinix.services.metalv1.api.spot_market_api import SpotMarketApi
 
 
 class TestSpotMarketApi(unittest.TestCase):

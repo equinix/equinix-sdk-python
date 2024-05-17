@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.event import Event
+from equinix.services.metalv1.models.event import Event
 
 class TestEvent(unittest.TestCase):
     """Event unit test stubs"""
@@ -42,9 +42,9 @@ class TestEvent(unittest.TestCase):
                 id = '',
                 interpolated = '',
                 ip = '',
-                modified_by = equinix_metal.models.modified_by.modified_by(),
+                modified_by = equinix.services.metalv1.models.modified_by.modified_by(),
                 relationships = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 state = '',

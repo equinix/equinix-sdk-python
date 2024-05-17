@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.auth_token_list import AuthTokenList
+from equinix.services.metalv1.models.auth_token_list import AuthTokenList
 
 class TestAuthTokenList(unittest.TestCase):
     """AuthTokenList unit test stubs"""
@@ -37,7 +37,7 @@ class TestAuthTokenList(unittest.TestCase):
         if include_optional:
             return AuthTokenList(
                 api_keys = [
-                    equinix_metal.models.auth_token.AuthToken(
+                    equinix.services.metalv1.models.auth_token.AuthToken(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
                         href = '', 

@@ -18,8 +18,8 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from equinix_metal.models.metal_gateway_create_input import MetalGatewayCreateInput
-from equinix_metal.models.vrf_metal_gateway_create_input import VrfMetalGatewayCreateInput
+from equinix.services.metalv1.models.metal_gateway_create_input import MetalGatewayCreateInput
+from equinix.services.metalv1.models.vrf_metal_gateway_create_input import VrfMetalGatewayCreateInput
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self

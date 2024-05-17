@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_assignment_list import IPAssignmentList
+from equinix.services.metalv1.models.ip_assignment_list import IPAssignmentList
 
 class TestIPAssignmentList(unittest.TestCase):
     """IPAssignmentList unit test stubs"""
@@ -38,10 +38,10 @@ class TestIPAssignmentList(unittest.TestCase):
             return IPAssignmentList(
                 href = '',
                 ip_addresses = [
-                    equinix_metal.models.ip_assignment.IPAssignment(
+                    equinix.services.metalv1.models.ip_assignment.IPAssignment(
                         address = '', 
                         address_family = 56, 
-                        assigned_to = equinix_metal.models.href.Href(
+                        assigned_to = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         cidr = 56, 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -56,7 +56,7 @@ class TestIPAssignmentList(unittest.TestCase):
                         netmask = '', 
                         network = '', 
                         next_hop = '', 
-                        parent_block = equinix_metal.models.parent_block.ParentBlock(
+                        parent_block = equinix.services.metalv1.models.parent_block.ParentBlock(
                             cidr = 56, 
                             href = '', 
                             netmask = '', 

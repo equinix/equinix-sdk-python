@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.parent_block import ParentBlock
+from equinix.services.metalv1.models.parent_block import ParentBlock
 
 class TestParentBlock(unittest.TestCase):
     """ParentBlock unit test stubs"""

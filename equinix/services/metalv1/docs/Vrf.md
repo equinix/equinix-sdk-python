@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf import Vrf
+from equinix.services.metalv1.models.vrf import Vrf
 
 # TODO update the JSON string below
 json = "{}"

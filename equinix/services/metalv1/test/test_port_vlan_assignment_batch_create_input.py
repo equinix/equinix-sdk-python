@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_vlan_assignment_batch_create_input import PortVlanAssignmentBatchCreateInput
+from equinix.services.metalv1.models.port_vlan_assignment_batch_create_input import PortVlanAssignmentBatchCreateInput
 
 class TestPortVlanAssignmentBatchCreateInput(unittest.TestCase):
     """PortVlanAssignmentBatchCreateInput unit test stubs"""
@@ -38,7 +38,7 @@ class TestPortVlanAssignmentBatchCreateInput(unittest.TestCase):
             return PortVlanAssignmentBatchCreateInput(
                 href = '',
                 vlan_assignments = [
-                    equinix_metal.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner.PortVlanAssignmentBatchCreateInput_vlan_assignments_inner(
+                    equinix.services.metalv1.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner.PortVlanAssignmentBatchCreateInput_vlan_assignments_inner(
                         href = '', 
                         native = True, 
                         state = 'assigned', 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.plans_api import PlansApi
+from equinix.services.metalv1.api.plans_api import PlansApi
 
 
 class TestPlansApi(unittest.TestCase):

@@ -1,4 +1,4 @@
-# equinix_metal.BGPApi
+# equinix.services.metalv1.BGPApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -25,13 +25,13 @@ Deletes the BGP session.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -47,9 +47,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | BGP session UUID
 
     try:
@@ -103,14 +103,14 @@ Returns a bgp config
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.bgp_config import BgpConfig
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.bgp_config import BgpConfig
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -126,9 +126,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | Project UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -186,14 +186,14 @@ Returns a BGP session
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.bgp_session import BgpSession
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.bgp_session import BgpSession
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -209,9 +209,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | BGP session UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -269,14 +269,14 @@ Returns all global bgp ranges for a project
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.global_bgp_range_list import GlobalBgpRangeList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.global_bgp_range_list import GlobalBgpRangeList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -292,9 +292,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | Project UUID
 
     try:
@@ -350,14 +350,14 @@ Provides a listing of available BGP sessions for the project.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.bgp_session_list import BgpSessionList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -373,9 +373,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | Project UUID
 
     try:
@@ -430,14 +430,14 @@ Requests to enable bgp configuration for a project.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.bgp_config_request_input import BgpConfigRequestInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.bgp_config_request_input import BgpConfigRequestInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -453,11 +453,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | Project UUID
-    bgp_config_request_input = equinix_metal.BgpConfigRequestInput() # BgpConfigRequestInput | BGP config Request to create
+    bgp_config_request_input = equinix.services.metalv1.BgpConfigRequestInput() # BgpConfigRequestInput | BGP config Request to create
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
     try:
@@ -514,13 +514,13 @@ Updates the BGP session by either enabling or disabling the default route functi
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -536,9 +536,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.BGPApi(api_client)
+    api_instance = equinix.services.metalv1.BGPApi(api_client)
     id = 'id_example' # str | BGP session UUID
     body = True # bool | Default route
 

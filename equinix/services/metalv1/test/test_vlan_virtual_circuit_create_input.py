@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
+from equinix.services.metalv1.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
 
 class TestVlanVirtualCircuitCreateInput(unittest.TestCase):
     """VlanVirtualCircuitCreateInput unit test stubs"""

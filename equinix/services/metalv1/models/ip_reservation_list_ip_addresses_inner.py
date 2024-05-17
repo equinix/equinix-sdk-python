@@ -20,8 +20,8 @@ import pprint
 import re  # noqa: F401
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
-from equinix_metal.models.ip_reservation import IPReservation
-from equinix_metal.models.vrf_ip_reservation import VrfIpReservation
+from equinix.services.metalv1.models.ip_reservation import IPReservation
+from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field

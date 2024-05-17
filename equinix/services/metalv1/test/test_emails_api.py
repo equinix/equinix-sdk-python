@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.emails_api import EmailsApi
+from equinix.services.metalv1.api.emails_api import EmailsApi
 
 
 class TestEmailsApi(unittest.TestCase):

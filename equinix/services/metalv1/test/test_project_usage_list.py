@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project_usage_list import ProjectUsageList
+from equinix.services.metalv1.models.project_usage_list import ProjectUsageList
 
 class TestProjectUsageList(unittest.TestCase):
     """ProjectUsageList unit test stubs"""
@@ -38,7 +38,7 @@ class TestProjectUsageList(unittest.TestCase):
             return ProjectUsageList(
                 href = '',
                 usages = [
-                    equinix_metal.models.project_usage.ProjectUsage(
+                    equinix.services.metalv1.models.project_usage.ProjectUsage(
                         facility = '', 
                         href = '', 
                         name = '', 

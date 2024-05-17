@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.operating_system import OperatingSystem
+from equinix.services.metalv1.models.operating_system import OperatingSystem
 
 class TestOperatingSystem(unittest.TestCase):
     """OperatingSystem unit test stubs"""
@@ -44,7 +44,7 @@ class TestOperatingSystem(unittest.TestCase):
                 licensed = True,
                 name = '',
                 preinstallable = True,
-                pricing = equinix_metal.models.pricing.pricing(),
+                pricing = equinix.services.metalv1.models.pricing.pricing(),
                 provisionable_on = [
                     ''
                     ],

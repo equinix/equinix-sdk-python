@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.console_log_details_api import ConsoleLogDetailsApi
+from equinix.services.metalv1.api.console_log_details_api import ConsoleLogDetailsApi
 
 
 class TestConsoleLogDetailsApi(unittest.TestCase):

@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,6 +37,7 @@ class Meta(BaseModel):
     previous: Optional[Href] = None
     var_self: Optional[Href] = Field(default=None, alias="self")
     total: Optional[StrictInt] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["current_page", "first", "href", "last", "last_page", "next", "previous", "self", "total"]
 
     model_config = ConfigDict(
@@ -69,8 +70,10 @@ class Meta(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -93,6 +96,11 @@ class Meta(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of var_self
         if self.var_self:
             _dict['self'] = self.var_self.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -115,6 +123,11 @@ class Meta(BaseModel):
             "self": Href.from_dict(obj["self"]) if obj.get("self") is not None else None,
             "total": obj.get("total")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

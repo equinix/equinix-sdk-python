@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.users_api import UsersApi
+from equinix.services.metalv1.api.users_api import UsersApi
 
 
 class TestUsersApi(unittest.TestCase):

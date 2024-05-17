@@ -21,9 +21,9 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.plan_available_in_inner import PlanAvailableInInner
-from equinix_metal.models.plan_available_in_metros_inner import PlanAvailableInMetrosInner
-from equinix_metal.models.plan_specs import PlanSpecs
+from equinix.services.metalv1.models.plan_available_in_inner import PlanAvailableInInner
+from equinix.services.metalv1.models.plan_available_in_metros_inner import PlanAvailableInMetrosInner
+from equinix.services.metalv1.models.plan_specs import PlanSpecs
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,6 +46,7 @@ class Plan(BaseModel):
     slug: Optional[StrictStr] = None
     specs: Optional[PlanSpecs] = None
     type: Optional[StrictStr] = Field(default=None, description="The plan type")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["available_in", "available_in_metros", "categories", "class", "deployment_types", "description", "href", "id", "legacy", "line", "name", "pricing", "slug", "specs", "type"]
 
     @field_validator('deployment_types')
@@ -99,8 +100,10 @@ class Plan(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -125,6 +128,11 @@ class Plan(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of specs
         if self.specs:
             _dict['specs'] = self.specs.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -153,6 +161,11 @@ class Plan(BaseModel):
             "specs": PlanSpecs.from_dict(obj["specs"]) if obj.get("specs") is not None else None,
             "type": obj.get("type")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

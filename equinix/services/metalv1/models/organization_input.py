@@ -21,7 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBytes, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from equinix_metal.models.address import Address
+from equinix.services.metalv1.models.address import Address
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,6 +39,7 @@ class OrganizationInput(BaseModel):
     name: Optional[StrictStr] = None
     twitter: Optional[StrictStr] = None
     website: Optional[StrictStr] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["address", "billing_address", "customdata", "description", "enforce_2fa_at", "href", "logo", "name", "twitter", "website"]
 
     model_config = ConfigDict(
@@ -71,8 +72,10 @@ class OrganizationInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,6 +89,11 @@ class OrganizationInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of billing_address
         if self.billing_address:
             _dict['billing_address'] = self.billing_address.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -109,6 +117,11 @@ class OrganizationInput(BaseModel):
             "twitter": obj.get("twitter"),
             "website": obj.get("website")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

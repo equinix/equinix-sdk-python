@@ -20,8 +20,8 @@ import pprint
 import re  # noqa: F401
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
-from equinix_metal.models.metal_gateway import MetalGateway
-from equinix_metal.models.vrf_metal_gateway import VrfMetalGateway
+from equinix.services.metalv1.models.metal_gateway import MetalGateway
+from equinix.services.metalv1.models.vrf_metal_gateway import VrfMetalGateway
 from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field

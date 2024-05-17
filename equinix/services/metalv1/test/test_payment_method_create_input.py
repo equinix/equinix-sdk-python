@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.payment_method_create_input import PaymentMethodCreateInput
+from equinix.services.metalv1.models.payment_method_create_input import PaymentMethodCreateInput
 
 class TestPaymentMethodCreateInput(unittest.TestCase):
     """PaymentMethodCreateInput unit test stubs"""

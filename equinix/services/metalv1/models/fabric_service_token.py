@@ -35,6 +35,7 @@ class FabricServiceToken(BaseModel):
     role: Optional[StrictStr] = Field(default=None, description="Either primary or secondary, depending on which interconnection the service token is associated to.")
     service_token_type: Optional[StrictStr] = Field(default=None, description="Either 'a_side' or 'z_side', depending on which type of Fabric VC was requested.")
     state: Optional[StrictStr] = Field(default=None, description="The state of the service token that corresponds with the service token state on Fabric. An 'inactive' state refers to a token that has not been redeemed yet on the Fabric side, an 'active' state refers to a token that has already been redeemed, and an 'expired' state refers to a token that has reached its expiry time.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["expires_at", "href", "id", "max_allowed_speed", "role", "service_token_type", "state"]
 
     @field_validator('role')
@@ -97,8 +98,10 @@ class FabricServiceToken(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -106,6 +109,11 @@ class FabricServiceToken(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -126,6 +134,11 @@ class FabricServiceToken(BaseModel):
             "service_token_type": obj.get("service_token_type"),
             "state": obj.get("state")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

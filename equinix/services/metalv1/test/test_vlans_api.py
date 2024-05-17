@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.vlans_api import VLANsApi
+from equinix.services.metalv1.api.vlans_api import VLANsApi
 
 
 class TestVLANsApi(unittest.TestCase):

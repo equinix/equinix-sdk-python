@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.payment_methods_api import PaymentMethodsApi
+from equinix.services.metalv1.api.payment_methods_api import PaymentMethodsApi
 
 
 class TestPaymentMethodsApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.partition import Partition
+from equinix.services.metalv1.models.partition import Partition
 
 class TestPartition(unittest.TestCase):
     """Partition unit test stubs"""

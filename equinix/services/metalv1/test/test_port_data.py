@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_data import PortData
+from equinix.services.metalv1.models.port_data import PortData
 
 class TestPortData(unittest.TestCase):
     """PortData unit test stubs"""

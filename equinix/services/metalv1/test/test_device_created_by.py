@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_created_by import DeviceCreatedBy
+from equinix.services.metalv1.models.device_created_by import DeviceCreatedBy
 
 class TestDeviceCreatedBy(unittest.TestCase):
     """DeviceCreatedBy unit test stubs"""

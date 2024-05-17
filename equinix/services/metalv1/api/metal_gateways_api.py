@@ -20,16 +20,16 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.create_metal_gateway_request import CreateMetalGatewayRequest
-from equinix_metal.models.find_metal_gateway_by_id200_response import FindMetalGatewayById200Response
-from equinix_metal.models.ip_assignment import IPAssignment
-from equinix_metal.models.ip_assignment_list import IPAssignmentList
-from equinix_metal.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
-from equinix_metal.models.metal_gateway_list import MetalGatewayList
+from equinix.services.metalv1.models.create_metal_gateway_request import CreateMetalGatewayRequest
+from equinix.services.metalv1.models.find_metal_gateway_by_id200_response import FindMetalGatewayById200Response
+from equinix.services.metalv1.models.ip_assignment import IPAssignment
+from equinix.services.metalv1.models.ip_assignment_list import IPAssignmentList
+from equinix.services.metalv1.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
+from equinix.services.metalv1.models.metal_gateway_list import MetalGatewayList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class MetalGatewaysApi:

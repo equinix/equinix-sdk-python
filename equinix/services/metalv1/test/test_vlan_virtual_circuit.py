@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vlan_virtual_circuit import VlanVirtualCircuit
+from equinix.services.metalv1.models.vlan_virtual_circuit import VlanVirtualCircuit
 
 class TestVlanVirtualCircuit(unittest.TestCase):
     """VlanVirtualCircuit unit test stubs"""
@@ -44,12 +44,12 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                 id = '',
                 name = '',
                 nni_vlan = 56,
-                port = equinix_metal.models.interconnection_port.InterconnectionPort(
+                port = equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
                     href = '', 
                     id = '', 
                     link_status = '', 
                     name = '', 
-                    organization = equinix_metal.models.href.Href(
+                    organization = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     role = 'primary', 
                     speed = 56, 
@@ -58,14 +58,14 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                     virtual_circuits = [
                         null
                         ], ),
-                project = equinix_metal.models.project.Project(
+                project = equinix.services.metalv1.models.project.Project(
                     backend_transfer_enabled = True, 
-                    bgp_config = equinix_metal.models.href.Href(
+                    bgp_config = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    customdata = equinix_metal.models.customdata.customdata(), 
+                    customdata = equinix.services.metalv1.models.customdata.customdata(), 
                     devices = [
-                        equinix_metal.models.href.Href(
+                        equinix.services.metalv1.models.href.Href(
                             href = '', )
                         ], 
                     href = '', 
@@ -73,7 +73,7 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                     invitations = [
                         
                         ], 
-                    max_devices = equinix_metal.models.max_devices.max_devices(), 
+                    max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                     members = [
                         
                         ], 
@@ -81,7 +81,7 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                         
                         ], 
                     name = '0', 
-                    network_status = equinix_metal.models.network_status.network_status(), 
+                    network_status = equinix.services.metalv1.models.network_status.network_status(), 
                     organization = , 
                     payment_method = , 
                     ssh_keys = [
@@ -96,6 +96,7 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                     volumes = [
                         
                         ], ),
+                provider_connection_id = 'dxcon-fggxx63k',
                 speed = 56,
                 status = 'pending',
                 tags = [
@@ -103,7 +104,7 @@ class TestVlanVirtualCircuit(unittest.TestCase):
                     ],
                 type = 'vlan',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                virtual_network = equinix_metal.models.href.Href(
+                virtual_network = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 vnid = 56
             )

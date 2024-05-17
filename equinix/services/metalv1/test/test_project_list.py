@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project_list import ProjectList
+from equinix.services.metalv1.models.project_list import ProjectList
 
 class TestProjectList(unittest.TestCase):
     """ProjectList unit test stubs"""
@@ -37,12 +37,12 @@ class TestProjectList(unittest.TestCase):
         if include_optional:
             return ProjectList(
                 href = '',
-                meta = equinix_metal.models.meta.Meta(
+                meta = equinix.services.metalv1.models.meta.Meta(
                     current_page = 56, 
-                    first = equinix_metal.models.href.Href(
+                    first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     href = '', 
-                    last = equinix_metal.models.href.Href(
+                    last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     last_page = 56, 
                     next = , 
@@ -50,14 +50,14 @@ class TestProjectList(unittest.TestCase):
                     self = , 
                     total = 56, ),
                 projects = [
-                    equinix_metal.models.project.Project(
+                    equinix.services.metalv1.models.project.Project(
                         backend_transfer_enabled = True, 
-                        bgp_config = equinix_metal.models.href.Href(
+                        bgp_config = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         devices = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         href = '', 
@@ -65,7 +65,7 @@ class TestProjectList(unittest.TestCase):
                         invitations = [
                             
                             ], 
-                        max_devices = equinix_metal.models.max_devices.max_devices(), 
+                        max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                         members = [
                             
                             ], 
@@ -73,7 +73,7 @@ class TestProjectList(unittest.TestCase):
                             
                             ], 
                         name = '0', 
-                        network_status = equinix_metal.models.network_status.network_status(), 
+                        network_status = equinix.services.metalv1.models.network_status.network_status(), 
                         organization = , 
                         payment_method = , 
                         ssh_keys = [

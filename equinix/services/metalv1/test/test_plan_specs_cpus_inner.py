@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_specs_cpus_inner import PlanSpecsCpusInner
+from equinix.services.metalv1.models.plan_specs_cpus_inner import PlanSpecsCpusInner
 
 class TestPlanSpecsCpusInner(unittest.TestCase):
     """PlanSpecsCpusInner unit test stubs"""

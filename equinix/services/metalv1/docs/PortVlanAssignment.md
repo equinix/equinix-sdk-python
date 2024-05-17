@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.port_vlan_assignment import PortVlanAssignment
+from equinix.services.metalv1.models.port_vlan_assignment import PortVlanAssignment
 
 # TODO update the JSON string below
 json = "{}"

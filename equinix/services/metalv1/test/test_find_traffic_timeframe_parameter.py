@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.find_traffic_timeframe_parameter import FindTrafficTimeframeParameter
+from equinix.services.metalv1.models.find_traffic_timeframe_parameter import FindTrafficTimeframeParameter
 
 class TestFindTrafficTimeframeParameter(unittest.TestCase):
     """FindTrafficTimeframeParameter unit test stubs"""

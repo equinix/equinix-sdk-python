@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.interconnection_metro_list_metros_inner_all_of_providers_inner import InterconnectionMetroListMetrosInnerAllOfProvidersInner
+from equinix.services.metalv1.models.interconnection_metro_list_metros_inner_all_of_providers_inner import InterconnectionMetroListMetrosInnerAllOfProvidersInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,6 +34,7 @@ class InterconnectionMetroListMetrosInner(BaseModel):
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     providers: Optional[List[InterconnectionMetroListMetrosInnerAllOfProvidersInner]] = Field(default=None, description="A list of providers and their equivalent regions available for connecting to the provider network.")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["code", "country", "href", "id", "name", "providers"]
 
     model_config = ConfigDict(
@@ -66,8 +67,10 @@ class InterconnectionMetroListMetrosInner(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -82,6 +85,11 @@ class InterconnectionMetroListMetrosInner(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['providers'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -101,6 +109,11 @@ class InterconnectionMetroListMetrosInner(BaseModel):
             "name": obj.get("name"),
             "providers": [InterconnectionMetroListMetrosInnerAllOfProvidersInner.from_dict(_item) for _item in obj["providers"]] if obj.get("providers") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

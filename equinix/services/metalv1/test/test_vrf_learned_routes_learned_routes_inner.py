@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_learned_routes_learned_routes_inner import VrfLearnedRoutesLearnedRoutesInner
+from equinix.services.metalv1.models.vrf_learned_routes_learned_routes_inner import VrfLearnedRoutesLearnedRoutesInner
 
 class TestVrfLearnedRoutesLearnedRoutesInner(unittest.TestCase):
     """VrfLearnedRoutesLearnedRoutesInner unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.transfer_request_input import TransferRequestInput
+from equinix.services.metalv1.models.transfer_request_input import TransferRequestInput
 
 class TestTransferRequestInput(unittest.TestCase):
     """TransferRequestInput unit test stubs"""

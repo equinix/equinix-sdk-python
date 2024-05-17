@@ -1,4 +1,4 @@
-# equinix_metal.SelfServiceReservationsApi
+# equinix.services.metalv1.SelfServiceReservationsApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -21,15 +21,15 @@ Creates a reservation.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
-from equinix_metal.models.self_service_reservation_response import SelfServiceReservationResponse
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
+from equinix.services.metalv1.models.self_service_reservation_response import SelfServiceReservationResponse
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -45,11 +45,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SelfServiceReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.SelfServiceReservationsApi(api_client)
     project_id = 'project_id_example' # str | Project UUID
-    create_self_service_reservation_request = equinix_metal.CreateSelfServiceReservationRequest() # CreateSelfServiceReservationRequest | reservation to create
+    create_self_service_reservation_request = equinix.services.metalv1.CreateSelfServiceReservationRequest() # CreateSelfServiceReservationRequest | reservation to create
 
     try:
         # Create a reservation
@@ -104,14 +104,14 @@ Returns a reservation
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.self_service_reservation_response import SelfServiceReservationResponse
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.self_service_reservation_response import SelfServiceReservationResponse
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -127,9 +127,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SelfServiceReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.SelfServiceReservationsApi(api_client)
     id = 'id_example' # str | Reservation short_id
     project_id = 'project_id_example' # str | Project UUID
 
@@ -186,14 +186,14 @@ Returns all reservations.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.self_service_reservation_list import SelfServiceReservationList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.self_service_reservation_list import SelfServiceReservationList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -209,9 +209,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SelfServiceReservationsApi(api_client)
+    api_instance = equinix.services.metalv1.SelfServiceReservationsApi(api_client)
     project_id = 'project_id_example' # str | Project UUID
     page = 1 # int | Page to return (optional) (default to 1)
     per_page = 10 # int | Items returned per page (optional) (default to 10)

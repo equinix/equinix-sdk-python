@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_specs import PlanSpecs
+from equinix.services.metalv1.models.plan_specs import PlanSpecs
 
 class TestPlanSpecs(unittest.TestCase):
     """PlanSpecs unit test stubs"""
@@ -37,30 +37,30 @@ class TestPlanSpecs(unittest.TestCase):
         if include_optional:
             return PlanSpecs(
                 cpus = [
-                    equinix_metal.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
+                    equinix.services.metalv1.models.plan_specs_cpus_inner.Plan_specs_cpus_inner(
                         count = 56, 
                         href = '', 
                         type = '', )
                     ],
                 drives = [
-                    equinix_metal.models.plan_specs_drives_inner.Plan_specs_drives_inner(
+                    equinix.services.metalv1.models.plan_specs_drives_inner.Plan_specs_drives_inner(
                         category = 'boot', 
                         count = 56, 
                         href = '', 
                         size = '3.84TB', 
                         type = '', )
                     ],
-                features = equinix_metal.models.plan_specs_features.Plan_specs_features(
+                features = equinix.services.metalv1.models.plan_specs_features.Plan_specs_features(
                     href = '', 
                     raid = True, 
                     txt = True, 
                     uefi = True, ),
                 href = '',
-                memory = equinix_metal.models.plan_specs_memory.Plan_specs_memory(
+                memory = equinix.services.metalv1.models.plan_specs_memory.Plan_specs_memory(
                     href = '', 
                     total = '', ),
                 nics = [
-                    equinix_metal.models.plan_specs_nics_inner.Plan_specs_nics_inner(
+                    equinix.services.metalv1.models.plan_specs_nics_inner.Plan_specs_nics_inner(
                         count = 2, 
                         href = '', 
                         type = '', )

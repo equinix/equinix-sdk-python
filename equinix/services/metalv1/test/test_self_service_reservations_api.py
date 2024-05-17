@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.self_service_reservations_api import SelfServiceReservationsApi
+from equinix.services.metalv1.api.self_service_reservations_api import SelfServiceReservationsApi
 
 
 class TestSelfServiceReservationsApi(unittest.TestCase):

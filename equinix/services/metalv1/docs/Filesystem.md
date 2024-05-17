@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.filesystem import Filesystem
+from equinix.services.metalv1.models.filesystem import Filesystem
 
 # TODO update the JSON string below
 json = "{}"

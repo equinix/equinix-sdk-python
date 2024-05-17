@@ -18,8 +18,8 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from equinix_metal.models.ip_reservation_request_input import IPReservationRequestInput
-from equinix_metal.models.vrf_ip_reservation_create_input import VrfIpReservationCreateInput
+from equinix.services.metalv1.models.ip_reservation_request_input import IPReservationRequestInput
+from equinix.services.metalv1.models.vrf_ip_reservation_create_input import VrfIpReservationCreateInput
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.password_reset_tokens_api import PasswordResetTokensApi
+from equinix.services.metalv1.api.password_reset_tokens_api import PasswordResetTokensApi
 
 
 class TestPasswordResetTokensApi(unittest.TestCase):

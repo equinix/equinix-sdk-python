@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.events_api import EventsApi
+from equinix.services.metalv1.api.events_api import EventsApi
 
 
 class TestEventsApi(unittest.TestCase):

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.organization_list import OrganizationList
+from equinix.services.metalv1.models.organization_list import OrganizationList
 
 class TestOrganizationList(unittest.TestCase):
     """OrganizationList unit test stubs"""
@@ -37,12 +37,12 @@ class TestOrganizationList(unittest.TestCase):
         if include_optional:
             return OrganizationList(
                 href = '',
-                meta = equinix_metal.models.meta.Meta(
+                meta = equinix.services.metalv1.models.meta.Meta(
                     current_page = 56, 
-                    first = equinix_metal.models.href.Href(
+                    first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     href = '', 
-                    last = equinix_metal.models.href.Href(
+                    last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     last_page = 56, 
                     next = , 
@@ -50,11 +50,11 @@ class TestOrganizationList(unittest.TestCase):
                     self = , 
                     total = 56, ),
                 organizations = [
-                    equinix_metal.models.organization.Organization(
-                        address = equinix_metal.models.address.Address(
+                    equinix.services.metalv1.models.organization.Organization(
+                        address = equinix.services.metalv1.models.address.Address(
                             address2 = '', 
                             city = '', 
-                            coordinates = equinix_metal.models.coordinates.Coordinates(
+                            coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                                 href = '', 
                                 latitude = '', 
                                 longitude = '', ), 
@@ -62,7 +62,7 @@ class TestOrganizationList(unittest.TestCase):
                             href = '', 
                             state = '', 
                             zip_code = '', ), 
-                        billing_address = equinix_metal.models.address.Address(
+                        billing_address = equinix.services.metalv1.models.address.Address(
                             address2 = '', 
                             city = '', 
                             country = '', 
@@ -71,18 +71,18 @@ class TestOrganizationList(unittest.TestCase):
                             zip_code = '', ), 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         credit_amount = 1.337, 
-                        customdata = equinix_metal.models.customdata.customdata(), 
+                        customdata = equinix.services.metalv1.models.customdata.customdata(), 
                         description = '', 
                         enforce_2fa_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         id = '', 
                         logo = '', 
                         members = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         memberships = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         name = '', 

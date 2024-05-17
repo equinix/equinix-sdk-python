@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_assignment_metro import IPAssignmentMetro
+from equinix.services.metalv1.models.ip_assignment_metro import IPAssignmentMetro
 
 class TestIPAssignmentMetro(unittest.TestCase):
     """IPAssignmentMetro unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.plan_specs_memory import PlanSpecsMemory
+from equinix.services.metalv1.models.plan_specs_memory import PlanSpecsMemory
 
 # TODO update the JSON string below
 json = "{}"

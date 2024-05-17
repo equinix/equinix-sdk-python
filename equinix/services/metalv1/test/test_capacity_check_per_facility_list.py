@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
+from equinix.services.metalv1.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
 
 class TestCapacityCheckPerFacilityList(unittest.TestCase):
     """CapacityCheckPerFacilityList unit test stubs"""
@@ -38,7 +38,7 @@ class TestCapacityCheckPerFacilityList(unittest.TestCase):
             return CapacityCheckPerFacilityList(
                 href = '',
                 servers = [
-                    equinix_metal.models.capacity_check_per_facility_info.CapacityCheckPerFacilityInfo(
+                    equinix.services.metalv1.models.capacity_check_per_facility_info.CapacityCheckPerFacilityInfo(
                         available = True, 
                         facility = '', 
                         href = '', 

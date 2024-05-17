@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_available_in_inner import PlanAvailableInInner
+from equinix.services.metalv1.models.plan_available_in_inner import PlanAvailableInInner
 
 class TestPlanAvailableInInner(unittest.TestCase):
     """PlanAvailableInInner unit test stubs"""
@@ -37,7 +37,7 @@ class TestPlanAvailableInInner(unittest.TestCase):
         if include_optional:
             return PlanAvailableInInner(
                 href = '',
-                price = equinix_metal.models.plan_available_in_inner_price.Plan_available_in_inner_price(
+                price = equinix.services.metalv1.models.plan_available_in_inner_price.Plan_available_in_inner_price(
                     hour = 1.23, 
                     href = '', )
             )

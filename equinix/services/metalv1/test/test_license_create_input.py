@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.license_create_input import LicenseCreateInput
+from equinix.services.metalv1.models.license_create_input import LicenseCreateInput
 
 class TestLicenseCreateInput(unittest.TestCase):
     """LicenseCreateInput unit test stubs"""

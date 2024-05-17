@@ -20,25 +20,25 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
-from equinix_metal.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
-from equinix_metal.models.bgp_dynamic_neighbor_list import BgpDynamicNeighborList
-from equinix_metal.models.vrf import Vrf
-from equinix_metal.models.vrf_bgp_neighbors import VrfBGPNeighbors
-from equinix_metal.models.vrf_create_input import VrfCreateInput
-from equinix_metal.models.vrf_ip_reservation import VrfIpReservation
-from equinix_metal.models.vrf_ip_reservation_list import VrfIpReservationList
-from equinix_metal.models.vrf_learned_routes import VrfLearnedRoutes
-from equinix_metal.models.vrf_list import VrfList
-from equinix_metal.models.vrf_route import VrfRoute
-from equinix_metal.models.vrf_route_create_input import VrfRouteCreateInput
-from equinix_metal.models.vrf_route_list import VrfRouteList
-from equinix_metal.models.vrf_route_update_input import VrfRouteUpdateInput
-from equinix_metal.models.vrf_update_input import VrfUpdateInput
+from equinix.services.metalv1.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
+from equinix.services.metalv1.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
+from equinix.services.metalv1.models.bgp_dynamic_neighbor_list import BgpDynamicNeighborList
+from equinix.services.metalv1.models.vrf import Vrf
+from equinix.services.metalv1.models.vrf_bgp_neighbors import VrfBGPNeighbors
+from equinix.services.metalv1.models.vrf_create_input import VrfCreateInput
+from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
+from equinix.services.metalv1.models.vrf_ip_reservation_list import VrfIpReservationList
+from equinix.services.metalv1.models.vrf_learned_routes import VrfLearnedRoutes
+from equinix.services.metalv1.models.vrf_list import VrfList
+from equinix.services.metalv1.models.vrf_route import VrfRoute
+from equinix.services.metalv1.models.vrf_route_create_input import VrfRouteCreateInput
+from equinix.services.metalv1.models.vrf_route_list import VrfRouteList
+from equinix.services.metalv1.models.vrf_route_update_input import VrfRouteUpdateInput
+from equinix.services.metalv1.models.vrf_update_input import VrfUpdateInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class VRFsApi:

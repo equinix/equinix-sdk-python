@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_available_in_inner_price import PlanAvailableInInnerPrice
+from equinix.services.metalv1.models.plan_available_in_inner_price import PlanAvailableInInnerPrice
 
 class TestPlanAvailableInInnerPrice(unittest.TestCase):
     """PlanAvailableInInnerPrice unit test stubs"""

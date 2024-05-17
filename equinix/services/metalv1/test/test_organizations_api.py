@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.organizations_api import OrganizationsApi
+from equinix.services.metalv1.api.organizations_api import OrganizationsApi
 
 
 class TestOrganizationsApi(unittest.TestCase):

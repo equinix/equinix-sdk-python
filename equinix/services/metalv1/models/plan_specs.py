@@ -20,11 +20,11 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.plan_specs_cpus_inner import PlanSpecsCpusInner
-from equinix_metal.models.plan_specs_drives_inner import PlanSpecsDrivesInner
-from equinix_metal.models.plan_specs_features import PlanSpecsFeatures
-from equinix_metal.models.plan_specs_memory import PlanSpecsMemory
-from equinix_metal.models.plan_specs_nics_inner import PlanSpecsNicsInner
+from equinix.services.metalv1.models.plan_specs_cpus_inner import PlanSpecsCpusInner
+from equinix.services.metalv1.models.plan_specs_drives_inner import PlanSpecsDrivesInner
+from equinix.services.metalv1.models.plan_specs_features import PlanSpecsFeatures
+from equinix.services.metalv1.models.plan_specs_memory import PlanSpecsMemory
+from equinix.services.metalv1.models.plan_specs_nics_inner import PlanSpecsNicsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,6 +38,7 @@ class PlanSpecs(BaseModel):
     href: Optional[StrictStr] = None
     memory: Optional[PlanSpecsMemory] = None
     nics: Optional[List[PlanSpecsNicsInner]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["cpus", "drives", "features", "href", "memory", "nics"]
 
     model_config = ConfigDict(
@@ -70,8 +71,10 @@ class PlanSpecs(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -106,6 +109,11 @@ class PlanSpecs(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['nics'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -125,6 +133,11 @@ class PlanSpecs(BaseModel):
             "memory": PlanSpecsMemory.from_dict(obj["memory"]) if obj.get("memory") is not None else None,
             "nics": [PlanSpecsNicsInner.from_dict(_item) for _item in obj["nics"]] if obj.get("nics") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

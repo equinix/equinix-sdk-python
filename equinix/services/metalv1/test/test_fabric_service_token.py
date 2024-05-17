@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.fabric_service_token import FabricServiceToken
+from equinix.services.metalv1.models.fabric_service_token import FabricServiceToken
 
 class TestFabricServiceToken(unittest.TestCase):
     """FabricServiceToken unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.filesystem import Filesystem
+from equinix.services.metalv1.models.filesystem import Filesystem
 
 class TestFilesystem(unittest.TestCase):
     """Filesystem unit test stubs"""
@@ -37,7 +37,7 @@ class TestFilesystem(unittest.TestCase):
         if include_optional:
             return Filesystem(
                 href = '',
-                mount = equinix_metal.models.mount.Mount(
+                mount = equinix.services.metalv1.models.mount.Mount(
                     device = '', 
                     format = '', 
                     href = '', 

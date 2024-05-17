@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.authentication_api import AuthenticationApi
+from equinix.services.metalv1.api.authentication_api import AuthenticationApi
 
 
 class TestAuthenticationApi(unittest.TestCase):

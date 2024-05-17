@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.metal_gateways_api import MetalGatewaysApi
+from equinix.services.metalv1.api.metal_gateways_api import MetalGatewaysApi
 
 
 class TestMetalGatewaysApi(unittest.TestCase):

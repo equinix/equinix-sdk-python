@@ -21,7 +21,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,6 +36,7 @@ class Membership(BaseModel):
     roles: Optional[List[StrictStr]] = None
     updated_at: Optional[datetime] = None
     user: Optional[Href] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "href", "id", "project", "roles", "updated_at", "user"]
 
     model_config = ConfigDict(
@@ -68,8 +69,10 @@ class Membership(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -83,6 +86,11 @@ class Membership(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of user
         if self.user:
             _dict['user'] = self.user.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -103,6 +111,11 @@ class Membership(BaseModel):
             "updated_at": obj.get("updated_at"),
             "user": Href.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

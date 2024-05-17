@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.line_item_adjustment import LineItemAdjustment
+from equinix.services.metalv1.models.line_item_adjustment import LineItemAdjustment
 
 class TestLineItemAdjustment(unittest.TestCase):
     """LineItemAdjustment unit test stubs"""

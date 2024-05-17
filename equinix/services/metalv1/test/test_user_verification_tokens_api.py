@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.user_verification_tokens_api import UserVerificationTokensApi
+from equinix.services.metalv1.api.user_verification_tokens_api import UserVerificationTokensApi
 
 
 class TestUserVerificationTokensApi(unittest.TestCase):

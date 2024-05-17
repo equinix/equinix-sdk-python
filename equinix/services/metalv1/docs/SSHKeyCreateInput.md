@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.ssh_key_create_input import SSHKeyCreateInput
+from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
 
 # TODO update the JSON string below
 json = "{}"

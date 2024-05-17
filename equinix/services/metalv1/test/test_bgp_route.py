@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_route import BgpRoute
+from equinix.services.metalv1.models.bgp_route import BgpRoute
 
 class TestBgpRoute(unittest.TestCase):
     """BgpRoute unit test stubs"""

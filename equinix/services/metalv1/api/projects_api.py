@@ -20,20 +20,20 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.invitation import Invitation
-from equinix_metal.models.invitation_input import InvitationInput
-from equinix_metal.models.invitation_list import InvitationList
-from equinix_metal.models.membership_list import MembershipList
-from equinix_metal.models.project import Project
-from equinix_metal.models.project_create_from_root_input import ProjectCreateFromRootInput
-from equinix_metal.models.project_list import ProjectList
-from equinix_metal.models.project_update_input import ProjectUpdateInput
-from equinix_metal.models.transfer_request import TransferRequest
-from equinix_metal.models.transfer_request_input import TransferRequestInput
+from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation_input import InvitationInput
+from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.membership_list import MembershipList
+from equinix.services.metalv1.models.project import Project
+from equinix.services.metalv1.models.project_create_from_root_input import ProjectCreateFromRootInput
+from equinix.services.metalv1.models.project_list import ProjectList
+from equinix.services.metalv1.models.project_update_input import ProjectUpdateInput
+from equinix.services.metalv1.models.transfer_request import TransferRequest
+from equinix.services.metalv1.models.transfer_request_input import TransferRequestInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class ProjectsApi:

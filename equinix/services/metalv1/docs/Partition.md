@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.partition import Partition
+from equinix.services.metalv1.models.partition import Partition
 
 # TODO update the JSON string below
 json = "{}"

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_bgp_neighbors import VrfBGPNeighbors
+from equinix.services.metalv1.models.vrf_bgp_neighbors import VrfBGPNeighbors
 
 class TestVrfBGPNeighbors(unittest.TestCase):
     """VrfBGPNeighbors unit test stubs"""
@@ -37,7 +37,7 @@ class TestVrfBGPNeighbors(unittest.TestCase):
         if include_optional:
             return VrfBGPNeighbors(
                 bgp_neighbors = [
-                    equinix_metal.models.vrf_bgp_neighbors_bgp_neighbors_inner.VrfBGPNeighbors_bgp_neighbors_inner(
+                    equinix.services.metalv1.models.vrf_bgp_neighbors_bgp_neighbors_inner.VrfBGPNeighbors_bgp_neighbors_inner(
                         peer_as = 65000, 
                         peer_ip = '8.8.8.8', 
                         state = 'up', )

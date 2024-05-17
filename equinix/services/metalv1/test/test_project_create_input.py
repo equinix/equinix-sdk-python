@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project_create_input import ProjectCreateInput
+from equinix.services.metalv1.models.project_create_input import ProjectCreateInput
 
 class TestProjectCreateInput(unittest.TestCase):
     """ProjectCreateInput unit test stubs"""

@@ -21,10 +21,10 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.metal_gateway_lite import MetalGatewayLite
-from equinix_metal.models.metro import Metro
-from equinix_metal.models.project import Project
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.metal_gateway_lite import MetalGatewayLite
+from equinix.services.metalv1.models.metro import Metro
+from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -45,6 +45,7 @@ class VirtualNetwork(BaseModel):
     metro_code: Optional[StrictStr] = Field(default=None, description="The Metro code of the metro in which this Virtual Network is defined.")
     tags: Optional[List[StrictStr]] = None
     vxlan: Optional[StrictInt] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["assigned_to", "assigned_to_virtual_circuit", "created_at", "description", "facility", "href", "id", "instances", "metal_gateways", "metro", "metro_code", "tags", "vxlan"]
 
     model_config = ConfigDict(
@@ -77,8 +78,10 @@ class VirtualNetwork(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -109,6 +112,11 @@ class VirtualNetwork(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of metro
         if self.metro:
             _dict['metro'] = self.metro.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -135,9 +143,14 @@ class VirtualNetwork(BaseModel):
             "tags": obj.get("tags"),
             "vxlan": obj.get("vxlan")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
-from equinix_metal.models.device import Device
+from equinix.services.metalv1.models.device import Device
 # TODO: Rewrite to not use raise_errors
 VirtualNetwork.model_rebuild(raise_errors=False)
 

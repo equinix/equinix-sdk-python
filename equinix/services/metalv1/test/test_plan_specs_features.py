@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.plan_specs_features import PlanSpecsFeatures
+from equinix.services.metalv1.models.plan_specs_features import PlanSpecsFeatures
 
 class TestPlanSpecsFeatures(unittest.TestCase):
     """PlanSpecsFeatures unit test stubs"""

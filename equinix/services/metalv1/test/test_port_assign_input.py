@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_assign_input import PortAssignInput
+from equinix.services.metalv1.models.port_assign_input import PortAssignInput
 
 class TestPortAssignInput(unittest.TestCase):
     """PortAssignInput unit test stubs"""

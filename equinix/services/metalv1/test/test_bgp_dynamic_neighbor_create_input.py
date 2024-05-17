@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
+from equinix.services.metalv1.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
 
 class TestBgpDynamicNeighborCreateInput(unittest.TestCase):
     """BgpDynamicNeighborCreateInput unit test stubs"""

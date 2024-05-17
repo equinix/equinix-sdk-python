@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.membership_input import MembershipInput
+from equinix.services.metalv1.models.membership_input import MembershipInput
 
 class TestMembershipInput(unittest.TestCase):
     """MembershipInput unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_assignment_update_input import IPAssignmentUpdateInput
+from equinix.services.metalv1.models.ip_assignment_update_input import IPAssignmentUpdateInput
 
 class TestIPAssignmentUpdateInput(unittest.TestCase):
     """IPAssignmentUpdateInput unit test stubs"""

@@ -1,4 +1,4 @@
-# equinix_metal.CapacityApi
+# equinix.services.metalv1.CapacityApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -24,15 +24,15 @@ Validates if a deploy can be fulfilled.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
-from equinix_metal.models.capacity_input import CapacityInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
+from equinix.services.metalv1.models.capacity_input import CapacityInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -48,10 +48,10 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
-    capacity_input = equinix_metal.CapacityInput() # CapacityInput | Facility to check capacity in
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
+    capacity_input = equinix.services.metalv1.CapacityInput() # CapacityInput | Facility to check capacity in
 
     try:
         # Check capacity
@@ -105,15 +105,15 @@ Validates if a deploy can be fulfilled in a metro.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
-from equinix_metal.models.capacity_input import CapacityInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
+from equinix.services.metalv1.models.capacity_input import CapacityInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -129,10 +129,10 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
-    capacity_input = equinix_metal.CapacityInput() # CapacityInput | Metro to check capacity in
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
+    capacity_input = equinix.services.metalv1.CapacityInput() # CapacityInput | Metro to check capacity in
 
     try:
         # Check capacity for a metro
@@ -186,14 +186,14 @@ Returns a list of facilities and plans with their current capacity.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_list import CapacityList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -209,9 +209,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
 
     try:
         # View capacity
@@ -261,14 +261,14 @@ Returns a list of metros and plans with their current capacity.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_list import CapacityList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -284,9 +284,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
 
     try:
         # View capacity for metros
@@ -336,14 +336,14 @@ Returns a list of facilities and plans with their current capacity.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_list import CapacityList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -359,9 +359,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
     id = 'id_example' # str | Organization UUID
 
     try:
@@ -416,14 +416,14 @@ Returns a list of metros and plans with their current capacity.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.capacity_list import CapacityList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -439,9 +439,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.CapacityApi(api_client)
+    api_instance = equinix.services.metalv1.CapacityApi(api_client)
     id = 'id_example' # str | Organization UUID
 
     try:

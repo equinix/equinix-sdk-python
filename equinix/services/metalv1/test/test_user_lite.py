@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.user_lite import UserLite
+from equinix.services.metalv1.models.user_lite import UserLite
 
 class TestUserLite(unittest.TestCase):
     """UserLite unit test stubs"""

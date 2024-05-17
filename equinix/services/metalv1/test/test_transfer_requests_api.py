@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.transfer_requests_api import TransferRequestsApi
+from equinix.services.metalv1.api.transfer_requests_api import TransferRequestsApi
 
 
 class TestTransferRequestsApi(unittest.TestCase):

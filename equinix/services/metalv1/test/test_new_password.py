@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.new_password import NewPassword
+from equinix.services.metalv1.models.new_password import NewPassword
 
 class TestNewPassword(unittest.TestCase):
     """NewPassword unit test stubs"""

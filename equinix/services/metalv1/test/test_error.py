@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.error import Error
+from equinix.services.metalv1.models.error import Error
 
 class TestError(unittest.TestCase):
     """Error unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.membership_list import MembershipList
+from equinix.services.metalv1.models.membership_list import MembershipList
 
 class TestMembershipList(unittest.TestCase):
     """MembershipList unit test stubs"""
@@ -38,17 +38,17 @@ class TestMembershipList(unittest.TestCase):
             return MembershipList(
                 href = '',
                 memberships = [
-                    equinix_metal.models.membership.Membership(
+                    equinix.services.metalv1.models.membership.Membership(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         href = '', 
                         id = '', 
-                        project = equinix_metal.models.href.Href(
+                        project = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         roles = [
                             ''
                             ], 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        user = equinix_metal.models.href.Href(
+                        user = equinix.services.metalv1.models.href.Href(
                             href = '', ), )
                     ]
             )

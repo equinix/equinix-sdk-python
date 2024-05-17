@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.support_request_input import SupportRequestInput
+from equinix.services.metalv1.models.support_request_input import SupportRequestInput
 
 class TestSupportRequestInput(unittest.TestCase):
     """SupportRequestInput unit test stubs"""

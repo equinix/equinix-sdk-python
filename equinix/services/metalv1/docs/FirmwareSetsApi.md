@@ -1,4 +1,4 @@
-# equinix_metal.FirmwareSetsApi
+# equinix.services.metalv1.FirmwareSetsApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -20,14 +20,14 @@ Returns all firmware sets associated with the organization.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.firmware_set_list_response import FirmwareSetListResponse
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.firmware_set_list_response import FirmwareSetListResponse
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -43,9 +43,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.FirmwareSetsApi(api_client)
+    api_instance = equinix.services.metalv1.FirmwareSetsApi(api_client)
     id = 'id_example' # str | Organization UUID
     page = 56 # int | page number to return (optional)
     per_page = 56 # int | items returned per page. (optional)
@@ -105,14 +105,14 @@ Returns all firmware sets associated with the project or organization.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.firmware_set_list_response import FirmwareSetListResponse
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.firmware_set_list_response import FirmwareSetListResponse
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -128,9 +128,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.FirmwareSetsApi(api_client)
+    api_instance = equinix.services.metalv1.FirmwareSetsApi(api_client)
     id = 'id_example' # str | Project UUID
     page = 56 # int | page number to return (optional)
     per_page = 56 # int | items returned per page. (optional)

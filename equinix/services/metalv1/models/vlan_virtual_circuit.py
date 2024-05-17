@@ -21,8 +21,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.project import Project
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -48,6 +48,7 @@ class VlanVirtualCircuit(BaseModel):
     updated_at: Optional[datetime] = None
     virtual_network: Optional[Href] = None
     vnid: Optional[StrictInt] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["bill", "bill_type", "created_at", "description", "href", "id", "name", "nni_vlan", "port", "project", "provider_connection_id", "speed", "status", "tags", "type", "updated_at", "virtual_network", "vnid"]
 
     @field_validator('bill_type')
@@ -110,8 +111,10 @@ class VlanVirtualCircuit(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -128,6 +131,11 @@ class VlanVirtualCircuit(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of virtual_network
         if self.virtual_network:
             _dict['virtual_network'] = self.virtual_network.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         # set to None if bill_type (nullable) is None
         # and model_fields_set contains the field
         if self.bill_type is None and "bill_type" in self.model_fields_set:
@@ -164,9 +172,14 @@ class VlanVirtualCircuit(BaseModel):
             "virtual_network": Href.from_dict(obj["virtual_network"]) if obj.get("virtual_network") is not None else None,
             "vnid": obj.get("vnid")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
-from equinix_metal.models.interconnection_port import InterconnectionPort
+from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
 # TODO: Rewrite to not use raise_errors
 VlanVirtualCircuit.model_rebuild(raise_errors=False)
 

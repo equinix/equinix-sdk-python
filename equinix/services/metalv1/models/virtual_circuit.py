@@ -133,8 +133,8 @@ class VirtualCircuit(BaseModel):
         """Returns the string representation of the actual instance"""
         return pprint.pformat(self.model_dump())
 
-from equinix_metal.models.vlan_virtual_circuit import VlanVirtualCircuit
-from equinix_metal.models.vrf_virtual_circuit import VrfVirtualCircuit
+from equinix.services.metalv1.models.vlan_virtual_circuit import VlanVirtualCircuit
+from equinix.services.metalv1.models.vrf_virtual_circuit import VrfVirtualCircuit
 # TODO: Rewrite to not use raise_errors
 VirtualCircuit.model_rebuild(raise_errors=False)
 

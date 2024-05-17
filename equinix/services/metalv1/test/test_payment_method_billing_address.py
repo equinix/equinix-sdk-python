@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.payment_method_billing_address import PaymentMethodBillingAddress
+from equinix.services.metalv1.models.payment_method_billing_address import PaymentMethodBillingAddress
 
 class TestPaymentMethodBillingAddress(unittest.TestCase):
     """PaymentMethodBillingAddress unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.licenses_api import LicensesApi
+from equinix.services.metalv1.api.licenses_api import LicensesApi
 
 
 class TestLicensesApi(unittest.TestCase):

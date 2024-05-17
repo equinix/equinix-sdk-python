@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner import PortVlanAssignmentBatchCreateInputVlanAssignmentsInner
+from equinix.services.metalv1.models.port_vlan_assignment_batch_create_input_vlan_assignments_inner import PortVlanAssignmentBatchCreateInputVlanAssignmentsInner
 
 class TestPortVlanAssignmentBatchCreateInputVlanAssignmentsInner(unittest.TestCase):
     """PortVlanAssignmentBatchCreateInputVlanAssignmentsInner unit test stubs"""

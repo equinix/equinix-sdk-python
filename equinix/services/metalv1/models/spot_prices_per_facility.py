@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.spot_prices_per_baremetal import SpotPricesPerBaremetal
+from equinix.services.metalv1.models.spot_prices_per_baremetal import SpotPricesPerBaremetal
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -38,6 +38,7 @@ class SpotPricesPerFacility(BaseModel):
     c2_medium_x86: Optional[SpotPricesPerBaremetal] = Field(default=None, alias="c2.medium.x86")
     href: Optional[StrictStr] = None
     m2_xlarge_x86: Optional[SpotPricesPerBaremetal] = Field(default=None, alias="m2.xlarge.x86")
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["baremetal_0", "baremetal_1", "baremetal_2", "baremetal_2a", "baremetal_2a2", "baremetal_3", "baremetal_s", "c2.medium.x86", "href", "m2.xlarge.x86"]
 
     model_config = ConfigDict(
@@ -70,8 +71,10 @@ class SpotPricesPerFacility(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -106,6 +109,11 @@ class SpotPricesPerFacility(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of m2_xlarge_x86
         if self.m2_xlarge_x86:
             _dict['m2.xlarge.x86'] = self.m2_xlarge_x86.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -129,6 +137,11 @@ class SpotPricesPerFacility(BaseModel):
             "href": obj.get("href"),
             "m2.xlarge.x86": SpotPricesPerBaremetal.from_dict(obj["m2.xlarge.x86"]) if obj.get("m2.xlarge.x86") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

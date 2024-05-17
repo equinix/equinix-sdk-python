@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.raid import Raid
+from equinix.services.metalv1.models.raid import Raid
 
 class TestRaid(unittest.TestCase):
     """Raid unit test stubs"""

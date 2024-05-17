@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.user import User
+from equinix.services.metalv1.models.user import User
 
 class TestUser(unittest.TestCase):
     """User unit test stubs"""
@@ -39,12 +39,12 @@ class TestUser(unittest.TestCase):
                 avatar_thumb_url = '',
                 avatar_url = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                customdata = equinix_metal.models.customdata.customdata(),
+                customdata = equinix.services.metalv1.models.customdata.customdata(),
                 default_organization_id = '',
                 default_project_id = '',
                 email = '',
                 emails = [
-                    equinix_metal.models.href.Href(
+                    equinix.services.metalv1.models.href.Href(
                         href = '', )
                     ],
                 first_name = '',

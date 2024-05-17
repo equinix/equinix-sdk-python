@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.spot_prices_history_report import SpotPricesHistoryReport
+from equinix.services.metalv1.models.spot_prices_history_report import SpotPricesHistoryReport
 
 class TestSpotPricesHistoryReport(unittest.TestCase):
     """SpotPricesHistoryReport unit test stubs"""
@@ -37,7 +37,7 @@ class TestSpotPricesHistoryReport(unittest.TestCase):
         if include_optional:
             return SpotPricesHistoryReport(
                 href = '',
-                prices_history = equinix_metal.models.spot_prices_datapoints.SpotPricesDatapoints(
+                prices_history = equinix.services.metalv1.models.spot_prices_datapoints.SpotPricesDatapoints(
                     datapoints = [
                         [
                             1.337

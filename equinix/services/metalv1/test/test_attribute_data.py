@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.attribute_data import AttributeData
+from equinix.services.metalv1.models.attribute_data import AttributeData
 
 class TestAttributeData(unittest.TestCase):
     """AttributeData unit test stubs"""

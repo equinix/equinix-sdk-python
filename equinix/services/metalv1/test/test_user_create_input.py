@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.user_create_input import UserCreateInput
+from equinix.services.metalv1.models.user_create_input import UserCreateInput
 
 class TestUserCreateInput(unittest.TestCase):
     """UserCreateInput unit test stubs"""
@@ -41,7 +41,7 @@ class TestUserCreateInput(unittest.TestCase):
                 company_url = '',
                 customdata = None,
                 emails = [
-                    equinix_metal.models.email_input.EmailInput(
+                    equinix.services.metalv1.models.email_input.EmailInput(
                         address = '', 
                         default = True, 
                         href = '', )
@@ -63,7 +63,7 @@ class TestUserCreateInput(unittest.TestCase):
         else:
             return UserCreateInput(
                 emails = [
-                    equinix_metal.models.email_input.EmailInput(
+                    equinix.services.metalv1.models.email_input.EmailInput(
                         address = '', 
                         default = True, 
                         href = '', )

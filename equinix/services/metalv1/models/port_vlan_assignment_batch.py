@@ -21,9 +21,9 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.href import Href
-from equinix_metal.models.port import Port
-from equinix_metal.models.port_vlan_assignment_batch_vlan_assignments_inner import PortVlanAssignmentBatchVlanAssignmentsInner
+from equinix.services.metalv1.models.href import Href
+from equinix.services.metalv1.models.port import Port
+from equinix.services.metalv1.models.port_vlan_assignment_batch_vlan_assignments_inner import PortVlanAssignmentBatchVlanAssignmentsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -41,6 +41,7 @@ class PortVlanAssignmentBatch(BaseModel):
     state: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     vlan_assignments: Optional[List[PortVlanAssignmentBatchVlanAssignmentsInner]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "error_messages", "href", "id", "port", "project", "quantity", "state", "updated_at", "vlan_assignments"]
 
     @field_validator('state')
@@ -83,8 +84,10 @@ class PortVlanAssignmentBatch(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -105,6 +108,11 @@ class PortVlanAssignmentBatch(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['vlan_assignments'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -128,6 +136,11 @@ class PortVlanAssignmentBatch(BaseModel):
             "updated_at": obj.get("updated_at"),
             "vlan_assignments": [PortVlanAssignmentBatchVlanAssignmentsInner.from_dict(_item) for _item in obj["vlan_assignments"]] if obj.get("vlan_assignments") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

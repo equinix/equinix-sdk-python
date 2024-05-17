@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vlan_csp_connection_create_input_fabric_provider import VlanCSPConnectionCreateInputFabricProvider
+from equinix.services.metalv1.models.vlan_csp_connection_create_input_fabric_provider import VlanCSPConnectionCreateInputFabricProvider
 
 class TestVlanCSPConnectionCreateInputFabricProvider(unittest.TestCase):
     """VlanCSPConnectionCreateInputFabricProvider unit test stubs"""
@@ -36,14 +36,14 @@ class TestVlanCSPConnectionCreateInputFabricProvider(unittest.TestCase):
         model = VlanCSPConnectionCreateInputFabricProvider()
         if include_optional:
             return VlanCSPConnectionCreateInputFabricProvider(
-                account_id = '129312',
+                account_id = '123412341234',
                 href = '',
                 location = 'us-west-1',
                 type = 'CSP_AWS'
             )
         else:
             return VlanCSPConnectionCreateInputFabricProvider(
-                account_id = '129312',
+                account_id = '123412341234',
                 type = 'CSP_AWS',
         )
         """

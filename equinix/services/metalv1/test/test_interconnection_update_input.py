@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_update_input import InterconnectionUpdateInput
+from equinix.services.metalv1.models.interconnection_update_input import InterconnectionUpdateInput
 
 class TestInterconnectionUpdateInput(unittest.TestCase):
     """InterconnectionUpdateInput unit test stubs"""

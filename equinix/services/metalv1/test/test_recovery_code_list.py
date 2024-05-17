@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.recovery_code_list import RecoveryCodeList
+from equinix.services.metalv1.models.recovery_code_list import RecoveryCodeList
 
 class TestRecoveryCodeList(unittest.TestCase):
     """RecoveryCodeList unit test stubs"""

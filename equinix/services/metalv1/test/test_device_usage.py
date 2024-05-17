@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_usage import DeviceUsage
+from equinix.services.metalv1.models.device_usage import DeviceUsage
 
 class TestDeviceUsage(unittest.TestCase):
     """DeviceUsage unit test stubs"""

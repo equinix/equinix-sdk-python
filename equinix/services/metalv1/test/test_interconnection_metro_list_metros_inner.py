@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_metro_list_metros_inner import InterconnectionMetroListMetrosInner
+from equinix.services.metalv1.models.interconnection_metro_list_metros_inner import InterconnectionMetroListMetrosInner
 
 class TestInterconnectionMetroListMetrosInner(unittest.TestCase):
     """InterconnectionMetroListMetrosInner unit test stubs"""
@@ -42,7 +42,13 @@ class TestInterconnectionMetroListMetrosInner(unittest.TestCase):
                 id = '',
                 name = '',
                 providers = [
-                    equinix_metal.models.interconnection_metro_list_metros_inner_all_of_providers_inner.InterconnectionMetroList_metros_inner_allOf_providers_inner(
+                    equinix.services.metalv1.models.interconnection_metro_list_metros_inner_all_of_providers_inner.InterconnectionMetroList_metros_inner_allOf_providers_inner(
+                        bandwidths = [
+                            50
+                            ], 
+                        features = [
+                            'high capacity'
+                            ], 
                         href = '', 
                         locations = [
                             'us-east-1'

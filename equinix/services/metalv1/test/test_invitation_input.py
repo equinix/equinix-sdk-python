@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.invitation_input import InvitationInput
+from equinix.services.metalv1.models.invitation_input import InvitationInput
 
 class TestInvitationInput(unittest.TestCase):
     """InvitationInput unit test stubs"""

@@ -20,18 +20,18 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.port import Port
-from equinix_metal.models.port_assign_input import PortAssignInput
-from equinix_metal.models.port_convert_layer3_input import PortConvertLayer3Input
-from equinix_metal.models.port_vlan_assignment import PortVlanAssignment
-from equinix_metal.models.port_vlan_assignment_batch import PortVlanAssignmentBatch
-from equinix_metal.models.port_vlan_assignment_batch_create_input import PortVlanAssignmentBatchCreateInput
-from equinix_metal.models.port_vlan_assignment_batch_list import PortVlanAssignmentBatchList
-from equinix_metal.models.port_vlan_assignment_list import PortVlanAssignmentList
+from equinix.services.metalv1.models.port import Port
+from equinix.services.metalv1.models.port_assign_input import PortAssignInput
+from equinix.services.metalv1.models.port_convert_layer3_input import PortConvertLayer3Input
+from equinix.services.metalv1.models.port_vlan_assignment import PortVlanAssignment
+from equinix.services.metalv1.models.port_vlan_assignment_batch import PortVlanAssignmentBatch
+from equinix.services.metalv1.models.port_vlan_assignment_batch_create_input import PortVlanAssignmentBatchCreateInput
+from equinix.services.metalv1.models.port_vlan_assignment_batch_list import PortVlanAssignmentBatchList
+from equinix.services.metalv1.models.port_vlan_assignment_list import PortVlanAssignmentList
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class PortsApi:

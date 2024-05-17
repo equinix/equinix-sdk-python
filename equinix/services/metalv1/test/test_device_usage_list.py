@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_usage_list import DeviceUsageList
+from equinix.services.metalv1.models.device_usage_list import DeviceUsageList
 
 class TestDeviceUsageList(unittest.TestCase):
     """DeviceUsageList unit test stubs"""
@@ -38,7 +38,7 @@ class TestDeviceUsageList(unittest.TestCase):
             return DeviceUsageList(
                 href = '',
                 usages = [
-                    equinix_metal.models.device_usage.DeviceUsage(
+                    equinix.services.metalv1.models.device_usage.DeviceUsage(
                         href = '', 
                         quantity = '', 
                         total = '', 

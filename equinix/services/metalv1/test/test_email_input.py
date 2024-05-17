@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.email_input import EmailInput
+from equinix.services.metalv1.models.email_input import EmailInput
 
 class TestEmailInput(unittest.TestCase):
     """EmailInput unit test stubs"""

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.capacity_check_per_metro_info import CapacityCheckPerMetroInfo
+from equinix.services.metalv1.models.capacity_check_per_metro_info import CapacityCheckPerMetroInfo
 
 class TestCapacityCheckPerMetroInfo(unittest.TestCase):
     """CapacityCheckPerMetroInfo unit test stubs"""

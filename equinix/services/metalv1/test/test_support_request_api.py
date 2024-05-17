@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.support_request_api import SupportRequestApi
+from equinix.services.metalv1.api.support_request_api import SupportRequestApi
 
 
 class TestSupportRequestApi(unittest.TestCase):
@@ -27,8 +27,8 @@ class TestSupportRequestApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_request_suppert(self) -> None:
-        """Test case for request_suppert
+    def test_request_support(self) -> None:
+        """Test case for request_support
 
         Create a support ticket
         """

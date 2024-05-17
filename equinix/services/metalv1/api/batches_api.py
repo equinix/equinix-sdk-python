@@ -20,13 +20,13 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.batch import Batch
-from equinix_metal.models.batches_list import BatchesList
-from equinix_metal.models.instances_batch_create_input import InstancesBatchCreateInput
+from equinix.services.metalv1.models.batch import Batch
+from equinix.services.metalv1.models.batches_list import BatchesList
+from equinix.services.metalv1.models.instances_batch_create_input import InstancesBatchCreateInput
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class BatchesApi:

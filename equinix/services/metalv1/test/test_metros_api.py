@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.metros_api import MetrosApi
+from equinix.services.metalv1.api.metros_api import MetrosApi
 
 
 class TestMetrosApi(unittest.TestCase):

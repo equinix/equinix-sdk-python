@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
+from equinix.services.metalv1.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
 
 class TestVrfVirtualCircuitCreateInput(unittest.TestCase):
     """VrfVirtualCircuitCreateInput unit test stubs"""

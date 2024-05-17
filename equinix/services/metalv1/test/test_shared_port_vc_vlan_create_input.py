@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
+from equinix.services.metalv1.models.shared_port_vc_vlan_create_input import SharedPortVCVlanCreateInput
 
 class TestSharedPortVCVlanCreateInput(unittest.TestCase):
     """SharedPortVCVlanCreateInput unit test stubs"""

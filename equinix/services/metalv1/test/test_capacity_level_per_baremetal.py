@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.capacity_level_per_baremetal import CapacityLevelPerBaremetal
+from equinix.services.metalv1.models.capacity_level_per_baremetal import CapacityLevelPerBaremetal
 
 class TestCapacityLevelPerBaremetal(unittest.TestCase):
     """CapacityLevelPerBaremetal unit test stubs"""

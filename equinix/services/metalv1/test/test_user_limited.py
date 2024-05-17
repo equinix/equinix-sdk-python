@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.user_limited import UserLimited
+from equinix.services.metalv1.models.user_limited import UserLimited
 
 class TestUserLimited(unittest.TestCase):
     """UserLimited unit test stubs"""

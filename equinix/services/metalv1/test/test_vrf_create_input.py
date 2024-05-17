@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_create_input import VrfCreateInput
+from equinix.services.metalv1.models.vrf_create_input import VrfCreateInput
 
 class TestVrfCreateInput(unittest.TestCase):
     """VrfCreateInput unit test stubs"""

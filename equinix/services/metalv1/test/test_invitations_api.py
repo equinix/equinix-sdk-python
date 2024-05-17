@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.invitations_api import InvitationsApi
+from equinix.services.metalv1.api.invitations_api import InvitationsApi
 
 
 class TestInvitationsApi(unittest.TestCase):

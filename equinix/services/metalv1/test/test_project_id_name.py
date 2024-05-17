@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.project_id_name import ProjectIdName
+from equinix.services.metalv1.models.project_id_name import ProjectIdName
 
 class TestProjectIdName(unittest.TestCase):
     """ProjectIdName unit test stubs"""

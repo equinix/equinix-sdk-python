@@ -18,8 +18,8 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
-from equinix_metal.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
-from equinix_metal.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
+from equinix.services.metalv1.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
+from equinix.services.metalv1.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
 from pydantic import StrictStr, Field
 from typing import Union, List, Optional, Dict
 from typing_extensions import Literal, Self

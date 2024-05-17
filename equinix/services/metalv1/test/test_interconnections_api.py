@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.interconnections_api import InterconnectionsApi
+from equinix.services.metalv1.api.interconnections_api import InterconnectionsApi
 
 
 class TestInterconnectionsApi(unittest.TestCase):

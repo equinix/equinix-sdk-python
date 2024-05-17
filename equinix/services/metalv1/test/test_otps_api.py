@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.otps_api import OTPsApi
+from equinix.services.metalv1.api.otps_api import OTPsApi
 
 
 class TestOTPsApi(unittest.TestCase):

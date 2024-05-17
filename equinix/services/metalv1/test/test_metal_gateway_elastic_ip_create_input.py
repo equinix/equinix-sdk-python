@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
+from equinix.services.metalv1.models.metal_gateway_elastic_ip_create_input import MetalGatewayElasticIpCreateInput
 
 class TestMetalGatewayElasticIpCreateInput(unittest.TestCase):
     """MetalGatewayElasticIpCreateInput unit test stubs"""

@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.metadata_network_network import MetadataNetworkNetwork
+from equinix.services.metalv1.models.metadata_network_network import MetadataNetworkNetwork
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,6 +32,7 @@ class MetadataNetwork(BaseModel):
     href: Optional[StrictStr] = None
     interfaces: Optional[List[Dict[str, Any]]] = None
     network: Optional[MetadataNetworkNetwork] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["addresses", "href", "interfaces", "network"]
 
     model_config = ConfigDict(
@@ -64,8 +65,10 @@ class MetadataNetwork(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -76,6 +79,11 @@ class MetadataNetwork(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of network
         if self.network:
             _dict['network'] = self.network.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -93,6 +101,11 @@ class MetadataNetwork(BaseModel):
             "interfaces": obj.get("interfaces"),
             "network": MetadataNetworkNetwork.from_dict(obj["network"]) if obj.get("network") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

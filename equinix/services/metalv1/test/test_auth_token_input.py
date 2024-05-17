@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.auth_token_input import AuthTokenInput
+from equinix.services.metalv1.models.auth_token_input import AuthTokenInput
 
 class TestAuthTokenInput(unittest.TestCase):
     """AuthTokenInput unit test stubs"""

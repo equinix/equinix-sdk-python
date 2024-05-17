@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.ip_reservation_request_input import IPReservationRequestInput
+from equinix.services.metalv1.models.ip_reservation_request_input import IPReservationRequestInput
 
 class TestIPReservationRequestInput(unittest.TestCase):
     """IPReservationRequestInput unit test stubs"""

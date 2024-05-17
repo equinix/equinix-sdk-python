@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.facilities_api import FacilitiesApi
+from equinix.services.metalv1.api.facilities_api import FacilitiesApi
 
 
 class TestFacilitiesApi(unittest.TestCase):

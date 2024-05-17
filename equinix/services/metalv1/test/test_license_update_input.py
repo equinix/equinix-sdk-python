@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.license_update_input import LicenseUpdateInput
+from equinix.services.metalv1.models.license_update_input import LicenseUpdateInput
 
 class TestLicenseUpdateInput(unittest.TestCase):
     """LicenseUpdateInput unit test stubs"""

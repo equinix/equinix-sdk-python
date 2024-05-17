@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.device_metro import DeviceMetro
+from equinix.services.metalv1.models.device_metro import DeviceMetro
 
 class TestDeviceMetro(unittest.TestCase):
     """DeviceMetro unit test stubs"""

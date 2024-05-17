@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.disk import Disk
+from equinix.services.metalv1.models.disk import Disk
 
 class TestDisk(unittest.TestCase):
     """Disk unit test stubs"""
@@ -39,7 +39,7 @@ class TestDisk(unittest.TestCase):
                 device = '',
                 href = '',
                 partitions = [
-                    equinix_metal.models.partition.Partition(
+                    equinix.services.metalv1.models.partition.Partition(
                         href = '', 
                         label = '', 
                         number = 56, 

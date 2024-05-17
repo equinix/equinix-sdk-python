@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.interconnection_list import InterconnectionList
+from equinix.services.metalv1.models.interconnection_list import InterconnectionList
 
 class TestInterconnectionList(unittest.TestCase):
     """InterconnectionList unit test stubs"""
@@ -38,16 +38,17 @@ class TestInterconnectionList(unittest.TestCase):
             return InterconnectionList(
                 href = '',
                 interconnections = [
-                    equinix_metal.models.interconnection.Interconnection(
+                    equinix.services.metalv1.models.interconnection.Interconnection(
                         authorization_code = '', 
                         contact_email = '', 
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         description = '', 
-                        facility = equinix_metal.models.facility.Facility(
-                            address = equinix_metal.models.address.Address(
+                        fabric_provider = null, 
+                        facility = equinix.services.metalv1.models.facility.Facility(
+                            address = equinix.services.metalv1.models.address.Address(
                                 address2 = '', 
                                 city = '', 
-                                coordinates = equinix_metal.models.coordinates.Coordinates(
+                                coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                                     href = '', 
                                     latitude = '', 
                                     longitude = '', ), 
@@ -67,8 +68,8 @@ class TestInterconnectionList(unittest.TestCase):
                         metro = null, 
                         mode = 'standard', 
                         name = '', 
-                        organization = equinix_metal.models.organization.Organization(
-                            billing_address = equinix_metal.models.address.Address(
+                        organization = equinix.services.metalv1.models.organization.Organization(
+                            billing_address = equinix.services.metalv1.models.address.Address(
                                 address2 = '', 
                                 city = '', 
                                 country = '', 
@@ -77,18 +78,18 @@ class TestInterconnectionList(unittest.TestCase):
                                 zip_code = '', ), 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             credit_amount = 1.337, 
-                            customdata = equinix_metal.models.customdata.customdata(), 
+                            customdata = equinix.services.metalv1.models.customdata.customdata(), 
                             description = '', 
                             enforce_2fa_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             href = '', 
                             id = '', 
                             logo = '', 
                             members = [
-                                equinix_metal.models.href.Href(
+                                equinix.services.metalv1.models.href.Href(
                                     href = '', )
                                 ], 
                             memberships = [
-                                equinix_metal.models.href.Href(
+                                equinix.services.metalv1.models.href.Href(
                                     href = '', )
                                 ], 
                             name = '', 
@@ -100,7 +101,7 @@ class TestInterconnectionList(unittest.TestCase):
                             updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             website = '', ), 
                         ports = [
-                            equinix_metal.models.interconnection_port.InterconnectionPort(
+                            equinix.services.metalv1.models.interconnection_port.InterconnectionPort(
                                 href = '', 
                                 id = '', 
                                 link_status = '', 
@@ -113,11 +114,11 @@ class TestInterconnectionList(unittest.TestCase):
                                     null
                                     ], )
                             ], 
-                        project = equinix_metal.models.project.Project(
+                        project = equinix.services.metalv1.models.project.Project(
                             backend_transfer_enabled = True, 
                             bgp_config = , 
                             created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            customdata = equinix_metal.models.customdata.customdata(), 
+                            customdata = equinix.services.metalv1.models.customdata.customdata(), 
                             devices = [
                                 
                                 ], 
@@ -126,9 +127,9 @@ class TestInterconnectionList(unittest.TestCase):
                             invitations = [
                                 
                                 ], 
-                            max_devices = equinix_metal.models.max_devices.max_devices(), 
+                            max_devices = equinix.services.metalv1.models.max_devices.max_devices(), 
                             name = '0', 
-                            network_status = equinix_metal.models.network_status.network_status(), 
+                            network_status = equinix.services.metalv1.models.network_status.network_status(), 
                             payment_method = , 
                             ssh_keys = [
                                 
@@ -145,7 +146,7 @@ class TestInterconnectionList(unittest.TestCase):
                         redundancy = 'primary', 
                         requested_by = , 
                         service_tokens = [
-                            equinix_metal.models.fabric_service_token.FabricServiceToken(
+                            equinix.services.metalv1.models.fabric_service_token.FabricServiceToken(
                                 expires_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 href = '', 
                                 id = '', 
@@ -163,12 +164,12 @@ class TestInterconnectionList(unittest.TestCase):
                         type = 'shared', 
                         updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                     ],
-                meta = equinix_metal.models.meta.Meta(
+                meta = equinix.services.metalv1.models.meta.Meta(
                     current_page = 56, 
-                    first = equinix_metal.models.href.Href(
+                    first = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     href = '', 
-                    last = equinix_metal.models.href.Href(
+                    last = equinix.services.metalv1.models.href.Href(
                         href = '', ), 
                     last_page = 56, 
                     next = , 

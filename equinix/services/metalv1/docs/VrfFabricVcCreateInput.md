@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
+from equinix.services.metalv1.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
 
 # TODO update the JSON string below
 json = "{}"

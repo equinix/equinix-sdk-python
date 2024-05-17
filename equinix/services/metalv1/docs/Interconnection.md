@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from equinix_metal.models.interconnection import Interconnection
+from equinix.services.metalv1.models.interconnection import Interconnection
 
 # TODO update the JSON string below
 json = "{}"

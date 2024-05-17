@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.transfer_request import TransferRequest
+from equinix.services.metalv1.models.transfer_request import TransferRequest
 
 class TestTransferRequest(unittest.TestCase):
     """TransferRequest unit test stubs"""
@@ -39,9 +39,9 @@ class TestTransferRequest(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 href = '',
                 id = '',
-                project = equinix_metal.models.href.Href(
+                project = equinix.services.metalv1.models.href.Href(
                     href = '', ),
-                target_organization = equinix_metal.models.href.Href(
+                target_organization = equinix.services.metalv1.models.href.Href(
                     href = '', ),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )

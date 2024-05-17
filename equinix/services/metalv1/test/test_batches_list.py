@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.batches_list import BatchesList
+from equinix.services.metalv1.models.batches_list import BatchesList
 
 class TestBatchesList(unittest.TestCase):
     """BatchesList unit test stubs"""
@@ -37,10 +37,10 @@ class TestBatchesList(unittest.TestCase):
         if include_optional:
             return BatchesList(
                 batches = [
-                    equinix_metal.models.batch.Batch(
+                    equinix.services.metalv1.models.batch.Batch(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         devices = [
-                            equinix_metal.models.href.Href(
+                            equinix.services.metalv1.models.href.Href(
                                 href = '', )
                             ], 
                         error_messages = [
@@ -48,7 +48,7 @@ class TestBatchesList(unittest.TestCase):
                             ], 
                         href = '', 
                         id = '', 
-                        project = equinix_metal.models.href.Href(
+                        project = equinix.services.metalv1.models.href.Href(
                             href = '', ), 
                         quantity = 56, 
                         state = '', 

@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.organization_input import OrganizationInput
+from equinix.services.metalv1.models.organization_input import OrganizationInput
 
 class TestOrganizationInput(unittest.TestCase):
     """OrganizationInput unit test stubs"""
@@ -36,11 +36,11 @@ class TestOrganizationInput(unittest.TestCase):
         model = OrganizationInput()
         if include_optional:
             return OrganizationInput(
-                address = equinix_metal.models.address.Address(
+                address = equinix.services.metalv1.models.address.Address(
                     address = '', 
                     address2 = '', 
                     city = '', 
-                    coordinates = equinix_metal.models.coordinates.Coordinates(
+                    coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                         href = '', 
                         latitude = '', 
                         longitude = '', ), 
@@ -48,11 +48,11 @@ class TestOrganizationInput(unittest.TestCase):
                     href = '', 
                     state = '', 
                     zip_code = '', ),
-                billing_address = equinix_metal.models.address.Address(
+                billing_address = equinix.services.metalv1.models.address.Address(
                     address = '', 
                     address2 = '', 
                     city = '', 
-                    coordinates = equinix_metal.models.coordinates.Coordinates(
+                    coordinates = equinix.services.metalv1.models.coordinates.Coordinates(
                         href = '', 
                         latitude = '', 
                         longitude = '', ), 

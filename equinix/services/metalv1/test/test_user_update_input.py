@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.user_update_input import UserUpdateInput
+from equinix.services.metalv1.models.user_update_input import UserUpdateInput
 
 class TestUserUpdateInput(unittest.TestCase):
     """UserUpdateInput unit test stubs"""

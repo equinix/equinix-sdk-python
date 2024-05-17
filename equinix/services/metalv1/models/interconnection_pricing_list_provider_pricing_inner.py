@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix_metal.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner import InterconnectionPricingListProviderPricingInnerTiersInner
+from equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner import InterconnectionPricingListProviderPricingInnerTiersInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,6 +31,7 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
     href: Optional[StrictStr] = None
     provider: Optional[StrictStr] = None
     tiers: Optional[List[InterconnectionPricingListProviderPricingInnerTiersInner]] = None
+    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "provider", "tiers"]
 
     model_config = ConfigDict(
@@ -63,8 +64,10 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -79,6 +82,11 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['tiers'] = _items
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -95,6 +103,11 @@ class InterconnectionPricingListProviderPricingInner(BaseModel):
             "provider": obj.get("provider"),
             "tiers": [InterconnectionPricingListProviderPricingInnerTiersInner.from_dict(_item) for _item in obj["tiers"]] if obj.get("tiers") is not None else None
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

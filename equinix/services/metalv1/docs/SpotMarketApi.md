@@ -1,4 +1,4 @@
-# equinix_metal.SpotMarketApi
+# equinix.services.metalv1.SpotMarketApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
@@ -25,15 +25,15 @@ Creates a new spot market request.  Type-specific options (such as operating_sys
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_market_request import SpotMarketRequest
-from equinix_metal.models.spot_market_request_create_input import SpotMarketRequestCreateInput
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_market_request import SpotMarketRequest
+from equinix.services.metalv1.models.spot_market_request_create_input import SpotMarketRequestCreateInput
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -49,11 +49,11 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     id = 'id_example' # str | Project UUID
-    spot_market_request_create_input = equinix_metal.SpotMarketRequestCreateInput() # SpotMarketRequestCreateInput | Spot Market Request to create
+    spot_market_request_create_input = equinix.services.metalv1.SpotMarketRequestCreateInput() # SpotMarketRequestCreateInput | Spot Market Request to create
 
     try:
         # Create a spot market request
@@ -109,13 +109,13 @@ Deletes the spot market request.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -131,9 +131,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     id = 'id_example' # str | SpotMarketRequest UUID
     force_termination = True # bool | Terminate associated spot instances (optional)
 
@@ -189,14 +189,14 @@ Get Equinix Metal current spot market prices for all metros.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -212,9 +212,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     metro = 'metro_example' # str | Metro to filter spot market prices (optional)
     plan = 'plan_example' # str | Plan to filter spot market prices (optional)
 
@@ -271,14 +271,14 @@ Get Equinix Metal current spot market prices.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_market_prices_list import SpotMarketPricesList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_market_prices_list import SpotMarketPricesList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -294,9 +294,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     facility = 'facility_example' # str | Facility to check spot market prices (optional)
     plan = 'plan_example' # str | Plan to check spot market prices (optional)
 
@@ -353,14 +353,14 @@ Get spot market prices for a given plan and facility in a fixed period of time  
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_prices_history_report import SpotPricesHistoryReport
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_prices_history_report import SpotPricesHistoryReport
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -376,9 +376,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     facility = 'facility_example' # str | Facility to check spot market prices
     plan = 'plan_example' # str | Plan to check spot market prices
     var_from = 'var_from_example' # str | Timestamp from range
@@ -441,14 +441,14 @@ Returns a single spot market request
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_market_request import SpotMarketRequest
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_market_request import SpotMarketRequest
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -464,9 +464,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     id = 'id_example' # str | SpotMarketRequest UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
 
@@ -524,14 +524,14 @@ View all spot market requests for a given project.
 * Api Key Authentication (x_auth_token):
 
 ```python
-import equinix_metal
-from equinix_metal.models.spot_market_request_list import SpotMarketRequestList
-from equinix_metal.rest import ApiException
+import equinix.services.metalv1
+from equinix.services.metalv1.models.spot_market_request_list import SpotMarketRequestList
+from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.equinix.com/metal/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
+configuration = equinix.services.metalv1.Configuration(
     host = "https://api.equinix.com/metal/v1"
 )
 
@@ -547,9 +547,9 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['x_auth_token'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix_metal.SpotMarketApi(api_client)
+    api_instance = equinix.services.metalv1.SpotMarketApi(api_client)
     id = 'id_example' # str | Project UUID
 
     try:

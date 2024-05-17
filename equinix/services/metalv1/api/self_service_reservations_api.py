@@ -20,13 +20,13 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix_metal.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
-from equinix_metal.models.self_service_reservation_list import SelfServiceReservationList
-from equinix_metal.models.self_service_reservation_response import SelfServiceReservationResponse
+from equinix.services.metalv1.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
+from equinix.services.metalv1.models.self_service_reservation_list import SelfServiceReservationList
+from equinix.services.metalv1.models.self_service_reservation_response import SelfServiceReservationResponse
 
-from equinix_metal.api_client import ApiClient, RequestSerialized
-from equinix_metal.api_response import ApiResponse
-from equinix_metal.rest import RESTResponseType
+from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
+from equinix.services.metalv1.api_response import ApiResponse
+from equinix.services.metalv1.rest import RESTResponseType
 
 
 class SelfServiceReservationsApi:

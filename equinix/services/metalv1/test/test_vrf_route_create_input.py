@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.models.vrf_route_create_input import VrfRouteCreateInput
+from equinix.services.metalv1.models.vrf_route_create_input import VrfRouteCreateInput
 
 class TestVrfRouteCreateInput(unittest.TestCase):
     """VrfRouteCreateInput unit test stubs"""

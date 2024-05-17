@@ -15,7 +15,7 @@
 
 import unittest
 
-from equinix_metal.api.invoices_api import InvoicesApi
+from equinix.services.metalv1.api.invoices_api import InvoicesApi
 
 
 class TestInvoicesApi(unittest.TestCase):
