@@ -21,9 +21,11 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="",
+    description="Equinix SDK for Python",
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     author="Equinix",
-    url="Equinix SDK for Python",
+    url="https://github.com/equinix/equinix-sdk-python",
     keywords=["Equinix"],
     install_requires=REQUIRES,
     python_requires=PYTHON_REQUIRES,
