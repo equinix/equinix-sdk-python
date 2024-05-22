@@ -6,8 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  PACKAGE_DIR: equinix_metal
-  DIST_DIR: equinix_metal/dist
+  DIST_DIR: dist
 jobs:
   release:
     name: Build and publish package
@@ -52,9 +51,8 @@ jobs:
           RELEASE_REQUESTER: "@${{ github.event.sender.login }}"
 
       - name: Build package
-        working-directory: ${{ env.PACKAGE_DIR }}
         run: |
-          python -m build --sdist --wheel --outdir dist/ .
+          python -m build --sdist --wheel --outdir ${{ env.DIST_DIR }} .
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
