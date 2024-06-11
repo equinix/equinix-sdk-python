@@ -1,8 +1,7 @@
 # Equinix Python SDK
 
-[![Maintained](https://img.shields.io/badge/stability-maintained-green.svg)](https://github.com/equinix-labs/equinix-labs/blob/main/maintained-statement.md)
 [![Release](https://img.shields.io/github/v/release/equinix/equinix-sdk-python)](https://github.com/equinix/equinix-sdk-python/releases/latest)
-[![PyPi](https://img.shields.io/pypi/v/equinix-sdk-python)](https://img.shields.io/pypi/v/equinix-sdk-python)
+[![PyPi](https://img.shields.io/pypi/v/equinix)](https://pypi.org/project/equinix)
 
 This is the official Python SDK for Equinix services.  This SDK is currently provided with a major version of `v0`. We aim to avoid breaking changes to this library, but they will certainly happen as we work towards a stable `v1` library.
 
