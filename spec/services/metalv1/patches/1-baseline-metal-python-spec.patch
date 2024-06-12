@@ -1,0 +1,102 @@
+diff --git a/spec/services/metalv1/oas3.patched/components/schemas/Address.yaml b/spec/services/metalv1/oas3.patched/components/schemas/Address.yaml
+index 7cbab35..46b267a 100644
+--- a/spec/services/metalv1/oas3.patched/components/schemas/Address.yaml
++++ b/spec/services/metalv1/oas3.patched/components/schemas/Address.yaml
+@@ -13,8 +13,4 @@ properties:
+     type: string
+   zip_code:
+     type: string
+-required:
+-- address
+-- zip_code
+-- country
+ type: object
+diff --git a/spec/services/metalv1/oas3.patched/components/schemas/IPAssignment.yaml b/spec/services/metalv1/oas3.patched/components/schemas/IPAssignment.yaml
+index efce269..33986f0 100644
+--- a/spec/services/metalv1/oas3.patched/components/schemas/IPAssignment.yaml
++++ b/spec/services/metalv1/oas3.patched/components/schemas/IPAssignment.yaml
+@@ -54,4 +54,6 @@ properties:
+       Only set when this is a Metal Gateway Elastic IP Assignment.
+ 
+       The IP address within the Metal Gateway to which requests to the Elastic IP are forwarded.
++required:
++- assigned_to
+ type: object
+diff --git a/spec/services/metalv1/oas3.patched/components/schemas/IPReservation.yaml b/spec/services/metalv1/oas3.patched/components/schemas/IPReservation.yaml
+index 848adb5..ba555d0 100644
+--- a/spec/services/metalv1/oas3.patched/components/schemas/IPReservation.yaml
++++ b/spec/services/metalv1/oas3.patched/components/schemas/IPReservation.yaml
+@@ -1,4 +1,4 @@
+-properties:
++eroperties:
+   addon:
+     type: boolean
+   address:
+@@ -7,7 +7,7 @@ properties:
+     type: integer
+   assignments:
+     items:
+-      $ref: './IPAssignment.yaml'
++      $ref: './Href.yaml'
+     type: array
+   available:
+     type: string
+diff --git a/spec/services/metalv1/oas3.patched/components/schemas/Plan.yaml b/spec/services/metalv1/oas3.patched/components/schemas/Plan.yaml
+index 0b5f1d5..c9602d0 100644
+--- a/spec/services/metalv1/oas3.patched/components/schemas/Plan.yaml
++++ b/spec/services/metalv1/oas3.patched/components/schemas/Plan.yaml
+@@ -94,10 +94,6 @@ properties:
+               type: integer
+             type:
+               type: string
+-              enum:
+-                - HDD
+-                - SSD
+-                - NVME
+             size:
+               type: string
+               example: 3.84TB
+@@ -117,10 +113,6 @@ properties:
+               example: 2
+             type:
+               type: string
+-              enum:
+-                - 1Gbps
+-                - 10Gbps
+-                - 25Gbps
+       features:
+         type: object
+         properties:
+diff --git a/spec/services/metalv1/oas3.patched/components/schemas/Project.yaml b/spec/services/metalv1/oas3.patched/components/schemas/Project.yaml
+index 48af7d0..5059b81 100644
+--- a/spec/services/metalv1/oas3.patched/components/schemas/Project.yaml
++++ b/spec/services/metalv1/oas3.patched/components/schemas/Project.yaml
+@@ -1,4 +1,6 @@
+ properties:
++  backend_transfer_enabled:
++    type: boolean
+   bgp_config:
+     $ref: './Href.yaml'
+   created_at:
+@@ -37,7 +39,7 @@ properties:
+   network_status:
+     type: object
+   organization:
+-    $ref: './Organization.yaml'
++    $ref: './Href.yaml'
+   payment_method:
+     $ref: './Href.yaml'
+   ssh_keys:
+diff --git a/spec/services/metalv1/oas3.patched/paths/plans.yaml b/spec/services/metalv1/oas3.patched/paths/plans.yaml
+index 1f04891..0576458 100644
+--- a/spec/services/metalv1/oas3.patched/paths/plans.yaml
++++ b/spec/services/metalv1/oas3.patched/paths/plans.yaml
+@@ -4,7 +4,7 @@ get:
+   parameters:
+   - description: Filter plans by its category
+     in: query
+-    name: categories
++    name: categories[]
+     schema:
+       type: array
+       items:
