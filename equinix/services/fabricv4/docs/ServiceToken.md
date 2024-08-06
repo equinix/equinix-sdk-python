@@ -34,7 +34,7 @@ print(ServiceToken.to_json())
 # convert the object into a dict
 service_token_dict = service_token_instance.to_dict()
 # create an instance of ServiceToken from a dict
-service_token_form_dict = service_token.from_dict(service_token_dict)
+service_token_from_dict = ServiceToken.from_dict(service_token_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

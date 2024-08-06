@@ -27,7 +27,7 @@ print(ProjectCreateInput.to_json())
 # convert the object into a dict
 project_create_input_dict = project_create_input_instance.to_dict()
 # create an instance of ProjectCreateInput from a dict
-project_create_input_form_dict = project_create_input.from_dict(project_create_input_dict)
+project_create_input_from_dict = ProjectCreateInput.from_dict(project_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

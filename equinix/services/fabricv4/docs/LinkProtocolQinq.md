@@ -30,7 +30,7 @@ print(LinkProtocolQinq.to_json())
 # convert the object into a dict
 link_protocol_qinq_dict = link_protocol_qinq_instance.to_dict()
 # create an instance of LinkProtocolQinq from a dict
-link_protocol_qinq_form_dict = link_protocol_qinq.from_dict(link_protocol_qinq_dict)
+link_protocol_qinq_from_dict = LinkProtocolQinq.from_dict(link_protocol_qinq_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

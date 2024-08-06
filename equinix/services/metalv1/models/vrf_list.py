@@ -77,9 +77,9 @@ class VrfList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in vrfs (list)
         _items = []
         if self.vrfs:
-            for _item in self.vrfs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_vrfs in self.vrfs:
+                if _item_vrfs:
+                    _items.append(_item_vrfs.to_dict())
             _dict['vrfs'] = _items
         return _dict
 

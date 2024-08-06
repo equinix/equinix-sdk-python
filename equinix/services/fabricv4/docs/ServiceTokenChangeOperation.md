@@ -25,7 +25,7 @@ print(ServiceTokenChangeOperation.to_json())
 # convert the object into a dict
 service_token_change_operation_dict = service_token_change_operation_instance.to_dict()
 # create an instance of ServiceTokenChangeOperation from a dict
-service_token_change_operation_form_dict = service_token_change_operation.from_dict(service_token_change_operation_dict)
+service_token_change_operation_from_dict = ServiceTokenChangeOperation.from_dict(service_token_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

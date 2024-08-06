@@ -76,9 +76,9 @@ class ServiceTokenSide(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in access_point_selectors (list)
         _items = []
         if self.access_point_selectors:
-            for _item in self.access_point_selectors:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_access_point_selectors in self.access_point_selectors:
+                if _item_access_point_selectors:
+                    _items.append(_item_access_point_selectors.to_dict())
             _dict['accessPointSelectors'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

@@ -50,7 +50,7 @@ print(IPReservation.to_json())
 # convert the object into a dict
 ip_reservation_dict = ip_reservation_instance.to_dict()
 # create an instance of IPReservation from a dict
-ip_reservation_form_dict = ip_reservation.from_dict(ip_reservation_dict)
+ip_reservation_from_dict = IPReservation.from_dict(ip_reservation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

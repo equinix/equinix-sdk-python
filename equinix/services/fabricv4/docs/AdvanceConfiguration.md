@@ -24,7 +24,7 @@ print(AdvanceConfiguration.to_json())
 # convert the object into a dict
 advance_configuration_dict = advance_configuration_instance.to_dict()
 # create an instance of AdvanceConfiguration from a dict
-advance_configuration_form_dict = advance_configuration.from_dict(advance_configuration_dict)
+advance_configuration_from_dict = AdvanceConfiguration.from_dict(advance_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

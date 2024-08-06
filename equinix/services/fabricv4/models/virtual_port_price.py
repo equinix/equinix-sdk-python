@@ -42,7 +42,7 @@ class VirtualPortPrice(BaseModel):
     bandwidth: Optional[StrictInt] = Field(default=None, description="Aggregated data transfer capacity,  expressed as follows <br> -> Mbps, megabits (1 million bits) per second <br> -> Gbps, gigabits (1 billion bits) per second <br> Bandwidth must be divisible by physicalPortsQuantity.")
     redundancy: Optional[VirtualPortRedundancy] = None
     connectivity_source: Optional[ConnectivitySource] = Field(default=None, alias="connectivitySource")
-    service_type: Optional[VirtualPortServiceType] = Field(default=None, alias="serviceType")
+    service_type: Optional[VirtualPortServiceType] = Field(default=VirtualPortServiceType.MSP, alias="serviceType")
     settings: Optional[VirtualPortConfiguration] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings"]
@@ -128,7 +128,7 @@ class VirtualPortPrice(BaseModel):
             "bandwidth": obj.get("bandwidth"),
             "redundancy": VirtualPortRedundancy.from_dict(obj["redundancy"]) if obj.get("redundancy") is not None else None,
             "connectivitySource": ConnectivitySource.from_dict(obj["connectivitySource"]) if obj.get("connectivitySource") is not None else None,
-            "serviceType": obj.get("serviceType"),
+            "serviceType": obj.get("serviceType") if obj.get("serviceType") is not None else VirtualPortServiceType.MSP,
             "settings": VirtualPortConfiguration.from_dict(obj["settings"]) if obj.get("settings") is not None else None
         })
         # store additional fields in additional_properties

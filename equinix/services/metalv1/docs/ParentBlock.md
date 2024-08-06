@@ -25,7 +25,7 @@ print(ParentBlock.to_json())
 # convert the object into a dict
 parent_block_dict = parent_block_instance.to_dict()
 # create an instance of ParentBlock from a dict
-parent_block_form_dict = parent_block.from_dict(parent_block_dict)
+parent_block_from_dict = ParentBlock.from_dict(parent_block_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,7 +22,7 @@ print(VirtualConnectionPriceASide.to_json())
 # convert the object into a dict
 virtual_connection_price_a_side_dict = virtual_connection_price_a_side_instance.to_dict()
 # create an instance of VirtualConnectionPriceASide from a dict
-virtual_connection_price_a_side_form_dict = virtual_connection_price_a_side.from_dict(virtual_connection_price_a_side_dict)
+virtual_connection_price_a_side_from_dict = VirtualConnectionPriceASide.from_dict(virtual_connection_price_a_side_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

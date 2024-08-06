@@ -27,7 +27,7 @@ print(LinkProtocolDot1q.to_json())
 # convert the object into a dict
 link_protocol_dot1q_dict = link_protocol_dot1q_instance.to_dict()
 # create an instance of LinkProtocolDot1q from a dict
-link_protocol_dot1q_form_dict = link_protocol_dot1q.from_dict(link_protocol_dot1q_dict)
+link_protocol_dot1q_from_dict = LinkProtocolDot1q.from_dict(link_protocol_dot1q_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

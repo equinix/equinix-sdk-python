@@ -25,7 +25,7 @@ print(NetworkChangeOperation.to_json())
 # convert the object into a dict
 network_change_operation_dict = network_change_operation_instance.to_dict()
 # create an instance of NetworkChangeOperation from a dict
-network_change_operation_form_dict = network_change_operation.from_dict(network_change_operation_dict)
+network_change_operation_from_dict = NetworkChangeOperation.from_dict(network_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

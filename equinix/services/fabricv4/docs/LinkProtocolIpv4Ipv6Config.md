@@ -25,7 +25,7 @@ print(LinkProtocolIpv4Ipv6Config.to_json())
 # convert the object into a dict
 link_protocol_ipv4_ipv6_config_dict = link_protocol_ipv4_ipv6_config_instance.to_dict()
 # create an instance of LinkProtocolIpv4Ipv6Config from a dict
-link_protocol_ipv4_ipv6_config_form_dict = link_protocol_ipv4_ipv6_config.from_dict(link_protocol_ipv4_ipv6_config_dict)
+link_protocol_ipv4_ipv6_config_from_dict = LinkProtocolIpv4Ipv6Config.from_dict(link_protocol_ipv4_ipv6_config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

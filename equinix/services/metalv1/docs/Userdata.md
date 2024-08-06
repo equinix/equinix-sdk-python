@@ -23,7 +23,7 @@ print(Userdata.to_json())
 # convert the object into a dict
 userdata_dict = userdata_instance.to_dict()
 # create an instance of Userdata from a dict
-userdata_form_dict = userdata.from_dict(userdata_dict)
+userdata_from_dict = Userdata.from_dict(userdata_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

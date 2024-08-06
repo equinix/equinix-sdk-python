@@ -76,23 +76,23 @@ class Storage(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in disks (list)
         _items = []
         if self.disks:
-            for _item in self.disks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_disks in self.disks:
+                if _item_disks:
+                    _items.append(_item_disks.to_dict())
             _dict['disks'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in filesystems (list)
         _items = []
         if self.filesystems:
-            for _item in self.filesystems:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_filesystems in self.filesystems:
+                if _item_filesystems:
+                    _items.append(_item_filesystems.to_dict())
             _dict['filesystems'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in raid (list)
         _items = []
         if self.raid:
-            for _item in self.raid:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_raid in self.raid:
+                if _item_raid:
+                    _items.append(_item_raid.to_dict())
             _dict['raid'] = _items
         return _dict
 

@@ -25,7 +25,7 @@ print(RouteFiltersChangeOperation.to_json())
 # convert the object into a dict
 route_filters_change_operation_dict = route_filters_change_operation_instance.to_dict()
 # create an instance of RouteFiltersChangeOperation from a dict
-route_filters_change_operation_form_dict = route_filters_change_operation.from_dict(route_filters_change_operation_dict)
+route_filters_change_operation_from_dict = RouteFiltersChangeOperation.from_dict(route_filters_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -143,9 +143,9 @@ class Interconnection(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ports (list)
         _items = []
         if self.ports:
-            for _item in self.ports:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ports in self.ports:
+                if _item_ports:
+                    _items.append(_item_ports.to_dict())
             _dict['ports'] = _items
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
@@ -156,9 +156,9 @@ class Interconnection(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in service_tokens (list)
         _items = []
         if self.service_tokens:
-            for _item in self.service_tokens:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_service_tokens in self.service_tokens:
+                if _item_service_tokens:
+                    _items.append(_item_service_tokens.to_dict())
             _dict['service_tokens'] = _items
         return _dict
 

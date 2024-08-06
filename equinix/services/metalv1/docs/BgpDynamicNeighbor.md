@@ -31,7 +31,7 @@ print(BgpDynamicNeighbor.to_json())
 # convert the object into a dict
 bgp_dynamic_neighbor_dict = bgp_dynamic_neighbor_instance.to_dict()
 # create an instance of BgpDynamicNeighbor from a dict
-bgp_dynamic_neighbor_form_dict = bgp_dynamic_neighbor.from_dict(bgp_dynamic_neighbor_dict)
+bgp_dynamic_neighbor_from_dict = BgpDynamicNeighbor.from_dict(bgp_dynamic_neighbor_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

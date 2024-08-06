@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.cloud_router_or_filter import CloudRouterOrFilter
 from equinix.services.fabricv4.models.cloud_router_simple_expression import CloudRouterSimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -41,7 +41,7 @@ class CloudRouterFilter(BaseModel):
         actual_instance: Optional[Union[CloudRouterOrFilter, CloudRouterSimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["CloudRouterOrFilter", "CloudRouterSimpleExpression"])
+    any_of_schemas: Set[str] = { "CloudRouterOrFilter", "CloudRouterSimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

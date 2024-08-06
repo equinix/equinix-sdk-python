@@ -26,7 +26,7 @@ print(IPAddress.to_json())
 # convert the object into a dict
 ip_address_dict = ip_address_instance.to_dict()
 # create an instance of IPAddress from a dict
-ip_address_form_dict = ip_address.from_dict(ip_address_dict)
+ip_address_from_dict = IPAddress.from_dict(ip_address_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

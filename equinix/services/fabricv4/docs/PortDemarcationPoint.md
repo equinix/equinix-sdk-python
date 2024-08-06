@@ -30,7 +30,7 @@ print(PortDemarcationPoint.to_json())
 # convert the object into a dict
 port_demarcation_point_dict = port_demarcation_point_instance.to_dict()
 # create an instance of PortDemarcationPoint from a dict
-port_demarcation_point_form_dict = port_demarcation_point.from_dict(port_demarcation_point_dict)
+port_demarcation_point_from_dict = PortDemarcationPoint.from_dict(port_demarcation_point_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

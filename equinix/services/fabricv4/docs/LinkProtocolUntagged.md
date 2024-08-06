@@ -25,7 +25,7 @@ print(LinkProtocolUntagged.to_json())
 # convert the object into a dict
 link_protocol_untagged_dict = link_protocol_untagged_instance.to_dict()
 # create an instance of LinkProtocolUntagged from a dict
-link_protocol_untagged_form_dict = link_protocol_untagged.from_dict(link_protocol_untagged_dict)
+link_protocol_untagged_from_dict = LinkProtocolUntagged.from_dict(link_protocol_untagged_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

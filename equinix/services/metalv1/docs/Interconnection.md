@@ -44,7 +44,7 @@ print(Interconnection.to_json())
 # convert the object into a dict
 interconnection_dict = interconnection_instance.to_dict()
 # create an instance of Interconnection from a dict
-interconnection_form_dict = interconnection.from_dict(interconnection_dict)
+interconnection_from_dict = Interconnection.from_dict(interconnection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

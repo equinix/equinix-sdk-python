@@ -28,7 +28,7 @@ print(FabricServiceToken.to_json())
 # convert the object into a dict
 fabric_service_token_dict = fabric_service_token_instance.to_dict()
 # create an instance of FabricServiceToken from a dict
-fabric_service_token_form_dict = fabric_service_token.from_dict(fabric_service_token_dict)
+fabric_service_token_from_dict = FabricServiceToken.from_dict(fabric_service_token_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

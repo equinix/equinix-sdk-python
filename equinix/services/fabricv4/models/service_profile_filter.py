@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.service_profile_and_filter import ServiceProfileAndFilter
 from equinix.services.fabricv4.models.service_profile_simple_expression import ServiceProfileSimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -41,7 +41,7 @@ class ServiceProfileFilter(BaseModel):
         actual_instance: Optional[Union[ServiceProfileAndFilter, ServiceProfileSimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["ServiceProfileAndFilter", "ServiceProfileSimpleExpression"])
+    any_of_schemas: Set[str] = { "ServiceProfileAndFilter", "ServiceProfileSimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

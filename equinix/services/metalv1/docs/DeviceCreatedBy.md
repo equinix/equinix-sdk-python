@@ -31,7 +31,7 @@ print(DeviceCreatedBy.to_json())
 # convert the object into a dict
 device_created_by_dict = device_created_by_instance.to_dict()
 # create an instance of DeviceCreatedBy from a dict
-device_created_by_form_dict = device_created_by.from_dict(device_created_by_dict)
+device_created_by_from_dict = DeviceCreatedBy.from_dict(device_created_by_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

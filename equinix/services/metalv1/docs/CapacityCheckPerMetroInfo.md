@@ -26,7 +26,7 @@ print(CapacityCheckPerMetroInfo.to_json())
 # convert the object into a dict
 capacity_check_per_metro_info_dict = capacity_check_per_metro_info_instance.to_dict()
 # create an instance of CapacityCheckPerMetroInfo from a dict
-capacity_check_per_metro_info_form_dict = capacity_check_per_metro_info.from_dict(capacity_check_per_metro_info_dict)
+capacity_check_per_metro_info_from_dict = CapacityCheckPerMetroInfo.from_dict(capacity_check_per_metro_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -62,7 +62,7 @@ print(PortResponse.to_json())
 # convert the object into a dict
 port_response_dict = port_response_instance.to_dict()
 # create an instance of PortResponse from a dict
-port_response_form_dict = port_response.from_dict(port_response_dict)
+port_response_from_dict = PortResponse.from_dict(port_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

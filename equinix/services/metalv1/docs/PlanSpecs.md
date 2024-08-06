@@ -27,7 +27,7 @@ print(PlanSpecs.to_json())
 # convert the object into a dict
 plan_specs_dict = plan_specs_instance.to_dict()
 # create an instance of PlanSpecs from a dict
-plan_specs_form_dict = plan_specs.from_dict(plan_specs_dict)
+plan_specs_from_dict = PlanSpecs.from_dict(plan_specs_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

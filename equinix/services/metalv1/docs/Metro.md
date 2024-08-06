@@ -26,7 +26,7 @@ print(Metro.to_json())
 # convert the object into a dict
 metro_dict = metro_instance.to_dict()
 # create an instance of Metro from a dict
-metro_form_dict = metro.from_dict(metro_dict)
+metro_from_dict = Metro.from_dict(metro_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

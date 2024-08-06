@@ -26,7 +26,7 @@ print(SearchExpression.to_json())
 # convert the object into a dict
 search_expression_dict = search_expression_instance.to_dict()
 # create an instance of SearchExpression from a dict
-search_expression_form_dict = search_expression.from_dict(search_expression_dict)
+search_expression_from_dict = SearchExpression.from_dict(search_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

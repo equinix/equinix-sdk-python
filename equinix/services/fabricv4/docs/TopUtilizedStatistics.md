@@ -24,7 +24,7 @@ print(TopUtilizedStatistics.to_json())
 # convert the object into a dict
 top_utilized_statistics_dict = top_utilized_statistics_instance.to_dict()
 # create an instance of TopUtilizedStatistics from a dict
-top_utilized_statistics_form_dict = top_utilized_statistics.from_dict(top_utilized_statistics_dict)
+top_utilized_statistics_from_dict = TopUtilizedStatistics.from_dict(top_utilized_statistics_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ print(PortRedundancy.to_json())
 # convert the object into a dict
 port_redundancy_dict = port_redundancy_instance.to_dict()
 # create an instance of PortRedundancy from a dict
-port_redundancy_form_dict = port_redundancy.from_dict(port_redundancy_dict)
+port_redundancy_from_dict = PortRedundancy.from_dict(port_redundancy_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

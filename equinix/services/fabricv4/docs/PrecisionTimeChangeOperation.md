@@ -25,7 +25,7 @@ print(PrecisionTimeChangeOperation.to_json())
 # convert the object into a dict
 precision_time_change_operation_dict = precision_time_change_operation_instance.to_dict()
 # create an instance of PrecisionTimeChangeOperation from a dict
-precision_time_change_operation_form_dict = precision_time_change_operation.from_dict(precision_time_change_operation_dict)
+precision_time_change_operation_from_dict = PrecisionTimeChangeOperation.from_dict(precision_time_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

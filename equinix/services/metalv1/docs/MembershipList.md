@@ -23,7 +23,7 @@ print(MembershipList.to_json())
 # convert the object into a dict
 membership_list_dict = membership_list_instance.to_dict()
 # create an instance of MembershipList from a dict
-membership_list_form_dict = membership_list.from_dict(membership_list_dict)
+membership_list_from_dict = MembershipList.from_dict(membership_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

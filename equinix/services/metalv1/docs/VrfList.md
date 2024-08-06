@@ -24,7 +24,7 @@ print(VrfList.to_json())
 # convert the object into a dict
 vrf_list_dict = vrf_list_instance.to_dict()
 # create an instance of VrfList from a dict
-vrf_list_form_dict = vrf_list.from_dict(vrf_list_dict)
+vrf_list_from_dict = VrfList.from_dict(vrf_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

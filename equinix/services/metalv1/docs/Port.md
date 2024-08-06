@@ -32,7 +32,7 @@ print(Port.to_json())
 # convert the object into a dict
 port_dict = port_instance.to_dict()
 # create an instance of Port from a dict
-port_form_dict = port.from_dict(port_dict)
+port_from_dict = Port.from_dict(port_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

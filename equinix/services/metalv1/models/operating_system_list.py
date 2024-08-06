@@ -72,9 +72,9 @@ class OperatingSystemList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in operating_systems (list)
         _items = []
         if self.operating_systems:
-            for _item in self.operating_systems:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_operating_systems in self.operating_systems:
+                if _item_operating_systems:
+                    _items.append(_item_operating_systems.to_dict())
             _dict['operating_systems'] = _items
         return _dict
 

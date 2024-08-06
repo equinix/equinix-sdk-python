@@ -138,11 +138,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StatisticsApi(api_client)
     metros = ['metros_example'] # List[str] | Two-letter prefix indicating the metropolitan area in which a specified Equinix asset is located.
-    sort = equinix.services.fabricv4.Sort() # Sort | Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \"?\" prefix indicates descending (DESC) order. (optional)
+    sort = -bandwidthUtilization # Sort | Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \"?\" prefix indicates descending (DESC) order. (optional) (default to -bandwidthUtilization)
     top = 5 # int | Filter returning only the specified number of most heavily trafficked ports. The standard value is [1...10], and the default is 5. (optional) (default to 5)
-    duration = equinix.services.fabricv4.Duration() # Duration | duration (optional)
-    direction = equinix.services.fabricv4.QueryDirection() # QueryDirection | Direction of traffic from the requester's viewpoint. The default is outbound. (optional)
-    metric_interval = equinix.services.fabricv4.MetricInterval() # MetricInterval | metricInterval (optional)
+    duration = P7D # Duration | duration (optional) (default to P7D)
+    direction = outbound # QueryDirection | Direction of traffic from the requester's viewpoint. The default is outbound. (optional) (default to outbound)
+    metric_interval = P7D # MetricInterval | metricInterval (optional) (default to P7D)
     project_id = 'project_id_example' # str | projectId (optional)
 
     try:
@@ -162,11 +162,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **metros** | [**List[str]**](str.md)| Two-letter prefix indicating the metropolitan area in which a specified Equinix asset is located. | 
- **sort** | [**Sort**](.md)| Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \&quot;?\&quot; prefix indicates descending (DESC) order. | [optional] 
+ **sort** | [**Sort**](.md)| Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \&quot;?\&quot; prefix indicates descending (DESC) order. | [optional] [default to -bandwidthUtilization]
  **top** | **int**| Filter returning only the specified number of most heavily trafficked ports. The standard value is [1...10], and the default is 5. | [optional] [default to 5]
- **duration** | [**Duration**](.md)| duration | [optional] 
- **direction** | [**QueryDirection**](.md)| Direction of traffic from the requester&#39;s viewpoint. The default is outbound. | [optional] 
- **metric_interval** | [**MetricInterval**](.md)| metricInterval | [optional] 
+ **duration** | [**Duration**](.md)| duration | [optional] [default to P7D]
+ **direction** | [**QueryDirection**](.md)| Direction of traffic from the requester&#39;s viewpoint. The default is outbound. | [optional] [default to outbound]
+ **metric_interval** | [**MetricInterval**](.md)| metricInterval | [optional] [default to P7D]
  **project_id** | **str**| projectId | [optional] 
 
 ### Return type

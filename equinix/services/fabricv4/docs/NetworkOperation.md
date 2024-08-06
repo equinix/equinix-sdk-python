@@ -23,7 +23,7 @@ print(NetworkOperation.to_json())
 # convert the object into a dict
 network_operation_dict = network_operation_instance.to_dict()
 # create an instance of NetworkOperation from a dict
-network_operation_form_dict = network_operation.from_dict(network_operation_dict)
+network_operation_from_dict = NetworkOperation.from_dict(network_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

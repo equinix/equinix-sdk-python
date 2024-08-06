@@ -24,7 +24,7 @@ print(PortDevice.to_json())
 # convert the object into a dict
 port_device_dict = port_device_instance.to_dict()
 # create an instance of PortDevice from a dict
-port_device_form_dict = port_device.from_dict(port_device_dict)
+port_device_from_dict = PortDevice.from_dict(port_device_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

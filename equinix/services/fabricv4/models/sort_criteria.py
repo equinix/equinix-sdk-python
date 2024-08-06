@@ -29,8 +29,8 @@ class SortCriteria(BaseModel):
     """
     SortCriteria
     """ # noqa: E501
-    direction: Optional[SortDirection] = None
-    var_property: Optional[SortBy] = Field(default=None, alias="property")
+    direction: Optional[SortDirection] = SortDirection.DESC
+    var_property: Optional[SortBy] = Field(default=SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -92,8 +92,8 @@ class SortCriteria(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "direction": obj.get("direction"),
-            "property": obj.get("property")
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortDirection.DESC,
+            "property": obj.get("property") if obj.get("property") is not None else SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

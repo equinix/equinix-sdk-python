@@ -31,7 +31,7 @@ print(FindMetalGatewayById200Response.to_json())
 # convert the object into a dict
 find_metal_gateway_by_id200_response_dict = find_metal_gateway_by_id200_response_instance.to_dict()
 # create an instance of FindMetalGatewayById200Response from a dict
-find_metal_gateway_by_id200_response_form_dict = find_metal_gateway_by_id200_response.from_dict(find_metal_gateway_by_id200_response_dict)
+find_metal_gateway_by_id200_response_from_dict = FindMetalGatewayById200Response.from_dict(find_metal_gateway_by_id200_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

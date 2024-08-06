@@ -23,7 +23,7 @@ print(PortVlanAssignmentList.to_json())
 # convert the object into a dict
 port_vlan_assignment_list_dict = port_vlan_assignment_list_instance.to_dict()
 # create an instance of PortVlanAssignmentList from a dict
-port_vlan_assignment_list_form_dict = port_vlan_assignment_list.from_dict(port_vlan_assignment_list_dict)
+port_vlan_assignment_list_from_dict = PortVlanAssignmentList.from_dict(port_vlan_assignment_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

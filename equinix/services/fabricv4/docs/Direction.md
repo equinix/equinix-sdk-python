@@ -25,7 +25,7 @@ print(Direction.to_json())
 # convert the object into a dict
 direction_dict = direction_instance.to_dict()
 # create an instance of Direction from a dict
-direction_form_dict = direction.from_dict(direction_dict)
+direction_from_dict = Direction.from_dict(direction_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

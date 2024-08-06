@@ -23,7 +23,7 @@ print(PaymentMethodList.to_json())
 # convert the object into a dict
 payment_method_list_dict = payment_method_list_instance.to_dict()
 # create an instance of PaymentMethodList from a dict
-payment_method_list_form_dict = payment_method_list.from_dict(payment_method_list_dict)
+payment_method_list_from_dict = PaymentMethodList.from_dict(payment_method_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

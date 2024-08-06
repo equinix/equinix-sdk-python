@@ -24,7 +24,7 @@ print(ConnectionRedundancy.to_json())
 # convert the object into a dict
 connection_redundancy_dict = connection_redundancy_instance.to_dict()
 # create an instance of ConnectionRedundancy from a dict
-connection_redundancy_form_dict = connection_redundancy.from_dict(connection_redundancy_dict)
+connection_redundancy_from_dict = ConnectionRedundancy.from_dict(connection_redundancy_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

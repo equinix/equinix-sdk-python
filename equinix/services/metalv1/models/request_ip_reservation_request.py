@@ -19,7 +19,7 @@ from typing import Any, List, Optional
 from equinix.services.metalv1.models.ip_reservation_request_input import IPReservationRequestInput
 from equinix.services.metalv1.models.vrf_ip_reservation_create_input import VrfIpReservationCreateInput
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 REQUESTIPRESERVATIONREQUEST_ONE_OF_SCHEMAS = ["IPReservationRequestInput", "VrfIpReservationCreateInput"]
@@ -33,7 +33,7 @@ class RequestIPReservationRequest(BaseModel):
     # data type: VrfIpReservationCreateInput
     oneof_schema_2_validator: Optional[VrfIpReservationCreateInput] = None
     actual_instance: Optional[Union[IPReservationRequestInput, VrfIpReservationCreateInput]] = None
-    one_of_schemas: List[str] = Field(default=Literal["IPReservationRequestInput", "VrfIpReservationCreateInput"])
+    one_of_schemas: Set[str] = { "IPReservationRequestInput", "VrfIpReservationCreateInput" }
 
     model_config = ConfigDict(
         validate_assignment=True,

@@ -24,7 +24,7 @@ print(VrfMetalGatewayCreateInput.to_json())
 # convert the object into a dict
 vrf_metal_gateway_create_input_dict = vrf_metal_gateway_create_input_instance.to_dict()
 # create an instance of VrfMetalGatewayCreateInput from a dict
-vrf_metal_gateway_create_input_form_dict = vrf_metal_gateway_create_input.from_dict(vrf_metal_gateway_create_input_dict)
+vrf_metal_gateway_create_input_from_dict = VrfMetalGatewayCreateInput.from_dict(vrf_metal_gateway_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(RouteTableEntrySimpleExpression.to_json())
 # convert the object into a dict
 route_table_entry_simple_expression_dict = route_table_entry_simple_expression_instance.to_dict()
 # create an instance of RouteTableEntrySimpleExpression from a dict
-route_table_entry_simple_expression_form_dict = route_table_entry_simple_expression.from_dict(route_table_entry_simple_expression_dict)
+route_table_entry_simple_expression_from_dict = RouteTableEntrySimpleExpression.from_dict(route_table_entry_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

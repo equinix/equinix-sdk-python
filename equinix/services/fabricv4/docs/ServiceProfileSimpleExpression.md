@@ -24,7 +24,7 @@ print(ServiceProfileSimpleExpression.to_json())
 # convert the object into a dict
 service_profile_simple_expression_dict = service_profile_simple_expression_instance.to_dict()
 # create an instance of ServiceProfileSimpleExpression from a dict
-service_profile_simple_expression_form_dict = service_profile_simple_expression.from_dict(service_profile_simple_expression_dict)
+service_profile_simple_expression_from_dict = ServiceProfileSimpleExpression.from_dict(service_profile_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

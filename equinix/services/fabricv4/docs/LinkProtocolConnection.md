@@ -26,7 +26,7 @@ print(LinkProtocolConnection.to_json())
 # convert the object into a dict
 link_protocol_connection_dict = link_protocol_connection_instance.to_dict()
 # create an instance of LinkProtocolConnection from a dict
-link_protocol_connection_form_dict = link_protocol_connection.from_dict(link_protocol_connection_dict)
+link_protocol_connection_from_dict = LinkProtocolConnection.from_dict(link_protocol_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

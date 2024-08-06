@@ -26,7 +26,7 @@ print(PortVlanAssignmentBatchVlanAssignmentsInner.to_json())
 # convert the object into a dict
 port_vlan_assignment_batch_vlan_assignments_inner_dict = port_vlan_assignment_batch_vlan_assignments_inner_instance.to_dict()
 # create an instance of PortVlanAssignmentBatchVlanAssignmentsInner from a dict
-port_vlan_assignment_batch_vlan_assignments_inner_form_dict = port_vlan_assignment_batch_vlan_assignments_inner.from_dict(port_vlan_assignment_batch_vlan_assignments_inner_dict)
+port_vlan_assignment_batch_vlan_assignments_inner_from_dict = PortVlanAssignmentBatchVlanAssignmentsInner.from_dict(port_vlan_assignment_batch_vlan_assignments_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

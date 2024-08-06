@@ -51,7 +51,7 @@ print(SimplifiedPort.to_json())
 # convert the object into a dict
 simplified_port_dict = simplified_port_instance.to_dict()
 # create an instance of SimplifiedPort from a dict
-simplified_port_form_dict = simplified_port.from_dict(simplified_port_dict)
+simplified_port_from_dict = SimplifiedPort.from_dict(simplified_port_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

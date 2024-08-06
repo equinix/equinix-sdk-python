@@ -26,7 +26,7 @@ print(AttributeData.to_json())
 # convert the object into a dict
 attribute_data_dict = attribute_data_instance.to_dict()
 # create an instance of AttributeData from a dict
-attribute_data_form_dict = attribute_data.from_dict(attribute_data_dict)
+attribute_data_from_dict = AttributeData.from_dict(attribute_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
