@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **customer_asn** | **int** | Customer asn | [optional] 
 **equinix_asn** | **int** | Equinix asn | [optional] 
 **bgp_auth_key** | **str** | BGP authorization key | [optional] 
+**as_override_enabled** | **bool** | Enable AS number override | [optional] 
 **bfd** | [**RoutingProtocolBFD**](RoutingProtocolBFD.md) |  | [optional] 
 
 ## Example

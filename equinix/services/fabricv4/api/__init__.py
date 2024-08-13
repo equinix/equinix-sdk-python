@@ -4,6 +4,7 @@
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
 from equinix.services.fabricv4.api.health_api import HealthApi
+from equinix.services.fabricv4.api.marketplace_subscriptions_api import MarketplaceSubscriptionsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
 from equinix.services.fabricv4.api.networks_api import NetworksApi
 from equinix.services.fabricv4.api.ports_api import PortsApi

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**Md5Type**](Md5Type.md) |  | [optional] 
-**id** | **str** |  | [optional] 
+**id** | **int** |  | [optional] 
 **password** | **str** |  | [optional] 
 
 ## Example
