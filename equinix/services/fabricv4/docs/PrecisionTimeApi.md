@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_time_services_connections_by_service_id**](PrecisionTimeApi.md#get_time_services_connections_by_service_id) | **GET** /fabric/v4/timeServices/{serviceId}/connections | Get Connection Links
 [**get_time_services_package_by_code**](PrecisionTimeApi.md#get_time_services_package_by_code) | **GET** /fabric/v4/timeServicePackages/{packageCode} | Get Package By Code
 [**get_time_services_packages**](PrecisionTimeApi.md#get_time_services_packages) | **GET** /fabric/v4/timeServicePackages | Get Packages
+[**search_time_services**](PrecisionTimeApi.md#search_time_services) | **POST** /fabric/v4/timeServices/search | Search Time Services
 [**update_time_services_by_id**](PrecisionTimeApi.md#update_time_services_by_id) | **PATCH** /fabric/v4/timeServices/{serviceId} | Patch time service
 
 
@@ -496,6 +497,90 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
+**415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_time_services**
+> ServiceSearchResponse search_time_services(time_services_search_request)
+
+Search Time Services
+
+The API provides capability to get list of user's Time Services using search criteria, including optional filtering, pagination and sorting
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.service_search_response import ServiceSearchResponse
+from equinix.services.fabricv4.models.time_services_search_request import TimeServicesSearchRequest
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.PrecisionTimeApi(api_client)
+    time_services_search_request = equinix.services.fabricv4.TimeServicesSearchRequest() # TimeServicesSearchRequest | 
+
+    try:
+        # Search Time Services
+        api_response = api_instance.search_time_services(time_services_search_request)
+        print("The response of PrecisionTimeApi->search_time_services:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PrecisionTimeApi->search_time_services: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **time_services_search_request** | [**TimeServicesSearchRequest**](TimeServicesSearchRequest.md)|  | 
+
+### Return type
+
+[**ServiceSearchResponse**](ServiceSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 **415** | Unsupported Media Type |  -  |
 **500** | Internal server error |  -  |
 
