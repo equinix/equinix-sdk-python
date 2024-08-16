@@ -39,7 +39,7 @@ jobs:
       if: ${{ always() && steps.patch.conclusion == 'success' }}
       run: |
         make -f Makefile.__PACKAGE_NAME__ generate
-        git add services/__PACKAGE_NAME__
+        git add equinix/services/__PACKAGE_NAME__
         echo `git commit -m 'sync: generate client with ${{ steps.date.outputs.date }} spec'`
     - name: Create Pull Request
       id: cpr

@@ -39,7 +39,7 @@ jobs:
       if: ${{ always() && steps.patch.conclusion == 'success' }}
       run: |
         make -f Makefile.fabricv4 generate
-        git add services/fabricv4
+        git add equinix/services/fabricv4
         echo `git commit -m 'sync: generate client with ${{ steps.date.outputs.date }} spec'`
     - name: Create Pull Request
       id: cpr
