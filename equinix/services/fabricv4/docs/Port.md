@@ -6,6 +6,7 @@ Port is the Request Object for Creating Fabric Ports
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | 
 **type** | [**PortType**](PortType.md) |  | 
 **id** | **int** | Equinix assigned response attribute for Port Id | [optional] 
 **href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
@@ -23,7 +24,6 @@ Name | Type | Description | Notes
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 
 **cvp_id** | **str** | Equinix assigned response attribute for Unique ID for a virtual port. | [optional] 
 **operation** | [**PortOperation**](PortOperation.md) |  | [optional] 
-**account** | [**SimplifiedAccountPortResponse**](SimplifiedAccountPortResponse.md) |  | 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
 **service_type** | [**PortResponseServiceType**](PortResponseServiceType.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **direction** | [**ConnectionDirection**](ConnectionDirection.md) |  | [optional] 
 **a_side** | [**ConnectionSide**](ConnectionSide.md) |  | 
 **z_side** | [**ConnectionSide**](ConnectionSide.md) |  | 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 **additional_info** | [**List[ConnectionSideAdditionalInfo]**](ConnectionSideAdditionalInfo.md) | Connection additional information | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
 
