@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **project** | [**Project**](Project.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
 **notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) | Preferences for notifications on connection configuration or status changes | [optional] 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 
 ## Example
 
