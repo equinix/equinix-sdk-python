@@ -12,7 +12,7 @@ NAME = "equinix"
 VERSION = open('version').read()
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
-    "urllib3 >= 1.25.3, < 2.1.0",
+    "urllib3 >=2.2.2, <3.0.0",
     "python-dateutil",
     "pydantic >= 2",
     "typing-extensions >= 4.7.1",
