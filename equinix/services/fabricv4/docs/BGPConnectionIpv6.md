@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **equinix_peer_ip** | **str** | Equinix side peering ip | [optional] 
 **enabled** | **bool** | Admin status for the BGP session | 
 **outbound_as_prepend_count** | **int** | AS path prepend count | [optional] 
+**inbound_med** | **int** | inbound Multi Exit Discriminator attribute | [optional] 
+**outbound_med** | **int** | inbound Multi Exit Discriminator attribute | [optional] 
 **operation** | [**BGPConnectionOperation**](BGPConnectionOperation.md) |  | [optional] 
 
 ## Example
