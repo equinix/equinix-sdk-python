@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **connections_count** | **int** | Number of connections associated with this Access point | [optional] 
 **distinct_ipv4_prefixes_count** | **int** | Number of distinct ipv4 routes | [optional] 
 **distinct_ipv6_prefixes_count** | **int** | Number of distinct ipv6 routes | [optional] 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **change** | [**CloudRouterChange**](CloudRouterChange.md) |  | [optional] 
 **type** | [**CloudRouterPostRequestType**](CloudRouterPostRequestType.md) |  | [optional] 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **z_side** | [**ConnectionSide**](ConnectionSide.md) |  | 
 **project** | [**Project**](Project.md) |  | [optional] 
 **additional_info** | [**List[ConnectionSideAdditionalInfo]**](ConnectionSideAdditionalInfo.md) | Connection additional information | [optional] 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 
 ## Example
 
