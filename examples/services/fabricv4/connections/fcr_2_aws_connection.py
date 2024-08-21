@@ -2,7 +2,7 @@ import time
 import os
 
 from examples.services.fabricv4.utils import utils
-from equinix.services import fabricv4 as module
+from equinix.services import fabricv4
 from examples.services.fabricv4.cloud_router import cloud_router_management
 from examples.services.fabricv4.connections import connection_management
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     """
 
     utils.pr_yellow('\nCreate Fabric Cloud Router')
-    fcr_request = module.CloudRouterPostRequest(
+    fcr_request = CloudRouterPostRequest(
         type="XF_ROUTER",
         name="fcrtoawsfcr_01",
         location={"metro_code": "SV"},
@@ -47,7 +47,7 @@ if __name__ == "__main__":
         provider).
         """
     utils.pr_yellow('\nCreate Fabric Cloud Router to AWS Connection')
-    fcr2aws_request = module.ConnectionPostRequest(
+    fcr2aws_request = ConnectionPostRequest(
         type="IP_VC",
         name="fcr2aws_conn_python_01",
         bandwidth=50,
@@ -100,7 +100,7 @@ if __name__ == "__main__":
         - Direct IPv4 Configuration: Specifies the Equinix Interface IP (equinixIfaceIp) with the value '99.65.179.45/30'.
     """
     utils.pr_yellow('\nConfigure Routing Protocol Detail by UUID')
-    routing_protocol_request = module.RoutingProtocolDirectType(
+    routing_protocol_request = RoutingProtocolDirectType(
         type="DIRECT",
         directIpv4={
             "equinixIfaceIp": 'ip'

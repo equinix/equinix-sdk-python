@@ -1,5 +1,5 @@
 from examples.services.fabricv4.utils import utils
-from equinix.services import fabricv4 as module
+from equinix.services import fabricv4
 import cloud_router_management
 
 
@@ -14,18 +14,10 @@ if __name__ == "__main__":
 
     Construct a `CloudRouterPostRequest` object using the `module.CloudRouterPostRequest` class.
     This object contains the details required to create the Fabric Cloud Router.
-
-    Notes:
-    - Ensure that the necessary modules and classes (e.g., `CloudRouterPostRequest`) are imported 
-      and accessible before invoking this method.
-    - The values provided in the request object are hardcoded for this example; modify them according 
-      to your requirements.
-    - This method only constructs and logs the request object; it does not send the request to the API. 
-      You may need to call an appropriate method or function to execute the API call.
     """
 
     utils.pr_yellow('\nCreate Fabric Cloud Router')
-    fcr_request = module.CloudRouterPostRequest(
+    fcr_request = CloudRouterPostRequest(
         type="XF_ROUTER",
         name="Python_FCR",
         location={"metro_code": "SV"},
@@ -61,17 +53,9 @@ if __name__ == "__main__":
     
     This method performs an update operation on a specified Fabric Cloud Router by replacing
     the current name with a new one. It leverages the Equinix Fabric API to execute this change.
-    
-    Notes:
-    -----
-    - Ensure that the provided UUID corresponds to an existing Fabric Cloud Router.
-    - The `op` field in `CloudRouterChangeOperation` is set to "replace", which indicates that the current name 
-      of the router will be replaced with the new name.
-    - The `path` field is set to "/name", which specifies that the operation targets the name attribute of the router.
-    - The `value` field is set to the new name provided by the user.
     """
 
-    update_name = [module.CloudRouterChangeOperation(
+    update_name = [CloudRouterChangeOperation(
         op="replace",
         path="/name",
         value="panthers-test-updated1"

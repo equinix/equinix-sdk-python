@@ -16,16 +16,6 @@ def create_fcr_connection(fcr_uuid, fcr2colo_request):
         This method handles the process of establishing a connection between a Fabric Cloud Router (FCR) and a
         colocation or another FCR within the Equinix Fabric. It generates the connection request payload,
         sends the request to the Equinix Fabric API, and returns the unique identifier (UUID) of the created connection.
-
-        Returns:
-            str: The UUID of the newly created connection, which can be used for further operations like querying the connection
-                 status, updating, or deleting the connection.
-
-        Example Usage:
-            fcr_uuid = "1234-abcd-5678-efgh"
-            fcr2colo_request = FCRConnectionRequest(...)  # An instance of a request object with necessary attributes.
-            connection_uuid = create_fcr_connection(fcr_uuid, fcr2colo_request)
-            print(f"Created FCR Connection UUID: {connection_uuid}")
         """
     utils.pr_purple('\nFCR Connection Request Payload:\n')
     ic(fcr2colo_request.to_json())
@@ -48,10 +38,6 @@ def configure_routing_protocol(connection_uuid,routing_protocol_request):
         specified routing protocol request. The method leverages the Equinix Fabric API
         to create the routing protocol associated with the connection. The response from
         the API is formatted and printed for verification.
-
-        This would configure a BGP routing protocol for the specified connection, using
-        the provided ASNs and authentication key, and then print the response from the
-        Equinix Fabric API.
         """
     rp_type = fabricv4.RoutingProtocolBase(routing_protocol_request)
     client = configure_client_credentials.get_equinix_fabric_client()

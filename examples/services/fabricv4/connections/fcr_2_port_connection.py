@@ -1,7 +1,7 @@
 import time
 
 from examples.services.fabricv4.utils import utils
-from equinix.services import fabricv4 as module
+from equinix.services import fabricv4
 from examples.services.fabricv4.cloud_router import cloud_router_management
 from examples.services.fabricv4.connections import connection_management
 
@@ -12,12 +12,9 @@ if __name__ == "__main__":
     This method sends a request to create a new Fabric Cloud Router with specified configurations 
     such as router type, name, location, package, and associated project and account details. 
     Notifications are also configured to receive updates regarding the router.
-
-    Construct a `CloudRouterPostRequest` object using the `module.CloudRouterPostRequest` class.
-    This object contains the details required to create the Fabric Cloud Router.
     """
     utils.pr_yellow('\nCreate Fabric Cloud Router')
-    fcr_request = module.CloudRouterPostRequest(
+    fcr_request = CloudRouterPostRequest(
         type="XF_ROUTER",
         name="fcrtoportfcr_01",
         location={"metro_code": "SV"},
@@ -44,7 +41,7 @@ if __name__ == "__main__":
         bandwidth, redundancy priority, and the details of both the A-side (Cloud Router) and Z-side (Equinix Port).
         """
     utils.pr_yellow('\nCreate Fabric Cloud Router to Colo Connection')
-    fcr2colo_request = module.ConnectionPostRequest(
+    fcr2colo_request = ConnectionPostRequest(
         type="IP_VC",
         name="fcr2port_conn_python_01",
         bandwidth=10,
@@ -83,18 +80,9 @@ if __name__ == "__main__":
     """
     Configures a routing protocol for a Fabric Cloud Router (FCR) to Port connection identified by the provided 
     connection UUID.
-
-        This method is designed to configure the routing protocol details for an existing connection between a Fabric 
-        Cloud Router and Port. It uses the `connection_uuid` to identify the connection and applies the specified 
-        routing protocol settings.
-
-        The routing protocol configuration includes the following details:
-        - Protocol Type: DIRECT
-        - Direct IPv4 Configuration: Specifies the Equinix Interface IP (equinixIfaceIp) with the value 
-        '99.65.179.9/30'.
     """
     utils.pr_yellow('\nConfigure Routing Protocol Detail by UUID')
-    routing_protocol_request = module.RoutingProtocolDirectType(
+    routing_protocol_request = RoutingProtocolDirectType(
         type="DIRECT",
         directIpv4={
             "equinixIfaceIp": 'ip'
@@ -118,7 +106,7 @@ if __name__ == "__main__":
     identified by its UUID, passed as the `fcr2colo` parameter.
     """
     utils.pr_yellow('\nUpdate Name Details Using Connection_UUID')
-    port_conn_name_update = [module.ConnectionChangeOperation(
+    port_conn_name_update = [ConnectionChangeOperation(
             op="replace",
             path="/name",
             value="fcr2PortUpdate"
@@ -128,13 +116,9 @@ if __name__ == "__main__":
 
     """
     Updates the bandwidth details of a connection using the provided Connection UUID.
-
-    This function changes the name attribute of an existing connection name to 50 Mbps 
-    by performing a "replace" operation on the connection's bandwidth field. The connection is 
-    identified by its UUID, passed as the `fcr2colo` parameter.
     """
     utils.pr_yellow('\nUpdate Bandwidth Details Using Connection_UUID')
-    port_conn_bandwidth_update = [module.ConnectionChangeOperation(
+    port_conn_bandwidth_update = [ConnectionChangeOperation(
             op="replace",
             path="/bandwidth",
             value=50
@@ -144,12 +128,6 @@ if __name__ == "__main__":
 
     """
     Deletes a Fabric Cloud Router (FCR) to Port Colo connection.
-
-    This function performs the following steps:
-    1. Prints a message indicating that the deletion of the Fabric Cloud Router 
-       to Port connection is about to begin. The message is printed in yellow for visibility.
-    2. Calls the `delete_connection` method from the `connection_management` module 
-       to delete the specified Fabric Cloud Router to Port connection.
     """
     utils.pr_yellow('\nDelete Fabric Cloud Router to Colo Connection')
     time.sleep(60)
@@ -157,12 +135,6 @@ if __name__ == "__main__":
 
     """
     Deletes a Fabric Cloud Router (FCR) with the specified UUID.
-
-    This method handles the deletion of a Fabric Cloud Router by calling the
-    relevant function in the `cloud_router_management` module. It first prints
-    a message to the console indicating the start of the deletion process,
-    using a yellow color for emphasis. After that, it proceeds to delete the
-    specified Fabric Cloud Router.
     """
     utils.pr_yellow('\nDelete Fabric Cloud Router')
     cloud_router_management.delete_fcr(fcr_uuid)
