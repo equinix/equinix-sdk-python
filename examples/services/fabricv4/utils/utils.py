@@ -21,10 +21,10 @@ def pr_purple(skk):
 
 def custom_serializer(obj):
     """
-        Custom JSON serializer to handle various object types.
-        - Handles Enums by returning their value.
-        - Converts datetime objects to ISO format.
-        - Converts objects with `__dict__` attribute to dictionary representation.
+    Custom JSON serializer to handle various object types.
+    - Handles Enums by returning their value.
+    - Converts datetime objects to ISO format.
+    - Converts objects with `__dict__` attribute to dictionary representation.
     """
     if isinstance(obj, Enum):
         return obj.value

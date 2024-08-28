@@ -8,14 +8,14 @@ from equinix.services import fabricv4
 
 def get_equinix_fabric_client():
     """
-       Initializes and returns an Equinix Fabric API client using OAuth2 authentication.
+    Initializes and returns an Equinix Fabric API client using OAuth2 authentication.
 
-       This method is designed to authenticate with the Equinix Fabric API using OAuth2
-       client credentials flow. It retrieves the client ID and client secret from the
-       environment variables `EQUINIX_API_CLIENTID` and `EQUINIX_API_CLIENTSECRET`. These
-       credentials are then used to obtain an OAuth2 access token, which is subsequently
-       used to configure the Equinix Fabric API client.
-       """
+    This method is designed to authenticate with the Equinix Fabric API using OAuth2
+    client credentials flow. It retrieves the client ID and client secret from the
+    environment variables `EQUINIX_API_CLIENTID` and `EQUINIX_API_CLIENTSECRET`. These
+    credentials are then used to obtain an OAuth2 access token, which is subsequently
+    used to configure the Equinix Fabric API client.
+    """
 
     client_id = os.getenv("EQUINIX_API_CLIENT_ID")
     client_secret = os.getenv("EQUINIX_API_CLIENT_SECRET")

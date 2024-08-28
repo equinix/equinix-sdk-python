@@ -33,8 +33,8 @@ if __name__ == "__main__":
     fcr_uuid = cloud_router_management.create_fcr(fcr_request)
 
     """
-        Create a Fabric Cloud Router (FCR) to AWS Connection.
-        """
+    Create a Fabric Cloud Router (FCR) to AWS Connection.
+    """
     utils.pr_yellow('\nCreate Fabric Cloud Router to AWS Connection')
     fcr2aws_request = ConnectionPostRequest(
         type="IP_VC",
@@ -77,7 +77,8 @@ if __name__ == "__main__":
     )
     fcr2aws = connection_management.create_fcr_connection(fcr_uuid, fcr2aws_request)
 
-    """Configures a routing protocol for a Fabric Cloud Router (FCR) to AWS connection identified by the provided 
+    """
+    Configures a routing protocol for a Fabric Cloud Router (FCR) to AWS connection identified by the provided 
     connection UUID.
     """
     utils.pr_yellow('\nConfigure Routing Protocol Detail by UUID')

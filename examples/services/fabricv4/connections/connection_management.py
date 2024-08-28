@@ -11,12 +11,12 @@ from equinix.services import fabricv4
 
 def create_fcr_connection(fcr_uuid, fcr2colo_request):
     """
-        Create a connection for a Fabric Cloud Router (FCR) within the Equinix Fabric environment.
+    Create a connection for a Fabric Cloud Router (FCR) within the Equinix Fabric environment.
 
-        This method handles the process of establishing a connection between a Fabric Cloud Router (FCR) and a
-        colocation or another FCR within the Equinix Fabric. It generates the connection request payload,
-        sends the request to the Equinix Fabric API, and returns the unique identifier (UUID) of the created connection.
-        """
+    This method handles the process of establishing a connection between a Fabric Cloud Router (FCR) and a
+    colocation or another FCR within the Equinix Fabric. It generates the connection request payload,
+    sends the request to the Equinix Fabric API, and returns the unique identifier (UUID) of the created connection.
+    """
     utils.pr_purple('\nFCR Connection Request Payload:\n')
     ic(fcr2colo_request.to_json())
     client = configure_client_credentials.get_equinix_fabric_client()
@@ -32,17 +32,17 @@ def create_fcr_connection(fcr_uuid, fcr2colo_request):
 
 def configure_routing_protocol(connection_uuid,routing_protocol_request):
     """
-        Configures a routing protocol for a specified connection in the Equinix Fabric.
+    Configures a routing protocol for a specified connection in the Equinix Fabric.
 
-        This method sets up a routing protocol for the given connection UUID using the
-        specified routing protocol request. The method leverages the Equinix Fabric API
-        to create the routing protocol associated with the connection. The response from
-        the API is formatted and printed for verification.
+    This method sets up a routing protocol for the given connection UUID using the
+    specified routing protocol request. The method leverages the Equinix Fabric API
+    to create the routing protocol associated with the connection. The response from
+    the API is formatted and printed for verification.
 
-        This would configure a BGP routing protocol for the specified connection, using
-        the provided ASNs and authentication key, and then print the response from the
-        Equinix Fabric API.
-        """
+    This would configure a BGP routing protocol for the specified connection, using
+    the provided ASNs and authentication key, and then print the response from the
+    Equinix Fabric API.
+    """
     rp_type = fabricv4.RoutingProtocolBase(routing_protocol_request)
     client = configure_client_credentials.get_equinix_fabric_client()
     routing_protocol = fabricv4.RoutingProtocolsApi(client)
@@ -55,12 +55,12 @@ def configure_routing_protocol(connection_uuid,routing_protocol_request):
 
 def get_connection_details_by_uuid(fcr_uuid):
     """
-        Retrieve connection details using the unique identifier (UUID) of a Fabric Cloud Router (FCR) connection.
+    Retrieve connection details using the unique identifier (UUID) of a Fabric Cloud Router (FCR) connection.
 
-        This method interacts with the Equinix Fabric API to fetch detailed information about a specific connection
-        identified by its UUID. The response is then formatted into a JSON string for easier readability and logged
-        for debugging purposes.
-        """
+    This method interacts with the Equinix Fabric API to fetch detailed information about a specific connection
+    identified by its UUID. The response is then formatted into a JSON string for easier readability and logged
+    for debugging purposes.
+    """
     client = configure_client_credentials.get_equinix_fabric_client()
     cloudrouterapicall = fabricv4.ConnectionsApi(client)
     response = dict(cloudrouterapicall.get_connection_by_uuid(fcr_uuid))
@@ -72,13 +72,13 @@ def get_connection_details_by_uuid(fcr_uuid):
 
 def update_connection_details_by_uuid(connection_uuid,update_payload):
     """
-        Updates the details of an existing connection in Equinix Fabric using its UUID.
+    Updates the details of an existing connection in Equinix Fabric using its UUID.
 
-        This method sends an update request to the Equinix Fabric API to modify the details of a
-        connection specified by its UUID. The updated details are provided through the update_payload
-        parameter. After the update, the method formats the response into a JSON string and logs
-        the updated connection details.
-        """
+    This method sends an update request to the Equinix Fabric API to modify the details of a
+    connection specified by its UUID. The updated details are provided through the update_payload
+    parameter. After the update, the method formats the response into a JSON string and logs
+    the updated connection details.
+    """
     client = configure_client_credentials.get_equinix_fabric_client()
     cloudrouterapicall = fabricv4.ConnectionsApi(client)
     response = dict(cloudrouterapicall.update_connection_by_uuid(connection_uuid,update_payload))
@@ -90,12 +90,12 @@ def update_connection_details_by_uuid(connection_uuid,update_payload):
 
 def delete_connection(con_uuid):
     """
-        Deletes a connection from the Equinix Fabric using the connection UUID.
+    Deletes a connection from the Equinix Fabric using the connection UUID.
 
-        This method interacts with the Equinix Fabric API to delete a specified connection.
-        The method retrieves a configured client for the Equinix Fabric, utilizes the
-        ConnectionsApi to perform the deletion, and then logs the response.
-        """
+    This method interacts with the Equinix Fabric API to delete a specified connection.
+    The method retrieves a configured client for the Equinix Fabric, utilizes the
+    ConnectionsApi to perform the deletion, and then logs the response.
+    """
     client = configure_client_credentials.get_equinix_fabric_client()
     connections = fabricv4.ConnectionsApi(client)
     response = connections.delete_connection_by_uuid_with_http_info(con_uuid).json

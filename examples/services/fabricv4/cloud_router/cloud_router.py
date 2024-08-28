@@ -71,4 +71,3 @@ if __name__ == "__main__":
     """
     utils.pr_yellow('\nDelete Fabric Cloud Router')
     cloud_router_management.delete_fcr(fcr_uuid)
-

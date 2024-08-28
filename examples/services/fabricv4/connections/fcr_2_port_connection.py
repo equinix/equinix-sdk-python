@@ -31,8 +31,8 @@ if __name__ == "__main__":
     fcr_uuid = cloud_router_management.create_fcr(fcr_request)
 
     """
-        Create a Fabric Cloud Router (FCR) to Colo Port Connection.
-        """
+    Create a Fabric Cloud Router (FCR) to Colo Port Connection.
+    """
     utils.pr_yellow('\nCreate Fabric Cloud Router to Colo Connection')
     fcr2colo_request = ConnectionPostRequest(
         type="IP_VC",
