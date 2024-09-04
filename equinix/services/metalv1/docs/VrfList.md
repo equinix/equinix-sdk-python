@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** |  | [optional] 
+**meta** | [**Meta**](Meta.md) |  | [optional] 
 **vrfs** | [**List[Vrf]**](Vrf.md) |  | [optional] 
 
 ## Example

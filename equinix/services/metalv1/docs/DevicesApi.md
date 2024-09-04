@@ -1251,7 +1251,7 @@ Just like [**find_project_devices**](DevicesApi.md#find_project_devices) but fet
 
 Retrieve device traffic
 
-Returns traffic for a specific device.
+Returns the total amount of inbound or outbound traffic for a specific device. The default time period is 1 hour.  Please note the results capture all network traffic for the server, but not all traffic may come from or be destined to the Internet and may be non-billable. Only Internet bound traffic is charged. 
 
 ### Example
 

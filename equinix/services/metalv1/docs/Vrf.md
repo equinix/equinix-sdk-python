@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **description** | **str** | Optional field that can be set to describe the VRF | [optional] 
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**ip_ranges** | **List[str]** | A list of CIDR network addresses. Like [\&quot;10.0.0.0/16\&quot;, \&quot;2001:d78::/56\&quot;]. | [optional] 
+**ip_ranges** | **List[str]** | A list of CIDR network addresses. Like [\&quot;10.0.0.0/16\&quot;, \&quot;2001:d78::/59\&quot;]. | [optional] 
 **local_asn** | **int** | A 4-byte ASN associated with the VRF. | [optional] 
 **metro** | [**Metro**](Metro.md) |  | [optional] 
 **name** | **str** |  | [optional] 

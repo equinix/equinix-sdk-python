@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_account_name** | **str** | The billing account name of the Equinix Fabric account. | [optional] 
-**contact_email** | **str** | The preferred email used for communication and notifications about the Equinix Fabric interconnection. Required when using a Project API key. Optional and defaults to the primary user email address when using a User API key. | [optional] 
+**contact_email** | **str** | The preferred email used for communication and notifications about the Equinix Fabric interconnection. Optional and defaults to the primary user email address when using a User API key or the organization owner email address when using a Project API key. | [optional] 
 **description** | **str** |  | [optional] 
 **facility_id** | **str** |  | [optional] 
 **href** | **str** |  | [optional] 

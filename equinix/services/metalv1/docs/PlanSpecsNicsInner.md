@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
 **href** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** | Values may include &#39;1Gbps&#39;, &#39;10Gbps&#39;, &#39;25Gbps&#39; | [optional] 
 
 ## Example
 

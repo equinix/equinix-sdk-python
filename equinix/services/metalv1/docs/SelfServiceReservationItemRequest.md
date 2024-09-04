@@ -5,12 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** |  | [optional] 
 **href** | **str** |  | [optional] 
-**metro_id** | **str** |  | [optional] 
-**plan_id** | **str** |  | [optional] 
-**quantity** | **int** |  | [optional] 
-**term** | **str** |  | [optional] 
+**metro_id** | **str** | Metro ID of the item. | [optional] 
+**plan_id** | **str** | Plan ID of the item. | [optional] 
+**quantity** | **int** | Number of items. | [optional] 
+**term** | **str** | Contract term of the item. | [optional] 
 
 ## Example
 

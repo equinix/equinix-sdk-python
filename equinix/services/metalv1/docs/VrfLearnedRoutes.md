@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** |  | [optional] 
-**learned_routes** | [**List[VrfLearnedRoutesLearnedRoutesInner]**](VrfLearnedRoutesLearnedRoutesInner.md) |  | [optional] 
+**origin_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
+**prefix** | **str** |  | [optional] 
 
 ## Example
 

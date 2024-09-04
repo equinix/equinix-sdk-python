@@ -4,15 +4,106 @@ All URIs are relative to *https://api.equinix.com/metal/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_bgp_dynamic_neighbor**](MetalGatewaysApi.md#create_bgp_dynamic_neighbor) | **POST** /metal-gateways/{id}/bgp-dynamic-neighbors | Create a VRF BGP Dynamic Neighbor range
 [**create_metal_gateway**](MetalGatewaysApi.md#create_metal_gateway) | **POST** /projects/{project_id}/metal-gateways | Create a metal gateway
 [**create_metal_gateway_elastic_ip**](MetalGatewaysApi.md#create_metal_gateway_elastic_ip) | **POST** /metal-gateways/{id}/ips | Create a Metal Gateway Elastic IP
 [**delete_metal_gateway**](MetalGatewaysApi.md#delete_metal_gateway) | **DELETE** /metal-gateways/{id} | Deletes the metal gateway
 [**find_metal_gateway_by_id**](MetalGatewaysApi.md#find_metal_gateway_by_id) | **GET** /metal-gateways/{id} | Returns the metal gateway
 [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project) | **GET** /projects/{project_id}/metal-gateways | Returns all metal gateways for a project
 [**find_metal_gateways_by_project_all_pages**](MetalGatewaysApi.md#find_metal_gateways_by_project_all_pages) | **GET** /projects/{project_id}/metal-gateways | Returns all metal gateways for a project, fetches all the pages
+[**get_bgp_dynamic_neighbors**](MetalGatewaysApi.md#get_bgp_dynamic_neighbors) | **GET** /metal-gateways/{id}/bgp-dynamic-neighbors | List BGP Dynamic Neighbors
 [**get_metal_gateway_elastic_ips**](MetalGatewaysApi.md#get_metal_gateway_elastic_ips) | **GET** /metal-gateways/{id}/ips | List Metal Gateway Elastic IPs
 
 
+# **create_bgp_dynamic_neighbor**
+> BgpDynamicNeighbor create_bgp_dynamic_neighbor(id, bgp_dynamic_neighbor_create_input, include=include, exclude=exclude)
+
+Create a VRF BGP Dynamic Neighbor range
+
+Create a VRF BGP Dynamic Neighbor range.  BGP Dynamic Neighbor records are limited to 2 per Virtual Network. 
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix_metal
+from equinix_metal.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
+from equinix_metal.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
+from equinix_metal.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix_metal.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix_metal.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix_metal.MetalGatewaysApi(api_client)
+    id = 'id_example' # str | Metal Gateway UUID
+    bgp_dynamic_neighbor_create_input = equinix_metal.BgpDynamicNeighborCreateInput() # BgpDynamicNeighborCreateInput | 
+    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
+    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
+
+    try:
+        # Create a VRF BGP Dynamic Neighbor range
+        api_response = api_instance.create_bgp_dynamic_neighbor(id, bgp_dynamic_neighbor_create_input, include=include, exclude=exclude)
+        print("The response of MetalGatewaysApi->create_bgp_dynamic_neighbor:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetalGatewaysApi->create_bgp_dynamic_neighbor: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Metal Gateway UUID | 
+ **bgp_dynamic_neighbor_create_input** | [**BgpDynamicNeighborCreateInput**](BgpDynamicNeighborCreateInput.md)|  | 
+ **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
+ **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
+
+### Return type
+
+[**BgpDynamicNeighbor**](BgpDynamicNeighbor.md)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_metal_gateway**
 > FindMetalGatewayById200Response create_metal_gateway(project_id, create_metal_gateway_request, include=include, exclude=exclude, page=page, per_page=per_page)
 
@@ -453,6 +544,90 @@ Name | Type | Description  | Notes
 # **find_metal_gateways_by_project_all_pages**
 > MetalGatewayList find_metal_gateways_by_project_all_pages(project_id, include=include, exclude=exclude, per_page=per_page)
 Just like [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_metal_gateways_by_project**](MetalGatewaysApi.md#find_metal_gateways_by_project).
+# **get_bgp_dynamic_neighbors**
+> BgpDynamicNeighborList get_bgp_dynamic_neighbors(id, include=include, exclude=exclude)
+
+List BGP Dynamic Neighbors
+
+Returns the list of VRF BGP Dynamic Neighbors for this Metal Gateway
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix_metal
+from equinix_metal.models.bgp_dynamic_neighbor_list import BgpDynamicNeighborList
+from equinix_metal.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix_metal.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix_metal.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix_metal.MetalGatewaysApi(api_client)
+    id = 'id_example' # str | Metal Gateway UUID
+    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
+    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
+
+    try:
+        # List BGP Dynamic Neighbors
+        api_response = api_instance.get_bgp_dynamic_neighbors(id, include=include, exclude=exclude)
+        print("The response of MetalGatewaysApi->get_bgp_dynamic_neighbors:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetalGatewaysApi->get_bgp_dynamic_neighbors: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Metal Gateway UUID | 
+ **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
+ **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
+
+### Return type
+
+[**BgpDynamicNeighborList**](BgpDynamicNeighborList.md)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **get_metal_gateway_elastic_ips**
 > IPAssignmentList get_metal_gateway_elastic_ips(id, include=include, exclude=exclude)
 

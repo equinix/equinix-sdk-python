@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | [optional] 
+**category** | **str** | Values may include &#39;boot&#39;, &#39;cache&#39;, &#39;storage&#39; | [optional] 
 **count** | **int** |  | [optional] 
 **href** | **str** |  | [optional] 
 **size** | **str** |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | **str** | Values may include &#39;HDD&#39;, &#39;SSD&#39;, &#39;NVME&#39; | [optional] 
 
 ## Example
 

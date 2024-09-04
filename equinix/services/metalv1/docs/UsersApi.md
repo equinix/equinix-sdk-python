@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> User create_user(user_create_input, include=include, exclude=exclude)
+> create_user(user_create_input, include=include, exclude=exclude)
 
 Create a user
 
@@ -27,7 +27,6 @@ Creates a user.
 
 ```python
 import equinix_metal
-from equinix_metal.models.user import User
 from equinix_metal.models.user_create_input import UserCreateInput
 from equinix_metal.rest import ApiException
 from pprint import pprint
@@ -59,9 +58,7 @@ with equinix_metal.ApiClient(configuration) as api_client:
 
     try:
         # Create a user
-        api_response = api_instance.create_user(user_create_input, include=include, exclude=exclude)
-        print("The response of UsersApi->create_user:\n")
-        pprint(api_response)
+        api_instance.create_user(user_create_input, include=include, exclude=exclude)
     except Exception as e:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
@@ -79,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+void (empty response body)
 
 ### Authorization
 
@@ -94,7 +91,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | created |  -  |
+**202** | accepted |  -  |
 **401** | unauthorized |  -  |
 **422** | unprocessable entity |  -  |
 

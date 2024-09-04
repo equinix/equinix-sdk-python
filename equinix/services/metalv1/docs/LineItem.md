@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **href** | **str** |  | [optional] 
 **item_type** | **str** |  | [optional] 
 **location** | **str** |  | [optional] 
-**plan** | [**Plan**](Plan.md) |  | [optional] 
+**plan** | [**PlanIdName**](PlanIdName.md) |  | [optional] 
 **plan_id** | **str** |  | [optional] 
 **project** | [**ProjectIdName**](ProjectIdName.md) |  | [optional] 
 **project_id** | **str** |  | [optional] 

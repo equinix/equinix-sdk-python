@@ -5,7 +5,6 @@ All URIs are relative to *https://api.equinix.com/metal/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bgp_dynamic_neighbors_id_get**](VRFsApi.md#bgp_dynamic_neighbors_id_get) | **GET** /bgp-dynamic-neighbors/{id} | Retrieve a BGP Dynamic Neighbor
-[**create_bgp_dynamic_neighbor**](VRFsApi.md#create_bgp_dynamic_neighbor) | **POST** /metal-gateways/{id}/bgp-dynamic-neighbors | Create a VRF BGP Dynamic Neighbor range
 [**create_vrf**](VRFsApi.md#create_vrf) | **POST** /projects/{id}/vrfs | Create a new VRF in the specified project
 [**create_vrf_route**](VRFsApi.md#create_vrf_route) | **POST** /vrfs/{id}/routes | Create a VRF route
 [**delete_bgp_dynamic_neighbor_by_id**](VRFsApi.md#delete_bgp_dynamic_neighbor_by_id) | **DELETE** /bgp-dynamic-neighbors/{id} | Delete a VRF BGP Dynamic Neighbor
@@ -16,9 +15,8 @@ Method | HTTP request | Description
 [**find_vrf_ip_reservations**](VRFsApi.md#find_vrf_ip_reservations) | **GET** /vrfs/{id}/ips | Retrieve all VRF IP Reservations in the VRF
 [**find_vrf_route_by_id**](VRFsApi.md#find_vrf_route_by_id) | **GET** /routes/{id} | Retrieve a VRF Route
 [**find_vrfs**](VRFsApi.md#find_vrfs) | **GET** /projects/{id}/vrfs | Retrieve all VRFs in the project
-[**get_bgp_dynamic_neighbors**](VRFsApi.md#get_bgp_dynamic_neighbors) | **GET** /metal-gateways/{id}/bgp-dynamic-neighbors | List BGP Dynamic Neighbors
-[**get_vrf_bgp_neighbors**](VRFsApi.md#get_vrf_bgp_neighbors) | **GET** /vrfs/{id}/bgp-neighbors | Retreive BGP neighbor states for the VRF
-[**get_vrf_learned_routes**](VRFsApi.md#get_vrf_learned_routes) | **GET** /vrfs/{id}/learned-routes | Retreive learned L3 routes within the VRF
+[**get_vrf_bgp_neighbors**](VRFsApi.md#get_vrf_bgp_neighbors) | **GET** /vrfs/{id}/bgp-neighbors | Retrieve BGP neighbor states for the VRF
+[**get_vrf_learned_routes**](VRFsApi.md#get_vrf_learned_routes) | **GET** /vrfs/{id}/learned-routes | Retrieve learned L3 routes within the VRF
 [**get_vrf_routes**](VRFsApi.md#get_vrf_routes) | **GET** /vrfs/{id}/routes | Retrieve all routes in the VRF
 [**update_vrf**](VRFsApi.md#update_vrf) | **PUT** /vrfs/{id} | Update the VRF
 [**update_vrf_route_by_id**](VRFsApi.md#update_vrf_route_by_id) | **PUT** /routes/{id} | Update a VRF Route
@@ -106,95 +104,6 @@ Name | Type | Description  | Notes
 **200** | OK |  -  |
 **401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **create_bgp_dynamic_neighbor**
-> BgpDynamicNeighbor create_bgp_dynamic_neighbor(id, bgp_dynamic_neighbor_create_input, include=include, exclude=exclude)
-
-Create a VRF BGP Dynamic Neighbor range
-
-Create a VRF BGP Dynamic Neighbor range.  BGP Dynamic Neighbor records are limited to 2 per Virtual Network.  Notice: VRFs are a test feature currently under active development, and only available to certain users. Please contact Customer Success for more information. 
-
-### Example
-
-* Api Key Authentication (x_auth_token):
-
-```python
-import equinix_metal
-from equinix_metal.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
-from equinix_metal.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
-from equinix_metal.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
-    host = "https://api.equinix.com/metal/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x_auth_token
-configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = equinix_metal.VRFsApi(api_client)
-    id = 'id_example' # str | Metal Gateway UUID
-    bgp_dynamic_neighbor_create_input = equinix_metal.BgpDynamicNeighborCreateInput() # BgpDynamicNeighborCreateInput | 
-    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
-    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
-
-    try:
-        # Create a VRF BGP Dynamic Neighbor range
-        api_response = api_instance.create_bgp_dynamic_neighbor(id, bgp_dynamic_neighbor_create_input, include=include, exclude=exclude)
-        print("The response of VRFsApi->create_bgp_dynamic_neighbor:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VRFsApi->create_bgp_dynamic_neighbor: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Metal Gateway UUID | 
- **bgp_dynamic_neighbor_create_input** | [**BgpDynamicNeighborCreateInput**](BgpDynamicNeighborCreateInput.md)|  | 
- **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
- **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
-
-### Return type
-
-[**BgpDynamicNeighbor**](BgpDynamicNeighbor.md)
-
-### Authorization
-
-[x_auth_token](../README.md#x_auth_token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Created |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_vrf**
@@ -290,7 +199,7 @@ Name | Type | Description  | Notes
 
 Create a VRF route
 
-Create a route in a VRF. Currently only static default routes are supported.  Notice: VRFs are a test feature currently under active development, and only available to certain users. Please contact Customer Success for more information. 
+Create a route in a VRF. Currently only static default routes are supported. 
 
 ### Example
 
@@ -1047,94 +956,10 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **get_bgp_dynamic_neighbors**
-> BgpDynamicNeighborList get_bgp_dynamic_neighbors(id, include=include, exclude=exclude)
-
-List BGP Dynamic Neighbors
-
-Returns the list of VRF BGP Dynamic Neighbors for this Metal Gateway
-
-### Example
-
-* Api Key Authentication (x_auth_token):
-
-```python
-import equinix_metal
-from equinix_metal.models.bgp_dynamic_neighbor_list import BgpDynamicNeighborList
-from equinix_metal.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = equinix_metal.Configuration(
-    host = "https://api.equinix.com/metal/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x_auth_token
-configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with equinix_metal.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = equinix_metal.VRFsApi(api_client)
-    id = 'id_example' # str | Metal Gateway UUID
-    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
-    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
-
-    try:
-        # List BGP Dynamic Neighbors
-        api_response = api_instance.get_bgp_dynamic_neighbors(id, include=include, exclude=exclude)
-        print("The response of VRFsApi->get_bgp_dynamic_neighbors:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VRFsApi->get_bgp_dynamic_neighbors: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| Metal Gateway UUID | 
- **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
- **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
-
-### Return type
-
-[**BgpDynamicNeighborList**](BgpDynamicNeighborList.md)
-
-### Authorization
-
-[x_auth_token](../README.md#x_auth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **get_vrf_bgp_neighbors**
-> VrfBGPNeighbors get_vrf_bgp_neighbors(id)
+> VrfBGPNeighborsList get_vrf_bgp_neighbors(id)
 
-Retreive BGP neighbor states for the VRF
+Retrieve BGP neighbor states for the VRF
 
 Provides BGP peering information such as the IP and state of the neighbor.
 
@@ -1144,7 +969,7 @@ Provides BGP peering information such as the IP and state of the neighbor.
 
 ```python
 import equinix_metal
-from equinix_metal.models.vrf_bgp_neighbors import VrfBGPNeighbors
+from equinix_metal.models.vrf_bgp_neighbors_list import VrfBGPNeighborsList
 from equinix_metal.rest import ApiException
 from pprint import pprint
 
@@ -1172,7 +997,7 @@ with equinix_metal.ApiClient(configuration) as api_client:
     id = 'id_example' # str | VRF UUID
 
     try:
-        # Retreive BGP neighbor states for the VRF
+        # Retrieve BGP neighbor states for the VRF
         api_response = api_instance.get_vrf_bgp_neighbors(id)
         print("The response of VRFsApi->get_vrf_bgp_neighbors:\n")
         pprint(api_response)
@@ -1191,7 +1016,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VrfBGPNeighbors**](VrfBGPNeighbors.md)
+[**VrfBGPNeighborsList**](VrfBGPNeighborsList.md)
 
 ### Authorization
 
@@ -1212,9 +1037,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **get_vrf_learned_routes**
-> VrfLearnedRoutes get_vrf_learned_routes(id)
+> VrfLearnedRoutesList get_vrf_learned_routes(id)
 
-Retreive learned L3 routes within the VRF
+Retrieve learned L3 routes within the VRF
 
 Provides information about learned routes for the VRF. The VRF builds this information dynamically though BGP from other routers in the network.
 
@@ -1224,7 +1049,7 @@ Provides information about learned routes for the VRF. The VRF builds this infor
 
 ```python
 import equinix_metal
-from equinix_metal.models.vrf_learned_routes import VrfLearnedRoutes
+from equinix_metal.models.vrf_learned_routes_list import VrfLearnedRoutesList
 from equinix_metal.rest import ApiException
 from pprint import pprint
 
@@ -1252,7 +1077,7 @@ with equinix_metal.ApiClient(configuration) as api_client:
     id = 'id_example' # str | VRF UUID
 
     try:
-        # Retreive learned L3 routes within the VRF
+        # Retrieve learned L3 routes within the VRF
         api_response = api_instance.get_vrf_learned_routes(id)
         print("The response of VRFsApi->get_vrf_learned_routes:\n")
         pprint(api_response)
@@ -1271,7 +1096,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VrfLearnedRoutes**](VrfLearnedRoutes.md)
+[**VrfLearnedRoutesList**](VrfLearnedRoutesList.md)
 
 ### Authorization
 

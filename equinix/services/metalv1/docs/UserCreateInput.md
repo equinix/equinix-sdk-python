@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | **bytearray** |  | [optional] 
 **company_name** | **str** |  | [optional] 
 **company_url** | **str** |  | [optional] 
 **customdata** | **object** |  | [optional] 

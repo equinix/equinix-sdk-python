@@ -5,8 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bgp_neighbors** | [**List[VrfBGPNeighborsBgpNeighborsInner]**](VrfBGPNeighborsBgpNeighborsInner.md) |  | [optional] 
 **href** | **str** |  | [optional] 
+**peer_as** | **int** | The ASN of the peer that advertised the prefix. | [optional] 
+**peer_ip** | **str** |  | [optional] 
+**state** | **str** | The current status of the connection to the BGP peer. State is either up or down. | [optional] 
 
 ## Example
 
