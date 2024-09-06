@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_plans_by_project**
-> PlanList find_plans_by_project(id, include=include, exclude=exclude)
+> PlanList1 find_plans_by_project(id, include=include, exclude=exclude)
 
 Retrieve all plans visible by the project
 
@@ -108,7 +108,7 @@ Returns a listing of available plans for the given project
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.plan_list import PlanList
+from equinix.services.metalv1.models.plan_list1 import PlanList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlanList**](PlanList.md)
+[**PlanList1**](PlanList1.md)
 
 ### Authorization
 

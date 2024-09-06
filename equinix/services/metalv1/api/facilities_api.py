@@ -19,6 +19,8 @@ from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.metalv1.models.facility_list import FacilityList
+from equinix.services.metalv1.models.facility_list1 import FacilityList1
+from equinix.services.metalv1.models.facility_list2 import FacilityList2
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
 from equinix.services.metalv1.api_response import ApiResponse
@@ -337,7 +339,7 @@ class FacilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> FacilityList:
+    ) -> FacilityList1:
         """(Deprecated) Retrieve all facilities visible by the organization
 
         Returns a listing of available datacenters for the given organization
@@ -382,7 +384,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -416,7 +418,7 @@ class FacilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[FacilityList]:
+    ) -> ApiResponse[FacilityList1]:
         """(Deprecated) Retrieve all facilities visible by the organization
 
         Returns a listing of available datacenters for the given organization
@@ -461,7 +463,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -540,7 +542,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -641,7 +643,7 @@ class FacilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> FacilityList:
+    ) -> FacilityList2:
         """(Deprecated) Retrieve all facilities visible by the project
 
         Returns a listing of available datacenters for the given project
@@ -686,7 +688,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -720,7 +722,7 @@ class FacilitiesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[FacilityList]:
+    ) -> ApiResponse[FacilityList2]:
         """(Deprecated) Retrieve all facilities visible by the project
 
         Returns a listing of available datacenters for the given project
@@ -765,7 +767,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -844,7 +846,7 @@ class FacilitiesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "FacilityList",
+            '200': "FacilityList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",

@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_facilities_by_organization**
-> FacilityList find_facilities_by_organization(id, include=include, exclude=exclude)
+> FacilityList1 find_facilities_by_organization(id, include=include, exclude=exclude)
 
 Retrieve all facilities visible by the organization
 
@@ -103,7 +103,7 @@ Returns a listing of available datacenters for the given organization
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.facility_list import FacilityList
+from equinix.services.metalv1.models.facility_list1 import FacilityList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FacilityList**](FacilityList.md)
+[**FacilityList1**](FacilityList1.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_facilities_by_project**
-> FacilityList find_facilities_by_project(id, include=include, exclude=exclude)
+> FacilityList2 find_facilities_by_project(id, include=include, exclude=exclude)
 
 Retrieve all facilities visible by the project
 
@@ -188,7 +188,7 @@ Returns a listing of available datacenters for the given project
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.facility_list import FacilityList
+from equinix.services.metalv1.models.facility_list2 import FacilityList2
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FacilityList**](FacilityList.md)
+[**FacilityList2**](FacilityList2.md)
 
 ### Authorization
 

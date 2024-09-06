@@ -19,7 +19,11 @@ from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.metalv1.models.event import Event
+from equinix.services.metalv1.models.event1 import Event1
+from equinix.services.metalv1.models.event2 import Event2
 from equinix.services.metalv1.models.event_list import EventList
+from equinix.services.metalv1.models.event_list1 import EventList1
+from equinix.services.metalv1.models.event_list2 import EventList2
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
 from equinix.services.metalv1.api_response import ApiResponse
@@ -1835,7 +1839,7 @@ class EventsApi:
 
 
     @validate_call
-    def find_organization_events_all_pages(self, id : Annotated[StrictStr, Field(description="Organization UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_organization_events_all_pages(self, id : Annotated[StrictStr, Field(description="Organization UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList1:  # noqa: E501
         """Retrieve organization's events  # noqa: E501
 
         This method is the same as find_organization_events, but fetches resources from all the pages.
@@ -1868,7 +1872,7 @@ class EventsApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: EventList
+        :rtype: EventList1
 
         """
         all_pages = None
@@ -1909,7 +1913,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> EventList:
+    ) -> EventList1:
         """Retrieve organization's events
 
         Returns a list of events for a single organization
@@ -1959,7 +1963,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -1995,7 +1999,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[EventList]:
+    ) -> ApiResponse[EventList1]:
         """Retrieve organization's events
 
         Returns a list of events for a single organization
@@ -2045,7 +2049,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2131,7 +2135,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2225,7 +2229,7 @@ class EventsApi:
 
 
     @validate_call
-    def find_project_events_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_project_events_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList2:  # noqa: E501
         """Retrieve project's events  # noqa: E501
 
         This method is the same as find_project_events, but fetches resources from all the pages.
@@ -2258,7 +2262,7 @@ class EventsApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: EventList
+        :rtype: EventList2
 
         """
         all_pages = None
@@ -2299,7 +2303,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> EventList:
+    ) -> EventList2:
         """Retrieve project's events
 
         Returns a list of events for a single project
@@ -2349,7 +2353,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2385,7 +2389,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[EventList]:
+    ) -> ApiResponse[EventList2]:
         """Retrieve project's events
 
         Returns a list of events for a single project
@@ -2435,7 +2439,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2521,7 +2525,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EventList",
+            '200': "EventList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2634,7 +2638,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Event:
+    ) -> Event2:
         """Retrieve virtual circuit events
 
         Returns a list of the virtual circuit events
@@ -2684,7 +2688,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2720,7 +2724,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Event]:
+    ) -> ApiResponse[Event2]:
         """Retrieve virtual circuit events
 
         Returns a list of the virtual circuit events
@@ -2770,7 +2774,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2856,7 +2860,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2969,7 +2973,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Event:
+    ) -> Event1:
         """Retrieve VRF route events
 
         Returns a list of the VRF route events
@@ -3019,7 +3023,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -3055,7 +3059,7 @@ class EventsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Event]:
+    ) -> ApiResponse[Event1]:
         """Retrieve VRF route events
 
         Returns a list of the VRF route events
@@ -3105,7 +3109,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -3191,7 +3195,7 @@ class EventsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Event",
+            '200': "Event1",
             '401': "Error",
             '403': "Error",
             '404': "Error",

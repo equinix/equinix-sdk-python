@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_organization_events**
-> EventList find_organization_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
+> EventList1 find_organization_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 
 Retrieve organization's events
 
@@ -481,7 +481,7 @@ Returns a list of events for a single organization
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.event_list import EventList
+from equinix.services.metalv1.models.event_list1 import EventList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventList**](EventList.md)
+[**EventList1**](EventList1.md)
 
 ### Authorization
 
@@ -558,10 +558,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_organization_events_all_pages**
-> EventList find_organization_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
+> EventList1 find_organization_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
 Just like [**find_organization_events**](EventsApi.md#find_organization_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_organization_events**](EventsApi.md#find_organization_events).
 # **find_project_events**
-> EventList find_project_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
+> EventList2 find_project_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 
 Retrieve project's events
 
@@ -573,7 +573,7 @@ Returns a list of events for a single project
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.event_list import EventList
+from equinix.services.metalv1.models.event_list2 import EventList2
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventList**](EventList.md)
+[**EventList2**](EventList2.md)
 
 ### Authorization
 
@@ -650,10 +650,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_project_events_all_pages**
-> EventList find_project_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
+> EventList2 find_project_events_all_pages(id, include=include, exclude=exclude, per_page=per_page)
 Just like [**find_project_events**](EventsApi.md#find_project_events) but fetches resources from all pages. This method doesn't take `page` parameter. Other parameters, return type and other characteristics are the same as in [**find_project_events**](EventsApi.md#find_project_events).
 # **find_virtual_circuit_events**
-> Event find_virtual_circuit_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
+> Event2 find_virtual_circuit_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 
 Retrieve virtual circuit events
 
@@ -665,7 +665,7 @@ Returns a list of the virtual circuit events
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.event import Event
+from equinix.services.metalv1.models.event2 import Event2
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](Event.md)
+[**Event2**](Event2.md)
 
 ### Authorization
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_vrf_route_events**
-> Event find_vrf_route_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
+> Event1 find_vrf_route_events(id, include=include, exclude=exclude, page=page, per_page=per_page)
 
 Retrieve VRF route events
 
@@ -754,7 +754,7 @@ Returns a list of the VRF route events
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.event import Event
+from equinix.services.metalv1.models.event1 import Event1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -809,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](Event.md)
+[**Event1**](Event1.md)
 
 ### Authorization
 

@@ -44,6 +44,7 @@ from equinix.services.metalv1.models.capacity_check_per_metro_list import Capaci
 from equinix.services.metalv1.models.capacity_input import CapacityInput
 from equinix.services.metalv1.models.capacity_level_per_baremetal import CapacityLevelPerBaremetal
 from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.models.capacity_list1 import CapacityList1
 from equinix.services.metalv1.models.component import Component
 from equinix.services.metalv1.models.coordinates import Coordinates
 from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
@@ -73,12 +74,18 @@ from equinix.services.metalv1.models.email_input import EmailInput
 from equinix.services.metalv1.models.entitlement import Entitlement
 from equinix.services.metalv1.models.error import Error
 from equinix.services.metalv1.models.event import Event
+from equinix.services.metalv1.models.event1 import Event1
+from equinix.services.metalv1.models.event2 import Event2
 from equinix.services.metalv1.models.event_list import EventList
+from equinix.services.metalv1.models.event_list1 import EventList1
+from equinix.services.metalv1.models.event_list2 import EventList2
 from equinix.services.metalv1.models.fabric_service_token import FabricServiceToken
 from equinix.services.metalv1.models.facility import Facility
 from equinix.services.metalv1.models.facility_input import FacilityInput
 from equinix.services.metalv1.models.facility_input_facility import FacilityInputFacility
 from equinix.services.metalv1.models.facility_list import FacilityList
+from equinix.services.metalv1.models.facility_list1 import FacilityList1
+from equinix.services.metalv1.models.facility_list2 import FacilityList2
 from equinix.services.metalv1.models.filesystem import Filesystem
 from equinix.services.metalv1.models.find_ip_address_by_id200_response import FindIPAddressById200Response
 from equinix.services.metalv1.models.find_metal_gateway_by_id200_response import FindMetalGatewayById200Response
@@ -119,8 +126,12 @@ from equinix.services.metalv1.models.interconnection_pricing_list_provider_prici
 from equinix.services.metalv1.models.interconnection_pricing_list_provider_pricing_inner_tiers_inner import InterconnectionPricingListProviderPricingInnerTiersInner
 from equinix.services.metalv1.models.interconnection_update_input import InterconnectionUpdateInput
 from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation1 import Invitation1
+from equinix.services.metalv1.models.invitation2 import Invitation2
 from equinix.services.metalv1.models.invitation_input import InvitationInput
 from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.invitation_list1 import InvitationList1
+from equinix.services.metalv1.models.invitation_list2 import InvitationList2
 from equinix.services.metalv1.models.invoice import Invoice
 from equinix.services.metalv1.models.invoice_list import InvoiceList
 from equinix.services.metalv1.models.license import License
@@ -151,6 +162,7 @@ from equinix.services.metalv1.models.move_hardware_reservation_request import Mo
 from equinix.services.metalv1.models.new_password import NewPassword
 from equinix.services.metalv1.models.operating_system import OperatingSystem
 from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.operating_system_list1 import OperatingSystemList1
 from equinix.services.metalv1.models.organization import Organization
 from equinix.services.metalv1.models.organization_input import OrganizationInput
 from equinix.services.metalv1.models.organization_list import OrganizationList
@@ -167,6 +179,7 @@ from equinix.services.metalv1.models.plan_available_in_inner_price import PlanAv
 from equinix.services.metalv1.models.plan_available_in_metros_inner import PlanAvailableInMetrosInner
 from equinix.services.metalv1.models.plan_id_name import PlanIdName
 from equinix.services.metalv1.models.plan_list import PlanList
+from equinix.services.metalv1.models.plan_list1 import PlanList1
 from equinix.services.metalv1.models.plan_specs import PlanSpecs
 from equinix.services.metalv1.models.plan_specs_cpus_inner import PlanSpecsCpusInner
 from equinix.services.metalv1.models.plan_specs_drives_inner import PlanSpecsDrivesInner

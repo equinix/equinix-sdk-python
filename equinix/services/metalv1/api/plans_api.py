@@ -19,6 +19,7 @@ from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.metalv1.models.plan_list import PlanList
+from equinix.services.metalv1.models.plan_list1 import PlanList1
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
 from equinix.services.metalv1.api_response import ApiResponse
@@ -386,7 +387,7 @@ class PlansApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PlanList:
+    ) -> PlanList1:
         """Retrieve all plans visible by the project
 
         Returns a listing of available plans for the given project
@@ -430,7 +431,7 @@ class PlansApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PlanList",
+            '200': "PlanList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -464,7 +465,7 @@ class PlansApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PlanList]:
+    ) -> ApiResponse[PlanList1]:
         """Retrieve all plans visible by the project
 
         Returns a listing of available plans for the given project
@@ -508,7 +509,7 @@ class PlansApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PlanList",
+            '200': "PlanList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -586,7 +587,7 @@ class PlansApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PlanList",
+            '200': "PlanList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",

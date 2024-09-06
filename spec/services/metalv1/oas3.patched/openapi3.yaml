@@ -743,6 +743,18 @@ components:
           format: uri
           type: string
       type: object
+    CapacityList_1:
+      properties:
+        capacity:
+          additionalProperties:
+            additionalProperties:
+              $ref: '#/components/schemas/CapacityLevelPerBaremetal'
+            type: object
+          type: object
+        href:
+          format: uri
+          type: string
+      type: object
     CapacityReport:
       additionalProperties:
         additionalProperties:
@@ -1693,6 +1705,84 @@ components:
         meta:
           $ref: '#/components/schemas/Meta'
       type: object
+    EventList_1:
+      properties:
+        events:
+          items:
+            $ref: '#/components/schemas/Event'
+          type: array
+        href:
+          format: uri
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+      type: object
+    EventList_2:
+      properties:
+        events:
+          items:
+            $ref: '#/components/schemas/Event'
+          type: array
+        href:
+          format: uri
+          type: string
+        meta:
+          $ref: '#/components/schemas/Meta'
+      type: object
+    Event_1:
+      properties:
+        body:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        href:
+          type: string
+        id:
+          format: uuid
+          type: string
+        interpolated:
+          type: string
+        ip:
+          type: string
+        modified_by:
+          type: object
+        relationships:
+          items:
+            $ref: '#/components/schemas/Href'
+          type: array
+        state:
+          type: string
+        type:
+          type: string
+      type: object
+    Event_2:
+      properties:
+        body:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        href:
+          type: string
+        id:
+          format: uuid
+          type: string
+        interpolated:
+          type: string
+        ip:
+          type: string
+        modified_by:
+          type: object
+        relationships:
+          items:
+            $ref: '#/components/schemas/Href'
+          type: array
+        state:
+          type: string
+        type:
+          type: string
+      type: object
     FabricServiceToken:
       properties:
         expires_at:
@@ -1831,6 +1921,26 @@ components:
         `f2` before accepting `any` facility. If none of the facilities provided have
         availability for the requested device the request will fail.'
     FacilityList:
+      properties:
+        facilities:
+          items:
+            $ref: '#/components/schemas/Facility'
+          type: array
+        href:
+          format: uri
+          type: string
+      type: object
+    FacilityList_1:
+      properties:
+        facilities:
+          items:
+            $ref: '#/components/schemas/Facility'
+          type: array
+        href:
+          format: uri
+          type: string
+      type: object
+    FacilityList_2:
       properties:
         facilities:
           items:
@@ -2727,6 +2837,102 @@ components:
             $ref: '#/components/schemas/Membership'
           type: array
       type: object
+    InvitationList_1:
+      properties:
+        href:
+          format: uri
+          type: string
+        invitations:
+          items:
+            $ref: '#/components/schemas/Membership'
+          type: array
+      type: object
+    InvitationList_2:
+      properties:
+        href:
+          format: uri
+          type: string
+        invitations:
+          items:
+            $ref: '#/components/schemas/Membership'
+          type: array
+      type: object
+    Invitation_1:
+      properties:
+        created_at:
+          format: date-time
+          type: string
+        href:
+          type: string
+        id:
+          format: uuid
+          type: string
+        invitation:
+          $ref: '#/components/schemas/Href'
+        invited_by:
+          $ref: '#/components/schemas/Href'
+        invitee:
+          format: email
+          type: string
+        nonce:
+          type: string
+        organization:
+          $ref: '#/components/schemas/Href'
+        projects:
+          items:
+            $ref: '#/components/schemas/Href'
+          type: array
+        roles:
+          items:
+            enum:
+            - admin
+            - billing
+            - collaborator
+            - limited_collaborator
+            type: string
+          type: array
+        updated_at:
+          format: date-time
+          type: string
+      type: object
+    Invitation_2:
+      properties:
+        created_at:
+          format: date-time
+          type: string
+        href:
+          type: string
+        id:
+          format: uuid
+          type: string
+        invitation:
+          $ref: '#/components/schemas/Href'
+        invited_by:
+          $ref: '#/components/schemas/Href'
+        invitee:
+          format: email
+          type: string
+        nonce:
+          type: string
+        organization:
+          $ref: '#/components/schemas/Href'
+        projects:
+          items:
+            $ref: '#/components/schemas/Href'
+          type: array
+        roles:
+          items:
+            enum:
+            - admin
+            - billing
+            - collaborator
+            - limited_collaborator
+            type: string
+          type: array
+        updated_at:
+          format: date-time
+          type: string
+      type: object
     Invoice:
       properties:
         amount:
@@ -3379,6 +3585,16 @@ components:
             $ref: '#/components/schemas/OperatingSystem'
           type: array
       type: object
+    OperatingSystemList_1:
+      properties:
+        href:
+          format: uri
+          type: string
+        operating_systems:
+          items:
+            $ref: '#/components/schemas/OperatingSystem'
+          type: array
+      type: object
     Organization:
       properties:
         address:
@@ -3663,6 +3879,16 @@ components:
           type: string
       type: object
     PlanList:
+      properties:
+        href:
+          format: uri
+          type: string
+        plans:
+          items:
+            $ref: '#/components/schemas/Plan'
+          type: array
+      type: object
+    PlanList_1:
       properties:
         href:
           format: uri
@@ -11522,7 +11748,7 @@ paths:
                     m2.xlarge.x86:
                       level: string
               schema:
-                $ref: '#/components/schemas/CapacityList'
+                $ref: '#/components/schemas/CapacityList_1'
           description: ok
         '401':
           content:
@@ -11838,7 +12064,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EventList'
+                $ref: '#/components/schemas/EventList_1'
           description: ok
         '401':
           content:
@@ -11908,7 +12134,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FacilityList'
+                $ref: '#/components/schemas/FacilityList_1'
           description: ok
         '401':
           content:
@@ -12026,7 +12252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvitationList'
+                $ref: '#/components/schemas/InvitationList_1'
           description: ok
         '401':
           content:
@@ -12085,7 +12311,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Invitation'
+                $ref: '#/components/schemas/Invitation_1'
           description: created
         '401':
           content:
@@ -12196,7 +12422,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OperatingSystemList'
+                $ref: '#/components/schemas/OperatingSystemList_1'
           description: ok
         '401':
           content:
@@ -14835,7 +15061,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EventList'
+                $ref: '#/components/schemas/EventList_2'
           description: ok
         '401':
           content:
@@ -14905,7 +15131,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FacilityList'
+                $ref: '#/components/schemas/FacilityList_2'
           description: ok
         '401':
           content:
@@ -15512,7 +15738,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlanList'
+                $ref: '#/components/schemas/PlanList_1'
           description: ok
         '401':
           content:
@@ -16344,7 +16570,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InvitationList'
+                $ref: '#/components/schemas/InvitationList_2'
           description: ok
         '401':
           content:
@@ -16399,7 +16625,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Invitation'
+                $ref: '#/components/schemas/Invitation_2'
           description: created
         '401':
           content:
@@ -17202,7 +17428,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Event'
+                $ref: '#/components/schemas/Event_1'
           description: ok
         '401':
           content:
@@ -18771,7 +18997,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Event'
+                $ref: '#/components/schemas/Event_2'
           description: ok
         '401':
           content:

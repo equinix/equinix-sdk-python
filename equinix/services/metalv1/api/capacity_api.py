@@ -21,6 +21,7 @@ from equinix.services.metalv1.models.capacity_check_per_facility_list import Cap
 from equinix.services.metalv1.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
 from equinix.services.metalv1.models.capacity_input import CapacityInput
 from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.models.capacity_list1 import CapacityList1
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
 from equinix.services.metalv1.api_response import ApiResponse
@@ -1095,7 +1096,7 @@ class CapacityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CapacityList:
+    ) -> CapacityList1:
         """View available hardware plans per Facility for given organization
 
         Returns a list of facilities and plans with their current capacity.
@@ -1133,7 +1134,7 @@ class CapacityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CapacityList",
+            '200': "CapacityList1",
             '401': "Error",
             '403': "Error",
         }
@@ -1164,7 +1165,7 @@ class CapacityApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CapacityList]:
+    ) -> ApiResponse[CapacityList1]:
         """View available hardware plans per Facility for given organization
 
         Returns a list of facilities and plans with their current capacity.
@@ -1202,7 +1203,7 @@ class CapacityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CapacityList",
+            '200': "CapacityList1",
             '401': "Error",
             '403': "Error",
         }
@@ -1271,7 +1272,7 @@ class CapacityApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CapacityList",
+            '200': "CapacityList1",
             '401': "Error",
             '403': "Error",
         }
