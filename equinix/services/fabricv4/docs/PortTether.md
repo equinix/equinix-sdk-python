@@ -29,7 +29,7 @@ print(PortTether.to_json())
 # convert the object into a dict
 port_tether_dict = port_tether_instance.to_dict()
 # create an instance of PortTether from a dict
-port_tether_form_dict = port_tether.from_dict(port_tether_dict)
+port_tether_from_dict = PortTether.from_dict(port_tether_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

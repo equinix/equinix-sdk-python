@@ -26,7 +26,7 @@ print(LinkProtocolServiceToken.to_json())
 # convert the object into a dict
 link_protocol_service_token_dict = link_protocol_service_token_instance.to_dict()
 # create an instance of LinkProtocolServiceToken from a dict
-link_protocol_service_token_form_dict = link_protocol_service_token.from_dict(link_protocol_service_token_dict)
+link_protocol_service_token_from_dict = LinkProtocolServiceToken.from_dict(link_protocol_service_token_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

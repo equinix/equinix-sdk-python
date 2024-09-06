@@ -26,7 +26,7 @@ print(InterconnectionFabricProvider.to_json())
 # convert the object into a dict
 interconnection_fabric_provider_dict = interconnection_fabric_provider_instance.to_dict()
 # create an instance of InterconnectionFabricProvider from a dict
-interconnection_fabric_provider_form_dict = interconnection_fabric_provider.from_dict(interconnection_fabric_provider_dict)
+interconnection_fabric_provider_from_dict = InterconnectionFabricProvider.from_dict(interconnection_fabric_provider_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

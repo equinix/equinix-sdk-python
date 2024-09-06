@@ -25,7 +25,7 @@ print(RouteTableEntrySearchRequest.to_json())
 # convert the object into a dict
 route_table_entry_search_request_dict = route_table_entry_search_request_instance.to_dict()
 # create an instance of RouteTableEntrySearchRequest from a dict
-route_table_entry_search_request_form_dict = route_table_entry_search_request.from_dict(route_table_entry_search_request_dict)
+route_table_entry_search_request_from_dict = RouteTableEntrySearchRequest.from_dict(route_table_entry_search_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -72,9 +72,9 @@ class GlobalBgpRangeList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in global_bgp_ranges (list)
         _items = []
         if self.global_bgp_ranges:
-            for _item in self.global_bgp_ranges:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_global_bgp_ranges in self.global_bgp_ranges:
+                if _item_global_bgp_ranges:
+                    _items.append(_item_global_bgp_ranges.to_dict())
             _dict['global_bgp_ranges'] = _items
         return _dict
 

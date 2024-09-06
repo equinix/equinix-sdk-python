@@ -20,7 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.metalv1.models.ip_reservation import IPReservation
 from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -39,7 +39,7 @@ class IPReservationListIpAddressesInner(BaseModel):
         actual_instance: Optional[Union[IPReservation, VrfIpReservation]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["IPReservation", "VrfIpReservation"])
+    any_of_schemas: Set[str] = { "IPReservation", "VrfIpReservation" }
 
     model_config = {
         "validate_assignment": True,

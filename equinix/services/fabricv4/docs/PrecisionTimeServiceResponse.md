@@ -35,7 +35,7 @@ print(PrecisionTimeServiceResponse.to_json())
 # convert the object into a dict
 precision_time_service_response_dict = precision_time_service_response_instance.to_dict()
 # create an instance of PrecisionTimeServiceResponse from a dict
-precision_time_service_response_form_dict = precision_time_service_response.from_dict(precision_time_service_response_dict)
+precision_time_service_response_from_dict = PrecisionTimeServiceResponse.from_dict(precision_time_service_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

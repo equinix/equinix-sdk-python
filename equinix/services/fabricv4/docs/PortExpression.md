@@ -26,7 +26,7 @@ print(PortExpression.to_json())
 # convert the object into a dict
 port_expression_dict = port_expression_instance.to_dict()
 # create an instance of PortExpression from a dict
-port_expression_form_dict = port_expression.from_dict(port_expression_dict)
+port_expression_from_dict = PortExpression.from_dict(port_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

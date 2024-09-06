@@ -74,9 +74,9 @@ class Disk(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in partitions (list)
         _items = []
         if self.partitions:
-            for _item in self.partitions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_partitions in self.partitions:
+                if _item_partitions:
+                    _items.append(_item_partitions.to_dict())
             _dict['partitions'] = _items
         return _dict
 

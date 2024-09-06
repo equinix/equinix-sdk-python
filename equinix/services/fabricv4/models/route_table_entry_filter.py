@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.route_table_entry_or_filter import RouteTableEntryOrFilter
 from equinix.services.fabricv4.models.route_table_entry_simple_expression import RouteTableEntrySimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -41,7 +41,7 @@ class RouteTableEntryFilter(BaseModel):
         actual_instance: Optional[Union[RouteTableEntryOrFilter, RouteTableEntrySimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["RouteTableEntryOrFilter", "RouteTableEntrySimpleExpression"])
+    any_of_schemas: Set[str] = { "RouteTableEntryOrFilter", "RouteTableEntrySimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

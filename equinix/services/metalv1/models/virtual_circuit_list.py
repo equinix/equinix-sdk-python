@@ -72,9 +72,9 @@ class VirtualCircuitList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in virtual_circuits (list)
         _items = []
         if self.virtual_circuits:
-            for _item in self.virtual_circuits:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_virtual_circuits in self.virtual_circuits:
+                if _item_virtual_circuits:
+                    _items.append(_item_virtual_circuits.to_dict())
             _dict['virtual_circuits'] = _items
         return _dict
 

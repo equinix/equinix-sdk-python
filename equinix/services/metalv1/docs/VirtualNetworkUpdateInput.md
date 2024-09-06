@@ -24,7 +24,7 @@ print(VirtualNetworkUpdateInput.to_json())
 # convert the object into a dict
 virtual_network_update_input_dict = virtual_network_update_input_instance.to_dict()
 # create an instance of VirtualNetworkUpdateInput from a dict
-virtual_network_update_input_form_dict = virtual_network_update_input.from_dict(virtual_network_update_input_dict)
+virtual_network_update_input_from_dict = VirtualNetworkUpdateInput.from_dict(virtual_network_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

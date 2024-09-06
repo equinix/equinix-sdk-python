@@ -23,7 +23,7 @@ print(MoveHardwareReservationRequest.to_json())
 # convert the object into a dict
 move_hardware_reservation_request_dict = move_hardware_reservation_request_instance.to_dict()
 # create an instance of MoveHardwareReservationRequest from a dict
-move_hardware_reservation_request_form_dict = move_hardware_reservation_request.from_dict(move_hardware_reservation_request_dict)
+move_hardware_reservation_request_from_dict = MoveHardwareReservationRequest.from_dict(move_hardware_reservation_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

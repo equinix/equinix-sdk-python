@@ -24,7 +24,7 @@ print(HardwareReservationList.to_json())
 # convert the object into a dict
 hardware_reservation_list_dict = hardware_reservation_list_instance.to_dict()
 # create an instance of HardwareReservationList from a dict
-hardware_reservation_list_form_dict = hardware_reservation_list.from_dict(hardware_reservation_list_dict)
+hardware_reservation_list_from_dict = HardwareReservationList.from_dict(hardware_reservation_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_organization_invitation**
-> Invitation create_organization_invitation(id, invitation_input, include=include)
+> Invitation1 create_organization_invitation(id, invitation_input, include=include)
 
 Create an invitation for an organization
 
@@ -122,7 +122,7 @@ In order to add a user to an organization, they must first be invited. To invite
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation1 import Invitation1
 from equinix.services.metalv1.models.invitation_input import InvitationInput
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](Invitation.md)
+[**Invitation1**](Invitation1.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_operating_systems_by_organization**
-> OperatingSystemList find_operating_systems_by_organization(id, include=include)
+> OperatingSystemList1 find_operating_systems_by_organization(id, include=include)
 
 Retrieve all operating systems visible by the organization
 
@@ -459,7 +459,7 @@ Returns a listing of available operating systems for the given organization
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.operating_system_list1 import OperatingSystemList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperatingSystemList**](OperatingSystemList.md)
+[**OperatingSystemList1**](OperatingSystemList1.md)
 
 ### Authorization
 
@@ -693,7 +693,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_organization_invitations**
-> InvitationList find_organization_invitations(id, include=include, page=page, per_page=per_page)
+> InvitationList1 find_organization_invitations(id, include=include, page=page, per_page=per_page)
 
 Retrieve organization invitations
 
@@ -705,7 +705,7 @@ Returns all invitations in an organization.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.invitation_list1 import InvitationList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvitationList**](InvitationList.md)
+[**InvitationList1**](InvitationList1.md)
 
 ### Authorization
 

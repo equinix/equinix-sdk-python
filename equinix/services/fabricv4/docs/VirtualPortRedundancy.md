@@ -23,7 +23,7 @@ print(VirtualPortRedundancy.to_json())
 # convert the object into a dict
 virtual_port_redundancy_dict = virtual_port_redundancy_instance.to_dict()
 # create an instance of VirtualPortRedundancy from a dict
-virtual_port_redundancy_form_dict = virtual_port_redundancy.from_dict(virtual_port_redundancy_dict)
+virtual_port_redundancy_from_dict = VirtualPortRedundancy.from_dict(virtual_port_redundancy_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

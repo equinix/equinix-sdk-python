@@ -25,7 +25,7 @@ print(AWSFabricProvider.to_json())
 # convert the object into a dict
 aws_fabric_provider_dict = aws_fabric_provider_instance.to_dict()
 # create an instance of AWSFabricProvider from a dict
-aws_fabric_provider_form_dict = aws_fabric_provider.from_dict(aws_fabric_provider_dict)
+aws_fabric_provider_from_dict = AWSFabricProvider.from_dict(aws_fabric_provider_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

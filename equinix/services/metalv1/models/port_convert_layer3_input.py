@@ -72,9 +72,9 @@ class PortConvertLayer3Input(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in request_ips (list)
         _items = []
         if self.request_ips:
-            for _item in self.request_ips:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_request_ips in self.request_ips:
+                if _item_request_ips:
+                    _items.append(_item_request_ips.to_dict())
             _dict['request_ips'] = _items
         return _dict
 

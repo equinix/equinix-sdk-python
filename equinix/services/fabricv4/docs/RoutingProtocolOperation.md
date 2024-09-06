@@ -22,7 +22,7 @@ print(RoutingProtocolOperation.to_json())
 # convert the object into a dict
 routing_protocol_operation_dict = routing_protocol_operation_instance.to_dict()
 # create an instance of RoutingProtocolOperation from a dict
-routing_protocol_operation_form_dict = routing_protocol_operation.from_dict(routing_protocol_operation_dict)
+routing_protocol_operation_from_dict = RoutingProtocolOperation.from_dict(routing_protocol_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

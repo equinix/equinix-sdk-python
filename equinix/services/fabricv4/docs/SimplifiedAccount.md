@@ -33,7 +33,7 @@ print(SimplifiedAccount.to_json())
 # convert the object into a dict
 simplified_account_dict = simplified_account_instance.to_dict()
 # create an instance of SimplifiedAccount from a dict
-simplified_account_form_dict = simplified_account.from_dict(simplified_account_dict)
+simplified_account_from_dict = SimplifiedAccount.from_dict(simplified_account_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

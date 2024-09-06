@@ -23,7 +23,7 @@ print(PortAssignInput.to_json())
 # convert the object into a dict
 port_assign_input_dict = port_assign_input_instance.to_dict()
 # create an instance of PortAssignInput from a dict
-port_assign_input_form_dict = port_assign_input.from_dict(port_assign_input_dict)
+port_assign_input_from_dict = PortAssignInput.from_dict(port_assign_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

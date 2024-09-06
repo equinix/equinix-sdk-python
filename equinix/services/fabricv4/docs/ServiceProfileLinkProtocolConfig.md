@@ -27,7 +27,7 @@ print(ServiceProfileLinkProtocolConfig.to_json())
 # convert the object into a dict
 service_profile_link_protocol_config_dict = service_profile_link_protocol_config_instance.to_dict()
 # create an instance of ServiceProfileLinkProtocolConfig from a dict
-service_profile_link_protocol_config_form_dict = service_profile_link_protocol_config.from_dict(service_profile_link_protocol_config_dict)
+service_profile_link_protocol_config_from_dict = ServiceProfileLinkProtocolConfig.from_dict(service_profile_link_protocol_config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

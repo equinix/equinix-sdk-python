@@ -34,7 +34,7 @@ print(VirtualNetwork.to_json())
 # convert the object into a dict
 virtual_network_dict = virtual_network_instance.to_dict()
 # create an instance of VirtualNetwork from a dict
-virtual_network_form_dict = virtual_network.from_dict(virtual_network_dict)
+virtual_network_from_dict = VirtualNetwork.from_dict(virtual_network_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

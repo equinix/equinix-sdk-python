@@ -72,9 +72,9 @@ class AuthTokenList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in api_keys (list)
         _items = []
         if self.api_keys:
-            for _item in self.api_keys:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_api_keys in self.api_keys:
+                if _item_api_keys:
+                    _items.append(_item_api_keys.to_dict())
             _dict['api_keys'] = _items
         return _dict
 

@@ -24,7 +24,7 @@ from equinix.services.fabricv4.models.link_protocol_qinq import LinkProtocolQinq
 from equinix.services.fabricv4.models.link_protocol_untagged import LinkProtocolUntagged
 from equinix.services.fabricv4.models.link_protocol_vxlan import LinkProtocolVxlan
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 LINKPROTOCOL_ONE_OF_SCHEMAS = ["LinkProtocolDot1q", "LinkProtocolEvpnVxlan", "LinkProtocolQinq", "LinkProtocolUntagged", "LinkProtocolVxlan"]
@@ -44,7 +44,7 @@ class LinkProtocol(BaseModel):
     # data type: LinkProtocolEvpnVxlan
     oneof_schema_5_validator: Optional[LinkProtocolEvpnVxlan] = None
     actual_instance: Optional[Union[LinkProtocolDot1q, LinkProtocolEvpnVxlan, LinkProtocolQinq, LinkProtocolUntagged, LinkProtocolVxlan]] = None
-    one_of_schemas: List[str] = Field(default=Literal["LinkProtocolDot1q", "LinkProtocolEvpnVxlan", "LinkProtocolQinq", "LinkProtocolUntagged", "LinkProtocolVxlan"])
+    one_of_schemas: Set[str] = { "LinkProtocolDot1q", "LinkProtocolEvpnVxlan", "LinkProtocolQinq", "LinkProtocolUntagged", "LinkProtocolVxlan" }
 
     model_config = ConfigDict(
         validate_assignment=True,

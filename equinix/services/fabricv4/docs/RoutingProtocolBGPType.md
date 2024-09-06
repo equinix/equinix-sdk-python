@@ -30,7 +30,7 @@ print(RoutingProtocolBGPType.to_json())
 # convert the object into a dict
 routing_protocol_bgp_type_dict = routing_protocol_bgp_type_instance.to_dict()
 # create an instance of RoutingProtocolBGPType from a dict
-routing_protocol_bgp_type_form_dict = routing_protocol_bgp_type.from_dict(routing_protocol_bgp_type_dict)
+routing_protocol_bgp_type_from_dict = RoutingProtocolBGPType.from_dict(routing_protocol_bgp_type_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(RoutingProtocolChangeDataResponse.to_json())
 # convert the object into a dict
 routing_protocol_change_data_response_dict = routing_protocol_change_data_response_instance.to_dict()
 # create an instance of RoutingProtocolChangeDataResponse from a dict
-routing_protocol_change_data_response_form_dict = routing_protocol_change_data_response.from_dict(routing_protocol_change_data_response_dict)
+routing_protocol_change_data_response_from_dict = RoutingProtocolChangeDataResponse.from_dict(routing_protocol_change_data_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

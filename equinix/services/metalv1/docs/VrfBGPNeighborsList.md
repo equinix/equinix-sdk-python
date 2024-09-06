@@ -23,7 +23,7 @@ print(VrfBGPNeighborsList.to_json())
 # convert the object into a dict
 vrf_bgp_neighbors_list_dict = vrf_bgp_neighbors_list_instance.to_dict()
 # create an instance of VrfBGPNeighborsList from a dict
-vrf_bgp_neighbors_list_form_dict = vrf_bgp_neighbors_list.from_dict(vrf_bgp_neighbors_list_dict)
+vrf_bgp_neighbors_list_from_dict = VrfBGPNeighborsList.from_dict(vrf_bgp_neighbors_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

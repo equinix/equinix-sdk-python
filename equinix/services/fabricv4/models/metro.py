@@ -90,9 +90,9 @@ class Metro(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in connected_metros (list)
         _items = []
         if self.connected_metros:
-            for _item in self.connected_metros:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connected_metros in self.connected_metros:
+                if _item_connected_metros:
+                    _items.append(_item_connected_metros.to_dict())
             _dict['connectedMetros'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

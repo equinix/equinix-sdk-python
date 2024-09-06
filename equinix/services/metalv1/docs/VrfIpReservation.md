@@ -45,7 +45,7 @@ print(VrfIpReservation.to_json())
 # convert the object into a dict
 vrf_ip_reservation_dict = vrf_ip_reservation_instance.to_dict()
 # create an instance of VrfIpReservation from a dict
-vrf_ip_reservation_form_dict = vrf_ip_reservation.from_dict(vrf_ip_reservation_dict)
+vrf_ip_reservation_from_dict = VrfIpReservation.from_dict(vrf_ip_reservation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

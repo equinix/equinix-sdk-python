@@ -25,7 +25,7 @@ print(NetworkSearchRequest.to_json())
 # convert the object into a dict
 network_search_request_dict = network_search_request_instance.to_dict()
 # create an instance of NetworkSearchRequest from a dict
-network_search_request_form_dict = network_search_request.from_dict(network_search_request_dict)
+network_search_request_from_dict = NetworkSearchRequest.from_dict(network_search_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

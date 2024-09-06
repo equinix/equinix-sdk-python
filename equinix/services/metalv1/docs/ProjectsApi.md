@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_project_invitation**
-> Invitation create_project_invitation(project_id, invitation_input, include=include)
+> Invitation2 create_project_invitation(project_id, invitation_input, include=include)
 
 Create an invitation for a project
 
@@ -116,7 +116,7 @@ In order to add a user to a project, they must first be invited.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation2 import Invitation2
 from equinix.services.metalv1.models.invitation_input import InvitationInput
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](Invitation.md)
+[**Invitation2**](Invitation2.md)
 
 ### Authorization
 
@@ -599,7 +599,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_project_invitations**
-> InvitationList find_project_invitations(project_id, include=include, page=page, per_page=per_page)
+> InvitationList2 find_project_invitations(project_id, include=include, page=page, per_page=per_page)
 
 Retrieve project invitations
 
@@ -611,7 +611,7 @@ Returns all invitations in a project.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.invitation_list2 import InvitationList2
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvitationList**](InvitationList.md)
+[**InvitationList2**](InvitationList2.md)
 
 ### Authorization
 

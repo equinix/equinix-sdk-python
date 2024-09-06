@@ -22,7 +22,7 @@ print(DirectConnectionIpv6.to_json())
 # convert the object into a dict
 direct_connection_ipv6_dict = direct_connection_ipv6_instance.to_dict()
 # create an instance of DirectConnectionIpv6 from a dict
-direct_connection_ipv6_form_dict = direct_connection_ipv6.from_dict(direct_connection_ipv6_dict)
+direct_connection_ipv6_from_dict = DirectConnectionIpv6.from_dict(direct_connection_ipv6_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

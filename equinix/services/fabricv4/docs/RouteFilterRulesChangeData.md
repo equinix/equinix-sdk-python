@@ -31,7 +31,7 @@ print(RouteFilterRulesChangeData.to_json())
 # convert the object into a dict
 route_filter_rules_change_data_dict = route_filter_rules_change_data_instance.to_dict()
 # create an instance of RouteFilterRulesChangeData from a dict
-route_filter_rules_change_data_form_dict = route_filter_rules_change_data.from_dict(route_filter_rules_change_data_dict)
+route_filter_rules_change_data_from_dict = RouteFilterRulesChangeData.from_dict(route_filter_rules_change_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

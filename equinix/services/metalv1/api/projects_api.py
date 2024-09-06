@@ -18,9 +18,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation2 import Invitation2
 from equinix.services.metalv1.models.invitation_input import InvitationInput
-from equinix.services.metalv1.models.invitation_list import InvitationList
+from equinix.services.metalv1.models.invitation_list2 import InvitationList2
 from equinix.services.metalv1.models.membership_list import MembershipList
 from equinix.services.metalv1.models.project import Project
 from equinix.services.metalv1.models.project_create_from_root_input import ProjectCreateFromRootInput
@@ -374,7 +374,7 @@ class ProjectsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Invitation:
+    ) -> Invitation2:
         """Create an invitation for a project
 
         In order to add a user to a project, they must first be invited.
@@ -418,7 +418,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -453,7 +453,7 @@ class ProjectsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Invitation]:
+    ) -> ApiResponse[Invitation2]:
         """Create an invitation for a project
 
         In order to add a user to a project, they must first be invited.
@@ -497,7 +497,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -576,7 +576,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2117,7 +2117,7 @@ class ProjectsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InvitationList:
+    ) -> InvitationList2:
         """Retrieve project invitations
 
         Returns all invitations in a project.
@@ -2164,7 +2164,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2199,7 +2199,7 @@ class ProjectsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InvitationList]:
+    ) -> ApiResponse[InvitationList2]:
         """Retrieve project invitations
 
         Returns all invitations in a project.
@@ -2246,7 +2246,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2328,7 +2328,7 @@ class ProjectsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList2",
             '401': "Error",
             '403': "Error",
             '404': "Error",

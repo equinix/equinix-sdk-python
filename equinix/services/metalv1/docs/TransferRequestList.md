@@ -23,7 +23,7 @@ print(TransferRequestList.to_json())
 # convert the object into a dict
 transfer_request_list_dict = transfer_request_list_instance.to_dict()
 # create an instance of TransferRequestList from a dict
-transfer_request_list_form_dict = transfer_request_list.from_dict(transfer_request_list_dict)
+transfer_request_list_from_dict = TransferRequestList.from_dict(transfer_request_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

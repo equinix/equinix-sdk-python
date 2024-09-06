@@ -72,9 +72,9 @@ class TransferRequestList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in transfers (list)
         _items = []
         if self.transfers:
-            for _item in self.transfers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_transfers in self.transfers:
+                if _item_transfers:
+                    _items.append(_item_transfers.to_dict())
             _dict['transfers'] = _items
         return _dict
 

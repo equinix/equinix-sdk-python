@@ -93,9 +93,9 @@ class AuthTokenUser(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in emails (list)
         _items = []
         if self.emails:
-            for _item in self.emails:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_emails in self.emails:
+                if _item_emails:
+                    _items.append(_item_emails.to_dict())
             _dict['emails'] = _items
         return _dict
 

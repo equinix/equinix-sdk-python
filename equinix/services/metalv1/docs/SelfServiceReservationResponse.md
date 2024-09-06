@@ -33,7 +33,7 @@ print(SelfServiceReservationResponse.to_json())
 # convert the object into a dict
 self_service_reservation_response_dict = self_service_reservation_response_instance.to_dict()
 # create an instance of SelfServiceReservationResponse from a dict
-self_service_reservation_response_form_dict = self_service_reservation_response.from_dict(self_service_reservation_response_dict)
+self_service_reservation_response_from_dict = SelfServiceReservationResponse.from_dict(self_service_reservation_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

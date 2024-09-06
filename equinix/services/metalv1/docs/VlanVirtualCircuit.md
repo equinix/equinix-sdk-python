@@ -39,7 +39,7 @@ print(VlanVirtualCircuit.to_json())
 # convert the object into a dict
 vlan_virtual_circuit_dict = vlan_virtual_circuit_instance.to_dict()
 # create an instance of VlanVirtualCircuit from a dict
-vlan_virtual_circuit_form_dict = vlan_virtual_circuit.from_dict(vlan_virtual_circuit_dict)
+vlan_virtual_circuit_from_dict = VlanVirtualCircuit.from_dict(vlan_virtual_circuit_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

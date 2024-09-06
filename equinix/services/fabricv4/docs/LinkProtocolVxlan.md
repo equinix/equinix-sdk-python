@@ -24,7 +24,7 @@ print(LinkProtocolVxlan.to_json())
 # convert the object into a dict
 link_protocol_vxlan_dict = link_protocol_vxlan_instance.to_dict()
 # create an instance of LinkProtocolVxlan from a dict
-link_protocol_vxlan_form_dict = link_protocol_vxlan.from_dict(link_protocol_vxlan_dict)
+link_protocol_vxlan_from_dict = LinkProtocolVxlan.from_dict(link_protocol_vxlan_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

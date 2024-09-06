@@ -96,23 +96,23 @@ class Organization(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in members (list)
         _items = []
         if self.members:
-            for _item in self.members:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_members in self.members:
+                if _item_members:
+                    _items.append(_item_members.to_dict())
             _dict['members'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in memberships (list)
         _items = []
         if self.memberships:
-            for _item in self.memberships:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_memberships in self.memberships:
+                if _item_memberships:
+                    _items.append(_item_memberships.to_dict())
             _dict['memberships'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in projects (list)
         _items = []
         if self.projects:
-            for _item in self.projects:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_projects in self.projects:
+                if _item_projects:
+                    _items.append(_item_projects.to_dict())
             _dict['projects'] = _items
         return _dict
 

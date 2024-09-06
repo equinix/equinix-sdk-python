@@ -23,7 +23,7 @@ print(RoutingProtocolBFD.to_json())
 # convert the object into a dict
 routing_protocol_bfd_dict = routing_protocol_bfd_instance.to_dict()
 # create an instance of RoutingProtocolBFD from a dict
-routing_protocol_bfd_form_dict = routing_protocol_bfd.from_dict(routing_protocol_bfd_dict)
+routing_protocol_bfd_from_dict = RoutingProtocolBFD.from_dict(routing_protocol_bfd_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -26,7 +26,7 @@ print(DeviceMetro.to_json())
 # convert the object into a dict
 device_metro_dict = device_metro_instance.to_dict()
 # create an instance of DeviceMetro from a dict
-device_metro_form_dict = device_metro.from_dict(device_metro_dict)
+device_metro_from_dict = DeviceMetro.from_dict(device_metro_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

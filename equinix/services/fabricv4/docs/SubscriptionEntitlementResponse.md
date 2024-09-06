@@ -27,7 +27,7 @@ print(SubscriptionEntitlementResponse.to_json())
 # convert the object into a dict
 subscription_entitlement_response_dict = subscription_entitlement_response_instance.to_dict()
 # create an instance of SubscriptionEntitlementResponse from a dict
-subscription_entitlement_response_form_dict = subscription_entitlement_response.from_dict(subscription_entitlement_response_dict)
+subscription_entitlement_response_from_dict = SubscriptionEntitlementResponse.from_dict(subscription_entitlement_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

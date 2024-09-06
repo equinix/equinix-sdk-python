@@ -6,7 +6,7 @@ Physical or virtual port that houses the connection.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ConnectivitySourceType**](ConnectivitySourceType.md) |  | [optional] 
+**type** | [**ConnectivitySourceType**](ConnectivitySourceType.md) |  | [optional] [default to ConnectivitySourceType.COLO]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(ConnectivitySource.to_json())
 # convert the object into a dict
 connectivity_source_dict = connectivity_source_instance.to_dict()
 # create an instance of ConnectivitySource from a dict
-connectivity_source_form_dict = connectivity_source.from_dict(connectivity_source_dict)
+connectivity_source_from_dict = ConnectivitySource.from_dict(connectivity_source_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

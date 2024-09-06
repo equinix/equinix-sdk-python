@@ -26,7 +26,7 @@ print(ConnectedMetro.to_json())
 # convert the object into a dict
 connected_metro_dict = connected_metro_instance.to_dict()
 # create an instance of ConnectedMetro from a dict
-connected_metro_form_dict = connected_metro.from_dict(connected_metro_dict)
+connected_metro_from_dict = ConnectedMetro.from_dict(connected_metro_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

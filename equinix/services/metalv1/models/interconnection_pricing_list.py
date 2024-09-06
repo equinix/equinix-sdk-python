@@ -72,9 +72,9 @@ class InterconnectionPricingList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in provider_pricing (list)
         _items = []
         if self.provider_pricing:
-            for _item in self.provider_pricing:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_provider_pricing in self.provider_pricing:
+                if _item_provider_pricing:
+                    _items.append(_item_provider_pricing.to_dict())
             _dict['provider_pricing'] = _items
         return _dict
 

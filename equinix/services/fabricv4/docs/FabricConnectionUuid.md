@@ -25,7 +25,7 @@ print(FabricConnectionUuid.to_json())
 # convert the object into a dict
 fabric_connection_uuid_dict = fabric_connection_uuid_instance.to_dict()
 # create an instance of FabricConnectionUuid from a dict
-fabric_connection_uuid_form_dict = fabric_connection_uuid.from_dict(fabric_connection_uuid_dict)
+fabric_connection_uuid_from_dict = FabricConnectionUuid.from_dict(fabric_connection_uuid_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

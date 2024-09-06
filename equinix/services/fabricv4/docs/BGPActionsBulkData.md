@@ -24,7 +24,7 @@ print(BGPActionsBulkData.to_json())
 # convert the object into a dict
 bgp_actions_bulk_data_dict = bgp_actions_bulk_data_instance.to_dict()
 # create an instance of BGPActionsBulkData from a dict
-bgp_actions_bulk_data_form_dict = bgp_actions_bulk_data.from_dict(bgp_actions_bulk_data_dict)
+bgp_actions_bulk_data_from_dict = BGPActionsBulkData.from_dict(bgp_actions_bulk_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

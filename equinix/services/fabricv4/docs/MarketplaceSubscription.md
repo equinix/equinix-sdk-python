@@ -25,7 +25,7 @@ print(MarketplaceSubscription.to_json())
 # convert the object into a dict
 marketplace_subscription_dict = marketplace_subscription_instance.to_dict()
 # create an instance of MarketplaceSubscription from a dict
-marketplace_subscription_form_dict = marketplace_subscription.from_dict(marketplace_subscription_dict)
+marketplace_subscription_from_dict = MarketplaceSubscription.from_dict(marketplace_subscription_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

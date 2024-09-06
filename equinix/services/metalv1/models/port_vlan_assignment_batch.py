@@ -99,9 +99,9 @@ class PortVlanAssignmentBatch(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in vlan_assignments (list)
         _items = []
         if self.vlan_assignments:
-            for _item in self.vlan_assignments:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_vlan_assignments in self.vlan_assignments:
+                if _item_vlan_assignments:
+                    _items.append(_item_vlan_assignments.to_dict())
             _dict['vlan_assignments'] = _items
         return _dict
 

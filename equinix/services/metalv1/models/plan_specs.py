@@ -80,16 +80,16 @@ class PlanSpecs(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in cpus (list)
         _items = []
         if self.cpus:
-            for _item in self.cpus:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_cpus in self.cpus:
+                if _item_cpus:
+                    _items.append(_item_cpus.to_dict())
             _dict['cpus'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in drives (list)
         _items = []
         if self.drives:
-            for _item in self.drives:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_drives in self.drives:
+                if _item_drives:
+                    _items.append(_item_drives.to_dict())
             _dict['drives'] = _items
         # override the default output from pydantic by calling `to_dict()` of features
         if self.features:
@@ -100,9 +100,9 @@ class PlanSpecs(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in nics (list)
         _items = []
         if self.nics:
-            for _item in self.nics:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_nics in self.nics:
+                if _item_nics:
+                    _items.append(_item_nics.to_dict())
             _dict['nics'] = _items
         return _dict
 

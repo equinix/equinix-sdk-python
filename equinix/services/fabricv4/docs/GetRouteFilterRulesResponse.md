@@ -23,7 +23,7 @@ print(GetRouteFilterRulesResponse.to_json())
 # convert the object into a dict
 get_route_filter_rules_response_dict = get_route_filter_rules_response_instance.to_dict()
 # create an instance of GetRouteFilterRulesResponse from a dict
-get_route_filter_rules_response_form_dict = get_route_filter_rules_response.from_dict(get_route_filter_rules_response_dict)
+get_route_filter_rules_response_from_dict = GetRouteFilterRulesResponse.from_dict(get_route_filter_rules_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

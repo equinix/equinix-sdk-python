@@ -25,7 +25,7 @@ print(ConnectionInvitation.to_json())
 # convert the object into a dict
 connection_invitation_dict = connection_invitation_instance.to_dict()
 # create an instance of ConnectionInvitation from a dict
-connection_invitation_form_dict = connection_invitation.from_dict(connection_invitation_dict)
+connection_invitation_from_dict = ConnectionInvitation.from_dict(connection_invitation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

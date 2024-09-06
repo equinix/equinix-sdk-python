@@ -23,7 +23,7 @@ print(FacilityInput.to_json())
 # convert the object into a dict
 facility_input_dict = facility_input_instance.to_dict()
 # create an instance of FacilityInput from a dict
-facility_input_form_dict = facility_input.from_dict(facility_input_dict)
+facility_input_from_dict = FacilityInput.from_dict(facility_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

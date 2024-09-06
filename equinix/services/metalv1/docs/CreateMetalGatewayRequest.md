@@ -25,7 +25,7 @@ print(CreateMetalGatewayRequest.to_json())
 # convert the object into a dict
 create_metal_gateway_request_dict = create_metal_gateway_request_instance.to_dict()
 # create an instance of CreateMetalGatewayRequest from a dict
-create_metal_gateway_request_form_dict = create_metal_gateway_request.from_dict(create_metal_gateway_request_dict)
+create_metal_gateway_request_from_dict = CreateMetalGatewayRequest.from_dict(create_metal_gateway_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

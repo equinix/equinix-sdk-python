@@ -24,7 +24,7 @@ print(PortEncapsulation.to_json())
 # convert the object into a dict
 port_encapsulation_dict = port_encapsulation_instance.to_dict()
 # create an instance of PortEncapsulation from a dict
-port_encapsulation_form_dict = port_encapsulation.from_dict(port_encapsulation_dict)
+port_encapsulation_from_dict = PortEncapsulation.from_dict(port_encapsulation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

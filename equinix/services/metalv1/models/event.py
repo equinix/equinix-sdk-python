@@ -81,9 +81,9 @@ class Event(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in relationships (list)
         _items = []
         if self.relationships:
-            for _item in self.relationships:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_relationships in self.relationships:
+                if _item_relationships:
+                    _items.append(_item_relationships.to_dict())
             _dict['relationships'] = _items
         return _dict
 

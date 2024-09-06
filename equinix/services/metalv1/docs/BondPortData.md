@@ -24,7 +24,7 @@ print(BondPortData.to_json())
 # convert the object into a dict
 bond_port_data_dict = bond_port_data_instance.to_dict()
 # create an instance of BondPortData from a dict
-bond_port_data_form_dict = bond_port_data.from_dict(bond_port_data_dict)
+bond_port_data_from_dict = BondPortData.from_dict(bond_port_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

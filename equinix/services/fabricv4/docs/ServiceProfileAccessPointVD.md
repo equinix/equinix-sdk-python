@@ -26,7 +26,7 @@ print(ServiceProfileAccessPointVD.to_json())
 # convert the object into a dict
 service_profile_access_point_vd_dict = service_profile_access_point_vd_instance.to_dict()
 # create an instance of ServiceProfileAccessPointVD from a dict
-service_profile_access_point_vd_form_dict = service_profile_access_point_vd.from_dict(service_profile_access_point_vd_dict)
+service_profile_access_point_vd_from_dict = ServiceProfileAccessPointVD.from_dict(service_profile_access_point_vd_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

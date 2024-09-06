@@ -24,7 +24,7 @@ print(DeviceList.to_json())
 # convert the object into a dict
 device_list_dict = device_list_instance.to_dict()
 # create an instance of DeviceList from a dict
-device_list_form_dict = device_list.from_dict(device_list_dict)
+device_list_from_dict = DeviceList.from_dict(device_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

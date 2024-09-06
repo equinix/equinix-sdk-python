@@ -25,7 +25,7 @@ print(CloudRouterFilter.to_json())
 # convert the object into a dict
 cloud_router_filter_dict = cloud_router_filter_instance.to_dict()
 # create an instance of CloudRouterFilter from a dict
-cloud_router_filter_form_dict = cloud_router_filter.from_dict(cloud_router_filter_dict)
+cloud_router_filter_from_dict = CloudRouterFilter.from_dict(cloud_router_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(BGPActionRequest.to_json())
 # convert the object into a dict
 bgp_action_request_dict = bgp_action_request_instance.to_dict()
 # create an instance of BGPActionRequest from a dict
-bgp_action_request_form_dict = bgp_action_request.from_dict(bgp_action_request_dict)
+bgp_action_request_from_dict = BGPActionRequest.from_dict(bgp_action_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

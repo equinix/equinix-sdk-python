@@ -24,7 +24,7 @@ print(Md5.to_json())
 # convert the object into a dict
 md5_dict = md5_instance.to_dict()
 # create an instance of Md5 from a dict
-md5_form_dict = md5.from_dict(md5_dict)
+md5_from_dict = Md5.from_dict(md5_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

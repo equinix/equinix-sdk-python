@@ -29,7 +29,7 @@ print(FirmwareSet.to_json())
 # convert the object into a dict
 firmware_set_dict = firmware_set_instance.to_dict()
 # create an instance of FirmwareSet from a dict
-firmware_set_form_dict = firmware_set.from_dict(firmware_set_dict)
+firmware_set_from_dict = FirmwareSet.from_dict(firmware_set_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,7 +34,7 @@ print(VrfVirtualCircuitUpdateInput.to_json())
 # convert the object into a dict
 vrf_virtual_circuit_update_input_dict = vrf_virtual_circuit_update_input_instance.to_dict()
 # create an instance of VrfVirtualCircuitUpdateInput from a dict
-vrf_virtual_circuit_update_input_form_dict = vrf_virtual_circuit_update_input.from_dict(vrf_virtual_circuit_update_input_dict)
+vrf_virtual_circuit_update_input_from_dict = VrfVirtualCircuitUpdateInput.from_dict(vrf_virtual_circuit_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

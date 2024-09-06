@@ -37,7 +37,7 @@ print(Network.to_json())
 # convert the object into a dict
 network_dict = network_instance.to_dict()
 # create an instance of Network from a dict
-network_form_dict = network.from_dict(network_dict)
+network_from_dict = Network.from_dict(network_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

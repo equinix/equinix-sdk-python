@@ -48,7 +48,7 @@ print(VirtualCircuit.to_json())
 # convert the object into a dict
 virtual_circuit_dict = virtual_circuit_instance.to_dict()
 # create an instance of VirtualCircuit from a dict
-virtual_circuit_form_dict = virtual_circuit.from_dict(virtual_circuit_dict)
+virtual_circuit_from_dict = VirtualCircuit.from_dict(virtual_circuit_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

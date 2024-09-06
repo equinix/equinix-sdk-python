@@ -23,7 +23,7 @@ print(SpotPricesPerBaremetal.to_json())
 # convert the object into a dict
 spot_prices_per_baremetal_dict = spot_prices_per_baremetal_instance.to_dict()
 # create an instance of SpotPricesPerBaremetal from a dict
-spot_prices_per_baremetal_form_dict = spot_prices_per_baremetal.from_dict(spot_prices_per_baremetal_dict)
+spot_prices_per_baremetal_from_dict = SpotPricesPerBaremetal.from_dict(spot_prices_per_baremetal_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

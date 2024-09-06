@@ -23,7 +23,7 @@ print(BatchesList.to_json())
 # convert the object into a dict
 batches_list_dict = batches_list_instance.to_dict()
 # create an instance of BatchesList from a dict
-batches_list_form_dict = batches_list.from_dict(batches_list_dict)
+batches_list_from_dict = BatchesList.from_dict(batches_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

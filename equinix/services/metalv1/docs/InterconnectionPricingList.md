@@ -23,7 +23,7 @@ print(InterconnectionPricingList.to_json())
 # convert the object into a dict
 interconnection_pricing_list_dict = interconnection_pricing_list_instance.to_dict()
 # create an instance of InterconnectionPricingList from a dict
-interconnection_pricing_list_form_dict = interconnection_pricing_list.from_dict(interconnection_pricing_list_dict)
+interconnection_pricing_list_from_dict = InterconnectionPricingList.from_dict(interconnection_pricing_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

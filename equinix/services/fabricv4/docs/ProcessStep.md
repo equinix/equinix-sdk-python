@@ -25,7 +25,7 @@ print(ProcessStep.to_json())
 # convert the object into a dict
 process_step_dict = process_step_instance.to_dict()
 # create an instance of ProcessStep from a dict
-process_step_form_dict = process_step.from_dict(process_step_dict)
+process_step_from_dict = ProcessStep.from_dict(process_step_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

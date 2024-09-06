@@ -25,7 +25,7 @@ print(Raid.to_json())
 # convert the object into a dict
 raid_dict = raid_instance.to_dict()
 # create an instance of Raid from a dict
-raid_form_dict = raid.from_dict(raid_dict)
+raid_from_dict = Raid.from_dict(raid_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

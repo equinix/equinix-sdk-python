@@ -25,7 +25,7 @@ print(PaymentMethodCreateInput.to_json())
 # convert the object into a dict
 payment_method_create_input_dict = payment_method_create_input_instance.to_dict()
 # create an instance of PaymentMethodCreateInput from a dict
-payment_method_create_input_form_dict = payment_method_create_input.from_dict(payment_method_create_input_dict)
+payment_method_create_input_from_dict = PaymentMethodCreateInput.from_dict(payment_method_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

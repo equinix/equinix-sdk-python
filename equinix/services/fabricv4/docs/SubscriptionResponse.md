@@ -33,7 +33,7 @@ print(SubscriptionResponse.to_json())
 # convert the object into a dict
 subscription_response_dict = subscription_response_instance.to_dict()
 # create an instance of SubscriptionResponse from a dict
-subscription_response_form_dict = subscription_response.from_dict(subscription_response_dict)
+subscription_response_from_dict = SubscriptionResponse.from_dict(subscription_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

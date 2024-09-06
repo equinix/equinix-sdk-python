@@ -52,7 +52,7 @@ print(IPReservationListIpAddressesInner.to_json())
 # convert the object into a dict
 ip_reservation_list_ip_addresses_inner_dict = ip_reservation_list_ip_addresses_inner_instance.to_dict()
 # create an instance of IPReservationListIpAddressesInner from a dict
-ip_reservation_list_ip_addresses_inner_form_dict = ip_reservation_list_ip_addresses_inner.from_dict(ip_reservation_list_ip_addresses_inner_dict)
+ip_reservation_list_ip_addresses_inner_from_dict = IPReservationListIpAddressesInner.from_dict(ip_reservation_list_ip_addresses_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

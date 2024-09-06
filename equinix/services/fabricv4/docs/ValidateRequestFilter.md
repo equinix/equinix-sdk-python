@@ -23,7 +23,7 @@ print(ValidateRequestFilter.to_json())
 # convert the object into a dict
 validate_request_filter_dict = validate_request_filter_instance.to_dict()
 # create an instance of ValidateRequestFilter from a dict
-validate_request_filter_form_dict = validate_request_filter.from_dict(validate_request_filter_dict)
+validate_request_filter_from_dict = ValidateRequestFilter.from_dict(validate_request_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

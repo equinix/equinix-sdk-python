@@ -39,7 +39,7 @@ print(LinkProtocol.to_json())
 # convert the object into a dict
 link_protocol_dict = link_protocol_instance.to_dict()
 # create an instance of LinkProtocol from a dict
-link_protocol_form_dict = link_protocol.from_dict(link_protocol_dict)
+link_protocol_from_dict = LinkProtocol.from_dict(link_protocol_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

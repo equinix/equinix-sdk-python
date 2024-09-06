@@ -23,7 +23,7 @@ print(BulkPhysicalPort.to_json())
 # convert the object into a dict
 bulk_physical_port_dict = bulk_physical_port_instance.to_dict()
 # create an instance of BulkPhysicalPort from a dict
-bulk_physical_port_form_dict = bulk_physical_port.from_dict(bulk_physical_port_dict)
+bulk_physical_port_from_dict = BulkPhysicalPort.from_dict(bulk_physical_port_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

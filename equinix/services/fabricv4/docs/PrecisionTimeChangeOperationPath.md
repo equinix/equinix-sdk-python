@@ -2,10 +2,11 @@
 
 path inside document leading to updated parameter
 
-## Properties
+## Enum
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+* `SLASH_NAME` (value: `'/name'`)
+
+* `SLASH_PACKAGE_SLASH_CODE` (value: `'/package/code'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

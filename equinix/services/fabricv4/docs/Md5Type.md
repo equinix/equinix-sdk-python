@@ -1,10 +1,11 @@
 # Md5Type
 
 
-## Properties
+## Enum
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+* `ASCII` (value: `'ASCII'`)
+
+* `HEX` (value: `'HEX'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

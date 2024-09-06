@@ -23,7 +23,7 @@ print(RouteFilterRulesPostRequest.to_json())
 # convert the object into a dict
 route_filter_rules_post_request_dict = route_filter_rules_post_request_instance.to_dict()
 # create an instance of RouteFilterRulesPostRequest from a dict
-route_filter_rules_post_request_form_dict = route_filter_rules_post_request.from_dict(route_filter_rules_post_request_dict)
+route_filter_rules_post_request_from_dict = RouteFilterRulesPostRequest.from_dict(route_filter_rules_post_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

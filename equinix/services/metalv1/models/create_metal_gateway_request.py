@@ -19,7 +19,7 @@ from typing import Any, List, Optional
 from equinix.services.metalv1.models.metal_gateway_create_input import MetalGatewayCreateInput
 from equinix.services.metalv1.models.vrf_metal_gateway_create_input import VrfMetalGatewayCreateInput
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 CREATEMETALGATEWAYREQUEST_ONE_OF_SCHEMAS = ["MetalGatewayCreateInput", "VrfMetalGatewayCreateInput"]
@@ -33,7 +33,7 @@ class CreateMetalGatewayRequest(BaseModel):
     # data type: VrfMetalGatewayCreateInput
     oneof_schema_2_validator: Optional[VrfMetalGatewayCreateInput] = None
     actual_instance: Optional[Union[MetalGatewayCreateInput, VrfMetalGatewayCreateInput]] = None
-    one_of_schemas: List[str] = Field(default=Literal["MetalGatewayCreateInput", "VrfMetalGatewayCreateInput"])
+    one_of_schemas: Set[str] = { "MetalGatewayCreateInput", "VrfMetalGatewayCreateInput" }
 
     model_config = ConfigDict(
         validate_assignment=True,

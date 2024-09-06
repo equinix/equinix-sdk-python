@@ -78,9 +78,9 @@ class AdvanceConfiguration(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ntp (list)
         _items = []
         if self.ntp:
-            for _item in self.ntp:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ntp in self.ntp:
+                if _item_ntp:
+                    _items.append(_item_ntp.to_dict())
             _dict['ntp'] = _items
         # override the default output from pydantic by calling `to_dict()` of ptp
         if self.ptp:

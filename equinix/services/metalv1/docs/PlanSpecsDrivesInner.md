@@ -26,7 +26,7 @@ print(PlanSpecsDrivesInner.to_json())
 # convert the object into a dict
 plan_specs_drives_inner_dict = plan_specs_drives_inner_instance.to_dict()
 # create an instance of PlanSpecsDrivesInner from a dict
-plan_specs_drives_inner_form_dict = plan_specs_drives_inner.from_dict(plan_specs_drives_inner_dict)
+plan_specs_drives_inner_from_dict = PlanSpecsDrivesInner.from_dict(plan_specs_drives_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

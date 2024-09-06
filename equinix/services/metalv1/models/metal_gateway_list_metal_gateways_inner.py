@@ -20,7 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.metalv1.models.metal_gateway import MetalGateway
 from equinix.services.metalv1.models.vrf_metal_gateway import VrfMetalGateway
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -39,7 +39,7 @@ class MetalGatewayListMetalGatewaysInner(BaseModel):
         actual_instance: Optional[Union[MetalGateway, VrfMetalGateway]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["MetalGateway", "VrfMetalGateway"])
+    any_of_schemas: Set[str] = { "MetalGateway", "VrfMetalGateway" }
 
     model_config = {
         "validate_assignment": True,

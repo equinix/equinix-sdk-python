@@ -25,7 +25,7 @@ print(CloudRouterChangeOperation.to_json())
 # convert the object into a dict
 cloud_router_change_operation_dict = cloud_router_change_operation_instance.to_dict()
 # create an instance of CloudRouterChangeOperation from a dict
-cloud_router_change_operation_form_dict = cloud_router_change_operation.from_dict(cloud_router_change_operation_dict)
+cloud_router_change_operation_from_dict = CloudRouterChangeOperation.from_dict(cloud_router_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

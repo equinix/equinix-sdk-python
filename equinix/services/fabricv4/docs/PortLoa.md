@@ -25,7 +25,7 @@ print(PortLoa.to_json())
 # convert the object into a dict
 port_loa_dict = port_loa_instance.to_dict()
 # create an instance of PortLoa from a dict
-port_loa_form_dict = port_loa.from_dict(port_loa_dict)
+port_loa_from_dict = PortLoa.from_dict(port_loa_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -26,7 +26,7 @@ print(MetalGatewayElasticIpCreateInput.to_json())
 # convert the object into a dict
 metal_gateway_elastic_ip_create_input_dict = metal_gateway_elastic_ip_create_input_instance.to_dict()
 # create an instance of MetalGatewayElasticIpCreateInput from a dict
-metal_gateway_elastic_ip_create_input_form_dict = metal_gateway_elastic_ip_create_input.from_dict(metal_gateway_elastic_ip_create_input_dict)
+metal_gateway_elastic_ip_create_input_from_dict = MetalGatewayElasticIpCreateInput.from_dict(metal_gateway_elastic_ip_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

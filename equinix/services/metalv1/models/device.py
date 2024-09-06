@@ -135,9 +135,9 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in actions (list)
         _items = []
         if self.actions:
-            for _item in self.actions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_actions in self.actions:
+                if _item_actions:
+                    _items.append(_item_actions.to_dict())
             _dict['actions'] = _items
         # override the default output from pydantic by calling `to_dict()` of created_by
         if self.created_by:
@@ -151,9 +151,9 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ip_addresses (list)
         _items = []
         if self.ip_addresses:
-            for _item in self.ip_addresses:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ip_addresses in self.ip_addresses:
+                if _item_ip_addresses:
+                    _items.append(_item_ip_addresses.to_dict())
             _dict['ip_addresses'] = _items
         # override the default output from pydantic by calling `to_dict()` of metro
         if self.metro:
@@ -161,9 +161,9 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in network_ports (list)
         _items = []
         if self.network_ports:
-            for _item in self.network_ports:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_network_ports in self.network_ports:
+                if _item_network_ports:
+                    _items.append(_item_network_ports.to_dict())
             _dict['network_ports'] = _items
         # override the default output from pydantic by calling `to_dict()` of operating_system
         if self.operating_system:
@@ -180,16 +180,16 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in provisioning_events (list)
         _items = []
         if self.provisioning_events:
-            for _item in self.provisioning_events:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_provisioning_events in self.provisioning_events:
+                if _item_provisioning_events:
+                    _items.append(_item_provisioning_events.to_dict())
             _dict['provisioning_events'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in ssh_keys (list)
         _items = []
         if self.ssh_keys:
-            for _item in self.ssh_keys:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ssh_keys in self.ssh_keys:
+                if _item_ssh_keys:
+                    _items.append(_item_ssh_keys.to_dict())
             _dict['ssh_keys'] = _items
         # override the default output from pydantic by calling `to_dict()` of storage
         if self.storage:
@@ -197,9 +197,9 @@ class Device(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in volumes (list)
         _items = []
         if self.volumes:
-            for _item in self.volumes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_volumes in self.volumes:
+                if _item_volumes:
+                    _items.append(_item_volumes.to_dict())
             _dict['volumes'] = _items
         return _dict
 

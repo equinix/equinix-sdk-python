@@ -22,7 +22,7 @@ print(RouteFiltersSearchBaseFilter.to_json())
 # convert the object into a dict
 route_filters_search_base_filter_dict = route_filters_search_base_filter_instance.to_dict()
 # create an instance of RouteFiltersSearchBaseFilter from a dict
-route_filters_search_base_filter_form_dict = route_filters_search_base_filter.from_dict(route_filters_search_base_filter_dict)
+route_filters_search_base_filter_from_dict = RouteFiltersSearchBaseFilter.from_dict(route_filters_search_base_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

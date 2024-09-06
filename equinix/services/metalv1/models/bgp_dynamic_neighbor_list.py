@@ -74,9 +74,9 @@ class BgpDynamicNeighborList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in bgp_dynamic_neighbors (list)
         _items = []
         if self.bgp_dynamic_neighbors:
-            for _item in self.bgp_dynamic_neighbors:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bgp_dynamic_neighbors in self.bgp_dynamic_neighbors:
+                if _item_bgp_dynamic_neighbors:
+                    _items.append(_item_bgp_dynamic_neighbors.to_dict())
             _dict['bgp_dynamic_neighbors'] = _items
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:

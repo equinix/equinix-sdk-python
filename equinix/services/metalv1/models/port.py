@@ -110,9 +110,9 @@ class Port(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in virtual_networks (list)
         _items = []
         if self.virtual_networks:
-            for _item in self.virtual_networks:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_virtual_networks in self.virtual_networks:
+                if _item_virtual_networks:
+                    _items.append(_item_virtual_networks.to_dict())
             _dict['virtual_networks'] = _items
         return _dict
 

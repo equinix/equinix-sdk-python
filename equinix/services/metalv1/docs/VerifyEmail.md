@@ -23,7 +23,7 @@ print(VerifyEmail.to_json())
 # convert the object into a dict
 verify_email_dict = verify_email_instance.to_dict()
 # create an instance of VerifyEmail from a dict
-verify_email_form_dict = verify_email.from_dict(verify_email_dict)
+verify_email_from_dict = VerifyEmail.from_dict(verify_email_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

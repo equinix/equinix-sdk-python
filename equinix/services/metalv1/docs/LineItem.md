@@ -39,7 +39,7 @@ print(LineItem.to_json())
 # convert the object into a dict
 line_item_dict = line_item_instance.to_dict()
 # create an instance of LineItem from a dict
-line_item_form_dict = line_item.from_dict(line_item_dict)
+line_item_from_dict = LineItem.from_dict(line_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

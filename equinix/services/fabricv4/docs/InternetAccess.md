@@ -23,7 +23,7 @@ print(InternetAccess.to_json())
 # convert the object into a dict
 internet_access_dict = internet_access_instance.to_dict()
 # create an instance of InternetAccess from a dict
-internet_access_form_dict = internet_access.from_dict(internet_access_dict)
+internet_access_from_dict = InternetAccess.from_dict(internet_access_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

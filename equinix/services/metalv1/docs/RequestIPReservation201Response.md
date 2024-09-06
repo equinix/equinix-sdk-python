@@ -52,7 +52,7 @@ print(RequestIPReservation201Response.to_json())
 # convert the object into a dict
 request_ip_reservation201_response_dict = request_ip_reservation201_response_instance.to_dict()
 # create an instance of RequestIPReservation201Response from a dict
-request_ip_reservation201_response_form_dict = request_ip_reservation201_response.from_dict(request_ip_reservation201_response_dict)
+request_ip_reservation201_response_from_dict = RequestIPReservation201Response.from_dict(request_ip_reservation201_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

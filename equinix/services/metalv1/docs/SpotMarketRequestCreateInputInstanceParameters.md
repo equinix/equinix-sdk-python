@@ -40,7 +40,7 @@ print(SpotMarketRequestCreateInputInstanceParameters.to_json())
 # convert the object into a dict
 spot_market_request_create_input_instance_parameters_dict = spot_market_request_create_input_instance_parameters_instance.to_dict()
 # create an instance of SpotMarketRequestCreateInputInstanceParameters from a dict
-spot_market_request_create_input_instance_parameters_form_dict = spot_market_request_create_input_instance_parameters.from_dict(spot_market_request_create_input_instance_parameters_dict)
+spot_market_request_create_input_instance_parameters_from_dict = SpotMarketRequestCreateInputInstanceParameters.from_dict(spot_market_request_create_input_instance_parameters_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

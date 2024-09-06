@@ -26,7 +26,7 @@ print(Ipv4.to_json())
 # convert the object into a dict
 ipv4_dict = ipv4_instance.to_dict()
 # create an instance of Ipv4 from a dict
-ipv4_form_dict = ipv4.from_dict(ipv4_dict)
+ipv4_from_dict = Ipv4.from_dict(ipv4_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

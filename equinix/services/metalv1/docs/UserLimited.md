@@ -26,7 +26,7 @@ print(UserLimited.to_json())
 # convert the object into a dict
 user_limited_dict = user_limited_instance.to_dict()
 # create an instance of UserLimited from a dict
-user_limited_form_dict = user_limited.from_dict(user_limited_dict)
+user_limited_from_dict = UserLimited.from_dict(user_limited_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

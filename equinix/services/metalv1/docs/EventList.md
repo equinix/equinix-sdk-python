@@ -24,7 +24,7 @@ print(EventList.to_json())
 # convert the object into a dict
 event_list_dict = event_list_instance.to_dict()
 # create an instance of EventList from a dict
-event_list_form_dict = event_list.from_dict(event_list_dict)
+event_list_from_dict = EventList.from_dict(event_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

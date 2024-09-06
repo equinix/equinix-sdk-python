@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**SortDirection**](SortDirection.md) |  | [optional] 
-**var_property** | [**SortBy**](SortBy.md) |  | [optional] 
+**direction** | [**SortDirection**](SortDirection.md) |  | [optional] [default to SortDirection.DESC]
+**var_property** | [**SortBy**](SortBy.md) |  | [optional] [default to SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(SortCriteriaResponse.to_json())
 # convert the object into a dict
 sort_criteria_response_dict = sort_criteria_response_instance.to_dict()
 # create an instance of SortCriteriaResponse from a dict
-sort_criteria_response_form_dict = sort_criteria_response.from_dict(sort_criteria_response_dict)
+sort_criteria_response_from_dict = SortCriteriaResponse.from_dict(sort_criteria_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

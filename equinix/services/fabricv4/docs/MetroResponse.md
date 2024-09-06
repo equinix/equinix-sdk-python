@@ -24,7 +24,7 @@ print(MetroResponse.to_json())
 # convert the object into a dict
 metro_response_dict = metro_response_instance.to_dict()
 # create an instance of MetroResponse from a dict
-metro_response_form_dict = metro_response.from_dict(metro_response_dict)
+metro_response_from_dict = MetroResponse.from_dict(metro_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

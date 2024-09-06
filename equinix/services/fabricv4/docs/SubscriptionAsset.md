@@ -25,7 +25,7 @@ print(SubscriptionAsset.to_json())
 # convert the object into a dict
 subscription_asset_dict = subscription_asset_instance.to_dict()
 # create an instance of SubscriptionAsset from a dict
-subscription_asset_form_dict = subscription_asset.from_dict(subscription_asset_dict)
+subscription_asset_from_dict = SubscriptionAsset.from_dict(subscription_asset_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

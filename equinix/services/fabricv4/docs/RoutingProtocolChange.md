@@ -25,7 +25,7 @@ print(RoutingProtocolChange.to_json())
 # convert the object into a dict
 routing_protocol_change_dict = routing_protocol_change_instance.to_dict()
 # create an instance of RoutingProtocolChange from a dict
-routing_protocol_change_form_dict = routing_protocol_change.from_dict(routing_protocol_change_dict)
+routing_protocol_change_from_dict = RoutingProtocolChange.from_dict(routing_protocol_change_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

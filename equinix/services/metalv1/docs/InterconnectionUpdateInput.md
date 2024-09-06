@@ -27,7 +27,7 @@ print(InterconnectionUpdateInput.to_json())
 # convert the object into a dict
 interconnection_update_input_dict = interconnection_update_input_instance.to_dict()
 # create an instance of InterconnectionUpdateInput from a dict
-interconnection_update_input_form_dict = interconnection_update_input.from_dict(interconnection_update_input_dict)
+interconnection_update_input_from_dict = InterconnectionUpdateInput.from_dict(interconnection_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

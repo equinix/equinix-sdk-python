@@ -33,7 +33,7 @@ print(VrfRoute.to_json())
 # convert the object into a dict
 vrf_route_dict = vrf_route_instance.to_dict()
 # create an instance of VrfRoute from a dict
-vrf_route_form_dict = vrf_route.from_dict(vrf_route_dict)
+vrf_route_from_dict = VrfRoute.from_dict(vrf_route_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

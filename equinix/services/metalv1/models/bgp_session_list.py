@@ -72,9 +72,9 @@ class BgpSessionList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in bgp_sessions (list)
         _items = []
         if self.bgp_sessions:
-            for _item in self.bgp_sessions:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_bgp_sessions in self.bgp_sessions:
+                if _item_bgp_sessions:
+                    _items.append(_item_bgp_sessions.to_dict())
             _dict['bgp_sessions'] = _items
         return _dict
 

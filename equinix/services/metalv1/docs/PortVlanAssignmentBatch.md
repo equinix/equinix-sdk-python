@@ -31,7 +31,7 @@ print(PortVlanAssignmentBatch.to_json())
 # convert the object into a dict
 port_vlan_assignment_batch_dict = port_vlan_assignment_batch_instance.to_dict()
 # create an instance of PortVlanAssignmentBatch from a dict
-port_vlan_assignment_batch_form_dict = port_vlan_assignment_batch.from_dict(port_vlan_assignment_batch_dict)
+port_vlan_assignment_batch_from_dict = PortVlanAssignmentBatch.from_dict(port_vlan_assignment_batch_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

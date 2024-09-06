@@ -72,9 +72,9 @@ class CapacityList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each value in capacity (dict)
         _field_dict = {}
         if self.capacity:
-            for _key in self.capacity:
-                if self.capacity[_key]:
-                    _field_dict[_key] = self.capacity[_key].to_dict()
+            for _key_capacity in self.capacity:
+                if self.capacity[_key_capacity]:
+                    _field_dict[_key_capacity] = self.capacity[_key_capacity].to_dict()
             _dict['capacity'] = _field_dict
         return _dict
 

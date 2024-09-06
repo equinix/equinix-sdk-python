@@ -26,7 +26,7 @@ print(BgpConfigRequestInput.to_json())
 # convert the object into a dict
 bgp_config_request_input_dict = bgp_config_request_input_instance.to_dict()
 # create an instance of BgpConfigRequestInput from a dict
-bgp_config_request_input_form_dict = bgp_config_request_input.from_dict(bgp_config_request_input_dict)
+bgp_config_request_input_from_dict = BgpConfigRequestInput.from_dict(bgp_config_request_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

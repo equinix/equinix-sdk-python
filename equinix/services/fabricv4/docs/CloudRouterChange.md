@@ -29,7 +29,7 @@ print(CloudRouterChange.to_json())
 # convert the object into a dict
 cloud_router_change_dict = cloud_router_change_instance.to_dict()
 # create an instance of CloudRouterChange from a dict
-cloud_router_change_form_dict = cloud_router_change.from_dict(cloud_router_change_dict)
+cloud_router_change_from_dict = CloudRouterChange.from_dict(cloud_router_change_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

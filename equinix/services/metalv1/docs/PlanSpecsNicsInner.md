@@ -24,7 +24,7 @@ print(PlanSpecsNicsInner.to_json())
 # convert the object into a dict
 plan_specs_nics_inner_dict = plan_specs_nics_inner_instance.to_dict()
 # create an instance of PlanSpecsNicsInner from a dict
-plan_specs_nics_inner_form_dict = plan_specs_nics_inner.from_dict(plan_specs_nics_inner_dict)
+plan_specs_nics_inner_from_dict = PlanSpecsNicsInner.from_dict(plan_specs_nics_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

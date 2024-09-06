@@ -23,7 +23,7 @@ print(RouteTableEntryConnection.to_json())
 # convert the object into a dict
 route_table_entry_connection_dict = route_table_entry_connection_instance.to_dict()
 # create an instance of RouteTableEntryConnection from a dict
-route_table_entry_connection_form_dict = route_table_entry_connection.from_dict(route_table_entry_connection_dict)
+route_table_entry_connection_from_dict = RouteTableEntryConnection.from_dict(route_table_entry_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

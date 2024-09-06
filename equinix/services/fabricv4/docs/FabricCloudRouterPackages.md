@@ -23,7 +23,7 @@ print(FabricCloudRouterPackages.to_json())
 # convert the object into a dict
 fabric_cloud_router_packages_dict = fabric_cloud_router_packages_instance.to_dict()
 # create an instance of FabricCloudRouterPackages from a dict
-fabric_cloud_router_packages_form_dict = fabric_cloud_router_packages.from_dict(fabric_cloud_router_packages_dict)
+fabric_cloud_router_packages_from_dict = FabricCloudRouterPackages.from_dict(fabric_cloud_router_packages_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

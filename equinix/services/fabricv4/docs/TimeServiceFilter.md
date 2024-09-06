@@ -25,7 +25,7 @@ print(TimeServiceFilter.to_json())
 # convert the object into a dict
 time_service_filter_dict = time_service_filter_instance.to_dict()
 # create an instance of TimeServiceFilter from a dict
-time_service_filter_form_dict = time_service_filter.from_dict(time_service_filter_dict)
+time_service_filter_from_dict = TimeServiceFilter.from_dict(time_service_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

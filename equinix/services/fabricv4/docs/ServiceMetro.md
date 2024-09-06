@@ -28,7 +28,7 @@ print(ServiceMetro.to_json())
 # convert the object into a dict
 service_metro_dict = service_metro_instance.to_dict()
 # create an instance of ServiceMetro from a dict
-service_metro_form_dict = service_metro.from_dict(service_metro_dict)
+service_metro_from_dict = ServiceMetro.from_dict(service_metro_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,7 +28,7 @@ print(ServiceProfileAccessPointCOLO.to_json())
 # convert the object into a dict
 service_profile_access_point_colo_dict = service_profile_access_point_colo_instance.to_dict()
 # create an instance of ServiceProfileAccessPointCOLO from a dict
-service_profile_access_point_colo_form_dict = service_profile_access_point_colo.from_dict(service_profile_access_point_colo_dict)
+service_profile_access_point_colo_from_dict = ServiceProfileAccessPointCOLO.from_dict(service_profile_access_point_colo_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

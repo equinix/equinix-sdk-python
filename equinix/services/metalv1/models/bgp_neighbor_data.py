@@ -81,16 +81,16 @@ class BgpNeighborData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in routes_in (list)
         _items = []
         if self.routes_in:
-            for _item in self.routes_in:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_routes_in in self.routes_in:
+                if _item_routes_in:
+                    _items.append(_item_routes_in.to_dict())
             _dict['routes_in'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in routes_out (list)
         _items = []
         if self.routes_out:
-            for _item in self.routes_out:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_routes_out in self.routes_out:
+                if _item_routes_out:
+                    _items.append(_item_routes_out.to_dict())
             _dict['routes_out'] = _items
         return _dict
 

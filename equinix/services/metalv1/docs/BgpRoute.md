@@ -24,7 +24,7 @@ print(BgpRoute.to_json())
 # convert the object into a dict
 bgp_route_dict = bgp_route_instance.to_dict()
 # create an instance of BgpRoute from a dict
-bgp_route_form_dict = bgp_route.from_dict(bgp_route_dict)
+bgp_route_from_dict = BgpRoute.from_dict(bgp_route_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

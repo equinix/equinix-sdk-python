@@ -30,7 +30,7 @@ print(BgpSession.to_json())
 # convert the object into a dict
 bgp_session_dict = bgp_session_instance.to_dict()
 # create an instance of BgpSession from a dict
-bgp_session_form_dict = bgp_session.from_dict(bgp_session_dict)
+bgp_session_from_dict = BgpSession.from_dict(bgp_session_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

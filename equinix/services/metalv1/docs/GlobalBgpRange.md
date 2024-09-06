@@ -26,7 +26,7 @@ print(GlobalBgpRange.to_json())
 # convert the object into a dict
 global_bgp_range_dict = global_bgp_range_instance.to_dict()
 # create an instance of GlobalBgpRange from a dict
-global_bgp_range_form_dict = global_bgp_range.from_dict(global_bgp_range_dict)
+global_bgp_range_from_dict = GlobalBgpRange.from_dict(global_bgp_range_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

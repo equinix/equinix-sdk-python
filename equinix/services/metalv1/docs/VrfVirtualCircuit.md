@@ -43,7 +43,7 @@ print(VrfVirtualCircuit.to_json())
 # convert the object into a dict
 vrf_virtual_circuit_dict = vrf_virtual_circuit_instance.to_dict()
 # create an instance of VrfVirtualCircuit from a dict
-vrf_virtual_circuit_form_dict = vrf_virtual_circuit.from_dict(vrf_virtual_circuit_dict)
+vrf_virtual_circuit_from_dict = VrfVirtualCircuit.from_dict(vrf_virtual_circuit_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

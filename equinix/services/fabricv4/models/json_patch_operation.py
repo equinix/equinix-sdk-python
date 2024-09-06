@@ -22,7 +22,7 @@ from equinix.services.fabricv4.models.add_operation import AddOperation
 from equinix.services.fabricv4.models.remove_operation import RemoveOperation
 from equinix.services.fabricv4.models.replace_operation import ReplaceOperation
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 JSONPATCHOPERATION_ONE_OF_SCHEMAS = ["AddOperation", "RemoveOperation", "ReplaceOperation"]
@@ -38,7 +38,7 @@ class JsonPatchOperation(BaseModel):
     # data type: ReplaceOperation
     oneof_schema_3_validator: Optional[ReplaceOperation] = None
     actual_instance: Optional[Union[AddOperation, RemoveOperation, ReplaceOperation]] = None
-    one_of_schemas: List[str] = Field(default=Literal["AddOperation", "RemoveOperation", "ReplaceOperation"])
+    one_of_schemas: Set[str] = { "AddOperation", "RemoveOperation", "ReplaceOperation" }
 
     model_config = ConfigDict(
         validate_assignment=True,

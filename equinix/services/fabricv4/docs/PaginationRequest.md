@@ -24,7 +24,7 @@ print(PaginationRequest.to_json())
 # convert the object into a dict
 pagination_request_dict = pagination_request_instance.to_dict()
 # create an instance of PaginationRequest from a dict
-pagination_request_form_dict = pagination_request.from_dict(pagination_request_dict)
+pagination_request_from_dict = PaginationRequest.from_dict(pagination_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -74,9 +74,9 @@ class InterconnectionList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in interconnections (list)
         _items = []
         if self.interconnections:
-            for _item in self.interconnections:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_interconnections in self.interconnections:
+                if _item_interconnections:
+                    _items.append(_item_interconnections.to_dict())
             _dict['interconnections'] = _items
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:

@@ -325,7 +325,7 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_organization_capacity_per_facility**
-> CapacityList find_organization_capacity_per_facility(id)
+> CapacityList1 find_organization_capacity_per_facility(id)
 
 View available hardware plans per Facility for given organization
 
@@ -337,7 +337,7 @@ Returns a list of facilities and plans with their current capacity.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.capacity_list import CapacityList
+from equinix.services.metalv1.models.capacity_list1 import CapacityList1
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CapacityList**](CapacityList.md)
+[**CapacityList1**](CapacityList1.md)
 
 ### Authorization
 

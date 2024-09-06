@@ -24,7 +24,7 @@ print(SubInterface.to_json())
 # convert the object into a dict
 sub_interface_dict = sub_interface_instance.to_dict()
 # create an instance of SubInterface from a dict
-sub_interface_form_dict = sub_interface.from_dict(sub_interface_dict)
+sub_interface_from_dict = SubInterface.from_dict(sub_interface_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

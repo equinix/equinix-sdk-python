@@ -26,7 +26,7 @@ print(IpBlockPrice.to_json())
 # convert the object into a dict
 ip_block_price_dict = ip_block_price_instance.to_dict()
 # create an instance of IpBlockPrice from a dict
-ip_block_price_form_dict = ip_block_price.from_dict(ip_block_price_dict)
+ip_block_price_from_dict = IpBlockPrice.from_dict(ip_block_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

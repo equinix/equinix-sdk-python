@@ -30,7 +30,7 @@ print(SSHKey.to_json())
 # convert the object into a dict
 ssh_key_dict = ssh_key_instance.to_dict()
 # create an instance of SSHKey from a dict
-ssh_key_form_dict = ssh_key.from_dict(ssh_key_dict)
+ssh_key_from_dict = SSHKey.from_dict(ssh_key_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

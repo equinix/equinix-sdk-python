@@ -18,10 +18,10 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
-from equinix.services.metalv1.models.invitation import Invitation
+from equinix.services.metalv1.models.invitation1 import Invitation1
 from equinix.services.metalv1.models.invitation_input import InvitationInput
-from equinix.services.metalv1.models.invitation_list import InvitationList
-from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.invitation_list1 import InvitationList1
+from equinix.services.metalv1.models.operating_system_list1 import OperatingSystemList1
 from equinix.services.metalv1.models.organization import Organization
 from equinix.services.metalv1.models.organization_input import OrganizationInput
 from equinix.services.metalv1.models.organization_list import OrganizationList
@@ -382,7 +382,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> Invitation:
+    ) -> Invitation1:
         """Create an invitation for an organization
 
         In order to add a user to an organization, they must first be invited. To invite to several projects the parameter `projects_ids:[a,b,c]` can be used
@@ -426,7 +426,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -461,7 +461,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[Invitation]:
+    ) -> ApiResponse[Invitation1]:
         """Create an invitation for an organization
 
         In order to add a user to an organization, they must first be invited. To invite to several projects the parameter `projects_ids:[a,b,c]` can be used
@@ -505,7 +505,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -584,7 +584,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "Invitation",
+            '201': "Invitation1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -1594,7 +1594,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OperatingSystemList:
+    ) -> OperatingSystemList1:
         """Retrieve all operating systems visible by the organization
 
         Returns a listing of available operating systems for the given organization
@@ -1635,7 +1635,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OperatingSystemList",
+            '200': "OperatingSystemList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -1668,7 +1668,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OperatingSystemList]:
+    ) -> ApiResponse[OperatingSystemList1]:
         """Retrieve all operating systems visible by the organization
 
         Returns a listing of available operating systems for the given organization
@@ -1709,7 +1709,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OperatingSystemList",
+            '200': "OperatingSystemList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -1783,7 +1783,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OperatingSystemList",
+            '200': "OperatingSystemList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2445,7 +2445,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> InvitationList:
+    ) -> InvitationList1:
         """Retrieve organization invitations
 
         Returns all invitations in an organization.
@@ -2492,7 +2492,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2527,7 +2527,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[InvitationList]:
+    ) -> ApiResponse[InvitationList1]:
         """Retrieve organization invitations
 
         Returns all invitations in an organization.
@@ -2574,7 +2574,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",
@@ -2656,7 +2656,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "InvitationList",
+            '200': "InvitationList1",
             '401': "Error",
             '403': "Error",
             '404': "Error",

@@ -27,7 +27,7 @@ print(VirtualDevice.to_json())
 # convert the object into a dict
 virtual_device_dict = virtual_device_instance.to_dict()
 # create an instance of VirtualDevice from a dict
-virtual_device_form_dict = virtual_device.from_dict(virtual_device_dict)
+virtual_device_from_dict = VirtualDevice.from_dict(virtual_device_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

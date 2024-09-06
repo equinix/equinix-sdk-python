@@ -48,7 +48,7 @@ print(DeviceCreateInFacilityInput.to_json())
 # convert the object into a dict
 device_create_in_facility_input_dict = device_create_in_facility_input_instance.to_dict()
 # create an instance of DeviceCreateInFacilityInput from a dict
-device_create_in_facility_input_form_dict = device_create_in_facility_input.from_dict(device_create_in_facility_input_dict)
+device_create_in_facility_input_from_dict = DeviceCreateInFacilityInput.from_dict(device_create_in_facility_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

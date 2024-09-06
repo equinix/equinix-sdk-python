@@ -26,7 +26,7 @@ print(SimplifiedLinkProtocol.to_json())
 # convert the object into a dict
 simplified_link_protocol_dict = simplified_link_protocol_instance.to_dict()
 # create an instance of SimplifiedLinkProtocol from a dict
-simplified_link_protocol_form_dict = simplified_link_protocol.from_dict(simplified_link_protocol_dict)
+simplified_link_protocol_from_dict = SimplifiedLinkProtocol.from_dict(simplified_link_protocol_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

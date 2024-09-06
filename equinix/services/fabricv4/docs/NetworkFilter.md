@@ -26,7 +26,7 @@ print(NetworkFilter.to_json())
 # convert the object into a dict
 network_filter_dict = network_filter_instance.to_dict()
 # create an instance of NetworkFilter from a dict
-network_filter_form_dict = network_filter.from_dict(network_filter_dict)
+network_filter_from_dict = NetworkFilter.from_dict(network_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

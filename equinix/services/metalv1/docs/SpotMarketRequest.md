@@ -32,7 +32,7 @@ print(SpotMarketRequest.to_json())
 # convert the object into a dict
 spot_market_request_dict = spot_market_request_instance.to_dict()
 # create an instance of SpotMarketRequest from a dict
-spot_market_request_form_dict = spot_market_request.from_dict(spot_market_request_dict)
+spot_market_request_from_dict = SpotMarketRequest.from_dict(spot_market_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

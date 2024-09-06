@@ -43,7 +43,7 @@ print(AuthTokenUser.to_json())
 # convert the object into a dict
 auth_token_user_dict = auth_token_user_instance.to_dict()
 # create an instance of AuthTokenUser from a dict
-auth_token_user_form_dict = auth_token_user.from_dict(auth_token_user_dict)
+auth_token_user_from_dict = AuthTokenUser.from_dict(auth_token_user_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

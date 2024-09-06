@@ -72,9 +72,9 @@ class SpotMarketRequestList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in spot_market_requests (list)
         _items = []
         if self.spot_market_requests:
-            for _item in self.spot_market_requests:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_spot_market_requests in self.spot_market_requests:
+                if _item_spot_market_requests:
+                    _items.append(_item_spot_market_requests.to_dict())
             _dict['spot_market_requests'] = _items
         return _dict
 

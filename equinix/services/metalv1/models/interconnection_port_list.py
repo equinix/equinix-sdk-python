@@ -72,9 +72,9 @@ class InterconnectionPortList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ports (list)
         _items = []
         if self.ports:
-            for _item in self.ports:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ports in self.ports:
+                if _item_ports:
+                    _items.append(_item_ports.to_dict())
             _dict['ports'] = _items
         return _dict
 

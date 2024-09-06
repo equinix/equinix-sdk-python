@@ -24,7 +24,7 @@ print(ConnectionLink.to_json())
 # convert the object into a dict
 connection_link_dict = connection_link_instance.to_dict()
 # create an instance of ConnectionLink from a dict
-connection_link_form_dict = connection_link.from_dict(connection_link_dict)
+connection_link_from_dict = ConnectionLink.from_dict(connection_link_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

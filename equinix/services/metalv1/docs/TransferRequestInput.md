@@ -23,7 +23,7 @@ print(TransferRequestInput.to_json())
 # convert the object into a dict
 transfer_request_input_dict = transfer_request_input_instance.to_dict()
 # create an instance of TransferRequestInput from a dict
-transfer_request_input_form_dict = transfer_request_input.from_dict(transfer_request_input_dict)
+transfer_request_input_from_dict = TransferRequestInput.from_dict(transfer_request_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.time_service_or_filter import TimeServiceOrFilter
 from equinix.services.fabricv4.models.time_service_simple_expression import TimeServiceSimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -41,7 +41,7 @@ class TimeServiceFilter(BaseModel):
         actual_instance: Optional[Union[TimeServiceOrFilter, TimeServiceSimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["TimeServiceOrFilter", "TimeServiceSimpleExpression"])
+    any_of_schemas: Set[str] = { "TimeServiceOrFilter", "TimeServiceSimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

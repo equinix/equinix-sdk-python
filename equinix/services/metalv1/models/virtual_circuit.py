@@ -17,7 +17,7 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 VIRTUALCIRCUIT_ONE_OF_SCHEMAS = ["VlanVirtualCircuit", "VrfVirtualCircuit"]
@@ -31,7 +31,7 @@ class VirtualCircuit(BaseModel):
     # data type: VrfVirtualCircuit
     oneof_schema_2_validator: Optional[VrfVirtualCircuit] = None
     actual_instance: Optional[Union[VlanVirtualCircuit, VrfVirtualCircuit]] = None
-    one_of_schemas: List[str] = Field(default=Literal["VlanVirtualCircuit", "VrfVirtualCircuit"])
+    one_of_schemas: Set[str] = { "VlanVirtualCircuit", "VrfVirtualCircuit" }
 
     model_config = ConfigDict(
         validate_assignment=True,

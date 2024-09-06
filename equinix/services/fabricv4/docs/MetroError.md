@@ -28,7 +28,7 @@ print(MetroError.to_json())
 # convert the object into a dict
 metro_error_dict = metro_error_instance.to_dict()
 # create an instance of MetroError from a dict
-metro_error_form_dict = metro_error.from_dict(metro_error_dict)
+metro_error_from_dict = MetroError.from_dict(metro_error_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,7 +41,7 @@ print(ServiceProfileMetadata.to_json())
 # convert the object into a dict
 service_profile_metadata_dict = service_profile_metadata_instance.to_dict()
 # create an instance of ServiceProfileMetadata from a dict
-service_profile_metadata_form_dict = service_profile_metadata.from_dict(service_profile_metadata_dict)
+service_profile_metadata_from_dict = ServiceProfileMetadata.from_dict(service_profile_metadata_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

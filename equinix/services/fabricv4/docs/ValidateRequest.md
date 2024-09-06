@@ -23,7 +23,7 @@ print(ValidateRequest.to_json())
 # convert the object into a dict
 validate_request_dict = validate_request_instance.to_dict()
 # create an instance of ValidateRequest from a dict
-validate_request_form_dict = validate_request.from_dict(validate_request_dict)
+validate_request_from_dict = ValidateRequest.from_dict(validate_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

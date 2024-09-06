@@ -25,7 +25,7 @@ print(Disk.to_json())
 # convert the object into a dict
 disk_dict = disk_instance.to_dict()
 # create an instance of Disk from a dict
-disk_form_dict = disk.from_dict(disk_dict)
+disk_from_dict = Disk.from_dict(disk_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

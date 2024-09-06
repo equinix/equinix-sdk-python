@@ -23,7 +23,7 @@ print(SpotPricesDatapoints.to_json())
 # convert the object into a dict
 spot_prices_datapoints_dict = spot_prices_datapoints_instance.to_dict()
 # create an instance of SpotPricesDatapoints from a dict
-spot_prices_datapoints_form_dict = spot_prices_datapoints.from_dict(spot_prices_datapoints_dict)
+spot_prices_datapoints_from_dict = SpotPricesDatapoints.from_dict(spot_prices_datapoints_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

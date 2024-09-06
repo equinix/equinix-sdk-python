@@ -23,7 +23,7 @@ print(VirtualPortConfiguration.to_json())
 # convert the object into a dict
 virtual_port_configuration_dict = virtual_port_configuration_instance.to_dict()
 # create an instance of VirtualPortConfiguration from a dict
-virtual_port_configuration_form_dict = virtual_port_configuration.from_dict(virtual_port_configuration_dict)
+virtual_port_configuration_from_dict = VirtualPortConfiguration.from_dict(virtual_port_configuration_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

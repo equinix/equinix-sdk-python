@@ -72,9 +72,9 @@ class FacilityList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in facilities (list)
         _items = []
         if self.facilities:
-            for _item in self.facilities:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_facilities in self.facilities:
+                if _item_facilities:
+                    _items.append(_item_facilities.to_dict())
             _dict['facilities'] = _items
         return _dict
 

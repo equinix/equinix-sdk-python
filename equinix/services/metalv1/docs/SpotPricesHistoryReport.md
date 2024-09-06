@@ -23,7 +23,7 @@ print(SpotPricesHistoryReport.to_json())
 # convert the object into a dict
 spot_prices_history_report_dict = spot_prices_history_report_instance.to_dict()
 # create an instance of SpotPricesHistoryReport from a dict
-spot_prices_history_report_form_dict = spot_prices_history_report.from_dict(spot_prices_history_report_dict)
+spot_prices_history_report_from_dict = SpotPricesHistoryReport.from_dict(spot_prices_history_report_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

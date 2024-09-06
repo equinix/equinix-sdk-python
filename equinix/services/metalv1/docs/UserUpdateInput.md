@@ -28,7 +28,7 @@ print(UserUpdateInput.to_json())
 # convert the object into a dict
 user_update_input_dict = user_update_input_instance.to_dict()
 # create an instance of UserUpdateInput from a dict
-user_update_input_form_dict = user_update_input.from_dict(user_update_input_dict)
+user_update_input_from_dict = UserUpdateInput.from_dict(user_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

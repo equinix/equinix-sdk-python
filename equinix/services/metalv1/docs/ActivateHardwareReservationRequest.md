@@ -23,7 +23,7 @@ print(ActivateHardwareReservationRequest.to_json())
 # convert the object into a dict
 activate_hardware_reservation_request_dict = activate_hardware_reservation_request_instance.to_dict()
 # create an instance of ActivateHardwareReservationRequest from a dict
-activate_hardware_reservation_request_form_dict = activate_hardware_reservation_request.from_dict(activate_hardware_reservation_request_dict)
+activate_hardware_reservation_request_from_dict = ActivateHardwareReservationRequest.from_dict(activate_hardware_reservation_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

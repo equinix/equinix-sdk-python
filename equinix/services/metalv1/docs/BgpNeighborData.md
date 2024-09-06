@@ -32,7 +32,7 @@ print(BgpNeighborData.to_json())
 # convert the object into a dict
 bgp_neighbor_data_dict = bgp_neighbor_data_instance.to_dict()
 # create an instance of BgpNeighborData from a dict
-bgp_neighbor_data_form_dict = bgp_neighbor_data.from_dict(bgp_neighbor_data_dict)
+bgp_neighbor_data_from_dict = BgpNeighborData.from_dict(bgp_neighbor_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

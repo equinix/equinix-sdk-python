@@ -23,7 +23,7 @@ print(Filesystem.to_json())
 # convert the object into a dict
 filesystem_dict = filesystem_instance.to_dict()
 # create an instance of Filesystem from a dict
-filesystem_form_dict = filesystem.from_dict(filesystem_dict)
+filesystem_from_dict = Filesystem.from_dict(filesystem_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

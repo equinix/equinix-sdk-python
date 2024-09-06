@@ -111,9 +111,9 @@ class IPReservation(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in assignments (list)
         _items = []
         if self.assignments:
-            for _item in self.assignments:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_assignments in self.assignments:
+                if _item_assignments:
+                    _items.append(_item_assignments.to_dict())
             _dict['assignments'] = _items
         # override the default output from pydantic by calling `to_dict()` of facility
         if self.facility:

@@ -27,7 +27,7 @@ print(VirtualConnectionPrice.to_json())
 # convert the object into a dict
 virtual_connection_price_dict = virtual_connection_price_instance.to_dict()
 # create an instance of VirtualConnectionPrice from a dict
-virtual_connection_price_form_dict = virtual_connection_price.from_dict(virtual_connection_price_dict)
+virtual_connection_price_from_dict = VirtualConnectionPrice.from_dict(virtual_connection_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

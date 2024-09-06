@@ -38,7 +38,7 @@ print(Vrf.to_json())
 # convert the object into a dict
 vrf_dict = vrf_instance.to_dict()
 # create an instance of Vrf from a dict
-vrf_form_dict = vrf.from_dict(vrf_dict)
+vrf_from_dict = Vrf.from_dict(vrf_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

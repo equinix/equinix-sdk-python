@@ -34,7 +34,7 @@ print(VlanFabricVcCreateInput.to_json())
 # convert the object into a dict
 vlan_fabric_vc_create_input_dict = vlan_fabric_vc_create_input_instance.to_dict()
 # create an instance of VlanFabricVcCreateInput from a dict
-vlan_fabric_vc_create_input_form_dict = vlan_fabric_vc_create_input.from_dict(vlan_fabric_vc_create_input_dict)
+vlan_fabric_vc_create_input_from_dict = VlanFabricVcCreateInput.from_dict(vlan_fabric_vc_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

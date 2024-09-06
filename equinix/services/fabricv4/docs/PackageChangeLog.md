@@ -24,7 +24,7 @@ print(PackageChangeLog.to_json())
 # convert the object into a dict
 package_change_log_dict = package_change_log_instance.to_dict()
 # create an instance of PackageChangeLog from a dict
-package_change_log_form_dict = package_change_log.from_dict(package_change_log_dict)
+package_change_log_from_dict = PackageChangeLog.from_dict(package_change_log_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

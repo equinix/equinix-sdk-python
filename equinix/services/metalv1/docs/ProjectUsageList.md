@@ -23,7 +23,7 @@ print(ProjectUsageList.to_json())
 # convert the object into a dict
 project_usage_list_dict = project_usage_list_instance.to_dict()
 # create an instance of ProjectUsageList from a dict
-project_usage_list_form_dict = project_usage_list.from_dict(project_usage_list_dict)
+project_usage_list_from_dict = ProjectUsageList.from_dict(project_usage_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

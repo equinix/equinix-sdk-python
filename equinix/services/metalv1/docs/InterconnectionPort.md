@@ -31,7 +31,7 @@ print(InterconnectionPort.to_json())
 # convert the object into a dict
 interconnection_port_dict = interconnection_port_instance.to_dict()
 # create an instance of InterconnectionPort from a dict
-interconnection_port_form_dict = interconnection_port.from_dict(interconnection_port_dict)
+interconnection_port_from_dict = InterconnectionPort.from_dict(interconnection_port_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

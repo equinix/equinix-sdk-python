@@ -24,7 +24,7 @@ print(SubscriptionTrial.to_json())
 # convert the object into a dict
 subscription_trial_dict = subscription_trial_instance.to_dict()
 # create an instance of SubscriptionTrial from a dict
-subscription_trial_form_dict = subscription_trial.from_dict(subscription_trial_dict)
+subscription_trial_from_dict = SubscriptionTrial.from_dict(subscription_trial_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

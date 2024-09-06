@@ -32,7 +32,7 @@ print(VlanCSPConnectionCreateInput.to_json())
 # convert the object into a dict
 vlan_csp_connection_create_input_dict = vlan_csp_connection_create_input_instance.to_dict()
 # create an instance of VlanCSPConnectionCreateInput from a dict
-vlan_csp_connection_create_input_form_dict = vlan_csp_connection_create_input.from_dict(vlan_csp_connection_create_input_dict)
+vlan_csp_connection_create_input_from_dict = VlanCSPConnectionCreateInput.from_dict(vlan_csp_connection_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

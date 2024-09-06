@@ -25,7 +25,7 @@ print(SimplifiedMetadataEntity.to_json())
 # convert the object into a dict
 simplified_metadata_entity_dict = simplified_metadata_entity_instance.to_dict()
 # create an instance of SimplifiedMetadataEntity from a dict
-simplified_metadata_entity_form_dict = simplified_metadata_entity.from_dict(simplified_metadata_entity_dict)
+simplified_metadata_entity_from_dict = SimplifiedMetadataEntity.from_dict(simplified_metadata_entity_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

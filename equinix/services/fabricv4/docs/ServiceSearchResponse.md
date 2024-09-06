@@ -23,7 +23,7 @@ print(ServiceSearchResponse.to_json())
 # convert the object into a dict
 service_search_response_dict = service_search_response_instance.to_dict()
 # create an instance of ServiceSearchResponse from a dict
-service_search_response_form_dict = service_search_response.from_dict(service_search_response_dict)
+service_search_response_from_dict = ServiceSearchResponse.from_dict(service_search_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

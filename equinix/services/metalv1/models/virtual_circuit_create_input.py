@@ -19,7 +19,7 @@ from typing import Any, List, Optional
 from equinix.services.metalv1.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
 from equinix.services.metalv1.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 VIRTUALCIRCUITCREATEINPUT_ONE_OF_SCHEMAS = ["VlanVirtualCircuitCreateInput", "VrfVirtualCircuitCreateInput"]
@@ -33,7 +33,7 @@ class VirtualCircuitCreateInput(BaseModel):
     # data type: VrfVirtualCircuitCreateInput
     oneof_schema_2_validator: Optional[VrfVirtualCircuitCreateInput] = None
     actual_instance: Optional[Union[VlanVirtualCircuitCreateInput, VrfVirtualCircuitCreateInput]] = None
-    one_of_schemas: List[str] = Field(default=Literal["VlanVirtualCircuitCreateInput", "VrfVirtualCircuitCreateInput"])
+    one_of_schemas: Set[str] = { "VlanVirtualCircuitCreateInput", "VrfVirtualCircuitCreateInput" }
 
     model_config = ConfigDict(
         validate_assignment=True,

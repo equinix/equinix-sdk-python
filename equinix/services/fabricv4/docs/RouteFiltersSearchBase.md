@@ -24,7 +24,7 @@ print(RouteFiltersSearchBase.to_json())
 # convert the object into a dict
 route_filters_search_base_dict = route_filters_search_base_instance.to_dict()
 # create an instance of RouteFiltersSearchBase from a dict
-route_filters_search_base_form_dict = route_filters_search_base.from_dict(route_filters_search_base_dict)
+route_filters_search_base_from_dict = RouteFiltersSearchBase.from_dict(route_filters_search_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

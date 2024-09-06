@@ -23,7 +23,7 @@ print(BgpSessionNeighbors.to_json())
 # convert the object into a dict
 bgp_session_neighbors_dict = bgp_session_neighbors_instance.to_dict()
 # create an instance of BgpSessionNeighbors from a dict
-bgp_session_neighbors_form_dict = bgp_session_neighbors.from_dict(bgp_session_neighbors_dict)
+bgp_session_neighbors_from_dict = BgpSessionNeighbors.from_dict(bgp_session_neighbors_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

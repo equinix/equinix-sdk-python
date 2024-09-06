@@ -23,7 +23,7 @@ print(PlanAvailableInInnerPrice.to_json())
 # convert the object into a dict
 plan_available_in_inner_price_dict = plan_available_in_inner_price_instance.to_dict()
 # create an instance of PlanAvailableInInnerPrice from a dict
-plan_available_in_inner_price_form_dict = plan_available_in_inner_price.from_dict(plan_available_in_inner_price_dict)
+plan_available_in_inner_price_from_dict = PlanAvailableInInnerPrice.from_dict(plan_available_in_inner_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

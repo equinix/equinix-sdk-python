@@ -25,7 +25,7 @@ print(DeviceHealthRollup.to_json())
 # convert the object into a dict
 device_health_rollup_dict = device_health_rollup_instance.to_dict()
 # create an instance of DeviceHealthRollup from a dict
-device_health_rollup_form_dict = device_health_rollup.from_dict(device_health_rollup_dict)
+device_health_rollup_from_dict = DeviceHealthRollup.from_dict(device_health_rollup_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

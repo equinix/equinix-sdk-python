@@ -24,7 +24,7 @@ print(VrfLearnedRoutes.to_json())
 # convert the object into a dict
 vrf_learned_routes_dict = vrf_learned_routes_instance.to_dict()
 # create an instance of VrfLearnedRoutes from a dict
-vrf_learned_routes_form_dict = vrf_learned_routes.from_dict(vrf_learned_routes_dict)
+vrf_learned_routes_from_dict = VrfLearnedRoutes.from_dict(vrf_learned_routes_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

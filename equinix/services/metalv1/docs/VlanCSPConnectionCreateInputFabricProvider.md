@@ -26,7 +26,7 @@ print(VlanCSPConnectionCreateInputFabricProvider.to_json())
 # convert the object into a dict
 vlan_csp_connection_create_input_fabric_provider_dict = vlan_csp_connection_create_input_fabric_provider_instance.to_dict()
 # create an instance of VlanCSPConnectionCreateInputFabricProvider from a dict
-vlan_csp_connection_create_input_fabric_provider_form_dict = vlan_csp_connection_create_input_fabric_provider.from_dict(vlan_csp_connection_create_input_fabric_provider_dict)
+vlan_csp_connection_create_input_fabric_provider_from_dict = VlanCSPConnectionCreateInputFabricProvider.from_dict(vlan_csp_connection_create_input_fabric_provider_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

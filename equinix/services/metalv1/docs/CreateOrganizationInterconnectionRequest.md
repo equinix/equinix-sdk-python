@@ -39,7 +39,7 @@ print(CreateOrganizationInterconnectionRequest.to_json())
 # convert the object into a dict
 create_organization_interconnection_request_dict = create_organization_interconnection_request_instance.to_dict()
 # create an instance of CreateOrganizationInterconnectionRequest from a dict
-create_organization_interconnection_request_form_dict = create_organization_interconnection_request.from_dict(create_organization_interconnection_request_dict)
+create_organization_interconnection_request_from_dict = CreateOrganizationInterconnectionRequest.from_dict(create_organization_interconnection_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

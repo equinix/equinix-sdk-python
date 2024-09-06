@@ -34,7 +34,7 @@ print(RequestIPReservationRequest.to_json())
 # convert the object into a dict
 request_ip_reservation_request_dict = request_ip_reservation_request_instance.to_dict()
 # create an instance of RequestIPReservationRequest from a dict
-request_ip_reservation_request_form_dict = request_ip_reservation_request.from_dict(request_ip_reservation_request_dict)
+request_ip_reservation_request_from_dict = RequestIPReservationRequest.from_dict(request_ip_reservation_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

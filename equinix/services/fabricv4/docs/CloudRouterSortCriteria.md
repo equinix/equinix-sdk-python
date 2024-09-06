@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**CloudRouterSortDirection**](CloudRouterSortDirection.md) |  | [optional] 
-**var_property** | [**CloudRouterSortBy**](CloudRouterSortBy.md) |  | [optional] 
+**direction** | [**CloudRouterSortDirection**](CloudRouterSortDirection.md) |  | [optional] [default to CloudRouterSortDirection.DESC]
+**var_property** | [**CloudRouterSortBy**](CloudRouterSortBy.md) |  | [optional] [default to CloudRouterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(CloudRouterSortCriteria.to_json())
 # convert the object into a dict
 cloud_router_sort_criteria_dict = cloud_router_sort_criteria_instance.to_dict()
 # create an instance of CloudRouterSortCriteria from a dict
-cloud_router_sort_criteria_form_dict = cloud_router_sort_criteria.from_dict(cloud_router_sort_criteria_dict)
+cloud_router_sort_criteria_from_dict = CloudRouterSortCriteria.from_dict(cloud_router_sort_criteria_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

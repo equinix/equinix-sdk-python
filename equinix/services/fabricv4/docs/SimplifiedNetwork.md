@@ -34,7 +34,7 @@ print(SimplifiedNetwork.to_json())
 # convert the object into a dict
 simplified_network_dict = simplified_network_instance.to_dict()
 # create an instance of SimplifiedNetwork from a dict
-simplified_network_form_dict = simplified_network.from_dict(simplified_network_dict)
+simplified_network_from_dict = SimplifiedNetwork.from_dict(simplified_network_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

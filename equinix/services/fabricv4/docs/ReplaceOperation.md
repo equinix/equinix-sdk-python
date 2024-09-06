@@ -25,7 +25,7 @@ print(ReplaceOperation.to_json())
 # convert the object into a dict
 replace_operation_dict = replace_operation_instance.to_dict()
 # create an instance of ReplaceOperation from a dict
-replace_operation_form_dict = replace_operation.from_dict(replace_operation_dict)
+replace_operation_from_dict = ReplaceOperation.from_dict(replace_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

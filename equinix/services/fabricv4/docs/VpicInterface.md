@@ -24,7 +24,7 @@ print(VpicInterface.to_json())
 # convert the object into a dict
 vpic_interface_dict = vpic_interface_instance.to_dict()
 # create an instance of VpicInterface from a dict
-vpic_interface_form_dict = vpic_interface.from_dict(vpic_interface_dict)
+vpic_interface_from_dict = VpicInterface.from_dict(vpic_interface_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

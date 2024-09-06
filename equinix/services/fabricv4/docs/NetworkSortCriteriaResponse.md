@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**NetworkSortDirectionResponse**](NetworkSortDirectionResponse.md) |  | [optional] 
-**var_property** | [**NetworkSortByResponse**](NetworkSortByResponse.md) |  | [optional] 
+**direction** | [**NetworkSortDirectionResponse**](NetworkSortDirectionResponse.md) |  | [optional] [default to NetworkSortDirectionResponse.DESC]
+**var_property** | [**NetworkSortByResponse**](NetworkSortByResponse.md) |  | [optional] [default to NetworkSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(NetworkSortCriteriaResponse.to_json())
 # convert the object into a dict
 network_sort_criteria_response_dict = network_sort_criteria_response_instance.to_dict()
 # create an instance of NetworkSortCriteriaResponse from a dict
-network_sort_criteria_response_form_dict = network_sort_criteria_response.from_dict(network_sort_criteria_response_dict)
+network_sort_criteria_response_from_dict = NetworkSortCriteriaResponse.from_dict(network_sort_criteria_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

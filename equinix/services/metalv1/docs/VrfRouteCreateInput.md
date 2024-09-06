@@ -25,7 +25,7 @@ print(VrfRouteCreateInput.to_json())
 # convert the object into a dict
 vrf_route_create_input_dict = vrf_route_create_input_instance.to_dict()
 # create an instance of VrfRouteCreateInput from a dict
-vrf_route_create_input_form_dict = vrf_route_create_input.from_dict(vrf_route_create_input_dict)
+vrf_route_create_input_from_dict = VrfRouteCreateInput.from_dict(vrf_route_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
