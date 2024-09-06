@@ -21,6 +21,11 @@ CODE_BASE_DIR=services
 onboard-service:
 	script/onboard_service.sh
 
+patch-all:
+	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
+		make -f $$makefile patch;\
+	done
+
 generate-all:
 	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
 		make -f $$makefile generate;\
