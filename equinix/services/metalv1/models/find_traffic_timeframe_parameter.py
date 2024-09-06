@@ -29,7 +29,6 @@ class FindTrafficTimeframeParameter(BaseModel):
     ended_at: datetime
     href: Optional[StrictStr] = None
     started_at: datetime
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["ended_at", "href", "started_at"]
 
     model_config = ConfigDict(
@@ -62,10 +61,8 @@ class FindTrafficTimeframeParameter(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -73,11 +70,6 @@ class FindTrafficTimeframeParameter(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -89,16 +81,16 @@ class FindTrafficTimeframeParameter(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in FindTrafficTimeframeParameter) in the input: " + _key)
+
         _obj = cls.model_validate({
             "ended_at": obj.get("ended_at"),
             "href": obj.get("href"),
             "started_at": obj.get("started_at")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

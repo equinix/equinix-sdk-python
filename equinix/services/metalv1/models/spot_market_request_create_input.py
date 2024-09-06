@@ -35,7 +35,6 @@ class SpotMarketRequestCreateInput(BaseModel):
     instance_parameters: Optional[SpotMarketRequestCreateInputInstanceParameters] = None
     max_bid_price: Optional[Union[StrictFloat, StrictInt]] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro ID or code the spot market request will be created in.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["devices_max", "devices_min", "end_at", "facilities", "href", "instance_parameters", "max_bid_price", "metro"]
 
     model_config = ConfigDict(
@@ -68,10 +67,8 @@ class SpotMarketRequestCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -82,11 +79,6 @@ class SpotMarketRequestCreateInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of instance_parameters
         if self.instance_parameters:
             _dict['instance_parameters'] = self.instance_parameters.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -98,6 +90,11 @@ class SpotMarketRequestCreateInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in SpotMarketRequestCreateInput) in the input: " + _key)
+
         _obj = cls.model_validate({
             "devices_max": obj.get("devices_max"),
             "devices_min": obj.get("devices_min"),
@@ -108,11 +105,6 @@ class SpotMarketRequestCreateInput(BaseModel):
             "max_bid_price": obj.get("max_bid_price"),
             "metro": obj.get("metro")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

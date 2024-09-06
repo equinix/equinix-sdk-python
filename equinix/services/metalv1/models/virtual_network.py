@@ -43,7 +43,6 @@ class VirtualNetwork(BaseModel):
     metro_code: Optional[StrictStr] = Field(default=None, description="The Metro code of the metro in which this Virtual Network is defined.")
     tags: Optional[List[StrictStr]] = None
     vxlan: Optional[StrictInt] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["assigned_to", "assigned_to_virtual_circuit", "created_at", "description", "facility", "href", "id", "instances", "metal_gateways", "metro", "metro_code", "tags", "vxlan"]
 
     model_config = ConfigDict(
@@ -76,10 +75,8 @@ class VirtualNetwork(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -110,11 +107,6 @@ class VirtualNetwork(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of metro
         if self.metro:
             _dict['metro'] = self.metro.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -125,6 +117,11 @@ class VirtualNetwork(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VirtualNetwork) in the input: " + _key)
 
         _obj = cls.model_validate({
             "assigned_to": Project.from_dict(obj["assigned_to"]) if obj.get("assigned_to") is not None else None,
@@ -141,11 +138,6 @@ class VirtualNetwork(BaseModel):
             "tags": obj.get("tags"),
             "vxlan": obj.get("vxlan")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 from equinix.services.metalv1.models.device import Device

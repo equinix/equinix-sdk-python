@@ -34,7 +34,6 @@ class VrfUpdateInput(BaseModel):
     local_asn: Optional[StrictInt] = Field(default=None, description="The new `local_asn` value for the VRF. This field cannot be updated when there are active Interconnection Virtual Circuits associated to the VRF, or if any of the VLANs of the VRF's metal gateway has been assigned on an instance.")
     name: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["bgp_dynamic_neighbors_bfd_enabled", "bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "description", "href", "ip_ranges", "local_asn", "name", "tags"]
 
     model_config = ConfigDict(
@@ -67,10 +66,8 @@ class VrfUpdateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -78,11 +75,6 @@ class VrfUpdateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -93,6 +85,11 @@ class VrfUpdateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VrfUpdateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
@@ -105,11 +102,6 @@ class VrfUpdateInput(BaseModel):
             "name": obj.get("name"),
             "tags": obj.get("tags")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

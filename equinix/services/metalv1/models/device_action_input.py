@@ -32,7 +32,6 @@ class DeviceActionInput(BaseModel):
     operating_system: Optional[StrictStr] = Field(default=None, description="When type is `reinstall`, use this `operating_system` (defaults to the current `operating system`)")
     preserve_data: Optional[StrictBool] = Field(default=None, description="When type is `reinstall`, preserve the existing data on all disks except the operating-system disk.")
     type: StrictStr = Field(description="Action to perform. See Device.actions for possible actions.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["deprovision_fast", "force_delete", "href", "ipxe_script_url", "operating_system", "preserve_data", "type"]
 
     @field_validator('type')
@@ -72,10 +71,8 @@ class DeviceActionInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -83,11 +80,6 @@ class DeviceActionInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -99,6 +91,11 @@ class DeviceActionInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in DeviceActionInput) in the input: " + _key)
+
         _obj = cls.model_validate({
             "deprovision_fast": obj.get("deprovision_fast"),
             "force_delete": obj.get("force_delete"),
@@ -108,11 +105,6 @@ class DeviceActionInput(BaseModel):
             "preserve_data": obj.get("preserve_data"),
             "type": obj.get("type")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -49,7 +49,6 @@ class Project(BaseModel):
     updated_at: Optional[datetime] = None
     url: Optional[StrictStr] = None
     volumes: Optional[List[Href]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["backend_transfer_enabled", "bgp_config", "created_at", "customdata", "devices", "href", "id", "invitations", "max_devices", "members", "memberships", "name", "network_status", "organization", "payment_method", "ssh_keys", "tags", "type", "updated_at", "url", "volumes"]
 
     @field_validator('type')
@@ -92,10 +91,8 @@ class Project(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -154,11 +151,6 @@ class Project(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['volumes'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -169,6 +161,11 @@ class Project(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Project) in the input: " + _key)
 
         _obj = cls.model_validate({
             "backend_transfer_enabled": obj.get("backend_transfer_enabled"),
@@ -193,11 +190,6 @@ class Project(BaseModel):
             "url": obj.get("url"),
             "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

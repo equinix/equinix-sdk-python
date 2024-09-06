@@ -31,7 +31,6 @@ class InterconnectionUpdateInput(BaseModel):
     mode: Optional[StrictStr] = Field(default=None, description="The mode of the interconnection (only relevant to Dedicated Ports). Shared connections won't have this field. Can be either 'standard' or 'tunnel'.   The default mode of an interconnection on a Dedicated Port is 'standard'. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances.")
     name: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["contact_email", "description", "href", "mode", "name", "tags"]
 
     @field_validator('mode')
@@ -74,10 +73,8 @@ class InterconnectionUpdateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -85,11 +82,6 @@ class InterconnectionUpdateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -101,6 +93,11 @@ class InterconnectionUpdateInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in InterconnectionUpdateInput) in the input: " + _key)
+
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
@@ -109,11 +106,6 @@ class InterconnectionUpdateInput(BaseModel):
             "name": obj.get("name"),
             "tags": obj.get("tags")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

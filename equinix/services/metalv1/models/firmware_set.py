@@ -35,7 +35,6 @@ class FirmwareSet(BaseModel):
     name: StrictStr = Field(description="Firmware Set Name")
     updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
     uuid: StrictStr = Field(description="Firmware Set UUID")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["attributes", "component_firmware", "created_at", "href", "name", "updated_at", "uuid"]
 
     model_config = ConfigDict(
@@ -72,14 +71,12 @@ class FirmwareSet(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "created_at",
             "name",
             "updated_at",
             "uuid",
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -101,11 +98,6 @@ class FirmwareSet(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['component_firmware'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -117,6 +109,11 @@ class FirmwareSet(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in FirmwareSet) in the input: " + _key)
+
         _obj = cls.model_validate({
             "attributes": [Attribute.from_dict(_item) for _item in obj["attributes"]] if obj.get("attributes") is not None else None,
             "component_firmware": [Component.from_dict(_item) for _item in obj["component_firmware"]] if obj.get("component_firmware") is not None else None,
@@ -126,11 +123,6 @@ class FirmwareSet(BaseModel):
             "updated_at": obj.get("updated_at"),
             "uuid": obj.get("uuid")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

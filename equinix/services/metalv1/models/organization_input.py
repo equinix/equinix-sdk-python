@@ -36,7 +36,6 @@ class OrganizationInput(BaseModel):
     name: Optional[StrictStr] = None
     twitter: Optional[StrictStr] = None
     website: Optional[StrictStr] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["address", "billing_address", "customdata", "description", "enforce_2fa_at", "href", "name", "twitter", "website"]
 
     model_config = ConfigDict(
@@ -69,10 +68,8 @@ class OrganizationInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -86,11 +83,6 @@ class OrganizationInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of billing_address
         if self.billing_address:
             _dict['billing_address'] = self.billing_address.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -101,6 +93,11 @@ class OrganizationInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in OrganizationInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "address": Address.from_dict(obj["address"]) if obj.get("address") is not None else None,
@@ -113,11 +110,6 @@ class OrganizationInput(BaseModel):
             "twitter": obj.get("twitter"),
             "website": obj.get("website")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -49,7 +49,6 @@ class AuthTokenUser(BaseModel):
     timezone: Optional[StrictStr] = None
     two_factor_auth: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["avatar_thumb_url", "avatar_url", "created_at", "customdata", "default_organization_id", "default_project_id", "email", "emails", "first_name", "fraud_score", "full_name", "href", "id", "last_login_at", "last_name", "max_organizations", "max_projects", "phone_number", "short_id", "timezone", "two_factor_auth", "updated_at"]
 
     model_config = ConfigDict(
@@ -82,10 +81,8 @@ class AuthTokenUser(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -100,11 +97,6 @@ class AuthTokenUser(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['emails'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -115,6 +107,11 @@ class AuthTokenUser(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in AuthTokenUser) in the input: " + _key)
 
         _obj = cls.model_validate({
             "avatar_thumb_url": obj.get("avatar_thumb_url"),
@@ -140,11 +137,6 @@ class AuthTokenUser(BaseModel):
             "two_factor_auth": obj.get("two_factor_auth"),
             "updated_at": obj.get("updated_at")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

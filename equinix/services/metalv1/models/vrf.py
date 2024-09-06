@@ -47,7 +47,6 @@ class Vrf(BaseModel):
     tags: Optional[List[StrictStr]] = None
     updated_at: Optional[datetime] = None
     virtual_circuits: Optional[List[VrfVirtualCircuit]] = Field(default=None, description="Virtual circuits that are in the VRF")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["bgp_dynamic_neighbors_bfd_enabled", "bgp_dynamic_neighbors_enabled", "bgp_dynamic_neighbors_export_route_map", "bill", "created_at", "created_by", "description", "href", "id", "ip_ranges", "local_asn", "metro", "name", "project", "tags", "updated_at", "virtual_circuits"]
 
     model_config = ConfigDict(
@@ -80,10 +79,8 @@ class Vrf(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -107,11 +104,6 @@ class Vrf(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['virtual_circuits'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -122,6 +114,11 @@ class Vrf(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Vrf) in the input: " + _key)
 
         _obj = cls.model_validate({
             "bgp_dynamic_neighbors_bfd_enabled": obj.get("bgp_dynamic_neighbors_bfd_enabled"),
@@ -142,11 +139,6 @@ class Vrf(BaseModel):
             "updated_at": obj.get("updated_at"),
             "virtual_circuits": [VrfVirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 from equinix.services.metalv1.models.vrf_virtual_circuit import VrfVirtualCircuit

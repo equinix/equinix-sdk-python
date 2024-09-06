@@ -30,7 +30,6 @@ class AttributeData(BaseModel):
     model: Optional[StrictStr] = Field(default=None, description="Model on which this firmware set can be applied")
     plan: Optional[StrictStr] = Field(default=None, description="Plan where the firmware set can be applied")
     vendor: Optional[StrictStr] = Field(default=None, description="Vendor on which this firmware set can be applied")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "latest", "model", "plan", "vendor"]
 
     model_config = ConfigDict(
@@ -67,14 +66,12 @@ class AttributeData(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "latest",
             "model",
             "plan",
             "vendor",
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -82,11 +79,6 @@ class AttributeData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -98,6 +90,11 @@ class AttributeData(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in AttributeData) in the input: " + _key)
+
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "latest": obj.get("latest"),
@@ -105,11 +102,6 @@ class AttributeData(BaseModel):
             "plan": obj.get("plan"),
             "vendor": obj.get("vendor")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

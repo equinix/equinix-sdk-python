@@ -45,7 +45,6 @@ class OperatingSystem(BaseModel):
     release_notes: Optional[StrictStr] = Field(default=None, description="The current release notes for this OS image, typically in Markdown format")
     slug: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["build_date", "default_operating_system", "deprecation_date", "distro", "distro_label", "end_of_life_date", "end_of_service_date", "href", "id", "licensed", "lifecycle_state", "name", "preinstallable", "pricing", "provisionable_on", "release_date", "release_notes", "slug", "version"]
 
     model_config = ConfigDict(
@@ -79,11 +78,9 @@ class OperatingSystem(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "default_operating_system",
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -91,11 +88,6 @@ class OperatingSystem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -106,6 +98,11 @@ class OperatingSystem(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in OperatingSystem) in the input: " + _key)
 
         _obj = cls.model_validate({
             "build_date": obj.get("build_date"),
@@ -128,11 +125,6 @@ class OperatingSystem(BaseModel):
             "slug": obj.get("slug"),
             "version": obj.get("version")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -44,7 +44,6 @@ class UserCreateInput(BaseModel):
     title: Optional[StrictStr] = None
     two_factor_auth: Optional[StrictStr] = None
     verified_at: Optional[datetime] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["company_name", "company_url", "customdata", "emails", "first_name", "href", "invitation_id", "last_name", "level", "nonce", "password", "phone_number", "social_accounts", "timezone", "title", "two_factor_auth", "verified_at"]
 
     model_config = ConfigDict(
@@ -77,10 +76,8 @@ class UserCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -95,11 +92,6 @@ class UserCreateInput(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['emails'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -110,6 +102,11 @@ class UserCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in UserCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "company_name": obj.get("company_name"),
@@ -130,11 +127,6 @@ class UserCreateInput(BaseModel):
             "two_factor_auth": obj.get("two_factor_auth"),
             "verified_at": obj.get("verified_at")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -42,7 +42,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
     subnet_ipv6: Optional[StrictStr] = Field(default=None, description="The /126 or /127 IPv6 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IPv6 and Customer IPv6 must be IPs from this subnet. For /126 subnets, the network and broadcast IPs cannot be used as the Metal IPv6 or Customer IPv6. The subnet specified must be contained within an already-defined IP Range for the VRF.")
     tags: Optional[List[StrictStr]] = None
     vrf: StrictStr = Field(description="The UUID of the VRF that will be associated with the Virtual Circuit.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["customer_ip", "customer_ipv6", "description", "href", "md5", "metal_ip", "metal_ipv6", "name", "nni_vlan", "peer_asn", "project_id", "speed", "subnet", "subnet_ipv6", "tags", "vrf"]
 
     @field_validator('md5')
@@ -85,10 +84,8 @@ class VrfVirtualCircuitCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -96,11 +93,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         # set to None if md5 (nullable) is None
         # and model_fields_set contains the field
         if self.md5 is None and "md5" in self.model_fields_set:
@@ -116,6 +108,11 @@ class VrfVirtualCircuitCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VrfVirtualCircuitCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "customer_ip": obj.get("customer_ip"),
@@ -135,11 +132,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
             "tags": obj.get("tags"),
             "vrf": obj.get("vrf")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

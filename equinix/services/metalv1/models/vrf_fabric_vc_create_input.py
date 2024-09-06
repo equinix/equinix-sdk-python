@@ -38,7 +38,6 @@ class VrfFabricVcCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="When requesting for a Fabric VC, the value of this field should be 'shared'.")
     vrfs: List[StrictStr] = Field(description="This field holds a list of VRF UUIDs that will be set automatically on the virtual circuits of Fabric VCs on creation, and can hold up to two UUIDs. Two UUIDs are required when requesting redundant Fabric VCs. The first UUID will be set on the primary virtual circuit, while the second UUID will be set on the secondary. The two UUIDs can be the same if both the primary and secondary virtual circuits will be in the same VRF. This parameter is included in the specification as a developer preview and is generally unavailable. Please contact our Support team for more details.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["contact_email", "description", "facility_id", "href", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vrfs"]
 
     @field_validator('service_token_type')
@@ -85,10 +84,8 @@ class VrfFabricVcCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -96,11 +93,6 @@ class VrfFabricVcCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -111,6 +103,11 @@ class VrfFabricVcCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VrfFabricVcCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
@@ -127,11 +124,6 @@ class VrfFabricVcCreateInput(BaseModel):
             "type": obj.get("type"),
             "vrfs": obj.get("vrfs")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

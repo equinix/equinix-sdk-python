@@ -43,7 +43,6 @@ class BgpConfig(BaseModel):
     route_object: Optional[StrictStr] = Field(default=None, description="Specifies AS-MACRO (aka AS-SET) to use when building client route filters")
     sessions: Optional[List[BgpSession]] = Field(default=None, description="The direct connections between neighboring routers that want to exchange routing information.")
     status: Optional[StrictStr] = Field(default=None, description="Status of the BGP Config. Status \"requested\" is valid only with the \"global\" deployment_type.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["asn", "created_at", "deployment_type", "href", "id", "max_prefix", "md5", "project", "ranges", "requested_at", "route_object", "sessions", "status"]
 
     @field_validator('deployment_type')
@@ -96,10 +95,8 @@ class BgpConfig(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -124,11 +121,6 @@ class BgpConfig(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sessions'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         # set to None if md5 (nullable) is None
         # and model_fields_set contains the field
         if self.md5 is None and "md5" in self.model_fields_set:
@@ -145,6 +137,11 @@ class BgpConfig(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in BgpConfig) in the input: " + _key)
+
         _obj = cls.model_validate({
             "asn": obj.get("asn"),
             "created_at": obj.get("created_at"),
@@ -160,11 +157,6 @@ class BgpConfig(BaseModel):
             "sessions": [BgpSession.from_dict(_item) for _item in obj["sessions"]] if obj.get("sessions") is not None else None,
             "status": obj.get("status")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

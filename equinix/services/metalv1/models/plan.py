@@ -44,7 +44,6 @@ class Plan(BaseModel):
     slug: Optional[StrictStr] = None
     specs: Optional[PlanSpecs] = None
     type: Optional[StrictStr] = Field(default=None, description="The plan type")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["available_in", "available_in_metros", "categories", "class", "deployment_types", "description", "href", "id", "legacy", "line", "name", "pricing", "slug", "specs", "type"]
 
     @field_validator('deployment_types')
@@ -98,10 +97,8 @@ class Plan(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -126,11 +123,6 @@ class Plan(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of specs
         if self.specs:
             _dict['specs'] = self.specs.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -141,6 +133,11 @@ class Plan(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Plan) in the input: " + _key)
 
         _obj = cls.model_validate({
             "available_in": [PlanAvailableInInner.from_dict(_item) for _item in obj["available_in"]] if obj.get("available_in") is not None else None,
@@ -159,11 +156,6 @@ class Plan(BaseModel):
             "specs": PlanSpecs.from_dict(obj["specs"]) if obj.get("specs") is not None else None,
             "type": obj.get("type")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

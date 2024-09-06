@@ -30,7 +30,6 @@ class OrganizationList(BaseModel):
     href: Optional[StrictStr] = None
     meta: Optional[Meta] = None
     organizations: Optional[List[Organization]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "meta", "organizations"]
 
     model_config = ConfigDict(
@@ -63,10 +62,8 @@ class OrganizationList(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -84,11 +81,6 @@ class OrganizationList(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['organizations'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -100,16 +92,16 @@ class OrganizationList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in OrganizationList) in the input: " + _key)
+
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "organizations": [Organization.from_dict(_item) for _item in obj["organizations"]] if obj.get("organizations") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

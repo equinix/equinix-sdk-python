@@ -55,7 +55,6 @@ class DeviceCreateInput(BaseModel):
     termination_time: Optional[datetime] = Field(default=None, description="When the device will be terminated. If you don't supply timezone info, the timestamp is assumed to be in UTC.  This is commonly set in advance for ephemeral spot market instances but this field may also be set with on-demand and reservation instances to automatically delete the resource at a given time. The termination time can also be used to release a hardware reservation instance at a given time, keeping the reservation open for other uses.  On a spot market device, the termination time will be set automatically when outbid. ")
     user_ssh_keys: Optional[List[StrictStr]] = Field(default=None, description="A list of UUIDs identifying the users that should be authorized to access this device (typically via /root/.ssh/authorized_keys).  These keys will also appear in the device metadata.  The users must be members of the project or organization.  If no SSH keys are specified (`user_ssh_keys`, `project_ssh_keys`, and `ssh_keys` are all empty lists or omitted), all parent project keys, parent project members keys and organization members keys will be included. This behaviour can be changed with 'no_ssh_keys' option to omit any SSH key being added. ")
     userdata: Optional[StrictStr] = Field(default=None, description="The userdata presented in the metadata service for this device.  Userdata is fetched and interpreted by the operating system installed on the device. Acceptable formats are determined by the operating system, with the exception of a special iPXE enabling syntax which is handled before the operating system starts.  See [Server User Data](https://deploy.equinix.com/developers/docs/metal/server-metadata/user-data/) and [Provisioning with Custom iPXE](https://deploy.equinix.com/developers/docs/metal/operating-systems/custom-ipxe/#provisioning-with-custom-ipxe) for more details.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "features", "hardware_reservation_id", "hostname", "href", "ip_addresses", "ipxe_script_url", "locked", "network_frozen", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "spot_instance", "spot_price_max", "ssh_keys", "storage", "tags", "termination_time", "user_ssh_keys", "userdata"]
 
     @field_validator('billing_cycle')
@@ -98,10 +97,8 @@ class DeviceCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -126,11 +123,6 @@ class DeviceCreateInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of storage
         if self.storage:
             _dict['storage'] = self.storage.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -141,6 +133,11 @@ class DeviceCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in DeviceCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "always_pxe": obj.get("always_pxe"),
@@ -170,11 +167,6 @@ class DeviceCreateInput(BaseModel):
             "user_ssh_keys": obj.get("user_ssh_keys"),
             "userdata": obj.get("userdata")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

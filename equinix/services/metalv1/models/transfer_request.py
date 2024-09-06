@@ -33,7 +33,6 @@ class TransferRequest(BaseModel):
     project: Optional[Href] = None
     target_organization: Optional[Href] = None
     updated_at: Optional[datetime] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "href", "id", "project", "target_organization", "updated_at"]
 
     model_config = ConfigDict(
@@ -66,10 +65,8 @@ class TransferRequest(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -83,11 +80,6 @@ class TransferRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of target_organization
         if self.target_organization:
             _dict['target_organization'] = self.target_organization.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -99,6 +91,11 @@ class TransferRequest(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in TransferRequest) in the input: " + _key)
+
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "href": obj.get("href"),
@@ -107,11 +104,6 @@ class TransferRequest(BaseModel):
             "target_organization": Href.from_dict(obj["target_organization"]) if obj.get("target_organization") is not None else None,
             "updated_at": obj.get("updated_at")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

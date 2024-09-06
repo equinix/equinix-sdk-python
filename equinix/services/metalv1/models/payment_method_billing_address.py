@@ -29,7 +29,6 @@ class PaymentMethodBillingAddress(BaseModel):
     href: Optional[StrictStr] = None
     postal_code: Optional[StrictStr] = None
     street_address: Optional[StrictStr] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["country_code_alpha2", "href", "postal_code", "street_address"]
 
     model_config = ConfigDict(
@@ -62,10 +61,8 @@ class PaymentMethodBillingAddress(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -73,11 +70,6 @@ class PaymentMethodBillingAddress(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -89,17 +81,17 @@ class PaymentMethodBillingAddress(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in PaymentMethodBillingAddress) in the input: " + _key)
+
         _obj = cls.model_validate({
             "country_code_alpha2": obj.get("country_code_alpha2"),
             "href": obj.get("href"),
             "postal_code": obj.get("postal_code"),
             "street_address": obj.get("street_address")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -38,7 +38,6 @@ class VlanFabricVcCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="When requesting for a Fabric VC, the value of this field should be 'shared'.")
     vlans: List[StrictInt] = Field(description="A list of one or two metro-based VLANs that will be set on the virtual circuits of primary and/or secondary (if redundant) interconnections respectively when creating Fabric VCs. VLANs can also be set after the interconnection is created, but are required to fully activate the virtual circuits.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["contact_email", "description", "facility_id", "href", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vlans"]
 
     @field_validator('service_token_type')
@@ -85,10 +84,8 @@ class VlanFabricVcCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -96,11 +93,6 @@ class VlanFabricVcCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -111,6 +103,11 @@ class VlanFabricVcCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VlanFabricVcCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
@@ -127,11 +124,6 @@ class VlanFabricVcCreateInput(BaseModel):
             "type": obj.get("type"),
             "vlans": obj.get("vlans")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

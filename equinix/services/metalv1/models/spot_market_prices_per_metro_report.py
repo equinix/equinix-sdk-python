@@ -34,7 +34,6 @@ class SpotMarketPricesPerMetroReport(BaseModel):
     ny: Optional[SpotPricesPerFacility] = None
     sg: Optional[SpotPricesPerFacility] = None
     sv: Optional[SpotPricesPerFacility] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["am", "ch", "da", "href", "la", "ny", "sg", "sv"]
 
     model_config = ConfigDict(
@@ -67,10 +66,8 @@ class SpotMarketPricesPerMetroReport(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -99,11 +96,6 @@ class SpotMarketPricesPerMetroReport(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of sv
         if self.sv:
             _dict['sv'] = self.sv.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -115,6 +107,11 @@ class SpotMarketPricesPerMetroReport(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in SpotMarketPricesPerMetroReport) in the input: " + _key)
+
         _obj = cls.model_validate({
             "am": SpotPricesPerFacility.from_dict(obj["am"]) if obj.get("am") is not None else None,
             "ch": SpotPricesPerFacility.from_dict(obj["ch"]) if obj.get("ch") is not None else None,
@@ -125,11 +122,6 @@ class SpotMarketPricesPerMetroReport(BaseModel):
             "sg": SpotPricesPerFacility.from_dict(obj["sg"]) if obj.get("sg") is not None else None,
             "sv": SpotPricesPerFacility.from_dict(obj["sv"]) if obj.get("sv") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

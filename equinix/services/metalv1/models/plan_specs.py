@@ -36,7 +36,6 @@ class PlanSpecs(BaseModel):
     href: Optional[StrictStr] = None
     memory: Optional[PlanSpecsMemory] = None
     nics: Optional[List[PlanSpecsNicsInner]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["cpus", "drives", "features", "href", "memory", "nics"]
 
     model_config = ConfigDict(
@@ -69,10 +68,8 @@ class PlanSpecs(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -107,11 +104,6 @@ class PlanSpecs(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['nics'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -123,6 +115,11 @@ class PlanSpecs(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in PlanSpecs) in the input: " + _key)
+
         _obj = cls.model_validate({
             "cpus": [PlanSpecsCpusInner.from_dict(_item) for _item in obj["cpus"]] if obj.get("cpus") is not None else None,
             "drives": [PlanSpecsDrivesInner.from_dict(_item) for _item in obj["drives"]] if obj.get("drives") is not None else None,
@@ -131,11 +128,6 @@ class PlanSpecs(BaseModel):
             "memory": PlanSpecsMemory.from_dict(obj["memory"]) if obj.get("memory") is not None else None,
             "nics": [PlanSpecsNicsInner.from_dict(_item) for _item in obj["nics"]] if obj.get("nics") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

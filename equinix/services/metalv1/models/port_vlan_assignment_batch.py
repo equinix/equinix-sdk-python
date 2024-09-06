@@ -39,7 +39,6 @@ class PortVlanAssignmentBatch(BaseModel):
     state: Optional[StrictStr] = None
     updated_at: Optional[datetime] = None
     vlan_assignments: Optional[List[PortVlanAssignmentBatchVlanAssignmentsInner]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "error_messages", "href", "id", "port", "project", "quantity", "state", "updated_at", "vlan_assignments"]
 
     @field_validator('state')
@@ -82,10 +81,8 @@ class PortVlanAssignmentBatch(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -106,11 +103,6 @@ class PortVlanAssignmentBatch(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['vlan_assignments'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -121,6 +113,11 @@ class PortVlanAssignmentBatch(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in PortVlanAssignmentBatch) in the input: " + _key)
 
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
@@ -134,11 +131,6 @@ class PortVlanAssignmentBatch(BaseModel):
             "updated_at": obj.get("updated_at"),
             "vlan_assignments": [PortVlanAssignmentBatchVlanAssignmentsInner.from_dict(_item) for _item in obj["vlan_assignments"]] if obj.get("vlan_assignments") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

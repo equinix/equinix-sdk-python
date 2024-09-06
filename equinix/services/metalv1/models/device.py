@@ -81,7 +81,6 @@ class Device(BaseModel):
     user: Optional[StrictStr] = None
     userdata: Optional[StrictStr] = None
     volumes: Optional[List[Href]] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["actions", "always_pxe", "billing_cycle", "bonding_mode", "created_at", "created_by", "customdata", "description", "facility", "firmware_set_id", "hardware_reservation", "hostname", "href", "id", "image_url", "ip_addresses", "ipxe_script_url", "iqn", "locked", "metro", "network_frozen", "network_ports", "operating_system", "plan", "project", "project_lite", "provisioning_events", "provisioning_percentage", "root_password", "short_id", "sos", "spot_instance", "spot_price_max", "ssh_keys", "state", "storage", "switch_uuid", "tags", "termination_time", "updated_at", "user", "userdata", "volumes"]
 
     @field_validator('state')
@@ -124,10 +123,8 @@ class Device(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -204,11 +201,6 @@ class Device(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['volumes'] = _items
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -219,6 +211,11 @@ class Device(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Device) in the input: " + _key)
 
         _obj = cls.model_validate({
             "actions": [DeviceActionsInner.from_dict(_item) for _item in obj["actions"]] if obj.get("actions") is not None else None,
@@ -265,11 +262,6 @@ class Device(BaseModel):
             "userdata": obj.get("userdata"),
             "volumes": [Href.from_dict(_item) for _item in obj["volumes"]] if obj.get("volumes") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 from equinix.services.metalv1.models.hardware_reservation import HardwareReservation

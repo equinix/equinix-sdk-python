@@ -45,7 +45,6 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
     termination_time: Optional[datetime] = None
     user_ssh_keys: Optional[List[StrictStr]] = Field(default=None, description="The UUIDs of users whose SSH keys should be included on the provisioned device.")
     userdata: Optional[StrictStr] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "features", "hostname", "hostnames", "href", "locked", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "tags", "termination_time", "user_ssh_keys", "userdata"]
 
     model_config = ConfigDict(
@@ -78,10 +77,8 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -89,11 +86,6 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -104,6 +96,11 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in SpotMarketRequestCreateInputInstanceParameters) in the input: " + _key)
 
         _obj = cls.model_validate({
             "always_pxe": obj.get("always_pxe"),
@@ -126,11 +123,6 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
             "user_ssh_keys": obj.get("user_ssh_keys"),
             "userdata": obj.get("userdata")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

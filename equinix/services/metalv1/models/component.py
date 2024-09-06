@@ -38,7 +38,6 @@ class Component(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Component UUID")
     vendor: Optional[StrictStr] = Field(default=None, description="Component vendor")
     version: Optional[StrictStr] = Field(default=None, description="Version of the component")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["checksum", "component", "created_at", "filename", "href", "model", "repository_url", "updated_at", "upstream_url", "uuid", "vendor", "version"]
 
     model_config = ConfigDict(
@@ -82,7 +81,6 @@ class Component(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "checksum",
@@ -96,7 +94,6 @@ class Component(BaseModel):
             "uuid",
             "vendor",
             "version",
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -104,11 +101,6 @@ class Component(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -119,6 +111,11 @@ class Component(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Component) in the input: " + _key)
 
         _obj = cls.model_validate({
             "checksum": obj.get("checksum"),
@@ -134,11 +131,6 @@ class Component(BaseModel):
             "vendor": obj.get("vendor"),
             "version": obj.get("version")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

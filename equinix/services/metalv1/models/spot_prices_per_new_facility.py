@@ -28,7 +28,6 @@ class SpotPricesPerNewFacility(BaseModel):
     """ # noqa: E501
     baremetal_1e: Optional[SpotPricesPerBaremetal] = None
     href: Optional[StrictStr] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["baremetal_1e", "href"]
 
     model_config = ConfigDict(
@@ -61,10 +60,8 @@ class SpotPricesPerNewFacility(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -75,11 +72,6 @@ class SpotPricesPerNewFacility(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of baremetal_1e
         if self.baremetal_1e:
             _dict['baremetal_1e'] = self.baremetal_1e.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -91,15 +83,15 @@ class SpotPricesPerNewFacility(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in SpotPricesPerNewFacility) in the input: " + _key)
+
         _obj = cls.model_validate({
             "baremetal_1e": SpotPricesPerBaremetal.from_dict(obj["baremetal_1e"]) if obj.get("baremetal_1e") is not None else None,
             "href": obj.get("href")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -43,7 +43,6 @@ class Invoice(BaseModel):
     reference_number: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     target_date: Optional[date] = None
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["amount", "balance", "created_on", "credit_amount", "credits_applied", "currency", "due_on", "href", "id", "items", "number", "project", "reference_number", "status", "target_date"]
 
     model_config = ConfigDict(
@@ -76,10 +75,8 @@ class Invoice(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -97,11 +94,6 @@ class Invoice(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -112,6 +104,11 @@ class Invoice(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in Invoice) in the input: " + _key)
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
@@ -130,11 +127,6 @@ class Invoice(BaseModel):
             "status": obj.get("status"),
             "target_date": obj.get("target_date")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -55,7 +55,6 @@ class VrfIpReservation(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr
     vrf: Vrf
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["address", "address_family", "bill", "cidr", "created_at", "created_by", "customdata", "details", "gateway", "href", "id", "manageable", "management", "metal_gateway", "metro", "netmask", "network", "project", "project_lite", "public", "state", "tags", "type", "vrf"]
 
     @field_validator('type')
@@ -95,10 +94,8 @@ class VrfIpReservation(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -124,11 +121,6 @@ class VrfIpReservation(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vrf
         if self.vrf:
             _dict['vrf'] = self.vrf.to_dict()
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -139,6 +131,11 @@ class VrfIpReservation(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VrfIpReservation) in the input: " + _key)
 
         _obj = cls.model_validate({
             "address": obj.get("address"),
@@ -166,11 +163,6 @@ class VrfIpReservation(BaseModel):
             "type": obj.get("type"),
             "vrf": Vrf.from_dict(obj["vrf"]) if obj.get("vrf") is not None else None
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

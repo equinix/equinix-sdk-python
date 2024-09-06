@@ -39,7 +39,6 @@ class DedicatedPortCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="When requesting for a dedicated port, the value of this field should be 'dedicated'.")
     use_case: Optional[StrictStr] = Field(default=None, description="The intended use case of the dedicated port.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["billing_account_name", "contact_email", "description", "facility_id", "href", "metro", "mode", "name", "project", "redundancy", "speed", "tags", "type", "use_case"]
 
     @field_validator('mode')
@@ -89,10 +88,8 @@ class DedicatedPortCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -100,11 +97,6 @@ class DedicatedPortCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -115,6 +107,11 @@ class DedicatedPortCreateInput(BaseModel):
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
+
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in DedicatedPortCreateInput) in the input: " + _key)
 
         _obj = cls.model_validate({
             "billing_account_name": obj.get("billing_account_name"),
@@ -132,11 +129,6 @@ class DedicatedPortCreateInput(BaseModel):
             "type": obj.get("type"),
             "use_case": obj.get("use_case")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

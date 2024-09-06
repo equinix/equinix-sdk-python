@@ -26,6 +26,8 @@ patch:
 	rm -rf ${SPEC_PATCHED_DIR}
 	cp -r ${SPEC_FETCHED_DIR} ${SPEC_PATCHED_DIR}
 
+	# TODO: fetch the merged (single-file) spec
+	# instead of merging it here
 	${OPENAPI_GENERATOR} generate \
 		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
 		-g openapi-yaml \
@@ -60,7 +62,10 @@ codegen:
 		--git-user-id ${GIT_ORG} \
 		--git-repo-id ${GIT_REPO} \
 		-c /local/config/openapi-generator.json \
+		`# TODO: enable inline enum resolution; this is only here to provide an upgrade path for metal-python` \
 		--inline-schema-options RESOLVE_INLINE_ENUMS=false \
+		`# TODO: remove this setting so that generated code follows OpenAPI standards; this is only here to provide an upgrade path for metal-python` \
+		-p disallowAdditionalPropertiesIfNotPresent=true \
 		-t /local/${TEMPLATE_DIR} \
 		-o /local/ \
 		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}

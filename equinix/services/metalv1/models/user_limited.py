@@ -30,7 +30,6 @@ class UserLimited(BaseModel):
     full_name: Optional[StrictStr] = Field(default=None, description="Full name of the User")
     href: Optional[StrictStr] = Field(default=None, description="API URL uniquely representing the User")
     id: StrictStr = Field(description="ID of the User")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["avatar_thumb_url", "avatar_url", "full_name", "href", "id"]
 
     model_config = ConfigDict(
@@ -63,10 +62,8 @@ class UserLimited(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -74,11 +71,6 @@ class UserLimited(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -90,6 +82,11 @@ class UserLimited(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in UserLimited) in the input: " + _key)
+
         _obj = cls.model_validate({
             "avatar_thumb_url": obj.get("avatar_thumb_url"),
             "avatar_url": obj.get("avatar_url"),
@@ -97,11 +94,6 @@ class UserLimited(BaseModel):
             "href": obj.get("href"),
             "id": obj.get("id")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

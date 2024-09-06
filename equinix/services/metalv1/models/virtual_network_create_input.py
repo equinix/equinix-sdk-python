@@ -31,7 +31,6 @@ class VirtualNetworkCreateInput(BaseModel):
     metro: Optional[StrictStr] = Field(default=None, description="The UUID (or metro code) for the Metro in which to create this Virtual Network.")
     tags: Optional[List[StrictStr]] = None
     vxlan: Optional[StrictInt] = Field(default=None, description="VLAN ID between 2-3999. Must be unique for the project within the Metro in which this Virtual Network is being created. If no value is specified, the next-available VLAN ID in the range 1000-1999 will be automatically selected.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["description", "facility", "href", "metro", "tags", "vxlan"]
 
     model_config = ConfigDict(
@@ -64,10 +63,8 @@ class VirtualNetworkCreateInput(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -75,11 +72,6 @@ class VirtualNetworkCreateInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -91,6 +83,11 @@ class VirtualNetworkCreateInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in VirtualNetworkCreateInput) in the input: " + _key)
+
         _obj = cls.model_validate({
             "description": obj.get("description"),
             "facility": obj.get("facility"),
@@ -99,11 +96,6 @@ class VirtualNetworkCreateInput(BaseModel):
             "tags": obj.get("tags"),
             "vxlan": obj.get("vxlan")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 

@@ -33,7 +33,6 @@ class MetalGatewayLite(BaseModel):
     state: Optional[StrictStr] = Field(default=None, description="The current state of the Metal Gateway. 'Ready' indicates the gateway record has been configured, but is currently not active on the network. 'Active' indicates the gateway has been configured on the network. 'Deleting' is a temporary state used to indicate that the gateway is in the process of being un-configured from the network, after which the gateway record will be deleted.")
     updated_at: Optional[datetime] = None
     vlan: Optional[StrictInt] = Field(default=None, description="The VLAN id of the Virtual Network record associated to this Metal Gateway.")
-    additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["created_at", "gateway_address", "href", "id", "state", "updated_at", "vlan"]
 
     @field_validator('state')
@@ -76,10 +75,8 @@ class MetalGatewayLite(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -87,11 +84,6 @@ class MetalGatewayLite(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # puts key-value pairs in additional_properties in the top level
-        if self.additional_properties is not None:
-            for _key, _value in self.additional_properties.items():
-                _dict[_key] = _value
-
         return _dict
 
     @classmethod
@@ -103,6 +95,11 @@ class MetalGatewayLite(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
+        # raise errors for additional fields in the input
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                raise ValueError("Error due to additional fields (not defined in MetalGatewayLite) in the input: " + _key)
+
         _obj = cls.model_validate({
             "created_at": obj.get("created_at"),
             "gateway_address": obj.get("gateway_address"),
@@ -112,11 +109,6 @@ class MetalGatewayLite(BaseModel):
             "updated_at": obj.get("updated_at"),
             "vlan": obj.get("vlan")
         })
-        # store additional fields in additional_properties
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                _obj.additional_properties[_key] = obj.get(_key)
-
         return _obj
 
 
