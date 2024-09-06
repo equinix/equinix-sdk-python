@@ -38,8 +38,15 @@ function download_file () {
 
     for path in $ref_targets
     do
-      resolve_relative_path $output_dir/ $current_output_dir/$path
-      download_file $spec_base_url $output_dir $resolved_path
+      case $path in
+        \#*)
+          echo "Skipping resolution of internal ref '${path}'";
+          ;;
+        *)
+          resolve_relative_path $output_dir/ $current_output_dir/$path
+          download_file $spec_base_url $output_dir $resolved_path
+          ;;
+      esac
     done
   fi
 }
