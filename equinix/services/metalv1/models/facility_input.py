@@ -83,11 +83,6 @@ class FacilityInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in FacilityInput) in the input: " + _key)
-
         _obj = cls.model_validate({
             "facility": FacilityInputFacility.from_dict(obj["facility"]) if obj.get("facility") is not None else None,
             "href": obj.get("href")

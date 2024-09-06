@@ -99,11 +99,6 @@ class OperatingSystem(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in OperatingSystem) in the input: " + _key)
-
         _obj = cls.model_validate({
             "build_date": obj.get("build_date"),
             "default_operating_system": obj.get("default_operating_system"),

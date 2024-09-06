@@ -87,11 +87,6 @@ class VrfBGPNeighborsList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VrfBGPNeighborsList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "bgp_neighbors": [VrfBGPNeighbors.from_dict(_item) for _item in obj["bgp_neighbors"]] if obj.get("bgp_neighbors") is not None else None,
             "href": obj.get("href")

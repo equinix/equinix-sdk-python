@@ -83,11 +83,6 @@ class MetadataNetworkNetwork(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in MetadataNetworkNetwork) in the input: " + _key)
-
         _obj = cls.model_validate({
             "bonding": MetadataNetworkNetworkBonding.from_dict(obj["bonding"]) if obj.get("bonding") is not None else None,
             "href": obj.get("href")

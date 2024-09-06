@@ -87,11 +87,6 @@ class SpotMarketRequestList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in SpotMarketRequestList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "spot_market_requests": [SpotMarketRequest.from_dict(_item) for _item in obj["spot_market_requests"]] if obj.get("spot_market_requests") is not None else None

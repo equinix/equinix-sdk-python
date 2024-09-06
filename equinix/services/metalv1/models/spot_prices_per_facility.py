@@ -115,11 +115,6 @@ class SpotPricesPerFacility(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in SpotPricesPerFacility) in the input: " + _key)
-
         _obj = cls.model_validate({
             "baremetal_0": SpotPricesPerBaremetal.from_dict(obj["baremetal_0"]) if obj.get("baremetal_0") is not None else None,
             "baremetal_1": SpotPricesPerBaremetal.from_dict(obj["baremetal_1"]) if obj.get("baremetal_1") is not None else None,

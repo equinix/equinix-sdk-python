@@ -84,11 +84,6 @@ class PaymentMethodUpdateInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in PaymentMethodUpdateInput) in the input: " + _key)
-
         _obj = cls.model_validate({
             "billing_address": obj.get("billing_address"),
             "cardholder_name": obj.get("cardholder_name"),

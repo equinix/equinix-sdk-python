@@ -87,11 +87,6 @@ class VrfLearnedRoutesList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VrfLearnedRoutesList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "learned_routes": [VrfLearnedRoutes.from_dict(_item) for _item in obj["learned_routes"]] if obj.get("learned_routes") is not None else None

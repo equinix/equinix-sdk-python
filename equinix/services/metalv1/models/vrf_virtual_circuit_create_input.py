@@ -109,11 +109,6 @@ class VrfVirtualCircuitCreateInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VrfVirtualCircuitCreateInput) in the input: " + _key)
-
         _obj = cls.model_validate({
             "customer_ip": obj.get("customer_ip"),
             "customer_ipv6": obj.get("customer_ipv6"),

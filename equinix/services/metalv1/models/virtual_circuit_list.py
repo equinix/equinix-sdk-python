@@ -87,11 +87,6 @@ class VirtualCircuitList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VirtualCircuitList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "virtual_circuits": [VirtualCircuit.from_dict(_item) for _item in obj["virtual_circuits"]] if obj.get("virtual_circuits") is not None else None

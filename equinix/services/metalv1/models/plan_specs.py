@@ -115,11 +115,6 @@ class PlanSpecs(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in PlanSpecs) in the input: " + _key)
-
         _obj = cls.model_validate({
             "cpus": [PlanSpecsCpusInner.from_dict(_item) for _item in obj["cpus"]] if obj.get("cpus") is not None else None,
             "drives": [PlanSpecsDrivesInner.from_dict(_item) for _item in obj["drives"]] if obj.get("drives") is not None else None,

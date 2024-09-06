@@ -162,11 +162,6 @@ class Project(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in Project) in the input: " + _key)
-
         _obj = cls.model_validate({
             "backend_transfer_enabled": obj.get("backend_transfer_enabled"),
             "bgp_config": Href.from_dict(obj["bgp_config"]) if obj.get("bgp_config") is not None else None,

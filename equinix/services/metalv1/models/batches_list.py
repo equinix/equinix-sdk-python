@@ -87,11 +87,6 @@ class BatchesList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in BatchesList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "batches": [Batch.from_dict(_item) for _item in obj["batches"]] if obj.get("batches") is not None else None,
             "href": obj.get("href")

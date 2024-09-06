@@ -91,11 +91,6 @@ class DeviceActionInput(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in DeviceActionInput) in the input: " + _key)
-
         _obj = cls.model_validate({
             "deprovision_fast": obj.get("deprovision_fast"),
             "force_delete": obj.get("force_delete"),

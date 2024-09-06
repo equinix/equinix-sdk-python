@@ -87,11 +87,6 @@ class AuthTokenList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in AuthTokenList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "api_keys": [AuthToken.from_dict(_item) for _item in obj["api_keys"]] if obj.get("api_keys") is not None else None,
             "href": obj.get("href")

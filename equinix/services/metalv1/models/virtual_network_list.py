@@ -87,11 +87,6 @@ class VirtualNetworkList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in VirtualNetworkList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "virtual_networks": [VirtualNetwork.from_dict(_item) for _item in obj["virtual_networks"]] if obj.get("virtual_networks") is not None else None

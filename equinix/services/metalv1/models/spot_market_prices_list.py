@@ -83,11 +83,6 @@ class SpotMarketPricesList(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in SpotMarketPricesList) in the input: " + _key)
-
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "spot_market_prices": SpotPricesReport.from_dict(obj["spot_market_prices"]) if obj.get("spot_market_prices") is not None else None

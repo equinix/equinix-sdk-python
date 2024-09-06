@@ -96,11 +96,6 @@ class AWSFabricProvider(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in AWSFabricProvider) in the input: " + _key)
-
         _obj = cls.model_validate({
             "account_id": obj.get("account_id"),
             "href": obj.get("href"),

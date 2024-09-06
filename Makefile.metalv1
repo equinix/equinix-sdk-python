@@ -61,11 +61,10 @@ codegen:
 		-p packageVersion=${PACKAGE_VERSION} \
 		--git-user-id ${GIT_ORG} \
 		--git-repo-id ${GIT_REPO} \
-		-c /local/config/openapi-generator.json \
-		`# TODO: enable inline enum resolution; this is only here to provide an upgrade path for metal-python` \
-		--inline-schema-options RESOLVE_INLINE_ENUMS=false \
-		`# TODO: remove this setting so that generated code follows OpenAPI standards; this is only here to provide an upgrade path for metal-python` \
-		-p disallowAdditionalPropertiesIfNotPresent=true \
+		`# TODO: re-enable the config file option so that generated code follows OpenAPI standards; this is only disabled to provide an upgrade path for metal-python` \
+		`# -c /local/config/openapi-generator.json` \
+		`# TODO: remove this when the config file is re-enabled` \
+		-p generateSourceCodeOnly=true \
 		-t /local/${TEMPLATE_DIR} \
 		-o /local/ \
 		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}

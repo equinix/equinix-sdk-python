@@ -134,11 +134,6 @@ class Plan(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in Plan) in the input: " + _key)
-
         _obj = cls.model_validate({
             "available_in": [PlanAvailableInInner.from_dict(_item) for _item in obj["available_in"]] if obj.get("available_in") is not None else None,
             "available_in_metros": [PlanAvailableInMetrosInner.from_dict(_item) for _item in obj["available_in_metros"]] if obj.get("available_in_metros") is not None else None,

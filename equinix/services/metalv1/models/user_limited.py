@@ -82,11 +82,6 @@ class UserLimited(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        # raise errors for additional fields in the input
-        for _key in obj.keys():
-            if _key not in cls.__properties:
-                raise ValueError("Error due to additional fields (not defined in UserLimited) in the input: " + _key)
-
         _obj = cls.model_validate({
             "avatar_thumb_url": obj.get("avatar_thumb_url"),
             "avatar_url": obj.get("avatar_url"),
