@@ -36,7 +36,6 @@ from equinix.services.metalv1.api.licenses_api import LicensesApi
 from equinix.services.metalv1.api.memberships_api import MembershipsApi
 from equinix.services.metalv1.api.metal_gateways_api import MetalGatewaysApi
 from equinix.services.metalv1.api.metros_api import MetrosApi
-from equinix.services.metalv1.api.otps_api import OTPsApi
 from equinix.services.metalv1.api.operating_systems_api import OperatingSystemsApi
 from equinix.services.metalv1.api.organizations_api import OrganizationsApi
 from equinix.services.metalv1.api.password_reset_tokens_api import PasswordResetTokensApi
@@ -250,7 +249,6 @@ from equinix.services.metalv1.models.project_update_input import ProjectUpdateIn
 from equinix.services.metalv1.models.project_usage import ProjectUsage
 from equinix.services.metalv1.models.project_usage_list import ProjectUsageList
 from equinix.services.metalv1.models.raid import Raid
-from equinix.services.metalv1.models.recovery_code_list import RecoveryCodeList
 from equinix.services.metalv1.models.request_ip_reservation201_response import RequestIPReservation201Response
 from equinix.services.metalv1.models.request_ip_reservation_request import RequestIPReservationRequest
 from equinix.services.metalv1.models.ssh_key import SSHKey

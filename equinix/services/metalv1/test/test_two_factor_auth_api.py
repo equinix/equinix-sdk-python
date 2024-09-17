@@ -32,24 +32,10 @@ class TestTwoFactorAuthApi(unittest.TestCase):
         """
         pass
 
-    def test_disable_tfa_sms(self) -> None:
-        """Test case for disable_tfa_sms
-
-        Disable two factor authentication
-        """
-        pass
-
     def test_enable_tfa_app(self) -> None:
         """Test case for enable_tfa_app
 
         Enable two factor auth using app
-        """
-        pass
-
-    def test_enable_tfa_sms(self) -> None:
-        """Test case for enable_tfa_sms
-
-        Enable two factor auth using sms
         """
         pass
 
