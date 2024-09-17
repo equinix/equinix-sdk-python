@@ -21,7 +21,6 @@ from equinix.services.metalv1.api.licenses_api import LicensesApi
 from equinix.services.metalv1.api.memberships_api import MembershipsApi
 from equinix.services.metalv1.api.metal_gateways_api import MetalGatewaysApi
 from equinix.services.metalv1.api.metros_api import MetrosApi
-from equinix.services.metalv1.api.otps_api import OTPsApi
 from equinix.services.metalv1.api.operating_systems_api import OperatingSystemsApi
 from equinix.services.metalv1.api.organizations_api import OrganizationsApi
 from equinix.services.metalv1.api.password_reset_tokens_api import PasswordResetTokensApi

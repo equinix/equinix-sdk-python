@@ -188,10 +188,6 @@ Class | Method | HTTP request | Description
 *MetalGatewaysApi* | [**get_metal_gateway_elastic_ips**](equinix/services/metalv1/docs/MetalGatewaysApi.md#get_metal_gateway_elastic_ips) | **GET** /metal-gateways/{id}/ips | List Metal Gateway Elastic IPs
 *MetrosApi* | [**find_metros**](equinix/services/metalv1/docs/MetrosApi.md#find_metros) | **GET** /locations/metros | Retrieve all metros
 *MetrosApi* | [**get_metro**](equinix/services/metalv1/docs/MetrosApi.md#get_metro) | **GET** /locations/metros/{id} | Retrieve a specific Metro&#39;s details
-*OTPsApi* | [**find_ensure_otp**](equinix/services/metalv1/docs/OTPsApi.md#find_ensure_otp) | **POST** /user/otp/verify/{otp} | Verify user by providing an OTP
-*OTPsApi* | [**find_recovery_codes**](equinix/services/metalv1/docs/OTPsApi.md#find_recovery_codes) | **GET** /user/otp/recovery-codes | Retrieve my recovery codes
-*OTPsApi* | [**receive_codes**](equinix/services/metalv1/docs/OTPsApi.md#receive_codes) | **POST** /user/otp/sms/receive | Receive an OTP per sms
-*OTPsApi* | [**regenerate_codes**](equinix/services/metalv1/docs/OTPsApi.md#regenerate_codes) | **POST** /user/otp/recovery-codes | Generate new recovery codes
 *OperatingSystemsApi* | [**find_operating_system_version**](equinix/services/metalv1/docs/OperatingSystemsApi.md#find_operating_system_version) | **GET** /operating-system-versions | Retrieve all operating system versions
 *OperatingSystemsApi* | [**find_operating_systems**](equinix/services/metalv1/docs/OperatingSystemsApi.md#find_operating_systems) | **GET** /operating-systems | Retrieve all operating systems
 *OrganizationsApi* | [**create_organization**](equinix/services/metalv1/docs/OrganizationsApi.md#create_organization) | **POST** /organizations | Create an organization
@@ -264,9 +260,7 @@ Class | Method | HTTP request | Description
 *TransferRequestsApi* | [**decline_transfer_request**](equinix/services/metalv1/docs/TransferRequestsApi.md#decline_transfer_request) | **DELETE** /transfers/{id} | Decline a transfer request
 *TransferRequestsApi* | [**find_transfer_request_by_id**](equinix/services/metalv1/docs/TransferRequestsApi.md#find_transfer_request_by_id) | **GET** /transfers/{id} | View a transfer request
 *TwoFactorAuthApi* | [**disable_tfa_app**](equinix/services/metalv1/docs/TwoFactorAuthApi.md#disable_tfa_app) | **DELETE** /user/otp/app | Disable two factor authentication
-*TwoFactorAuthApi* | [**disable_tfa_sms**](equinix/services/metalv1/docs/TwoFactorAuthApi.md#disable_tfa_sms) | **DELETE** /user/otp/sms | Disable two factor authentication
 *TwoFactorAuthApi* | [**enable_tfa_app**](equinix/services/metalv1/docs/TwoFactorAuthApi.md#enable_tfa_app) | **POST** /user/otp/app | Enable two factor auth using app
-*TwoFactorAuthApi* | [**enable_tfa_sms**](equinix/services/metalv1/docs/TwoFactorAuthApi.md#enable_tfa_sms) | **POST** /user/otp/sms | Enable two factor auth using sms
 *UsagesApi* | [**find_device_usages**](equinix/services/metalv1/docs/UsagesApi.md#find_device_usages) | **GET** /devices/{id}/usages | Retrieve all usages for device
 *UsagesApi* | [**find_project_usage**](equinix/services/metalv1/docs/UsagesApi.md#find_project_usage) | **GET** /projects/{id}/usages | Retrieve all usages for project
 *UserVerificationTokensApi* | [**consume_verification_request**](equinix/services/metalv1/docs/UserVerificationTokensApi.md#consume_verification_request) | **PUT** /verify-email | Verify a user using an email verification token
@@ -485,7 +479,6 @@ Class | Method | HTTP request | Description
  - [ProjectUsage](equinix/services/metalv1/docs/ProjectUsage.md)
  - [ProjectUsageList](equinix/services/metalv1/docs/ProjectUsageList.md)
  - [Raid](equinix/services/metalv1/docs/Raid.md)
- - [RecoveryCodeList](equinix/services/metalv1/docs/RecoveryCodeList.md)
  - [RequestIPReservation201Response](equinix/services/metalv1/docs/RequestIPReservation201Response.md)
  - [RequestIPReservationRequest](equinix/services/metalv1/docs/RequestIPReservationRequest.md)
  - [SSHKey](equinix/services/metalv1/docs/SSHKey.md)
