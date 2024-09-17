@@ -40,7 +40,7 @@ jobs:
       if: ${{ always() && steps.patch.conclusion == 'success' }}
       run: |
         make -f Makefile.metalv1 generate
-        git add services/metalv1
+        git add equinix/services/metalv1
         echo `git commit -m 'sync: generate client with ${{ steps.date.outputs.date }} spec'`
     - name: Create Pull Request
       id: cpr
