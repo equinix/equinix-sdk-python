@@ -78,17 +78,6 @@ fixedSpec['components']['schemas']['IPReservation']['properties']['assignments']
 
 del fixedSpec['components']['schemas']['Address']['required']
 
-# FIX 13. rename query attribute categories to "categories[]"
-
-plans_get_params = fixedSpec['paths']['/plans']['get']['parameters']
-
-for i, p in enumerate(plans_get_params):
-    if p['name'] == 'categories':
-        fixedSpec['paths']['/plans']['get']['parameters'][i]['name'] = "categories[]"
-        break
-
-
-
 # Mark paginated operation with `x-equinix-metal-paginated-property`
 
 refkey = "$ref"
