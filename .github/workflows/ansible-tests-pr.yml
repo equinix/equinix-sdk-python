@@ -33,15 +33,15 @@ jobs:
       - name: install make
         run: sudo apt-get install -y build-essential
 
-      - name: setup python 3
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-
       - name: checkout Python SDK, this PR
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.ref }}
+
+      - name: setup python 3
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
 
       - name: checkout Ansible collection
         uses: actions/checkout@v4
