@@ -1,21 +1,21 @@
 # SubscriptionResponse
 
-Subscription
+Subscription Response
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
-**uuid** | **str** |  | [optional] 
-**status** | [**SubscriptionStatus**](SubscriptionStatus.md) |  | [optional] 
-**marketplace** | [**SubscriptionResponseMarketplace**](SubscriptionResponseMarketplace.md) |  | [optional] 
+**href** | **str** | Subscription URL | [optional] 
+**uuid** | **str** | Unique identifier of the Subscription | [optional] 
+**state** | [**SubscriptionState**](SubscriptionState.md) |  | 
+**marketplace** | [**SubscriptionResponseMarketplace**](SubscriptionResponseMarketplace.md) |  | 
 **offer_type** | [**SubscriptionResponseOfferType**](SubscriptionResponseOfferType.md) |  | [optional] 
-**is_auto_renew** | **bool** |  | [optional] 
-**offer_id** | **str** |  | [optional] 
+**is_auto_renew** | **bool** | Is Auto Renewal Enabled | [optional] 
+**offer_id** | **str** | Marketplace Offer Id | [optional] 
 **trial** | [**SubscriptionTrial**](SubscriptionTrial.md) |  | [optional] 
-**subscription_key** | **str** |  | [optional] 
-**entitlements** | [**List[SubscriptionEntitlementResponse]**](SubscriptionEntitlementResponse.md) |  | [optional] 
+**subscription_key** | **str** | Subscription Key | [optional] 
+**entitlements** | [**List[SubscriptionEntitlementResponse]**](SubscriptionEntitlementResponse.md) | List of entitlements associated with the subscription | 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

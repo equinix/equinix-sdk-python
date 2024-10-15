@@ -6,9 +6,9 @@ Asset information
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**SubscriptionAssetType**](SubscriptionAssetType.md) |  | [optional] 
+**type** | **str** | Type of the subscription asset ( XF_ROUTER ,IP_VC, IPWAN_VC ) | [optional] 
 **package** | [**SubscriptionRouterPackageType**](SubscriptionRouterPackageType.md) |  | [optional] 
-**bandwidth** | **int** |  | [optional] 
+**bandwidth** | **int** | Bandwidth of the asset in Mbps | [optional] 
 
 ## Example
 

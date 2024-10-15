@@ -1,13 +1,13 @@
 # SubscriptionTrial
 
-Trial
+Free Trial Subscription
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enabled** | **bool** |  | [optional] 
-**expiry_date_time** | **datetime** |  | [optional] 
+**enabled** | **bool** | Free Trial Enabled | [optional] 
+**expiry_date_time** | **datetime** | Free Trial Expiry Date | [optional] 
 
 ## Example
 

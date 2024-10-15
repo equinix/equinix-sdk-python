@@ -1,13 +1,12 @@
 # PrecisionTimePackageRequest
 
-EPT Package Request
+Precision Time Service Level Request
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** |  | [optional] 
-**code** | [**GetTimeServicesPackageByCodePackageCodeParameter**](GetTimeServicesPackageByCodePackageCodeParameter.md) |  | 
+**code** | [**PrecisionTimePackageRequestCode**](PrecisionTimePackageRequestCode.md) |  | 
 
 ## Example
 

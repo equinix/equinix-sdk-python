@@ -1,17 +1,18 @@
 # PtpAdvanceConfiguration
 
+PTP Advanced Configuration.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **time_scale** | [**PtpAdvanceConfigurationTimeScale**](PtpAdvanceConfigurationTimeScale.md) |  | [optional] 
-**domain** | **int** |  | [optional] 
-**priority1** | **int** |  | [optional] 
-**priority2** | **int** |  | [optional] 
-**log_announce_interval** | **int** | The mean time interval between Announce messages. A shorter interval makes ptp4l react faster to the changes in the master-slave hierarchy. The interval should be the same in the whole domain. It&#39;s specified as a power of two in seconds. The default is 1 (2 seconds). | [optional] 
-**log_sync_interval** | **int** | The mean time interval between Sync messages. A shorter interval may improve accuracy of the local clock. It&#39;s specified as a power of two in seconds. The default is 0 (1 second). | [optional] 
-**log_delay_req_interval** | **int** |  | [optional] 
+**domain** | **int** | The PTP domain value. | [optional] 
+**priority1** | **int** | The priority1 value determines the best primary clock, Lower value indicates higher priority. | [optional] 
+**priority2** | **int** | The priority2 value differentiates and prioritizes the primary clock to avoid confusion when priority1-value is the same for different primary clocks in a network. | [optional] 
+**log_announce_interval** | [**PtpAdvanceConfigurationLogAnnounceInterval**](PtpAdvanceConfigurationLogAnnounceInterval.md) |  | [optional] 
+**log_sync_interval** | [**PtpAdvanceConfigurationLogSyncInterval**](PtpAdvanceConfigurationLogSyncInterval.md) |  | [optional] 
+**log_delay_req_interval** | [**PtpAdvanceConfigurationLogDelayReqInterval**](PtpAdvanceConfigurationLogDelayReqInterval.md) |  | [optional] 
 **transport_mode** | [**PtpAdvanceConfigurationTransportMode**](PtpAdvanceConfigurationTransportMode.md) |  | [optional] 
 **grant_time** | **int** | Unicast Grant Time in seconds. For Multicast and Hybrid transport modes, grant time defaults to 300 seconds. For Unicast mode, grant time can be between 30 to 7200. | [optional] 
 

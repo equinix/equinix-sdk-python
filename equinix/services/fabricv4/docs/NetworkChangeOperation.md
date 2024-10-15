@@ -6,7 +6,7 @@ Network change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**ServiceTokenChangeOperationOp**](ServiceTokenChangeOperationOp.md) |  | 
+**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
 **path** | **str** | path inside document leading to updated parameter | 
 **value** | **object** | new value for updated parameter | 
 

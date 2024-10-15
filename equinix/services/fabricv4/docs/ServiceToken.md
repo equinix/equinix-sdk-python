@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**ServiceTokenType**](ServiceTokenType.md) |  | [optional] 
 **href** | **str** | An absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
-**uuid** | **str** | Equinix-assigned service token identifier | 
+**uuid** | **str** | Equinix-assigned service token identifier | [optional] 
+**issuer_side** | [**ServiceTokenIssuerSide**](ServiceTokenIssuerSide.md) |  | [optional] 
 **name** | **str** | Customer-provided service token name | [optional] 
 **description** | **str** | Customer-provided service token description | [optional] 
 **expiration_date_time** | **datetime** | Expiration date and time of the service token. | [optional] 

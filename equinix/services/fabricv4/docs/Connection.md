@@ -6,8 +6,8 @@ Connection specification
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ConnectionType**](ConnectionType.md) |  | 
 **href** | **str** | Connection URI | [optional] [readonly] 
+**type** | [**ConnectionType**](ConnectionType.md) |  | 
 **uuid** | **str** | Equinix-assigned connection identifier | [optional] 
 **name** | **str** | Customer-provided connection name | 
 **description** | **str** | Customer-provided connection description | [optional] 

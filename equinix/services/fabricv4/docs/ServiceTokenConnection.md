@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **href** | **str** | An absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **uuid** | **str** | Equinix-assigned connection identifier | [optional] 
 **allow_remote_connection** | **bool** | Authorization to connect remotely | [optional] [default to False]
+**allow_custom_bandwidth** | **bool** | Allow custom bandwidth value | [optional] [default to False]
 **bandwidth_limit** | **int** | Connection bandwidth limit in Mbps | [optional] 
 **supported_bandwidths** | **List[int]** | List of permitted bandwidths. | [optional] 
 **a_side** | [**ServiceTokenSide**](ServiceTokenSide.md) |  | [optional] 

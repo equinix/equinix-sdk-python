@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **state** | [**CloudRouterActionState**](CloudRouterActionState.md) |  | 
 **change_log** | [**Changelog**](Changelog.md) |  | 
+**href** | **str** |  | [optional] 
+**connection** | [**RouterActionsConnection**](RouterActionsConnection.md) |  | [optional] 
+**operation** | [**Operation**](Operation.md) |  | [optional] 
 
 ## Example
 

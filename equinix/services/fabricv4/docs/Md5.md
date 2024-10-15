@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**Md5Type**](Md5Type.md) |  | [optional] 
-**id** | **int** |  | [optional] 
-**password** | **str** |  | [optional] 
+**key_number** | **int** | The authentication Key ID. | [optional] 
+**key** | **str** | The plaintext authentication key. For ASCII type, the key must contain printable ASCII characters, range 10-20 characters. For HEX type, range should be 10-40 characters. | [optional] 
 
 ## Example
 

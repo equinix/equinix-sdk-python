@@ -1,6 +1,6 @@
 # PrecisionTimeServiceRequestType
 
-Indicate the entity is EPT service
+Precision Time Service Type refers to the corresponding Protocol.
 
 ## Properties
 

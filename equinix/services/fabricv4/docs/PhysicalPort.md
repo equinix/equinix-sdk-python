@@ -6,15 +6,18 @@ Physical Port specification
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **type** | [**PhysicalPortType**](PhysicalPortType.md) |  | [optional] 
 **id** | **int** | Equinix assigned response attribute for Physical Port Id | [optional] 
-**href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **state** | [**PortState**](PortState.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
 **interface_speed** | **int** | Physical Port Speed in Mbps | [optional] 
 **interface_type** | **str** | Physical Port Interface Type | [optional] 
+**uuid** | **str** | Equinix assigned response attribute for physical port identifier | [optional] 
 **tether** | [**PortTether**](PortTether.md) |  | [optional] 
 **demarcation_point** | [**PortDemarcationPoint**](PortDemarcationPoint.md) |  | [optional] 
+**settings** | [**PhysicalPortSettings**](PhysicalPortSettings.md) |  | [optional] 
+**interface** | [**PortInterface**](PortInterface.md) |  | [optional] 
 **notifications** | [**List[PortNotification]**](PortNotification.md) | Notification preferences | [optional] 
 **additional_info** | [**List[PortAdditionalInfo]**](PortAdditionalInfo.md) | Physical Port additional information | [optional] 
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 

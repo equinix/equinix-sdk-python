@@ -7,9 +7,9 @@ Subscription entitlement
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Subscription Entitlement Id | [optional] 
-**quantity_entitled** | **int** |  | [optional] 
-**quantity_consumed** | **int** |  | [optional] 
-**quantity_available** | **int** |  | [optional] 
+**quantity_entitled** | **int** | Quantity entitled for the subscription | [optional] 
+**quantity_consumed** | **int** | Quantity consumed from the entitlement | [optional] 
+**quantity_available** | **int** | Quantity available from the entitlement | [optional] 
 **asset** | [**SubscriptionAsset**](SubscriptionAsset.md) |  | [optional] 
 
 ## Example

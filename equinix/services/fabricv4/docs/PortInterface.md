@@ -7,8 +7,6 @@ Port interface
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | Port interface type | [optional] 
-**if_index** | **str** | Port interface index | [optional] 
-**name** | **str** | Port interface name | [optional] 
 
 ## Example
 

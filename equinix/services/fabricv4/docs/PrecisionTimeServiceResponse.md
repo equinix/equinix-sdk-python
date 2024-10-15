@@ -1,24 +1,25 @@
 # PrecisionTimeServiceResponse
 
-EPT service instance
+Precision Time Service Response Schema.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**PrecisionTimeServiceCreateResponseType**](PrecisionTimeServiceCreateResponseType.md) |  | 
-**href** | **str** |  | 
-**uuid** | **str** | uuid of the ept service | 
-**name** | **str** | name of the ept service | [optional] 
-**description** | **str** |  | [optional] 
-**state** | [**PrecisionTimeServiceCreateResponseState**](PrecisionTimeServiceCreateResponseState.md) |  | 
+**href** | **str** | Precision Time Service URI. | 
+**type** | [**PrecisionTimeServiceResponseType**](PrecisionTimeServiceResponseType.md) |  | 
+**name** | **str** | Precision Time Service Name. | [optional] 
+**uuid** | **str** | Precision Time Service UUID. | 
+**state** | [**PrecisionTimeServiceResponseState**](PrecisionTimeServiceResponseState.md) |  | 
 **package** | [**PrecisionTimePackageResponse**](PrecisionTimePackageResponse.md) |  | 
-**connections** | [**List[FabricConnectionUuid]**](FabricConnectionUuid.md) | fabric l2 connections used for the ept service | [optional] 
-**order** | [**Order**](Order.md) |  | 
-**ipv4** | [**Ipv4**](Ipv4.md) |  | 
-**advance_configuration** | [**AdvanceConfiguration**](AdvanceConfiguration.md) |  | [optional] 
+**connections** | [**List[VirtualConnectionTimeServiceResponse]**](VirtualConnectionTimeServiceResponse.md) | Fabric Connections associated with Precision Time Service. | [optional] 
+**ipv4** | [**Ipv4**](Ipv4.md) |  | [optional] 
+**ntp_advanced_configuration** | [**List[Md5]**](Md5.md) | NTP Advanced configuration - MD5 Authentication. | [optional] 
+**ptp_advanced_configuration** | [**PtpAdvanceConfiguration**](PtpAdvanceConfiguration.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
-**account** | [**Account**](Account.md) |  | [optional] 
+**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
+**order** | [**PrecisionTimeOrder**](PrecisionTimeOrder.md) |  | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
 

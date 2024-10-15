@@ -1,19 +1,20 @@
 # PrecisionTimeServiceRequest
 
-EPT service instance
+Create Precision Time Service Request Schema.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**PrecisionTimeServiceRequestType**](PrecisionTimeServiceRequestType.md) |  | 
-**name** | **str** |  | 
-**description** | **str** |  | [optional] 
+**name** | **str** | Precision Time Service name. | 
 **package** | [**PrecisionTimePackageRequest**](PrecisionTimePackageRequest.md) |  | 
-**connections** | [**List[FabricConnectionUuid]**](FabricConnectionUuid.md) |  | 
+**connections** | [**List[VirtualConnectionUuid]**](VirtualConnectionUuid.md) |  | 
 **ipv4** | [**Ipv4**](Ipv4.md) |  | 
-**advance_configuration** | [**AdvanceConfiguration**](AdvanceConfiguration.md) |  | [optional] 
+**ntp_advanced_configuration** | [**List[Md5]**](Md5.md) | NTP Advanced configuration - MD5 Authentication. | [optional] 
+**ptp_advanced_configuration** | [**PtpAdvanceConfiguration**](PtpAdvanceConfiguration.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
+**order** | [**PrecisionTimeOrder**](PrecisionTimeOrder.md) |  | [optional] 
 
 ## Example
 
