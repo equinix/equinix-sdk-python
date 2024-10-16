@@ -9,6 +9,13 @@ Name | Type | Description | Notes
 **href** | **str** | url to entity | [optional] 
 **uuid** | **str** | Equinix assigned Identifier | [optional] 
 **type** | **str** | Type of Port | [optional] 
+**cvp_id** | **int** | Customer virtual port Id | [optional] 
+**bandwidth** | **float** | Port Bandwidth | [optional] 
+**port_name** | **str** | Port Name | [optional] 
+**encapsulation_protocol_type** | **str** | Port Encapsulation | [optional] 
+**account_name** | **str** | Account Name | [optional] 
+**priority** | **str** | Port Priority | [optional] 
+**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | [optional] 
 
 ## Example
 

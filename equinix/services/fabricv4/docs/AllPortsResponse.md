@@ -7,7 +7,7 @@ GET All User Port Across Fabric Metros
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**List[PortResponse]**](PortResponse.md) | GET All User Port Across Fabric Metros | [optional] 
+**data** | [**List[Port]**](Port.md) | GET All User Port Across Fabric Metros | [optional] 
 
 ## Example
 

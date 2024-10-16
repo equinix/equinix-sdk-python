@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_bulk_port**
-> AllPortsResponse create_bulk_port(bulk_port)
+> BulkPort create_bulk_port(bulk_port_request)
 
 Create Port
 
@@ -111,8 +111,8 @@ Create Port creates Equinix Fabric? Port.<font color=\"red\"> <sup color='red'>P
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.all_ports_response import AllPortsResponse
 from equinix.services.fabricv4.models.bulk_port import BulkPort
+from equinix.services.fabricv4.models.bulk_port_request import BulkPortRequest
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -136,11 +136,11 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
-    bulk_port = equinix.services.fabricv4.BulkPort() # BulkPort | 
+    bulk_port_request = equinix.services.fabricv4.BulkPortRequest() # BulkPortRequest | 
 
     try:
         # Create Port
-        api_response = api_instance.create_bulk_port(bulk_port)
+        api_response = api_instance.create_bulk_port(bulk_port_request)
         print("The response of PortsApi->create_bulk_port:\n")
         pprint(api_response)
     except Exception as e:
@@ -154,11 +154,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulk_port** | [**BulkPort**](BulkPort.md)|  | 
+ **bulk_port_request** | [**BulkPortRequest**](BulkPortRequest.md)|  | 
 
 ### Return type
 
-[**AllPortsResponse**](AllPortsResponse.md)
+[**BulkPort**](BulkPort.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_port**
-> PortResponse create_port(port)
+> Port create_port(port_request)
 
 Create Port
 
@@ -191,7 +191,7 @@ Creates Equinix Fabric? Port.
 ```python
 import equinix.services.fabricv4
 from equinix.services.fabricv4.models.port import Port
-from equinix.services.fabricv4.models.port_response import PortResponse
+from equinix.services.fabricv4.models.port_request import PortRequest
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -215,11 +215,11 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
-    port = equinix.services.fabricv4.Port() # Port | 
+    port_request = equinix.services.fabricv4.PortRequest() # PortRequest | 
 
     try:
         # Create Port
-        api_response = api_instance.create_port(port)
+        api_response = api_instance.create_port(port_request)
         print("The response of PortsApi->create_port:\n")
         pprint(api_response)
     except Exception as e:
@@ -233,11 +233,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **port** | [**Port**](Port.md)|  | 
+ **port_request** | [**PortRequest**](PortRequest.md)|  | 
 
 ### Return type
 
-[**PortResponse**](PortResponse.md)
+[**Port**](Port.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_port_by_uuid**
-> PortResponse get_port_by_uuid(port_id)
+> Port get_port_by_uuid(port_id)
 
 Get Port by uuid
 
@@ -352,7 +352,7 @@ Get Port By uuid returns details of assigned and available Equinix Fabric port f
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.port_response import PortResponse
+from equinix.services.fabricv4.models.port import Port
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortResponse**](PortResponse.md)
+[**Port**](Port.md)
 
 ### Authorization
 

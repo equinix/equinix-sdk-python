@@ -1,5 +1,6 @@
 # SubscriptionResponseMarketplace
 
+Marketplace Type
 
 ## Properties
 

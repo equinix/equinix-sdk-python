@@ -6,12 +6,10 @@ Port configuration settings
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**product** | **str** | Product name | [optional] 
 **buyout** | **bool** |  | [optional] 
 **view_port_permission** | **bool** |  | [optional] 
 **place_vc_order_permission** | **bool** |  | [optional] 
 **layer3_enabled** | **bool** |  | [optional] 
-**product_code** | **str** |  | [optional] 
 **shared_port_type** | **bool** |  | [optional] 
 **shared_port_product** | [**PortSettingsSharedPortProduct**](PortSettingsSharedPortProduct.md) |  | [optional] 
 **package_type** | [**PortSettingsPackageType**](PortSettingsPackageType.md) |  | [optional] 

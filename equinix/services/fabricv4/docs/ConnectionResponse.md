@@ -7,7 +7,7 @@ ValidateResponse
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additional_info** | [**List[ConnectionSideAdditionalInfo]**](ConnectionSideAdditionalInfo.md) | Additional information | [optional] 
-**data** | [**List[Connection]**](Connection.md) | Connection response data | [optional] 
+**data** | [**List[ValidateConnectionResponse]**](ValidateConnectionResponse.md) | Connection response data | [optional] 
 
 ## Example
 

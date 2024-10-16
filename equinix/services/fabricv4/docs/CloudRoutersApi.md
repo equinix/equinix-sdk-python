@@ -8,11 +8,15 @@ Method | HTTP request | Description
 [**create_cloud_router_action**](CloudRoutersApi.md#create_cloud_router_action) | **POST** /fabric/v4/routers/{routerId}/actions | Route table actions
 [**delete_cloud_router_by_uuid**](CloudRoutersApi.md#delete_cloud_router_by_uuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Routers
 [**get_cloud_router_actions**](CloudRoutersApi.md#get_cloud_router_actions) | **GET** /fabric/v4/routers/{routerId}/actions | Get actions
+[**get_cloud_router_actions_by_uuid**](CloudRoutersApi.md#get_cloud_router_actions_by_uuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get actions
 [**get_cloud_router_by_uuid**](CloudRoutersApi.md#get_cloud_router_by_uuid) | **GET** /fabric/v4/routers/{routerId} | Get Routers
 [**get_cloud_router_package_by_code**](CloudRoutersApi.md#get_cloud_router_package_by_code) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
 [**get_cloud_router_packages**](CloudRoutersApi.md#get_cloud_router_packages) | **GET** /fabric/v4/routerPackages | List Packages
 [**search_cloud_router_routes**](CloudRoutersApi.md#search_cloud_router_routes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table
 [**search_cloud_routers**](CloudRoutersApi.md#search_cloud_routers) | **POST** /fabric/v4/routers/search | Search Routers
+[**search_connection_advertised_routes**](CloudRoutersApi.md#search_connection_advertised_routes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | search advertised
+[**search_connection_received_routes**](CloudRoutersApi.md#search_connection_received_routes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search received
+[**search_router_actions**](CloudRoutersApi.md#search_router_actions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search actions
 [**update_cloud_router_by_uuid**](CloudRoutersApi.md#update_cloud_router_by_uuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers
 
 
@@ -325,6 +329,95 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **router_id** | **str**| Router UUID | 
+ **state** | [**CloudRouterActionState**](.md)| Action state | [optional] 
+
+### Return type
+
+[**CloudRouterActionResponse**](CloudRouterActionResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cloud_router_actions_by_uuid**
+> CloudRouterActionResponse get_cloud_router_actions_by_uuid(router_id, action_id, state=state)
+
+Get actions
+
+This API provides capability to fetch action status
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_action_response import CloudRouterActionResponse
+from equinix.services.fabricv4.models.cloud_router_action_state import CloudRouterActionState
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    action_id = 'action_id_example' # str | Action UUID
+    state = equinix.services.fabricv4.CloudRouterActionState() # CloudRouterActionState | Action state (optional)
+
+    try:
+        # Get actions
+        api_response = api_instance.get_cloud_router_actions_by_uuid(router_id, action_id, state=state)
+        print("The response of CloudRoutersApi->get_cloud_router_actions_by_uuid:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->get_cloud_router_actions_by_uuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **action_id** | **str**| Action UUID | 
  **state** | [**CloudRouterActionState**](.md)| Action state | [optional] 
 
 ### Return type
@@ -771,6 +864,263 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_connection_advertised_routes**
+> ConnectionRouteTableEntrySearchResponse search_connection_advertised_routes(connection_id, connection_route_search_request)
+
+search advertised
+
+The API provides capability to get list of user's advertised routes using search criteria, including optional filtering, pagination and sorting
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.connection_route_search_request import ConnectionRouteSearchRequest
+from equinix.services.fabricv4.models.connection_route_table_entry_search_response import ConnectionRouteTableEntrySearchResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    connection_id = 'connection_id_example' # str | Connection Id
+    connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
+
+    try:
+        # search advertised
+        api_response = api_instance.search_connection_advertised_routes(connection_id, connection_route_search_request)
+        print("The response of CloudRoutersApi->search_connection_advertised_routes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->search_connection_advertised_routes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connection_id** | **str**| Connection Id | 
+ **connection_route_search_request** | [**ConnectionRouteSearchRequest**](ConnectionRouteSearchRequest.md)|  | 
+
+### Return type
+
+[**ConnectionRouteTableEntrySearchResponse**](ConnectionRouteTableEntrySearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_connection_received_routes**
+> ConnectionRouteTableEntrySearchResponse search_connection_received_routes(connection_id, connection_route_search_request)
+
+Search received
+
+The API provides capability to get list of received routes using search criteria, including optional filtering, pagination and sorting
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.connection_route_search_request import ConnectionRouteSearchRequest
+from equinix.services.fabricv4.models.connection_route_table_entry_search_response import ConnectionRouteTableEntrySearchResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    connection_id = 'connection_id_example' # str | Connection Id
+    connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
+
+    try:
+        # Search received
+        api_response = api_instance.search_connection_received_routes(connection_id, connection_route_search_request)
+        print("The response of CloudRoutersApi->search_connection_received_routes:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->search_connection_received_routes: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connection_id** | **str**| Connection Id | 
+ **connection_route_search_request** | [**ConnectionRouteSearchRequest**](ConnectionRouteSearchRequest.md)|  | 
+
+### Return type
+
+[**ConnectionRouteTableEntrySearchResponse**](ConnectionRouteTableEntrySearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_router_actions**
+> CloudRouterActionsSearchResponse search_router_actions(router_id, cloud_router_actions_search_request)
+
+Search actions
+
+This API provides capability to refresh route table and bgp session summary information
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_actions_search_request import CloudRouterActionsSearchRequest
+from equinix.services.fabricv4.models.cloud_router_actions_search_response import CloudRouterActionsSearchResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    cloud_router_actions_search_request = equinix.services.fabricv4.CloudRouterActionsSearchRequest() # CloudRouterActionsSearchRequest | 
+
+    try:
+        # Search actions
+        api_response = api_instance.search_router_actions(router_id, cloud_router_actions_search_request)
+        print("The response of CloudRoutersApi->search_router_actions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->search_router_actions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **cloud_router_actions_search_request** | [**CloudRouterActionsSearchRequest**](CloudRouterActionsSearchRequest.md)|  | 
+
+### Return type
+
+[**CloudRouterActionsSearchResponse**](CloudRouterActionsSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

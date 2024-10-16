@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **operational_status** | [**PortOperationOperationalStatus**](PortOperationOperationalStatus.md) |  | [optional] 
 **connection_count** | **int** | Total number of connections. | [optional] 
+**evpl_vc_count** | **int** | Total number of connections. | [optional] 
+**fg_vc_count** | **int** | Total number of connections. | [optional] 
+**access_vc_count** | **int** | Total number of connections. | [optional] 
 **op_status_changed_at** | **datetime** | Date and time at which port availability changed. | [optional] 
 
 ## Example

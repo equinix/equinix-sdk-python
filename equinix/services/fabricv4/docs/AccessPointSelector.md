@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**AccessPointSelectorType**](AccessPointSelectorType.md) |  | [optional] 
 **port** | [**SimplifiedMetadataEntity**](SimplifiedMetadataEntity.md) |  | [optional] 
-**link_protocol** | [**LinkProtocol**](LinkProtocol.md) |  | [optional] 
+**link_protocol** | [**SimplifiedLinkProtocol**](SimplifiedLinkProtocol.md) |  | [optional] 
+**virtual_device** | [**SimplifiedVirtualDevice**](SimplifiedVirtualDevice.md) |  | [optional] 
+**interface** | [**VirtualDeviceInterface**](VirtualDeviceInterface.md) |  | [optional] 
+**network** | [**SimplifiedTokenNetwork**](SimplifiedTokenNetwork.md) |  | [optional] 
 
 ## Example
 

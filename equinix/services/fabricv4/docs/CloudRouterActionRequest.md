@@ -7,6 +7,7 @@ Cloud Router action request
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**CloudRouterActionType**](CloudRouterActionType.md) |  | 
+**connection** | [**RouterActionsConnection**](RouterActionsConnection.md) |  | [optional] 
 
 ## Example
 

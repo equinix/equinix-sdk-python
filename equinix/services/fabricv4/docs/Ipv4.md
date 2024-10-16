@@ -6,10 +6,10 @@ EPT service network information
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**primary** | **str** |  | [optional] 
-**secondary** | **str** |  | [optional] 
-**network_mask** | **str** |  | [optional] 
-**default_gateway** | **str** |  | [optional] 
+**primary** | **str** | Primary Timing Server IP Address | 
+**secondary** | **str** | Secondary Timing Server IP Address | 
+**network_mask** | **str** | Network Mask | 
+**default_gateway** | **str** | Gateway Interface IP address | [optional] 
 
 ## Example
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **end_date** | **str** |  | [optional] 
 **attachment_id** | **str** |  | [optional] 
 **selection_type** | [**PortOrderPurchaseOrderSelectionType**](PortOrderPurchaseOrderSelectionType.md) |  | [optional] 
+**type** | [**PortOrderPurchaseOrderType**](PortOrderPurchaseOrderType.md) |  | [optional] 
 
 ## Example
 

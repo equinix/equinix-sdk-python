@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **age** | **str** |  | [optional] 
 **prefix** | **str** |  | [optional] 
 **next_hop** | **str** |  | [optional] 
-**metric** | **int** |  | [optional] 
+**med** | **int** |  | [optional] 
 **local_preference** | **int** |  | [optional] 
-**as_path** | **List[int]** |  | [optional] 
-**connection** | [**RouteTableEntryConnection**](RouteTableEntryConnection.md) |  | [optional] 
+**as_path** | **List[str]** |  | [optional] 
+**connection** | [**ConnectionRouteTableEntryConnection**](ConnectionRouteTableEntryConnection.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | 
 
 ## Example

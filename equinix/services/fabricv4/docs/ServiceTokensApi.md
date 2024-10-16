@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_service_token_by_uuid**
-> delete_service_token_by_uuid(service_token_id)
+> ServiceToken delete_service_token_by_uuid(service_token_id)
 
 Delete Token by uuid
 
@@ -192,6 +192,7 @@ Delete Service Tokens removes an Equinix Fabric service token corresponding to t
 
 ```python
 import equinix.services.fabricv4
+from equinix.services.fabricv4.models.service_token import ServiceToken
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -219,7 +220,9 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
     try:
         # Delete Token by uuid
-        api_instance.delete_service_token_by_uuid(service_token_id)
+        api_response = api_instance.delete_service_token_by_uuid(service_token_id)
+        print("The response of ServiceTokensApi->delete_service_token_by_uuid:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling ServiceTokensApi->delete_service_token_by_uuid: %s\n" % e)
 ```
@@ -235,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ServiceToken**](ServiceToken.md)
 
 ### Authorization
 
@@ -250,9 +253,10 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Deleted Service Token Successfully |  -  |
+**200** | Successful operation |  -  |
 **400** | Bad request |  -  |
-**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -419,7 +423,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_service_tokens**
-> ServiceTokens search_service_tokens(service_token_search_request)
+> ServiceTokens search_service_tokens(service_token_search_request, offset=offset, limit=limit)
 
 Search servicetokens
 
@@ -457,10 +461,12 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
     service_token_search_request = equinix.services.fabricv4.ServiceTokenSearchRequest() # ServiceTokenSearchRequest | 
+    offset = 3.4 # float | offset (optional)
+    limit = 3.4 # float | number of records to fetch (optional)
 
     try:
         # Search servicetokens
-        api_response = api_instance.search_service_tokens(service_token_search_request)
+        api_response = api_instance.search_service_tokens(service_token_search_request, offset=offset, limit=limit)
         print("The response of ServiceTokensApi->search_service_tokens:\n")
         pprint(api_response)
     except Exception as e:
@@ -475,6 +481,8 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_token_search_request** | [**ServiceTokenSearchRequest**](ServiceTokenSearchRequest.md)|  | 
+ **offset** | **float**| offset | [optional] 
+ **limit** | **float**| number of records to fetch | [optional] 
 
 ### Return type
 
@@ -581,6 +589,7 @@ Name | Type | Description  | Notes
 **200** | Successful operation |  -  |
 **400** | Bad request |  -  |
 **403** | Forbidden |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

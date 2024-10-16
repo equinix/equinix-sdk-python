@@ -7,16 +7,16 @@ EPT Service Package Information
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** |  | [optional] 
+**type** | [**PrecisionTimePackageResponseType**](PrecisionTimePackageResponseType.md) |  | 
 **code** | [**GetTimeServicesPackageByCodePackageCodeParameter**](GetTimeServicesPackageByCodePackageCodeParameter.md) |  | 
-**type** | [**PrecisionTimePackageResponseType**](PrecisionTimePackageResponseType.md) |  | [optional] 
-**bandwidth** | **int** |  | [optional] 
-**clients_per_second_max** | **int** |  | [optional] 
-**redundancy_supported** | **bool** |  | [optional] 
-**multi_subnet_supported** | **bool** |  | [optional] 
-**accuracy_unit** | **str** |  | [optional] 
-**accuracy_sla** | **int** |  | [optional] 
-**accuracy_avg_min** | **int** |  | [optional] 
-**accuracy_avg_max** | **int** |  | [optional] 
+**bandwidth** | **int** | Connection bandwidth in Mbps. | 
+**clients_per_second_max** | **int** | Max. number of clients that can be synchronized per second at a packet rate of 1 per second. | [optional] 
+**redundancy_supported** | **bool** | Is Redundant virtual connection supported for the package code. | [optional] 
+**multi_subnet_supported** | **bool** | Is Multiple subnet supported for the package code. | [optional] 
+**accuracy_sla_unit** | **str** | Accuracy SLA unit. | [optional] 
+**accuracy_sla** | **int** | Accuracy SLA for the package code, -1 value denotes the accuracySla is not published. | [optional] 
+**accuracy_sla_min** | **int** | Typical minimum Accuracy for the package code. | [optional] 
+**accuracy_sla_max** | **int** | Typical maximum Accuracy for the package code. | [optional] 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
