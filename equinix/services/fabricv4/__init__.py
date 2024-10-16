@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
