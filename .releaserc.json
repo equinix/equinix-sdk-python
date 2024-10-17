@@ -35,8 +35,10 @@
       {
         "message": "ci: regenerate code for version ${nextRelease.version} triggered by ${process.env.RELEASE_REQUESTER}",
         "assets": [
-          ".",
-          "!.openapi-generator"
+          [
+            ".",
+            "!.openapi-generator"
+          ]
         ]
       }
     ]
