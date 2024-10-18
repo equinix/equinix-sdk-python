@@ -2651,6 +2651,12 @@ components:
       - $ref: '#/components/schemas/AWSFabricProvider'
     Invitation:
       properties:
+        bound_roles:
+          example:
+          - permrv2-:id
+          items:
+            type: string
+          type: array
         created_at:
           format: date-time
           type: string
@@ -2689,6 +2695,12 @@ components:
       type: object
     InvitationInput:
       properties:
+        bound_roles:
+          example:
+          - permrv2-:id
+          items:
+            type: string
+          type: array
         href:
           format: uri
           type: string
@@ -2894,8 +2906,86 @@ components:
           format: uri
           type: string
       type: object
+    Member:
+      properties:
+        bound_roles:
+          example:
+          - permrv2-:id
+          items:
+            type: string
+          type: array
+        href:
+          type: string
+        id:
+          format: uuid
+          type: string
+        organization:
+          $ref: '#/components/schemas/Href'
+        projects:
+          items:
+            $ref: '#/components/schemas/Href'
+          type: array
+        projects_count:
+          type: integer
+        roles:
+          items:
+            enum:
+            - admin
+            - billing
+            - collaborator
+            - limited_collaborator
+            type: string
+          type: array
+        user:
+          $ref: '#/components/schemas/Href'
+      type: object
+    MemberList:
+      properties:
+        href:
+          format: uri
+          type: string
+        members:
+          items:
+            $ref: '#/components/schemas/Member'
+          type: array
+      type: object
+    MemberUpdateInput:
+      properties:
+        bound_roles:
+          description: Additional roles that can be bound to the user to grant extra
+            permissions.
+          example:
+          - permrv2-:id
+          items:
+            type: string
+          type: array
+        href:
+          format: uri
+          type: string
+        project_ids:
+          description: Project IDs the user should be able to access. This field is
+            only required when role is set to `collaborator` or `limited_collaborator`.
+          items:
+            format: uuid
+            type: string
+          type: array
+        role:
+          description: Primary role for the user within the organization
+          items:
+            enum:
+            - admin
+            - billing
+            - collaborator
+            - limited_collaborator
+            type: string
+          type: array
+      type: object
     Membership:
       properties:
+        bound_roles:
+          items:
+            type: string
+          type: array
         created_at:
           format: date-time
           type: string
@@ -3304,7 +3394,7 @@ components:
     OperatingSystem:
       properties:
         build_date:
-          description: The date on which the current OS image was build and released
+          description: The date when Metal's current OS image was built and released.
           format: date
           type: string
         default_operating_system:
@@ -3312,7 +3402,8 @@ components:
           readOnly: true
           type: boolean
         deprecation_date:
-          description: The date when the OS is deprecated
+          description: The date when the OS is deprecated. This is the date set by
+            the upstream operating system maintainer.
           format: date
           type: string
         distro:
@@ -3320,13 +3411,14 @@ components:
         distro_label:
           type: string
         end_of_life_date:
-          description: The OS no longer receives any updates and may be disabled at
-            any time
+          description: The date when the Metal OS image no longer receives any updates
+            and may be disabled at any time. Typically the same as the deprecation
+            date set by the upstream OS maintainers.
           format: date
           type: string
         end_of_service_date:
-          description: When the OS is nearing end of life, typically 30 days before
-            end of life
+          description: Metal-set date for when the OS is nearing end of life, typically
+            30 days before end of life.
           format: date
           type: string
         href:
@@ -3336,33 +3428,37 @@ components:
           format: uuid
           type: string
         licensed:
-          description: Licenced OS is priced according to pricing property
+          description: Indicates if the OS is licensed or not. Licensed operating
+            systems are priced according to pricing property.
           type: boolean
         lifecycle_state:
-          description: Where in the support lifecycle the OS is
+          description: Where in the lifecycle the OS image is. Possible states are
+            - `"testing"`, `"pre_release"`, `"active"`, `"deprecated"`, `"end_of_service"`,
+            or `"end_of_life"`.
           type: string
         name:
           type: string
         preinstallable:
-          description: Servers can be already preinstalled with OS in order to shorten
-            provision time.
+          description: Indicates whether servers can be preinstalled with OS image
+            in order to shorten provision time.
           type: boolean
         pricing:
           description: This object contains price per time unit and optional multiplier
-            value if licence price depends on hardware plan or components (e.g. number
-            of cores)
+            value if license price depends on hardware plan or components (e.g. number
+            of cores).
           type: object
         provisionable_on:
           items:
             type: string
           type: array
         release_date:
-          description: The date when the OS was released
+          description: The date the upstream operating system maintainer released
+            this version of the OS.
           format: date
           type: string
         release_notes:
           description: The current release notes for this OS image, typically in Markdown
-            format
+            format.
           type: string
         slug:
           type: string
@@ -4050,11 +4146,9 @@ components:
             type: string
           type: array
         type:
-          description: The type of the project. Projects of type `vmce` are part of
-            an in development feature and not available to all customers.
+          description: The type of the project.
           enum:
           - default
-          - vmce
           type: string
         updated_at:
           format: date-time
@@ -4091,11 +4185,9 @@ components:
           type: array
         type:
           description: The type of the project. If no type is specified the project
-            type will automatically be `default` Projects of type 'vmce' are part
-            of an in development feature and not available to all customers.
+            type will automatically be `default`
           enum:
           - default
-          - vmce
           type: string
       required:
       - name
@@ -4122,11 +4214,9 @@ components:
           type: array
         type:
           description: The type of the project. If no type is specified the project
-            type will automatically be `default` Projects of type 'vmce' are part
-            of an in development feature and not available to all customers.
+            type will automatically be `default`
           enum:
           - default
-          - vmce
           type: string
       required:
       - name
@@ -4224,6 +4314,35 @@ components:
           type: string
         name:
           type: string
+      type: object
+    Role:
+      properties:
+        actions:
+          items:
+            type: string
+          type: array
+        href:
+          format: uri
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+      type: object
+    RoleList:
+      properties:
+        href:
+          format: uri
+          type: string
+        roles:
+          items:
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+            type: object
+          type: object
       type: object
     SSHKey:
       properties:
@@ -11126,8 +11245,8 @@ paths:
       - OperatingSystems
   /operating-systems:
     get:
-      description: Provides a listing of available operating systems to provision
-        your new device with.
+      description: Returns a list of available operating systems to provision your
+        new device with.
       operationId: findOperatingSystems
       responses:
         '200':
@@ -11644,7 +11763,6 @@ paths:
             enum:
             - compute
             - storage
-            - vmce
             - legacy_gen
             - current_gen
             example: compute
@@ -12553,6 +12671,81 @@ paths:
       summary: Create a project for the organization
       tags:
       - Organizations
+  /organizations/{id}/roles:
+    get:
+      description: This list of roles can be used to update Members or new Invitations
+        with additional permissions.
+      operationId: listOrganizationRoles
+      parameters:
+      - description: Organization UUID
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleList'
+          description: ok
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: forbidden
+      summary: List available roles
+      tags:
+      - Roles
+  /organizations/{id}/roles/{role_id}:
+    get:
+      description: Learn what actions are in each role.
+      operationId: getOrganizationRole
+      parameters:
+      - description: Organization UUID
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Role ID
+        in: path
+        name: role_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+          description: ok
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: forbidden
+      summary: Get details about a specific role
+      tags:
+      - Roles
   /organizations/{id}/transfers:
     get:
       description: Provides a collection of project transfer requests from or to the
@@ -12604,7 +12797,7 @@ paths:
       - Organizations
   /organizations/{organization_id}/connections:
     get:
-      description: List the connections belonging to the organization
+      description: Returns a list of the interconnections belonging to the Organization.
       operationId: organizationListInterconnections
       parameters:
       - description: UUID of the organization
@@ -12642,6 +12835,13 @@ paths:
             type: string
           type: array
         style: form
+      - description: Filter the list to return only the interconnections for the specified
+          Project.
+        in: query
+        name: project={project_id}
+        schema:
+          format: uuid
+          type: string
       responses:
         '200':
           content:
@@ -12661,7 +12861,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: not found
-      summary: List organization connections
+      summary: List an Organization's interconnections
       tags:
       - Interconnections
     post:
@@ -12734,6 +12934,163 @@ paths:
       summary: Request a new interconnection for the organization
       tags:
       - Interconnections
+  /organizations/{organization_id}/members:
+    get:
+      description: Get all Members of an Organization
+      operationId: getOrganizationMembers
+      parameters:
+      - description: 'Nested attributes to include. Included objects will return their
+          full
+
+          attributes. Attribute names can be dotted (up to 3 levels) to included deeply
+
+          nested objects.'
+        explode: false
+        in: query
+        name: include
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - description: Organization UUID
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberList'
+          description: ok
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: not found
+      summary: Retrieve organization members
+      tags:
+      - Organizations
+  /organizations/{organization_id}/members/{id}:
+    delete:
+      operationId: removeOrganizationMember
+      parameters:
+      - description: Organization UUID
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Member UUID
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      responses:
+        '204':
+          description: no content
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: not found
+      summary: Remove member from the organization
+      tags:
+      - Organizations
+    put:
+      description: 'Update organization member by assigning roles that determine which
+        actions they can perform within the organization.
+
+        '
+      operationId: updateOrganizationMemberRoles
+      parameters:
+      - description: Organization UUID
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      - description: Member UUID
+        in: path
+        name: id
+        required: true
+        schema:
+          format: uuid
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MemberUpdateInput'
+        description: Organization to update
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+          description: ok
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unauthorized
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: forbidden
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: not found
+        '422':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: unprocessable entity
+      summary: Update roles for an organization member
+      tags:
+      - Organizations
   /payment-methods/{id}:
     delete:
       description: Deletes the payment method.
@@ -12885,7 +13242,6 @@ paths:
             enum:
             - compute
             - storage
-            - vmce
             - legacy_gen
             - current_gen
             example: compute
@@ -14498,7 +14854,6 @@ paths:
             enum:
             - compute
             - storage
-            - vmce
             - legacy_gen
             - current_gen
             example: compute
@@ -16141,7 +16496,11 @@ paths:
       - VRFs
   /projects/{project_id}/connections:
     get:
-      description: List the connections belonging to the project
+      description: Returns a List of all the interconnections in an Organization,
+        including the interconnections in the specified Project. To reliably get a
+        list of interconnections filtered to just the interconnections accessible
+        to the specified Project, use the [`/organizations/{organization_id}/interconnections?project={project_id}`](https://deploy.equinix.com/developers/api/metal/#tag/Interconnections/operation/organizationListInterconnections)
+        endpoint, filtering on the Project ID.
       operationId: projectListInterconnections
       parameters:
       - description: UUID of the project
@@ -16217,7 +16576,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: not found
-      summary: List project connections
+      summary: List a Project's and Organization's interconnections
       tags:
       - Interconnections
       x-equinix-metal-paginated-property: interconnections
@@ -16753,7 +17112,6 @@ paths:
             enum:
             - compute
             - storage
-            - vmce
             - legacy_gen
             - current_gen
             example: compute
@@ -19563,8 +19921,7 @@ tags:
   externalDocs:
     url: https://deploy.equinix.com/developers/docs/metal/locations/metros/
   name: Metros
-- description: 'Operating System Management. Check out the product docs to learn more
-    about [Operating Systems choices](https://deploy.equinix.com/developers/docs/metal/operating-systems/licensed/).
+- description: 'Operating System Images and Lifecycle Management
 
     '
   externalDocs:
@@ -19706,6 +20063,7 @@ x-tagGroups:
   - PasswordResetTokens
   - PaymentMethods
   - Projects
+  - Roles
   - SSHKeys
   - SupportRequest
   - TransferRequests
