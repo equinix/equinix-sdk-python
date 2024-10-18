@@ -161,8 +161,8 @@ Class | Method | HTTP request | Description
 *InterconnectionsApi* | [**list_interconnection_port_virtual_circuits**](equinix/services/metalv1/docs/InterconnectionsApi.md#list_interconnection_port_virtual_circuits) | **GET** /connections/{connection_id}/ports/{port_id}/virtual-circuits | List a interconnection port&#39;s virtual circuits
 *InterconnectionsApi* | [**list_interconnection_ports**](equinix/services/metalv1/docs/InterconnectionsApi.md#list_interconnection_ports) | **GET** /connections/{connection_id}/ports | List a interconnection&#39;s ports
 *InterconnectionsApi* | [**list_interconnection_virtual_circuits**](equinix/services/metalv1/docs/InterconnectionsApi.md#list_interconnection_virtual_circuits) | **GET** /connections/{connection_id}/virtual-circuits | List a interconnection&#39;s virtual circuits
-*InterconnectionsApi* | [**organization_list_interconnections**](equinix/services/metalv1/docs/InterconnectionsApi.md#organization_list_interconnections) | **GET** /organizations/{organization_id}/connections | List organization connections
-*InterconnectionsApi* | [**project_list_interconnections**](equinix/services/metalv1/docs/InterconnectionsApi.md#project_list_interconnections) | **GET** /projects/{project_id}/connections | List project connections
+*InterconnectionsApi* | [**organization_list_interconnections**](equinix/services/metalv1/docs/InterconnectionsApi.md#organization_list_interconnections) | **GET** /organizations/{organization_id}/connections | List an Organization&#39;s interconnections
+*InterconnectionsApi* | [**project_list_interconnections**](equinix/services/metalv1/docs/InterconnectionsApi.md#project_list_interconnections) | **GET** /projects/{project_id}/connections | List a Project&#39;s and Organization&#39;s interconnections
 *InterconnectionsApi* | [**update_interconnection**](equinix/services/metalv1/docs/InterconnectionsApi.md#update_interconnection) | **PUT** /connections/{connection_id} | Update interconnection
 *InterconnectionsApi* | [**update_virtual_circuit**](equinix/services/metalv1/docs/InterconnectionsApi.md#update_virtual_circuit) | **PUT** /virtual-circuits/{id} | Update a virtual circuit
 *InvitationsApi* | [**accept_invitation**](equinix/services/metalv1/docs/InvitationsApi.md#accept_invitation) | **PUT** /invitations/{id} | Accept an invitation
@@ -204,7 +204,10 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**find_organization_transfers**](equinix/services/metalv1/docs/OrganizationsApi.md#find_organization_transfers) | **GET** /organizations/{id}/transfers | Retrieve all project transfer requests from or to an organization
 *OrganizationsApi* | [**find_organizations**](equinix/services/metalv1/docs/OrganizationsApi.md#find_organizations) | **GET** /organizations | Retrieve all organizations
 *OrganizationsApi* | [**find_plans_by_organization**](equinix/services/metalv1/docs/OrganizationsApi.md#find_plans_by_organization) | **GET** /organizations/{id}/plans | Retrieve all plans visible by the organization
+*OrganizationsApi* | [**get_organization_members**](equinix/services/metalv1/docs/OrganizationsApi.md#get_organization_members) | **GET** /organizations/{organization_id}/members | Retrieve organization members
+*OrganizationsApi* | [**remove_organization_member**](equinix/services/metalv1/docs/OrganizationsApi.md#remove_organization_member) | **DELETE** /organizations/{organization_id}/members/{id} | Remove member from the organization
 *OrganizationsApi* | [**update_organization**](equinix/services/metalv1/docs/OrganizationsApi.md#update_organization) | **PUT** /organizations/{id} | Update the organization
+*OrganizationsApi* | [**update_organization_member_roles**](equinix/services/metalv1/docs/OrganizationsApi.md#update_organization_member_roles) | **PUT** /organizations/{organization_id}/members/{id} | Update roles for an organization member
 *PasswordResetTokensApi* | [**create_password_reset_token**](equinix/services/metalv1/docs/PasswordResetTokensApi.md#create_password_reset_token) | **POST** /reset-password | Create a password reset token
 *PasswordResetTokensApi* | [**reset_password**](equinix/services/metalv1/docs/PasswordResetTokensApi.md#reset_password) | **DELETE** /reset-password | Reset current user password
 *PaymentMethodsApi* | [**delete_payment_method**](equinix/services/metalv1/docs/PaymentMethodsApi.md#delete_payment_method) | **DELETE** /payment-methods/{id} | Delete the payment method
@@ -237,6 +240,8 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**find_project_memberships**](equinix/services/metalv1/docs/ProjectsApi.md#find_project_memberships) | **GET** /projects/{project_id}/memberships | Retrieve project memberships
 *ProjectsApi* | [**find_projects**](equinix/services/metalv1/docs/ProjectsApi.md#find_projects) | **GET** /projects | Retrieve all projects
 *ProjectsApi* | [**update_project**](equinix/services/metalv1/docs/ProjectsApi.md#update_project) | **PUT** /projects/{id} | Update the project
+*RolesApi* | [**get_organization_role**](equinix/services/metalv1/docs/RolesApi.md#get_organization_role) | **GET** /organizations/{id}/roles/{role_id} | Get details about a specific role
+*RolesApi* | [**list_organization_roles**](equinix/services/metalv1/docs/RolesApi.md#list_organization_roles) | **GET** /organizations/{id}/roles | List available roles
 *SSHKeysApi* | [**create_project_ssh_key**](equinix/services/metalv1/docs/SSHKeysApi.md#create_project_ssh_key) | **POST** /projects/{id}/ssh-keys | Create a ssh key for the given project
 *SSHKeysApi* | [**create_ssh_key**](equinix/services/metalv1/docs/SSHKeysApi.md#create_ssh_key) | **POST** /ssh-keys | Create a ssh key for the current user
 *SSHKeysApi* | [**delete_ssh_key**](equinix/services/metalv1/docs/SSHKeysApi.md#delete_ssh_key) | **DELETE** /ssh-keys/{id} | Delete the ssh key
@@ -414,6 +419,9 @@ Class | Method | HTTP request | Description
  - [LicenseUpdateInput](equinix/services/metalv1/docs/LicenseUpdateInput.md)
  - [LineItem](equinix/services/metalv1/docs/LineItem.md)
  - [LineItemAdjustment](equinix/services/metalv1/docs/LineItemAdjustment.md)
+ - [Member](equinix/services/metalv1/docs/Member.md)
+ - [MemberList](equinix/services/metalv1/docs/MemberList.md)
+ - [MemberUpdateInput](equinix/services/metalv1/docs/MemberUpdateInput.md)
  - [Membership](equinix/services/metalv1/docs/Membership.md)
  - [MembershipInput](equinix/services/metalv1/docs/MembershipInput.md)
  - [MembershipList](equinix/services/metalv1/docs/MembershipList.md)
@@ -481,6 +489,9 @@ Class | Method | HTTP request | Description
  - [Raid](equinix/services/metalv1/docs/Raid.md)
  - [RequestIPReservation201Response](equinix/services/metalv1/docs/RequestIPReservation201Response.md)
  - [RequestIPReservationRequest](equinix/services/metalv1/docs/RequestIPReservationRequest.md)
+ - [Role](equinix/services/metalv1/docs/Role.md)
+ - [RoleList](equinix/services/metalv1/docs/RoleList.md)
+ - [RoleListRolesInner](equinix/services/metalv1/docs/RoleListRolesInner.md)
  - [SSHKey](equinix/services/metalv1/docs/SSHKey.md)
  - [SSHKeyCreateInput](equinix/services/metalv1/docs/SSHKeyCreateInput.md)
  - [SSHKeyInput](equinix/services/metalv1/docs/SSHKeyInput.md)
