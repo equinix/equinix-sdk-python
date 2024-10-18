@@ -1,0 +1,40 @@
+get:
+  description: Get all Members of an Organization
+  operationId: getOrganizationMembers
+  parameters:
+  - $ref: '../../../components/parameters/Include.yaml'
+  - description: Organization UUID
+    in: path
+    name: organization_id
+    required: true
+    schema:
+      format: uuid
+      type: string
+  responses:
+    "200":
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/MemberList.yaml'
+      description: ok
+    "401":
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: unauthorized
+    "403":
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: forbidden
+    "404":
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: not found
+  summary: Retrieve organization members
+  tags:
+  - Organizations

@@ -285,6 +285,12 @@ components:
       $ref: './components/schemas/LicenseUpdateInput.yaml'
     LineItem:
       $ref: './components/schemas/LineItem.yaml'
+    Member:
+      $ref: './components/schemas/Member.yaml'
+    MemberList:
+      $ref: './components/schemas/MemberList.yaml'
+    MemberUpdateInput:
+      $ref: './components/schemas/MemberUpdateInput.yaml'
     Membership:
       $ref: './components/schemas/Membership.yaml'
     MembershipInput:
@@ -371,6 +377,10 @@ components:
       $ref: './components/schemas/ProjectUsage.yaml'
     ProjectUsageList:
       $ref: './components/schemas/ProjectUsageList.yaml'
+    Role:
+      $ref: './components/schemas/Role.yaml'
+    RoleList:
+      $ref: './components/schemas/RoleList.yaml'
     SSHKey:
       $ref: './components/schemas/SSHKey.yaml'
     SSHKeyCreateInput:
@@ -668,8 +678,16 @@ paths:
     $ref: ./paths/organizations/id/plans.yaml
   /organizations/{id}/projects:
     $ref: ./paths/organizations/id/projects.yaml
+  /organizations/{id}/roles:
+    $ref: ./paths/organizations/id/roles.yaml
+  /organizations/{id}/roles/{role_id}:
+    $ref: ./paths/organizations/id/roles/role_id.yaml
   /organizations/{id}/transfers:
     $ref: ./paths/organizations/id/transfers.yaml
+  /organizations/{organization_id}/members:
+    $ref: ./paths/organizations/organization_id/members.yaml
+  /organizations/{organization_id}/members/{id}:
+    $ref: ./paths/organizations/organization_id/members/id.yaml
   /organizations/{organization_id}/connections:
     $ref: ./paths/organizations/organization_id/connections.yaml
   /payment-methods/{id}:
@@ -973,9 +991,7 @@ tags:
     externalDocs:
       url: https://deploy.equinix.com/developers/docs/metal/locations/metros/
   - description: >
-      Operating System Management. Check out the product docs to learn more about
-      [Operating Systems
-      choices](https://deploy.equinix.com/developers/docs/metal/operating-systems/licensed/).
+      Operating System Images and Lifecycle Management
     name: OperatingSystems
     externalDocs:
       url: https://deploy.equinix.com/developers/docs/metal/operating-systems/supported/
@@ -1097,6 +1113,7 @@ x-tagGroups:
       - PasswordResetTokens
       - PaymentMethods
       - Projects
+      - Roles
       - SSHKeys
       - SupportRequest
       - TransferRequests
