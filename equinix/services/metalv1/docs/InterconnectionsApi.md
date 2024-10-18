@@ -17,9 +17,9 @@ Method | HTTP request | Description
 [**list_interconnection_port_virtual_circuits**](InterconnectionsApi.md#list_interconnection_port_virtual_circuits) | **GET** /connections/{connection_id}/ports/{port_id}/virtual-circuits | List a interconnection port&#39;s virtual circuits
 [**list_interconnection_ports**](InterconnectionsApi.md#list_interconnection_ports) | **GET** /connections/{connection_id}/ports | List a interconnection&#39;s ports
 [**list_interconnection_virtual_circuits**](InterconnectionsApi.md#list_interconnection_virtual_circuits) | **GET** /connections/{connection_id}/virtual-circuits | List a interconnection&#39;s virtual circuits
-[**organization_list_interconnections**](InterconnectionsApi.md#organization_list_interconnections) | **GET** /organizations/{organization_id}/connections | List organization connections
-[**project_list_interconnections**](InterconnectionsApi.md#project_list_interconnections) | **GET** /projects/{project_id}/connections | List project connections
-[**project_list_interconnections_all_pages**](InterconnectionsApi.md#project_list_interconnections_all_pages) | **GET** /projects/{project_id}/connections | List project connections, fetches all the pages
+[**organization_list_interconnections**](InterconnectionsApi.md#organization_list_interconnections) | **GET** /organizations/{organization_id}/connections | List an Organization&#39;s interconnections
+[**project_list_interconnections**](InterconnectionsApi.md#project_list_interconnections) | **GET** /projects/{project_id}/connections | List a Project&#39;s and Organization&#39;s interconnections
+[**project_list_interconnections_all_pages**](InterconnectionsApi.md#project_list_interconnections_all_pages) | **GET** /projects/{project_id}/connections | List a Project&#39;s and Organization&#39;s interconnections, fetches all the pages
 [**update_interconnection**](InterconnectionsApi.md#update_interconnection) | **PUT** /connections/{connection_id} | Update interconnection
 [**update_virtual_circuit**](InterconnectionsApi.md#update_virtual_circuit) | **PUT** /virtual-circuits/{id} | Update a virtual circuit
 
@@ -1105,11 +1105,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **organization_list_interconnections**
-> InterconnectionList organization_list_interconnections(organization_id, include=include, exclude=exclude)
+> InterconnectionList organization_list_interconnections(organization_id, include=include, exclude=exclude, projectproject_id=projectproject_id)
 
-List organization connections
+List an Organization's interconnections
 
-List the connections belonging to the organization
+Returns a list of the interconnections belonging to the Organization.
 
 ### Example
 
@@ -1145,10 +1145,11 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     organization_id = 'organization_id_example' # str | UUID of the organization
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
+    projectproject_id = 'projectproject_id_example' # str | Filter the list to return only the interconnections for the specified Project. (optional)
 
     try:
-        # List organization connections
-        api_response = api_instance.organization_list_interconnections(organization_id, include=include, exclude=exclude)
+        # List an Organization's interconnections
+        api_response = api_instance.organization_list_interconnections(organization_id, include=include, exclude=exclude, projectproject_id=projectproject_id)
         print("The response of InterconnectionsApi->organization_list_interconnections:\n")
         pprint(api_response)
     except Exception as e:
@@ -1165,6 +1166,7 @@ Name | Type | Description  | Notes
  **organization_id** | **str**| UUID of the organization | 
  **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
  **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
+ **projectproject_id** | **str**| Filter the list to return only the interconnections for the specified Project. | [optional] 
 
 ### Return type
 
@@ -1191,9 +1193,9 @@ Name | Type | Description  | Notes
 # **project_list_interconnections**
 > InterconnectionList project_list_interconnections(project_id, include=include, exclude=exclude, page=page, per_page=per_page)
 
-List project connections
+List a Project's and Organization's interconnections
 
-List the connections belonging to the project
+Returns a List of all the interconnections in an Organization, including the interconnections in the specified Project. To reliably get a list of interconnections filtered to just the interconnections accessible to the specified Project, use the [`/organizations/{organization_id}/interconnections?project={project_id}`](https://deploy.equinix.com/developers/api/metal/#tag/Interconnections/operation/organizationListInterconnections) endpoint, filtering on the Project ID.
 
 ### Example
 
@@ -1233,7 +1235,7 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     per_page = 10 # int | Items returned per page (optional) (default to 10)
 
     try:
-        # List project connections
+        # List a Project's and Organization's interconnections
         api_response = api_instance.project_list_interconnections(project_id, include=include, exclude=exclude, page=page, per_page=per_page)
         print("The response of InterconnectionsApi->project_list_interconnections:\n")
         pprint(api_response)

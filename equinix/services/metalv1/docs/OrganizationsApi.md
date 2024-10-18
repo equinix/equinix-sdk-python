@@ -20,7 +20,10 @@ Method | HTTP request | Description
 [**find_organizations**](OrganizationsApi.md#find_organizations) | **GET** /organizations | Retrieve all organizations
 [**find_organizations_all_pages**](OrganizationsApi.md#find_organizations_all_pages) | **GET** /organizations | Retrieve all organizations, fetches all the pages
 [**find_plans_by_organization**](OrganizationsApi.md#find_plans_by_organization) | **GET** /organizations/{id}/plans | Retrieve all plans visible by the organization
+[**get_organization_members**](OrganizationsApi.md#get_organization_members) | **GET** /organizations/{organization_id}/members | Retrieve organization members
+[**remove_organization_member**](OrganizationsApi.md#remove_organization_member) | **DELETE** /organizations/{organization_id}/members/{id} | Remove member from the organization
 [**update_organization**](OrganizationsApi.md#update_organization) | **PUT** /organizations/{id} | Update the organization
+[**update_organization_member_roles**](OrganizationsApi.md#update_organization_member_roles) | **PUT** /organizations/{organization_id}/members/{id} | Update roles for an organization member
 
 
 # **create_organization**
@@ -1216,6 +1219,167 @@ Name | Type | Description  | Notes
 **404** | not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+# **get_organization_members**
+> MemberList get_organization_members(organization_id, include=include)
+
+Retrieve organization members
+
+Get all Members of an Organization
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix.services.metalv1
+from equinix.services.metalv1.models.member_list import MemberList
+from equinix.services.metalv1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.metalv1.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.metalv1.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization UUID
+    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
+
+    try:
+        # Retrieve organization members
+        api_response = api_instance.get_organization_members(organization_id, include=include)
+        print("The response of OrganizationsApi->get_organization_members:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->get_organization_members: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization UUID | 
+ **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
+
+### Return type
+
+[**MemberList**](MemberList.md)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ok |  -  |
+**401** | unauthorized |  -  |
+**403** | forbidden |  -  |
+**404** | not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+# **remove_organization_member**
+> remove_organization_member(organization_id, id)
+
+Remove member from the organization
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix.services.metalv1
+from equinix.services.metalv1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.metalv1.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.metalv1.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization UUID
+    id = 'id_example' # str | Member UUID
+
+    try:
+        # Remove member from the organization
+        api_instance.remove_organization_member(organization_id, id)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->remove_organization_member: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization UUID | 
+ **id** | **str**| Member UUID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | no content |  -  |
+**401** | unauthorized |  -  |
+**403** | forbidden |  -  |
+**404** | not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **update_organization**
 > Organization update_organization(id, organization_input, include=include, exclude=exclude)
 
@@ -1284,6 +1448,93 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Organization**](Organization.md)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ok |  -  |
+**401** | unauthorized |  -  |
+**403** | forbidden |  -  |
+**404** | not found |  -  |
+**422** | unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+# **update_organization_member_roles**
+> Member update_organization_member_roles(organization_id, id, member_update_input=member_update_input)
+
+Update roles for an organization member
+
+Update organization member by assigning roles that determine which actions they can perform within the organization. 
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix.services.metalv1
+from equinix.services.metalv1.models.member import Member
+from equinix.services.metalv1.models.member_update_input import MemberUpdateInput
+from equinix.services.metalv1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.metalv1.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.metalv1.OrganizationsApi(api_client)
+    organization_id = 'organization_id_example' # str | Organization UUID
+    id = 'id_example' # str | Member UUID
+    member_update_input = equinix.services.metalv1.MemberUpdateInput() # MemberUpdateInput | Organization to update (optional)
+
+    try:
+        # Update roles for an organization member
+        api_response = api_instance.update_organization_member_roles(organization_id, id, member_update_input=member_update_input)
+        print("The response of OrganizationsApi->update_organization_member_roles:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrganizationsApi->update_organization_member_roles: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organization_id** | **str**| Organization UUID | 
+ **id** | **str**| Member UUID | 
+ **member_update_input** | [**MemberUpdateInput**](MemberUpdateInput.md)| Organization to update | [optional] 
+
+### Return type
+
+[**Member**](Member.md)
 
 ### Authorization
 

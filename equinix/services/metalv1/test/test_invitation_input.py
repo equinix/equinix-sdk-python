@@ -34,6 +34,7 @@ class TestInvitationInput(unittest.TestCase):
         model = InvitationInput()
         if include_optional:
             return InvitationInput(
+                bound_roles = ["permrv2-:id"],
                 href = '',
                 invitee = '',
                 message = '',

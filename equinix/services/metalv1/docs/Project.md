@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **payment_method** | [**Href**](Href.md) |  | [optional] 
 **ssh_keys** | [**List[Href]**](Href.md) |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
-**type** | **str** | The type of the project. Projects of type &#x60;vmce&#x60; are part of an in development feature and not available to all customers. | [optional] 
+**type** | **str** | The type of the project. | [optional] 
 **updated_at** | **datetime** |  | [optional] 
 **url** | **str** |  | [optional] 
 **volumes** | [**List[Href]**](Href.md) |  | [optional] 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** | The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis. | 
 **payment_method_id** | **str** |  | [optional] 
 **tags** | **List[str]** |  | [optional] 
-**type** | **str** | The type of the project. If no type is specified the project type will automatically be &#x60;default&#x60; Projects of type &#39;vmce&#39; are part of an in development feature and not available to all customers. | [optional] 
+**type** | **str** | The type of the project. If no type is specified the project type will automatically be &#x60;default&#x60; | [optional] 
 
 ## Example
 

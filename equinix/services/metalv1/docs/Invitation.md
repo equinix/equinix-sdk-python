@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bound_roles** | **List[str]** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **href** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

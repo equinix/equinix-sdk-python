@@ -27,6 +27,7 @@ class Invitation(BaseModel):
     """
     Invitation
     """ # noqa: E501
+    bound_roles: Optional[List[StrictStr]] = None
     created_at: Optional[datetime] = None
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
@@ -38,7 +39,7 @@ class Invitation(BaseModel):
     projects: Optional[List[Href]] = None
     roles: Optional[List[StrictStr]] = None
     updated_at: Optional[datetime] = None
-    __properties: ClassVar[List[str]] = ["created_at", "href", "id", "invitation", "invited_by", "invitee", "nonce", "organization", "projects", "roles", "updated_at"]
+    __properties: ClassVar[List[str]] = ["bound_roles", "created_at", "href", "id", "invitation", "invited_by", "invitee", "nonce", "organization", "projects", "roles", "updated_at"]
 
     @field_validator('roles')
     def roles_validate_enum(cls, value):
@@ -118,6 +119,7 @@ class Invitation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "bound_roles": obj.get("bound_roles"),
             "created_at": obj.get("created_at"),
             "href": obj.get("href"),
             "id": obj.get("id"),

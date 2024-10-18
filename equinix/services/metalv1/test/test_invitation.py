@@ -34,6 +34,7 @@ class TestInvitation(unittest.TestCase):
         model = Invitation()
         if include_optional:
             return Invitation(
+                bound_roles = ["permrv2-:id"],
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 href = '',
                 id = '',
