@@ -28,6 +28,7 @@ from equinix.services.metalv1.api.payment_methods_api import PaymentMethodsApi
 from equinix.services.metalv1.api.plans_api import PlansApi
 from equinix.services.metalv1.api.ports_api import PortsApi
 from equinix.services.metalv1.api.projects_api import ProjectsApi
+from equinix.services.metalv1.api.roles_api import RolesApi
 from equinix.services.metalv1.api.ssh_keys_api import SSHKeysApi
 from equinix.services.metalv1.api.self_service_reservations_api import SelfServiceReservationsApi
 from equinix.services.metalv1.api.spot_market_api import SpotMarketApi

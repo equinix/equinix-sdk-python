@@ -45,7 +45,7 @@ class Project(BaseModel):
     payment_method: Optional[Href] = None
     ssh_keys: Optional[List[Href]] = None
     tags: Optional[List[StrictStr]] = None
-    type: Optional[StrictStr] = Field(default=None, description="The type of the project. Projects of type `vmce` are part of an in development feature and not available to all customers.")
+    type: Optional[StrictStr] = Field(default=None, description="The type of the project.")
     updated_at: Optional[datetime] = None
     url: Optional[StrictStr] = None
     volumes: Optional[List[Href]] = None
@@ -57,8 +57,8 @@ class Project(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['default', 'vmce']):
-            raise ValueError("must be one of enum values ('default', 'vmce')")
+        if value not in set(['default']):
+            raise ValueError("must be one of enum values ('default')")
         return value
 
     model_config = ConfigDict(

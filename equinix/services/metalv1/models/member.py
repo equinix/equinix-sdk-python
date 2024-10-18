@@ -16,23 +16,25 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InvitationInput(BaseModel):
+class Member(BaseModel):
     """
-    InvitationInput
+    Member
     """ # noqa: E501
     bound_roles: Optional[List[StrictStr]] = None
     href: Optional[StrictStr] = None
-    invitee: StrictStr
-    message: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    projects_ids: Optional[List[StrictStr]] = None
+    id: Optional[StrictStr] = None
+    organization: Optional[Href] = None
+    projects: Optional[List[Href]] = None
+    projects_count: Optional[StrictInt] = None
     roles: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["bound_roles", "href", "invitee", "message", "organization_id", "projects_ids", "roles"]
+    user: Optional[Href] = None
+    __properties: ClassVar[List[str]] = ["bound_roles", "href", "id", "organization", "projects", "projects_count", "roles", "user"]
 
     @field_validator('roles')
     def roles_validate_enum(cls, value):
@@ -63,7 +65,7 @@ class InvitationInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InvitationInput from a JSON string"""
+        """Create an instance of Member from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -84,11 +86,24 @@ class InvitationInput(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of organization
+        if self.organization:
+            _dict['organization'] = self.organization.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in projects (list)
+        _items = []
+        if self.projects:
+            for _item in self.projects:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['projects'] = _items
+        # override the default output from pydantic by calling `to_dict()` of user
+        if self.user:
+            _dict['user'] = self.user.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InvitationInput from a dict"""
+        """Create an instance of Member from a dict"""
         if obj is None:
             return None
 
@@ -98,11 +113,12 @@ class InvitationInput(BaseModel):
         _obj = cls.model_validate({
             "bound_roles": obj.get("bound_roles"),
             "href": obj.get("href"),
-            "invitee": obj.get("invitee"),
-            "message": obj.get("message"),
-            "organization_id": obj.get("organization_id"),
-            "projects_ids": obj.get("projects_ids"),
-            "roles": obj.get("roles")
+            "id": obj.get("id"),
+            "organization": Href.from_dict(obj["organization"]) if obj.get("organization") is not None else None,
+            "projects": [Href.from_dict(_item) for _item in obj["projects"]] if obj.get("projects") is not None else None,
+            "projects_count": obj.get("projects_count"),
+            "roles": obj.get("roles"),
+            "user": Href.from_dict(obj["user"]) if obj.get("user") is not None else None
         })
         return _obj
 

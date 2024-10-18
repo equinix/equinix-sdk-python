@@ -13,10 +13,10 @@
 
 import unittest
 
-from equinix.services.metalv1.models.invitation_input import InvitationInput
+from equinix.services.metalv1.models.member import Member
 
-class TestInvitationInput(unittest.TestCase):
-    """InvitationInput unit test stubs"""
+class TestMember(unittest.TestCase):
+    """Member unit test stubs"""
 
     def setUp(self):
         pass
@@ -24,36 +24,39 @@ class TestInvitationInput(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> InvitationInput:
-        """Test InvitationInput
+    def make_instance(self, include_optional) -> Member:
+        """Test Member
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `InvitationInput`
+        # uncomment below to create an instance of `Member`
         """
-        model = InvitationInput()
+        model = Member()
         if include_optional:
-            return InvitationInput(
+            return Member(
                 bound_roles = ["permrv2-:id"],
                 href = '',
-                invitee = '',
-                message = '',
-                organization_id = '',
-                projects_ids = [
-                    ''
+                id = '',
+                organization = equinix.services.metalv1.models.href.Href(
+                    href = '', ),
+                projects = [
+                    equinix.services.metalv1.models.href.Href(
+                        href = '', )
                     ],
+                projects_count = 56,
                 roles = [
                     'admin'
-                    ]
+                    ],
+                user = equinix.services.metalv1.models.href.Href(
+                    href = '', )
             )
         else:
-            return InvitationInput(
-                invitee = '',
+            return Member(
         )
         """
 
-    def testInvitationInput(self):
-        """Test InvitationInput"""
+    def testMember(self):
+        """Test Member"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

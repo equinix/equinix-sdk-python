@@ -119,21 +119,21 @@ class TestInterconnectionsApi(unittest.TestCase):
     def test_organization_list_interconnections(self) -> None:
         """Test case for organization_list_interconnections
 
-        List organization connections
+        List an Organization's interconnections
         """
         pass
 
     def test_project_list_interconnections(self) -> None:
         """Test case for project_list_interconnections
 
-        List project connections
+        List a Project's and Organization's interconnections
         """
         pass
 
     def test_project_list_interconnections_all_pages(self):
         """Test case for project_list_interconnections_all_pages
 
-        List project connections  # noqa: E501
+        List a Project's and Organization's interconnections  # noqa: E501
         """
         pass
 

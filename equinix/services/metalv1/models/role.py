@@ -16,34 +16,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InvitationInput(BaseModel):
+class Role(BaseModel):
     """
-    InvitationInput
+    Role
     """ # noqa: E501
-    bound_roles: Optional[List[StrictStr]] = None
+    actions: Optional[List[StrictStr]] = None
     href: Optional[StrictStr] = None
-    invitee: StrictStr
-    message: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    projects_ids: Optional[List[StrictStr]] = None
-    roles: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["bound_roles", "href", "invitee", "message", "organization_id", "projects_ids", "roles"]
-
-    @field_validator('roles')
-    def roles_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        for i in value:
-            if i not in set(['admin', 'billing', 'collaborator', 'limited_collaborator']):
-                raise ValueError("each list item must be one of ('admin', 'billing', 'collaborator', 'limited_collaborator')")
-        return value
+    id: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["actions", "href", "id", "name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -63,7 +49,7 @@ class InvitationInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InvitationInput from a JSON string"""
+        """Create an instance of Role from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -88,7 +74,7 @@ class InvitationInput(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InvitationInput from a dict"""
+        """Create an instance of Role from a dict"""
         if obj is None:
             return None
 
@@ -96,13 +82,10 @@ class InvitationInput(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bound_roles": obj.get("bound_roles"),
+            "actions": obj.get("actions"),
             "href": obj.get("href"),
-            "invitee": obj.get("invitee"),
-            "message": obj.get("message"),
-            "organization_id": obj.get("organization_id"),
-            "projects_ids": obj.get("projects_ids"),
-            "roles": obj.get("roles")
+            "id": obj.get("id"),
+            "name": obj.get("name")
         })
         return _obj
 

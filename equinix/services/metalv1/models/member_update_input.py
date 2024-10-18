@@ -16,26 +16,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InvitationInput(BaseModel):
+class MemberUpdateInput(BaseModel):
     """
-    InvitationInput
+    MemberUpdateInput
     """ # noqa: E501
-    bound_roles: Optional[List[StrictStr]] = None
+    bound_roles: Optional[List[StrictStr]] = Field(default=None, description="Additional roles that can be bound to the user to grant extra permissions.")
     href: Optional[StrictStr] = None
-    invitee: StrictStr
-    message: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    projects_ids: Optional[List[StrictStr]] = None
-    roles: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["bound_roles", "href", "invitee", "message", "organization_id", "projects_ids", "roles"]
+    project_ids: Optional[List[StrictStr]] = Field(default=None, description="Project IDs the user should be able to access. This field is only required when role is set to `collaborator` or `limited_collaborator`.")
+    role: Optional[List[StrictStr]] = Field(default=None, description="Primary role for the user within the organization")
+    __properties: ClassVar[List[str]] = ["bound_roles", "href", "project_ids", "role"]
 
-    @field_validator('roles')
-    def roles_validate_enum(cls, value):
+    @field_validator('role')
+    def role_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
@@ -63,7 +60,7 @@ class InvitationInput(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InvitationInput from a JSON string"""
+        """Create an instance of MemberUpdateInput from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -88,7 +85,7 @@ class InvitationInput(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InvitationInput from a dict"""
+        """Create an instance of MemberUpdateInput from a dict"""
         if obj is None:
             return None
 
@@ -98,11 +95,8 @@ class InvitationInput(BaseModel):
         _obj = cls.model_validate({
             "bound_roles": obj.get("bound_roles"),
             "href": obj.get("href"),
-            "invitee": obj.get("invitee"),
-            "message": obj.get("message"),
-            "organization_id": obj.get("organization_id"),
-            "projects_ids": obj.get("projects_ids"),
-            "roles": obj.get("roles")
+            "project_ids": obj.get("project_ids"),
+            "role": obj.get("role")
         })
         return _obj
 

@@ -137,10 +137,31 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_organization_members(self) -> None:
+        """Test case for get_organization_members
+
+        Retrieve organization members
+        """
+        pass
+
+    def test_remove_organization_member(self) -> None:
+        """Test case for remove_organization_member
+
+        Remove member from the organization
+        """
+        pass
+
     def test_update_organization(self) -> None:
         """Test case for update_organization
 
         Update the organization
+        """
+        pass
+
+    def test_update_organization_member_roles(self) -> None:
+        """Test case for update_organization_member_roles
+
+        Update roles for an organization member
         """
         pass
 

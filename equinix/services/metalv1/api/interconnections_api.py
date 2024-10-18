@@ -3849,6 +3849,7 @@ class InterconnectionsApi:
         organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
+        projectproject_id: Annotated[Optional[StrictStr], Field(description="Filter the list to return only the interconnections for the specified Project.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3862,9 +3863,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InterconnectionList:
-        """List organization connections
+        """List an Organization's interconnections
 
-        List the connections belonging to the organization
+        Returns a list of the interconnections belonging to the Organization.
 
         :param organization_id: UUID of the organization (required)
         :type organization_id: str
@@ -3872,6 +3873,8 @@ class InterconnectionsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
+        :param projectproject_id: Filter the list to return only the interconnections for the specified Project.
+        :type projectproject_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3898,6 +3901,7 @@ class InterconnectionsApi:
             organization_id=organization_id,
             include=include,
             exclude=exclude,
+            projectproject_id=projectproject_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3926,6 +3930,7 @@ class InterconnectionsApi:
         organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
+        projectproject_id: Annotated[Optional[StrictStr], Field(description="Filter the list to return only the interconnections for the specified Project.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3939,9 +3944,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InterconnectionList]:
-        """List organization connections
+        """List an Organization's interconnections
 
-        List the connections belonging to the organization
+        Returns a list of the interconnections belonging to the Organization.
 
         :param organization_id: UUID of the organization (required)
         :type organization_id: str
@@ -3949,6 +3954,8 @@ class InterconnectionsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
+        :param projectproject_id: Filter the list to return only the interconnections for the specified Project.
+        :type projectproject_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3975,6 +3982,7 @@ class InterconnectionsApi:
             organization_id=organization_id,
             include=include,
             exclude=exclude,
+            projectproject_id=projectproject_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4003,6 +4011,7 @@ class InterconnectionsApi:
         organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
+        projectproject_id: Annotated[Optional[StrictStr], Field(description="Filter the list to return only the interconnections for the specified Project.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4016,9 +4025,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List organization connections
+        """List an Organization's interconnections
 
-        List the connections belonging to the organization
+        Returns a list of the interconnections belonging to the Organization.
 
         :param organization_id: UUID of the organization (required)
         :type organization_id: str
@@ -4026,6 +4035,8 @@ class InterconnectionsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
+        :param projectproject_id: Filter the list to return only the interconnections for the specified Project.
+        :type projectproject_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4052,6 +4063,7 @@ class InterconnectionsApi:
             organization_id=organization_id,
             include=include,
             exclude=exclude,
+            projectproject_id=projectproject_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4075,6 +4087,7 @@ class InterconnectionsApi:
         organization_id,
         include,
         exclude,
+        projectproject_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4106,6 +4119,10 @@ class InterconnectionsApi:
         if exclude is not None:
             
             _query_params.append(('exclude', exclude))
+            
+        if projectproject_id is not None:
+            
+            _query_params.append(('project&#x3D;{project_id}', projectproject_id))
             
         # process the header parameters
         # process the form parameters
@@ -4143,7 +4160,7 @@ class InterconnectionsApi:
 
     @validate_call
     def project_list_interconnections_all_pages(self, project_id : Annotated[StrictStr, Field(description="UUID of the project")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> InterconnectionList:  # noqa: E501
-        """List project connections  # noqa: E501
+        """List a Project's and Organization's interconnections  # noqa: E501
 
         This method is the same as project_list_interconnections, but fetches resources from all the pages.
 
@@ -4217,9 +4234,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InterconnectionList:
-        """List project connections
+        """List a Project's and Organization's interconnections
 
-        List the connections belonging to the project
+        Returns a List of all the interconnections in an Organization, including the interconnections in the specified Project. To reliably get a list of interconnections filtered to just the interconnections accessible to the specified Project, use the [`/organizations/{organization_id}/interconnections?project={project_id}`](https://deploy.equinix.com/developers/api/metal/#tag/Interconnections/operation/organizationListInterconnections) endpoint, filtering on the Project ID.
 
         :param project_id: UUID of the project (required)
         :type project_id: str
@@ -4302,9 +4319,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InterconnectionList]:
-        """List project connections
+        """List a Project's and Organization's interconnections
 
-        List the connections belonging to the project
+        Returns a List of all the interconnections in an Organization, including the interconnections in the specified Project. To reliably get a list of interconnections filtered to just the interconnections accessible to the specified Project, use the [`/organizations/{organization_id}/interconnections?project={project_id}`](https://deploy.equinix.com/developers/api/metal/#tag/Interconnections/operation/organizationListInterconnections) endpoint, filtering on the Project ID.
 
         :param project_id: UUID of the project (required)
         :type project_id: str
@@ -4387,9 +4404,9 @@ class InterconnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List project connections
+        """List a Project's and Organization's interconnections
 
-        List the connections belonging to the project
+        Returns a List of all the interconnections in an Organization, including the interconnections in the specified Project. To reliably get a list of interconnections filtered to just the interconnections accessible to the specified Project, use the [`/organizations/{organization_id}/interconnections?project={project_id}`](https://deploy.equinix.com/developers/api/metal/#tag/Interconnections/operation/organizationListInterconnections) endpoint, filtering on the Project ID.
 
         :param project_id: UUID of the project (required)
         :type project_id: str

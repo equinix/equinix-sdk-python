@@ -1,19 +1,19 @@
-# equinix.services.metalv1.OperatingSystemsApi
+# equinix.services.metalv1.RolesApi
 
 All URIs are relative to *https://api.equinix.com/metal/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**find_operating_system_version**](OperatingSystemsApi.md#find_operating_system_version) | **GET** /operating-system-versions | Retrieve all operating system versions
-[**find_operating_systems**](OperatingSystemsApi.md#find_operating_systems) | **GET** /operating-systems | Retrieve all operating systems
+[**get_organization_role**](RolesApi.md#get_organization_role) | **GET** /organizations/{id}/roles/{role_id} | Get details about a specific role
+[**list_organization_roles**](RolesApi.md#list_organization_roles) | **GET** /organizations/{id}/roles | List available roles
 
 
-# **find_operating_system_version**
-> OperatingSystemList find_operating_system_version()
+# **get_organization_role**
+> Role get_organization_role(id, role_id)
 
-Retrieve all operating system versions
+Get details about a specific role
 
-Provides a listing of available operating system versions.
+Learn what actions are in each role.
 
 ### Example
 
@@ -21,7 +21,7 @@ Provides a listing of available operating system versions.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.role import Role
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -45,26 +45,32 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix.services.metalv1.OperatingSystemsApi(api_client)
+    api_instance = equinix.services.metalv1.RolesApi(api_client)
+    id = 'id_example' # str | Organization UUID
+    role_id = 'role_id_example' # str | Role ID
 
     try:
-        # Retrieve all operating system versions
-        api_response = api_instance.find_operating_system_version()
-        print("The response of OperatingSystemsApi->find_operating_system_version:\n")
+        # Get details about a specific role
+        api_response = api_instance.get_organization_role(id, role_id)
+        print("The response of RolesApi->get_organization_role:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OperatingSystemsApi->find_operating_system_version: %s\n" % e)
+        print("Exception when calling RolesApi->get_organization_role: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organization UUID | 
+ **role_id** | **str**| Role ID | 
 
 ### Return type
 
-[**OperatingSystemList**](OperatingSystemList.md)
+[**Role**](Role.md)
 
 ### Authorization
 
@@ -81,14 +87,15 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | ok |  -  |
 **401** | unauthorized |  -  |
+**403** | forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-# **find_operating_systems**
-> OperatingSystemList find_operating_systems()
+# **list_organization_roles**
+> RoleList list_organization_roles(id)
 
-Retrieve all operating systems
+List available roles
 
-Returns a list of available operating systems to provision your new device with.
+This list of roles can be used to update Members or new Invitations with additional permissions.
 
 ### Example
 
@@ -96,7 +103,7 @@ Returns a list of available operating systems to provision your new device with.
 
 ```python
 import equinix.services.metalv1
-from equinix.services.metalv1.models.operating_system_list import OperatingSystemList
+from equinix.services.metalv1.models.role_list import RoleList
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -120,26 +127,30 @@ configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
 # Enter a context with an instance of the API client
 with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = equinix.services.metalv1.OperatingSystemsApi(api_client)
+    api_instance = equinix.services.metalv1.RolesApi(api_client)
+    id = 'id_example' # str | Organization UUID
 
     try:
-        # Retrieve all operating systems
-        api_response = api_instance.find_operating_systems()
-        print("The response of OperatingSystemsApi->find_operating_systems:\n")
+        # List available roles
+        api_response = api_instance.list_organization_roles(id)
+        print("The response of RolesApi->list_organization_roles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OperatingSystemsApi->find_operating_systems: %s\n" % e)
+        print("Exception when calling RolesApi->list_organization_roles: %s\n" % e)
 ```
 
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Organization UUID | 
 
 ### Return type
 
-[**OperatingSystemList**](OperatingSystemList.md)
+[**RoleList**](RoleList.md)
 
 ### Authorization
 
@@ -156,5 +167,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | ok |  -  |
 **401** | unauthorized |  -  |
+**403** | forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

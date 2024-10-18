@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bound_roles** | **List[str]** |  | [optional] 
 **href** | **str** |  | [optional] 
 **invitee** | **str** |  | 
 **message** | **str** |  | [optional] 

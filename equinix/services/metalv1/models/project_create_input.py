@@ -31,7 +31,7 @@ class ProjectCreateInput(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True, max_length=80)] = Field(description="The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis.")
     payment_method_id: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    type: Optional[StrictStr] = Field(default=None, description="The type of the project. If no type is specified the project type will automatically be `default` Projects of type 'vmce' are part of an in development feature and not available to all customers.")
+    type: Optional[StrictStr] = Field(default=None, description="The type of the project. If no type is specified the project type will automatically be `default`")
     __properties: ClassVar[List[str]] = ["customdata", "href", "name", "payment_method_id", "tags", "type"]
 
     @field_validator('type')
@@ -40,8 +40,8 @@ class ProjectCreateInput(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['default', 'vmce']):
-            raise ValueError("must be one of enum values ('default', 'vmce')")
+        if value not in set(['default']):
+            raise ValueError("must be one of enum values ('default')")
         return value
 
     model_config = ConfigDict(
