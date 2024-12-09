@@ -9,11 +9,11 @@ Method | HTTP request | Description
 [**delete_route_filter_by_uuid**](RouteFiltersApi.md#delete_route_filter_by_uuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId} | Delete Route Filter
 [**detach_connection_route_filter**](RouteFiltersApi.md#detach_connection_route_filter) | **DELETE** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Detach Route Filter
 [**get_connection_route_filter_by_uuid**](RouteFiltersApi.md#get_connection_route_filter_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Get Route Filter
-[**get_connection_route_filters**](RouteFiltersApi.md#get_connection_route_filters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get All RouteFilters
-[**get_route_filter_by_uuid**](RouteFiltersApi.md#get_route_filter_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Filter By UUID
+[**get_connection_route_filters**](RouteFiltersApi.md#get_connection_route_filters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get All Route Filters
+[**get_route_filter_by_uuid**](RouteFiltersApi.md#get_route_filter_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter By UUID
 [**get_route_filter_change_by_uuid**](RouteFiltersApi.md#get_route_filter_change_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes/{changeId} | Get Change By ID
 [**get_route_filter_changes**](RouteFiltersApi.md#get_route_filter_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes
-[**get_route_filter_connections**](RouteFiltersApi.md#get_route_filter_connections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get Connections
+[**get_route_filter_connections**](RouteFiltersApi.md#get_route_filter_connections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter
 [**patch_route_filter_by_uuid**](RouteFiltersApi.md#patch_route_filter_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter
 [**search_route_filters**](RouteFiltersApi.md#search_route_filters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters
 
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 # **get_connection_route_filters**
 > GetAllConnectionRouteFiltersResponse get_connection_route_filters(connection_id)
 
-Get All RouteFilters
+Get All Route Filters
 
 This API provides capability to view all Route Filters attached to a Connection
 
@@ -488,7 +488,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_id = 'connection_id_example' # str | Connection Id
 
     try:
-        # Get All RouteFilters
+        # Get All Route Filters
         api_response = api_instance.get_connection_route_filters(connection_id)
         print("The response of RouteFiltersApi->get_connection_route_filters:\n")
         pprint(api_response)
@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_by_uuid**
 > RouteFiltersData get_route_filter_by_uuid(route_filter_id)
 
-Get Filter By UUID
+Get Route Filter By UUID
 
 This API provides capability to view a Route Filter by UUID
 
@@ -572,7 +572,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_id = 'route_filter_id_example' # str | Route Filters Id
 
     try:
-        # Get Filter By UUID
+        # Get Route Filter By UUID
         api_response = api_instance.get_route_filter_by_uuid(route_filter_id)
         print("The response of RouteFiltersApi->get_route_filter_by_uuid:\n")
         pprint(api_response)
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_connections**
 > GetRouteFilterGetConnectionsResponse get_route_filter_connections(route_filter_id)
 
-Get Connections
+Get All Connections on Route Filter
 
 This API provides capability to view all Connections using the Route Filter
 
@@ -828,7 +828,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_id = 'route_filter_id_example' # str | Route Filters Id
 
     try:
-        # Get Connections
+        # Get All Connections on Route Filter
         api_response = api_instance.get_route_filter_connections(route_filter_id)
         print("The response of RouteFiltersApi->get_route_filter_connections:\n")
         pprint(api_response)

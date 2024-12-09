@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_network**
-> Network create_network(network_post_request)
+> Network create_network(network_post_request, dry_run=dry_run)
 
 Create Network
 
@@ -53,10 +53,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
     network_post_request = equinix.services.fabricv4.NetworkPostRequest() # NetworkPostRequest | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Create Network
-        api_response = api_instance.create_network(network_post_request)
+        api_response = api_instance.create_network(network_post_request, dry_run=dry_run)
         print("The response of NetworksApi->create_network:\n")
         pprint(api_response)
     except Exception as e:
@@ -71,6 +72,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network_post_request** | [**NetworkPostRequest**](NetworkPostRequest.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 
@@ -89,6 +91,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **202** | Fabric Network Access point object |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |

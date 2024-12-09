@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **state** | **str** | Stream provision state | [optional] 
 **assets_count** | **int** | Stream assets count | [optional] 
 **stream_subscriptions_count** | **int** | Stream subscriptions count | [optional] 
-**changelog** | [**Changelog**](Changelog.md) |  | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **type** | [**StreamPostRequestType**](StreamPostRequestType.md) |  | [optional] 
 **name** | **str** | Customer-provided stream name | [optional] 
 **description** | **str** | Customer-provided stream description | [optional] 

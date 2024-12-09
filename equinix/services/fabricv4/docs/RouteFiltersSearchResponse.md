@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**List[RouteFiltersData]**](RouteFiltersData.md) | List of Route Filters | [optional] 
+**data** | [**List[RouteFiltersData]**](RouteFiltersData.md) | List of route filters | [optional] 
 
 ## Example
 

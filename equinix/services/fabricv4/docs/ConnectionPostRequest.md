@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **project** | [**Project**](Project.md) |  | [optional] 
 **additional_info** | [**List[ConnectionSideAdditionalInfo]**](ConnectionSideAdditionalInfo.md) | Connection additional information | [optional] 
 **marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
+**end_customer** | [**EndCustomer**](EndCustomer.md) |  | [optional] 
 
 ## Example
 

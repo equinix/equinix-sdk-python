@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** | Stream Asset URI | [optional] [readonly] 
 **uuid** | **str** | Equinix-assigned access point identifier | [optional] 
+**type** | [**StreamAssetType**](StreamAssetType.md) |  | [optional] 
 **metrics_enabled** | **bool** | enable metric | [optional] 
 **attachment_status** | [**StreamAssetAttachmentStatus**](StreamAssetAttachmentStatus.md) |  | [optional] 
 

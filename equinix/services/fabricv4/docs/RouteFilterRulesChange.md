@@ -1,6 +1,6 @@
 # RouteFilterRulesChange
 
-Current state of latest Route Filter Rule change
+Current state of latest route filter rule change
 
 ## Properties
 
