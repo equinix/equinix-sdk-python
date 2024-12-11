@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **project** | [**Project**](Project.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
 **order** | [**PrecisionTimeOrder**](PrecisionTimeOrder.md) |  | [optional] 
+**pricing** | [**PrecisionTimePrice**](PrecisionTimePrice.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

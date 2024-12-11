@@ -1,6 +1,6 @@
 # RouteFilterRulesPatchRequestItem
 
-Route Filter Rule change operation data
+Route filter rule change operation data
 
 ## Properties
 

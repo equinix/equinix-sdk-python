@@ -1,6 +1,6 @@
 # RouteFilterRulesDataType
 
-Route Filter type
+Route filter type
 
 ## Properties
 

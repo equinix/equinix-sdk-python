@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ConnectionRouteFilterDataType**](ConnectionRouteFilterDataType.md) |  | 
+**type** | [**RouteFiltersBaseType**](RouteFiltersBaseType.md) |  | 
 **name** | **str** |  | 
 **description** | **str** | Customer-provided connection description | [optional] 
 **project** | [**Project**](Project.md) |  | 

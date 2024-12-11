@@ -6,9 +6,9 @@ Port specification
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **type** | [**PortType**](PortType.md) |  | [optional] 
 **id** | **int** | Equinix assigned response attribute for Port Id | [optional] 
-**href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **uuid** | **str** | Equinix assigned response attribute for  port identifier | [optional] 
 **name** | **str** | Equinix assigned response attribute for Port name | [optional] 
 **description** | **str** | Equinix assigned response attribute for Port description | [optional] 

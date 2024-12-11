@@ -1,21 +1,21 @@
 # RouteFilterChangeData
 
-Current state of latest Route Filter change
+Current state of latest route filter change
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** | Current outcome of the change flow | [optional] 
-**created_by** | **str** | Created by User Key | [optional] 
+**created_by** | **str** | Created by user key | [optional] 
 **created_date_time** | **datetime** | Set when change flow starts | [optional] 
-**updated_by** | **str** | Updated by User Key | [optional] 
+**updated_by** | **str** | Updated by user key | [optional] 
 **updated_date_time** | **datetime** | Set when change object is updated | [optional] 
 **information** | **str** | Additional information | [optional] 
 **data** | [**RouteFiltersChangeOperation**](RouteFiltersChangeOperation.md) |  | [optional] 
 **uuid** | **str** | Uniquely identifies a change | 
 **type** | [**RouteFiltersChangeType**](RouteFiltersChangeType.md) |  | 
-**href** | **str** | Route Filter Change URI | [optional] 
+**href** | **str** | Route filter change URI | [optional] 
 
 ## Example
 

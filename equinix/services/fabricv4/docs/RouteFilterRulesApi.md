@@ -4,21 +4,21 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_route_filter_rule**](RouteFilterRulesApi.md#create_route_filter_rule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create RFRule
-[**create_route_filter_rules_in_bulk**](RouteFilterRulesApi.md#create_route_filter_rules_in_bulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk RFRules
-[**delete_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#delete_route_filter_rule_by_uuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | DeleteRFRule
-[**get_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | GetRFRule By UUID
+[**create_route_filter_rule**](RouteFilterRulesApi.md#create_route_filter_rule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create Route Filter Rule
+[**create_route_filter_rules_in_bulk**](RouteFilterRulesApi.md#create_route_filter_rules_in_bulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk Create Route Filter Rules
+[**delete_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#delete_route_filter_rule_by_uuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Delete Route Filter Rule
+[**get_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule By UUID
 [**get_route_filter_rule_change_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_change_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes/{changeId} | Get Change By ID
 [**get_route_filter_rule_changes**](RouteFilterRulesApi.md#get_route_filter_rule_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get All Changes
-[**get_route_filter_rules**](RouteFilterRulesApi.md#get_route_filter_rules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | GetRFRules
-[**patch_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#patch_route_filter_rule_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | PatchRFilterRule
-[**replace_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#replace_route_filter_rule_by_uuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | ReplaceRFRule
+[**get_route_filter_rules**](RouteFilterRulesApi.md#get_route_filter_rules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules
+[**patch_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#patch_route_filter_rule_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule
+[**replace_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#replace_route_filter_rule_by_uuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule
 
 
 # **create_route_filter_rule**
 > RouteFilterRulesData create_route_filter_rule(route_filter_id, route_filter_rules_base)
 
-Create RFRule
+Create Route Filter Rule
 
 This API provides capability to create a Route Filter Rule
 
@@ -57,7 +57,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rules_base = equinix.services.fabricv4.RouteFilterRulesBase() # RouteFilterRulesBase | 
 
     try:
-        # Create RFRule
+        # Create Route Filter Rule
         api_response = api_instance.create_route_filter_rule(route_filter_id, route_filter_rules_base)
         print("The response of RouteFilterRulesApi->create_route_filter_rule:\n")
         pprint(api_response)
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 # **create_route_filter_rules_in_bulk**
 > GetRouteFilterRulesResponse create_route_filter_rules_in_bulk(route_filter_id, route_filter_rules_post_request)
 
-Bulk RFRules
+Bulk Create Route Filter Rules
 
 This API provides capability to create bulk route filter rules
 
@@ -144,7 +144,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rules_post_request = equinix.services.fabricv4.RouteFilterRulesPostRequest() # RouteFilterRulesPostRequest | 
 
     try:
-        # Bulk RFRules
+        # Bulk Create Route Filter Rules
         api_response = api_instance.create_route_filter_rules_in_bulk(route_filter_id, route_filter_rules_post_request)
         print("The response of RouteFilterRulesApi->create_route_filter_rules_in_bulk:\n")
         pprint(api_response)
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 # **delete_route_filter_rule_by_uuid**
 > RouteFilterRulesData delete_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
 
-DeleteRFRule
+Delete Route Filter Rule
 
 This API provides capability to delete a Route Filter Rule
 
@@ -230,7 +230,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
 
     try:
-        # DeleteRFRule
+        # Delete Route Filter Rule
         api_response = api_instance.delete_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
         print("The response of RouteFilterRulesApi->delete_route_filter_rule_by_uuid:\n")
         pprint(api_response)
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_rule_by_uuid**
 > RouteFilterRulesData get_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
 
-GetRFRule By UUID
+Get Route Filter Rule By UUID
 
 This API provides capability to view a Route Filter Rule by UUID
 
@@ -316,7 +316,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
 
     try:
-        # GetRFRule By UUID
+        # Get Route Filter Rule By UUID
         api_response = api_instance.get_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
         print("The response of RouteFilterRulesApi->get_route_filter_rule_by_uuid:\n")
         pprint(api_response)
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_rules**
 > GetRouteFilterRulesResponse get_route_filter_rules(route_filter_id, offset=offset, limit=limit)
 
-GetRFRules
+Get Route Filter Rules
 
 This API provides capability to get all Route Filters Rules for Fabric
 
@@ -579,7 +579,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # GetRFRules
+        # Get Route Filter Rules
         api_response = api_instance.get_route_filter_rules(route_filter_id, offset=offset, limit=limit)
         print("The response of RouteFilterRulesApi->get_route_filter_rules:\n")
         pprint(api_response)
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 # **patch_route_filter_rule_by_uuid**
 > RouteFilterRulesData patch_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_patch_request_item)
 
-PatchRFilterRule
+Patch Route Filter Rule
 
 This API provides capability to partially update a Route Filter Rule
 
@@ -667,7 +667,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rules_patch_request_item = [equinix.services.fabricv4.RouteFilterRulesPatchRequestItem()] # List[RouteFilterRulesPatchRequestItem] | 
 
     try:
-        # PatchRFilterRule
+        # Patch Route Filter Rule
         api_response = api_instance.patch_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_patch_request_item)
         print("The response of RouteFilterRulesApi->patch_route_filter_rule_by_uuid:\n")
         pprint(api_response)
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 # **replace_route_filter_rule_by_uuid**
 > RouteFilterRulesData replace_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_base)
 
-ReplaceRFRule
+Replace Route Filter Rule
 
 This API provides capability to replace a Route Filter Rule completely
 
@@ -756,7 +756,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rules_base = equinix.services.fabricv4.RouteFilterRulesBase() # RouteFilterRulesBase | 
 
     try:
-        # ReplaceRFRule
+        # Replace Route Filter Rule
         api_response = api_instance.replace_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_base)
         print("The response of RouteFilterRulesApi->replace_route_filter_rule_by_uuid:\n")
         pprint(api_response)

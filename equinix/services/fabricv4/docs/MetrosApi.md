@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get Metro by Code
 
-GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location. .
+GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
 
 ### Example
 
