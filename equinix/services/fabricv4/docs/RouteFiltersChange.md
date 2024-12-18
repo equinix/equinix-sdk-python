@@ -1,6 +1,6 @@
 # RouteFiltersChange
 
-Current state of latest Route Filter change
+Current state of latest route filter change
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Uniquely identifies a change | 
 **type** | [**RouteFiltersChangeType**](RouteFiltersChangeType.md) |  | 
-**href** | **str** | Route Filter Change URI | [optional] 
+**href** | **str** | Route filter change URI | [optional] 
 
 ## Example
 

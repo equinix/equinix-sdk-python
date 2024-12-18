@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_connection**
-> Connection create_connection(connection_post_request)
+> Connection create_connection(connection_post_request, dry_run=dry_run)
 
 Create Connection
 
@@ -52,10 +52,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
     connection_post_request = equinix.services.fabricv4.ConnectionPostRequest() # ConnectionPostRequest | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Create Connection
-        api_response = api_instance.create_connection(connection_post_request)
+        api_response = api_instance.create_connection(connection_post_request, dry_run=dry_run)
         print("The response of ConnectionsApi->create_connection:\n")
         pprint(api_response)
     except Exception as e:
@@ -70,6 +71,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connection_post_request** | [**ConnectionPostRequest**](ConnectionPostRequest.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 
@@ -88,6 +90,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **201** | Accept Connection Request |  -  |
 **400** | Bad request |  -  |
 **403** | Forbidden |  -  |

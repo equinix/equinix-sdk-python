@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** | Connection URI | [optional] 
 **type** | [**ConnectionType**](ConnectionType.md) |  | [optional] 
-**uuid** | **str** | Route Filter identifier | [optional] 
+**uuid** | **str** | Route filter identifier | [optional] 
 **name** | **str** |  | [optional] 
 
 ## Example

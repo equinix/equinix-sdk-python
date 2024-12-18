@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | The Canonical URL at which the resource resides. | [optional] 
+**metro_href** | **str** | The Canonical URL at which the resource resides. | [optional] 
 **region** | **str** |  | [optional] 
 **metro_name** | **str** |  | [optional] 
 **metro_code** | **str** |  | 

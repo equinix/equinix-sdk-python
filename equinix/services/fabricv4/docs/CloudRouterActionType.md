@@ -1,6 +1,6 @@
 # CloudRouterActionType
 
-Cloud Router action type
+Cloud router action type
 
 ## Properties
 

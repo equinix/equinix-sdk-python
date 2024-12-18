@@ -5,23 +5,23 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_cloud_router**](CloudRoutersApi.md#create_cloud_router) | **POST** /fabric/v4/routers | Create Routers
-[**create_cloud_router_action**](CloudRoutersApi.md#create_cloud_router_action) | **POST** /fabric/v4/routers/{routerId}/actions | Route table actions
+[**create_cloud_router_action**](CloudRoutersApi.md#create_cloud_router_action) | **POST** /fabric/v4/routers/{routerId}/actions | Create Route Table Action
 [**delete_cloud_router_by_uuid**](CloudRoutersApi.md#delete_cloud_router_by_uuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Routers
-[**get_cloud_router_actions**](CloudRoutersApi.md#get_cloud_router_actions) | **GET** /fabric/v4/routers/{routerId}/actions | Get actions
-[**get_cloud_router_actions_by_uuid**](CloudRoutersApi.md#get_cloud_router_actions_by_uuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get actions
+[**get_cloud_router_actions**](CloudRoutersApi.md#get_cloud_router_actions) | **GET** /fabric/v4/routers/{routerId}/actions | Get Route Table Actions
+[**get_cloud_router_actions_by_uuid**](CloudRoutersApi.md#get_cloud_router_actions_by_uuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get Route Table Action by ID
 [**get_cloud_router_by_uuid**](CloudRoutersApi.md#get_cloud_router_by_uuid) | **GET** /fabric/v4/routers/{routerId} | Get Routers
 [**get_cloud_router_package_by_code**](CloudRoutersApi.md#get_cloud_router_package_by_code) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
 [**get_cloud_router_packages**](CloudRoutersApi.md#get_cloud_router_packages) | **GET** /fabric/v4/routerPackages | List Packages
 [**search_cloud_router_routes**](CloudRoutersApi.md#search_cloud_router_routes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table
 [**search_cloud_routers**](CloudRoutersApi.md#search_cloud_routers) | **POST** /fabric/v4/routers/search | Search Routers
-[**search_connection_advertised_routes**](CloudRoutersApi.md#search_connection_advertised_routes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | search advertised
-[**search_connection_received_routes**](CloudRoutersApi.md#search_connection_received_routes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search received
-[**search_router_actions**](CloudRoutersApi.md#search_router_actions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search actions
+[**search_connection_advertised_routes**](CloudRoutersApi.md#search_connection_advertised_routes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | Search Advertised Routes
+[**search_connection_received_routes**](CloudRoutersApi.md#search_connection_received_routes) | **POST** /fabric/v4/connections/{connectionId}/receivedRoutes/search | Search Received Routes
+[**search_router_actions**](CloudRoutersApi.md#search_router_actions) | **POST** /fabric/v4/routers/{routerId}/actions/search | Search Route Table Actions
 [**update_cloud_router_by_uuid**](CloudRoutersApi.md#update_cloud_router_by_uuid) | **PATCH** /fabric/v4/routers/{routerId} | Update Routers
 
 
 # **create_cloud_router**
-> CloudRouter create_cloud_router(cloud_router_post_request)
+> CloudRouter create_cloud_router(cloud_router_post_request, dry_run=dry_run)
 
 Create Routers
 
@@ -59,10 +59,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
     cloud_router_post_request = equinix.services.fabricv4.CloudRouterPostRequest() # CloudRouterPostRequest | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Create Routers
-        api_response = api_instance.create_cloud_router(cloud_router_post_request)
+        api_response = api_instance.create_cloud_router(cloud_router_post_request, dry_run=dry_run)
         print("The response of CloudRoutersApi->create_cloud_router:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,6 +78,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cloud_router_post_request** | [**CloudRouterPostRequest**](CloudRouterPostRequest.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 # **create_cloud_router_action**
 > CloudRouterActionResponse create_cloud_router_action(router_id, cloud_router_action_request)
 
-Route table actions
+Create Route Table Action
 
 This API provides capability to refresh route table and bgp session summary information
 
@@ -146,7 +148,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     cloud_router_action_request = equinix.services.fabricv4.CloudRouterActionRequest() # CloudRouterActionRequest | 
 
     try:
-        # Route table actions
+        # Create Route Table Action
         api_response = api_instance.create_cloud_router_action(router_id, cloud_router_action_request)
         print("The response of CloudRoutersApi->create_cloud_router_action:\n")
         pprint(api_response)
@@ -274,7 +276,7 @@ void (empty response body)
 # **get_cloud_router_actions**
 > CloudRouterActionResponse get_cloud_router_actions(router_id, state=state)
 
-Get actions
+Get Route Table Actions
 
 This API provides capability to fetch action status
 
@@ -313,7 +315,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     state = equinix.services.fabricv4.CloudRouterActionState() # CloudRouterActionState | Action state (optional)
 
     try:
-        # Get actions
+        # Get Route Table Actions
         api_response = api_instance.get_cloud_router_actions(router_id, state=state)
         print("The response of CloudRoutersApi->get_cloud_router_actions:\n")
         pprint(api_response)
@@ -361,7 +363,7 @@ Name | Type | Description  | Notes
 # **get_cloud_router_actions_by_uuid**
 > CloudRouterActionResponse get_cloud_router_actions_by_uuid(router_id, action_id, state=state)
 
-Get actions
+Get Route Table Action by ID
 
 This API provides capability to fetch action status
 
@@ -401,7 +403,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     state = equinix.services.fabricv4.CloudRouterActionState() # CloudRouterActionState | Action state (optional)
 
     try:
-        # Get actions
+        # Get Route Table Action by ID
         api_response = api_instance.get_cloud_router_actions_by_uuid(router_id, action_id, state=state)
         print("The response of CloudRoutersApi->get_cloud_router_actions_by_uuid:\n")
         pprint(api_response)
@@ -871,7 +873,7 @@ Name | Type | Description  | Notes
 # **search_connection_advertised_routes**
 > ConnectionRouteTableEntrySearchResponse search_connection_advertised_routes(connection_id, connection_route_search_request)
 
-search advertised
+Search Advertised Routes
 
 The API provides capability to get list of user's advertised routes using search criteria, including optional filtering, pagination and sorting
 
@@ -910,7 +912,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
 
     try:
-        # search advertised
+        # Search Advertised Routes
         api_response = api_instance.search_connection_advertised_routes(connection_id, connection_route_search_request)
         print("The response of CloudRoutersApi->search_connection_advertised_routes:\n")
         pprint(api_response)
@@ -956,7 +958,7 @@ Name | Type | Description  | Notes
 # **search_connection_received_routes**
 > ConnectionRouteTableEntrySearchResponse search_connection_received_routes(connection_id, connection_route_search_request)
 
-Search received
+Search Received Routes
 
 The API provides capability to get list of received routes using search criteria, including optional filtering, pagination and sorting
 
@@ -995,7 +997,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
 
     try:
-        # Search received
+        # Search Received Routes
         api_response = api_instance.search_connection_received_routes(connection_id, connection_route_search_request)
         print("The response of CloudRoutersApi->search_connection_received_routes:\n")
         pprint(api_response)
@@ -1041,7 +1043,7 @@ Name | Type | Description  | Notes
 # **search_router_actions**
 > CloudRouterActionsSearchResponse search_router_actions(router_id, cloud_router_actions_search_request)
 
-Search actions
+Search Route Table Actions
 
 This API provides capability to refresh route table and bgp session summary information
 
@@ -1080,7 +1082,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     cloud_router_actions_search_request = equinix.services.fabricv4.CloudRouterActionsSearchRequest() # CloudRouterActionsSearchRequest | 
 
     try:
-        # Search actions
+        # Search Route Table Actions
         api_response = api_instance.search_router_actions(router_id, cloud_router_actions_search_request)
         print("The response of CloudRoutersApi->search_router_actions:\n")
         pprint(api_response)

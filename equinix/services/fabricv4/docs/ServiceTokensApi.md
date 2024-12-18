@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_service_token**
-> ServiceToken create_service_token(service_token)
+> ServiceToken create_service_token(service_token, dry_run=dry_run)
 
 Create Service Token
 
@@ -51,10 +51,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
     service_token = equinix.services.fabricv4.ServiceToken() # ServiceToken | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Create Service Token
-        api_response = api_instance.create_service_token(service_token)
+        api_response = api_instance.create_service_token(service_token, dry_run=dry_run)
         print("The response of ServiceTokensApi->create_service_token:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,6 +70,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_token** | [**ServiceToken**](ServiceToken.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 
@@ -87,6 +89,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **201** | Successful operation |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |

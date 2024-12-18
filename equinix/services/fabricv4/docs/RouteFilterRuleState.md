@@ -1,6 +1,6 @@
 # RouteFilterRuleState
 
-Route Filter Rule status
+Route filter rule status
 
 ## Properties
 

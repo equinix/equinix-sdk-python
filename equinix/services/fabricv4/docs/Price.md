@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **ip_block** | [**IpBlockPrice**](IpBlockPrice.md) |  | [optional] 
 **router** | [**FabricCloudRouterPrice**](FabricCloudRouterPrice.md) |  | [optional] 
 **port** | [**VirtualPortPrice**](VirtualPortPrice.md) |  | [optional] 
+**time_service** | [**TimeServicePrice**](TimeServicePrice.md) |  | [optional] 
 
 ## Example
 
