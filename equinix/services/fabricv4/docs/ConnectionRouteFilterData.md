@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | Route Filter URI | [optional] 
+**href** | **str** | Route filter URI | [optional] 
 **type** | [**ConnectionRouteFilterDataType**](ConnectionRouteFilterDataType.md) |  | [optional] 
 **uuid** | **str** | Route Filter identifier | [optional] 
-**attachment_status** | [**ConnectionRouteFilterDataAttachmentStatus**](ConnectionRouteFilterDataAttachmentStatus.md) |  | [optional] 
+**attachment_status** | [**ConnectionRouteAggregationDataAttachmentStatus**](ConnectionRouteAggregationDataAttachmentStatus.md) |  | [optional] 
 **direction** | [**ConnectionRouteFilterDataDirection**](ConnectionRouteFilterDataDirection.md) |  | [optional] 
 
 ## Example

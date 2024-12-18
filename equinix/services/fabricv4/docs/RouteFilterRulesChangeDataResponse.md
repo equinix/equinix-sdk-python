@@ -1,6 +1,6 @@
 # RouteFilterRulesChangeDataResponse
 
-List of Route Filter Rule changes
+List of route filter rule changes
 
 ## Properties
 

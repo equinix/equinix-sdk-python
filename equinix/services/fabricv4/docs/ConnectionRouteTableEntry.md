@@ -1,6 +1,6 @@
 # ConnectionRouteTableEntry
 
-Adv/Rec Route table entry object
+Advertised and received route table entry object
 
 ## Properties
 

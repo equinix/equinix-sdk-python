@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | Route Filter URI | [optional] 
-**type** | [**ConnectionRouteFilterDataType**](ConnectionRouteFilterDataType.md) |  | [optional] 
-**uuid** | **str** | Route Filter identifier | [optional] 
+**href** | **str** | Route filter URI | [optional] 
+**type** | [**RouteFiltersBaseType**](RouteFiltersBaseType.md) |  | [optional] 
+**uuid** | **str** | Route filter identifier | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** | Customer-provided connection description | [optional] 
 **state** | [**RouteFilterState**](RouteFilterState.md) |  | [optional] 

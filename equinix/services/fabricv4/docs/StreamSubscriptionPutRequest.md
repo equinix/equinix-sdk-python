@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **stream** | [**StreamTarget**](StreamTarget.md) |  | [optional] 
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
 **filters** | [**StreamSubscriptionFilter**](StreamSubscriptionFilter.md) |  | [optional] 
+**metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
+**event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
 
 ## Example

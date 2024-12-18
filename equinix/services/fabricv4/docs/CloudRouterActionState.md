@@ -1,6 +1,6 @@
 # CloudRouterActionState
 
-Cloud Router action state
+Cloud router action state
 
 ## Properties
 

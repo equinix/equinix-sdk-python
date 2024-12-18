@@ -10,6 +10,8 @@ from equinix.services.fabricv4.api.networks_api import NetworksApi
 from equinix.services.fabricv4.api.ports_api import PortsApi
 from equinix.services.fabricv4.api.precision_time_api import PrecisionTimeApi
 from equinix.services.fabricv4.api.prices_api import PricesApi
+from equinix.services.fabricv4.api.route_aggregation_rules_api import RouteAggregationRulesApi
+from equinix.services.fabricv4.api.route_aggregations_api import RouteAggregationsApi
 from equinix.services.fabricv4.api.route_filter_rules_api import RouteFilterRulesApi
 from equinix.services.fabricv4.api.route_filters_api import RouteFiltersApi
 from equinix.services.fabricv4.api.routing_protocols_api import RoutingProtocolsApi

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **is_auto_renew** | **bool** | Is Auto Renewal Enabled | [optional] 
 **offer_id** | **str** | Marketplace Offer Id | [optional] 
 **trial** | [**SubscriptionTrial**](SubscriptionTrial.md) |  | [optional] 
-**subscription_key** | **str** | Subscription Key | [optional] 
+**metro_codes** | **List[str]** | List of available metro | [optional] 
 **entitlements** | [**List[SubscriptionEntitlementResponse]**](SubscriptionEntitlementResponse.md) | List of entitlements associated with the subscription | 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
 

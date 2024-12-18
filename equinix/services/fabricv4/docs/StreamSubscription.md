@@ -16,8 +16,10 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
 **stream** | [**StreamTarget**](StreamTarget.md) |  | [optional] 
 **filters** | [**StreamSubscriptionFilter**](StreamSubscriptionFilter.md) |  | [optional] 
+**metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
+**event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
-**changelog** | [**Changelog**](Changelog.md) |  | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
 

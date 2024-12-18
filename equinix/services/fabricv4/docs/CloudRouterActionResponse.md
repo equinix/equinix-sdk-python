@@ -1,6 +1,6 @@
 # CloudRouterActionResponse
 
-Cloud Router actions response object
+Cloud router actions response object
 
 ## Properties
 

@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**metro_href** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 **metro_name** | **str** |  | [optional] 
 **metro_code** | **str** |  | [optional] 
-**metro_href** | **str** |  | [optional] 
 **ibx** | **str** |  | [optional] 
 
 ## Example
