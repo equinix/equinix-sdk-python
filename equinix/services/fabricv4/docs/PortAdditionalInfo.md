@@ -24,7 +24,7 @@ print(PortAdditionalInfo.to_json())
 # convert the object into a dict
 port_additional_info_dict = port_additional_info_instance.to_dict()
 # create an instance of PortAdditionalInfo from a dict
-port_additional_info_form_dict = port_additional_info.from_dict(port_additional_info_dict)
+port_additional_info_from_dict = PortAdditionalInfo.from_dict(port_additional_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

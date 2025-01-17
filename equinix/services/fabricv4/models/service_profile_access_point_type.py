@@ -20,7 +20,7 @@ from typing import Any, List, Optional
 from equinix.services.fabricv4.models.service_profile_access_point_type_colo import ServiceProfileAccessPointTypeCOLO
 from equinix.services.fabricv4.models.service_profile_access_point_type_vd import ServiceProfileAccessPointTypeVD
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 SERVICEPROFILEACCESSPOINTTYPE_ONE_OF_SCHEMAS = ["ServiceProfileAccessPointTypeCOLO", "ServiceProfileAccessPointTypeVD"]
@@ -34,7 +34,7 @@ class ServiceProfileAccessPointType(BaseModel):
     # data type: ServiceProfileAccessPointTypeVD
     oneof_schema_2_validator: Optional[ServiceProfileAccessPointTypeVD] = None
     actual_instance: Optional[Union[ServiceProfileAccessPointTypeCOLO, ServiceProfileAccessPointTypeVD]] = None
-    one_of_schemas: List[str] = Field(default=Literal["ServiceProfileAccessPointTypeCOLO", "ServiceProfileAccessPointTypeVD"])
+    one_of_schemas: Set[str] = { "ServiceProfileAccessPointTypeCOLO", "ServiceProfileAccessPointTypeVD" }
 
     model_config = ConfigDict(
         validate_assignment=True,

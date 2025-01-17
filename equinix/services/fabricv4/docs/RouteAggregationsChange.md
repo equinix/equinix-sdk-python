@@ -25,7 +25,7 @@ print(RouteAggregationsChange.to_json())
 # convert the object into a dict
 route_aggregations_change_dict = route_aggregations_change_instance.to_dict()
 # create an instance of RouteAggregationsChange from a dict
-route_aggregations_change_form_dict = route_aggregations_change.from_dict(route_aggregations_change_dict)
+route_aggregations_change_from_dict = RouteAggregationsChange.from_dict(route_aggregations_change_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

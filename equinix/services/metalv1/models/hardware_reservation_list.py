@@ -74,9 +74,9 @@ class HardwareReservationList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in hardware_reservations (list)
         _items = []
         if self.hardware_reservations:
-            for _item in self.hardware_reservations:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_hardware_reservations in self.hardware_reservations:
+                if _item_hardware_reservations:
+                    _items.append(_item_hardware_reservations.to_dict())
             _dict['hardware_reservations'] = _items
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:

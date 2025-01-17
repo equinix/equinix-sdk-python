@@ -22,7 +22,7 @@ from equinix.services.metalv1.models.vlan_csp_connection_create_input import Vla
 from equinix.services.metalv1.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
 from equinix.services.metalv1.models.vrf_fabric_vc_create_input import VrfFabricVcCreateInput
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 CREATEORGANIZATIONINTERCONNECTIONREQUEST_ONE_OF_SCHEMAS = ["DedicatedPortCreateInput", "SharedPortVCVlanCreateInput", "VlanCSPConnectionCreateInput", "VlanFabricVcCreateInput", "VrfFabricVcCreateInput"]
@@ -42,7 +42,7 @@ class CreateOrganizationInterconnectionRequest(BaseModel):
     # data type: VlanCSPConnectionCreateInput
     oneof_schema_5_validator: Optional[VlanCSPConnectionCreateInput] = None
     actual_instance: Optional[Union[DedicatedPortCreateInput, SharedPortVCVlanCreateInput, VlanCSPConnectionCreateInput, VlanFabricVcCreateInput, VrfFabricVcCreateInput]] = None
-    one_of_schemas: List[str] = Field(default=Literal["DedicatedPortCreateInput", "SharedPortVCVlanCreateInput", "VlanCSPConnectionCreateInput", "VlanFabricVcCreateInput", "VrfFabricVcCreateInput"])
+    one_of_schemas: Set[str] = { "DedicatedPortCreateInput", "SharedPortVCVlanCreateInput", "VlanCSPConnectionCreateInput", "VlanFabricVcCreateInput", "VrfFabricVcCreateInput" }
 
     model_config = ConfigDict(
         validate_assignment=True,

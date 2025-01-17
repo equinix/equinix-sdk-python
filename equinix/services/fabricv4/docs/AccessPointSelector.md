@@ -29,7 +29,7 @@ print(AccessPointSelector.to_json())
 # convert the object into a dict
 access_point_selector_dict = access_point_selector_instance.to_dict()
 # create an instance of AccessPointSelector from a dict
-access_point_selector_form_dict = access_point_selector.from_dict(access_point_selector_dict)
+access_point_selector_from_dict = AccessPointSelector.from_dict(access_point_selector_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

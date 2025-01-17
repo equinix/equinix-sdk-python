@@ -27,7 +27,7 @@ print(InvitationInput.to_json())
 # convert the object into a dict
 invitation_input_dict = invitation_input_instance.to_dict()
 # create an instance of InvitationInput from a dict
-invitation_input_form_dict = invitation_input.from_dict(invitation_input_dict)
+invitation_input_from_dict = InvitationInput.from_dict(invitation_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

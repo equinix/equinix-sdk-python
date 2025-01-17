@@ -34,7 +34,7 @@ print(Changelog.to_json())
 # convert the object into a dict
 changelog_dict = changelog_instance.to_dict()
 # create an instance of Changelog from a dict
-changelog_form_dict = changelog.from_dict(changelog_dict)
+changelog_from_dict = Changelog.from_dict(changelog_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

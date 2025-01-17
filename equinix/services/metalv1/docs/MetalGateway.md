@@ -30,7 +30,7 @@ print(MetalGateway.to_json())
 # convert the object into a dict
 metal_gateway_dict = metal_gateway_instance.to_dict()
 # create an instance of MetalGateway from a dict
-metal_gateway_form_dict = metal_gateway.from_dict(metal_gateway_dict)
+metal_gateway_from_dict = MetalGateway.from_dict(metal_gateway_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

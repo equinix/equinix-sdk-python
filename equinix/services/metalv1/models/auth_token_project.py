@@ -106,30 +106,30 @@ class AuthTokenProject(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in devices (list)
         _items = []
         if self.devices:
-            for _item in self.devices:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_devices in self.devices:
+                if _item_devices:
+                    _items.append(_item_devices.to_dict())
             _dict['devices'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in invitations (list)
         _items = []
         if self.invitations:
-            for _item in self.invitations:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_invitations in self.invitations:
+                if _item_invitations:
+                    _items.append(_item_invitations.to_dict())
             _dict['invitations'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in members (list)
         _items = []
         if self.members:
-            for _item in self.members:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_members in self.members:
+                if _item_members:
+                    _items.append(_item_members.to_dict())
             _dict['members'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in memberships (list)
         _items = []
         if self.memberships:
-            for _item in self.memberships:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_memberships in self.memberships:
+                if _item_memberships:
+                    _items.append(_item_memberships.to_dict())
             _dict['memberships'] = _items
         # override the default output from pydantic by calling `to_dict()` of organization
         if self.organization:
@@ -140,16 +140,16 @@ class AuthTokenProject(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ssh_keys (list)
         _items = []
         if self.ssh_keys:
-            for _item in self.ssh_keys:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ssh_keys in self.ssh_keys:
+                if _item_ssh_keys:
+                    _items.append(_item_ssh_keys.to_dict())
             _dict['ssh_keys'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in volumes (list)
         _items = []
         if self.volumes:
-            for _item in self.volumes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_volumes in self.volumes:
+                if _item_volumes:
+                    _items.append(_item_volumes.to_dict())
             _dict['volumes'] = _items
         return _dict
 

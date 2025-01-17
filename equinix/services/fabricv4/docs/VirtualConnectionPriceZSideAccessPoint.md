@@ -27,7 +27,7 @@ print(VirtualConnectionPriceZSideAccessPoint.to_json())
 # convert the object into a dict
 virtual_connection_price_z_side_access_point_dict = virtual_connection_price_z_side_access_point_instance.to_dict()
 # create an instance of VirtualConnectionPriceZSideAccessPoint from a dict
-virtual_connection_price_z_side_access_point_form_dict = virtual_connection_price_z_side_access_point.from_dict(virtual_connection_price_z_side_access_point_dict)
+virtual_connection_price_z_side_access_point_from_dict = VirtualConnectionPriceZSideAccessPoint.from_dict(virtual_connection_price_z_side_access_point_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**RouteTableEntrySortDirection**](RouteTableEntrySortDirection.md) |  | [optional] 
-**var_property** | [**RouteTableEntrySortBy**](RouteTableEntrySortBy.md) |  | [optional] 
+**direction** | [**RouteTableEntrySortDirection**](RouteTableEntrySortDirection.md) |  | [optional] [default to RouteTableEntrySortDirection.DESC]
+**var_property** | [**RouteTableEntrySortBy**](RouteTableEntrySortBy.md) |  | [optional] [default to RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(RouteTableEntrySortCriteria.to_json())
 # convert the object into a dict
 route_table_entry_sort_criteria_dict = route_table_entry_sort_criteria_instance.to_dict()
 # create an instance of RouteTableEntrySortCriteria from a dict
-route_table_entry_sort_criteria_form_dict = route_table_entry_sort_criteria.from_dict(route_table_entry_sort_criteria_dict)
+route_table_entry_sort_criteria_from_dict = RouteTableEntrySortCriteria.from_dict(route_table_entry_sort_criteria_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

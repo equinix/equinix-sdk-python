@@ -25,7 +25,7 @@ print(RouteAggregationsBase.to_json())
 # convert the object into a dict
 route_aggregations_base_dict = route_aggregations_base_instance.to_dict()
 # create an instance of RouteAggregationsBase from a dict
-route_aggregations_base_form_dict = route_aggregations_base.from_dict(route_aggregations_base_dict)
+route_aggregations_base_from_dict = RouteAggregationsBase.from_dict(route_aggregations_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

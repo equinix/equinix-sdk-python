@@ -25,7 +25,7 @@ print(AuthenticationKey.to_json())
 # convert the object into a dict
 authentication_key_dict = authentication_key_instance.to_dict()
 # create an instance of AuthenticationKey from a dict
-authentication_key_form_dict = authentication_key.from_dict(authentication_key_dict)
+authentication_key_from_dict = AuthenticationKey.from_dict(authentication_key_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

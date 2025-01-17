@@ -28,7 +28,7 @@ print(ConnectionAction.to_json())
 # convert the object into a dict
 connection_action_dict = connection_action_instance.to_dict()
 # create an instance of ConnectionAction from a dict
-connection_action_form_dict = connection_action.from_dict(connection_action_dict)
+connection_action_from_dict = ConnectionAction.from_dict(connection_action_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

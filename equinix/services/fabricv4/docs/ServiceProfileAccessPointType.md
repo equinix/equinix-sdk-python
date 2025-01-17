@@ -37,7 +37,7 @@ print(ServiceProfileAccessPointType.to_json())
 # convert the object into a dict
 service_profile_access_point_type_dict = service_profile_access_point_type_instance.to_dict()
 # create an instance of ServiceProfileAccessPointType from a dict
-service_profile_access_point_type_form_dict = service_profile_access_point_type.from_dict(service_profile_access_point_type_dict)
+service_profile_access_point_type_from_dict = ServiceProfileAccessPointType.from_dict(service_profile_access_point_type_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

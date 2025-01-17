@@ -24,7 +24,7 @@ print(RouteAggregationsSearchFilterItem.to_json())
 # convert the object into a dict
 route_aggregations_search_filter_item_dict = route_aggregations_search_filter_item_instance.to_dict()
 # create an instance of RouteAggregationsSearchFilterItem from a dict
-route_aggregations_search_filter_item_form_dict = route_aggregations_search_filter_item.from_dict(route_aggregations_search_filter_item_dict)
+route_aggregations_search_filter_item_from_dict = RouteAggregationsSearchFilterItem.from_dict(route_aggregations_search_filter_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

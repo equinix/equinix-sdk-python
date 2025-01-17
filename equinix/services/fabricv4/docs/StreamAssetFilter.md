@@ -25,7 +25,7 @@ print(StreamAssetFilter.to_json())
 # convert the object into a dict
 stream_asset_filter_dict = stream_asset_filter_instance.to_dict()
 # create an instance of StreamAssetFilter from a dict
-stream_asset_filter_form_dict = stream_asset_filter.from_dict(stream_asset_filter_dict)
+stream_asset_filter_from_dict = StreamAssetFilter.from_dict(stream_asset_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(IPAssignmentList.to_json())
 # convert the object into a dict
 ip_assignment_list_dict = ip_assignment_list_instance.to_dict()
 # create an instance of IPAssignmentList from a dict
-ip_assignment_list_form_dict = ip_assignment_list.from_dict(ip_assignment_list_dict)
+ip_assignment_list_from_dict = IPAssignmentList.from_dict(ip_assignment_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

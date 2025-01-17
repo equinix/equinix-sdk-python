@@ -26,7 +26,7 @@ print(Statistics.to_json())
 # convert the object into a dict
 statistics_dict = statistics_instance.to_dict()
 # create an instance of Statistics from a dict
-statistics_form_dict = statistics.from_dict(statistics_dict)
+statistics_from_dict = Statistics.from_dict(statistics_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

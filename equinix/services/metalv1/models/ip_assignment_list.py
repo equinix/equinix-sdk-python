@@ -72,9 +72,9 @@ class IPAssignmentList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ip_addresses (list)
         _items = []
         if self.ip_addresses:
-            for _item in self.ip_addresses:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ip_addresses in self.ip_addresses:
+                if _item_ip_addresses:
+                    _items.append(_item_ip_addresses.to_dict())
             _dict['ip_addresses'] = _items
         return _dict
 

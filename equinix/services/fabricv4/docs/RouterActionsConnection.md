@@ -23,7 +23,7 @@ print(RouterActionsConnection.to_json())
 # convert the object into a dict
 router_actions_connection_dict = router_actions_connection_instance.to_dict()
 # create an instance of RouterActionsConnection from a dict
-router_actions_connection_form_dict = router_actions_connection.from_dict(router_actions_connection_dict)
+router_actions_connection_from_dict = RouterActionsConnection.from_dict(router_actions_connection_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

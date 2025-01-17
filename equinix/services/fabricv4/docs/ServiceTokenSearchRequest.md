@@ -24,7 +24,7 @@ print(ServiceTokenSearchRequest.to_json())
 # convert the object into a dict
 service_token_search_request_dict = service_token_search_request_instance.to_dict()
 # create an instance of ServiceTokenSearchRequest from a dict
-service_token_search_request_form_dict = service_token_search_request.from_dict(service_token_search_request_dict)
+service_token_search_request_from_dict = ServiceTokenSearchRequest.from_dict(service_token_search_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

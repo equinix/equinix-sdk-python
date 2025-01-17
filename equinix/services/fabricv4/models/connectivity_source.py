@@ -27,7 +27,7 @@ class ConnectivitySource(BaseModel):
     """
     Physical or virtual port that houses the connection.
     """ # noqa: E501
-    type: Optional[ConnectivitySourceType] = None
+    type: Optional[ConnectivitySourceType] = ConnectivitySourceType.COLO
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type"]
 
@@ -89,7 +89,7 @@ class ConnectivitySource(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "type": obj.get("type")
+            "type": obj.get("type") if obj.get("type") is not None else ConnectivitySourceType.COLO
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -22,7 +22,7 @@ print(StreamSubscriptionFilter.to_json())
 # convert the object into a dict
 stream_subscription_filter_dict = stream_subscription_filter_instance.to_dict()
 # create an instance of StreamSubscriptionFilter from a dict
-stream_subscription_filter_form_dict = stream_subscription_filter.from_dict(stream_subscription_filter_dict)
+stream_subscription_filter_from_dict = StreamSubscriptionFilter.from_dict(stream_subscription_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

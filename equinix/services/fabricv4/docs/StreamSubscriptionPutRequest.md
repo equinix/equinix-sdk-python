@@ -30,7 +30,7 @@ print(StreamSubscriptionPutRequest.to_json())
 # convert the object into a dict
 stream_subscription_put_request_dict = stream_subscription_put_request_instance.to_dict()
 # create an instance of StreamSubscriptionPutRequest from a dict
-stream_subscription_put_request_form_dict = stream_subscription_put_request.from_dict(stream_subscription_put_request_dict)
+stream_subscription_put_request_from_dict = StreamSubscriptionPutRequest.from_dict(stream_subscription_put_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,7 +20,7 @@ from typing import Any, List, Optional
 from equinix.services.fabricv4.models.routing_protocol_bgp_type import RoutingProtocolBGPType
 from equinix.services.fabricv4.models.routing_protocol_direct_type import RoutingProtocolDirectType
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 ROUTINGPROTOCOLBASE_ONE_OF_SCHEMAS = ["RoutingProtocolBGPType", "RoutingProtocolDirectType"]
@@ -34,7 +34,7 @@ class RoutingProtocolBase(BaseModel):
     # data type: RoutingProtocolDirectType
     oneof_schema_2_validator: Optional[RoutingProtocolDirectType] = None
     actual_instance: Optional[Union[RoutingProtocolBGPType, RoutingProtocolDirectType]] = None
-    one_of_schemas: List[str] = Field(default=Literal["RoutingProtocolBGPType", "RoutingProtocolDirectType"])
+    one_of_schemas: Set[str] = { "RoutingProtocolBGPType", "RoutingProtocolDirectType" }
 
     model_config = ConfigDict(
         validate_assignment=True,

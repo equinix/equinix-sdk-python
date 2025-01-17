@@ -20,7 +20,7 @@ from equinix.services.metalv1.models.ip_assignment import IPAssignment
 from equinix.services.metalv1.models.ip_reservation import IPReservation
 from equinix.services.metalv1.models.vrf_ip_reservation import VrfIpReservation
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 FINDIPADDRESSBYID200RESPONSE_ONE_OF_SCHEMAS = ["IPAssignment", "IPReservation", "VrfIpReservation"]
@@ -36,7 +36,7 @@ class FindIPAddressById200Response(BaseModel):
     # data type: VrfIpReservation
     oneof_schema_3_validator: Optional[VrfIpReservation] = None
     actual_instance: Optional[Union[IPAssignment, IPReservation, VrfIpReservation]] = None
-    one_of_schemas: List[str] = Field(default=Literal["IPAssignment", "IPReservation", "VrfIpReservation"])
+    one_of_schemas: Set[str] = { "IPAssignment", "IPReservation", "VrfIpReservation" }
 
     model_config = ConfigDict(
         validate_assignment=True,

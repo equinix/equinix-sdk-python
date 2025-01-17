@@ -26,7 +26,7 @@ print(StreamSubscriptionSinkCredential.to_json())
 # convert the object into a dict
 stream_subscription_sink_credential_dict = stream_subscription_sink_credential_instance.to_dict()
 # create an instance of StreamSubscriptionSinkCredential from a dict
-stream_subscription_sink_credential_form_dict = stream_subscription_sink_credential.from_dict(stream_subscription_sink_credential_dict)
+stream_subscription_sink_credential_from_dict = StreamSubscriptionSinkCredential.from_dict(stream_subscription_sink_credential_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

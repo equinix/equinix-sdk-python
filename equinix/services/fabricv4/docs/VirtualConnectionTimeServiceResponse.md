@@ -27,7 +27,7 @@ print(VirtualConnectionTimeServiceResponse.to_json())
 # convert the object into a dict
 virtual_connection_time_service_response_dict = virtual_connection_time_service_response_instance.to_dict()
 # create an instance of VirtualConnectionTimeServiceResponse from a dict
-virtual_connection_time_service_response_form_dict = virtual_connection_time_service_response.from_dict(virtual_connection_time_service_response_dict)
+virtual_connection_time_service_response_from_dict = VirtualConnectionTimeServiceResponse.from_dict(virtual_connection_time_service_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

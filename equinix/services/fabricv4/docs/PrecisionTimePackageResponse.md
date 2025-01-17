@@ -34,7 +34,7 @@ print(PrecisionTimePackageResponse.to_json())
 # convert the object into a dict
 precision_time_package_response_dict = precision_time_package_response_instance.to_dict()
 # create an instance of PrecisionTimePackageResponse from a dict
-precision_time_package_response_form_dict = precision_time_package_response.from_dict(precision_time_package_response_dict)
+precision_time_package_response_from_dict = PrecisionTimePackageResponse.from_dict(precision_time_package_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

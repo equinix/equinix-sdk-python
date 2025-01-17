@@ -43,7 +43,7 @@ print(ServiceProfile.to_json())
 # convert the object into a dict
 service_profile_dict = service_profile_instance.to_dict()
 # create an instance of ServiceProfile from a dict
-service_profile_form_dict = service_profile.from_dict(service_profile_dict)
+service_profile_from_dict = ServiceProfile.from_dict(service_profile_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

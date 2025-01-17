@@ -28,8 +28,8 @@ class RouteTableEntrySortCriteria(BaseModel):
     """
     RouteTableEntrySortCriteria
     """ # noqa: E501
-    direction: Optional[RouteTableEntrySortDirection] = None
-    var_property: Optional[RouteTableEntrySortBy] = Field(default=None, alias="property")
+    direction: Optional[RouteTableEntrySortDirection] = RouteTableEntrySortDirection.DESC
+    var_property: Optional[RouteTableEntrySortBy] = Field(default=RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -91,8 +91,8 @@ class RouteTableEntrySortCriteria(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "direction": obj.get("direction"),
-            "property": obj.get("property")
+            "direction": obj.get("direction") if obj.get("direction") is not None else RouteTableEntrySortDirection.DESC,
+            "property": obj.get("property") if obj.get("property") is not None else RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

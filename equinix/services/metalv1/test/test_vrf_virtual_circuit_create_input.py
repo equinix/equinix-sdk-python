@@ -26,7 +26,7 @@ class TestVrfVirtualCircuitCreateInput(unittest.TestCase):
 
     def make_instance(self, include_optional) -> VrfVirtualCircuitCreateInput:
         """Test VrfVirtualCircuitCreateInput
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `VrfVirtualCircuitCreateInput`
@@ -38,7 +38,7 @@ class TestVrfVirtualCircuitCreateInput(unittest.TestCase):
                 customer_ipv6 = '2604:1380:4641:a00::6',
                 description = '',
                 href = '',
-                md5 = 'jUR,rZ#UM/?R,Fp^l6$ARjeJk C>i H'qT\\{<?'es#)#iK.YM{Rag2/!KB!k@5oXh.:Ts\";mGL,i&z5[P@M\"lzfB+Y,Twzfu~N^z\"mfqecVU{SE{QA<Y8XX0<}J;Krm9W'g~?)DvDDL7BlwpCDcpNjORpuEG',
+                md5 = 'jUR,rZ#UM/?R,Fp^l6$ARjeJk C>i H\'qT\\{<?\'es#)#iK.YM{Rag2/!KB!k@5oXh.:Ts\";mGL,i&z5[P@M\"lzfB+Y,Twzfu~N^z\"mfqecVU{SE{QA<Y8XX0<}J;Krm9W\'g~?)DvDDL7BlwpCDcpNjORpuEG',
                 metal_ip = '12.0.0.1',
                 metal_ipv6 = '2604:1380:4641:a00::6',
                 name = '',

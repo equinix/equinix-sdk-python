@@ -25,7 +25,7 @@ print(TimeServicePrice.to_json())
 # convert the object into a dict
 time_service_price_dict = time_service_price_instance.to_dict()
 # create an instance of TimeServicePrice from a dict
-time_service_price_form_dict = time_service_price.from_dict(time_service_price_dict)
+time_service_price_from_dict = TimeServicePrice.from_dict(time_service_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

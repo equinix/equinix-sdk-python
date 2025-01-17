@@ -28,8 +28,8 @@ class StreamAssetSortCriteria(BaseModel):
     """
     StreamAssetSortCriteria
     """ # noqa: E501
-    direction: Optional[StreamAssetSortDirection] = None
-    var_property: Optional[StreamAssetSortBy] = Field(default=None, alias="property")
+    direction: Optional[StreamAssetSortDirection] = StreamAssetSortDirection.DESC
+    var_property: Optional[StreamAssetSortBy] = Field(default=StreamAssetSortBy.SLASH_UUID, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -91,8 +91,8 @@ class StreamAssetSortCriteria(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "direction": obj.get("direction"),
-            "property": obj.get("property")
+            "direction": obj.get("direction") if obj.get("direction") is not None else StreamAssetSortDirection.DESC,
+            "property": obj.get("property") if obj.get("property") is not None else StreamAssetSortBy.SLASH_UUID
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

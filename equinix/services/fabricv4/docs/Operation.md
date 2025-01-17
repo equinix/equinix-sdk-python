@@ -24,7 +24,7 @@ print(Operation.to_json())
 # convert the object into a dict
 operation_dict = operation_instance.to_dict()
 # create an instance of Operation from a dict
-operation_form_dict = operation.from_dict(operation_dict)
+operation_from_dict = Operation.from_dict(operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

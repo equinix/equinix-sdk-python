@@ -24,7 +24,7 @@ print(PortOrderSignature.to_json())
 # convert the object into a dict
 port_order_signature_dict = port_order_signature_instance.to_dict()
 # create an instance of PortOrderSignature from a dict
-port_order_signature_form_dict = port_order_signature.from_dict(port_order_signature_dict)
+port_order_signature_from_dict = PortOrderSignature.from_dict(port_order_signature_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

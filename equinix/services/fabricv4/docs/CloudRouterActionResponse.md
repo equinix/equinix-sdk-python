@@ -30,7 +30,7 @@ print(CloudRouterActionResponse.to_json())
 # convert the object into a dict
 cloud_router_action_response_dict = cloud_router_action_response_instance.to_dict()
 # create an instance of CloudRouterActionResponse from a dict
-cloud_router_action_response_form_dict = cloud_router_action_response.from_dict(cloud_router_action_response_dict)
+cloud_router_action_response_from_dict = CloudRouterActionResponse.from_dict(cloud_router_action_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

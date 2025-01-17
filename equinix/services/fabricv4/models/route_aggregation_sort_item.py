@@ -28,8 +28,8 @@ class RouteAggregationSortItem(BaseModel):
     """
     RouteAggregationSortItem
     """ # noqa: E501
-    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=None, alias="property")
-    direction: Optional[SortItemDirection] = None
+    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    direction: Optional[SortItemDirection] = SortItemDirection.DESC
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "direction"]
 
@@ -91,8 +91,8 @@ class RouteAggregationSortItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "property": obj.get("property"),
-            "direction": obj.get("direction")
+            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -24,7 +24,7 @@ print(EmailInput.to_json())
 # convert the object into a dict
 email_input_dict = email_input_instance.to_dict()
 # create an instance of EmailInput from a dict
-email_input_form_dict = email_input.from_dict(email_input_dict)
+email_input_from_dict = EmailInput.from_dict(email_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

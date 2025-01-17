@@ -31,7 +31,7 @@ print(VrfMetalGateway.to_json())
 # convert the object into a dict
 vrf_metal_gateway_dict = vrf_metal_gateway_instance.to_dict()
 # create an instance of VrfMetalGateway from a dict
-vrf_metal_gateway_form_dict = vrf_metal_gateway.from_dict(vrf_metal_gateway_dict)
+vrf_metal_gateway_from_dict = VrfMetalGateway.from_dict(vrf_metal_gateway_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

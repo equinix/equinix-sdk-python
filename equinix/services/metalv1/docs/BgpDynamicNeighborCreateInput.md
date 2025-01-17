@@ -25,7 +25,7 @@ print(BgpDynamicNeighborCreateInput.to_json())
 # convert the object into a dict
 bgp_dynamic_neighbor_create_input_dict = bgp_dynamic_neighbor_create_input_instance.to_dict()
 # create an instance of BgpDynamicNeighborCreateInput from a dict
-bgp_dynamic_neighbor_create_input_form_dict = bgp_dynamic_neighbor_create_input.from_dict(bgp_dynamic_neighbor_create_input_dict)
+bgp_dynamic_neighbor_create_input_from_dict = BgpDynamicNeighborCreateInput.from_dict(bgp_dynamic_neighbor_create_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

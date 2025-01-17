@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.stream_asset_or_filter import StreamAssetOrFilter
 from equinix.services.fabricv4.models.stream_asset_simple_expression import StreamAssetSimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -40,7 +40,7 @@ class StreamAssetFilter(BaseModel):
         actual_instance: Optional[Union[StreamAssetOrFilter, StreamAssetSimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["StreamAssetOrFilter", "StreamAssetSimpleExpression"])
+    any_of_schemas: Set[str] = { "StreamAssetOrFilter", "StreamAssetSimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

@@ -28,7 +28,7 @@ print(MetalGatewayLite.to_json())
 # convert the object into a dict
 metal_gateway_lite_dict = metal_gateway_lite_instance.to_dict()
 # create an instance of MetalGatewayLite from a dict
-metal_gateway_lite_form_dict = metal_gateway_lite.from_dict(metal_gateway_lite_dict)
+metal_gateway_lite_from_dict = MetalGatewayLite.from_dict(metal_gateway_lite_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

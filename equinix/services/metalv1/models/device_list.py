@@ -74,9 +74,9 @@ class DeviceList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in devices (list)
         _items = []
         if self.devices:
-            for _item in self.devices:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_devices in self.devices:
+                if _item_devices:
+                    _items.append(_item_devices.to_dict())
             _dict['devices'] = _items
         # override the default output from pydantic by calling `to_dict()` of meta
         if self.meta:

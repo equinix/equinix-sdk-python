@@ -23,7 +23,7 @@ print(RouteAggregationsDataProject.to_json())
 # convert the object into a dict
 route_aggregations_data_project_dict = route_aggregations_data_project_instance.to_dict()
 # create an instance of RouteAggregationsDataProject from a dict
-route_aggregations_data_project_form_dict = route_aggregations_data_project.from_dict(route_aggregations_data_project_dict)
+route_aggregations_data_project_from_dict = RouteAggregationsDataProject.from_dict(route_aggregations_data_project_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

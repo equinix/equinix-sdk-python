@@ -25,7 +25,7 @@ print(ConnectionRouteSearchRequest.to_json())
 # convert the object into a dict
 connection_route_search_request_dict = connection_route_search_request_instance.to_dict()
 # create an instance of ConnectionRouteSearchRequest from a dict
-connection_route_search_request_form_dict = connection_route_search_request.from_dict(connection_route_search_request_dict)
+connection_route_search_request_from_dict = ConnectionRouteSearchRequest.from_dict(connection_route_search_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

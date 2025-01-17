@@ -29,7 +29,7 @@ print(BGPConnectionIpv4.to_json())
 # convert the object into a dict
 bgp_connection_ipv4_dict = bgp_connection_ipv4_instance.to_dict()
 # create an instance of BGPConnectionIpv4 from a dict
-bgp_connection_ipv4_form_dict = bgp_connection_ipv4.from_dict(bgp_connection_ipv4_dict)
+bgp_connection_ipv4_from_dict = BGPConnectionIpv4.from_dict(bgp_connection_ipv4_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

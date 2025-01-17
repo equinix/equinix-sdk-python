@@ -72,9 +72,9 @@ class VrfLearnedRoutesList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in learned_routes (list)
         _items = []
         if self.learned_routes:
-            for _item in self.learned_routes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_learned_routes in self.learned_routes:
+                if _item_learned_routes:
+                    _items.append(_item_learned_routes.to_dict())
             _dict['learned_routes'] = _items
         return _dict
 

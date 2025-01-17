@@ -84,9 +84,9 @@ class SelfServiceReservationResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in item (list)
         _items = []
         if self.item:
-            for _item in self.item:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_item in self.item:
+                if _item_item:
+                    _items.append(_item_item.to_dict())
             _dict['item'] = _items
         # override the default output from pydantic by calling `to_dict()` of period
         if self.period:

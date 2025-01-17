@@ -23,7 +23,7 @@ print(GetAllStreamSubscriptionResponse.to_json())
 # convert the object into a dict
 get_all_stream_subscription_response_dict = get_all_stream_subscription_response_instance.to_dict()
 # create an instance of GetAllStreamSubscriptionResponse from a dict
-get_all_stream_subscription_response_form_dict = get_all_stream_subscription_response.from_dict(get_all_stream_subscription_response_dict)
+get_all_stream_subscription_response_from_dict = GetAllStreamSubscriptionResponse.from_dict(get_all_stream_subscription_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

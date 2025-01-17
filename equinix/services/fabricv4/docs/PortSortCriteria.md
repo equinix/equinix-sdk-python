@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**PortSortDirection**](PortSortDirection.md) |  | [optional] 
-**var_property** | [**PortSortBy**](PortSortBy.md) |  | [optional] 
+**direction** | [**PortSortDirection**](PortSortDirection.md) |  | [optional] [default to PortSortDirection.DESC]
+**var_property** | [**PortSortBy**](PortSortBy.md) |  | [optional] [default to PortSortBy.SLASH_DEVICE_SLASH_NAME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(PortSortCriteria.to_json())
 # convert the object into a dict
 port_sort_criteria_dict = port_sort_criteria_instance.to_dict()
 # create an instance of PortSortCriteria from a dict
-port_sort_criteria_form_dict = port_sort_criteria.from_dict(port_sort_criteria_dict)
+port_sort_criteria_from_dict = PortSortCriteria.from_dict(port_sort_criteria_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

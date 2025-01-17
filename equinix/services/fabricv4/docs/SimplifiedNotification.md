@@ -25,7 +25,7 @@ print(SimplifiedNotification.to_json())
 # convert the object into a dict
 simplified_notification_dict = simplified_notification_instance.to_dict()
 # create an instance of SimplifiedNotification from a dict
-simplified_notification_form_dict = simplified_notification.from_dict(simplified_notification_dict)
+simplified_notification_from_dict = SimplifiedNotification.from_dict(simplified_notification_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

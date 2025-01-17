@@ -25,7 +25,7 @@ print(InterconnectionPricingListProviderPricingInnerTiersInner.to_json())
 # convert the object into a dict
 interconnection_pricing_list_provider_pricing_inner_tiers_inner_dict = interconnection_pricing_list_provider_pricing_inner_tiers_inner_instance.to_dict()
 # create an instance of InterconnectionPricingListProviderPricingInnerTiersInner from a dict
-interconnection_pricing_list_provider_pricing_inner_tiers_inner_form_dict = interconnection_pricing_list_provider_pricing_inner_tiers_inner.from_dict(interconnection_pricing_list_provider_pricing_inner_tiers_inner_dict)
+interconnection_pricing_list_provider_pricing_inner_tiers_inner_from_dict = InterconnectionPricingListProviderPricingInnerTiersInner.from_dict(interconnection_pricing_list_provider_pricing_inner_tiers_inner_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

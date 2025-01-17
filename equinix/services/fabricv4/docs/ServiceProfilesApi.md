@@ -219,7 +219,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
-    view_point = equinix.services.fabricv4.GetServiceProfilesViewPointParameter() # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional)
+    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
         # Get Profile
@@ -238,7 +238,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_profile_id** | **str**| Service Profile UUID | 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] 
+ **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 
@@ -391,7 +391,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
-    view_point = equinix.services.fabricv4.GetServiceProfilesViewPointParameter() # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional)
+    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
         # Get all Profiles
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| offset | [optional] 
  **limit** | **int**| number of records to fetch | [optional] 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] 
+ **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 
@@ -566,7 +566,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_search_request = equinix.services.fabricv4.ServiceProfileSearchRequest() # ServiceProfileSearchRequest | 
-    view_point = equinix.services.fabricv4.GetServiceProfilesViewPointParameter() # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional)
+    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
         # Profile Search
@@ -585,7 +585,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_profile_search_request** | [**ServiceProfileSearchRequest**](ServiceProfileSearchRequest.md)|  | 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] 
+ **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 

@@ -25,7 +25,7 @@ print(PrecisionTimeOrder.to_json())
 # convert the object into a dict
 precision_time_order_dict = precision_time_order_instance.to_dict()
 # create an instance of PrecisionTimeOrder from a dict
-precision_time_order_form_dict = precision_time_order.from_dict(precision_time_order_dict)
+precision_time_order_from_dict = PrecisionTimeOrder.from_dict(precision_time_order_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

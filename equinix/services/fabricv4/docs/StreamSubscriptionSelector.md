@@ -23,7 +23,7 @@ print(StreamSubscriptionSelector.to_json())
 # convert the object into a dict
 stream_subscription_selector_dict = stream_subscription_selector_instance.to_dict()
 # create an instance of StreamSubscriptionSelector from a dict
-stream_subscription_selector_form_dict = stream_subscription_selector.from_dict(stream_subscription_selector_dict)
+stream_subscription_selector_from_dict = StreamSubscriptionSelector.from_dict(stream_subscription_selector_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

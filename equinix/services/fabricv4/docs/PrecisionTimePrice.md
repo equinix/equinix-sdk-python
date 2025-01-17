@@ -24,7 +24,7 @@ print(PrecisionTimePrice.to_json())
 # convert the object into a dict
 precision_time_price_dict = precision_time_price_instance.to_dict()
 # create an instance of PrecisionTimePrice from a dict
-precision_time_price_form_dict = precision_time_price.from_dict(precision_time_price_dict)
+precision_time_price_from_dict = PrecisionTimePrice.from_dict(precision_time_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

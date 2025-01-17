@@ -28,7 +28,7 @@ print(ConnectionSide.to_json())
 # convert the object into a dict
 connection_side_dict = connection_side_instance.to_dict()
 # create an instance of ConnectionSide from a dict
-connection_side_form_dict = connection_side.from_dict(connection_side_dict)
+connection_side_from_dict = ConnectionSide.from_dict(connection_side_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

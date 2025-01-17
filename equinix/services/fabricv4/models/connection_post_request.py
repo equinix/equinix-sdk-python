@@ -100,9 +100,9 @@ class ConnectionPostRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
         _items = []
         if self.notifications:
-            for _item in self.notifications:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
             _dict['notifications'] = _items
         # override the default output from pydantic by calling `to_dict()` of redundancy
         if self.redundancy:
@@ -119,9 +119,9 @@ class ConnectionPostRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in additional_info (list)
         _items = []
         if self.additional_info:
-            for _item in self.additional_info:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_additional_info in self.additional_info:
+                if _item_additional_info:
+                    _items.append(_item_additional_info.to_dict())
             _dict['additionalInfo'] = _items
         # override the default output from pydantic by calling `to_dict()` of marketplace_subscription
         if self.marketplace_subscription:

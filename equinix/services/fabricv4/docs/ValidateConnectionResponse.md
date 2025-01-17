@@ -27,7 +27,7 @@ print(ValidateConnectionResponse.to_json())
 # convert the object into a dict
 validate_connection_response_dict = validate_connection_response_instance.to_dict()
 # create an instance of ValidateConnectionResponse from a dict
-validate_connection_response_form_dict = validate_connection_response.from_dict(validate_connection_response_dict)
+validate_connection_response_from_dict = ValidateConnectionResponse.from_dict(validate_connection_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

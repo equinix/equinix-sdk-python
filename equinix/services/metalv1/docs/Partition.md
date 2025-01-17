@@ -25,7 +25,7 @@ print(Partition.to_json())
 # convert the object into a dict
 partition_dict = partition_instance.to_dict()
 # create an instance of Partition from a dict
-partition_form_dict = partition.from_dict(partition_dict)
+partition_from_dict = Partition.from_dict(partition_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,7 +22,7 @@ print(ConnectionRouteEntryFilters.to_json())
 # convert the object into a dict
 connection_route_entry_filters_dict = connection_route_entry_filters_instance.to_dict()
 # create an instance of ConnectionRouteEntryFilters from a dict
-connection_route_entry_filters_form_dict = connection_route_entry_filters.from_dict(connection_route_entry_filters_dict)
+connection_route_entry_filters_from_dict = ConnectionRouteEntryFilters.from_dict(connection_route_entry_filters_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

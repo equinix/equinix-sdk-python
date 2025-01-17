@@ -29,7 +29,7 @@ print(BGPConnectionIpv6.to_json())
 # convert the object into a dict
 bgp_connection_ipv6_dict = bgp_connection_ipv6_instance.to_dict()
 # create an instance of BGPConnectionIpv6 from a dict
-bgp_connection_ipv6_form_dict = bgp_connection_ipv6.from_dict(bgp_connection_ipv6_dict)
+bgp_connection_ipv6_from_dict = BGPConnectionIpv6.from_dict(bgp_connection_ipv6_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

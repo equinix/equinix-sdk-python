@@ -30,7 +30,7 @@ print(RouteAggregationRulesData.to_json())
 # convert the object into a dict
 route_aggregation_rules_data_dict = route_aggregation_rules_data_instance.to_dict()
 # create an instance of RouteAggregationRulesData from a dict
-route_aggregation_rules_data_form_dict = route_aggregation_rules_data.from_dict(route_aggregation_rules_data_dict)
+route_aggregation_rules_data_from_dict = RouteAggregationRulesData.from_dict(route_aggregation_rules_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

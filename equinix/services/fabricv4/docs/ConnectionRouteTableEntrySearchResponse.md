@@ -23,7 +23,7 @@ print(ConnectionRouteTableEntrySearchResponse.to_json())
 # convert the object into a dict
 connection_route_table_entry_search_response_dict = connection_route_table_entry_search_response_instance.to_dict()
 # create an instance of ConnectionRouteTableEntrySearchResponse from a dict
-connection_route_table_entry_search_response_form_dict = connection_route_table_entry_search_response.from_dict(connection_route_table_entry_search_response_dict)
+connection_route_table_entry_search_response_from_dict = ConnectionRouteTableEntrySearchResponse.from_dict(connection_route_table_entry_search_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

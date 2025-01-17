@@ -23,7 +23,7 @@ print(PortInterface.to_json())
 # convert the object into a dict
 port_interface_dict = port_interface_instance.to_dict()
 # create an instance of PortInterface from a dict
-port_interface_form_dict = port_interface.from_dict(port_interface_dict)
+port_interface_from_dict = PortInterface.from_dict(port_interface_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

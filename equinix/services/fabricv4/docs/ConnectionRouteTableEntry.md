@@ -33,7 +33,7 @@ print(ConnectionRouteTableEntry.to_json())
 # convert the object into a dict
 connection_route_table_entry_dict = connection_route_table_entry_instance.to_dict()
 # create an instance of ConnectionRouteTableEntry from a dict
-connection_route_table_entry_form_dict = connection_route_table_entry.from_dict(connection_route_table_entry_dict)
+connection_route_table_entry_from_dict = ConnectionRouteTableEntry.from_dict(connection_route_table_entry_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

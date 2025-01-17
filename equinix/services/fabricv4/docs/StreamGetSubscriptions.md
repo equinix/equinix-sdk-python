@@ -25,7 +25,7 @@ print(StreamGetSubscriptions.to_json())
 # convert the object into a dict
 stream_get_subscriptions_dict = stream_get_subscriptions_instance.to_dict()
 # create an instance of StreamGetSubscriptions from a dict
-stream_get_subscriptions_form_dict = stream_get_subscriptions.from_dict(stream_get_subscriptions_dict)
+stream_get_subscriptions_from_dict = StreamGetSubscriptions.from_dict(stream_get_subscriptions_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

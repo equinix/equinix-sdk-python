@@ -33,7 +33,7 @@ print(RouteTableEntry.to_json())
 # convert the object into a dict
 route_table_entry_dict = route_table_entry_instance.to_dict()
 # create an instance of RouteTableEntry from a dict
-route_table_entry_form_dict = route_table_entry.from_dict(route_table_entry_dict)
+route_table_entry_from_dict = RouteTableEntry.from_dict(route_table_entry_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -101,9 +101,9 @@ class Price(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in charges (list)
         _items = []
         if self.charges:
-            for _item in self.charges:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_charges in self.charges:
+                if _item_charges:
+                    _items.append(_item_charges.to_dict())
             _dict['charges'] = _items
         # override the default output from pydantic by calling `to_dict()` of connection
         if self.connection:

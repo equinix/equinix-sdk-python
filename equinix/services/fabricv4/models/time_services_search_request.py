@@ -85,9 +85,9 @@ class TimeServicesSearchRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in sort (list)
         _items = []
         if self.sort:
-            for _item in self.sort:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_sort in self.sort:
+                if _item_sort:
+                    _items.append(_item_sort.to_dict())
             _dict['sort'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

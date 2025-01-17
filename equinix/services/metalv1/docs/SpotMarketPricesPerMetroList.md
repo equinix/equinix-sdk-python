@@ -23,7 +23,7 @@ print(SpotMarketPricesPerMetroList.to_json())
 # convert the object into a dict
 spot_market_prices_per_metro_list_dict = spot_market_prices_per_metro_list_instance.to_dict()
 # create an instance of SpotMarketPricesPerMetroList from a dict
-spot_market_prices_per_metro_list_form_dict = spot_market_prices_per_metro_list.from_dict(spot_market_prices_per_metro_list_dict)
+spot_market_prices_per_metro_list_from_dict = SpotMarketPricesPerMetroList.from_dict(spot_market_prices_per_metro_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

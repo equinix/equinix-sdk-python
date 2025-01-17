@@ -23,7 +23,7 @@ print(MetroInput.to_json())
 # convert the object into a dict
 metro_input_dict = metro_input_instance.to_dict()
 # create an instance of MetroInput from a dict
-metro_input_form_dict = metro_input.from_dict(metro_input_dict)
+metro_input_from_dict = MetroInput.from_dict(metro_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ print(RouteAggregationRulesPatchRequestItem.to_json())
 # convert the object into a dict
 route_aggregation_rules_patch_request_item_dict = route_aggregation_rules_patch_request_item_instance.to_dict()
 # create an instance of RouteAggregationRulesPatchRequestItem from a dict
-route_aggregation_rules_patch_request_item_form_dict = route_aggregation_rules_patch_request_item.from_dict(route_aggregation_rules_patch_request_item_dict)
+route_aggregation_rules_patch_request_item_from_dict = RouteAggregationRulesPatchRequestItem.from_dict(route_aggregation_rules_patch_request_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,7 +22,7 @@ print(RouteTableEntryOrFilter.to_json())
 # convert the object into a dict
 route_table_entry_or_filter_dict = route_table_entry_or_filter_instance.to_dict()
 # create an instance of RouteTableEntryOrFilter from a dict
-route_table_entry_or_filter_form_dict = route_table_entry_or_filter.from_dict(route_table_entry_or_filter_dict)
+route_table_entry_or_filter_from_dict = RouteTableEntryOrFilter.from_dict(route_table_entry_or_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

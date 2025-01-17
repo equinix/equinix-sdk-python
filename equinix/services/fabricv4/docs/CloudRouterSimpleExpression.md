@@ -24,7 +24,7 @@ print(CloudRouterSimpleExpression.to_json())
 # convert the object into a dict
 cloud_router_simple_expression_dict = cloud_router_simple_expression_instance.to_dict()
 # create an instance of CloudRouterSimpleExpression from a dict
-cloud_router_simple_expression_form_dict = cloud_router_simple_expression.from_dict(cloud_router_simple_expression_dict)
+cloud_router_simple_expression_from_dict = CloudRouterSimpleExpression.from_dict(cloud_router_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

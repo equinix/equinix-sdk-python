@@ -29,7 +29,7 @@ print(FirmwareSetListResponse.to_json())
 # convert the object into a dict
 firmware_set_list_response_dict = firmware_set_list_response_instance.to_dict()
 # create an instance of FirmwareSetListResponse from a dict
-firmware_set_list_response_form_dict = firmware_set_list_response.from_dict(firmware_set_list_response_dict)
+firmware_set_list_response_from_dict = FirmwareSetListResponse.from_dict(firmware_set_list_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

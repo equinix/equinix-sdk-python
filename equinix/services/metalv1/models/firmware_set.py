@@ -87,16 +87,16 @@ class FirmwareSet(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in attributes (list)
         _items = []
         if self.attributes:
-            for _item in self.attributes:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_attributes in self.attributes:
+                if _item_attributes:
+                    _items.append(_item_attributes.to_dict())
             _dict['attributes'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in component_firmware (list)
         _items = []
         if self.component_firmware:
-            for _item in self.component_firmware:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_component_firmware in self.component_firmware:
+                if _item_component_firmware:
+                    _items.append(_item_component_firmware.to_dict())
             _dict['component_firmware'] = _items
         return _dict
 

@@ -104,9 +104,9 @@ class PrecisionTimeServiceResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in connections (list)
         _items = []
         if self.connections:
-            for _item in self.connections:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_connections in self.connections:
+                if _item_connections:
+                    _items.append(_item_connections.to_dict())
             _dict['connections'] = _items
         # override the default output from pydantic by calling `to_dict()` of ipv4
         if self.ipv4:
@@ -114,9 +114,9 @@ class PrecisionTimeServiceResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ntp_advanced_configuration (list)
         _items = []
         if self.ntp_advanced_configuration:
-            for _item in self.ntp_advanced_configuration:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ntp_advanced_configuration in self.ntp_advanced_configuration:
+                if _item_ntp_advanced_configuration:
+                    _items.append(_item_ntp_advanced_configuration.to_dict())
             _dict['ntpAdvancedConfiguration'] = _items
         # override the default output from pydantic by calling `to_dict()` of ptp_advanced_configuration
         if self.ptp_advanced_configuration:

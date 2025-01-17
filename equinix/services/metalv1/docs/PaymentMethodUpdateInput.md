@@ -28,7 +28,7 @@ print(PaymentMethodUpdateInput.to_json())
 # convert the object into a dict
 payment_method_update_input_dict = payment_method_update_input_instance.to_dict()
 # create an instance of PaymentMethodUpdateInput from a dict
-payment_method_update_input_form_dict = payment_method_update_input.from_dict(payment_method_update_input_dict)
+payment_method_update_input_from_dict = PaymentMethodUpdateInput.from_dict(payment_method_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

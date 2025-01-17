@@ -93,16 +93,16 @@ class VirtualNetwork(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in instances (list)
         _items = []
         if self.instances:
-            for _item in self.instances:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_instances in self.instances:
+                if _item_instances:
+                    _items.append(_item_instances.to_dict())
             _dict['instances'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in metal_gateways (list)
         _items = []
         if self.metal_gateways:
-            for _item in self.metal_gateways:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_metal_gateways in self.metal_gateways:
+                if _item_metal_gateways:
+                    _items.append(_item_metal_gateways.to_dict())
             _dict['metal_gateways'] = _items
         # override the default output from pydantic by calling `to_dict()` of metro
         if self.metro:
