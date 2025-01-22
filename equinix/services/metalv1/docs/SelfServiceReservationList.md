@@ -23,7 +23,7 @@ print(SelfServiceReservationList.to_json())
 # convert the object into a dict
 self_service_reservation_list_dict = self_service_reservation_list_instance.to_dict()
 # create an instance of SelfServiceReservationList from a dict
-self_service_reservation_list_form_dict = self_service_reservation_list.from_dict(self_service_reservation_list_dict)
+self_service_reservation_list_from_dict = SelfServiceReservationList.from_dict(self_service_reservation_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

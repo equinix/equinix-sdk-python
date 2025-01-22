@@ -33,7 +33,7 @@ print(CloudRouterPackage.to_json())
 # convert the object into a dict
 cloud_router_package_dict = cloud_router_package_instance.to_dict()
 # create an instance of CloudRouterPackage from a dict
-cloud_router_package_form_dict = cloud_router_package.from_dict(cloud_router_package_dict)
+cloud_router_package_from_dict = CloudRouterPackage.from_dict(cloud_router_package_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

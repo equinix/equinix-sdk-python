@@ -93,9 +93,9 @@ class SubscriptionResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in entitlements (list)
         _items = []
         if self.entitlements:
-            for _item in self.entitlements:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_entitlements in self.entitlements:
+                if _item_entitlements:
+                    _items.append(_item_entitlements.to_dict())
             _dict['entitlements'] = _items
         # override the default output from pydantic by calling `to_dict()` of changelog
         if self.changelog:

@@ -25,7 +25,7 @@ print(FabricCloudRouterPrice.to_json())
 # convert the object into a dict
 fabric_cloud_router_price_dict = fabric_cloud_router_price_instance.to_dict()
 # create an instance of FabricCloudRouterPrice from a dict
-fabric_cloud_router_price_form_dict = fabric_cloud_router_price.from_dict(fabric_cloud_router_price_dict)
+fabric_cloud_router_price_from_dict = FabricCloudRouterPrice.from_dict(fabric_cloud_router_price_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

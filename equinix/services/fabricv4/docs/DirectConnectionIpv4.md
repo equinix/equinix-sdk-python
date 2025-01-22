@@ -22,7 +22,7 @@ print(DirectConnectionIpv4.to_json())
 # convert the object into a dict
 direct_connection_ipv4_dict = direct_connection_ipv4_instance.to_dict()
 # create an instance of DirectConnectionIpv4 from a dict
-direct_connection_ipv4_form_dict = direct_connection_ipv4.from_dict(direct_connection_ipv4_dict)
+direct_connection_ipv4_from_dict = DirectConnectionIpv4.from_dict(direct_connection_ipv4_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

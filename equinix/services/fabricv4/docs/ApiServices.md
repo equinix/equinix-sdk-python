@@ -25,7 +25,7 @@ print(ApiServices.to_json())
 # convert the object into a dict
 api_services_dict = api_services_instance.to_dict()
 # create an instance of ApiServices from a dict
-api_services_form_dict = api_services.from_dict(api_services_dict)
+api_services_from_dict = ApiServices.from_dict(api_services_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

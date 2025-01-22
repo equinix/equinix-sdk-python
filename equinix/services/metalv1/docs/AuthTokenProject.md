@@ -42,7 +42,7 @@ print(AuthTokenProject.to_json())
 # convert the object into a dict
 auth_token_project_dict = auth_token_project_instance.to_dict()
 # create an instance of AuthTokenProject from a dict
-auth_token_project_form_dict = auth_token_project.from_dict(auth_token_project_dict)
+auth_token_project_from_dict = AuthTokenProject.from_dict(auth_token_project_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

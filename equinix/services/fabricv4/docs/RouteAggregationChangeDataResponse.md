@@ -24,7 +24,7 @@ print(RouteAggregationChangeDataResponse.to_json())
 # convert the object into a dict
 route_aggregation_change_data_response_dict = route_aggregation_change_data_response_instance.to_dict()
 # create an instance of RouteAggregationChangeDataResponse from a dict
-route_aggregation_change_data_response_form_dict = route_aggregation_change_data_response.from_dict(route_aggregation_change_data_response_dict)
+route_aggregation_change_data_response_from_dict = RouteAggregationChangeDataResponse.from_dict(route_aggregation_change_data_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

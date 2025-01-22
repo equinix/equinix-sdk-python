@@ -6,7 +6,7 @@ Create bulk port request
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[PortRequest]**](PortRequest.md) |  | [optional] 
+**data** | [**List[PortRequest]**](Port.md) |  | [optional] 
 
 ## Example
 
@@ -23,7 +23,7 @@ print(BulkPortRequest.to_json())
 # convert the object into a dict
 bulk_port_request_dict = bulk_port_request_instance.to_dict()
 # create an instance of BulkPortRequest from a dict
-bulk_port_request_form_dict = bulk_port_request.from_dict(bulk_port_request_dict)
+bulk_port_request_from_dict = BulkPortRequest.from_dict(bulk_port_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

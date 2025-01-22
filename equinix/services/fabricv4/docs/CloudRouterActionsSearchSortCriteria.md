@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**CloudRouterActionsSearchSortDirection**](CloudRouterActionsSearchSortDirection.md) |  | [optional] 
-**var_property** | [**CloudRouterActionsSearchSortBy**](CloudRouterActionsSearchSortBy.md) |  | [optional] 
+**direction** | [**CloudRouterActionsSearchSortDirection**](CloudRouterActionsSearchSortDirection.md) |  | [optional] [default to CloudRouterActionsSearchSortDirection.DESC]
+**var_property** | [**CloudRouterActionsSearchSortBy**](CloudRouterActionsSearchSortBy.md) |  | [optional] [default to CloudRouterActionsSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example
 
@@ -23,7 +23,7 @@ print(CloudRouterActionsSearchSortCriteria.to_json())
 # convert the object into a dict
 cloud_router_actions_search_sort_criteria_dict = cloud_router_actions_search_sort_criteria_instance.to_dict()
 # create an instance of CloudRouterActionsSearchSortCriteria from a dict
-cloud_router_actions_search_sort_criteria_form_dict = cloud_router_actions_search_sort_criteria.from_dict(cloud_router_actions_search_sort_criteria_dict)
+cloud_router_actions_search_sort_criteria_from_dict = CloudRouterActionsSearchSortCriteria.from_dict(cloud_router_actions_search_sort_criteria_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

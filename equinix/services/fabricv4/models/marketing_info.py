@@ -78,9 +78,9 @@ class MarketingInfo(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in process_steps (list)
         _items = []
         if self.process_steps:
-            for _item in self.process_steps:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_process_steps in self.process_steps:
+                if _item_process_steps:
+                    _items.append(_item_process_steps.to_dict())
             _dict['processSteps'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

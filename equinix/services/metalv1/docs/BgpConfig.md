@@ -34,7 +34,7 @@ print(BgpConfig.to_json())
 # convert the object into a dict
 bgp_config_dict = bgp_config_instance.to_dict()
 # create an instance of BgpConfig from a dict
-bgp_config_form_dict = bgp_config.from_dict(bgp_config_dict)
+bgp_config_from_dict = BgpConfig.from_dict(bgp_config_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

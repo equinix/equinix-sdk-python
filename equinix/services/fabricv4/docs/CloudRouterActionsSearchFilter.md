@@ -25,7 +25,7 @@ print(CloudRouterActionsSearchFilter.to_json())
 # convert the object into a dict
 cloud_router_actions_search_filter_dict = cloud_router_actions_search_filter_instance.to_dict()
 # create an instance of CloudRouterActionsSearchFilter from a dict
-cloud_router_actions_search_filter_form_dict = cloud_router_actions_search_filter.from_dict(cloud_router_actions_search_filter_dict)
+cloud_router_actions_search_filter_from_dict = CloudRouterActionsSearchFilter.from_dict(cloud_router_actions_search_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

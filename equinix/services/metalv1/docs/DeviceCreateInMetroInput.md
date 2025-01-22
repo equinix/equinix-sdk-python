@@ -48,7 +48,7 @@ print(DeviceCreateInMetroInput.to_json())
 # convert the object into a dict
 device_create_in_metro_input_dict = device_create_in_metro_input_instance.to_dict()
 # create an instance of DeviceCreateInMetroInput from a dict
-device_create_in_metro_input_form_dict = device_create_in_metro_input.from_dict(device_create_in_metro_input_dict)
+device_create_in_metro_input_from_dict = DeviceCreateInMetroInput.from_dict(device_create_in_metro_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

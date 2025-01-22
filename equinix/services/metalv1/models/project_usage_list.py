@@ -72,9 +72,9 @@ class ProjectUsageList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in usages (list)
         _items = []
         if self.usages:
-            for _item in self.usages:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_usages in self.usages:
+                if _item_usages:
+                    _items.append(_item_usages.to_dict())
             _dict['usages'] = _items
         return _dict
 

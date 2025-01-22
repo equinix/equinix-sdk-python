@@ -24,7 +24,7 @@ print(EndCustomer.to_json())
 # convert the object into a dict
 end_customer_dict = end_customer_instance.to_dict()
 # create an instance of EndCustomer from a dict
-end_customer_form_dict = end_customer.from_dict(end_customer_dict)
+end_customer_from_dict = EndCustomer.from_dict(end_customer_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

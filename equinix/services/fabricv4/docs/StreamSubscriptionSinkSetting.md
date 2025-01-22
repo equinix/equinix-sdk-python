@@ -26,7 +26,7 @@ print(StreamSubscriptionSinkSetting.to_json())
 # convert the object into a dict
 stream_subscription_sink_setting_dict = stream_subscription_sink_setting_instance.to_dict()
 # create an instance of StreamSubscriptionSinkSetting from a dict
-stream_subscription_sink_setting_form_dict = stream_subscription_sink_setting.from_dict(stream_subscription_sink_setting_dict)
+stream_subscription_sink_setting_from_dict = StreamSubscriptionSinkSetting.from_dict(stream_subscription_sink_setting_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

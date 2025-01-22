@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Optional
 from equinix.services.fabricv4.models.connection_route_entry_or_filter import ConnectionRouteEntryOrFilter
 from equinix.services.fabricv4.models.connection_route_entry_simple_expression import ConnectionRouteEntrySimpleExpression
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -40,7 +40,7 @@ class ConnectionRouteEntryFilter(BaseModel):
         actual_instance: Optional[Union[ConnectionRouteEntryOrFilter, ConnectionRouteEntrySimpleExpression]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["ConnectionRouteEntryOrFilter", "ConnectionRouteEntrySimpleExpression"])
+    any_of_schemas: Set[str] = { "ConnectionRouteEntryOrFilter", "ConnectionRouteEntrySimpleExpression" }
 
     model_config = {
         "validate_assignment": True,

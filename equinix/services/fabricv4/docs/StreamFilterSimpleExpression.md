@@ -24,7 +24,7 @@ print(StreamFilterSimpleExpression.to_json())
 # convert the object into a dict
 stream_filter_simple_expression_dict = stream_filter_simple_expression_instance.to_dict()
 # create an instance of StreamFilterSimpleExpression from a dict
-stream_filter_simple_expression_form_dict = stream_filter_simple_expression.from_dict(stream_filter_simple_expression_dict)
+stream_filter_simple_expression_from_dict = StreamFilterSimpleExpression.from_dict(stream_filter_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

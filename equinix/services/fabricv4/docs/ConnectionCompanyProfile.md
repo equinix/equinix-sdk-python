@@ -25,7 +25,7 @@ print(ConnectionCompanyProfile.to_json())
 # convert the object into a dict
 connection_company_profile_dict = connection_company_profile_instance.to_dict()
 # create an instance of ConnectionCompanyProfile from a dict
-connection_company_profile_form_dict = connection_company_profile.from_dict(connection_company_profile_dict)
+connection_company_profile_from_dict = ConnectionCompanyProfile.from_dict(connection_company_profile_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

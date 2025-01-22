@@ -72,9 +72,9 @@ class CapacityInput(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in servers (list)
         _items = []
         if self.servers:
-            for _item in self.servers:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_servers in self.servers:
+                if _item_servers:
+                    _items.append(_item_servers.to_dict())
             _dict['servers'] = _items
         return _dict
 

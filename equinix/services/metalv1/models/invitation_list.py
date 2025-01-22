@@ -72,9 +72,9 @@ class InvitationList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in invitations (list)
         _items = []
         if self.invitations:
-            for _item in self.invitations:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_invitations in self.invitations:
+                if _item_invitations:
+                    _items.append(_item_invitations.to_dict())
             _dict['invitations'] = _items
         return _dict
 

@@ -91,9 +91,9 @@ class LineItem(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in adjustments (list)
         _items = []
         if self.adjustments:
-            for _item in self.adjustments:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_adjustments in self.adjustments:
+                if _item_adjustments:
+                    _items.append(_item_adjustments.to_dict())
             _dict['adjustments'] = _items
         # override the default output from pydantic by calling `to_dict()` of plan
         if self.plan:

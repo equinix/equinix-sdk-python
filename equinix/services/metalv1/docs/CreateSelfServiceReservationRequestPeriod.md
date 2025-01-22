@@ -24,7 +24,7 @@ print(CreateSelfServiceReservationRequestPeriod.to_json())
 # convert the object into a dict
 create_self_service_reservation_request_period_dict = create_self_service_reservation_request_period_instance.to_dict()
 # create an instance of CreateSelfServiceReservationRequestPeriod from a dict
-create_self_service_reservation_request_period_form_dict = create_self_service_reservation_request_period.from_dict(create_self_service_reservation_request_period_dict)
+create_self_service_reservation_request_period_from_dict = CreateSelfServiceReservationRequestPeriod.from_dict(create_self_service_reservation_request_period_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

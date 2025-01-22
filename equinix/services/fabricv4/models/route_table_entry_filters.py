@@ -76,9 +76,9 @@ class RouteTableEntryFilters(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in var_and (list)
         _items = []
         if self.var_and:
-            for _item in self.var_and:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_var_and in self.var_and:
+                if _item_var_and:
+                    _items.append(_item_var_and.to_dict())
             _dict['and'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

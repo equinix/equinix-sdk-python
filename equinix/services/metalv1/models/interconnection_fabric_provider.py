@@ -18,7 +18,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, f
 from typing import Any, List, Optional
 from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 from pydantic import StrictStr, Field
-from typing import Union, List, Optional, Dict
+from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
 INTERCONNECTIONFABRICPROVIDER_ONE_OF_SCHEMAS = ["AWSFabricProvider"]
@@ -30,7 +30,7 @@ class InterconnectionFabricProvider(BaseModel):
     # data type: AWSFabricProvider
     oneof_schema_1_validator: Optional[AWSFabricProvider] = None
     actual_instance: Optional[Union[AWSFabricProvider]] = None
-    one_of_schemas: List[str] = Field(default=Literal["AWSFabricProvider"])
+    one_of_schemas: Set[str] = { "AWSFabricProvider" }
 
     model_config = ConfigDict(
         validate_assignment=True,

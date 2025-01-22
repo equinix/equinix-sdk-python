@@ -23,7 +23,7 @@ print(SpotPricesPerNewFacility.to_json())
 # convert the object into a dict
 spot_prices_per_new_facility_dict = spot_prices_per_new_facility_instance.to_dict()
 # create an instance of SpotPricesPerNewFacility from a dict
-spot_prices_per_new_facility_form_dict = spot_prices_per_new_facility.from_dict(spot_prices_per_new_facility_dict)
+spot_prices_per_new_facility_from_dict = SpotPricesPerNewFacility.from_dict(spot_prices_per_new_facility_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

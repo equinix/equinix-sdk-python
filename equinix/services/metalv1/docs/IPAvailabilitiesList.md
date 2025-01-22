@@ -23,7 +23,7 @@ print(IPAvailabilitiesList.to_json())
 # convert the object into a dict
 ip_availabilities_list_dict = ip_availabilities_list_instance.to_dict()
 # create an instance of IPAvailabilitiesList from a dict
-ip_availabilities_list_form_dict = ip_availabilities_list.from_dict(ip_availabilities_list_dict)
+ip_availabilities_list_from_dict = IPAvailabilitiesList.from_dict(ip_availabilities_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,8 +28,8 @@ class NetworkSortCriteria(BaseModel):
     """
     NetworkSortCriteria
     """ # noqa: E501
-    direction: Optional[NetworkSortDirection] = None
-    var_property: Optional[NetworkSortBy] = Field(default=None, alias="property")
+    direction: Optional[NetworkSortDirection] = NetworkSortDirection.DESC
+    var_property: Optional[NetworkSortBy] = Field(default=NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -91,8 +91,8 @@ class NetworkSortCriteria(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "direction": obj.get("direction"),
-            "property": obj.get("property")
+            "direction": obj.get("direction") if obj.get("direction") is not None else NetworkSortDirection.DESC,
+            "property": obj.get("property") if obj.get("property") is not None else NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

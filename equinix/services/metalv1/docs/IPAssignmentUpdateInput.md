@@ -25,7 +25,7 @@ print(IPAssignmentUpdateInput.to_json())
 # convert the object into a dict
 ip_assignment_update_input_dict = ip_assignment_update_input_instance.to_dict()
 # create an instance of IPAssignmentUpdateInput from a dict
-ip_assignment_update_input_form_dict = ip_assignment_update_input.from_dict(ip_assignment_update_input_dict)
+ip_assignment_update_input_from_dict = IPAssignmentUpdateInput.from_dict(ip_assignment_update_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

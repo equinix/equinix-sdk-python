@@ -29,7 +29,7 @@ print(StreamSubscriptionSink.to_json())
 # convert the object into a dict
 stream_subscription_sink_dict = stream_subscription_sink_instance.to_dict()
 # create an instance of StreamSubscriptionSink from a dict
-stream_subscription_sink_form_dict = stream_subscription_sink.from_dict(stream_subscription_sink_dict)
+stream_subscription_sink_from_dict = StreamSubscriptionSink.from_dict(stream_subscription_sink_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

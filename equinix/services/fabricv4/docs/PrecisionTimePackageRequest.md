@@ -23,7 +23,7 @@ print(PrecisionTimePackageRequest.to_json())
 # convert the object into a dict
 precision_time_package_request_dict = precision_time_package_request_instance.to_dict()
 # create an instance of PrecisionTimePackageRequest from a dict
-precision_time_package_request_form_dict = precision_time_package_request.from_dict(precision_time_package_request_dict)
+precision_time_package_request_from_dict = PrecisionTimePackageRequest.from_dict(precision_time_package_request_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

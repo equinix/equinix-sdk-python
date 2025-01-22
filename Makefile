@@ -8,7 +8,7 @@ GIT_REPO=equinix-sdk-python
 PACKAGE_VERSION=$(shell cat version)
 USER_AGENT=${GIT_REPO}/${PACKAGE_VERSION}
 
-OPENAPI_IMAGE_TAG=v7.4.0
+OPENAPI_IMAGE_TAG=v7.10.0
 OPENAPI_IMAGE=openapitools/openapi-generator-cli:${OPENAPI_IMAGE_TAG}
 CRI=docker # nerdctl
 OPENAPI_GENERATOR=${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} -v $(CURDIR):/local ${OPENAPI_IMAGE}

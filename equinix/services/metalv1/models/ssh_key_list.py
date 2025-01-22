@@ -72,9 +72,9 @@ class SSHKeyList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ssh_keys (list)
         _items = []
         if self.ssh_keys:
-            for _item in self.ssh_keys:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ssh_keys in self.ssh_keys:
+                if _item_ssh_keys:
+                    _items.append(_item_ssh_keys.to_dict())
             _dict['ssh_keys'] = _items
         return _dict
 

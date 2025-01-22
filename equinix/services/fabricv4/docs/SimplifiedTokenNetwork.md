@@ -27,7 +27,7 @@ print(SimplifiedTokenNetwork.to_json())
 # convert the object into a dict
 simplified_token_network_dict = simplified_token_network_instance.to_dict()
 # create an instance of SimplifiedTokenNetwork from a dict
-simplified_token_network_form_dict = simplified_token_network.from_dict(simplified_token_network_dict)
+simplified_token_network_from_dict = SimplifiedTokenNetwork.from_dict(simplified_token_network_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

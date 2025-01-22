@@ -31,7 +31,7 @@ print(RouteAggregationRulesChangeData.to_json())
 # convert the object into a dict
 route_aggregation_rules_change_data_dict = route_aggregation_rules_change_data_instance.to_dict()
 # create an instance of RouteAggregationRulesChangeData from a dict
-route_aggregation_rules_change_data_form_dict = route_aggregation_rules_change_data.from_dict(route_aggregation_rules_change_data_dict)
+route_aggregation_rules_change_data_from_dict = RouteAggregationRulesChangeData.from_dict(route_aggregation_rules_change_data_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

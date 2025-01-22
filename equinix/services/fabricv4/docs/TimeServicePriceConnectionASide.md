@@ -23,7 +23,7 @@ print(TimeServicePriceConnectionASide.to_json())
 # convert the object into a dict
 time_service_price_connection_a_side_dict = time_service_price_connection_a_side_instance.to_dict()
 # create an instance of TimeServicePriceConnectionASide from a dict
-time_service_price_connection_a_side_form_dict = time_service_price_connection_a_side.from_dict(time_service_price_connection_a_side_dict)
+time_service_price_connection_a_side_from_dict = TimeServicePriceConnectionASide.from_dict(time_service_price_connection_a_side_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

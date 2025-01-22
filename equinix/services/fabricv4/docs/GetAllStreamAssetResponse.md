@@ -23,7 +23,7 @@ print(GetAllStreamAssetResponse.to_json())
 # convert the object into a dict
 get_all_stream_asset_response_dict = get_all_stream_asset_response_instance.to_dict()
 # create an instance of GetAllStreamAssetResponse from a dict
-get_all_stream_asset_response_form_dict = get_all_stream_asset_response.from_dict(get_all_stream_asset_response_dict)
+get_all_stream_asset_response_from_dict = GetAllStreamAssetResponse.from_dict(get_all_stream_asset_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

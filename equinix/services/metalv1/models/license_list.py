@@ -72,9 +72,9 @@ class LicenseList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in licenses (list)
         _items = []
         if self.licenses:
-            for _item in self.licenses:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_licenses in self.licenses:
+                if _item_licenses:
+                    _items.append(_item_licenses.to_dict())
             _dict['licenses'] = _items
         return _dict
 

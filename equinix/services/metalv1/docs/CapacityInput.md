@@ -23,7 +23,7 @@ print(CapacityInput.to_json())
 # convert the object into a dict
 capacity_input_dict = capacity_input_instance.to_dict()
 # create an instance of CapacityInput from a dict
-capacity_input_form_dict = capacity_input.from_dict(capacity_input_dict)
+capacity_input_from_dict = CapacityInput.from_dict(capacity_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

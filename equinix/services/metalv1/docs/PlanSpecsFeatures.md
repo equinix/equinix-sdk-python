@@ -25,7 +25,7 @@ print(PlanSpecsFeatures.to_json())
 # convert the object into a dict
 plan_specs_features_dict = plan_specs_features_instance.to_dict()
 # create an instance of PlanSpecsFeatures from a dict
-plan_specs_features_form_dict = plan_specs_features.from_dict(plan_specs_features_dict)
+plan_specs_features_from_dict = PlanSpecsFeatures.from_dict(plan_specs_features_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

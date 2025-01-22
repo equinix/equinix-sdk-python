@@ -22,7 +22,7 @@ print(RouteAggregationsSearchBaseFilter.to_json())
 # convert the object into a dict
 route_aggregations_search_base_filter_dict = route_aggregations_search_base_filter_instance.to_dict()
 # create an instance of RouteAggregationsSearchBaseFilter from a dict
-route_aggregations_search_base_filter_form_dict = route_aggregations_search_base_filter.from_dict(route_aggregations_search_base_filter_dict)
+route_aggregations_search_base_filter_from_dict = RouteAggregationsSearchBaseFilter.from_dict(route_aggregations_search_base_filter_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

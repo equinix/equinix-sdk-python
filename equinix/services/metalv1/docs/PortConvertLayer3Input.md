@@ -23,7 +23,7 @@ print(PortConvertLayer3Input.to_json())
 # convert the object into a dict
 port_convert_layer3_input_dict = port_convert_layer3_input_instance.to_dict()
 # create an instance of PortConvertLayer3Input from a dict
-port_convert_layer3_input_form_dict = port_convert_layer3_input.from_dict(port_convert_layer3_input_dict)
+port_convert_layer3_input_from_dict = PortConvertLayer3Input.from_dict(port_convert_layer3_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

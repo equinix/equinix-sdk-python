@@ -24,7 +24,7 @@ print(StreamAssetSimpleExpression.to_json())
 # convert the object into a dict
 stream_asset_simple_expression_dict = stream_asset_simple_expression_instance.to_dict()
 # create an instance of StreamAssetSimpleExpression from a dict
-stream_asset_simple_expression_form_dict = stream_asset_simple_expression.from_dict(stream_asset_simple_expression_dict)
+stream_asset_simple_expression_from_dict = StreamAssetSimpleExpression.from_dict(stream_asset_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

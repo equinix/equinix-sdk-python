@@ -25,7 +25,7 @@ print(RouteFiltersPatchRequestItem.to_json())
 # convert the object into a dict
 route_filters_patch_request_item_dict = route_filters_patch_request_item_instance.to_dict()
 # create an instance of RouteFiltersPatchRequestItem from a dict
-route_filters_patch_request_item_form_dict = route_filters_patch_request_item.from_dict(route_filters_patch_request_item_dict)
+route_filters_patch_request_item_from_dict = RouteFiltersPatchRequestItem.from_dict(route_filters_patch_request_item_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

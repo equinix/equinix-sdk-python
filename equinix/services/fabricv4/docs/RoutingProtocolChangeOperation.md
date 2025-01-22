@@ -25,7 +25,7 @@ print(RoutingProtocolChangeOperation.to_json())
 # convert the object into a dict
 routing_protocol_change_operation_dict = routing_protocol_change_operation_instance.to_dict()
 # create an instance of RoutingProtocolChangeOperation from a dict
-routing_protocol_change_operation_form_dict = routing_protocol_change_operation.from_dict(routing_protocol_change_operation_dict)
+routing_protocol_change_operation_from_dict = RoutingProtocolChangeOperation.from_dict(routing_protocol_change_operation_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

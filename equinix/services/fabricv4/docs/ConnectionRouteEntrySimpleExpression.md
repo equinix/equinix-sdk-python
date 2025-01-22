@@ -24,7 +24,7 @@ print(ConnectionRouteEntrySimpleExpression.to_json())
 # convert the object into a dict
 connection_route_entry_simple_expression_dict = connection_route_entry_simple_expression_instance.to_dict()
 # create an instance of ConnectionRouteEntrySimpleExpression from a dict
-connection_route_entry_simple_expression_form_dict = connection_route_entry_simple_expression.from_dict(connection_route_entry_simple_expression_dict)
+connection_route_entry_simple_expression_from_dict = ConnectionRouteEntrySimpleExpression.from_dict(connection_route_entry_simple_expression_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(PortNotification.to_json())
 # convert the object into a dict
 port_notification_dict = port_notification_instance.to_dict()
 # create an instance of PortNotification from a dict
-port_notification_form_dict = port_notification.from_dict(port_notification_dict)
+port_notification_from_dict = PortNotification.from_dict(port_notification_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

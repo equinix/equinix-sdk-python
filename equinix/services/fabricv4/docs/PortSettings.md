@@ -29,7 +29,7 @@ print(PortSettings.to_json())
 # convert the object into a dict
 port_settings_dict = port_settings_instance.to_dict()
 # create an instance of PortSettings from a dict
-port_settings_form_dict = port_settings.from_dict(port_settings_dict)
+port_settings_from_dict = PortSettings.from_dict(port_settings_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

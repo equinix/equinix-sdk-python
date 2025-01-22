@@ -26,7 +26,7 @@ print(SimplifiedLocation.to_json())
 # convert the object into a dict
 simplified_location_dict = simplified_location_instance.to_dict()
 # create an instance of SimplifiedLocation from a dict
-simplified_location_form_dict = simplified_location.from_dict(simplified_location_dict)
+simplified_location_from_dict = SimplifiedLocation.from_dict(simplified_location_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

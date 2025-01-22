@@ -36,7 +36,7 @@ print(StreamSubscription.to_json())
 # convert the object into a dict
 stream_subscription_dict = stream_subscription_instance.to_dict()
 # create an instance of StreamSubscription from a dict
-stream_subscription_form_dict = stream_subscription.from_dict(stream_subscription_dict)
+stream_subscription_from_dict = StreamSubscription.from_dict(stream_subscription_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

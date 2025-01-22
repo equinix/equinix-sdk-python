@@ -23,7 +23,7 @@ print(LicenseList.to_json())
 # convert the object into a dict
 license_list_dict = license_list_instance.to_dict()
 # create an instance of LicenseList from a dict
-license_list_form_dict = license_list.from_dict(license_list_dict)
+license_list_from_dict = LicenseList.from_dict(license_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

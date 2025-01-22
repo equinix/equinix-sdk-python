@@ -72,9 +72,9 @@ class MetroList(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in metros (list)
         _items = []
         if self.metros:
-            for _item in self.metros:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_metros in self.metros:
+                if _item_metros:
+                    _items.append(_item_metros.to_dict())
             _dict['metros'] = _items
         return _dict
 

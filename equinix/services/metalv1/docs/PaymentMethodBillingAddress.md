@@ -25,7 +25,7 @@ print(PaymentMethodBillingAddress.to_json())
 # convert the object into a dict
 payment_method_billing_address_dict = payment_method_billing_address_instance.to_dict()
 # create an instance of PaymentMethodBillingAddress from a dict
-payment_method_billing_address_form_dict = payment_method_billing_address.from_dict(payment_method_billing_address_dict)
+payment_method_billing_address_from_dict = PaymentMethodBillingAddress.from_dict(payment_method_billing_address_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

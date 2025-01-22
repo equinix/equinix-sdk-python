@@ -23,7 +23,7 @@ print(GetRouteAggregationGetConnectionsResponse.to_json())
 # convert the object into a dict
 get_route_aggregation_get_connections_response_dict = get_route_aggregation_get_connections_response_instance.to_dict()
 # create an instance of GetRouteAggregationGetConnectionsResponse from a dict
-get_route_aggregation_get_connections_response_form_dict = get_route_aggregation_get_connections_response.from_dict(get_route_aggregation_get_connections_response_dict)
+get_route_aggregation_get_connections_response_from_dict = GetRouteAggregationGetConnectionsResponse.from_dict(get_route_aggregation_get_connections_response_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

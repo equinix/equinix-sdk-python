@@ -118,9 +118,9 @@ class CloudRouter(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
         _items = []
         if self.notifications:
-            for _item in self.notifications:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
             _dict['notifications'] = _items
         # override the default output from pydantic by calling `to_dict()` of marketplace_subscription
         if self.marketplace_subscription:

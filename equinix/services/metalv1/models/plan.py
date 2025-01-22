@@ -109,16 +109,16 @@ class Plan(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in available_in (list)
         _items = []
         if self.available_in:
-            for _item in self.available_in:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_available_in in self.available_in:
+                if _item_available_in:
+                    _items.append(_item_available_in.to_dict())
             _dict['available_in'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in available_in_metros (list)
         _items = []
         if self.available_in_metros:
-            for _item in self.available_in_metros:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_available_in_metros in self.available_in_metros:
+                if _item_available_in_metros:
+                    _items.append(_item_available_in_metros.to_dict())
             _dict['available_in_metros'] = _items
         # override the default output from pydantic by calling `to_dict()` of specs
         if self.specs:

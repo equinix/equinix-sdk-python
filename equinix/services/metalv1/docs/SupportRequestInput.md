@@ -27,7 +27,7 @@ print(SupportRequestInput.to_json())
 # convert the object into a dict
 support_request_input_dict = support_request_input_instance.to_dict()
 # create an instance of SupportRequestInput from a dict
-support_request_input_form_dict = support_request_input.from_dict(support_request_input_dict)
+support_request_input_from_dict = SupportRequestInput.from_dict(support_request_input_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

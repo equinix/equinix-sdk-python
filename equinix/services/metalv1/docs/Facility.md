@@ -29,7 +29,7 @@ print(Facility.to_json())
 # convert the object into a dict
 facility_dict = facility_instance.to_dict()
 # create an instance of Facility from a dict
-facility_form_dict = facility.from_dict(facility_dict)
+facility_from_dict = Facility.from_dict(facility_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

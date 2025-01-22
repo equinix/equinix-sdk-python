@@ -27,7 +27,7 @@ print(StreamAsset.to_json())
 # convert the object into a dict
 stream_asset_dict = stream_asset_instance.to_dict()
 # create an instance of StreamAsset from a dict
-stream_asset_form_dict = stream_asset.from_dict(stream_asset_dict)
+stream_asset_from_dict = StreamAsset.from_dict(stream_asset_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

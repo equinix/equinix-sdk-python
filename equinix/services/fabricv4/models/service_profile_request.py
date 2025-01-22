@@ -104,23 +104,23 @@ class ServiceProfileRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
         _items = []
         if self.notifications:
-            for _item in self.notifications:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
             _dict['notifications'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in access_point_type_configs (list)
         _items = []
         if self.access_point_type_configs:
-            for _item in self.access_point_type_configs:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_access_point_type_configs in self.access_point_type_configs:
+                if _item_access_point_type_configs:
+                    _items.append(_item_access_point_type_configs.to_dict())
             _dict['accessPointTypeConfigs'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in custom_fields (list)
         _items = []
         if self.custom_fields:
-            for _item in self.custom_fields:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_custom_fields in self.custom_fields:
+                if _item_custom_fields:
+                    _items.append(_item_custom_fields.to_dict())
             _dict['customFields'] = _items
         # override the default output from pydantic by calling `to_dict()` of marketing_info
         if self.marketing_info:
@@ -128,23 +128,23 @@ class ServiceProfileRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in ports (list)
         _items = []
         if self.ports:
-            for _item in self.ports:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_ports in self.ports:
+                if _item_ports:
+                    _items.append(_item_ports.to_dict())
             _dict['ports'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in virtual_devices (list)
         _items = []
         if self.virtual_devices:
-            for _item in self.virtual_devices:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_virtual_devices in self.virtual_devices:
+                if _item_virtual_devices:
+                    _items.append(_item_virtual_devices.to_dict())
             _dict['virtualDevices'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in metros (list)
         _items = []
         if self.metros:
-            for _item in self.metros:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_metros in self.metros:
+                if _item_metros:
+                    _items.append(_item_metros.to_dict())
             _dict['metros'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:

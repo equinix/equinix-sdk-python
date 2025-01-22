@@ -24,7 +24,7 @@ print(NetworkConnections.to_json())
 # convert the object into a dict
 network_connections_dict = network_connections_instance.to_dict()
 # create an instance of NetworkConnections from a dict
-network_connections_form_dict = network_connections.from_dict(network_connections_dict)
+network_connections_from_dict = NetworkConnections.from_dict(network_connections_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

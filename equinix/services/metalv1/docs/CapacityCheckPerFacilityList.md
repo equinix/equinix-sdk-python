@@ -23,7 +23,7 @@ print(CapacityCheckPerFacilityList.to_json())
 # convert the object into a dict
 capacity_check_per_facility_list_dict = capacity_check_per_facility_list_instance.to_dict()
 # create an instance of CapacityCheckPerFacilityList from a dict
-capacity_check_per_facility_list_form_dict = capacity_check_per_facility_list.from_dict(capacity_check_per_facility_list_dict)
+capacity_check_per_facility_list_from_dict = CapacityCheckPerFacilityList.from_dict(capacity_check_per_facility_list_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

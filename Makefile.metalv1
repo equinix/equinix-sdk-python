@@ -28,7 +28,13 @@ patch:
 
 	# TODO: fetch the merged (single-file) spec
 	# instead of merging it here
-	${OPENAPI_GENERATOR} generate \
+	# *NOTE*: Due to a bug in swagger-parser, we have
+	# to use v7.4.0 of openapi-generator to merge the
+	# spec in order to avoid introducing duplicate models
+	${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} \
+	    -v $(CURDIR):/local \
+		openapitools/openapi-generator-cli:v7.4.0 \
+		generate \
 		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
 		-g openapi-yaml \
 		-p skipOperationExample=true -p outputFile=${SPEC_ROOT_FILE} \

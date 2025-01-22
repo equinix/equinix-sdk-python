@@ -31,7 +31,7 @@ print(UserLite.to_json())
 # convert the object into a dict
 user_lite_dict = user_lite_instance.to_dict()
 # create an instance of UserLite from a dict
-user_lite_form_dict = user_lite.from_dict(user_lite_dict)
+user_lite_from_dict = UserLite.from_dict(user_lite_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
