@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Customer-provided stream subscription name | [optional] 
 **description** | **str** | Customer-provided stream subscription description | [optional] 
-**stream** | [**StreamTarget**](StreamTarget.md) |  | [optional] 
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
 **filters** | [**StreamSubscriptionFilter**](StreamSubscriptionFilter.md) |  | [optional] 
 **metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 

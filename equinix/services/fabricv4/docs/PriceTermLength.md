@@ -1,8 +1,10 @@
 # PriceTermLength
 
-In months. No value means unlimited
+In months. No value or value of 1 means on-demand
 
 ## Enum
+
+* `NUMBER_1` (value: `1`)
 
 * `NUMBER_12` (value: `12`)
 

@@ -1,10 +1,12 @@
-# MetricInterval
+# StreamAlertRuleState
 
-metric interval
+Steam subscription provision state
 
 ## Enum
 
-* `P7D` (value: `'P7D'`)
+* `ACTIVE` (value: `'ACTIVE'`)
+
+* `INACTIVE` (value: `'INACTIVE'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

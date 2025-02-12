@@ -6,7 +6,7 @@ Service Token Connection Type Information
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ServiceTokenConnectionType**](ServiceTokenConnectionType.md) |  | 
+**type** | [**ServiceTokenConnectionType**](ServiceTokenConnectionType.md) |  | [optional] 
 **href** | **str** | An absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **uuid** | **str** | Equinix-assigned connection identifier | [optional] 
 **allow_remote_connection** | **bool** | Authorization to connect remotely | [optional] [default to False]

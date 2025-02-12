@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **metric_index** | **str** | metric index | [optional] 
 **source** | **str** | source | [optional] 
 **application_key** | **str** | Application key | [optional] 
+**event_uri** | **str** | event uri | [optional] 
+**metric_uri** | **str** | metric uri | [optional] 
+**transform_alerts** | **bool** | transform alerts | [optional] 
 
 ## Example
 
