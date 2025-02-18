@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **batch_wait_time_max** | **int** | maximum batch waiting time | [optional] 
 **credential** | [**StreamSubscriptionSinkCredential**](StreamSubscriptionSinkCredential.md) |  | [optional] 
 **settings** | [**StreamSubscriptionSinkSetting**](StreamSubscriptionSinkSetting.md) |  | [optional] 
+**host** | **str** | sink host | [optional] 
 
 ## Example
 

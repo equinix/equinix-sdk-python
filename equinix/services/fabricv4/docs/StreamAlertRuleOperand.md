@@ -1,14 +1,12 @@
-# Duration
+# StreamAlertRuleOperand
 
-Duration of the statistical analysis interval.
+Stream alert rule metric operand
 
 ## Enum
 
-* `P7D` (value: `'P7D'`)
+* `ABOVE` (value: `'ABOVE'`)
 
-* `P1M` (value: `'P1M'`)
-
-* `P3M` (value: `'P3M'`)
+* `BELOW` (value: `'BELOW'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,12 +1,10 @@
-# QueryDirection
+# StreamAlertRuleType
 
-Direction of traffic from the requester's viewpoint.
+Stream subscription type
 
 ## Enum
 
-* `INBOUND` (value: `'inbound'`)
-
-* `OUTBOUND` (value: `'outbound'`)
+* `METRIC_ALERT` (value: `'METRIC_ALERT'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
