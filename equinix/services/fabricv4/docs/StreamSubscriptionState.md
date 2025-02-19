@@ -8,6 +8,8 @@ Steam subscription provision state
 
 * `PROVISIONED` (value: `'PROVISIONED'`)
 
+* `REPROVISIONING` (value: `'REPROVISIONING'`)
+
 * `DEPROVISIONING` (value: `'DEPROVISIONING'`)
 
 * `DEPROVISIONED` (value: `'DEPROVISIONED'`)

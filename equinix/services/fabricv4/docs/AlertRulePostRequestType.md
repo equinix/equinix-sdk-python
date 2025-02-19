@@ -1,10 +1,9 @@
-# StreamGetSubscriptionsType
+# AlertRulePostRequestType
 
-Stream subscription type
 
 ## Enum
 
-* `STREAM_SUBSCRIPTION` (value: `'STREAM_SUBSCRIPTION'`)
+* `METRIC_ALERT` (value: `'METRIC_ALERT'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -18,6 +18,7 @@ from equinix.services.fabricv4.api.routing_protocols_api import RoutingProtocols
 from equinix.services.fabricv4.api.service_profiles_api import ServiceProfilesApi
 from equinix.services.fabricv4.api.service_tokens_api import ServiceTokensApi
 from equinix.services.fabricv4.api.statistics_api import StatisticsApi
+from equinix.services.fabricv4.api.stream_alert_rules_api import StreamAlertRulesApi
 from equinix.services.fabricv4.api.stream_subscriptions_api import StreamSubscriptionsApi
 from equinix.services.fabricv4.api.streams_api import StreamsApi
 

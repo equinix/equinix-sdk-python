@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **access_token** | **str** | passed as Authorization header value | [optional] 
 **integration_key** | **str** | passed as Authorization header value | [optional] 
 **api_key** | **str** | passed as Authorization header value | [optional] 
+**username** | **str** | passed as Authorization header value | [optional] 
+**password** | **str** | passed as Authorization header value | [optional] 
 
 ## Example
 

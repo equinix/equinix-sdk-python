@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided stream name | [optional] 
 **description** | **str** | Customer-provided stream description | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
-**enabled** | **bool** | Stream enabled status | [optional] 
 
 ## Example
 

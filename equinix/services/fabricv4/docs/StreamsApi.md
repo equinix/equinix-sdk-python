@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**get_stream_by_uuid**](StreamsApi.md#get_stream_by_uuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream
 [**get_streams**](StreamsApi.md#get_streams) | **GET** /fabric/v4/streams | Get Streams
 [**get_streams_assets**](StreamsApi.md#get_streams_assets) | **POST** /fabric/v4/streamAssets/search | Get Assets
-[**get_subscriptions_in_stream**](StreamsApi.md#get_subscriptions_in_stream) | **GET** /fabric/v4/streams/{streamId}/streamSubscriptions | Get Stream&#39;s Subs
 [**update_stream_asset_by_uuid**](StreamsApi.md#update_stream_asset_by_uuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 [**update_stream_by_uuid**](StreamsApi.md#update_stream_by_uuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
 
@@ -599,92 +598,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**404** | Not Found |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_subscriptions_in_stream**
-> GetSubscriptionsInStreamResponse get_subscriptions_in_stream(stream_id, offset=offset, limit=limit)
-
-Get Stream's Subs
-
-This API provides capability to retrieve subscriptions in a stream
-
-### Example
-
-* Bearer (JWT) Authentication (BearerAuth):
-
-```python
-import equinix.services.fabricv4
-from equinix.services.fabricv4.models.get_subscriptions_in_stream_response import GetSubscriptionsInStreamResponse
-from equinix.services.fabricv4.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.equinix.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = equinix.services.fabricv4.Configuration(
-    host = "https://api.equinix.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): BearerAuth
-configuration = equinix.services.fabricv4.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with equinix.services.fabricv4.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    offset = 1 # int | offset (optional)
-    limit = 10 # int | number of records to fetch (optional)
-
-    try:
-        # Get Stream's Subs
-        api_response = api_instance.get_subscriptions_in_stream(stream_id, offset=offset, limit=limit)
-        print("The response of StreamsApi->get_subscriptions_in_stream:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling StreamsApi->get_subscriptions_in_stream: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stream_id** | **str**| Stream UUID | 
- **offset** | **int**| offset | [optional] 
- **limit** | **int**| number of records to fetch | [optional] 
-
-### Return type
-
-[**GetSubscriptionsInStreamResponse**](GetSubscriptionsInStreamResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

@@ -5,7 +5,6 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_connection_stats_by_port_uuid**](StatisticsApi.md#get_connection_stats_by_port_uuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by uuid
-[**get_port_stats**](StatisticsApi.md#get_port_stats) | **GET** /fabric/v4/ports/stats | Top Port Statistics
 [**get_port_stats_by_port_uuid**](StatisticsApi.md#get_port_stats_by_port_uuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid
 
 
@@ -76,102 +75,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Statistics**](Statistics.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_port_stats**
-> TopUtilizedStatistics get_port_stats(metros, sort=sort, top=top, duration=duration, direction=direction, metric_interval=metric_interval, project_id=project_id)
-
-Top Port Statistics
-
-This API provides top utilized service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
-
-### Example
-
-* Bearer (JWT) Authentication (BearerAuth):
-
-```python
-import equinix.services.fabricv4
-from equinix.services.fabricv4.models.duration import Duration
-from equinix.services.fabricv4.models.metric_interval import MetricInterval
-from equinix.services.fabricv4.models.query_direction import QueryDirection
-from equinix.services.fabricv4.models.sort import Sort
-from equinix.services.fabricv4.models.top_utilized_statistics import TopUtilizedStatistics
-from equinix.services.fabricv4.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.equinix.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = equinix.services.fabricv4.Configuration(
-    host = "https://api.equinix.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization (JWT): BearerAuth
-configuration = equinix.services.fabricv4.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with equinix.services.fabricv4.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = equinix.services.fabricv4.StatisticsApi(api_client)
-    metros = ['metros_example'] # List[str] | Two-letter prefix indicating the metropolitan area in which a specified Equinix asset is located.
-    sort = -bandwidthUtilization # Sort | Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \"?\" prefix indicates descending (DESC) order. (optional) (default to -bandwidthUtilization)
-    top = 5 # int | Filter returning only the specified number of most heavily trafficked ports. The standard value is [1...10], and the default is 5. (optional) (default to 5)
-    duration = P7D # Duration | duration (optional) (default to P7D)
-    direction = outbound # QueryDirection | Direction of traffic from the requester's viewpoint. The default is outbound. (optional) (default to outbound)
-    metric_interval = P7D # MetricInterval | metricInterval (optional) (default to P7D)
-    project_id = 'project_id_example' # str | projectId (optional)
-
-    try:
-        # Top Port Statistics
-        api_response = api_instance.get_port_stats(metros, sort=sort, top=top, duration=duration, direction=direction, metric_interval=metric_interval, project_id=project_id)
-        print("The response of StatisticsApi->get_port_stats:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling StatisticsApi->get_port_stats: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **metros** | [**List[str]**](str.md)| Two-letter prefix indicating the metropolitan area in which a specified Equinix asset is located. | 
- **sort** | [**Sort**](.md)| Key or set of keys that organizes the search payload by property (such as createdDate or metroCode) or by direction. Ascending (ASC) is the default value. The \&quot;?\&quot; prefix indicates descending (DESC) order. | [optional] [default to -bandwidthUtilization]
- **top** | **int**| Filter returning only the specified number of most heavily trafficked ports. The standard value is [1...10], and the default is 5. | [optional] [default to 5]
- **duration** | [**Duration**](.md)| duration | [optional] [default to P7D]
- **direction** | [**QueryDirection**](.md)| Direction of traffic from the requester&#39;s viewpoint. The default is outbound. | [optional] [default to outbound]
- **metric_interval** | [**MetricInterval**](.md)| metricInterval | [optional] [default to P7D]
- **project_id** | **str**| projectId | [optional] 
-
-### Return type
-
-[**TopUtilizedStatistics**](TopUtilizedStatistics.md)
 
 ### Authorization
 
