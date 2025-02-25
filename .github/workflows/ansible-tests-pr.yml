@@ -55,7 +55,7 @@ jobs:
         working-directory: .ansible/collections/ansible_collections/equinix/cloud
 
       - name: install cloned Python SDK
-        run: python3 -m pip install ./equinix_metal
+        run: python3 -m pip install .
 
 
       - name: replace existing keys
