@@ -32,13 +32,13 @@ patch:
 	# to use v7.4.0 of openapi-generator to merge the
 	# spec in order to avoid introducing duplicate models
 	${CRI} run --rm -u ${CURRENT_UID}:${CURRENT_GID} \
-	    -v $(CURDIR):/local \
+	    -v $(CURDIR):/workdir -w /workdir \
 		openapitools/openapi-generator-cli:v7.4.0 \
 		generate \
-		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
+		-i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} \
 		-g openapi-yaml \
 		-p skipOperationExample=true -p outputFile=${SPEC_ROOT_FILE} \
-		-o /local/${SPEC_PATCHED_DIR}
+		-o ${SPEC_PATCHED_DIR}
 
 	rm -rf ${SPEC_PATCHED_DIR}/.openapi-generator* \
 		   ${SPEC_PATCHED_DIR}/README.md \
@@ -68,14 +68,14 @@ codegen:
 		--git-user-id ${GIT_ORG} \
 		--git-repo-id ${GIT_REPO} \
 		`# TODO: re-enable the config file option so that generated code follows OpenAPI standards; this is only disabled to provide an upgrade path for metal-python` \
-		`# -c /local/config/openapi-generator.json` \
+		`# -c config/openapi-generator.json` \
 		`# TODO: remove this when the config file is re-enabled` \
 		-p generateSourceCodeOnly=true \
-		-t /local/${TEMPLATE_DIR} \
-		-o /local/ \
-		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
+		-t ${TEMPLATE_DIR} \
+		-o . \
+		-i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
 
 validate:
 	${OPENAPI_GENERATOR} validate \
 		--recommend \
-		-i /local/${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
+		-i ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
