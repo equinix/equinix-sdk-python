@@ -6,7 +6,7 @@ Create bulk port request
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List[PortRequest]**](Port.md) |  | [optional] 
+**data** | [**List[PortRequest]**](PortRequest.md) |  | [optional] 
 
 ## Example
 
