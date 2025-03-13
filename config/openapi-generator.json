@@ -3,5 +3,9 @@
     "disallowAdditionalPropertiesIfNotPresent": false,
     "inlineSchemaOptions": {
         "RESOLVE_INLINE_ENUMS": true
+    },
+    "globalProperties": {
+        "modelTests": false,
+        "apiTests": false
     }
 }
