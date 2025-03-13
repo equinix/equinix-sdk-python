@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 Add to Lag
 
-Add Physical Ports to Virtual Port.<font color=\"red\"> <sup color='red'>Preview</sup></font>
+Add Physical Ports to Virtual Port.<font color="red"> <sup color='red'>Preview</sup></font>
 
 ### Example
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 Create Port
 
-Create Port creates Equinix Fabric? Port.<font color=\"red\"> <sup color='red'>Preview</sup></font>
+Create Port creates Equinix Fabric? Port.<font color="red"> <sup color='red'>Preview</sup></font>
 
 ### Example
 

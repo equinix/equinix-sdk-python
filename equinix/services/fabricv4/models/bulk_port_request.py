@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.port import Port
+from equinix.services.fabricv4.models.port_request import PortRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +23,7 @@ class BulkPortRequest(BaseModel):
     """
     Create bulk port request
     """ # noqa: E501
-    data: Optional[List[Port]] = None
+    data: Optional[List[PortRequest]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["data"]
 
@@ -92,7 +92,7 @@ class BulkPortRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "data": [Port.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "data": [PortRequest.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
