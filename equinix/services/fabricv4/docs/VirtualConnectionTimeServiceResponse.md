@@ -6,9 +6,9 @@ Fabric Connection Precision Time Service Response Object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | Connection URI | [readonly] 
-**type** | **str** | Connection Type. | 
-**uuid** | **str** | Connection UUID. | 
+**href** | **str** | Connection URI | [optional] [readonly] 
+**type** | **str** | Connection Type. | [optional] 
+**uuid** | **str** | Connection UUID. | [optional] 
 **a_side** | [**VirtualConnectionSide**](VirtualConnectionSide.md) |  | [optional] 
 **z_side** | [**VirtualConnectionSide**](VirtualConnectionSide.md) |  | [optional] 
 

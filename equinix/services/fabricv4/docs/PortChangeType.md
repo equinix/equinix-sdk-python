@@ -1,14 +1,14 @@
-# CloudRouterChangeStatus
+# PortChangeType
 
-Current outcome of the change flow
+Type of change
 
 ## Enum
 
-* `COMPLETED` (value: `'COMPLETED'`)
+* `PORT_CREATION` (value: `'PORT_CREATION'`)
 
-* `FAILED` (value: `'FAILED'`)
+* `PORT_UPDATE` (value: `'PORT_UPDATE'`)
 
-* `REQUESTED` (value: `'REQUESTED'`)
+* `PORT_DELETION` (value: `'PORT_DELETION'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

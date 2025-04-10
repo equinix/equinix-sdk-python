@@ -100,7 +100,7 @@ class NetworksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Network",
+            '201': "Network",
             '202': "Network",
             '400': "List[Error]",
             '401': "List[Error]",
@@ -177,7 +177,7 @@ class NetworksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Network",
+            '201': "Network",
             '202': "Network",
             '400': "List[Error]",
             '401': "List[Error]",
@@ -254,7 +254,7 @@ class NetworksApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "Network",
+            '201': "Network",
             '202': "Network",
             '400': "List[Error]",
             '401': "List[Error]",

@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_connection_by_uuid**
-> Connection update_connection_by_uuid(connection_id, connection_change_operation)
+> Connection update_connection_by_uuid(connection_id, connection_change_operation, dry_run=dry_run)
 
 Update by ID
 
@@ -474,10 +474,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
     connection_id = 'connection_id_example' # str | Connection Id
     connection_change_operation = [equinix.services.fabricv4.ConnectionChangeOperation()] # List[ConnectionChangeOperation] | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Update by ID
-        api_response = api_instance.update_connection_by_uuid(connection_id, connection_change_operation)
+        api_response = api_instance.update_connection_by_uuid(connection_id, connection_change_operation, dry_run=dry_run)
         print("The response of ConnectionsApi->update_connection_by_uuid:\n")
         pprint(api_response)
     except Exception as e:
@@ -493,6 +494,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connection_id** | **str**| Connection Id | 
  **connection_change_operation** | [**List[ConnectionChangeOperation]**](ConnectionChangeOperation.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 
@@ -511,7 +513,9 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **202** | Successful operation |  -  |
+**400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
