@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Uniquely identifies a change | [optional] 
 **type** | [**CloudRouterChangeType**](CloudRouterChangeType.md) |  | 
-**status** | [**CloudRouterChangeStatus**](CloudRouterChangeStatus.md) |  | [optional] 
+**status** | [**PortChangeStatus**](PortChangeStatus.md) |  | [optional] 
 **created_date_time** | **datetime** | Set when change flow starts | [optional] 
 **updated_date_time** | **datetime** | Set when change object is updated | 
 **information** | **str** | Additional information | [optional] 

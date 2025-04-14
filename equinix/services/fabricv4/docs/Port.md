@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 
 **operation** | [**PortOperation**](PortOperation.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
+**change** | [**PortChange**](PortChange.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 

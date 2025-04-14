@@ -1791,6 +1791,7 @@ class ServiceTokensApi:
         self,
         service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1812,6 +1813,8 @@ class ServiceTokensApi:
         :type service_token_id: str
         :param service_token_change_operation: (required)
         :type service_token_change_operation: List[ServiceTokenChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1837,6 +1840,7 @@ class ServiceTokensApi:
         _param = self._update_service_token_by_uuid_serialize(
             service_token_id=service_token_id,
             service_token_change_operation=service_token_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1865,6 +1869,7 @@ class ServiceTokensApi:
         self,
         service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1886,6 +1891,8 @@ class ServiceTokensApi:
         :type service_token_id: str
         :param service_token_change_operation: (required)
         :type service_token_change_operation: List[ServiceTokenChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1911,6 +1918,7 @@ class ServiceTokensApi:
         _param = self._update_service_token_by_uuid_serialize(
             service_token_id=service_token_id,
             service_token_change_operation=service_token_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1939,6 +1947,7 @@ class ServiceTokensApi:
         self,
         service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1960,6 +1969,8 @@ class ServiceTokensApi:
         :type service_token_id: str
         :param service_token_change_operation: (required)
         :type service_token_change_operation: List[ServiceTokenChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1985,6 +1996,7 @@ class ServiceTokensApi:
         _param = self._update_service_token_by_uuid_serialize(
             service_token_id=service_token_id,
             service_token_change_operation=service_token_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2008,6 +2020,7 @@ class ServiceTokensApi:
         self,
         service_token_id,
         service_token_change_operation,
+        dry_run,
         _request_auth,
         _content_type,
         _headers,
@@ -2033,6 +2046,10 @@ class ServiceTokensApi:
         if service_token_id is not None:
             _path_params['serviceTokenId'] = service_token_id
         # process the query parameters
+        if dry_run is not None:
+            
+            _query_params.append(('dryRun', dry_run))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

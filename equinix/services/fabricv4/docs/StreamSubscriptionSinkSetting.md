@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **application_key** | **str** | Application key | [optional] 
 **event_uri** | **str** | event uri | [optional] 
 **metric_uri** | **str** | metric uri | [optional] 
-**transform_alerts** | **bool** | transform alerts | [optional] 
 
 ## Example
 

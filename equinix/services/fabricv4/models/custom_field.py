@@ -24,7 +24,7 @@ class CustomField(BaseModel):
     Define Custom Attributes
     """ # noqa: E501
     label: StrictStr
-    description: StrictStr
+    description: Optional[StrictStr] = None
     required: Optional[StrictBool] = None
     data_type: CustomFieldDataType = Field(alias="dataType")
     options: Optional[List[StrictStr]] = None

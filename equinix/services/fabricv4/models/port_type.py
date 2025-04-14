@@ -24,6 +24,7 @@ class PortType(str, Enum):
     """
     XF_PORT = 'XF_PORT'
     IX_PORT = 'IX_PORT'
+    IA_PORT = 'IA_PORT'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

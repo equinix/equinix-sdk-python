@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **str** | Precision Time Service Name. | [optional] 
 **uuid** | **str** | Precision Time Service UUID. | 
 **state** | [**PrecisionTimeServiceResponseState**](PrecisionTimeServiceResponseState.md) |  | 
-**package** | [**PrecisionTimePackageResponse**](PrecisionTimePackageResponse.md) |  | 
+**package** | [**PrecisionTimePackagePostResponse**](PrecisionTimePackagePostResponse.md) |  | 
 **connections** | [**List[VirtualConnectionTimeServiceResponse]**](VirtualConnectionTimeServiceResponse.md) | Fabric Connections associated with Precision Time Service. | [optional] 
 **ipv4** | [**Ipv4**](Ipv4.md) |  | [optional] 
 **ntp_advanced_configuration** | [**List[Md5]**](Md5.md) | NTP Advanced configuration - MD5 Authentication. | [optional] 

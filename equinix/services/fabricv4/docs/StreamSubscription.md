@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **description** | **str** | Customer-provided subscription description | [optional] 
 **state** | [**StreamSubscriptionState**](StreamSubscriptionState.md) |  | [optional] 
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
-**filters** | [**StreamSubscriptionFilter**](StreamSubscriptionFilter.md) |  | [optional] 
 **metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
+**last_error_message** | **str** | HTTP response from sink type if error occurred | [optional] 
 
 ## Example
 
