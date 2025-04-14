@@ -22,6 +22,7 @@ from equinix.services.fabricv4.models.package import Package
 from equinix.services.fabricv4.models.physical_port import PhysicalPort
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
 from equinix.services.fabricv4.models.port_bmmr_type import PortBmmrType
+from equinix.services.fabricv4.models.port_change import PortChange
 from equinix.services.fabricv4.models.port_connectivity_source_type import PortConnectivitySourceType
 from equinix.services.fabricv4.models.port_demarcation_point import PortDemarcationPoint
 from equinix.services.fabricv4.models.port_device import PortDevice
@@ -65,6 +66,7 @@ class Port(BaseModel):
     order: Optional[PortOrder] = None
     operation: Optional[PortOperation] = None
     account: Optional[SimplifiedAccount] = None
+    change: Optional[PortChange] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     service_type: Optional[PortServiceType] = Field(default=None, alias="serviceType")
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port bandwidth in Mbps")
@@ -90,7 +92,7 @@ class Port(BaseModel):
     physical_ports: Optional[List[PhysicalPort]] = Field(default=None, description="Physical ports that implement this port", alias="physicalPorts")
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "changeLog", "serviceType", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas"]
+    __properties: ClassVar[List[str]] = ["href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -147,6 +149,9 @@ class Port(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of account
         if self.account:
             _dict['account'] = self.account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of change
+        if self.change:
+            _dict['change'] = self.change.to_dict()
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -242,6 +247,7 @@ class Port(BaseModel):
             "order": PortOrder.from_dict(obj["order"]) if obj.get("order") is not None else None,
             "operation": PortOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "change": PortChange.from_dict(obj["change"]) if obj.get("change") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None,
             "serviceType": obj.get("serviceType"),
             "bandwidth": obj.get("bandwidth"),

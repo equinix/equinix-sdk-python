@@ -14,21 +14,19 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class CloudRouterChangeStatus(str, Enum):
+class CloudRouterCommandType(str, Enum):
     """
-    Current outcome of the change flow
+    Fabric Cloud Router Command Type
     """
 
     """
     allowed enum values
     """
-    COMPLETED = 'COMPLETED'
-    FAILED = 'FAILED'
-    REQUESTED = 'REQUESTED'
+    PING_COMMAND = 'PING_COMMAND'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of CloudRouterChangeStatus from a JSON string"""
+        """Create an instance of CloudRouterCommandType from a JSON string"""
         return cls(json.loads(json_str))
 
 

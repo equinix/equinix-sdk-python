@@ -13,6 +13,7 @@
 __version__ = "0.9.0"
 
 # import apis into sdk package
+from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
 from equinix.services.fabricv4.api.health_api import HealthApi
@@ -60,6 +61,9 @@ from equinix.services.fabricv4.models.all_ports_response import AllPortsResponse
 from equinix.services.fabricv4.models.api_config import ApiConfig
 from equinix.services.fabricv4.models.api_services import ApiServices
 from equinix.services.fabricv4.models.asset import Asset
+from equinix.services.fabricv4.models.auth_context import AuthContext
+from equinix.services.fabricv4.models.auth_context_authid import AuthContextAuthid
+from equinix.services.fabricv4.models.auth_context_authtype import AuthContextAuthtype
 from equinix.services.fabricv4.models.authentication_key import AuthenticationKey
 from equinix.services.fabricv4.models.bgp_action_data import BGPActionData
 from equinix.services.fabricv4.models.bgp_action_request import BGPActionRequest
@@ -79,6 +83,12 @@ from equinix.services.fabricv4.models.change import Change
 from equinix.services.fabricv4.models.change_status import ChangeStatus
 from equinix.services.fabricv4.models.change_type import ChangeType
 from equinix.services.fabricv4.models.changelog import Changelog
+from equinix.services.fabricv4.models.cloud_event import CloudEvent
+from equinix.services.fabricv4.models.cloud_event_asset_type import CloudEventAssetType
+from equinix.services.fabricv4.models.cloud_event_data import CloudEventData
+from equinix.services.fabricv4.models.cloud_event_filters import CloudEventFilters
+from equinix.services.fabricv4.models.cloud_event_search_request import CloudEventSearchRequest
+from equinix.services.fabricv4.models.cloud_event_simple_expression import CloudEventSimpleExpression
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
 from equinix.services.fabricv4.models.cloud_router_access_point_state import CloudRouterAccessPointState
 from equinix.services.fabricv4.models.cloud_router_action_request import CloudRouterActionRequest
@@ -96,8 +106,23 @@ from equinix.services.fabricv4.models.cloud_router_actions_search_sort_criteria 
 from equinix.services.fabricv4.models.cloud_router_actions_search_sort_direction import CloudRouterActionsSearchSortDirection
 from equinix.services.fabricv4.models.cloud_router_change import CloudRouterChange
 from equinix.services.fabricv4.models.cloud_router_change_operation import CloudRouterChangeOperation
-from equinix.services.fabricv4.models.cloud_router_change_status import CloudRouterChangeStatus
 from equinix.services.fabricv4.models.cloud_router_change_type import CloudRouterChangeType
+from equinix.services.fabricv4.models.cloud_router_command import CloudRouterCommand
+from equinix.services.fabricv4.models.cloud_router_command_post_request import CloudRouterCommandPostRequest
+from equinix.services.fabricv4.models.cloud_router_command_request import CloudRouterCommandRequest
+from equinix.services.fabricv4.models.cloud_router_command_request_connection import CloudRouterCommandRequestConnection
+from equinix.services.fabricv4.models.cloud_router_command_response import CloudRouterCommandResponse
+from equinix.services.fabricv4.models.cloud_router_command_search_expression import CloudRouterCommandSearchExpression
+from equinix.services.fabricv4.models.cloud_router_command_search_filter import CloudRouterCommandSearchFilter
+from equinix.services.fabricv4.models.cloud_router_command_search_filters import CloudRouterCommandSearchFilters
+from equinix.services.fabricv4.models.cloud_router_command_search_or_filter import CloudRouterCommandSearchOrFilter
+from equinix.services.fabricv4.models.cloud_router_command_search_request import CloudRouterCommandSearchRequest
+from equinix.services.fabricv4.models.cloud_router_command_search_response import CloudRouterCommandSearchResponse
+from equinix.services.fabricv4.models.cloud_router_command_search_sort_by import CloudRouterCommandSearchSortBy
+from equinix.services.fabricv4.models.cloud_router_command_search_sort_criteria import CloudRouterCommandSearchSortCriteria
+from equinix.services.fabricv4.models.cloud_router_command_search_sort_direction import CloudRouterCommandSearchSortDirection
+from equinix.services.fabricv4.models.cloud_router_command_state import CloudRouterCommandState
+from equinix.services.fabricv4.models.cloud_router_command_type import CloudRouterCommandType
 from equinix.services.fabricv4.models.cloud_router_filter import CloudRouterFilter
 from equinix.services.fabricv4.models.cloud_router_filters import CloudRouterFilters
 from equinix.services.fabricv4.models.cloud_router_or_filter import CloudRouterOrFilter
@@ -175,11 +200,13 @@ from equinix.services.fabricv4.models.fabric_cloud_router_price import FabricClo
 from equinix.services.fabricv4.models.filter_body import FilterBody
 from equinix.services.fabricv4.models.geo_coordinates import GeoCoordinates
 from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
+from equinix.services.fabricv4.models.get_all_cloud_router_commands import GetAllCloudRouterCommands
 from equinix.services.fabricv4.models.get_all_connection_route_aggregations_response import GetAllConnectionRouteAggregationsResponse
 from equinix.services.fabricv4.models.get_all_connection_route_filters_response import GetAllConnectionRouteFiltersResponse
 from equinix.services.fabricv4.models.get_all_stream_asset_response import GetAllStreamAssetResponse
 from equinix.services.fabricv4.models.get_all_stream_response import GetAllStreamResponse
 from equinix.services.fabricv4.models.get_all_stream_subscription_response import GetAllStreamSubscriptionResponse
+from equinix.services.fabricv4.models.get_cloud_events_by_asset_response import GetCloudEventsByAssetResponse
 from equinix.services.fabricv4.models.get_response import GetResponse
 from equinix.services.fabricv4.models.get_route_aggregation_get_connections_response import GetRouteAggregationGetConnectionsResponse
 from equinix.services.fabricv4.models.get_route_aggregation_rules_response import GetRouteAggregationRulesResponse
@@ -243,6 +270,8 @@ from equinix.services.fabricv4.models.network_type import NetworkType
 from equinix.services.fabricv4.models.op_enum import OpEnum
 from equinix.services.fabricv4.models.operation import Operation
 from equinix.services.fabricv4.models.order import Order
+from equinix.services.fabricv4.models.output_structured_ping import OutputStructuredPing
+from equinix.services.fabricv4.models.output_structured_ping_response_item import OutputStructuredPingResponseItem
 from equinix.services.fabricv4.models.package import Package
 from equinix.services.fabricv4.models.package_change_log import PackageChangeLog
 from equinix.services.fabricv4.models.package_code import PackageCode
@@ -257,7 +286,10 @@ from equinix.services.fabricv4.models.physical_port_type import PhysicalPortType
 from equinix.services.fabricv4.models.port import Port
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
 from equinix.services.fabricv4.models.port_bmmr_type import PortBmmrType
+from equinix.services.fabricv4.models.port_change import PortChange
 from equinix.services.fabricv4.models.port_change_operation import PortChangeOperation
+from equinix.services.fabricv4.models.port_change_status import PortChangeStatus
+from equinix.services.fabricv4.models.port_change_type import PortChangeType
 from equinix.services.fabricv4.models.port_connectivity_source_type import PortConnectivitySourceType
 from equinix.services.fabricv4.models.port_demarcation_point import PortDemarcationPoint
 from equinix.services.fabricv4.models.port_device import PortDevice
@@ -301,6 +333,7 @@ from equinix.services.fabricv4.models.precision_time_change_operation import Pre
 from equinix.services.fabricv4.models.precision_time_change_operation_op import PrecisionTimeChangeOperationOp
 from equinix.services.fabricv4.models.precision_time_change_operation_path import PrecisionTimeChangeOperationPath
 from equinix.services.fabricv4.models.precision_time_order import PrecisionTimeOrder
+from equinix.services.fabricv4.models.precision_time_package_post_response import PrecisionTimePackagePostResponse
 from equinix.services.fabricv4.models.precision_time_package_request import PrecisionTimePackageRequest
 from equinix.services.fabricv4.models.precision_time_package_request_code import PrecisionTimePackageRequestCode
 from equinix.services.fabricv4.models.precision_time_package_response import PrecisionTimePackageResponse
@@ -337,6 +370,7 @@ from equinix.services.fabricv4.models.ptp_advance_configuration_time_scale impor
 from equinix.services.fabricv4.models.ptp_advance_configuration_transport_mode import PtpAdvanceConfigurationTransportMode
 from equinix.services.fabricv4.models.remove_operation import RemoveOperation
 from equinix.services.fabricv4.models.replace_operation import ReplaceOperation
+from equinix.services.fabricv4.models.resource_data import ResourceData
 from equinix.services.fabricv4.models.resource_selector import ResourceSelector
 from equinix.services.fabricv4.models.route_aggregation_change_data import RouteAggregationChangeData
 from equinix.services.fabricv4.models.route_aggregation_change_data_response import RouteAggregationChangeDataResponse

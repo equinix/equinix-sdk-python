@@ -23,9 +23,9 @@ class VirtualConnectionTimeServiceResponse(BaseModel):
     """
     Fabric Connection Precision Time Service Response Object
     """ # noqa: E501
-    href: StrictStr = Field(description="Connection URI")
-    type: StrictStr = Field(description="Connection Type.")
-    uuid: StrictStr = Field(description="Connection UUID.")
+    href: Optional[StrictStr] = Field(default=None, description="Connection URI")
+    type: Optional[StrictStr] = Field(default=None, description="Connection Type.")
+    uuid: Optional[StrictStr] = Field(default=None, description="Connection UUID.")
     a_side: Optional[VirtualConnectionSide] = Field(default=None, alias="aSide")
     z_side: Optional[VirtualConnectionSide] = Field(default=None, alias="zSide")
     additional_properties: Dict[str, Any] = {}

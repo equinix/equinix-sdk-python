@@ -20,7 +20,7 @@ from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.ipv4 import Ipv4
 from equinix.services.fabricv4.models.md5 import Md5
 from equinix.services.fabricv4.models.precision_time_order import PrecisionTimeOrder
-from equinix.services.fabricv4.models.precision_time_package_response import PrecisionTimePackageResponse
+from equinix.services.fabricv4.models.precision_time_package_post_response import PrecisionTimePackagePostResponse
 from equinix.services.fabricv4.models.precision_time_price import PrecisionTimePrice
 from equinix.services.fabricv4.models.precision_time_service_response_state import PrecisionTimeServiceResponseState
 from equinix.services.fabricv4.models.precision_time_service_response_type import PrecisionTimeServiceResponseType
@@ -40,7 +40,7 @@ class PrecisionTimeServiceResponse(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Precision Time Service Name.")
     uuid: StrictStr = Field(description="Precision Time Service UUID.")
     state: PrecisionTimeServiceResponseState
-    package: PrecisionTimePackageResponse
+    package: PrecisionTimePackagePostResponse
     connections: Optional[Annotated[List[VirtualConnectionTimeServiceResponse], Field(min_length=1, max_length=2)]] = Field(default=None, description="Fabric Connections associated with Precision Time Service.")
     ipv4: Optional[Ipv4] = None
     ntp_advanced_configuration: Optional[List[Md5]] = Field(default=None, description="NTP Advanced configuration - MD5 Authentication.", alias="ntpAdvancedConfiguration")
@@ -154,7 +154,7 @@ class PrecisionTimeServiceResponse(BaseModel):
             "name": obj.get("name"),
             "uuid": obj.get("uuid"),
             "state": obj.get("state"),
-            "package": PrecisionTimePackageResponse.from_dict(obj["package"]) if obj.get("package") is not None else None,
+            "package": PrecisionTimePackagePostResponse.from_dict(obj["package"]) if obj.get("package") is not None else None,
             "connections": [VirtualConnectionTimeServiceResponse.from_dict(_item) for _item in obj["connections"]] if obj.get("connections") is not None else None,
             "ipv4": Ipv4.from_dict(obj["ipv4"]) if obj.get("ipv4") is not None else None,
             "ntpAdvancedConfiguration": [Md5.from_dict(_item) for _item in obj["ntpAdvancedConfiguration"]] if obj.get("ntpAdvancedConfiguration") is not None else None,
