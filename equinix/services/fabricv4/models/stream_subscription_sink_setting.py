@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,8 @@ class StreamSubscriptionSinkSetting(BaseModel):
     application_key: Optional[StrictStr] = Field(default=None, description="Application key", alias="applicationKey")
     event_uri: Optional[StrictStr] = Field(default=None, description="event uri", alias="eventUri")
     metric_uri: Optional[StrictStr] = Field(default=None, description="metric uri", alias="metricUri")
-    transform_alerts: Optional[StrictBool] = Field(default=None, description="transform alerts", alias="transformAlerts")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["eventIndex", "metricIndex", "source", "applicationKey", "eventUri", "metricUri", "transformAlerts"]
+    __properties: ClassVar[List[str]] = ["eventIndex", "metricIndex", "source", "applicationKey", "eventUri", "metricUri"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,8 +94,7 @@ class StreamSubscriptionSinkSetting(BaseModel):
             "source": obj.get("source"),
             "applicationKey": obj.get("applicationKey"),
             "eventUri": obj.get("eventUri"),
-            "metricUri": obj.get("metricUri"),
-            "transformAlerts": obj.get("transformAlerts")
+            "metricUri": obj.get("metricUri")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

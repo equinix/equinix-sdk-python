@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_service_token_by_uuid**
-> ServiceToken update_service_token_by_uuid(service_token_id, service_token_change_operation)
+> ServiceToken update_service_token_by_uuid(service_token_id, service_token_change_operation, dry_run=dry_run)
 
 Update Token By ID
 
@@ -552,10 +552,11 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
     service_token_id = 'service_token_id_example' # str | Service Token UUID
     service_token_change_operation = [equinix.services.fabricv4.ServiceTokenChangeOperation()] # List[ServiceTokenChangeOperation] | 
+    dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
         # Update Token By ID
-        api_response = api_instance.update_service_token_by_uuid(service_token_id, service_token_change_operation)
+        api_response = api_instance.update_service_token_by_uuid(service_token_id, service_token_change_operation, dry_run=dry_run)
         print("The response of ServiceTokensApi->update_service_token_by_uuid:\n")
         pprint(api_response)
     except Exception as e:
@@ -571,6 +572,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_token_id** | **str**| Service Token UUID | 
  **service_token_change_operation** | [**List[ServiceTokenChangeOperation]**](ServiceTokenChangeOperation.md)|  | 
+ **dry_run** | **bool**| option to verify that API calls will succeed | [optional] [default to False]
 
 ### Return type
 

@@ -30,10 +30,10 @@ class CloudRouterPostRequest(BaseModel):
     """
     Create Cloud Router
     """ # noqa: E501
-    type: Optional[CloudRouterPostRequestType] = None
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided Cloud Router name")
-    location: Optional[SimplifiedLocationWithoutIBX] = None
-    package: Optional[CloudRouterPostRequestPackage] = None
+    type: CloudRouterPostRequestType
+    name: StrictStr = Field(description="Customer-provided Cloud Router name")
+    location: SimplifiedLocationWithoutIBX
+    package: CloudRouterPostRequestPackage
     order: Optional[Order] = None
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None

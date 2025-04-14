@@ -7,7 +7,7 @@ Define Custom Attributes
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **str** |  | 
-**description** | **str** |  | 
+**description** | **str** |  | [optional] 
 **required** | **bool** |  | [optional] 
 **data_type** | [**CustomFieldDataType**](CustomFieldDataType.md) |  | 
 **options** | **List[str]** |  | [optional] 

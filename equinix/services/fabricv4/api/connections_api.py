@@ -1505,6 +1505,7 @@ class ConnectionsApi:
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1526,6 +1527,8 @@ class ConnectionsApi:
         :type connection_id: str
         :param connection_change_operation: (required)
         :type connection_change_operation: List[ConnectionChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1551,6 +1554,7 @@ class ConnectionsApi:
         _param = self._update_connection_by_uuid_serialize(
             connection_id=connection_id,
             connection_change_operation=connection_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1558,7 +1562,9 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Connection",
             '202': "Connection",
+            '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -1579,6 +1585,7 @@ class ConnectionsApi:
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1600,6 +1607,8 @@ class ConnectionsApi:
         :type connection_id: str
         :param connection_change_operation: (required)
         :type connection_change_operation: List[ConnectionChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1625,6 +1634,7 @@ class ConnectionsApi:
         _param = self._update_connection_by_uuid_serialize(
             connection_id=connection_id,
             connection_change_operation=connection_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1632,7 +1642,9 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Connection",
             '202': "Connection",
+            '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -1653,6 +1665,7 @@ class ConnectionsApi:
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1674,6 +1687,8 @@ class ConnectionsApi:
         :type connection_id: str
         :param connection_change_operation: (required)
         :type connection_change_operation: List[ConnectionChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1699,6 +1714,7 @@ class ConnectionsApi:
         _param = self._update_connection_by_uuid_serialize(
             connection_id=connection_id,
             connection_change_operation=connection_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1706,7 +1722,9 @@ class ConnectionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Connection",
             '202': "Connection",
+            '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -1722,6 +1740,7 @@ class ConnectionsApi:
         self,
         connection_id,
         connection_change_operation,
+        dry_run,
         _request_auth,
         _content_type,
         _headers,
@@ -1747,6 +1766,10 @@ class ConnectionsApi:
         if connection_id is not None:
             _path_params['connectionId'] = connection_id
         # process the query parameters
+        if dry_run is not None:
+            
+            _query_params.append(('dryRun', dry_run))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

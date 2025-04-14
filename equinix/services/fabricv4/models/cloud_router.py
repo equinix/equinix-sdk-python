@@ -43,9 +43,9 @@ class CloudRouter(BaseModel):
     marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     change: Optional[CloudRouterChange] = None
-    type: Optional[CloudRouterPostRequestType] = None
-    location: Optional[SimplifiedLocationWithoutIBX] = None
-    package: Optional[CloudRouterPostRequestPackage] = None
+    type: CloudRouterPostRequestType
+    location: SimplifiedLocationWithoutIBX
+    package: CloudRouterPostRequestPackage
     order: Optional[Order] = None
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None

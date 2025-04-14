@@ -6,12 +6,17 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_cloud_router**](CloudRoutersApi.md#create_cloud_router) | **POST** /fabric/v4/routers | Create Routers
 [**create_cloud_router_action**](CloudRoutersApi.md#create_cloud_router_action) | **POST** /fabric/v4/routers/{routerId}/actions | Create Route Table Action
+[**create_cloud_router_command**](CloudRoutersApi.md#create_cloud_router_command) | **POST** /fabric/v4/routers/{routerId}/commands | Initiate Command
 [**delete_cloud_router_by_uuid**](CloudRoutersApi.md#delete_cloud_router_by_uuid) | **DELETE** /fabric/v4/routers/{routerId} | Delete Routers
+[**delete_cloud_router_command_by_uuid**](CloudRoutersApi.md#delete_cloud_router_command_by_uuid) | **DELETE** /fabric/v4/routers/{routerId}/commands/{commandId} | Delete Command
+[**get_all_cloud_router_commands**](CloudRoutersApi.md#get_all_cloud_router_commands) | **GET** /fabric/v4/routers/{routerId}/commands | Get Commands
 [**get_cloud_router_actions**](CloudRoutersApi.md#get_cloud_router_actions) | **GET** /fabric/v4/routers/{routerId}/actions | Get Route Table Actions
 [**get_cloud_router_actions_by_uuid**](CloudRoutersApi.md#get_cloud_router_actions_by_uuid) | **GET** /fabric/v4/routers/{routerId}/actions/{actionId} | Get Route Table Action by ID
 [**get_cloud_router_by_uuid**](CloudRoutersApi.md#get_cloud_router_by_uuid) | **GET** /fabric/v4/routers/{routerId} | Get Routers
+[**get_cloud_router_command**](CloudRoutersApi.md#get_cloud_router_command) | **GET** /fabric/v4/routers/{routerId}/commands/{commandId} | Get Command
 [**get_cloud_router_package_by_code**](CloudRoutersApi.md#get_cloud_router_package_by_code) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
 [**get_cloud_router_packages**](CloudRoutersApi.md#get_cloud_router_packages) | **GET** /fabric/v4/routerPackages | List Packages
+[**search_cloud_router_commands**](CloudRoutersApi.md#search_cloud_router_commands) | **POST** /fabric/v4/routers/{routerId}/commands/search | Search Commands
 [**search_cloud_router_routes**](CloudRoutersApi.md#search_cloud_router_routes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table
 [**search_cloud_routers**](CloudRoutersApi.md#search_cloud_routers) | **POST** /fabric/v4/routers/search | Search Routers
 [**search_connection_advertised_routes**](CloudRoutersApi.md#search_connection_advertised_routes) | **POST** /fabric/v4/connections/{connectionId}/advertisedRoutes/search | Search Advertised Routes
@@ -193,6 +198,93 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_cloud_router_command**
+> CloudRouterCommand create_cloud_router_command(router_id, cloud_router_command_post_request)
+
+Initiate Command
+
+This API provides capability to initiate Command
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_command import CloudRouterCommand
+from equinix.services.fabricv4.models.cloud_router_command_post_request import CloudRouterCommandPostRequest
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    cloud_router_command_post_request = equinix.services.fabricv4.CloudRouterCommandPostRequest() # CloudRouterCommandPostRequest | 
+
+    try:
+        # Initiate Command
+        api_response = api_instance.create_cloud_router_command(router_id, cloud_router_command_post_request)
+        print("The response of CloudRoutersApi->create_cloud_router_command:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->create_cloud_router_command: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **cloud_router_command_post_request** | [**CloudRouterCommandPostRequest**](CloudRouterCommandPostRequest.md)|  | 
+
+### Return type
+
+[**CloudRouterCommand**](CloudRouterCommand.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_cloud_router_by_uuid**
 > delete_cloud_router_by_uuid(router_id)
 
@@ -269,6 +361,172 @@ void (empty response body)
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_cloud_router_command_by_uuid**
+> delete_cloud_router_command_by_uuid(router_id, command_id)
+
+Delete Command
+
+This API provides capability to delete command based on command Id
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    command_id = 'command_id_example' # str | Command UUID
+
+    try:
+        # Delete Command
+        api_instance.delete_cloud_router_command_by_uuid(router_id, command_id)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->delete_cloud_router_command_by_uuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **command_id** | **str**| Command UUID | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Deleted command successfully |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_cloud_router_commands**
+> GetAllCloudRouterCommands get_all_cloud_router_commands(router_id)
+
+Get Commands
+
+This API provides capability to fetch all commands
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.get_all_cloud_router_commands import GetAllCloudRouterCommands
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+
+    try:
+        # Get Commands
+        api_response = api_instance.get_all_cloud_router_commands(router_id)
+        print("The response of CloudRoutersApi->get_all_cloud_router_commands:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->get_all_cloud_router_commands: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+
+### Return type
+
+[**GetAllCloudRouterCommands**](GetAllCloudRouterCommands.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -531,6 +789,92 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_cloud_router_command**
+> CloudRouterCommand get_cloud_router_command(router_id, command_id)
+
+Get Command
+
+This API provides capability to fetch command using command Id
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_command import CloudRouterCommand
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    command_id = 'command_id_example' # str | Command UUID
+
+    try:
+        # Get Command
+        api_response = api_instance.get_cloud_router_command(router_id, command_id)
+        print("The response of CloudRoutersApi->get_cloud_router_command:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->get_cloud_router_command: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **command_id** | **str**| Command UUID | 
+
+### Return type
+
+[**CloudRouterCommand**](CloudRouterCommand.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_cloud_router_package_by_code**
 > CloudRouterPackage get_cloud_router_package_by_code(router_package_code)
 
@@ -695,6 +1039,93 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_cloud_router_commands**
+> CloudRouterCommandSearchResponse search_cloud_router_commands(router_id, cloud_router_command_search_request)
+
+Search Commands
+
+This API provides capability to search commands
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_command_search_request import CloudRouterCommandSearchRequest
+from equinix.services.fabricv4.models.cloud_router_command_search_response import CloudRouterCommandSearchResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    router_id = 'router_id_example' # str | Router UUID
+    cloud_router_command_search_request = equinix.services.fabricv4.CloudRouterCommandSearchRequest() # CloudRouterCommandSearchRequest | 
+
+    try:
+        # Search Commands
+        api_response = api_instance.search_cloud_router_commands(router_id, cloud_router_command_search_request)
+        print("The response of CloudRoutersApi->search_cloud_router_commands:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->search_cloud_router_commands: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Router UUID | 
+ **cloud_router_command_search_request** | [**CloudRouterCommandSearchRequest**](CloudRouterCommandSearchRequest.md)|  | 
+
+### Return type
+
+[**CloudRouterCommandSearchResponse**](CloudRouterCommandSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Internal server error |  -  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
