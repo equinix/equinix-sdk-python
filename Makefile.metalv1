@@ -45,10 +45,6 @@ patch:
 		   ${SPEC_PATCHED_DIR}/components \
 		   ${SPEC_PATCHED_DIR}/paths
 
-	for diff in $(shell set -x; find ${SPEC_PATCH_DIR} -name '*.patch' | sort -n); do \
-		patch --no-backup-if-mismatch -N -t -p1 -i $$diff; \
-	done
-	
 	script/patch_metal_spec.py ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE} ${SPEC_PATCHED_DIR}/${SPEC_ROOT_FILE}
 
 patch-post:

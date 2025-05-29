@@ -24,7 +24,9 @@ onboard-service:
 patch-all:
 	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
 		make -f $$makefile patch;\
-	done
+		RESULT=$$(($${RESULT} + $$?)); \
+	done; \
+	exit $$RESULT;
 
 generate-all:
 	for makefile in $(shell set -x; ls -1 Makefile.* | sort -n); do \
