@@ -10,33 +10,45 @@ jobs:
     - name: Get current date
       id: date
       run: echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+
     - name: Checkout code
       uses: actions/checkout@v4
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version-file: .python-version
+
     - name: GitHub user
       run: |
         # https://api.github.com/users/github-actions[bot]
         git config user.name 'github-actions[bot]'
         git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+    - name: Get last API Spec Version in repo
+      id: spec_versions
+      run: |  
+        CURRENT_VERSION_NUM=$(yq eval .info.version ./spec/services/fabricv4/oas3.fetched/openapi.yaml)
+        echo "cur_version=$CURRENT_VERSION_NUM" >> "$GITHUB_OUTPUT"
+
     - name: Fetch latest spec
       id: fetch
       run: |
         make -f Makefile.fabricv4 fetch
         git add spec/services/fabricv4
         echo `git commit -m 'sync: fetch ${{ steps.date.outputs.date }} spec and apply patches'`
+
     - name: Apply spec patches
       id: patch
-      if: ${{ always() && steps.fetch.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       run: |
         make -f Makefile.fabricv4 patch
         git add spec/services/fabricv4
         echo `git commit -m 'sync: patch spec with ${{ steps.date.outputs.date }} spec'`
+
     - name: Generate code
       id: generate
-      if: ${{ always() && steps.fetch.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       run: |
         make -f Makefile.fabricv4 generate
         git add equinix/services/fabricv4
@@ -44,7 +56,7 @@ jobs:
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v7
-      if: ${{ always() && steps.fetch.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       with:
         branch: sync/gh
         branch-suffix: timestamp
@@ -60,20 +72,23 @@ jobs:
           * generated client has been updated
         delete-branch: true
         draft: ${{ steps.patch.conclusion == 'failure' || steps.generate.conclusion == 'failure' }}
+
     - name: Comment for failed patch
       uses: mshick/add-pr-comment@v2
-      if: ${{ always() && steps.patch.conclusion == 'failure' && steps.cpr.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       with:
         issue: ${{ steps.cpr.outputs.pull-request-number }}
         message: Failed to patch latest spec.  Someone with write access must review and, if necessary, fix this PR manually and then convert it from Draft status to Ready for Review.
+
     - name: Comment for failed generate
       uses: mshick/add-pr-comment@v2
-      if: ${{ always() && steps.generate.conclusion == 'failure' && steps.cpr.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       with:
         issue: ${{ steps.cpr.outputs.pull-request-number }}
         message: Failed to generate code from latest patched spec.  Someone with write access must fix this PR manually and then convert it from Draft status to Ready for Review.
+
     - name: Check outputs
-      if: ${{ always() && steps.cpr.conclusion == 'success' }}
+      if: ${{ always() && steps.fetch.conclusion == 'success' && steps.spec_versions.outputs.cur_version != steps.fetch.outputs.new_version }}
       run: |
         echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
         echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
