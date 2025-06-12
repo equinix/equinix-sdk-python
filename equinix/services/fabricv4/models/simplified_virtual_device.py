@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_virtual_device_type import SimplifiedVirtualDeviceType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,11 +26,12 @@ class SimplifiedVirtualDevice(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="url to entity")
     uuid: Optional[StrictStr] = Field(default=None, description="Network Edge assigned Virtual Device Identifier")
-    type: Optional[SimplifiedVirtualDeviceType] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-assigned Virtual Device name")
+    type: Optional[SimplifiedVirtualDeviceType] = None
+    account: Optional[SimplifiedAccount] = None
     cluster: Optional[StrictStr] = Field(default=None, description="Virtual Device Cluster Information")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "cluster"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "name", "type", "account", "cluster"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,9 @@ class SimplifiedVirtualDevice(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -91,8 +96,9 @@ class SimplifiedVirtualDevice(BaseModel):
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "uuid": obj.get("uuid"),
-            "type": obj.get("type"),
             "name": obj.get("name"),
+            "type": obj.get("type"),
+            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "cluster": obj.get("cluster")
         })
         # store additional fields in additional_properties

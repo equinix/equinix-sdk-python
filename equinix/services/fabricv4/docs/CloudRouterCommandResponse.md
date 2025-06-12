@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **output** | **str** |  | [optional] 
 **output_structured_ping** | [**OutputStructuredPing**](OutputStructuredPing.md) |  | [optional] 
+**errors** | [**List[Error]**](Error.md) |  | [optional] 
+**output_structured_traceroute** | [**OutputStructuredTraceroute**](OutputStructuredTraceroute.md) |  | [optional] 
 
 ## Example
 

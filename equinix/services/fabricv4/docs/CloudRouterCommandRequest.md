@@ -7,11 +7,13 @@ Fabric Cloud Router Command Request
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **destination** | **str** | Fabric Cloud Router Ping Command Destination | 
-**source_connection** | [**CloudRouterCommandRequestConnection**](CloudRouterCommandRequestConnection.md) |  | [optional] 
-**timeout** | **int** | Fabric Cloud Router Ping Command Timeout | [optional] 
+**source_connection** | [**CloudRouterCommandRequestConnection**](CloudRouterCommandRequestConnection.md) |  | 
+**timeout** | **int** | Timeout in seconds for Fabric Cloud Router Ping or Traceroute Command | [optional] 
 **data_bytes** | **int** | Fabric Cloud Router Ping Command DataBytes | [optional] [default to 64]
-**interval** | **int** | Time in milliseconds between sending each packet | [optional] [readonly] [default to 1000]
-**count** | **int** | Total number of ping requests | [optional] [readonly] [default to 5]
+**interval** | **int** | Time in milliseconds between sending each packet for Fabric Cloud Router Ping Command | [optional] [readonly] [default to 1000]
+**count** | **int** | Total number of ping requests for Fabric Cloud Router Ping Command | [optional] [readonly] [default to 5]
+**probes** | **int** | Number of probes to send for Fabric Cloud Router Traceroute Command | [optional] [default to 3]
+**hops_max** | **int** | Maximum number of hops for Fabric Cloud Router Traceroute Command | [optional] [default to 20]
 
 ## Example
 

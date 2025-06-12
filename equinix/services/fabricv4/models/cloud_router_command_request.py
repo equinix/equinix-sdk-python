@@ -25,13 +25,15 @@ class CloudRouterCommandRequest(BaseModel):
     Fabric Cloud Router Command Request
     """ # noqa: E501
     destination: StrictStr = Field(description="Fabric Cloud Router Ping Command Destination")
-    source_connection: Optional[CloudRouterCommandRequestConnection] = Field(default=None, alias="sourceConnection")
-    timeout: Optional[StrictInt] = Field(default=None, description="Fabric Cloud Router Ping Command Timeout")
+    source_connection: CloudRouterCommandRequestConnection = Field(alias="sourceConnection")
+    timeout: Optional[StrictInt] = Field(default=None, description="Timeout in seconds for Fabric Cloud Router Ping or Traceroute Command")
     data_bytes: Optional[Annotated[int, Field(le=9000, strict=True, ge=16)]] = Field(default=64, description="Fabric Cloud Router Ping Command DataBytes", alias="dataBytes")
-    interval: Optional[StrictInt] = Field(default=1000, description="Time in milliseconds between sending each packet")
-    count: Optional[StrictInt] = Field(default=5, description="Total number of ping requests")
+    interval: Optional[StrictInt] = Field(default=1000, description="Time in milliseconds between sending each packet for Fabric Cloud Router Ping Command")
+    count: Optional[StrictInt] = Field(default=5, description="Total number of ping requests for Fabric Cloud Router Ping Command")
+    probes: Optional[StrictInt] = Field(default=3, description="Number of probes to send for Fabric Cloud Router Traceroute Command")
+    hops_max: Optional[Annotated[int, Field(le=30, strict=True)]] = Field(default=20, description="Maximum number of hops for Fabric Cloud Router Traceroute Command", alias="hopsMax")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["destination", "sourceConnection", "timeout", "dataBytes", "interval", "count"]
+    __properties: ClassVar[List[str]] = ["destination", "sourceConnection", "timeout", "dataBytes", "interval", "count", "probes", "hopsMax"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,7 +105,9 @@ class CloudRouterCommandRequest(BaseModel):
             "timeout": obj.get("timeout"),
             "dataBytes": obj.get("dataBytes") if obj.get("dataBytes") is not None else 64,
             "interval": obj.get("interval") if obj.get("interval") is not None else 1000,
-            "count": obj.get("count") if obj.get("count") is not None else 5
+            "count": obj.get("count") if obj.get("count") is not None else 5,
+            "probes": obj.get("probes") if obj.get("probes") is not None else 3,
+            "hopsMax": obj.get("hopsMax") if obj.get("hopsMax") is not None else 20
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

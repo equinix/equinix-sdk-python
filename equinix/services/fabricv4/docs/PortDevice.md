@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Device name | [optional] 
 **redundancy** | [**PortDeviceRedundancy**](PortDeviceRedundancy.md) |  | [optional] 
+**vc_bandwidth_max** | **int** | Maximum bandwidth allowed for connection. | [optional] 
 
 ## Example
 

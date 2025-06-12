@@ -30,6 +30,8 @@ class ConnectionType(str, Enum):
     EIA_VC = 'EIA_VC'
     EVPLAN_VC = 'EVPLAN_VC'
     EPLAN_VC = 'EPLAN_VC'
+    EVPTREE_VC = 'EVPTREE_VC'
+    EPTREE_VC = 'EPTREE_VC'
     IPWAN_VC = 'IPWAN_VC'
     IA_VC = 'IA_VC'
 

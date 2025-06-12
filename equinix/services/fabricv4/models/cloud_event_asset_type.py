@@ -25,6 +25,10 @@ class CloudEventAssetType(str, Enum):
     PORTS = 'ports'
     CONNECTIONS = 'connections'
     ROUTERS = 'routers'
+    SERVICETOKENS = 'serviceTokens'
+    NETWORKS = 'networks'
+    PROJECTS = 'projects'
+    ORGANIZATIONS = 'organizations'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

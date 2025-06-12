@@ -15,9 +15,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.alert_rule_post_request_metric_name import AlertRulePostRequestMetricName
+from equinix.services.fabricv4.models.alert_rule_post_request_operand import AlertRulePostRequestOperand
 from equinix.services.fabricv4.models.resource_selector import ResourceSelector
-from equinix.services.fabricv4.models.stream_alert_rule_metric_name import StreamAlertRuleMetricName
-from equinix.services.fabricv4.models.stream_alert_rule_operand import StreamAlertRuleOperand
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +28,9 @@ class AlertRulePutRequest(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     enabled: Optional[StrictBool] = Field(default=True, description="Stream alert rule enabled status")
-    metric_name: Optional[StreamAlertRuleMetricName] = Field(default=None, alias="metricName")
+    metric_name: Optional[AlertRulePostRequestMetricName] = Field(default=None, alias="metricName")
     resource_selector: Optional[ResourceSelector] = Field(default=None, alias="resourceSelector")
-    operand: Optional[StreamAlertRuleOperand] = None
+    operand: Optional[AlertRulePostRequestOperand] = None
     window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
     warning_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric warning threshold", alias="warningThreshold")
     critical_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric critical threshold", alias="criticalThreshold")

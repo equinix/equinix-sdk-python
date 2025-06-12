@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.port_device_redundancy import PortDeviceRedundancy
 from typing import Optional, Set
@@ -25,8 +25,9 @@ class PortDevice(BaseModel):
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="Device name")
     redundancy: Optional[PortDeviceRedundancy] = None
+    vc_bandwidth_max: Optional[StrictInt] = Field(default=None, description="Maximum bandwidth allowed for connection.", alias="vcBandwidthMax")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["name", "redundancy"]
+    __properties: ClassVar[List[str]] = ["name", "redundancy", "vcBandwidthMax"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +91,8 @@ class PortDevice(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
-            "redundancy": PortDeviceRedundancy.from_dict(obj["redundancy"]) if obj.get("redundancy") is not None else None
+            "redundancy": PortDeviceRedundancy.from_dict(obj["redundancy"]) if obj.get("redundancy") is not None else None,
+            "vcBandwidthMax": obj.get("vcBandwidthMax")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

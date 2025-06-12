@@ -6,7 +6,7 @@ Connection object for Cloud Router Command
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** | Connection UUID | [optional] 
+**uuid** | **str** | Connection UUID | 
 
 ## Example
 

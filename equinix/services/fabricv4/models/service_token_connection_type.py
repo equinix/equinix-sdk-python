@@ -28,6 +28,8 @@ class ServiceTokenConnectionType(str, Enum):
     EPLAN_VC = 'EPLAN_VC'
     IPWAN_VC = 'IPWAN_VC'
     IP_VC = 'IP_VC'
+    EVPTREE_VC = 'EVPTREE_VC'
+    EPTREE_VC = 'EPTREE_VC'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

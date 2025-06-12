@@ -37,7 +37,7 @@ class ConnectionPostRequest(BaseModel):
     name: StrictStr = Field(description="Customer-provided connection name")
     order: Optional[Order] = None
     notifications: List[SimplifiedNotification] = Field(description="Preferences for notifications on connection configuration or status changes")
-    bandwidth: Annotated[int, Field(le=50000, strict=True, ge=0)] = Field(description="Connection bandwidth in Mbps")
+    bandwidth: Annotated[int, Field(le=100000, strict=True, ge=0)] = Field(description="Connection bandwidth in Mbps")
     geo_scope: Optional[GeoScopeType] = Field(default=None, alias="geoScope")
     redundancy: Optional[ConnectionRedundancy] = None
     a_side: ConnectionSide = Field(alias="aSide")

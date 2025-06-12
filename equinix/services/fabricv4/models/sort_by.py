@@ -33,6 +33,7 @@ class SortBy(str, Enum):
     SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_S_TAG = '/aSide/accessPoint/linkProtocol/vlanSTag'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_NAME = '/zSide/accessPoint/name'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_TYPE = '/zSide/accessPoint/type'
+    SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ROLE = '/zSide/accessPoint/role'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ACCOUNT_SLASH_ACCOUNT_NAME = '/zSide/accessPoint/account/accountName'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_NAME = '/zSide/accessPoint/location/metroName'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_CODE = '/zSide/accessPoint/location/metroCode'

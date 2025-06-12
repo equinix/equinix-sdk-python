@@ -6,9 +6,11 @@ Cloud Router code
 
 * `LAB` (value: `'LAB'`)
 
-* `ADVANCED` (value: `'ADVANCED'`)
+* `BASIC` (value: `'BASIC'`)
 
 * `STANDARD` (value: `'STANDARD'`)
+
+* `ADVANCED` (value: `'ADVANCED'`)
 
 * `PREMIUM` (value: `'PREMIUM'`)
 

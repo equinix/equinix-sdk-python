@@ -64,6 +64,7 @@ class SearchFieldName(str, Enum):
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_PORT_SLASH_NAME = '/zSide/accessPoint/port/name'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_PROFILE_SLASH_UUID = '/zSide/accessPoint/profile/uuid'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_TYPE = '/zSide/accessPoint/type'
+    SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ROLE = '/zSide/accessPoint/role'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_NAME = '/zSide/accessPoint/virtualDevice/name'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_UUID = '/zSide/accessPoint/virtualDevice/uuid'
     SLASH_Z_SIDE_SLASH_SERVICE_TOKEN_SLASH_UUID = '/zSide/serviceToken/uuid'

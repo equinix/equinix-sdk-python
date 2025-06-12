@@ -31,6 +31,8 @@ class VirtualConnectionPriceConnectionType(str, Enum):
     EVPLAN_VC = 'EVPLAN_VC'
     EPLAN_VC = 'EPLAN_VC'
     IPWAN_VC = 'IPWAN_VC'
+    EVPTREE_VC = 'EVPTREE_VC'
+    EPTREE_VC = 'EPTREE_VC'
     IA_VC = 'IA_VC'
 
     @classmethod
