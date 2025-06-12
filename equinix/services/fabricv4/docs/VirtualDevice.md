@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-assigned Virtual Device name | [optional] 
 **type** | [**VirtualDeviceType**](VirtualDeviceType.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
+**cluster** | **str** | Virtual Device Cluster Information | [optional] 
 
 ## Example
 

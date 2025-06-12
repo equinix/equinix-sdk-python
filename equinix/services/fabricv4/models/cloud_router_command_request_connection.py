@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,7 +22,7 @@ class CloudRouterCommandRequestConnection(BaseModel):
     """
     Connection object for Cloud Router Command
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Connection UUID")
+    uuid: StrictStr = Field(description="Connection UUID")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid"]
 

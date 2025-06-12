@@ -23,6 +23,7 @@ class CloudRouterCommandType(str, Enum):
     allowed enum values
     """
     PING_COMMAND = 'PING_COMMAND'
+    TRACEROUTE_COMMAND = 'TRACEROUTE_COMMAND'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

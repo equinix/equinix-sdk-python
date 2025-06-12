@@ -88,6 +88,8 @@ Possible field names to use on filters
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_TYPE` (value: `'/zSide/accessPoint/type'`)
 
+* `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ROLE` (value: `'/zSide/accessPoint/role'`)
+
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_NAME` (value: `'/zSide/accessPoint/virtualDevice/name'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_UUID` (value: `'/zSide/accessPoint/virtualDevice/uuid'`)

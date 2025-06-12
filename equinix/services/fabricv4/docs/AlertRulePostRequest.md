@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided stream name | [optional] 
 **description** | **str** | Customer-provided stream description | [optional] 
 **enabled** | **bool** | Stream alert rule enabled status | [optional] [default to True]
-**metric_name** | [**StreamAlertRuleMetricName**](StreamAlertRuleMetricName.md) |  | [optional] 
+**metric_name** | [**AlertRulePostRequestMetricName**](AlertRulePostRequestMetricName.md) |  | [optional] 
 **resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | [optional] 
 **window_size** | **str** | Stream alert rule metric window size | [optional] 
-**operand** | [**StreamAlertRuleOperand**](StreamAlertRuleOperand.md) |  | [optional] 
+**operand** | [**AlertRulePostRequestOperand**](AlertRulePostRequestOperand.md) |  | [optional] 
 **warning_threshold** | **str** | Stream alert rule metric warning threshold | [optional] 
 **critical_threshold** | **str** | Stream alert rule metric critical threshold | [optional] 
 

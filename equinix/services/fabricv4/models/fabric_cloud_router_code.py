@@ -23,8 +23,9 @@ class FabricCloudRouterCode(str, Enum):
     allowed enum values
     """
     LAB = 'LAB'
-    ADVANCED = 'ADVANCED'
+    BASIC = 'BASIC'
     STANDARD = 'STANDARD'
+    ADVANCED = 'ADVANCED'
     PREMIUM = 'PREMIUM'
 
     @classmethod

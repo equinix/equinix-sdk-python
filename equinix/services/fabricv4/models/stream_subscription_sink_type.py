@@ -23,11 +23,13 @@ class StreamSubscriptionSinkType(str, Enum):
     allowed enum values
     """
     DATADOG = 'DATADOG'
+    GOOGLE_PUBSUB = 'GOOGLE_PUBSUB'
     PAGERDUTY = 'PAGERDUTY'
-    SPLUNK_HEC = 'SPLUNK_HEC'
+    SERVICENOW = 'SERVICENOW'
     SLACK = 'SLACK'
+    SPLUNK_HEC = 'SPLUNK_HEC'
     TEAMS = 'TEAMS'
-    CUSTOM = 'CUSTOM'
+    WEBHOOK = 'WEBHOOK'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

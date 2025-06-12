@@ -26,6 +26,8 @@ Possible field names to use on sorting
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_TYPE` (value: `'/zSide/accessPoint/type'`)
 
+* `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ROLE` (value: `'/zSide/accessPoint/role'`)
+
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ACCOUNT_SLASH_ACCOUNT_NAME` (value: `'/zSide/accessPoint/account/accountName'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_NAME` (value: `'/zSide/accessPoint/location/metroName'`)

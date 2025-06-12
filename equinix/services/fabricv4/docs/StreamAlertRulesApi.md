@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_stream_alert_rules**
-> StreamAlertRule get_stream_alert_rules(stream_id, offset=offset, limit=limit)
+> GetAllStreamAlertRuleResponse get_stream_alert_rules(stream_id, offset=offset, limit=limit)
 
 Get Stream Alert Rules
 
@@ -280,7 +280,7 @@ This API provides capability to retrieve stream alert rules
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.stream_alert_rule import StreamAlertRule
+from equinix.services.fabricv4.models.get_all_stream_alert_rule_response import GetAllStreamAlertRuleResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StreamAlertRule**](StreamAlertRule.md)
+[**GetAllStreamAlertRuleResponse**](GetAllStreamAlertRuleResponse.md)
 
 ### Authorization
 

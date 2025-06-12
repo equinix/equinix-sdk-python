@@ -18,6 +18,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.connected_metro import ConnectedMetro
 from equinix.services.fabricv4.models.geo_coordinates import GeoCoordinates
 from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
+from equinix.services.fabricv4.models.services import Services
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,9 +35,10 @@ class Metro(BaseModel):
     local_vc_bandwidth_max: Optional[StrictInt] = Field(default=None, description="This field holds Max Connection speed with in the metro", alias="localVCBandwidthMax")
     geo_coordinates: Optional[GeoCoordinates] = Field(default=None, alias="geoCoordinates")
     connected_metros: Optional[List[ConnectedMetro]] = Field(default=None, alias="connectedMetros")
+    services: Optional[List[Services]] = None
     geo_scopes: Optional[List[GeoScopeType]] = Field(default=None, description="List of supported geographic boundaries of a Fabric Metro.", alias="geoScopes")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "geoScopes"]
+    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +91,13 @@ class Metro(BaseModel):
                 if _item_connected_metros:
                     _items.append(_item_connected_metros.to_dict())
             _dict['connectedMetros'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in services (list)
+        _items = []
+        if self.services:
+            for _item_services in self.services:
+                if _item_services:
+                    _items.append(_item_services.to_dict())
+            _dict['services'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -115,6 +124,7 @@ class Metro(BaseModel):
             "localVCBandwidthMax": obj.get("localVCBandwidthMax"),
             "geoCoordinates": GeoCoordinates.from_dict(obj["geoCoordinates"]) if obj.get("geoCoordinates") is not None else None,
             "connectedMetros": [ConnectedMetro.from_dict(_item) for _item in obj["connectedMetros"]] if obj.get("connectedMetros") is not None else None,
+            "services": [Services.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
             "geoScopes": obj.get("geoScopes")
         })
         # store additional fields in additional_properties
