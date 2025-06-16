@@ -14,20 +14,25 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class StreamAlertRuleOperand(str, Enum):
+class VpnTunnelState(str, Enum):
     """
-    Stream alert rule metric operand
+    VPN Tunnel lifecycle state
     """
 
     """
     allowed enum values
     """
-    ABOVE = 'ABOVE'
-    BELOW = 'BELOW'
+    PROVISIONING = 'PROVISIONING'
+    PROVISIONED = 'PROVISIONED'
+    DEPROVISIONING = 'DEPROVISIONING'
+    DEPROVISIONED = 'DEPROVISIONED'
+    REPROVISIONING = 'REPROVISIONING'
+    PROVISIONING_FAILED = 'PROVISIONING_FAILED'
+    DEPROVISIONING_FAILED = 'DEPROVISIONING_FAILED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of StreamAlertRuleOperand from a JSON string"""
+        """Create an instance of VpnTunnelState from a JSON string"""
         return cls(json.loads(json_str))
 
 

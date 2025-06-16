@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.stream_subscription_sink_setting_format import StreamSubscriptionSinkSettingFormat
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +29,9 @@ class StreamSubscriptionSinkSetting(BaseModel):
     application_key: Optional[StrictStr] = Field(default=None, description="Application key", alias="applicationKey")
     event_uri: Optional[StrictStr] = Field(default=None, description="event uri", alias="eventUri")
     metric_uri: Optional[StrictStr] = Field(default=None, description="metric uri", alias="metricUri")
+    format: Optional[StreamSubscriptionSinkSettingFormat] = StreamSubscriptionSinkSettingFormat.CLOUDEVENT
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["eventIndex", "metricIndex", "source", "applicationKey", "eventUri", "metricUri"]
+    __properties: ClassVar[List[str]] = ["eventIndex", "metricIndex", "source", "applicationKey", "eventUri", "metricUri", "format"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +96,8 @@ class StreamSubscriptionSinkSetting(BaseModel):
             "source": obj.get("source"),
             "applicationKey": obj.get("applicationKey"),
             "eventUri": obj.get("eventUri"),
-            "metricUri": obj.get("metricUri")
+            "metricUri": obj.get("metricUri"),
+            "format": obj.get("format") if obj.get("format") is not None else StreamSubscriptionSinkSettingFormat.CLOUDEVENT
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

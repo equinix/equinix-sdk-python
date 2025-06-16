@@ -26,7 +26,7 @@ class ValidateConnectionResponse(BaseModel):
     Validate Connection specification
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned connection identifier")
-    bandwidth: Optional[Annotated[int, Field(le=50000, strict=True, ge=0)]] = Field(default=None, description="Connection bandwidth in Mbps")
+    bandwidth: Optional[Annotated[int, Field(le=100000, strict=True, ge=0)]] = Field(default=None, description="Connection bandwidth in Mbps")
     redundancy: Optional[ConnectionRedundancy] = None
     a_side: Optional[ConnectionSide] = Field(default=None, alias="aSide")
     z_side: Optional[ConnectionSide] = Field(default=None, alias="zSide")

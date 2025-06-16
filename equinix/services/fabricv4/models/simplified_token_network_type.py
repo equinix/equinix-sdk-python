@@ -25,6 +25,8 @@ class SimplifiedTokenNetworkType(str, Enum):
     EVPLAN = 'EVPLAN'
     EPLAN = 'EPLAN'
     IPWAN = 'IPWAN'
+    EVPTREE = 'EVPTREE'
+    EPTREE = 'EPTREE'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

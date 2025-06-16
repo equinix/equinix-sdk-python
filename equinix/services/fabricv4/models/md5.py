@@ -13,8 +13,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.md5_type import Md5Type
 from typing import Optional, Set
@@ -26,9 +26,19 @@ class Md5(BaseModel):
     """ # noqa: E501
     type: Optional[Md5Type] = None
     key_number: Optional[Annotated[int, Field(le=65535, strict=True, ge=1)]] = Field(default=None, description="The authentication Key ID.", alias="keyNumber")
-    key: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=40)]] = Field(default=None, description="The plaintext authentication key. For ASCII type, the key must contain printable ASCII characters, range 10-20 characters. For HEX type, range should be 10-40 characters.")
+    key: Optional[Union[Annotated[bytes, Field(strict=True)], Annotated[str, Field(strict=True)]]] = Field(default=None, description="The plaintext authentication key. Must be Base64 encoded. For ASCII type, the key must contain printable ASCII characters, range 10-20 characters. For HEX type, range should be 10-40 characters.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "keyNumber", "key"]
+
+    @field_validator('key')
+    def key_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if value is None:
+            return value
+
+        if not re.match(r"^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$", value):
+            raise ValueError(r"must validate the regular expression /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

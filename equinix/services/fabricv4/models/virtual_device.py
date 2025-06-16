@@ -29,8 +29,9 @@ class VirtualDevice(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Customer-assigned Virtual Device name")
     type: Optional[VirtualDeviceType] = None
     account: Optional[SimplifiedAccount] = None
+    cluster: Optional[StrictStr] = Field(default=None, description="Virtual Device Cluster Information")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "name", "type", "account"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "name", "type", "account", "cluster"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +100,8 @@ class VirtualDevice(BaseModel):
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "type": obj.get("type"),
-            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None
+            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "cluster": obj.get("cluster")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

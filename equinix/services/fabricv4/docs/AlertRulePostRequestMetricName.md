@@ -1,4 +1,4 @@
-# StreamAlertRuleMetricName
+# AlertRulePostRequestMetricName
 
 Stream alert rule metric name
 

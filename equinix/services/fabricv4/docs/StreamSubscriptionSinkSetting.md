@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **application_key** | **str** | Application key | [optional] 
 **event_uri** | **str** | event uri | [optional] 
 **metric_uri** | **str** | metric uri | [optional] 
+**format** | [**StreamSubscriptionSinkSettingFormat**](StreamSubscriptionSinkSettingFormat.md) |  | [optional] [default to StreamSubscriptionSinkSettingFormat.CLOUDEVENT]
 
 ## Example
 

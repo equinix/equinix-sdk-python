@@ -17,6 +17,7 @@ from typing import Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.alert_rule_post_request import AlertRulePostRequest
 from equinix.services.fabricv4.models.alert_rule_put_request import AlertRulePutRequest
+from equinix.services.fabricv4.models.get_all_stream_alert_rule_response import GetAllStreamAlertRuleResponse
 from equinix.services.fabricv4.models.stream_alert_rule import StreamAlertRule
 
 from equinix.services.fabricv4.api_client import ApiClient, RequestSerialized
@@ -941,7 +942,7 @@ class StreamAlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> StreamAlertRule:
+    ) -> GetAllStreamAlertRuleResponse:
         """Get Stream Alert Rules
 
         This API provides capability to retrieve stream alert rules
@@ -985,7 +986,7 @@ class StreamAlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "StreamAlertRule",
+            '200': "GetAllStreamAlertRuleResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -1020,7 +1021,7 @@ class StreamAlertRulesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[StreamAlertRule]:
+    ) -> ApiResponse[GetAllStreamAlertRuleResponse]:
         """Get Stream Alert Rules
 
         This API provides capability to retrieve stream alert rules
@@ -1064,7 +1065,7 @@ class StreamAlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "StreamAlertRule",
+            '200': "GetAllStreamAlertRuleResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -1143,7 +1144,7 @@ class StreamAlertRulesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "StreamAlertRule",
+            '200': "GetAllStreamAlertRuleResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",

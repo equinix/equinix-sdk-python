@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.access_point_role import AccessPointRole
 from equinix.services.fabricv4.models.access_point_type import AccessPointType
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
 from equinix.services.fabricv4.models.interface import Interface
@@ -53,8 +54,9 @@ class AccessPoint(BaseModel):
     virtual_network: Optional[VirtualNetwork] = Field(default=None, alias="virtualNetwork")
     interconnection: Optional[MetalInterconnection] = None
     vpic_interface: Optional[VpicInterface] = None
+    role: Optional[AccessPointRole] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "vpic_interface"]
+    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "vpic_interface", "role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -166,7 +168,8 @@ class AccessPoint(BaseModel):
             "providerConnectionId": obj.get("providerConnectionId"),
             "virtualNetwork": VirtualNetwork.from_dict(obj["virtualNetwork"]) if obj.get("virtualNetwork") is not None else None,
             "interconnection": MetalInterconnection.from_dict(obj["interconnection"]) if obj.get("interconnection") is not None else None,
-            "vpic_interface": VpicInterface.from_dict(obj["vpic_interface"]) if obj.get("vpic_interface") is not None else None
+            "vpic_interface": VpicInterface.from_dict(obj["vpic_interface"]) if obj.get("vpic_interface") is not None else None,
+            "role": obj.get("role")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
