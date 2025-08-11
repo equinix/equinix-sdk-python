@@ -37,7 +37,7 @@ jobs:
         run: sudo apt-get install -y build-essential
 
       - name: checkout Python SDK, this PR
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           ref: ${{ github.event.pull_request.head.sha || github.ref }}
 
@@ -47,7 +47,7 @@ jobs:
           python-version-file: .python-version
 
       - name: checkout Ansible collection
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           repository: equinix-labs/ansible-collection-equinix
           path: ${{ env.COLLECTION_PATH }}
