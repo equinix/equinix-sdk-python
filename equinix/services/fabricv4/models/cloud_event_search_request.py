@@ -26,9 +26,8 @@ class CloudEventSearchRequest(BaseModel):
     """ # noqa: E501
     filter: Optional[CloudEventFilters] = None
     pagination: Optional[PaginationRequest] = None
-    sort: Optional[List[CloudEventFilters]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["filter", "pagination", "sort"]
+    __properties: ClassVar[List[str]] = ["filter", "pagination"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,13 +76,6 @@ class CloudEventSearchRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of pagination
         if self.pagination:
             _dict['pagination'] = self.pagination.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in sort (list)
-        _items = []
-        if self.sort:
-            for _item_sort in self.sort:
-                if _item_sort:
-                    _items.append(_item_sort.to_dict())
-            _dict['sort'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -102,8 +94,7 @@ class CloudEventSearchRequest(BaseModel):
 
         _obj = cls.model_validate({
             "filter": CloudEventFilters.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
-            "pagination": PaginationRequest.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "sort": [CloudEventFilters.from_dict(_item) for _item in obj["sort"]] if obj.get("sort") is not None else None
+            "pagination": PaginationRequest.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

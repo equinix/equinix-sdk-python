@@ -4,16 +4,16 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_connection_stats_by_port_uuid**](StatisticsApi.md#get_connection_stats_by_port_uuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by uuid
-[**get_port_stats_by_port_uuid**](StatisticsApi.md#get_port_stats_by_port_uuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid
+[**get_connection_stats_by_port_uuid**](StatisticsApi.md#get_connection_stats_by_port_uuid) | **GET** /fabric/v4/connections/{connectionId}/stats | Get Stats by uuid **(DEPRECATED)**
+[**get_port_stats_by_port_uuid**](StatisticsApi.md#get_port_stats_by_port_uuid) | **GET** /fabric/v4/ports/{portId}/stats | Get Stats by uuid **(DEPRECATED)**
 
 
 # **get_connection_stats_by_port_uuid**
 > Statistics get_connection_stats_by_port_uuid(connection_id, start_date_time, end_date_time, view_point)
 
-Get Stats by uuid
+Get Stats by uuid **(DEPRECATED)**
 
-This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity
+This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
 ### Example
 
@@ -52,7 +52,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     view_point = equinix.services.fabricv4.ViewPoint() # ViewPoint | viewPoint
 
     try:
-        # Get Stats by uuid
+        # Get Stats by uuid **(DEPRECATED)**
         api_response = api_instance.get_connection_stats_by_port_uuid(connection_id, start_date_time, end_date_time, view_point)
         print("The response of StatisticsApi->get_connection_stats_by_port_uuid:\n")
         pprint(api_response)
@@ -98,9 +98,9 @@ Name | Type | Description  | Notes
 # **get_port_stats_by_port_uuid**
 > Statistics get_port_stats_by_port_uuid(port_id, start_date_time, end_date_time)
 
-Get Stats by uuid
+Get Stats by uuid **(DEPRECATED)**
 
-This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
+This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
 ### Example
 
@@ -137,7 +137,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     end_date_time = '2020-11-10T07:00:00Z' # datetime | endDateTime
 
     try:
-        # Get Stats by uuid
+        # Get Stats by uuid **(DEPRECATED)**
         api_response = api_instance.get_port_stats_by_port_uuid(port_id, start_date_time, end_date_time)
         print("The response of StatisticsApi->get_port_stats_by_port_uuid:\n")
         pprint(api_response)

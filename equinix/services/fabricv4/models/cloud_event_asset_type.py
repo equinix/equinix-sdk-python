@@ -29,6 +29,7 @@ class CloudEventAssetType(str, Enum):
     NETWORKS = 'networks'
     PROJECTS = 'projects'
     ORGANIZATIONS = 'organizations'
+    TIMESERVICES = 'timeServices'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

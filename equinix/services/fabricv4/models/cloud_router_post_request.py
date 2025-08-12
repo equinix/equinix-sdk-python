@@ -15,8 +15,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.cloud_router_post_request_base_type import CloudRouterPostRequestBaseType
 from equinix.services.fabricv4.models.cloud_router_post_request_package import CloudRouterPostRequestPackage
-from equinix.services.fabricv4.models.cloud_router_post_request_type import CloudRouterPostRequestType
 from equinix.services.fabricv4.models.marketplace_subscription import MarketplaceSubscription
 from equinix.services.fabricv4.models.order import Order
 from equinix.services.fabricv4.models.project import Project
@@ -28,9 +28,9 @@ from typing_extensions import Self
 
 class CloudRouterPostRequest(BaseModel):
     """
-    Create Cloud Router
+    CloudRouterPostRequest
     """ # noqa: E501
-    type: CloudRouterPostRequestType
+    type: CloudRouterPostRequestBaseType
     name: StrictStr = Field(description="Customer-provided Cloud Router name")
     location: SimplifiedLocationWithoutIBX
     package: CloudRouterPostRequestPackage

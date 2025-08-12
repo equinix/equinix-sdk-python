@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from equinix.services.fabricv4.api.client_interfaces_api import ClientInterfacesApi
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi

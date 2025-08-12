@@ -22,9 +22,16 @@ class PortSearchFieldName(str, Enum):
     """
     allowed enum values
     """
-    SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
-    SLASH_SETTINGS_SLASH_PRODUCT_CODE = '/settings/productCode'
+    SLASH_DEVICE_SLASH_NAME = '/device/name'
+    SLASH_PHYSICAL_PORTS_SLASH_TETHER_SLASH_CROSS_CONNECT_ID = '/physicalPorts/tether/crossConnectId'
+    SLASH_PHYSICAL_PORTS_SLASH_INTERFACE_SLASH_NAME = '/physicalPorts/interface/name'
     SLASH_STATE = '/state'
+    SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
+    SLASH_UUID = '/uuid'
+    SLASH_NAME = '/name'
+    SLASH_ACCOUNT_SLASH_ORG_ID = '/account/orgId'
+    SLASH_ACCOUNT_SLASH_ACCOUNT_NUMBER = '/account/accountNumber'
+    SLASH_LOCATION_SLASH_METRO_CODE = '/location/metroCode'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

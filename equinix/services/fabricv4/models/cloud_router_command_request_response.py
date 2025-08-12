@@ -20,18 +20,18 @@ from equinix.services.fabricv4.models.cloud_router_command_request_connection im
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CloudRouterCommandRequest(BaseModel):
+class CloudRouterCommandRequestResponse(BaseModel):
     """
     Fabric Cloud Router Command Request
     """ # noqa: E501
-    destination: StrictStr = Field(description="Fabric Cloud Router Ping Command Destination")
-    source_connection: CloudRouterCommandRequestConnection = Field(alias="sourceConnection")
-    timeout: Optional[StrictInt] = Field(default=None, description="Timeout in seconds for Fabric Cloud Router Ping or Traceroute Command")
-    data_bytes: Optional[Annotated[int, Field(le=9000, strict=True, ge=16)]] = Field(default=64, description="Fabric Cloud Router Ping Command DataBytes", alias="dataBytes")
-    interval: Optional[StrictInt] = Field(default=1000, description="Time in milliseconds between sending each packet for Fabric Cloud Router Ping Command")
-    count: Optional[StrictInt] = Field(default=5, description="Total number of ping requests for Fabric Cloud Router Ping Command")
-    probes: Optional[StrictInt] = Field(default=3, description="Number of probes to send for Fabric Cloud Router Traceroute Command")
-    hops_max: Optional[Annotated[int, Field(le=30, strict=True)]] = Field(default=20, description="Maximum number of hops for Fabric Cloud Router Traceroute Command", alias="hopsMax")
+    destination: Optional[StrictStr] = Field(default=None, description="Fabric Cloud Router Ping or Traceroute Command Destination")
+    source_connection: Optional[CloudRouterCommandRequestConnection] = Field(default=None, alias="sourceConnection")
+    timeout: Optional[StrictInt] = Field(default=None, description="Timeout in seconds for Fabric Cloud Router Command:   - For `PING_COMMAND`: Packet timeout duration. The default value is 5.   - For `TRACEROUTE_COMMAND`: Probe timeout duration.     The default value is 2 and it is not configurable. ")
+    data_bytes: Optional[Annotated[int, Field(le=9000, strict=True, ge=16)]] = Field(default=64, description="Ping Command DataBytes.  This field is only applicable for commands of type `PING_COMMAND`. ", alias="dataBytes")
+    interval: Optional[StrictInt] = Field(default=1000, description="Time in milliseconds between sending each packet. This field is only applicable for commands of type `PING_COMMAND`. ")
+    count: Optional[StrictInt] = Field(default=5, description="Total number of ping requests. This field is only applicable for commands of type `PING_COMMAND`. ")
+    probes: Optional[StrictInt] = Field(default=3, description="Number of probes for Fabric Cloud Router Traceroute Command. This field is only applicable for commands of type `TRACEROUTE_COMMAND` and is not configurable. ")
+    hops_max: Optional[Annotated[int, Field(le=30, strict=True)]] = Field(default=20, description="Maximum number of hops for the traceroute command. This field is only applicable for commands of type `TRACEROUTE_COMMAND`. ", alias="hopsMax")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["destination", "sourceConnection", "timeout", "dataBytes", "interval", "count", "probes", "hopsMax"]
 
@@ -53,7 +53,7 @@ class CloudRouterCommandRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CloudRouterCommandRequest from a JSON string"""
+        """Create an instance of CloudRouterCommandRequestResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -65,13 +65,9 @@ class CloudRouterCommandRequest(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "interval",
-            "count",
             "additional_properties",
         ])
 
@@ -92,7 +88,7 @@ class CloudRouterCommandRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CloudRouterCommandRequest from a dict"""
+        """Create an instance of CloudRouterCommandRequestResponse from a dict"""
         if obj is None:
             return None
 

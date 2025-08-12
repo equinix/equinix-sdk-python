@@ -14,25 +14,19 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class VpnTunnelState(str, Enum):
+class CloudRouterPostRequestBaseType(str, Enum):
     """
-    VPN Tunnel lifecycle state
+    CloudRouterPostRequestBaseType
     """
 
     """
     allowed enum values
     """
-    PROVISIONING = 'PROVISIONING'
-    PROVISIONED = 'PROVISIONED'
-    DEPROVISIONING = 'DEPROVISIONING'
-    DEPROVISIONED = 'DEPROVISIONED'
-    REPROVISIONING = 'REPROVISIONING'
-    PROVISIONING_FAILED = 'PROVISIONING_FAILED'
-    DEPROVISIONING_FAILED = 'DEPROVISIONING_FAILED'
+    XF_ROUTER = 'XF_ROUTER'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of VpnTunnelState from a JSON string"""
+        """Create an instance of CloudRouterPostRequestBaseType from a JSON string"""
         return cls(json.loads(json_str))
 
 

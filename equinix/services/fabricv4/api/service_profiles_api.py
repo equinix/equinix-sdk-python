@@ -60,7 +60,7 @@ class ServiceProfilesApi:
     ) -> ServiceProfile:
         """Create Profile
 
-        Create Service Profile creates Equinix Fabric? Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile.
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest
@@ -131,7 +131,7 @@ class ServiceProfilesApi:
     ) -> ApiResponse[ServiceProfile]:
         """Create Profile
 
-        Create Service Profile creates Equinix Fabric? Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile.
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest
@@ -202,7 +202,7 @@ class ServiceProfilesApi:
     ) -> RESTResponseType:
         """Create Profile
 
-        Create Service Profile creates Equinix Fabric? Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile.
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest

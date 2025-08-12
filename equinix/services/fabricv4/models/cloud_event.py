@@ -32,12 +32,15 @@ class CloudEvent(BaseModel):
     datacontenttype: Optional[StrictStr] = Field(default=None, description="Cloud Event data content type")
     severitynumber: Optional[StrictStr] = Field(default=None, description="Cloud Event severity number")
     severitytext: Optional[StrictStr] = Field(default=None, description="Cloud Event severity text")
+    equinixorganization: Optional[StrictStr] = Field(default=None, description="Equinix organization identifier")
     equinixproject: Optional[StrictStr] = Field(default=None, description="Equinix project identifier")
     authtype: Optional[StrictStr] = Field(default=None, description="Cloud Event auth type")
     authid: Optional[StrictStr] = Field(default=None, description="Cloud Event user identifier")
+    traceparent: Optional[StrictStr] = Field(default=None, description="Cloud Event traceparent")
+    tracestate: Optional[StrictStr] = Field(default=None, description="Cloud Event tracestate")
     data: Optional[CloudEventData] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["spec", "source", "id", "type", "subject", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixproject", "authtype", "authid", "data"]
+    __properties: ClassVar[List[str]] = ["spec", "source", "id", "type", "subject", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,9 +114,12 @@ class CloudEvent(BaseModel):
             "datacontenttype": obj.get("datacontenttype"),
             "severitynumber": obj.get("severitynumber"),
             "severitytext": obj.get("severitytext"),
+            "equinixorganization": obj.get("equinixorganization"),
             "equinixproject": obj.get("equinixproject"),
             "authtype": obj.get("authtype"),
             "authid": obj.get("authid"),
+            "traceparent": obj.get("traceparent"),
+            "tracestate": obj.get("tracestate"),
             "data": CloudEventData.from_dict(obj["data"]) if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties

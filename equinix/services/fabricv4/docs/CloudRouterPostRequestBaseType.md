@@ -1,4 +1,4 @@
-# CloudRouterPostRequestType
+# CloudRouterPostRequestBaseType
 
 
 ## Enum

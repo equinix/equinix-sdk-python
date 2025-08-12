@@ -15,7 +15,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.port_loa_type import PortLoaType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,10 +23,9 @@ class PortLoa(BaseModel):
     Port Loas
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="uuid")
-    href: Optional[StrictStr] = Field(default=None, description="Loa uri.")
-    type: Optional[PortLoaType] = None
+    type: Optional[StrictStr] = Field(default=None, description="Loa type")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "href", "type"]
+    __properties: ClassVar[List[str]] = ["uuid", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,11 +57,9 @@ class PortLoa(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
-        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "href",
             "additional_properties",
         ])
 
@@ -90,7 +86,6 @@ class PortLoa(BaseModel):
 
         _obj = cls.model_validate({
             "uuid": obj.get("uuid"),
-            "href": obj.get("href"),
             "type": obj.get("type")
         })
         # store additional fields in additional_properties

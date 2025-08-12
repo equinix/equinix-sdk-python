@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 Create Profile
 
-Create Service Profile creates Equinix Fabric? Service Profile.
+Create Service Profile creates Equinix Fabric™ Service Profile.
 
 ### Example
 

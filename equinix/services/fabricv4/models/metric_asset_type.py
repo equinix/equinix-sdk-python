@@ -24,7 +24,7 @@ class MetricAssetType(str, Enum):
     """
     PORTS = 'ports'
     CONNECTIONS = 'connections'
-    ROUTERS = 'routers'
+    METROS = 'metros'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
