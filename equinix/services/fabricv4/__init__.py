@@ -10,7 +10,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.11.0"
+__version__ = "0.12.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.client_interfaces_api import ClientInterfacesApi
