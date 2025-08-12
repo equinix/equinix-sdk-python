@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_metric_by_asset_id**
-> GetMetricsByAssetResponse get_metric_by_asset_id(asset, asset_id, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
+> GetMetricsByAssetResponse get_metric_by_asset_id(asset, asset_id, name, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
 
 Get Metrics by Asset Id
 
@@ -47,6 +47,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.MetricsApi(api_client)
     asset = equinix.services.fabricv4.MetricAssetType() # MetricAssetType | asset
     asset_id = 'asset_id_example' # str | asset UUID
+    name = 'name_example' # str | Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg 
     from_date_time = '2013-10-20T19:20:30+01:00' # datetime | Start date and time (optional)
     to_date_time = '2013-10-20T19:20:30+01:00' # datetime | End date and time (optional)
     offset = 0 # int | offset (optional) (default to 0)
@@ -54,7 +55,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
     try:
         # Get Metrics by Asset Id
-        api_response = api_instance.get_metric_by_asset_id(asset, asset_id, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
+        api_response = api_instance.get_metric_by_asset_id(asset, asset_id, name, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
         print("The response of MetricsApi->get_metric_by_asset_id:\n")
         pprint(api_response)
     except Exception as e:
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **asset** | [**MetricAssetType**](.md)| asset | 
  **asset_id** | **str**| asset UUID | 
+ **name** | **str**| Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg  | 
  **from_date_time** | **datetime**| Start date and time | [optional] 
  **to_date_time** | **datetime**| End date and time | [optional] 
  **offset** | **int**| offset | [optional] [default to 0]

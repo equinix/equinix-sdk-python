@@ -12,14 +12,12 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.all_physical_ports_response import AllPhysicalPortsResponse
 from equinix.services.fabricv4.models.all_ports_response import AllPortsResponse
 from equinix.services.fabricv4.models.bulk_physical_port import BulkPhysicalPort
-from equinix.services.fabricv4.models.bulk_port import BulkPort
-from equinix.services.fabricv4.models.bulk_port_request import BulkPortRequest
 from equinix.services.fabricv4.models.link_protocol_get_response import LinkProtocolGetResponse
 from equinix.services.fabricv4.models.port import Port
 from equinix.services.fabricv4.models.port_change_operation import PortChangeOperation
@@ -103,6 +101,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPhysicalPortsResponse",
+            '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
             '500': "List[Error]",
@@ -177,6 +176,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPhysicalPortsResponse",
+            '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
             '500': "List[Error]",
@@ -251,6 +251,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPhysicalPortsResponse",
+            '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
             '500': "List[Error]",
@@ -343,283 +344,10 @@ class PortsApi:
 
 
     @validate_call
-    def create_bulk_port(
-        self,
-        bulk_port_request: BulkPortRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> BulkPort:
-        """Create Port
-
-        Create Port creates Equinix Fabric? Port.<font color=\"red\"> <sup color='red'>Preview</sup></font>
-
-        :param bulk_port_request: (required)
-        :type bulk_port_request: BulkPortRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._create_bulk_port_serialize(
-            bulk_port_request=bulk_port_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '201': "BulkPort",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def create_bulk_port_with_http_info(
-        self,
-        bulk_port_request: BulkPortRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[BulkPort]:
-        """Create Port
-
-        Create Port creates Equinix Fabric? Port.<font color=\"red\"> <sup color='red'>Preview</sup></font>
-
-        :param bulk_port_request: (required)
-        :type bulk_port_request: BulkPortRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._create_bulk_port_serialize(
-            bulk_port_request=bulk_port_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '201': "BulkPort",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def create_bulk_port_without_preload_content(
-        self,
-        bulk_port_request: BulkPortRequest,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Create Port
-
-        Create Port creates Equinix Fabric? Port.<font color=\"red\"> <sup color='red'>Preview</sup></font>
-
-        :param bulk_port_request: (required)
-        :type bulk_port_request: BulkPortRequest
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._create_bulk_port_serialize(
-            bulk_port_request=bulk_port_request,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '201': "BulkPort",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _create_bulk_port_serialize(
-        self,
-        bulk_port_request,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-        if bulk_port_request is not None:
-            _body_params = bulk_port_request
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-        # set the HTTP header `Content-Type`
-        if _content_type:
-            _header_params['Content-Type'] = _content_type
-        else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
-            )
-            if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'BearerAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/fabric/v4/ports/bulk',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def create_port(
         self,
         port_request: PortRequest,
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -635,10 +363,12 @@ class PortsApi:
     ) -> Port:
         """Create Port
 
-        Creates Equinix Fabric? Port.
+        Creates Equinix Fabric™ Port.
 
         :param port_request: (required)
         :type port_request: PortRequest
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -663,6 +393,7 @@ class PortsApi:
 
         _param = self._create_port_serialize(
             port_request=port_request,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -670,8 +401,10 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '201': "Port",
             '400': "List[Error]",
+            '401': "List[Error]",
             '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
@@ -689,6 +422,7 @@ class PortsApi:
     def create_port_with_http_info(
         self,
         port_request: PortRequest,
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -704,10 +438,12 @@ class PortsApi:
     ) -> ApiResponse[Port]:
         """Create Port
 
-        Creates Equinix Fabric? Port.
+        Creates Equinix Fabric™ Port.
 
         :param port_request: (required)
         :type port_request: PortRequest
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -732,6 +468,7 @@ class PortsApi:
 
         _param = self._create_port_serialize(
             port_request=port_request,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -739,8 +476,10 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '201': "Port",
             '400': "List[Error]",
+            '401': "List[Error]",
             '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
@@ -758,6 +497,7 @@ class PortsApi:
     def create_port_without_preload_content(
         self,
         port_request: PortRequest,
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -773,10 +513,12 @@ class PortsApi:
     ) -> RESTResponseType:
         """Create Port
 
-        Creates Equinix Fabric? Port.
+        Creates Equinix Fabric™ Port.
 
         :param port_request: (required)
         :type port_request: PortRequest
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -801,6 +543,7 @@ class PortsApi:
 
         _param = self._create_port_serialize(
             port_request=port_request,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -808,8 +551,10 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '201': "Port",
             '400': "List[Error]",
+            '401': "List[Error]",
             '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
@@ -822,6 +567,7 @@ class PortsApi:
     def _create_port_serialize(
         self,
         port_request,
+        dry_run,
         _request_auth,
         _content_type,
         _headers,
@@ -844,6 +590,10 @@ class PortsApi:
 
         # process the path parameters
         # process the query parameters
+        if dry_run is not None:
+            
+            _query_params.append(('dryRun', dry_run))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -900,6 +650,7 @@ class PortsApi:
     def delete_port(
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -919,6 +670,8 @@ class PortsApi:
 
         :param port_id: Port UUID (required)
         :type port_id: str
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -943,6 +696,7 @@ class PortsApi:
 
         _param = self._delete_port_serialize(
             port_id=port_id,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -950,6 +704,7 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
@@ -970,6 +725,7 @@ class PortsApi:
     def delete_port_with_http_info(
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -989,6 +745,8 @@ class PortsApi:
 
         :param port_id: Port UUID (required)
         :type port_id: str
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1013,6 +771,7 @@ class PortsApi:
 
         _param = self._delete_port_serialize(
             port_id=port_id,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1020,6 +779,7 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
@@ -1040,6 +800,7 @@ class PortsApi:
     def delete_port_without_preload_content(
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1059,6 +820,8 @@ class PortsApi:
 
         :param port_id: Port UUID (required)
         :type port_id: str
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1083,6 +846,7 @@ class PortsApi:
 
         _param = self._delete_port_serialize(
             port_id=port_id,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1090,6 +854,7 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
+            '200': "Port",
             '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
@@ -1105,6 +870,7 @@ class PortsApi:
     def _delete_port_serialize(
         self,
         port_id,
+        dry_run,
         _request_auth,
         _content_type,
         _headers,
@@ -1129,6 +895,10 @@ class PortsApi:
         if port_id is not None:
             _path_params['portId'] = port_id
         # process the query parameters
+        if dry_run is not None:
+            
+            _query_params.append(('dryRun', dry_run))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1491,7 +1261,10 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPortsResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
             '403': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1559,7 +1332,10 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPortsResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
             '403': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1627,7 +1403,10 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "AllPortsResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
             '403': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2027,6 +1806,7 @@ class PortsApi:
             '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2097,6 +1877,7 @@ class PortsApi:
             '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2167,6 +1948,7 @@ class PortsApi:
             '400': "List[Error]",
             '401': "List[Error]",
             '404': "List[Error]",
+            '500': "List[Error]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2257,6 +2039,7 @@ class PortsApi:
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2278,6 +2061,8 @@ class PortsApi:
         :type port_id: str
         :param port_change_operation: (required)
         :type port_change_operation: List[PortChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2303,6 +2088,7 @@ class PortsApi:
         _param = self._update_port_by_uuid_serialize(
             port_id=port_id,
             port_change_operation=port_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2310,10 +2096,11 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "AllPortsResponse",
+            '200': "AllPortsResponse",
+            '202': "Port",
             '400': "List[Error]",
             '403': "List[Error]",
-            '500': "List[Error]",
+            '500': "Error",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2331,6 +2118,7 @@ class PortsApi:
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2352,6 +2140,8 @@ class PortsApi:
         :type port_id: str
         :param port_change_operation: (required)
         :type port_change_operation: List[PortChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2377,6 +2167,7 @@ class PortsApi:
         _param = self._update_port_by_uuid_serialize(
             port_id=port_id,
             port_change_operation=port_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2384,10 +2175,11 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "AllPortsResponse",
+            '200': "AllPortsResponse",
+            '202': "Port",
             '400': "List[Error]",
             '403': "List[Error]",
-            '500': "List[Error]",
+            '500': "Error",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2405,6 +2197,7 @@ class PortsApi:
         self,
         port_id: Annotated[StrictStr, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
+        dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2426,6 +2219,8 @@ class PortsApi:
         :type port_id: str
         :param port_change_operation: (required)
         :type port_change_operation: List[PortChangeOperation]
+        :param dry_run: option to verify that API calls will succeed
+        :type dry_run: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2451,6 +2246,7 @@ class PortsApi:
         _param = self._update_port_by_uuid_serialize(
             port_id=port_id,
             port_change_operation=port_change_operation,
+            dry_run=dry_run,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2458,10 +2254,11 @@ class PortsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "AllPortsResponse",
+            '200': "AllPortsResponse",
+            '202': "Port",
             '400': "List[Error]",
             '403': "List[Error]",
-            '500': "List[Error]",
+            '500': "Error",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2474,6 +2271,7 @@ class PortsApi:
         self,
         port_id,
         port_change_operation,
+        dry_run,
         _request_auth,
         _content_type,
         _headers,
@@ -2499,6 +2297,10 @@ class PortsApi:
         if port_id is not None:
             _path_params['portId'] = port_id
         # process the query parameters
+        if dry_run is not None:
+            
+            _query_params.append(('dryRun', dry_run))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

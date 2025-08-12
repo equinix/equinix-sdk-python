@@ -15,7 +15,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.alert_rule_post_request_metric_name import AlertRulePostRequestMetricName
 from equinix.services.fabricv4.models.alert_rule_post_request_operand import AlertRulePostRequestOperand
 from equinix.services.fabricv4.models.alert_rule_post_request_type import AlertRulePostRequestType
 from equinix.services.fabricv4.models.resource_selector import ResourceSelector
@@ -30,7 +29,7 @@ class AlertRulePostRequest(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     enabled: Optional[StrictBool] = Field(default=True, description="Stream alert rule enabled status")
-    metric_name: Optional[AlertRulePostRequestMetricName] = Field(default=None, alias="metricName")
+    metric_name: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric name", alias="metricName")
     resource_selector: Optional[ResourceSelector] = Field(default=None, alias="resourceSelector")
     window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
     operand: Optional[AlertRulePostRequestOperand] = None

@@ -7,8 +7,7 @@ Port Loas
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | uuid | [optional] 
-**href** | **str** | Loa uri. | [optional] [readonly] 
-**type** | [**PortLoaType**](PortLoaType.md) |  | [optional] 
+**type** | **str** | Loa type | [optional] 
 
 ## Example
 

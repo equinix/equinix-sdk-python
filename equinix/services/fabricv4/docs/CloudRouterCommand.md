@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **state** | [**CloudRouterCommandState**](CloudRouterCommandState.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
-**request** | [**CloudRouterCommandRequest**](CloudRouterCommandRequest.md) |  | [optional] 
+**request** | [**CloudRouterCommandRequestResponse**](CloudRouterCommandRequestResponse.md) |  | [optional] 
 **response** | [**CloudRouterCommandResponse**](CloudRouterCommandResponse.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 

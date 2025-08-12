@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **change** | [**CloudRouterChange**](CloudRouterChange.md) |  | [optional] 
-**type** | [**CloudRouterPostRequestType**](CloudRouterPostRequestType.md) |  | 
-**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  | 
-**package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  | 
+**type** | [**CloudRouterPostRequestBaseType**](CloudRouterPostRequestBaseType.md) |  | [optional] 
+**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  | [optional] 
+**package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  | [optional] 
 **order** | [**Order**](Order.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 

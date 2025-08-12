@@ -56,9 +56,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Statistics:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity
+        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
         :param connection_id: Connection UUID (required)
         :type connection_id: str
@@ -89,6 +89,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/connections/{connectionId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_connection_stats_by_port_uuid_serialize(
             connection_id=connection_id,
@@ -137,9 +138,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Statistics]:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity
+        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
         :param connection_id: Connection UUID (required)
         :type connection_id: str
@@ -170,6 +171,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/connections/{connectionId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_connection_stats_by_port_uuid_serialize(
             connection_id=connection_id,
@@ -218,9 +220,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity
+        This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
         :param connection_id: Connection UUID (required)
         :type connection_id: str
@@ -251,6 +253,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/connections/{connectionId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_connection_stats_by_port_uuid_serialize(
             connection_id=connection_id,
@@ -391,9 +394,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Statistics:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
+        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -422,6 +425,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/ports/{portId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_port_stats_by_port_uuid_serialize(
             port_id=port_id,
@@ -469,9 +473,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Statistics]:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
+        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -500,6 +504,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/ports/{portId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_port_stats_by_port_uuid_serialize(
             port_id=port_id,
@@ -547,9 +552,9 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Stats by uuid
+        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
 
-        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.
+        This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -578,6 +583,7 @@ class StatisticsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/ports/{portId}/stats is deprecated.", DeprecationWarning)
 
         _param = self._get_port_stats_by_port_uuid_serialize(
             port_id=port_id,

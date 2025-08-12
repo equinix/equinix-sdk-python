@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **description** | **str** | Customer-provided stream alert rule description | [optional] 
 **state** | [**StreamAlertRuleState**](StreamAlertRuleState.md) |  | [optional] 
 **enabled** | **bool** | Stream alert rule enabled status | [optional] [default to True]
-**metric_name** | [**AlertRulePostRequestMetricName**](AlertRulePostRequestMetricName.md) |  | [optional] 
+**metric_name** | **str** | Stream alert rule metric name | [optional] 
 **resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | [optional] 
 **window_size** | **str** | Stream alert rule metric window size | [optional] 
 **operand** | [**AlertRulePostRequestOperand**](AlertRulePostRequestOperand.md) |  | [optional] 

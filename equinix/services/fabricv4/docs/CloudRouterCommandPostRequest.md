@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided Cloud Router Command name | [optional] 
 **description** | **str** | Customer-provided Cloud Router Command description | [optional] 
 **project** | [**Project**](Project.md) |  | 
-**request** | [**CloudRouterCommandRequest**](CloudRouterCommandRequest.md) |  | 
+**request** | [**CloudRouterCommandRequestPayload**](CloudRouterCommandRequestPayload.md) |  | 
 
 ## Example
 

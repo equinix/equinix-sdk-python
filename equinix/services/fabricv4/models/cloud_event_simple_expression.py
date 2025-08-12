@@ -22,7 +22,7 @@ class CloudEventSimpleExpression(BaseModel):
     """
     CloudEventSimpleExpression
     """ # noqa: E501
-    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/subject` - Cloud Event subject description  * `/type` - Cloud Event type  * `/time` - Time of Cloud Events ", alias="property")
+    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/subject` - Cloud Event subject description  * `/type` - Cloud Event type  * `/time` - Time of Cloud Events  * `/equinixproject` - Equinix Project of Cloud Events  * `/equinixorganization` - Equinix Organization of Cloud Events ", alias="property")
     operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `>` - greater than  * `>=` - greater than or equal to  * `<` - less than  * `<=` - less than or equal to  * `BETWEEN` - between  * `IN` - in ")
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}

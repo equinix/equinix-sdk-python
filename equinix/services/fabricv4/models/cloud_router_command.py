@@ -16,7 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.cloud_router_command_request import CloudRouterCommandRequest
+from equinix.services.fabricv4.models.cloud_router_command_request_response import CloudRouterCommandRequestResponse
 from equinix.services.fabricv4.models.cloud_router_command_response import CloudRouterCommandResponse
 from equinix.services.fabricv4.models.cloud_router_command_state import CloudRouterCommandState
 from equinix.services.fabricv4.models.cloud_router_command_type import CloudRouterCommandType
@@ -35,7 +35,7 @@ class CloudRouterCommand(BaseModel):
     description: Optional[StrictStr] = None
     state: Optional[CloudRouterCommandState] = None
     project: Optional[Project] = None
-    request: Optional[CloudRouterCommandRequest] = None
+    request: Optional[CloudRouterCommandRequestResponse] = None
     response: Optional[CloudRouterCommandResponse] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
@@ -118,7 +118,7 @@ class CloudRouterCommand(BaseModel):
             "description": obj.get("description"),
             "state": obj.get("state"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "request": CloudRouterCommandRequest.from_dict(obj["request"]) if obj.get("request") is not None else None,
+            "request": CloudRouterCommandRequestResponse.from_dict(obj["request"]) if obj.get("request") is not None else None,
             "response": CloudRouterCommandResponse.from_dict(obj["response"]) if obj.get("response") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })

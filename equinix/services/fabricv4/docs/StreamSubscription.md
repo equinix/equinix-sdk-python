@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
+**operation** | [**StreamSubscriptionOperation**](StreamSubscriptionOperation.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
-**last_error_message** | **str** | HTTP response from sink type if error occurred | [optional] 
 
 ## Example
 

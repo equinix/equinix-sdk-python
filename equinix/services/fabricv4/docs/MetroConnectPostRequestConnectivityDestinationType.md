@@ -1,10 +1,14 @@
-# PortLoaType
+# MetroConnectPostRequestConnectivityDestinationType
 
-Loa type
+Destination Port connectivity type
 
 ## Enum
 
-* `CTR_LOA` (value: `'CTR_LOA'`)
+* `COLO` (value: `'COLO'`)
+
+* `BMMR` (value: `'BMMR'`)
+
+* `REMOTE` (value: `'REMOTE'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

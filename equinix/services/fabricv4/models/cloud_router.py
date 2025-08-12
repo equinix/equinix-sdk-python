@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.cloud_router_access_point_state import CloudRouterAccessPointState
 from equinix.services.fabricv4.models.cloud_router_change import CloudRouterChange
+from equinix.services.fabricv4.models.cloud_router_post_request_base_type import CloudRouterPostRequestBaseType
 from equinix.services.fabricv4.models.cloud_router_post_request_package import CloudRouterPostRequestPackage
-from equinix.services.fabricv4.models.cloud_router_post_request_type import CloudRouterPostRequestType
 from equinix.services.fabricv4.models.marketplace_subscription import MarketplaceSubscription
 from equinix.services.fabricv4.models.order import Order
 from equinix.services.fabricv4.models.project import Project
@@ -43,9 +43,9 @@ class CloudRouter(BaseModel):
     marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     change: Optional[CloudRouterChange] = None
-    type: CloudRouterPostRequestType
-    location: SimplifiedLocationWithoutIBX
-    package: CloudRouterPostRequestPackage
+    type: Optional[CloudRouterPostRequestBaseType] = None
+    location: Optional[SimplifiedLocationWithoutIBX] = None
+    package: Optional[CloudRouterPostRequestPackage] = None
     order: Optional[Order] = None
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None

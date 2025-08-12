@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class Metro(BaseModel):
     """
-    GET Metros retrieves all Equinix? Fabric? metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
+    GET Metros retrieves all Equinix® Fabric™ metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="The Canonical URL at which the resource resides.")
     type: Optional[StrictStr] = Field(default=None, description="Indicator of a Fabric Metro")

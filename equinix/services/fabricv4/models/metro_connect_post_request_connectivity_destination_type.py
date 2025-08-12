@@ -14,19 +14,21 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class PortLoaType(str, Enum):
+class MetroConnectPostRequestConnectivityDestinationType(str, Enum):
     """
-    Loa type
+    Destination Port connectivity type
     """
 
     """
     allowed enum values
     """
-    CTR_LOA = 'CTR_LOA'
+    COLO = 'COLO'
+    BMMR = 'BMMR'
+    REMOTE = 'REMOTE'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of PortLoaType from a JSON string"""
+        """Create an instance of MetroConnectPostRequestConnectivityDestinationType from a JSON string"""
         return cls(json.loads(json_str))
 
 

@@ -1,12 +1,11 @@
 # CloudRouterPostRequest
 
-Create Cloud Router
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**CloudRouterPostRequestType**](CloudRouterPostRequestType.md) |  | 
+**type** | [**CloudRouterPostRequestBaseType**](CloudRouterPostRequestBaseType.md) |  | 
 **name** | **str** | Customer-provided Cloud Router name | 
 **location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  | 
 **package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  | 

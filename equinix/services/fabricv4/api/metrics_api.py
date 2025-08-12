@@ -42,6 +42,7 @@ class MetricsApi:
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
         asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        name: Annotated[StrictStr, Field(description="Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
@@ -67,6 +68,8 @@ class MetricsApi:
         :type asset: MetricAssetType
         :param asset_id: asset UUID (required)
         :type asset_id: str
+        :param name: Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg  (required)
+        :type name: str
         :param from_date_time: Start date and time
         :type from_date_time: datetime
         :param to_date_time: End date and time
@@ -100,6 +103,7 @@ class MetricsApi:
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,
             asset_id=asset_id,
+            name=name,
             from_date_time=from_date_time,
             to_date_time=to_date_time,
             offset=offset,
@@ -133,6 +137,7 @@ class MetricsApi:
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
         asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        name: Annotated[StrictStr, Field(description="Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
@@ -158,6 +163,8 @@ class MetricsApi:
         :type asset: MetricAssetType
         :param asset_id: asset UUID (required)
         :type asset_id: str
+        :param name: Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg  (required)
+        :type name: str
         :param from_date_time: Start date and time
         :type from_date_time: datetime
         :param to_date_time: End date and time
@@ -191,6 +198,7 @@ class MetricsApi:
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,
             asset_id=asset_id,
+            name=name,
             from_date_time=from_date_time,
             to_date_time=to_date_time,
             offset=offset,
@@ -224,6 +232,7 @@ class MetricsApi:
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
         asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        name: Annotated[StrictStr, Field(description="Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
@@ -249,6 +258,8 @@ class MetricsApi:
         :type asset: MetricAssetType
         :param asset_id: asset UUID (required)
         :type asset_id: str
+        :param name: Name of the metric types: - equinix.fabric.connection.bandwidth_rx.usage - equinix.fabric.connection.bandwidth_tx.usage - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count - equinix.fabric.port.bandwidth_rx.usage - equinix.fabric.port.bandwidth_tx.usage - equinix.fabric.port.packets_dropped_rx.count - equinix.fabric.port.packets_dropped_tx.count - equinix.fabric.port.packets_erred_rx.count - equinix.fabric.port.packets_erred_tx.count - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg  (required)
+        :type name: str
         :param from_date_time: Start date and time
         :type from_date_time: datetime
         :param to_date_time: End date and time
@@ -282,6 +293,7 @@ class MetricsApi:
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,
             asset_id=asset_id,
+            name=name,
             from_date_time=from_date_time,
             to_date_time=to_date_time,
             offset=offset,
@@ -310,6 +322,7 @@ class MetricsApi:
         self,
         asset,
         asset_id,
+        name,
         from_date_time,
         to_date_time,
         offset,
@@ -340,6 +353,10 @@ class MetricsApi:
         if asset_id is not None:
             _path_params['assetId'] = asset_id
         # process the query parameters
+        if name is not None:
+            
+            _query_params.append(('name', name))
+            
         if from_date_time is not None:
             if isinstance(from_date_time, datetime):
                 _query_params.append(

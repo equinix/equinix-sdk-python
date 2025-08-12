@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.cloud_router_command_request import CloudRouterCommandRequest
+from equinix.services.fabricv4.models.cloud_router_command_request_payload import CloudRouterCommandRequestPayload
 from equinix.services.fabricv4.models.cloud_router_command_type import CloudRouterCommandType
 from equinix.services.fabricv4.models.project import Project
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class CloudRouterCommandPostRequest(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided Cloud Router Command name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided Cloud Router Command description")
     project: Project
-    request: CloudRouterCommandRequest
+    request: CloudRouterCommandRequestPayload
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "description", "project", "request"]
 
@@ -101,7 +101,7 @@ class CloudRouterCommandPostRequest(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "request": CloudRouterCommandRequest.from_dict(obj["request"]) if obj.get("request") is not None else None
+            "request": CloudRouterCommandRequestPayload.from_dict(obj["request"]) if obj.get("request") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

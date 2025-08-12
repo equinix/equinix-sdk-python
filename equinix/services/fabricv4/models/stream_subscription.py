@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
+from equinix.services.fabricv4.models.stream_subscription_operation import StreamSubscriptionOperation
 from equinix.services.fabricv4.models.stream_subscription_selector import StreamSubscriptionSelector
 from equinix.services.fabricv4.models.stream_subscription_sink import StreamSubscriptionSink
 from equinix.services.fabricv4.models.stream_subscription_state import StreamSubscriptionState
@@ -37,10 +38,10 @@ class StreamSubscription(BaseModel):
     metric_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="metricSelector")
     event_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="eventSelector")
     sink: Optional[StreamSubscriptionSink] = None
+    operation: Optional[StreamSubscriptionOperation] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
-    last_error_message: Optional[StrictStr] = Field(default=None, description="HTTP response from sink type if error occurred", alias="lastErrorMessage")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "state", "enabled", "metricSelector", "eventSelector", "sink", "changeLog", "lastErrorMessage"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "state", "enabled", "metricSelector", "eventSelector", "sink", "operation", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +95,9 @@ class StreamSubscription(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of sink
         if self.sink:
             _dict['sink'] = self.sink.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of operation
+        if self.operation:
+            _dict['operation'] = self.operation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -124,8 +128,8 @@ class StreamSubscription(BaseModel):
             "metricSelector": StreamSubscriptionSelector.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
             "eventSelector": StreamSubscriptionSelector.from_dict(obj["eventSelector"]) if obj.get("eventSelector") is not None else None,
             "sink": StreamSubscriptionSink.from_dict(obj["sink"]) if obj.get("sink") is not None else None,
-            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None,
-            "lastErrorMessage": obj.get("lastErrorMessage")
+            "operation": StreamSubscriptionOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
+            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

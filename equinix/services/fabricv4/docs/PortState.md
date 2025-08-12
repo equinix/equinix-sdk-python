@@ -10,6 +10,8 @@ Port lifecycle state
 
 * `REPROVISIONING` (value: `'REPROVISIONING'`)
 
+* `PENDING_CROSS_CONNECT` (value: `'PENDING_CROSS_CONNECT'`)
+
 * `PROVISIONED` (value: `'PROVISIONED'`)
 
 * `ACTIVE` (value: `'ACTIVE'`)
