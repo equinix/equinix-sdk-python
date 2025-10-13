@@ -15,7 +15,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.alert_rule_post_request_operand import AlertRulePostRequestOperand
+from equinix.services.fabricv4.models.alert_rule_post_request_type import AlertRulePostRequestType
+from equinix.services.fabricv4.models.detection_method import DetectionMethod
+from equinix.services.fabricv4.models.metric_selector import MetricSelector
 from equinix.services.fabricv4.models.resource_selector import ResourceSelector
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,16 +27,14 @@ class AlertRulePutRequest(BaseModel):
     Create Stream Alert Rules
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
+    type: Optional[AlertRulePostRequestType] = None
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     enabled: Optional[StrictBool] = Field(default=True, description="Stream alert rule enabled status")
-    metric_name: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric name", alias="metricName")
+    metric_selector: Optional[MetricSelector] = Field(default=None, alias="metricSelector")
     resource_selector: Optional[ResourceSelector] = Field(default=None, alias="resourceSelector")
-    operand: Optional[AlertRulePostRequestOperand] = None
-    window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
-    warning_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric warning threshold", alias="warningThreshold")
-    critical_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric critical threshold", alias="criticalThreshold")
+    detection_method: Optional[DetectionMethod] = Field(default=None, alias="detectionMethod")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["name", "description", "enabled", "metricName", "resourceSelector", "operand", "windowSize", "warningThreshold", "criticalThreshold"]
+    __properties: ClassVar[List[str]] = ["name", "type", "description", "enabled", "metricSelector", "resourceSelector", "detectionMethod"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,9 +77,15 @@ class AlertRulePutRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of metric_selector
+        if self.metric_selector:
+            _dict['metricSelector'] = self.metric_selector.to_dict()
         # override the default output from pydantic by calling `to_dict()` of resource_selector
         if self.resource_selector:
             _dict['resourceSelector'] = self.resource_selector.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of detection_method
+        if self.detection_method:
+            _dict['detectionMethod'] = self.detection_method.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -98,14 +104,12 @@ class AlertRulePutRequest(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
+            "type": obj.get("type"),
             "description": obj.get("description"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
-            "metricName": obj.get("metricName"),
+            "metricSelector": MetricSelector.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
             "resourceSelector": ResourceSelector.from_dict(obj["resourceSelector"]) if obj.get("resourceSelector") is not None else None,
-            "operand": obj.get("operand"),
-            "windowSize": obj.get("windowSize"),
-            "warningThreshold": obj.get("warningThreshold"),
-            "criticalThreshold": obj.get("criticalThreshold")
+            "detectionMethod": DetectionMethod.from_dict(obj["detectionMethod"]) if obj.get("detectionMethod") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -18,8 +18,8 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.cloud_router_action_state import CloudRouterActionState
 from equinix.services.fabricv4.models.cloud_router_action_type import CloudRouterActionType
-from equinix.services.fabricv4.models.operation import Operation
 from equinix.services.fabricv4.models.router_actions_connection import RouterActionsConnection
+from equinix.services.fabricv4.models.router_actions_router import RouterActionsRouter
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,9 +34,9 @@ class CloudRouterActionResponse(BaseModel):
     change_log: Changelog = Field(alias="changeLog")
     href: Optional[StrictStr] = None
     connection: Optional[RouterActionsConnection] = None
-    operation: Optional[Operation] = None
+    router: Optional[RouterActionsRouter] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "uuid", "description", "state", "changeLog", "href", "connection", "operation"]
+    __properties: ClassVar[List[str]] = ["type", "uuid", "description", "state", "changeLog", "href", "connection", "router"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,9 +85,9 @@ class CloudRouterActionResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of connection
         if self.connection:
             _dict['connection'] = self.connection.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of operation
-        if self.operation:
-            _dict['operation'] = self.operation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of router
+        if self.router:
+            _dict['router'] = self.router.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -112,7 +112,7 @@ class CloudRouterActionResponse(BaseModel):
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None,
             "href": obj.get("href"),
             "connection": RouterActionsConnection.from_dict(obj["connection"]) if obj.get("connection") is not None else None,
-            "operation": Operation.from_dict(obj["operation"]) if obj.get("operation") is not None else None
+            "router": RouterActionsRouter.from_dict(obj["router"]) if obj.get("router") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

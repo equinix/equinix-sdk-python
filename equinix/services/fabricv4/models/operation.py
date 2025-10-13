@@ -24,8 +24,10 @@ class Operation(BaseModel):
     """ # noqa: E501
     bgp_ipv4_routes_count: Optional[StrictInt] = Field(default=None, description="IPV4 route count", alias="bgpIpv4RoutesCount")
     bgp_ipv6_routes_count: Optional[StrictInt] = Field(default=None, description="IPV6 route count", alias="bgpIpv6RoutesCount")
+    distinct_ipv4_prefixes_count: Optional[StrictInt] = Field(default=None, description="distinct IPV4 prefixes count", alias="distinctIpv4PrefixesCount")
+    distinct_ipv6_prefixes_count: Optional[StrictInt] = Field(default=None, description="distinct IPV6 prefixes count", alias="distinctIpv6PrefixesCount")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["bgpIpv4RoutesCount", "bgpIpv6RoutesCount"]
+    __properties: ClassVar[List[str]] = ["bgpIpv4RoutesCount", "bgpIpv6RoutesCount", "distinctIpv4PrefixesCount", "distinctIpv6PrefixesCount"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +88,9 @@ class Operation(BaseModel):
 
         _obj = cls.model_validate({
             "bgpIpv4RoutesCount": obj.get("bgpIpv4RoutesCount"),
-            "bgpIpv6RoutesCount": obj.get("bgpIpv6RoutesCount")
+            "bgpIpv6RoutesCount": obj.get("bgpIpv6RoutesCount"),
+            "distinctIpv4PrefixesCount": obj.get("distinctIpv4PrefixesCount"),
+            "distinctIpv6PrefixesCount": obj.get("distinctIpv6PrefixesCount")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

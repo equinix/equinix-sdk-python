@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | Route Protocol URI | [optional] [readonly] 
-**type** | [**RoutingProtocolBGPTypeType**](RoutingProtocolBGPTypeType.md) |  | 
-**uuid** | **str** | Equinix-assigned route protocol identifier | [optional] 
+**href** | **str** | IPWAN Connection URI | [optional] [readonly] 
+**type** | **str** |  | 
+**uuid** | **str** | Equinix-assigned ipwan connection identifier | [optional] 
 **state** | [**DeploymentState**](DeploymentState.md) |  | 
 **name** | **str** |  | 
-**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  | 
+**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | 
 **package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  | 
 **deployment_properties** | [**TopologyProperties**](TopologyProperties.md) |  | 
 **bandwidth** | **int** |  | 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **customer_asn** | **int** | Customer asn | 
 **bgp_auth_key** | **str** | BGP authorization key | 
 **as_override_enabled** | **bool** | Enable AS number override | [optional] 
+**scope** | [**NetworkScope**](NetworkScope.md) |  | [optional] 
 
 ## Example
 

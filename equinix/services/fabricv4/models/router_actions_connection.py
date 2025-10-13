@@ -15,6 +15,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.connection_type import ConnectionType
+from equinix.services.fabricv4.models.operation import Operation
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,8 +25,11 @@ class RouterActionsConnection(BaseModel):
     Connection object for router actions
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="Connection UUID")
+    href: Optional[StrictStr] = None
+    type: Optional[ConnectionType] = None
+    operation: Optional[Operation] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid"]
+    __properties: ClassVar[List[str]] = ["uuid", "href", "type", "operation"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -67,6 +72,9 @@ class RouterActionsConnection(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of operation
+        if self.operation:
+            _dict['operation'] = self.operation.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -84,7 +92,10 @@ class RouterActionsConnection(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "uuid": obj.get("uuid")
+            "uuid": obj.get("uuid"),
+            "href": obj.get("href"),
+            "type": obj.get("type"),
+            "operation": Operation.from_dict(obj["operation"]) if obj.get("operation") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **connectivity_source** | [**ConnectivitySource**](ConnectivitySource.md) |  | [optional] 
 **service_type** | [**VirtualPortServiceType**](VirtualPortServiceType.md) |  | [optional] [default to VirtualPortServiceType.MSP]
 **settings** | [**VirtualPortConfiguration**](VirtualPortConfiguration.md) |  | [optional] 
+**package** | [**VirtualPortPackage**](VirtualPortPackage.md) |  | [optional] 
 
 ## Example
 

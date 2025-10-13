@@ -14,13 +14,15 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from equinix.services.fabricv4.models.fabric_connection import FabricConnection
+from equinix.services.fabricv4.models.fabric_ipwan import FabricIPWAN
+from equinix.services.fabricv4.models.fabric_ipwan_connection import FabricIPWANConnection
 from equinix.services.fabricv4.models.fabric_route_protocols import FabricRouteProtocols
 from equinix.services.fabricv4.models.fabric_router import FabricRouter
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-FABRICPROVIDERRESOURCE_ONE_OF_SCHEMAS = ["FabricConnection", "FabricRouteProtocols", "FabricRouter"]
+FABRICPROVIDERRESOURCE_ONE_OF_SCHEMAS = ["FabricConnection", "FabricIPWAN", "FabricIPWANConnection", "FabricRouteProtocols", "FabricRouter"]
 
 class FabricProviderResource(BaseModel):
     """
@@ -32,8 +34,12 @@ class FabricProviderResource(BaseModel):
     oneof_schema_2_validator: Optional[FabricConnection] = None
     # data type: FabricRouteProtocols
     oneof_schema_3_validator: Optional[FabricRouteProtocols] = None
-    actual_instance: Optional[Union[FabricConnection, FabricRouteProtocols, FabricRouter]] = None
-    one_of_schemas: Set[str] = { "FabricConnection", "FabricRouteProtocols", "FabricRouter" }
+    # data type: FabricIPWAN
+    oneof_schema_4_validator: Optional[FabricIPWAN] = None
+    # data type: FabricIPWANConnection
+    oneof_schema_5_validator: Optional[FabricIPWANConnection] = None
+    actual_instance: Optional[Union[FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter]] = None
+    one_of_schemas: Set[str] = { "FabricConnection", "FabricIPWAN", "FabricIPWANConnection", "FabricRouteProtocols", "FabricRouter" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -74,12 +80,22 @@ class FabricProviderResource(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `FabricRouteProtocols`")
         else:
             match += 1
+        # validate data type: FabricIPWAN
+        if not isinstance(v, FabricIPWAN):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `FabricIPWAN`")
+        else:
+            match += 1
+        # validate data type: FabricIPWANConnection
+        if not isinstance(v, FabricIPWANConnection):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `FabricIPWANConnection`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in FabricProviderResource with oneOf schemas: FabricConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in FabricProviderResource with oneOf schemas: FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in FabricProviderResource with oneOf schemas: FabricConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in FabricProviderResource with oneOf schemas: FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -112,13 +128,25 @@ class FabricProviderResource(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into FabricIPWAN
+        try:
+            instance.actual_instance = FabricIPWAN.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into FabricIPWANConnection
+        try:
+            instance.actual_instance = FabricIPWANConnection.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into FabricProviderResource with oneOf schemas: FabricConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into FabricProviderResource with oneOf schemas: FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into FabricProviderResource with oneOf schemas: FabricConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into FabricProviderResource with oneOf schemas: FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -132,7 +160,7 @@ class FabricProviderResource(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], FabricConnection, FabricRouteProtocols, FabricRouter]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], FabricConnection, FabricIPWAN, FabricIPWANConnection, FabricRouteProtocols, FabricRouter]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

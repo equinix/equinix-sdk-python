@@ -1,7 +1,6 @@
 # flake8: noqa
 
 # import apis into api package
-from equinix.services.fabricv4.api.client_interfaces_api import ClientInterfacesApi
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
@@ -11,6 +10,8 @@ from equinix.services.fabricv4.api.marketplace_subscriptions_api import Marketpl
 from equinix.services.fabricv4.api.metrics_api import MetricsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
 from equinix.services.fabricv4.api.networks_api import NetworksApi
+from equinix.services.fabricv4.api.peering_protocols_api import PeeringProtocolsApi
+from equinix.services.fabricv4.api.port_packages_api import PortPackagesApi
 from equinix.services.fabricv4.api.ports_api import PortsApi
 from equinix.services.fabricv4.api.precision_time_api import PrecisionTimeApi
 from equinix.services.fabricv4.api.prices_api import PricesApi

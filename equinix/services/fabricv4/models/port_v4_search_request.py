@@ -25,7 +25,7 @@ class PortV4SearchRequest(BaseModel):
     """
     Search requests containing criteria
     """ # noqa: E501
-    filter: Optional[PortExpression] = None
+    filter: PortExpression
     pagination: Optional[PaginationRequest] = None
     sort: Optional[List[PortSortCriteria]] = None
     additional_properties: Dict[str, Any] = {}

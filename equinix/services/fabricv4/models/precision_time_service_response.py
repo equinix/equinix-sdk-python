@@ -27,6 +27,7 @@ from equinix.services.fabricv4.models.precision_time_service_response_type impor
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.ptp_advance_configuration import PtpAdvanceConfiguration
 from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
+from equinix.services.fabricv4.models.time_service_operation import TimeServiceOperation
 from equinix.services.fabricv4.models.virtual_connection_time_service_response import VirtualConnectionTimeServiceResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,6 +41,7 @@ class PrecisionTimeServiceResponse(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Precision Time Service Name.")
     uuid: StrictStr = Field(description="Precision Time Service UUID.")
     state: PrecisionTimeServiceResponseState
+    operation: Optional[TimeServiceOperation] = None
     package: PrecisionTimePackagePostResponse
     connections: Optional[Annotated[List[VirtualConnectionTimeServiceResponse], Field(min_length=1, max_length=2)]] = Field(default=None, description="Fabric Connections associated with Precision Time Service.")
     ipv4: Optional[Ipv4] = None
@@ -51,7 +53,7 @@ class PrecisionTimeServiceResponse(BaseModel):
     pricing: Optional[PrecisionTimePrice] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "state", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "pricing", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "pricing", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,9 @@ class PrecisionTimeServiceResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of operation
+        if self.operation:
+            _dict['operation'] = self.operation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of package
         if self.package:
             _dict['package'] = self.package.to_dict()
@@ -154,6 +159,7 @@ class PrecisionTimeServiceResponse(BaseModel):
             "name": obj.get("name"),
             "uuid": obj.get("uuid"),
             "state": obj.get("state"),
+            "operation": TimeServiceOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "package": PrecisionTimePackagePostResponse.from_dict(obj["package"]) if obj.get("package") is not None else None,
             "connections": [VirtualConnectionTimeServiceResponse.from_dict(_item) for _item in obj["connections"]] if obj.get("connections") is not None else None,
             "ipv4": Ipv4.from_dict(obj["ipv4"]) if obj.get("ipv4") is not None else None,

@@ -34,6 +34,9 @@ class ConnectionType(str, Enum):
     EPTREE_VC = 'EPTREE_VC'
     IPWAN_VC = 'IPWAN_VC'
     IA_VC = 'IA_VC'
+    MC_VC = 'MC_VC'
+    IX_PUBLIC_VC = 'IX_PUBLIC_VC'
+    IX_PRIVATE_VC = 'IX_PRIVATE_VC'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -13,12 +13,9 @@ Name | Type | Description | Notes
 **description** | **str** | Customer-provided stream alert rule description | [optional] 
 **state** | [**StreamAlertRuleState**](StreamAlertRuleState.md) |  | [optional] 
 **enabled** | **bool** | Stream alert rule enabled status | [optional] [default to True]
-**metric_name** | **str** | Stream alert rule metric name | [optional] 
+**metric_selector** | [**MetricSelector**](MetricSelector.md) |  | [optional] 
 **resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | [optional] 
-**window_size** | **str** | Stream alert rule metric window size | [optional] 
-**operand** | [**AlertRulePostRequestOperand**](AlertRulePostRequestOperand.md) |  | [optional] 
-**warning_threshold** | **str** | Stream alert rule metric warning threshold | [optional] 
-**critical_threshold** | **str** | Stream alert rule metric critical threshold | [optional] 
+**detection_method** | [**DetectionMethod**](DetectionMethod.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

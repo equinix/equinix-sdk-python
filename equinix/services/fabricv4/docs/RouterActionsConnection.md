@@ -7,6 +7,9 @@ Connection object for router actions
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Connection UUID | [optional] 
+**href** | **str** |  | [optional] 
+**type** | [**ConnectionType**](ConnectionType.md) |  | [optional] 
+**operation** | [**Operation**](Operation.md) |  | [optional] 
 
 ## Example
 

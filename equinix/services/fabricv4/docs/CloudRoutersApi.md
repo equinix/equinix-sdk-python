@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**get_cloud_router_command**](CloudRoutersApi.md#get_cloud_router_command) | **GET** /fabric/v4/routers/{routerId}/commands/{commandId} | Get Command
 [**get_cloud_router_package_by_code**](CloudRoutersApi.md#get_cloud_router_package_by_code) | **GET** /fabric/v4/routerPackages/{routerPackageCode} | Get Package Details
 [**get_cloud_router_packages**](CloudRoutersApi.md#get_cloud_router_packages) | **GET** /fabric/v4/routerPackages | List Packages
+[**get_gateway_attachment_to_cloud_router_by_uuid**](CloudRoutersApi.md#get_gateway_attachment_to_cloud_router_by_uuid) | **GET** /fabric/v4/gateways/{gatewayId}/routers/{routerId} | Get Gateway Attachment details to a Cloud Router
+[**list_gateway_attachments_to_cloud_router**](CloudRoutersApi.md#list_gateway_attachments_to_cloud_router) | **GET** /fabric/v4/gateways/{gatewayId}/routers | List Cloud Routers of a Gateway Attachment.
 [**search_cloud_router_commands**](CloudRoutersApi.md#search_cloud_router_commands) | **POST** /fabric/v4/routers/{routerId}/commands/search | Search Commands
 [**search_cloud_router_routes**](CloudRoutersApi.md#search_cloud_router_routes) | **POST** /fabric/v4/routers/{routerId}/routes/search | Search Route Table
 [**search_cloud_routers**](CloudRoutersApi.md#search_cloud_routers) | **POST** /fabric/v4/routers/search | Search Routers
@@ -1038,6 +1040,180 @@ Name | Type | Description  | Notes
 **200** | Fabric Cloud Router Packages |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+**415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_gateway_attachment_to_cloud_router_by_uuid**
+> CloudRouterForGatewayAttachmentResponse get_gateway_attachment_to_cloud_router_by_uuid(gateway_id, router_id)
+
+Get Gateway Attachment details to a Cloud Router
+
+Get details of a Specific Gateway Attachment to a Cloud Router.
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_for_gateway_attachment_response import CloudRouterForGatewayAttachmentResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    gateway_id = 'gateway_id_example' # str | Gateway UUID
+    router_id = 'router_id_example' # str | Cloud Router UUID
+
+    try:
+        # Get Gateway Attachment details to a Cloud Router
+        api_response = api_instance.get_gateway_attachment_to_cloud_router_by_uuid(gateway_id, router_id)
+        print("The response of CloudRoutersApi->get_gateway_attachment_to_cloud_router_by_uuid:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->get_gateway_attachment_to_cloud_router_by_uuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gateway_id** | **str**| Gateway UUID | 
+ **router_id** | **str**| Cloud Router UUID | 
+
+### Return type
+
+[**CloudRouterForGatewayAttachmentResponse**](CloudRouterForGatewayAttachmentResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Cloud Router associated to a Gateway Attachment. |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_gateway_attachments_to_cloud_router**
+> CloudRouterListForGatewayAttachment list_gateway_attachments_to_cloud_router(gateway_id, offset=offset, limit=limit)
+
+List Cloud Routers of a Gateway Attachment.
+
+Get all Cloud Routers attached on a Gateway.
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_list_for_gateway_attachment import CloudRouterListForGatewayAttachment
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
+    gateway_id = 'gateway_id_example' # str | Gateway UUID
+    offset = 1 # int | offset (optional)
+    limit = 10 # int | number of records to fetch (optional)
+
+    try:
+        # List Cloud Routers of a Gateway Attachment.
+        api_response = api_instance.list_gateway_attachments_to_cloud_router(gateway_id, offset=offset, limit=limit)
+        print("The response of CloudRoutersApi->list_gateway_attachments_to_cloud_router:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CloudRoutersApi->list_gateway_attachments_to_cloud_router: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gateway_id** | **str**| Gateway UUID | 
+ **offset** | **int**| offset | [optional] 
+ **limit** | **int**| number of records to fetch | [optional] 
+
+### Return type
+
+[**CloudRouterListForGatewayAttachment**](CloudRouterListForGatewayAttachment.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of Cloud Routers on a Gateway Attachment. |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 **415** | Unsupported Media Type |  -  |
 **500** | Internal server error |  -  |
 
