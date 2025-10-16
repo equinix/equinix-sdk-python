@@ -26,6 +26,8 @@ from equinix.services.fabricv4.models.cloud_router_command import CloudRouterCom
 from equinix.services.fabricv4.models.cloud_router_command_post_request import CloudRouterCommandPostRequest
 from equinix.services.fabricv4.models.cloud_router_command_search_request import CloudRouterCommandSearchRequest
 from equinix.services.fabricv4.models.cloud_router_command_search_response import CloudRouterCommandSearchResponse
+from equinix.services.fabricv4.models.cloud_router_for_gateway_attachment_response import CloudRouterForGatewayAttachmentResponse
+from equinix.services.fabricv4.models.cloud_router_list_for_gateway_attachment import CloudRouterListForGatewayAttachment
 from equinix.services.fabricv4.models.cloud_router_package import CloudRouterPackage
 from equinix.services.fabricv4.models.cloud_router_post_request import CloudRouterPostRequest
 from equinix.services.fabricv4.models.cloud_router_search_request import CloudRouterSearchRequest
@@ -3549,6 +3551,613 @@ class CloudRoutersApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/fabric/v4/routerPackages',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_gateway_attachment_to_cloud_router_by_uuid(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> CloudRouterForGatewayAttachmentResponse:
+        """Get Gateway Attachment details to a Cloud Router
+
+        Get details of a Specific Gateway Attachment to a Cloud Router.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param router_id: Cloud Router UUID (required)
+        :type router_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_gateway_attachment_to_cloud_router_by_uuid_serialize(
+            gateway_id=gateway_id,
+            router_id=router_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterForGatewayAttachmentResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_gateway_attachment_to_cloud_router_by_uuid_with_http_info(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[CloudRouterForGatewayAttachmentResponse]:
+        """Get Gateway Attachment details to a Cloud Router
+
+        Get details of a Specific Gateway Attachment to a Cloud Router.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param router_id: Cloud Router UUID (required)
+        :type router_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_gateway_attachment_to_cloud_router_by_uuid_serialize(
+            gateway_id=gateway_id,
+            router_id=router_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterForGatewayAttachmentResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_gateway_attachment_to_cloud_router_by_uuid_without_preload_content(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Gateway Attachment details to a Cloud Router
+
+        Get details of a Specific Gateway Attachment to a Cloud Router.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param router_id: Cloud Router UUID (required)
+        :type router_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_gateway_attachment_to_cloud_router_by_uuid_serialize(
+            gateway_id=gateway_id,
+            router_id=router_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterForGatewayAttachmentResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_gateway_attachment_to_cloud_router_by_uuid_serialize(
+        self,
+        gateway_id,
+        router_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if gateway_id is not None:
+            _path_params['gatewayId'] = gateway_id
+        if router_id is not None:
+            _path_params['routerId'] = router_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/fabric/v4/gateways/{gatewayId}/routers/{routerId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def list_gateway_attachments_to_cloud_router(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> CloudRouterListForGatewayAttachment:
+        """List Cloud Routers of a Gateway Attachment.
+
+        Get all Cloud Routers attached on a Gateway.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_gateway_attachments_to_cloud_router_serialize(
+            gateway_id=gateway_id,
+            offset=offset,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterListForGatewayAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def list_gateway_attachments_to_cloud_router_with_http_info(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[CloudRouterListForGatewayAttachment]:
+        """List Cloud Routers of a Gateway Attachment.
+
+        Get all Cloud Routers attached on a Gateway.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_gateway_attachments_to_cloud_router_serialize(
+            gateway_id=gateway_id,
+            offset=offset,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterListForGatewayAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def list_gateway_attachments_to_cloud_router_without_preload_content(
+        self,
+        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """List Cloud Routers of a Gateway Attachment.
+
+        Get all Cloud Routers attached on a Gateway.
+
+        :param gateway_id: Gateway UUID (required)
+        :type gateway_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._list_gateway_attachments_to_cloud_router_serialize(
+            gateway_id=gateway_id,
+            offset=offset,
+            limit=limit,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "CloudRouterListForGatewayAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _list_gateway_attachments_to_cloud_router_serialize(
+        self,
+        gateway_id,
+        offset,
+        limit,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if gateway_id is not None:
+            _path_params['gatewayId'] = gateway_id
+        # process the query parameters
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/fabric/v4/gateways/{gatewayId}/routers',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -13,7 +13,6 @@
 __version__ = "0.12.0"
 
 # import apis into sdk package
-from equinix.services.fabricv4.api.client_interfaces_api import ClientInterfacesApi
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
@@ -23,6 +22,8 @@ from equinix.services.fabricv4.api.marketplace_subscriptions_api import Marketpl
 from equinix.services.fabricv4.api.metrics_api import MetricsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
 from equinix.services.fabricv4.api.networks_api import NetworksApi
+from equinix.services.fabricv4.api.peering_protocols_api import PeeringProtocolsApi
+from equinix.services.fabricv4.api.port_packages_api import PortPackagesApi
 from equinix.services.fabricv4.api.ports_api import PortsApi
 from equinix.services.fabricv4.api.precision_time_api import PrecisionTimeApi
 from equinix.services.fabricv4.api.prices_api import PricesApi
@@ -71,10 +72,10 @@ from equinix.services.fabricv4.models.action_request import ActionRequest
 from equinix.services.fabricv4.models.actions import Actions
 from equinix.services.fabricv4.models.add_operation import AddOperation
 from equinix.services.fabricv4.models.alert_rule_post_request import AlertRulePostRequest
-from equinix.services.fabricv4.models.alert_rule_post_request_operand import AlertRulePostRequestOperand
 from equinix.services.fabricv4.models.alert_rule_post_request_type import AlertRulePostRequestType
 from equinix.services.fabricv4.models.alert_rule_put_request import AlertRulePutRequest
 from equinix.services.fabricv4.models.all_physical_ports_response import AllPhysicalPortsResponse
+from equinix.services.fabricv4.models.all_port_packages_response import AllPortPackagesResponse
 from equinix.services.fabricv4.models.all_ports_response import AllPortsResponse
 from equinix.services.fabricv4.models.api_config import ApiConfig
 from equinix.services.fabricv4.models.api_services import ApiServices
@@ -95,13 +96,11 @@ from equinix.services.fabricv4.models.bgp_connection_operation_operational_statu
 from equinix.services.fabricv4.models.bandwidth_utilization import BandwidthUtilization
 from equinix.services.fabricv4.models.bandwidth_utilization_unit import BandwidthUtilizationUnit
 from equinix.services.fabricv4.models.bulk_physical_port import BulkPhysicalPort
-from equinix.services.fabricv4.models.bulk_port import BulkPort
 from equinix.services.fabricv4.models.bulk_port_request import BulkPortRequest
 from equinix.services.fabricv4.models.change import Change
 from equinix.services.fabricv4.models.change_status import ChangeStatus
 from equinix.services.fabricv4.models.change_type import ChangeType
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.client_interfaces import ClientInterfaces
 from equinix.services.fabricv4.models.cloud_event import CloudEvent
 from equinix.services.fabricv4.models.cloud_event_asset_type import CloudEventAssetType
 from equinix.services.fabricv4.models.cloud_event_data import CloudEventData
@@ -147,6 +146,8 @@ from equinix.services.fabricv4.models.cloud_router_command_traceroute_response i
 from equinix.services.fabricv4.models.cloud_router_command_type import CloudRouterCommandType
 from equinix.services.fabricv4.models.cloud_router_filter import CloudRouterFilter
 from equinix.services.fabricv4.models.cloud_router_filters import CloudRouterFilters
+from equinix.services.fabricv4.models.cloud_router_for_gateway_attachment_response import CloudRouterForGatewayAttachmentResponse
+from equinix.services.fabricv4.models.cloud_router_list_for_gateway_attachment import CloudRouterListForGatewayAttachment
 from equinix.services.fabricv4.models.cloud_router_or_filter import CloudRouterOrFilter
 from equinix.services.fabricv4.models.cloud_router_package import CloudRouterPackage
 from equinix.services.fabricv4.models.cloud_router_package_type import CloudRouterPackageType
@@ -175,6 +176,8 @@ from equinix.services.fabricv4.models.connection_link import ConnectionLink
 from equinix.services.fabricv4.models.connection_link_type import ConnectionLinkType
 from equinix.services.fabricv4.models.connection_operation import ConnectionOperation
 from equinix.services.fabricv4.models.connection_operation_operational_status import ConnectionOperationOperationalStatus
+from equinix.services.fabricv4.models.connection_peering_protocol_post_request import ConnectionPeeringProtocolPostRequest
+from equinix.services.fabricv4.models.connection_peering_protocol_post_request_type import ConnectionPeeringProtocolPostRequestType
 from equinix.services.fabricv4.models.connection_post_request import ConnectionPostRequest
 from equinix.services.fabricv4.models.connection_priority import ConnectionPriority
 from equinix.services.fabricv4.models.connection_redundancy import ConnectionRedundancy
@@ -220,6 +223,9 @@ from equinix.services.fabricv4.models.deployment_search_request import Deploymen
 from equinix.services.fabricv4.models.deployment_search_response import DeploymentSearchResponse
 from equinix.services.fabricv4.models.deployment_state import DeploymentState
 from equinix.services.fabricv4.models.deployment_topology import DeploymentTopology
+from equinix.services.fabricv4.models.detection_method import DetectionMethod
+from equinix.services.fabricv4.models.detection_method_operand import DetectionMethodOperand
+from equinix.services.fabricv4.models.detection_method_type import DetectionMethodType
 from equinix.services.fabricv4.models.direct_connection_ipv4 import DirectConnectionIpv4
 from equinix.services.fabricv4.models.direct_connection_ipv6 import DirectConnectionIpv6
 from equinix.services.fabricv4.models.direction import Direction
@@ -235,6 +241,10 @@ from equinix.services.fabricv4.models.fabric_cloud_router_price import FabricClo
 from equinix.services.fabricv4.models.fabric_connection import FabricConnection
 from equinix.services.fabricv4.models.fabric_connection_response import FabricConnectionResponse
 from equinix.services.fabricv4.models.fabric_connection_type import FabricConnectionType
+from equinix.services.fabricv4.models.fabric_ipwan import FabricIPWAN
+from equinix.services.fabricv4.models.fabric_ipwan_connection import FabricIPWANConnection
+from equinix.services.fabricv4.models.fabric_ipwan_connection_response import FabricIPWANConnectionResponse
+from equinix.services.fabricv4.models.fabric_ipwan_response import FabricIPWANResponse
 from equinix.services.fabricv4.models.fabric_provider import FabricProvider
 from equinix.services.fabricv4.models.fabric_provider_resource import FabricProviderResource
 from equinix.services.fabricv4.models.fabric_provider_resource_response import FabricProviderResourceResponse
@@ -256,6 +266,10 @@ from equinix.services.fabricv4.models.gcp_provider_resource import GCPProviderRe
 from equinix.services.fabricv4.models.gcp_provider_resource_response import GCPProviderResourceResponse
 from equinix.services.fabricv4.models.gcp_provider_response import GCPProviderResponse
 from equinix.services.fabricv4.models.gcp_provider_type import GCPProviderType
+from equinix.services.fabricv4.models.gateway_attachment_list_response import GatewayAttachmentListResponse
+from equinix.services.fabricv4.models.gateway_attachment_response import GatewayAttachmentResponse
+from equinix.services.fabricv4.models.gateway_attachment_response_attachment_status import GatewayAttachmentResponseAttachmentStatus
+from equinix.services.fabricv4.models.gateway_attachment_response_type import GatewayAttachmentResponseType
 from equinix.services.fabricv4.models.geo_coordinates import GeoCoordinates
 from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
 from equinix.services.fabricv4.models.get_all_cloud_router_commands import GetAllCloudRouterCommands
@@ -302,18 +316,13 @@ from equinix.services.fabricv4.models.metal_interconnection import MetalIntercon
 from equinix.services.fabricv4.models.metric import Metric
 from equinix.services.fabricv4.models.metric_asset_type import MetricAssetType
 from equinix.services.fabricv4.models.metric_datapoints import MetricDatapoints
+from equinix.services.fabricv4.models.metric_filters import MetricFilters
 from equinix.services.fabricv4.models.metric_resource import MetricResource
+from equinix.services.fabricv4.models.metric_selector import MetricSelector
+from equinix.services.fabricv4.models.metric_simple_expression import MetricSimpleExpression
 from equinix.services.fabricv4.models.metrics import Metrics
+from equinix.services.fabricv4.models.metrics_search_request import MetricsSearchRequest
 from equinix.services.fabricv4.models.metro import Metro
-from equinix.services.fabricv4.models.metro_connect_a_side import MetroConnectASide
-from equinix.services.fabricv4.models.metro_connect_a_side_response import MetroConnectASideResponse
-from equinix.services.fabricv4.models.metro_connect_order import MetroConnectOrder
-from equinix.services.fabricv4.models.metro_connect_patch_panel import MetroConnectPatchPanel
-from equinix.services.fabricv4.models.metro_connect_port import MetroConnectPort
-from equinix.services.fabricv4.models.metro_connect_post_request import MetroConnectPostRequest
-from equinix.services.fabricv4.models.metro_connect_post_request_connectivity_destination_type import MetroConnectPostRequestConnectivityDestinationType
-from equinix.services.fabricv4.models.metro_connect_z_side import MetroConnectZSide
-from equinix.services.fabricv4.models.metro_connect_z_side_response import MetroConnectZSideResponse
 from equinix.services.fabricv4.models.metro_error import MetroError
 from equinix.services.fabricv4.models.metro_error_error_code import MetroErrorErrorCode
 from equinix.services.fabricv4.models.metro_error_error_message import MetroErrorErrorMessage
@@ -344,6 +353,7 @@ from equinix.services.fabricv4.models.network_state import NetworkState
 from equinix.services.fabricv4.models.network_type import NetworkType
 from equinix.services.fabricv4.models.op_enum import OpEnum
 from equinix.services.fabricv4.models.operation import Operation
+from equinix.services.fabricv4.models.operational_status import OperationalStatus
 from equinix.services.fabricv4.models.orchestrator_providers import OrchestratorProviders
 from equinix.services.fabricv4.models.order import Order
 from equinix.services.fabricv4.models.output_structured_ping import OutputStructuredPing
@@ -356,6 +366,17 @@ from equinix.services.fabricv4.models.package_response import PackageResponse
 from equinix.services.fabricv4.models.package_type import PackageType
 from equinix.services.fabricv4.models.pagination import Pagination
 from equinix.services.fabricv4.models.pagination_request import PaginationRequest
+from equinix.services.fabricv4.models.peering_connection_ipv4 import PeeringConnectionIpv4
+from equinix.services.fabricv4.models.peering_connection_ipv4_auth_keys import PeeringConnectionIpv4AuthKeys
+from equinix.services.fabricv4.models.peering_connection_ipv6 import PeeringConnectionIpv6
+from equinix.services.fabricv4.models.peering_connection_res_ipv4 import PeeringConnectionResIpv4
+from equinix.services.fabricv4.models.peering_connection_res_ipv4_auth_keys import PeeringConnectionResIpv4AuthKeys
+from equinix.services.fabricv4.models.peering_connection_res_ipv4_auth_keys_type import PeeringConnectionResIpv4AuthKeysType
+from equinix.services.fabricv4.models.peering_connection_res_ipv6 import PeeringConnectionResIpv6
+from equinix.services.fabricv4.models.peering_protocol_data import PeeringProtocolData
+from equinix.services.fabricv4.models.peering_protocol_data_route_collectors import PeeringProtocolDataRouteCollectors
+from equinix.services.fabricv4.models.peering_protocol_data_state import PeeringProtocolDataState
+from equinix.services.fabricv4.models.peering_protocol_data_type import PeeringProtocolDataType
 from equinix.services.fabricv4.models.peering_type import PeeringType
 from equinix.services.fabricv4.models.physical_port import PhysicalPort
 from equinix.services.fabricv4.models.physical_port_settings import PhysicalPortSettings
@@ -389,6 +410,10 @@ from equinix.services.fabricv4.models.port_order_purchase_order_type import Port
 from equinix.services.fabricv4.models.port_order_signature import PortOrderSignature
 from equinix.services.fabricv4.models.port_order_signature_delegate import PortOrderSignatureDelegate
 from equinix.services.fabricv4.models.port_order_signature_signatory import PortOrderSignatureSignatory
+from equinix.services.fabricv4.models.port_package import PortPackage
+from equinix.services.fabricv4.models.port_package_source_type import PortPackageSourceType
+from equinix.services.fabricv4.models.port_package_supported_service_types_inner import PortPackageSupportedServiceTypesInner
+from equinix.services.fabricv4.models.port_package_type import PortPackageType
 from equinix.services.fabricv4.models.port_physical_ports_type import PortPhysicalPortsType
 from equinix.services.fabricv4.models.port_priority import PortPriority
 from equinix.services.fabricv4.models.port_redundancy import PortRedundancy
@@ -528,6 +553,7 @@ from equinix.services.fabricv4.models.route_table_entry_sort_direction import Ro
 from equinix.services.fabricv4.models.route_table_entry_state import RouteTableEntryState
 from equinix.services.fabricv4.models.route_table_entry_type import RouteTableEntryType
 from equinix.services.fabricv4.models.router_actions_connection import RouterActionsConnection
+from equinix.services.fabricv4.models.router_actions_router import RouterActionsRouter
 from equinix.services.fabricv4.models.router_package_code import RouterPackageCode
 from equinix.services.fabricv4.models.routing_protocol_bfd import RoutingProtocolBFD
 from equinix.services.fabricv4.models.routing_protocol_bgp_data import RoutingProtocolBGPData
@@ -676,6 +702,8 @@ from equinix.services.fabricv4.models.subscription_state import SubscriptionStat
 from equinix.services.fabricv4.models.subscription_trial import SubscriptionTrial
 from equinix.services.fabricv4.models.time_service_filter import TimeServiceFilter
 from equinix.services.fabricv4.models.time_service_filters import TimeServiceFilters
+from equinix.services.fabricv4.models.time_service_operation import TimeServiceOperation
+from equinix.services.fabricv4.models.time_service_operation_operational_status import TimeServiceOperationOperationalStatus
 from equinix.services.fabricv4.models.time_service_or_filter import TimeServiceOrFilter
 from equinix.services.fabricv4.models.time_service_price import TimeServicePrice
 from equinix.services.fabricv4.models.time_service_price_connection import TimeServicePriceConnection
@@ -719,6 +747,7 @@ from equinix.services.fabricv4.models.virtual_device_type import VirtualDeviceTy
 from equinix.services.fabricv4.models.virtual_network import VirtualNetwork
 from equinix.services.fabricv4.models.virtual_port_configuration import VirtualPortConfiguration
 from equinix.services.fabricv4.models.virtual_port_location import VirtualPortLocation
+from equinix.services.fabricv4.models.virtual_port_package import VirtualPortPackage
 from equinix.services.fabricv4.models.virtual_port_price import VirtualPortPrice
 from equinix.services.fabricv4.models.virtual_port_redundancy import VirtualPortRedundancy
 from equinix.services.fabricv4.models.virtual_port_service_type import VirtualPortServiceType

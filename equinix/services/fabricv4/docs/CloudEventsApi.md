@@ -134,7 +134,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     from_date_time = '2013-10-20T19:20:30+01:00' # datetime | Start date and time (optional)
     to_date_time = '2013-10-20T19:20:30+01:00' # datetime | End date and time (optional)
     offset = 0 # int | offset (optional) (default to 0)
-    limit = 20 # int | limit (optional) (default to 20)
+    limit = 100 # int | limit (optional) (default to 100)
 
     try:
         # Get Cloud Events by Asset Id
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
  **from_date_time** | **datetime**| Start date and time | [optional] 
  **to_date_time** | **datetime**| End date and time | [optional] 
  **offset** | **int**| offset | [optional] [default to 0]
- **limit** | **int**| limit | [optional] [default to 20]
+ **limit** | **int**| limit | [optional] [default to 100]
 
 ### Return type
 

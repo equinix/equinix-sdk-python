@@ -1,5 +1,6 @@
 # PortExpression
 
+Either use 'and' for AND operations, 'or' for OR operations,  or specify 'property', 'operator', and 'values' for field filtering. Only one of these patterns should be used at a time. 
 
 ## Properties
 

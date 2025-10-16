@@ -13,6 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.cloud_event_data import CloudEventData
@@ -28,10 +29,12 @@ class CloudEvent(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="Cloud Event identifier")
     type: Optional[StrictStr] = Field(default=None, description="Equinix supported event type")
     subject: Optional[StrictStr] = Field(default=None, description="Cloud Event subject")
+    time: Optional[datetime] = Field(default=None, description="Cloud Event time the event occurred")
     dataschema: Optional[StrictStr] = Field(default=None, description="Cloud Event dataschema reference")
     datacontenttype: Optional[StrictStr] = Field(default=None, description="Cloud Event data content type")
     severitynumber: Optional[StrictStr] = Field(default=None, description="Cloud Event severity number")
     severitytext: Optional[StrictStr] = Field(default=None, description="Cloud Event severity text")
+    equinixalert: Optional[StrictStr] = Field(default=None, description="Equinix alert")
     equinixorganization: Optional[StrictStr] = Field(default=None, description="Equinix organization identifier")
     equinixproject: Optional[StrictStr] = Field(default=None, description="Equinix project identifier")
     authtype: Optional[StrictStr] = Field(default=None, description="Cloud Event auth type")
@@ -40,7 +43,7 @@ class CloudEvent(BaseModel):
     tracestate: Optional[StrictStr] = Field(default=None, description="Cloud Event tracestate")
     data: Optional[CloudEventData] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["spec", "source", "id", "type", "subject", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"]
+    __properties: ClassVar[List[str]] = ["spec", "source", "id", "type", "subject", "time", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixalert", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,10 +113,12 @@ class CloudEvent(BaseModel):
             "id": obj.get("id"),
             "type": obj.get("type"),
             "subject": obj.get("subject"),
+            "time": obj.get("time"),
             "dataschema": obj.get("dataschema"),
             "datacontenttype": obj.get("datacontenttype"),
             "severitynumber": obj.get("severitynumber"),
             "severitytext": obj.get("severitytext"),
+            "equinixalert": obj.get("equinixalert"),
             "equinixorganization": obj.get("equinixorganization"),
             "equinixproject": obj.get("equinixproject"),
             "authtype": obj.get("authtype"),

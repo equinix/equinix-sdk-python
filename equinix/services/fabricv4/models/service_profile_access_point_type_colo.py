@@ -38,12 +38,13 @@ class ServiceProfileAccessPointTypeCOLO(BaseModel):
     link_protocol_config: Optional[ServiceProfileLinkProtocolConfig] = Field(default=None, alias="linkProtocolConfig")
     enable_auto_generate_service_key: Optional[StrictBool] = Field(default=None, description="for verizon only.", alias="enableAutoGenerateServiceKey")
     connection_redundancy_required: Optional[StrictBool] = Field(default=False, description="Mandate redundant connections", alias="connectionRedundancyRequired")
+    selective_redundancy: Optional[StrictBool] = Field(default=False, description="Optional redundant connections", alias="selectiveRedundancy")
     api_config: Optional[ApiConfig] = Field(default=None, alias="apiConfig")
     connection_label: Optional[StrictStr] = Field(default=None, description="custom name for \"Connection\"", alias="connectionLabel")
     authentication_key: Optional[AuthenticationKey] = Field(default=None, alias="authenticationKey")
     metadata: Optional[ServiceProfileMetadata] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "type", "supportedBandwidths", "allowRemoteConnections", "allowCustomBandwidth", "bandwidthAlertThreshold", "allowBandwidthAutoApproval", "allowBandwidthUpgrade", "linkProtocolConfig", "enableAutoGenerateServiceKey", "connectionRedundancyRequired", "apiConfig", "connectionLabel", "authenticationKey", "metadata"]
+    __properties: ClassVar[List[str]] = ["uuid", "type", "supportedBandwidths", "allowRemoteConnections", "allowCustomBandwidth", "bandwidthAlertThreshold", "allowBandwidthAutoApproval", "allowBandwidthUpgrade", "linkProtocolConfig", "enableAutoGenerateServiceKey", "connectionRedundancyRequired", "selectiveRedundancy", "apiConfig", "connectionLabel", "authenticationKey", "metadata"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -126,6 +127,7 @@ class ServiceProfileAccessPointTypeCOLO(BaseModel):
             "linkProtocolConfig": ServiceProfileLinkProtocolConfig.from_dict(obj["linkProtocolConfig"]) if obj.get("linkProtocolConfig") is not None else None,
             "enableAutoGenerateServiceKey": obj.get("enableAutoGenerateServiceKey"),
             "connectionRedundancyRequired": obj.get("connectionRedundancyRequired") if obj.get("connectionRedundancyRequired") is not None else False,
+            "selectiveRedundancy": obj.get("selectiveRedundancy") if obj.get("selectiveRedundancy") is not None else False,
             "apiConfig": ApiConfig.from_dict(obj["apiConfig"]) if obj.get("apiConfig") is not None else None,
             "connectionLabel": obj.get("connectionLabel"),
             "authenticationKey": AuthenticationKey.from_dict(obj["authenticationKey"]) if obj.get("authenticationKey") is not None else None,

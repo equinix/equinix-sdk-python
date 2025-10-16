@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type** | **str** | Equinix supported metric type | [optional] 
 **name** | **str** | Metric name | [optional] 
 **unit** | **str** | Metric unit | [optional] 
+**interval** | **str** | Metric interval (set automatically based on search range) | [optional] 
 **resource** | [**MetricResource**](MetricResource.md) |  | [optional] 
 **summary** | **str** | Metric summary | [optional] 
 **datapoints** | [**List[MetricDatapoints]**](MetricDatapoints.md) | Metric data points | [optional] 

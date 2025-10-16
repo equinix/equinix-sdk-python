@@ -19,6 +19,7 @@ from equinix.services.fabricv4.models.connectivity_source import ConnectivitySou
 from equinix.services.fabricv4.models.link_aggregation_group import LinkAggregationGroup
 from equinix.services.fabricv4.models.virtual_port_configuration import VirtualPortConfiguration
 from equinix.services.fabricv4.models.virtual_port_location import VirtualPortLocation
+from equinix.services.fabricv4.models.virtual_port_package import VirtualPortPackage
 from equinix.services.fabricv4.models.virtual_port_redundancy import VirtualPortRedundancy
 from equinix.services.fabricv4.models.virtual_port_service_type import VirtualPortServiceType
 from equinix.services.fabricv4.models.virtual_port_type import VirtualPortType
@@ -39,8 +40,9 @@ class VirtualPortPrice(BaseModel):
     connectivity_source: Optional[ConnectivitySource] = Field(default=None, alias="connectivitySource")
     service_type: Optional[VirtualPortServiceType] = Field(default=VirtualPortServiceType.MSP, alias="serviceType")
     settings: Optional[VirtualPortConfiguration] = None
+    package: Optional[VirtualPortPackage] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings"]
+    __properties: ClassVar[List[str]] = ["uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings", "package"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +100,9 @@ class VirtualPortPrice(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of settings
         if self.settings:
             _dict['settings'] = self.settings.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of package
+        if self.package:
+            _dict['package'] = self.package.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -124,7 +129,8 @@ class VirtualPortPrice(BaseModel):
             "redundancy": VirtualPortRedundancy.from_dict(obj["redundancy"]) if obj.get("redundancy") is not None else None,
             "connectivitySource": ConnectivitySource.from_dict(obj["connectivitySource"]) if obj.get("connectivitySource") is not None else None,
             "serviceType": obj.get("serviceType") if obj.get("serviceType") is not None else VirtualPortServiceType.MSP,
-            "settings": VirtualPortConfiguration.from_dict(obj["settings"]) if obj.get("settings") is not None else None
+            "settings": VirtualPortConfiguration.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
+            "package": VirtualPortPackage.from_dict(obj["package"]) if obj.get("package") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

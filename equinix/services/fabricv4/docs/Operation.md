@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bgp_ipv4_routes_count** | **int** | IPV4 route count | [optional] 
 **bgp_ipv6_routes_count** | **int** | IPV6 route count | [optional] 
+**distinct_ipv4_prefixes_count** | **int** | distinct IPV4 prefixes count | [optional] 
+**distinct_ipv6_prefixes_count** | **int** | distinct IPV6 prefixes count | [optional] 
 
 ## Example
 

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **change_log** | [**Changelog**](Changelog.md) |  | 
 **href** | **str** |  | [optional] 
 **connection** | [**RouterActionsConnection**](RouterActionsConnection.md) |  | [optional] 
-**operation** | [**Operation**](Operation.md) |  | [optional] 
+**router** | [**RouterActionsRouter**](RouterActionsRouter.md) |  | [optional] 
 
 ## Example
 

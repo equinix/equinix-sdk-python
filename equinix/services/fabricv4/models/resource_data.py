@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.operational_status import OperationalStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +28,9 @@ class ResourceData(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="Cloud Event asset type")
     name: Optional[StrictStr] = Field(default=None, description="Cloud Event asset name")
     state: Optional[StrictStr] = Field(default=None, description="Cloud Event asset state")
+    operation: Optional[OperationalStatus] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "state"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "state", "operation"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +73,9 @@ class ResourceData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of operation
+        if self.operation:
+            _dict['operation'] = self.operation.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -92,7 +97,8 @@ class ResourceData(BaseModel):
             "uuid": obj.get("uuid"),
             "type": obj.get("type"),
             "name": obj.get("name"),
-            "state": obj.get("state")
+            "state": obj.get("state"),
+            "operation": OperationalStatus.from_dict(obj["operation"]) if obj.get("operation") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -27,11 +27,12 @@ class Metric(BaseModel):
     type: Optional[StrictStr] = Field(default=None, description="Equinix supported metric type")
     name: Optional[StrictStr] = Field(default=None, description="Metric name")
     unit: Optional[StrictStr] = Field(default=None, description="Metric unit")
+    interval: Optional[StrictStr] = Field(default=None, description="Metric interval (set automatically based on search range)")
     resource: Optional[MetricResource] = None
     summary: Optional[StrictStr] = Field(default=None, description="Metric summary")
     datapoints: Optional[List[MetricDatapoints]] = Field(default=None, description="Metric data points")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "unit", "resource", "summary", "datapoints"]
+    __properties: ClassVar[List[str]] = ["type", "name", "unit", "interval", "resource", "summary", "datapoints"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,7 @@ class Metric(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "unit": obj.get("unit"),
+            "interval": obj.get("interval"),
             "resource": MetricResource.from_dict(obj["resource"]) if obj.get("resource") is not None else None,
             "summary": obj.get("summary"),
             "datapoints": [MetricDatapoints.from_dict(_item) for _item in obj["datapoints"]] if obj.get("datapoints") is not None else None

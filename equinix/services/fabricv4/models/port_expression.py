@@ -22,7 +22,7 @@ from typing_extensions import Self
 
 class PortExpression(BaseModel):
     """
-    PortExpression
+    Either use 'and' for AND operations, 'or' for OR operations,  or specify 'property', 'operator', and 'values' for field filtering. Only one of these patterns should be used at a time. 
     """ # noqa: E501
     var_and: Optional[List[PortExpression]] = Field(default=None, alias="and")
     var_or: Optional[List[PortExpression]] = Field(default=None, alias="or")

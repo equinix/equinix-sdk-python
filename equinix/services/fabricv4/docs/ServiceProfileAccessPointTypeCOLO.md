@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **link_protocol_config** | [**ServiceProfileLinkProtocolConfig**](ServiceProfileLinkProtocolConfig.md) |  | [optional] 
 **enable_auto_generate_service_key** | **bool** | for verizon only. | [optional] 
 **connection_redundancy_required** | **bool** | Mandate redundant connections | [optional] [default to False]
+**selective_redundancy** | **bool** | Optional redundant connections | [optional] [default to False]
 **api_config** | [**ApiConfig**](ApiConfig.md) |  | [optional] 
 **connection_label** | **str** | custom name for \&quot;Connection\&quot; | [optional] 
 **authentication_key** | [**AuthenticationKey**](AuthenticationKey.md) |  | [optional] 

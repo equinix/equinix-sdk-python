@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class PortPhysicalPortsType(str, Enum):
     """
-    Physical Ports Type
+    Physical Ports Type. 10GBASE_SMF and 400GBASE_LR4 are only used for IX ports
     """
 
     """
@@ -27,6 +27,8 @@ class PortPhysicalPortsType(str, Enum):
     ENUM_100_GBASE_LR4 = '100GBASE_LR4'
     ENUM_10_GBASE_ER = '10GBASE_ER'
     ENUM_1000_BASE_SX = '1000BASE_SX'
+    ENUM_10_GBASE_SMF = '10GBASE_SMF'
+    ENUM_400_GBASE_LR4 = '400GBASE_LR4'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

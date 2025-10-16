@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **type** | **str** | Cloud Event asset type | [optional] 
 **name** | **str** | Cloud Event asset name | [optional] 
 **state** | **str** | Cloud Event asset state | [optional] 
+**operation** | [**OperationalStatus**](OperationalStatus.md) |  | [optional] 
 
 ## Example
 

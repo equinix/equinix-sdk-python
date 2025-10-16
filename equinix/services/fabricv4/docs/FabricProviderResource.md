@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**RoutingProtocolBGPTypeType**](RoutingProtocolBGPTypeType.md) |  | 
-**name** | **str** |  | [optional] 
-**uuid** | **str** | Equinix-assigned route protocol identifier | [optional] 
-**location** | [**SimplifiedLocationWithoutIBX**](SimplifiedLocationWithoutIBX.md) |  | [optional] 
+**type** | **str** |  | 
+**name** | **str** |  | 
+**uuid** | **str** | Equinix-assigned access point identifier | [optional] 
+**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | [optional] 
 **package** | [**CloudRouterPostRequestPackage**](CloudRouterPostRequestPackage.md) |  | [optional] 
 **deployment_properties** | [**TopologyProperties**](TopologyProperties.md) |  | 
 **bandwidth** | **int** |  | 
@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **customer_asn** | **int** | Customer asn | 
 **bgp_auth_key** | **str** | BGP authorization key | 
 **as_override_enabled** | **bool** | Enable AS number override | [optional] 
+**scope** | [**NetworkScope**](NetworkScope.md) |  | 
 
 ## Example
 

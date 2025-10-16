@@ -22,7 +22,7 @@ class ResourceSelector(BaseModel):
     """
     ResourceSelector
     """ # noqa: E501
-    include: Optional[List[StrictStr]] = Field(default=None, description="### Supported metric names to use on filters with property /subject:   * `*` - all events or metrics   * `*/ports/<uuid>` - port metrics   * `*/connections/<uuid>` - connection metrics   * `*/metros/<metroCode>` - metro latency metrics ")
+    include: Optional[List[StrictStr]] = Field(default=None, description="### Supported metric names to use on filters with property /subject:   * `/fabric/v4/ports/<uuid>` - port metrics   * `/fabric/v4/connections/<uuid>` - connection metrics   * `/fabric/v4/metros/<metroCode>` - metro latency metrics ")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["include"]
 
