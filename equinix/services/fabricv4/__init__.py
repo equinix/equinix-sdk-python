@@ -10,7 +10,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.12.0"
+__version__ = "0.13.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
