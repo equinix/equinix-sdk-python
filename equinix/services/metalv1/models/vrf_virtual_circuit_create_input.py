@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,12 +37,12 @@ class VrfVirtualCircuitCreateInput(BaseModel):
     name: Optional[StrictStr] = None
     nni_vlan: Annotated[int, Field(le=4094, strict=True, ge=2)]
     peer_asn: Annotated[int, Field(le=4294967295, strict=True, ge=0)] = Field(description="The peer ASN that will be used with the VRF on the Virtual Circuit.")
-    project_id: StrictStr
+    project_id: UUID
     speed: Optional[StrictStr] = Field(default=None, description="speed can be passed as integer number representing bps speed or string (e.g. '52m' or '100g' or '4 gbps')")
     subnet: StrictStr = Field(description="The /30 or /31 IPv4 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IP and Customer IP must be IPs from this subnet. For /30 subnets, the network and broadcast IPs cannot be used as the Metal or Customer IP. The subnet specified must be contained within an already-defined IP Range for the VRF.")
     subnet_ipv6: Optional[StrictStr] = Field(default=None, description="The /126 or /127 IPv6 subnet of one of the VRF IP Blocks that will be used with the VRF for the Virtual Circuit. This subnet does not have to be an existing VRF IP reservation, as we will create the VRF IP reservation on creation if it does not exist. The Metal IPv6 and Customer IPv6 must be IPs from this subnet. For /126 subnets, the network and broadcast IPs cannot be used as the Metal IPv6 or Customer IPv6. The subnet specified must be contained within an already-defined IP Range for the VRF.")
     tags: Optional[List[StrictStr]] = None
-    vrf: StrictStr = Field(description="The UUID of the VRF that will be associated with the Virtual Circuit.")
+    vrf: UUID = Field(description="The UUID of the VRF that will be associated with the Virtual Circuit.")
     __properties: ClassVar[List[str]] = ["customer_ip", "customer_ipv6", "description", "href", "md5", "metal_ip", "metal_ipv6", "name", "nni_vlan", "peer_asn", "project_id", "speed", "subnet", "subnet_ipv6", "tags", "vrf"]
 
     @field_validator('md5')

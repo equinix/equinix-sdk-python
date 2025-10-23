@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.payment_method import PaymentMethod
 from equinix.services.metalv1.models.payment_method_update_input import PaymentMethodUpdateInput
 
@@ -40,7 +40,7 @@ class PaymentMethodsApi:
     @validate_call
     def delete_payment_method(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -94,8 +94,7 @@ class PaymentMethodsApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -109,7 +108,7 @@ class PaymentMethodsApi:
     @validate_call
     def delete_payment_method_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -163,8 +162,7 @@ class PaymentMethodsApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -178,7 +176,7 @@ class PaymentMethodsApi:
     @validate_call
     def delete_payment_method_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -232,8 +230,7 @@ class PaymentMethodsApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -302,7 +299,7 @@ class PaymentMethodsApi:
     @validate_call
     def find_payment_method_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -360,8 +357,7 @@ class PaymentMethodsApi:
             '200': "PaymentMethod",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -375,7 +371,7 @@ class PaymentMethodsApi:
     @validate_call
     def find_payment_method_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -433,8 +429,7 @@ class PaymentMethodsApi:
             '200': "PaymentMethod",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -448,7 +443,7 @@ class PaymentMethodsApi:
     @validate_call
     def find_payment_method_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -506,8 +501,7 @@ class PaymentMethodsApi:
             '200': "PaymentMethod",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -582,7 +576,7 @@ class PaymentMethodsApi:
     @validate_call
     def update_payment_method(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         payment_method_update_input: Annotated[PaymentMethodUpdateInput, Field(description="Payment Method to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -645,8 +639,7 @@ class PaymentMethodsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -660,7 +653,7 @@ class PaymentMethodsApi:
     @validate_call
     def update_payment_method_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         payment_method_update_input: Annotated[PaymentMethodUpdateInput, Field(description="Payment Method to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -723,8 +716,7 @@ class PaymentMethodsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -738,7 +730,7 @@ class PaymentMethodsApi:
     @validate_call
     def update_payment_method_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Payment Method UUID")],
+        id: Annotated[UUID, Field(description="Payment Method UUID")],
         payment_method_update_input: Annotated[PaymentMethodUpdateInput, Field(description="Payment Method to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -801,8 +793,7 @@ class PaymentMethodsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

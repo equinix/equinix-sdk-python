@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +24,7 @@ class VpicInterface(BaseModel):
     MCN VPIC Interface Information
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="The Canonical URL at which the resource resides.")
-    uuid: Optional[StrictStr] = Field(default=None, description="MCN assigned VPIC Interface Identifier")
+    uuid: Optional[UUID] = Field(default=None, description="MCN assigned VPIC Interface Identifier")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "uuid"]
 

@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.port import Port
 from equinix.services.metalv1.models.port_vlan_assignment_batch_vlan_assignments_inner import PortVlanAssignmentBatchVlanAssignmentsInner
@@ -32,7 +33,7 @@ class PortVlanAssignmentBatch(BaseModel):
     created_at: Optional[datetime] = None
     error_messages: Optional[List[StrictStr]] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     port: Optional[Port] = None
     project: Optional[Href] = None
     quantity: Optional[StrictInt] = None

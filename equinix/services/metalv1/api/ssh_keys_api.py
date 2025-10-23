@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.ssh_key import SSHKey
 from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
 from equinix.services.metalv1.models.ssh_key_input import SSHKeyInput
@@ -42,7 +42,7 @@ class SSHKeysApi:
     @validate_call
     def create_project_ssh_key(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         ssh_key_create_input: Annotated[SSHKeyCreateInput, Field(description="ssh key to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -104,8 +104,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -119,7 +118,7 @@ class SSHKeysApi:
     @validate_call
     def create_project_ssh_key_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         ssh_key_create_input: Annotated[SSHKeyCreateInput, Field(description="ssh key to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -181,8 +180,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -196,7 +194,7 @@ class SSHKeysApi:
     @validate_call
     def create_project_ssh_key_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         ssh_key_create_input: Annotated[SSHKeyCreateInput, Field(description="ssh key to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -258,8 +256,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -408,8 +405,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -481,8 +477,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -554,8 +549,7 @@ class SSHKeysApi:
             '201': "SSHKey",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -643,7 +637,7 @@ class SSHKeysApi:
     @validate_call
     def delete_ssh_key(
         self,
-        id: Annotated[StrictStr, Field(description="ssh key UUID")],
+        id: Annotated[UUID, Field(description="ssh key UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -698,8 +692,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -713,7 +706,7 @@ class SSHKeysApi:
     @validate_call
     def delete_ssh_key_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="ssh key UUID")],
+        id: Annotated[UUID, Field(description="ssh key UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -768,8 +761,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -783,7 +775,7 @@ class SSHKeysApi:
     @validate_call
     def delete_ssh_key_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="ssh key UUID")],
+        id: Annotated[UUID, Field(description="ssh key UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -838,8 +830,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -908,7 +899,7 @@ class SSHKeysApi:
     @validate_call
     def find_device_ssh_keys(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search_string: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -969,8 +960,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -984,7 +974,7 @@ class SSHKeysApi:
     @validate_call
     def find_device_ssh_keys_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search_string: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1045,8 +1035,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1060,7 +1049,7 @@ class SSHKeysApi:
     @validate_call
     def find_device_ssh_keys_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search_string: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1121,8 +1110,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1202,7 +1190,7 @@ class SSHKeysApi:
     @validate_call
     def find_project_ssh_keys(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1263,8 +1251,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1278,7 +1265,7 @@ class SSHKeysApi:
     @validate_call
     def find_project_ssh_keys_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1339,8 +1326,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1354,7 +1340,7 @@ class SSHKeysApi:
     @validate_call
     def find_project_ssh_keys_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by key, label, or fingerprint")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1415,8 +1401,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1496,7 +1481,7 @@ class SSHKeysApi:
     @validate_call
     def find_ssh_key_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1555,8 +1540,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1570,7 +1554,7 @@ class SSHKeysApi:
     @validate_call
     def find_ssh_key_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1629,8 +1613,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1644,7 +1627,7 @@ class SSHKeysApi:
     @validate_call
     def find_ssh_key_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1703,8 +1686,7 @@ class SSHKeysApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1836,8 +1818,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1908,8 +1889,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1980,8 +1960,7 @@ class SSHKeysApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SSHKeyList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2058,7 +2037,7 @@ class SSHKeysApi:
     @validate_call
     def update_ssh_key(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         ssh_key_input: Annotated[SSHKeyInput, Field(description="ssh key to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2122,8 +2101,7 @@ class SSHKeysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2137,7 +2115,7 @@ class SSHKeysApi:
     @validate_call
     def update_ssh_key_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         ssh_key_input: Annotated[SSHKeyInput, Field(description="ssh key to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2201,8 +2179,7 @@ class SSHKeysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2216,7 +2193,7 @@ class SSHKeysApi:
     @validate_call
     def update_ssh_key_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="SSH Key UUID")],
+        id: Annotated[UUID, Field(description="SSH Key UUID")],
         ssh_key_input: Annotated[SSHKeyInput, Field(description="ssh key to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2280,8 +2257,7 @@ class SSHKeysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

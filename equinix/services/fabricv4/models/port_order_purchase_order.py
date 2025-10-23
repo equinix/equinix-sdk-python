@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.port_order_purchase_order_selection_type import PortOrderPurchaseOrderSelectionType
 from equinix.services.fabricv4.models.port_order_purchase_order_type import PortOrderPurchaseOrderType
 from typing import Optional, Set
@@ -28,7 +29,7 @@ class PortOrderPurchaseOrder(BaseModel):
     amount: Optional[StrictStr] = Field(default=None, description="purchase order amount")
     start_date: Optional[StrictStr] = Field(default=None, alias="startDate")
     end_date: Optional[StrictStr] = Field(default=None, alias="endDate")
-    attachment_id: Optional[StrictStr] = Field(default=None, alias="attachmentId")
+    attachment_id: Optional[UUID] = Field(default=None, alias="attachmentId")
     selection_type: Optional[PortOrderPurchaseOrderSelectionType] = Field(default=None, alias="selectionType")
     type: Optional[PortOrderPurchaseOrderType] = None
     additional_properties: Dict[str, Any] = {}

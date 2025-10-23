@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
+from uuid import UUID
 from equinix.services.fabricv4.models.gcp_cloud_router_type import GCPCloudRouterType
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
 from typing import Optional, Set
@@ -25,8 +26,8 @@ class GCPCloudRouter(BaseModel):
     The GCP CloudRouter schema defines the structure for the gcp cloud router configuration, including provider type, VPC, subnet, and deployment properties. 
     """ # noqa: E501
     type: GCPCloudRouterType
-    vpc_id: StrictStr = Field(alias="vpcId")
-    subnet_id: StrictStr = Field(alias="subnetId")
+    vpc_id: UUID = Field(alias="vpcId")
+    subnet_id: UUID = Field(alias="subnetId")
     deployment_properties: TopologyProperties = Field(alias="deploymentProperties")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "vpcId", "subnetId", "deploymentProperties"]

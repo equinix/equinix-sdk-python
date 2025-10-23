@@ -16,6 +16,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.cloud_event_data import CloudEventData
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +27,7 @@ class CloudEvent(BaseModel):
     """ # noqa: E501
     spec: Optional[StrictStr] = Field(default=None, description="Cloud Event Open Telemetry specification")
     source: Optional[StrictStr] = Field(default=None, description="Cloud Event source")
-    id: Optional[StrictStr] = Field(default=None, description="Cloud Event identifier")
+    id: Optional[UUID] = Field(default=None, description="Cloud Event identifier")
     type: Optional[StrictStr] = Field(default=None, description="Equinix supported event type")
     subject: Optional[StrictStr] = Field(default=None, description="Cloud Event subject")
     time: Optional[datetime] = Field(default=None, description="Cloud Event time the event occurred")

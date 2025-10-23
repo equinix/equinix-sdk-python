@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.get_route_filter_rules_response import GetRouteFilterRulesResponse
 from equinix.services.fabricv4.models.route_filter_rules_base import RouteFilterRulesBase
 from equinix.services.fabricv4.models.route_filter_rules_change_data import RouteFilterRulesChangeData
@@ -1248,7 +1249,7 @@ class RouteFilterRulesApi:
         self,
         route_filter_id: Annotated[StrictStr, Field(description="Route Filters Id")],
         route_filter_rule_id: Annotated[StrictStr, Field(description="Route  Filter  Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Filter Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Filter Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1328,7 +1329,7 @@ class RouteFilterRulesApi:
         self,
         route_filter_id: Annotated[StrictStr, Field(description="Route Filters Id")],
         route_filter_rule_id: Annotated[StrictStr, Field(description="Route  Filter  Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Filter Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Filter Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1408,7 +1409,7 @@ class RouteFilterRulesApi:
         self,
         route_filter_id: Annotated[StrictStr, Field(description="Route Filters Id")],
         route_filter_rule_id: Annotated[StrictStr, Field(description="Route  Filter  Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Filter Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Filter Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

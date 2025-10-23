@@ -56,7 +56,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -132,7 +131,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling TransferRequestsApi->decline_transfer_request: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -214,7 +212,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling TransferRequestsApi->find_transfer_request_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters

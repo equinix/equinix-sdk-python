@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.virtual_network import VirtualNetwork
 from equinix.services.metalv1.models.vrf import Vrf
 from equinix.services.metalv1.models.vrf_metal_gateway import VrfMetalGateway
@@ -31,7 +32,7 @@ class VrfRoute(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = Field(default=None, description="The unique identifier for the newly-created resource")
+    id: Optional[UUID] = Field(default=None, description="The unique identifier for the newly-created resource")
     metal_gateway: Optional[VrfMetalGateway] = None
     next_hop: Optional[StrictStr] = Field(default=None, description="The next-hop IPv4 address for the route")
     prefix: Optional[StrictStr] = Field(default=None, description="The IPv4 prefix for the route, in CIDR-style notation")

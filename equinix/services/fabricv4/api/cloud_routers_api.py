@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
 from equinix.services.fabricv4.models.cloud_router_action_request import CloudRouterActionRequest
 from equinix.services.fabricv4.models.cloud_router_action_response import CloudRouterActionResponse
@@ -367,7 +368,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_action(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_action_request: CloudRouterActionRequest,
         _request_timeout: Union[
             None,
@@ -444,7 +445,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_action_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_action_request: CloudRouterActionRequest,
         _request_timeout: Union[
             None,
@@ -521,7 +522,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_action_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_action_request: CloudRouterActionRequest,
         _request_timeout: Union[
             None,
@@ -674,7 +675,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_command(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_post_request: CloudRouterCommandPostRequest,
         _request_timeout: Union[
             None,
@@ -751,7 +752,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_command_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_post_request: CloudRouterCommandPostRequest,
         _request_timeout: Union[
             None,
@@ -828,7 +829,7 @@ class CloudRoutersApi:
     @validate_call
     def create_cloud_router_command_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_post_request: CloudRouterCommandPostRequest,
         _request_timeout: Union[
             None,
@@ -981,7 +982,7 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_by_uuid(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1053,7 +1054,7 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_by_uuid_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1125,7 +1126,7 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_by_uuid_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1257,8 +1258,8 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_command_by_uuid(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1333,8 +1334,8 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_command_by_uuid_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1409,8 +1410,8 @@ class CloudRoutersApi:
     @validate_call
     def delete_cloud_router_command_by_uuid_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1548,7 +1549,7 @@ class CloudRoutersApi:
     @validate_call
     def get_all_cloud_router_commands(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1621,7 +1622,7 @@ class CloudRoutersApi:
     @validate_call
     def get_all_cloud_router_commands_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1694,7 +1695,7 @@ class CloudRoutersApi:
     @validate_call
     def get_all_cloud_router_commands_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1827,7 +1828,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -1904,7 +1905,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -1981,7 +1982,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -2123,8 +2124,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions_by_uuid(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        action_id: Annotated[StrictStr, Field(description="Action UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        action_id: Annotated[UUID, Field(description="Action UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -2204,8 +2205,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions_by_uuid_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        action_id: Annotated[StrictStr, Field(description="Action UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        action_id: Annotated[UUID, Field(description="Action UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -2285,8 +2286,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_actions_by_uuid_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        action_id: Annotated[StrictStr, Field(description="Action UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        action_id: Annotated[UUID, Field(description="Action UUID")],
         state: Annotated[Optional[CloudRouterActionState], Field(description="Action state")] = None,
         _request_timeout: Union[
             None,
@@ -2434,7 +2435,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_by_uuid(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2505,7 +2506,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_by_uuid_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2576,7 +2577,7 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_by_uuid_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2707,8 +2708,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_command(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2784,8 +2785,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_command_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2861,8 +2862,8 @@ class CloudRoutersApi:
     @validate_call
     def get_cloud_router_command_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
-        command_id: Annotated[StrictStr, Field(description="Command UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
+        command_id: Annotated[UUID, Field(description="Command UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3569,8 +3570,8 @@ class CloudRoutersApi:
     @validate_call
     def get_gateway_attachment_to_cloud_router_by_uuid(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3646,8 +3647,8 @@ class CloudRoutersApi:
     @validate_call
     def get_gateway_attachment_to_cloud_router_by_uuid_with_http_info(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3723,8 +3724,8 @@ class CloudRoutersApi:
     @validate_call
     def get_gateway_attachment_to_cloud_router_by_uuid_without_preload_content(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3863,7 +3864,7 @@ class CloudRoutersApi:
     @validate_call
     def list_gateway_attachments_to_cloud_router(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -3944,7 +3945,7 @@ class CloudRoutersApi:
     @validate_call
     def list_gateway_attachments_to_cloud_router_with_http_info(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -4025,7 +4026,7 @@ class CloudRoutersApi:
     @validate_call
     def list_gateway_attachments_to_cloud_router_without_preload_content(
         self,
-        gateway_id: Annotated[StrictStr, Field(description="Gateway UUID")],
+        gateway_id: Annotated[UUID, Field(description="Gateway UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -4176,7 +4177,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_commands(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_search_request: CloudRouterCommandSearchRequest,
         _request_timeout: Union[
             None,
@@ -4253,7 +4254,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_commands_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_search_request: CloudRouterCommandSearchRequest,
         _request_timeout: Union[
             None,
@@ -4330,7 +4331,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_commands_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_command_search_request: CloudRouterCommandSearchRequest,
         _request_timeout: Union[
             None,
@@ -4483,7 +4484,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_routes(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         route_table_entry_search_request: RouteTableEntrySearchRequest,
         _request_timeout: Union[
             None,
@@ -4560,7 +4561,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_routes_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         route_table_entry_search_request: RouteTableEntrySearchRequest,
         _request_timeout: Union[
             None,
@@ -4637,7 +4638,7 @@ class CloudRoutersApi:
     @validate_call
     def search_cloud_router_routes_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         route_table_entry_search_request: RouteTableEntrySearchRequest,
         _request_timeout: Union[
             None,
@@ -5681,7 +5682,7 @@ class CloudRoutersApi:
     @validate_call
     def search_router_actions(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_actions_search_request: CloudRouterActionsSearchRequest,
         _request_timeout: Union[
             None,
@@ -5758,7 +5759,7 @@ class CloudRoutersApi:
     @validate_call
     def search_router_actions_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_actions_search_request: CloudRouterActionsSearchRequest,
         _request_timeout: Union[
             None,
@@ -5835,7 +5836,7 @@ class CloudRoutersApi:
     @validate_call
     def search_router_actions_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Router UUID")],
+        router_id: Annotated[UUID, Field(description="Router UUID")],
         cloud_router_actions_search_request: CloudRouterActionsSearchRequest,
         _request_timeout: Union[
             None,
@@ -5988,7 +5989,7 @@ class CloudRoutersApi:
     @validate_call
     def update_cloud_router_by_uuid(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         cloud_router_change_operation: Annotated[List[CloudRouterChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,
@@ -6065,7 +6066,7 @@ class CloudRoutersApi:
     @validate_call
     def update_cloud_router_by_uuid_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         cloud_router_change_operation: Annotated[List[CloudRouterChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,
@@ -6142,7 +6143,7 @@ class CloudRoutersApi:
     @validate_call
     def update_cloud_router_by_uuid_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         cloud_router_change_operation: Annotated[List[CloudRouterChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,

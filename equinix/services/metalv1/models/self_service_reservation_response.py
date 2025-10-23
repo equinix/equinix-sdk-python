@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.create_self_service_reservation_request_period import CreateSelfServiceReservationRequestPeriod
 from equinix.services.metalv1.models.self_service_reservation_item_response import SelfServiceReservationItemResponse
 from typing import Optional, Set
@@ -33,10 +34,10 @@ class SelfServiceReservationResponse(BaseModel):
     item: Optional[List[SelfServiceReservationItemResponse]] = None
     notes: Optional[StrictStr] = None
     organization: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
+    organization_id: Optional[UUID] = None
     period: Optional[CreateSelfServiceReservationRequestPeriod] = None
     project: Optional[StrictStr] = None
-    project_id: Optional[StrictStr] = None
+    project_id: Optional[UUID] = None
     start_date: Optional[datetime] = None
     status: Optional[StrictStr] = None
     total_cost: Optional[StrictInt] = None

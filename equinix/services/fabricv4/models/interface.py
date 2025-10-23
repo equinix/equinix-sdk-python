@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.interface_type import InterfaceType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +25,7 @@ class Interface(BaseModel):
     Interface Information
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Interface URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned Interface identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned Interface identifier")
     id: Optional[StrictInt] = Field(default=None, description="Interface id")
     type: Optional[InterfaceType] = None
     project_id: Optional[StrictStr] = Field(default=None, description="Interface Project ID", alias="projectId")

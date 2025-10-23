@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class Metro(BaseModel):
     code: Optional[StrictStr] = None
     country: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["code", "country", "href", "id", "name"]
 

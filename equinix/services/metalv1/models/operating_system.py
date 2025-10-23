@@ -19,6 +19,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,7 +35,7 @@ class OperatingSystem(BaseModel):
     end_of_life_date: Optional[date] = Field(default=None, description="The OS no longer receives any updates and may be disabled at any time")
     end_of_service_date: Optional[date] = Field(default=None, description="When the OS is nearing end of life, typically 30 days before end of life")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     licensed: Optional[StrictBool] = Field(default=None, description="Licenced OS is priced according to pricing property")
     lifecycle_state: Optional[StrictStr] = Field(default=None, description="Where in the support lifecycle the OS is")
     name: Optional[StrictStr] = None

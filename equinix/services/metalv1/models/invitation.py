@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +30,7 @@ class Invitation(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     invitation: Optional[Href] = None
     invited_by: Optional[Href] = None
     invitee: Optional[StrictStr] = None

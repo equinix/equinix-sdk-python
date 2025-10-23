@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
 from equinix.services.metalv1.models.bgp_dynamic_neighbor_create_input import BgpDynamicNeighborCreateInput
 from equinix.services.metalv1.models.bgp_dynamic_neighbor_list import BgpDynamicNeighborList
@@ -47,7 +47,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_bgp_dynamic_neighbor(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         bgp_dynamic_neighbor_create_input: BgpDynamicNeighborCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -115,8 +115,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -130,7 +129,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_bgp_dynamic_neighbor_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         bgp_dynamic_neighbor_create_input: BgpDynamicNeighborCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -198,8 +197,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -213,7 +211,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_bgp_dynamic_neighbor_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         bgp_dynamic_neighbor_create_input: BgpDynamicNeighborCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -281,8 +279,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -379,7 +376,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_metal_gateway_request: Annotated[CreateMetalGatewayRequest, Field(description="Metal Gateway to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -454,8 +451,7 @@ class MetalGatewaysApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -469,7 +465,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_metal_gateway_request: Annotated[CreateMetalGatewayRequest, Field(description="Metal Gateway to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -544,8 +540,7 @@ class MetalGatewaysApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -559,7 +554,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_metal_gateway_request: Annotated[CreateMetalGatewayRequest, Field(description="Metal Gateway to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -634,8 +629,7 @@ class MetalGatewaysApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -742,7 +736,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway_elastic_ip(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         metal_gateway_elastic_ip_create_input: MetalGatewayElasticIpCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -810,8 +804,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -825,7 +818,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway_elastic_ip_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         metal_gateway_elastic_ip_create_input: MetalGatewayElasticIpCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -893,8 +886,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -908,7 +900,7 @@ class MetalGatewaysApi:
     @validate_call
     def create_metal_gateway_elastic_ip_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         metal_gateway_elastic_ip_create_input: MetalGatewayElasticIpCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -976,8 +968,7 @@ class MetalGatewaysApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1074,7 +1065,7 @@ class MetalGatewaysApi:
     @validate_call
     def delete_metal_gateway(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1136,8 +1127,7 @@ class MetalGatewaysApi:
             '202': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1151,7 +1141,7 @@ class MetalGatewaysApi:
     @validate_call
     def delete_metal_gateway_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1213,8 +1203,7 @@ class MetalGatewaysApi:
             '202': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1228,7 +1217,7 @@ class MetalGatewaysApi:
     @validate_call
     def delete_metal_gateway_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1290,8 +1279,7 @@ class MetalGatewaysApi:
             '202': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1372,7 +1360,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateway_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1434,8 +1422,7 @@ class MetalGatewaysApi:
             '200': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1449,7 +1436,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateway_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1511,8 +1498,7 @@ class MetalGatewaysApi:
             '200': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1526,7 +1512,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateway_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1588,8 +1574,7 @@ class MetalGatewaysApi:
             '200': "FindMetalGatewayById200Response",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1668,7 +1653,7 @@ class MetalGatewaysApi:
 
 
     @validate_call
-    def find_metal_gateways_by_project_all_pages(self, project_id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> MetalGatewayList:  # noqa: E501
+    def find_metal_gateways_by_project_all_pages(self, project_id : Annotated[UUID, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> MetalGatewayList:  # noqa: E501
         """Returns all metal gateways for a project  # noqa: E501
 
         This method is the same as find_metal_gateways_by_project, but fetches resources from all the pages.
@@ -1725,7 +1710,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateways_by_project(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1795,8 +1780,7 @@ class MetalGatewaysApi:
             '200': "MetalGatewayList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1810,7 +1794,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateways_by_project_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1880,8 +1864,7 @@ class MetalGatewaysApi:
             '200': "MetalGatewayList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1895,7 +1878,7 @@ class MetalGatewaysApi:
     @validate_call
     def find_metal_gateways_by_project_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1965,8 +1948,7 @@ class MetalGatewaysApi:
             '200': "MetalGatewayList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2057,7 +2039,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_bgp_dynamic_neighbors(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2119,8 +2101,7 @@ class MetalGatewaysApi:
             '200': "BgpDynamicNeighborList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2134,7 +2115,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_bgp_dynamic_neighbors_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2196,8 +2177,7 @@ class MetalGatewaysApi:
             '200': "BgpDynamicNeighborList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2211,7 +2191,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_bgp_dynamic_neighbors_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2273,8 +2253,7 @@ class MetalGatewaysApi:
             '200': "BgpDynamicNeighborList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2355,7 +2334,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_metal_gateway_elastic_ips(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2417,8 +2396,7 @@ class MetalGatewaysApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2432,7 +2410,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_metal_gateway_elastic_ips_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2494,8 +2472,7 @@ class MetalGatewaysApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2509,7 +2486,7 @@ class MetalGatewaysApi:
     @validate_call
     def get_metal_gateway_elastic_ips_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metal Gateway UUID")],
+        id: Annotated[UUID, Field(description="Metal Gateway UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2571,8 +2548,7 @@ class MetalGatewaysApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.deployment_topology import DeploymentTopology
 from equinix.services.fabricv4.models.provider_response import ProviderResponse
 from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
@@ -26,7 +27,7 @@ class DeploymentResponse(BaseModel):
     This API provides capability to retrieve user's deployments The response contains the details of the deployment including its state, topology, and providers. The deployment is identified by its UUID. The response also includes a list of notifications preferences for deployment status changes.     The response is in JSON format and follows the OpenAPI specification. 
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     type: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None

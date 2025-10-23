@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +24,7 @@ class LinkProtocolServiceToken(BaseModel):
     Service Token details of Link Protocol
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Service Token URI")
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     type: Optional[StrictStr] = None
     bandwidth: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}

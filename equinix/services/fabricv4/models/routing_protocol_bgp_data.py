@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.bgp_connection_ipv4 import BGPConnectionIpv4
 from equinix.services.fabricv4.models.bgp_connection_ipv6 import BGPConnectionIpv6
 from equinix.services.fabricv4.models.changelog import Changelog
@@ -40,7 +41,7 @@ class RoutingProtocolBGPData(BaseModel):
     as_override_enabled: Optional[StrictBool] = Field(default=None, description="Enable AS number override", alias="asOverrideEnabled")
     bfd: Optional[RoutingProtocolBFD] = None
     href: Optional[StrictStr] = Field(default=None, description="Routing Protocol URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Routing protocol identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Routing protocol identifier")
     state: Optional[RoutingProtocolBGPDataState] = None
     operation: Optional[RoutingProtocolOperation] = None
     change: Optional[RoutingProtocolChange] = None

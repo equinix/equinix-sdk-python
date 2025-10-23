@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.link import Link
 from equinix.services.fabricv4.models.network_operation import NetworkOperation
@@ -40,7 +41,7 @@ class Network(BaseModel):
     project: Optional[Project] = None
     notifications: List[SimplifiedNotification] = Field(description="Preferences for notifications on network configuration or status changes")
     href: StrictStr = Field(description="Network URI")
-    uuid: StrictStr = Field(description="Equinix-assigned network identifier")
+    uuid: UUID = Field(description="Equinix-assigned network identifier")
     state: NetworkState
     connections_count: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="number of connections created on the network", alias="connectionsCount")
     account: Optional[SimplifiedAccount] = None

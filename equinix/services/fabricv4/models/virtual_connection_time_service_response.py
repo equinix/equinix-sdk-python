@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.virtual_connection_side import VirtualConnectionSide
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +26,7 @@ class VirtualConnectionTimeServiceResponse(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Connection URI")
     type: Optional[StrictStr] = Field(default=None, description="Connection Type.")
-    uuid: Optional[StrictStr] = Field(default=None, description="Connection UUID.")
+    uuid: Optional[UUID] = Field(default=None, description="Connection UUID.")
     a_side: Optional[VirtualConnectionSide] = Field(default=None, alias="aSide")
     z_side: Optional[VirtualConnectionSide] = Field(default=None, alias="zSide")
     additional_properties: Dict[str, Any] = {}

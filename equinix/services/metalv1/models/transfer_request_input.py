@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class TransferRequestInput(BaseModel):
     TransferRequestInput
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    target_organization_id: Optional[StrictStr] = None
+    target_organization_id: Optional[UUID] = None
     __properties: ClassVar[List[str]] = ["href", "target_organization_id"]
 
     model_config = ConfigDict(

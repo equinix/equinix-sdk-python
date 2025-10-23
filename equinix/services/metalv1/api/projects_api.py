@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.invitation import Invitation
 from equinix.services.metalv1.models.invitation_input import InvitationInput
 from equinix.services.metalv1.models.invitation_list import InvitationList
@@ -110,8 +110,7 @@ class ProjectsApi:
             '201': "Project",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -187,8 +186,7 @@ class ProjectsApi:
             '201': "Project",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -264,8 +262,7 @@ class ProjectsApi:
             '201': "Project",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -359,7 +356,7 @@ class ProjectsApi:
     @validate_call
     def create_project_invitation(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         invitation_input: Annotated[InvitationInput, Field(description="Invitation to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -423,8 +420,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -438,7 +434,7 @@ class ProjectsApi:
     @validate_call
     def create_project_invitation_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         invitation_input: Annotated[InvitationInput, Field(description="Invitation to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -502,8 +498,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -517,7 +512,7 @@ class ProjectsApi:
     @validate_call
     def create_project_invitation_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         invitation_input: Annotated[InvitationInput, Field(description="Invitation to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -581,8 +576,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -673,7 +667,7 @@ class ProjectsApi:
     @validate_call
     def create_transfer_request(
         self,
-        id: Annotated[StrictStr, Field(description="UUID of the project to be transferred")],
+        id: Annotated[UUID, Field(description="UUID of the project to be transferred")],
         transfer_request_input: Annotated[TransferRequestInput, Field(description="Transfer Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -738,8 +732,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -753,7 +746,7 @@ class ProjectsApi:
     @validate_call
     def create_transfer_request_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="UUID of the project to be transferred")],
+        id: Annotated[UUID, Field(description="UUID of the project to be transferred")],
         transfer_request_input: Annotated[TransferRequestInput, Field(description="Transfer Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -818,8 +811,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -833,7 +825,7 @@ class ProjectsApi:
     @validate_call
     def create_transfer_request_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="UUID of the project to be transferred")],
+        id: Annotated[UUID, Field(description="UUID of the project to be transferred")],
         transfer_request_input: Annotated[TransferRequestInput, Field(description="Transfer Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -898,8 +890,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -990,7 +981,7 @@ class ProjectsApi:
     @validate_call
     def delete_project(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1045,8 +1036,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1060,7 +1050,7 @@ class ProjectsApi:
     @validate_call
     def delete_project_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1115,8 +1105,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1130,7 +1119,7 @@ class ProjectsApi:
     @validate_call
     def delete_project_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1185,8 +1174,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1255,8 +1243,8 @@ class ProjectsApi:
     @validate_call
     def find_ip_reservation_customdata(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1314,8 +1302,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1329,8 +1316,8 @@ class ProjectsApi:
     @validate_call
     def find_ip_reservation_customdata_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1388,8 +1375,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1403,8 +1389,8 @@ class ProjectsApi:
     @validate_call
     def find_ip_reservation_customdata_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1462,8 +1448,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1535,7 +1520,7 @@ class ProjectsApi:
     @validate_call
     def find_project_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1598,8 +1583,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1613,7 +1597,7 @@ class ProjectsApi:
     @validate_call
     def find_project_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1676,8 +1660,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1691,7 +1674,7 @@ class ProjectsApi:
     @validate_call
     def find_project_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1754,8 +1737,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1836,7 +1818,7 @@ class ProjectsApi:
     @validate_call
     def find_project_customdata(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1891,8 +1873,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1906,7 +1887,7 @@ class ProjectsApi:
     @validate_call
     def find_project_customdata_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1961,8 +1942,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1976,7 +1956,7 @@ class ProjectsApi:
     @validate_call
     def find_project_customdata_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2031,8 +2011,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2101,7 +2080,7 @@ class ProjectsApi:
     @validate_call
     def find_project_invitations(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
@@ -2168,8 +2147,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2183,7 +2161,7 @@ class ProjectsApi:
     @validate_call
     def find_project_invitations_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
@@ -2250,8 +2228,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2265,7 +2242,7 @@ class ProjectsApi:
     @validate_call
     def find_project_invitations_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
@@ -2332,8 +2309,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2418,7 +2394,7 @@ class ProjectsApi:
     @validate_call
     def find_project_memberships(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by member full name, id and email.")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2489,8 +2465,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2504,7 +2479,7 @@ class ProjectsApi:
     @validate_call
     def find_project_memberships_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by member full name, id and email.")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2575,8 +2550,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2590,7 +2564,7 @@ class ProjectsApi:
     @validate_call
     def find_project_memberships_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by member full name, id and email.")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2661,8 +2635,7 @@ class ProjectsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2876,8 +2849,7 @@ class ProjectsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ProjectList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2960,8 +2932,7 @@ class ProjectsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ProjectList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3044,8 +3015,7 @@ class ProjectsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ProjectList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3138,7 +3108,7 @@ class ProjectsApi:
     @validate_call
     def update_project(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         project_update_input: Annotated[ProjectUpdateInput, Field(description="Project to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -3206,8 +3176,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3221,7 +3190,7 @@ class ProjectsApi:
     @validate_call
     def update_project_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         project_update_input: Annotated[ProjectUpdateInput, Field(description="Project to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -3289,8 +3258,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3304,7 +3272,7 @@ class ProjectsApi:
     @validate_call
     def update_project_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         project_update_input: Annotated[ProjectUpdateInput, Field(description="Project to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -3372,8 +3340,7 @@ class ProjectsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -55,7 +55,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -132,7 +131,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PasswordResetTokensApi->reset_password: %s\n" % e)
 ```
-
 
 
 ### Parameters

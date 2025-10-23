@@ -64,7 +64,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -147,7 +146,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -227,7 +225,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UsersApi->find_invitations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -314,7 +311,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -392,7 +388,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UsersApi->find_user_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -476,7 +471,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UsersApi->find_users: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -564,7 +558,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UsersApi->update_current_user: %s\n" % e)
 ```
-
 
 
 ### Parameters

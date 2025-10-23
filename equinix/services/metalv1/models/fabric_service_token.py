@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class FabricServiceToken(BaseModel):
     """ # noqa: E501
     expires_at: Optional[datetime] = Field(default=None, description="The expiration date and time of the Fabric service token. Once a service token is expired, it is no longer redeemable.")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = Field(default=None, description="The UUID that can be used on the Fabric Portal to redeem either an A-Side or Z-Side Service Token. For Fabric VCs (Metal Billed), this UUID will represent an A-Side Service Token, which will allow interconnections to be made from Equinix Metal to other Service Providers on Fabric. For Fabric VCs (Fabric Billed), this UUID will represent a Z-Side Service Token, which will allow interconnections to be made to connect an owned Fabric Port or  Virtual Device to Equinix Metal.")
+    id: Optional[UUID] = Field(default=None, description="The UUID that can be used on the Fabric Portal to redeem either an A-Side or Z-Side Service Token. For Fabric VCs (Metal Billed), this UUID will represent an A-Side Service Token, which will allow interconnections to be made from Equinix Metal to other Service Providers on Fabric. For Fabric VCs (Fabric Billed), this UUID will represent a Z-Side Service Token, which will allow interconnections to be made to connect an owned Fabric Port or  Virtual Device to Equinix Metal.")
     max_allowed_speed: Optional[StrictInt] = Field(default=None, description="The maximum speed that can be selected on the Fabric Portal when configuring a interconnection with either  an A-Side or Z-Side Service Token. For Fabric VCs (Metal Billed), this is what the billing is based off of, and can be one of the following options, '50mbps', '200mbps', '500mbps', '1gbps', '2gbps', '5gbps' or '10gbps'. For Fabric VCs (Fabric Billed), this will default to 10Gbps.")
     role: Optional[StrictStr] = Field(default=None, description="Either primary or secondary, depending on which interconnection the service token is associated to.")
     service_token_type: Optional[StrictStr] = Field(default=None, description="Either 'a_side' or 'z_side', depending on which type of Fabric VC was requested.")

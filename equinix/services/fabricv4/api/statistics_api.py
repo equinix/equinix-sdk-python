@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from datetime import datetime
 from pydantic import Field, StrictStr
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.statistics import Statistics
 from equinix.services.fabricv4.models.view_point import ViewPoint
 
@@ -378,7 +379,7 @@ class StatisticsApi:
     @validate_call
     def get_port_stats_by_port_uuid(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         start_date_time: Annotated[datetime, Field(description="startDateTime")],
         end_date_time: Annotated[datetime, Field(description="endDateTime")],
         _request_timeout: Union[
@@ -457,7 +458,7 @@ class StatisticsApi:
     @validate_call
     def get_port_stats_by_port_uuid_with_http_info(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         start_date_time: Annotated[datetime, Field(description="startDateTime")],
         end_date_time: Annotated[datetime, Field(description="endDateTime")],
         _request_timeout: Union[
@@ -536,7 +537,7 @@ class StatisticsApi:
     @validate_call
     def get_port_stats_by_port_uuid_without_preload_content(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         start_date_time: Annotated[datetime, Field(description="startDateTime")],
         end_date_time: Annotated[datetime, Field(description="endDateTime")],
         _request_timeout: Union[

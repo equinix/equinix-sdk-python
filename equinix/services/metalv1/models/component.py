@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -35,7 +36,7 @@ class Component(BaseModel):
     repository_url: Optional[StrictStr] = Field(default=None, description="Location of the file in the repository")
     updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
     upstream_url: Optional[StrictStr] = Field(default=None, description="Location of the file")
-    uuid: Optional[StrictStr] = Field(default=None, description="Component UUID")
+    uuid: Optional[UUID] = Field(default=None, description="Component UUID")
     vendor: Optional[StrictStr] = Field(default=None, description="Component vendor")
     version: Optional[StrictStr] = Field(default=None, description="Version of the component")
     __properties: ClassVar[List[str]] = ["checksum", "component", "created_at", "filename", "href", "model", "repository_url", "updated_at", "upstream_url", "uuid", "vendor", "version"]

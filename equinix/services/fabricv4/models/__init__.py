@@ -8,7 +8,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from equinix.services.fabricv4.models.aws_direct_connect import AWSDirectConnect
 from equinix.services.fabricv4.models.aws_direct_connect_response import AWSDirectConnectResponse
@@ -209,8 +208,6 @@ from equinix.services.fabricv4.models.fabric_provider_resource import FabricProv
 from equinix.services.fabricv4.models.fabric_provider_resource_response import FabricProviderResourceResponse
 from equinix.services.fabricv4.models.fabric_provider_response import FabricProviderResponse
 from equinix.services.fabricv4.models.fabric_provider_type import FabricProviderType
-from equinix.services.fabricv4.models.fabric_route_protocols import FabricRouteProtocols
-from equinix.services.fabricv4.models.fabric_route_protocols_response import FabricRouteProtocolsResponse
 from equinix.services.fabricv4.models.fabric_router import FabricRouter
 from equinix.services.fabricv4.models.fabric_router_response import FabricRouterResponse
 from equinix.services.fabricv4.models.fabric_router_type import FabricRouterType
@@ -712,3 +709,4 @@ from equinix.services.fabricv4.models.virtual_port_redundancy import VirtualPort
 from equinix.services.fabricv4.models.virtual_port_service_type import VirtualPortServiceType
 from equinix.services.fabricv4.models.virtual_port_type import VirtualPortType
 from equinix.services.fabricv4.models.vpic_interface import VpicInterface
+

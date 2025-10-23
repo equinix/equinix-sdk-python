@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -85,8 +84,7 @@ class TwoFactorAuthApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -150,8 +148,7 @@ class TwoFactorAuthApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -215,8 +212,7 @@ class TwoFactorAuthApi:
             '204': None,
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -331,8 +327,7 @@ class TwoFactorAuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -395,8 +390,7 @@ class TwoFactorAuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -459,8 +453,7 @@ class TwoFactorAuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': None,
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

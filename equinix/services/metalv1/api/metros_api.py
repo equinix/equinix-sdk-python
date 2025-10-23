@@ -9,14 +9,14 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.metro import Metro
 from equinix.services.metalv1.models.metro_list import MetroList
 
@@ -88,8 +88,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MetroList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -152,8 +151,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MetroList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -216,8 +214,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "MetroList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -283,7 +280,7 @@ class MetrosApi:
     @validate_call
     def get_metro(
         self,
-        id: Annotated[StrictStr, Field(description="Metro UUID")],
+        id: Annotated[UUID, Field(description="Metro UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -336,8 +333,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Metro",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -351,7 +347,7 @@ class MetrosApi:
     @validate_call
     def get_metro_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Metro UUID")],
+        id: Annotated[UUID, Field(description="Metro UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -404,8 +400,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Metro",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -419,7 +414,7 @@ class MetrosApi:
     @validate_call
     def get_metro_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Metro UUID")],
+        id: Annotated[UUID, Field(description="Metro UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -472,8 +467,7 @@ class MetrosApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Metro",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

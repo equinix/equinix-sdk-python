@@ -12,8 +12,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_peering_protocol_post_request import ConnectionPeeringProtocolPostRequest
 from equinix.services.fabricv4.models.peering_protocol_data import PeeringProtocolData
 
@@ -38,7 +39,7 @@ class PeeringProtocolsApi:
     @validate_call
     def create_connection_peering_protocol(
         self,
-        uuid: Annotated[StrictStr, Field(description="uuid")],
+        uuid: Annotated[UUID, Field(description="uuid")],
         connection_peering_protocol_post_request: ConnectionPeeringProtocolPostRequest,
         _request_timeout: Union[
             None,
@@ -115,7 +116,7 @@ class PeeringProtocolsApi:
     @validate_call
     def create_connection_peering_protocol_with_http_info(
         self,
-        uuid: Annotated[StrictStr, Field(description="uuid")],
+        uuid: Annotated[UUID, Field(description="uuid")],
         connection_peering_protocol_post_request: ConnectionPeeringProtocolPostRequest,
         _request_timeout: Union[
             None,
@@ -192,7 +193,7 @@ class PeeringProtocolsApi:
     @validate_call
     def create_connection_peering_protocol_without_preload_content(
         self,
-        uuid: Annotated[StrictStr, Field(description="uuid")],
+        uuid: Annotated[UUID, Field(description="uuid")],
         connection_peering_protocol_post_request: ConnectionPeeringProtocolPostRequest,
         _request_timeout: Union[
             None,

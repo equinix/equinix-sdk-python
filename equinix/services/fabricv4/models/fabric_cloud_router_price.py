@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.fabric_cloud_router_packages import FabricCloudRouterPackages
 from equinix.services.fabricv4.models.price_location import PriceLocation
 from typing import Optional, Set
@@ -24,7 +25,7 @@ class FabricCloudRouterPrice(BaseModel):
     """
     Cloud Router  Product configuration
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Unique identifier assigned to the Cloud Router")
+    uuid: Optional[UUID] = Field(default=None, description="Unique identifier assigned to the Cloud Router")
     location: Optional[PriceLocation] = None
     package: Optional[FabricCloudRouterPackages] = None
     additional_properties: Dict[str, Any] = {}

@@ -13,9 +13,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.virtual_connection_price_a_side import VirtualConnectionPriceASide
 from equinix.services.fabricv4.models.virtual_connection_price_connection_type import VirtualConnectionPriceConnectionType
 from equinix.services.fabricv4.models.virtual_connection_price_z_side import VirtualConnectionPriceZSide
@@ -26,7 +27,7 @@ class VirtualConnectionPrice(BaseModel):
     """
     Virtual Connection Product configuration
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Either uuid or rest of attributes are required")
+    uuid: Optional[UUID] = Field(default=None, description="Either uuid or rest of attributes are required")
     type: Optional[VirtualConnectionPriceConnectionType] = None
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = None
     a_side: Optional[VirtualConnectionPriceASide] = Field(default=None, alias="aSide")

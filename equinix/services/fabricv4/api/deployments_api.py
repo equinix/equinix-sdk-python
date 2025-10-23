@@ -12,8 +12,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.cloud_router_action_response import CloudRouterActionResponse
 from equinix.services.fabricv4.models.deployment import Deployment
 from equinix.services.fabricv4.models.deployment_action_request import DeploymentActionRequest
@@ -44,7 +45,7 @@ class DeploymentsApi:
     @validate_call
     def action_deployment(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         deployment_action_request: DeploymentActionRequest,
         _request_timeout: Union[
             None,
@@ -121,7 +122,7 @@ class DeploymentsApi:
     @validate_call
     def action_deployment_with_http_info(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         deployment_action_request: DeploymentActionRequest,
         _request_timeout: Union[
             None,
@@ -198,7 +199,7 @@ class DeploymentsApi:
     @validate_call
     def action_deployment_without_preload_content(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         deployment_action_request: DeploymentActionRequest,
         _request_timeout: Union[
             None,
@@ -640,7 +641,7 @@ class DeploymentsApi:
     @validate_call
     def delete_deployment(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -712,7 +713,7 @@ class DeploymentsApi:
     @validate_call
     def delete_deployment_with_http_info(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -784,7 +785,7 @@ class DeploymentsApi:
     @validate_call
     def delete_deployment_without_preload_content(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -916,7 +917,7 @@ class DeploymentsApi:
     @validate_call
     def get_deployment(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -987,7 +988,7 @@ class DeploymentsApi:
     @validate_call
     def get_deployment_with_http_info(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1058,7 +1059,7 @@ class DeploymentsApi:
     @validate_call
     def get_deployment_without_preload_content(
         self,
-        deployment_id: Annotated[StrictStr, Field(description="Deployment UUID")],
+        deployment_id: Annotated[UUID, Field(description="Deployment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

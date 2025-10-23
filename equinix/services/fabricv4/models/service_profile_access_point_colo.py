@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.service_profile_access_point_colo_type import ServiceProfileAccessPointCOLOType
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
 from typing import Optional, Set
@@ -25,7 +26,7 @@ class ServiceProfileAccessPointCOLO(BaseModel):
     Colo Access Point
     """ # noqa: E501
     type: ServiceProfileAccessPointCOLOType
-    uuid: StrictStr
+    uuid: UUID
     location: Optional[SimplifiedLocation] = None
     seller_region: Optional[StrictStr] = Field(default=None, alias="sellerRegion")
     seller_region_description: Optional[StrictStr] = Field(default=None, alias="sellerRegionDescription")

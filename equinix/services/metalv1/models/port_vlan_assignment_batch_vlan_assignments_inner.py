@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class PortVlanAssignmentBatchVlanAssignmentsInner(BaseModel):
     PortVlanAssignmentBatchVlanAssignmentsInner
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     native: Optional[StrictBool] = None
     state: Optional[StrictStr] = None
     vlan: Optional[StrictInt] = None

@@ -81,7 +81,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -166,7 +165,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->create_device: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -257,7 +255,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -337,7 +334,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->delete_device: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -423,7 +419,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -506,7 +501,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -584,7 +578,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->find_device_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -667,7 +660,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -746,7 +738,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->find_device_userdata_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -828,7 +819,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -906,7 +896,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->find_ip_assignment_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -990,7 +979,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->find_ip_assignments: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1085,7 +1073,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->find_organization_devices: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1198,7 +1185,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1298,7 +1284,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1384,7 +1369,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1464,7 +1448,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->get_device_firmware_sets: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1547,7 +1530,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1625,7 +1607,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->perform_action: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1711,7 +1692,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DevicesApi->update_device: %s\n" % e)
 ```
-
 
 
 ### Parameters

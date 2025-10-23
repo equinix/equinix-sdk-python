@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.deployment_state import DeploymentState
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
 from typing import Optional, Set
@@ -28,8 +29,8 @@ class AWSVirtualPrivateGatewayResponse(BaseModel):
     type: StrictStr
     state: DeploymentState
     required: Optional[StrictBool] = None
-    vpc_id: StrictStr = Field(alias="vpcId")
-    subnet_id: StrictStr = Field(alias="subnetId")
+    vpc_id: UUID = Field(alias="vpcId")
+    subnet_id: UUID = Field(alias="subnetId")
     deployment_properties: TopologyProperties = Field(alias="deploymentProperties")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "type", "state", "required", "vpcId", "subnetId", "deploymentProperties"]

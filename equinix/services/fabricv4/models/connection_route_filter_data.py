@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_route_aggregation_data_attachment_status import ConnectionRouteAggregationDataAttachmentStatus
 from equinix.services.fabricv4.models.connection_route_filter_data_direction import ConnectionRouteFilterDataDirection
 from equinix.services.fabricv4.models.connection_route_filter_data_type import ConnectionRouteFilterDataType
@@ -27,7 +28,7 @@ class ConnectionRouteFilterData(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Route filter URI")
     type: Optional[ConnectionRouteFilterDataType] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Route Filter identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Route Filter identifier")
     attachment_status: Optional[ConnectionRouteAggregationDataAttachmentStatus] = Field(default=None, alias="attachmentStatus")
     direction: Optional[ConnectionRouteFilterDataDirection] = None
     additional_properties: Dict[str, Any] = {}

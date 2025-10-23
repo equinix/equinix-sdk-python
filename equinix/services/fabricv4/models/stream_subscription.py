@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.stream_subscription_operation import StreamSubscriptionOperation
 from equinix.services.fabricv4.models.stream_subscription_selector import StreamSubscriptionSelector
@@ -29,7 +30,7 @@ class StreamSubscription(BaseModel):
     Stream Subscription object
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Stream Subscription URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     type: Optional[StreamSubscriptionType] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided subscription name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided subscription description")
