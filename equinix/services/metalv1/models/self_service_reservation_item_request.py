@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +27,8 @@ class SelfServiceReservationItemRequest(BaseModel):
     SelfServiceReservationItemRequest
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    metro_id: Optional[StrictStr] = Field(default=None, description="Metro ID of the item.")
-    plan_id: Optional[StrictStr] = Field(default=None, description="Plan ID of the item.")
+    metro_id: Optional[UUID] = Field(default=None, description="Metro ID of the item.")
+    plan_id: Optional[UUID] = Field(default=None, description="Plan ID of the item.")
     quantity: Optional[StrictInt] = Field(default=None, description="Number of items.")
     term: Optional[StrictStr] = Field(default=None, description="Contract term of the item.")
     __properties: ClassVar[List[str]] = ["href", "metro_id", "plan_id", "quantity", "term"]

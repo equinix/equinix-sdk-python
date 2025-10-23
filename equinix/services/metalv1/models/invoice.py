@@ -19,6 +19,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.line_item import LineItem
 from equinix.services.metalv1.models.project_id_name import ProjectIdName
 from typing import Optional, Set
@@ -36,7 +37,7 @@ class Invoice(BaseModel):
     currency: Optional[StrictStr] = None
     due_on: Optional[date] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     items: Optional[List[LineItem]] = None
     number: Optional[StrictStr] = None
     project: Optional[ProjectIdName] = None

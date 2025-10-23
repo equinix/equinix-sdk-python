@@ -64,7 +64,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -149,7 +148,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -229,7 +227,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -304,7 +301,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling AuthenticationApi->delete_user_api_key: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -387,7 +383,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -467,7 +462,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling AuthenticationApi->find_project_api_keys: %s\n" % e)
 ```
-
 
 
 ### Parameters

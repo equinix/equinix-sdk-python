@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.cloud_router_post_request_package import CloudRouterPostRequestPackage
 from equinix.services.fabricv4.models.fabric_router_type import FabricRouterType
 from equinix.services.fabricv4.models.simplified_location_without_ibx import SimplifiedLocationWithoutIBX
@@ -28,7 +29,7 @@ class FabricRouter(BaseModel):
     """ # noqa: E501
     type: FabricRouterType
     name: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     location: Optional[SimplifiedLocationWithoutIBX] = None
     package: Optional[CloudRouterPostRequestPackage] = None
     deployment_properties: TopologyProperties = Field(alias="deploymentProperties")

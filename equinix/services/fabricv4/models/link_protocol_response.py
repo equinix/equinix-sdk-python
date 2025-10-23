@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.link_protocol_connection import LinkProtocolConnection
 from equinix.services.fabricv4.models.link_protocol_request_type import LinkProtocolRequestType
@@ -29,7 +30,7 @@ class LinkProtocolResponse(BaseModel):
     Link Protocol response
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="LinkProtocol URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned network identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned network identifier")
     state: Optional[LinkProtocolState] = None
     type: Optional[LinkProtocolRequestType] = None
     vlan_tag: Optional[StrictInt] = Field(default=None, alias="vlanTag")

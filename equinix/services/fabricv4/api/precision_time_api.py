@@ -12,9 +12,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing import List
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.get_time_services_package_by_code_package_code_parameter import GetTimeServicesPackageByCodePackageCodeParameter
 from equinix.services.fabricv4.models.precision_time_change_operation import PrecisionTimeChangeOperation
 from equinix.services.fabricv4.models.precision_time_package_response import PrecisionTimePackageResponse
@@ -335,7 +336,7 @@ class PrecisionTimeApi:
     @validate_call
     def delete_time_service_by_id(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -407,7 +408,7 @@ class PrecisionTimeApi:
     @validate_call
     def delete_time_service_by_id_with_http_info(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -479,7 +480,7 @@ class PrecisionTimeApi:
     @validate_call
     def delete_time_service_by_id_without_preload_content(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -611,7 +612,7 @@ class PrecisionTimeApi:
     @validate_call
     def fulfill_time_services(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_service_request: PrecisionTimeServiceRequest,
         _request_timeout: Union[
             None,
@@ -688,7 +689,7 @@ class PrecisionTimeApi:
     @validate_call
     def fulfill_time_services_with_http_info(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_service_request: PrecisionTimeServiceRequest,
         _request_timeout: Union[
             None,
@@ -765,7 +766,7 @@ class PrecisionTimeApi:
     @validate_call
     def fulfill_time_services_without_preload_content(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_service_request: PrecisionTimeServiceRequest,
         _request_timeout: Union[
             None,
@@ -918,7 +919,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_by_id(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -991,7 +992,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_by_id_with_http_info(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1064,7 +1065,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_by_id_without_preload_content(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1197,7 +1198,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_connections_by_service_id(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1268,7 +1269,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_connections_by_service_id_with_http_info(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1339,7 +1340,7 @@ class PrecisionTimeApi:
     @validate_call
     def get_time_services_connections_by_service_id_without_preload_content(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2278,7 +2279,7 @@ class PrecisionTimeApi:
     @validate_call
     def update_time_services_by_id(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_change_operation: Annotated[List[PrecisionTimeChangeOperation], Field(min_length=1, max_length=1)],
         _request_timeout: Union[
             None,
@@ -2355,7 +2356,7 @@ class PrecisionTimeApi:
     @validate_call
     def update_time_services_by_id_with_http_info(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_change_operation: Annotated[List[PrecisionTimeChangeOperation], Field(min_length=1, max_length=1)],
         _request_timeout: Union[
             None,
@@ -2432,7 +2433,7 @@ class PrecisionTimeApi:
     @validate_call
     def update_time_services_by_id_without_preload_content(
         self,
-        service_id: Annotated[StrictStr, Field(description="Service UUID")],
+        service_id: Annotated[UUID, Field(description="Service UUID")],
         precision_time_change_operation: Annotated[List[PrecisionTimeChangeOperation], Field(min_length=1, max_length=1)],
         _request_timeout: Union[
             None,

@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.transfer_request import TransferRequest
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
@@ -39,7 +39,7 @@ class TransferRequestsApi:
     @validate_call
     def accept_transfer_request(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -94,8 +94,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -109,7 +108,7 @@ class TransferRequestsApi:
     @validate_call
     def accept_transfer_request_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -164,8 +163,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -179,7 +177,7 @@ class TransferRequestsApi:
     @validate_call
     def accept_transfer_request_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -234,8 +232,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -304,7 +301,7 @@ class TransferRequestsApi:
     @validate_call
     def decline_transfer_request(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -359,8 +356,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -374,7 +370,7 @@ class TransferRequestsApi:
     @validate_call
     def decline_transfer_request_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -429,8 +425,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -444,7 +439,7 @@ class TransferRequestsApi:
     @validate_call
     def decline_transfer_request_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -499,8 +494,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -569,7 +563,7 @@ class TransferRequestsApi:
     @validate_call
     def find_transfer_request_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -628,8 +622,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -643,7 +636,7 @@ class TransferRequestsApi:
     @validate_call
     def find_transfer_request_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -702,8 +695,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -717,7 +709,7 @@ class TransferRequestsApi:
     @validate_call
     def find_transfer_request_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Transfer request UUID")],
+        id: Annotated[UUID, Field(description="Transfer request UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -776,8 +768,7 @@ class TransferRequestsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

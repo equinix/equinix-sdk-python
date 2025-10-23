@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.plan_available_in_inner import PlanAvailableInInner
 from equinix.services.metalv1.models.plan_available_in_metros_inner import PlanAvailableInMetrosInner
 from equinix.services.metalv1.models.plan_specs import PlanSpecs
@@ -36,7 +37,7 @@ class Plan(BaseModel):
     deployment_types: Optional[Annotated[List[StrictStr], Field(min_length=0)]] = None
     description: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     legacy: Optional[StrictBool] = Field(default=None, description="Deprecated. Always return false")
     line: Optional[StrictStr] = None
     name: Optional[StrictStr] = None

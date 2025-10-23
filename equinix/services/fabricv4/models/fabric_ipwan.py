@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.network_scope import NetworkScope
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
@@ -27,7 +28,7 @@ class FabricIPWAN(BaseModel):
     """ # noqa: E501
     type: StrictStr
     name: StrictStr
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     scope: NetworkScope
     location: Optional[SimplifiedLocation] = None
     deployment_properties: TopologyProperties = Field(alias="deploymentProperties")

@@ -56,7 +56,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -136,7 +135,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MembershipsApi->find_membership_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -221,7 +219,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MembershipsApi->update_membership: %s\n" % e)
 ```
-
 
 
 ### Parameters

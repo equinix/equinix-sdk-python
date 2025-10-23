@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.service_profile_access_point_vd_type import ServiceProfileAccessPointVDType
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
 from typing import Optional, Set
@@ -25,9 +26,9 @@ class ServiceProfileAccessPointVD(BaseModel):
     Virtual Device Point
     """ # noqa: E501
     type: ServiceProfileAccessPointVDType
-    uuid: StrictStr
+    uuid: UUID
     location: Optional[SimplifiedLocation] = None
-    interface_uuid: Optional[StrictStr] = Field(default=None, alias="interfaceUuid")
+    interface_uuid: Optional[UUID] = Field(default=None, alias="interfaceUuid")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "uuid", "location", "interfaceUuid"]
 

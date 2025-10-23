@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.deployment_state import DeploymentState
 from equinix.services.fabricv4.models.gcp_cloud_router_type import GCPCloudRouterType
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
@@ -28,8 +29,8 @@ class GCPCloudRouterResponse(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="Cloud Router id.")
     state: Optional[DeploymentState] = None
     type: Optional[GCPCloudRouterType] = None
-    vpc_id: Optional[StrictStr] = Field(default=None, alias="vpcId")
-    subnet_id: Optional[StrictStr] = Field(default=None, alias="subnetId")
+    vpc_id: Optional[UUID] = Field(default=None, alias="vpcId")
+    subnet_id: Optional[UUID] = Field(default=None, alias="subnetId")
     deployment_properties: Optional[TopologyProperties] = Field(default=None, alias="deploymentProperties")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["id", "state", "type", "vpcId", "subnetId", "deploymentProperties"]

@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.ip_assignment_metro import IPAssignmentMetro
 from equinix.services.metalv1.models.parent_block import ParentBlock
@@ -38,7 +39,7 @@ class IPAssignment(BaseModel):
     gateway: Optional[StrictStr] = None
     global_ip: Optional[StrictBool] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     manageable: Optional[StrictBool] = None
     management: Optional[StrictBool] = None
     metro: Optional[IPAssignmentMetro] = None

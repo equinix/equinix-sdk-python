@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
 from equinix.services.fabricv4.models.simplified_token_network_scope import SimplifiedTokenNetworkScope
 from equinix.services.fabricv4.models.simplified_token_network_type import SimplifiedTokenNetworkType
@@ -26,7 +27,7 @@ class SimplifiedTokenNetwork(BaseModel):
     SimplifiedTokenNetwork
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="url to entity")
-    uuid: Optional[StrictStr] = Field(default=None, description="Network Identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Network Identifier")
     type: Optional[SimplifiedTokenNetworkType] = None
     name: Optional[StrictStr] = Field(default=None, description="Network Name")
     scope: Optional[SimplifiedTokenNetworkScope] = None

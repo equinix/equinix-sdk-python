@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.event import Event
 from equinix.services.metalv1.models.event_list import EventList
 
@@ -38,7 +38,7 @@ class EventsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
     @validate_call
-    def find_device_events_all_pages(self, id : Annotated[StrictStr, Field(description="Device UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_device_events_all_pages(self, id : Annotated[UUID, Field(description="Device UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
         """Retrieve device's events  # noqa: E501
 
         This method is the same as find_device_events, but fetches resources from all the pages.
@@ -95,7 +95,7 @@ class EventsApi:
     @validate_call
     def find_device_events(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -166,8 +166,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -181,7 +180,7 @@ class EventsApi:
     @validate_call
     def find_device_events_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -252,8 +251,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -267,7 +265,7 @@ class EventsApi:
     @validate_call
     def find_device_events_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -338,8 +336,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -430,7 +427,7 @@ class EventsApi:
     @validate_call
     def find_event_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Event UUID")],
+        id: Annotated[UUID, Field(description="Event UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -493,8 +490,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -508,7 +504,7 @@ class EventsApi:
     @validate_call
     def find_event_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Event UUID")],
+        id: Annotated[UUID, Field(description="Event UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -571,8 +567,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -586,7 +581,7 @@ class EventsApi:
     @validate_call
     def find_event_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Event UUID")],
+        id: Annotated[UUID, Field(description="Event UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -649,8 +644,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -848,8 +842,7 @@ class EventsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "EventList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -928,8 +921,7 @@ class EventsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "EventList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1008,8 +1000,7 @@ class EventsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "EventList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1095,7 +1086,7 @@ class EventsApi:
 
 
     @validate_call
-    def find_interconnection_events_all_pages(self, connection_id : Annotated[StrictStr, Field(description="Interconnection UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_interconnection_events_all_pages(self, connection_id : Annotated[UUID, Field(description="Interconnection UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
         """Retrieve interconnection events  # noqa: E501
 
         This method is the same as find_interconnection_events, but fetches resources from all the pages.
@@ -1152,7 +1143,7 @@ class EventsApi:
     @validate_call
     def find_interconnection_events(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1223,8 +1214,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1238,7 +1228,7 @@ class EventsApi:
     @validate_call
     def find_interconnection_events_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1309,8 +1299,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1324,7 +1313,7 @@ class EventsApi:
     @validate_call
     def find_interconnection_events_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1395,8 +1384,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1487,8 +1475,8 @@ class EventsApi:
     @validate_call
     def find_interconnection_port_events(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
-        id: Annotated[StrictStr, Field(description="Interconnection Port UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
+        id: Annotated[UUID, Field(description="Interconnection Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1562,8 +1550,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1577,8 +1564,8 @@ class EventsApi:
     @validate_call
     def find_interconnection_port_events_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
-        id: Annotated[StrictStr, Field(description="Interconnection Port UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
+        id: Annotated[UUID, Field(description="Interconnection Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1652,8 +1639,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1667,8 +1653,8 @@ class EventsApi:
     @validate_call
     def find_interconnection_port_events_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
-        id: Annotated[StrictStr, Field(description="Interconnection Port UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
+        id: Annotated[UUID, Field(description="Interconnection Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1742,8 +1728,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1835,7 +1820,7 @@ class EventsApi:
 
 
     @validate_call
-    def find_organization_events_all_pages(self, id : Annotated[StrictStr, Field(description="Organization UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_organization_events_all_pages(self, id : Annotated[UUID, Field(description="Organization UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
         """Retrieve organization's events  # noqa: E501
 
         This method is the same as find_organization_events, but fetches resources from all the pages.
@@ -1892,7 +1877,7 @@ class EventsApi:
     @validate_call
     def find_organization_events(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -1963,8 +1948,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1978,7 +1962,7 @@ class EventsApi:
     @validate_call
     def find_organization_events_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2049,8 +2033,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2064,7 +2047,7 @@ class EventsApi:
     @validate_call
     def find_organization_events_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2135,8 +2118,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2225,7 +2207,7 @@ class EventsApi:
 
 
     @validate_call
-    def find_project_events_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
+    def find_project_events_all_pages(self, id : Annotated[UUID, Field(description="Project UUID")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> EventList:  # noqa: E501
         """Retrieve project's events  # noqa: E501
 
         This method is the same as find_project_events, but fetches resources from all the pages.
@@ -2282,7 +2264,7 @@ class EventsApi:
     @validate_call
     def find_project_events(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2353,8 +2335,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2368,7 +2349,7 @@ class EventsApi:
     @validate_call
     def find_project_events_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2439,8 +2420,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2454,7 +2434,7 @@ class EventsApi:
     @validate_call
     def find_project_events_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2525,8 +2505,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2617,7 +2596,7 @@ class EventsApi:
     @validate_call
     def find_virtual_circuit_events(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2688,8 +2667,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2703,7 +2681,7 @@ class EventsApi:
     @validate_call
     def find_virtual_circuit_events_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2774,8 +2752,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2789,7 +2766,7 @@ class EventsApi:
     @validate_call
     def find_virtual_circuit_events_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -2860,8 +2837,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2952,7 +2928,7 @@ class EventsApi:
     @validate_call
     def find_vrf_route_events(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -3023,8 +2999,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3038,7 +3013,7 @@ class EventsApi:
     @validate_call
     def find_vrf_route_events_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -3109,8 +3084,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3124,7 +3098,7 @@ class EventsApi:
     @validate_call
     def find_vrf_route_events_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -3195,8 +3169,7 @@ class EventsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

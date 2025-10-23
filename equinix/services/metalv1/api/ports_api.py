@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.port import Port
 from equinix.services.metalv1.models.port_assign_input import PortAssignInput
 from equinix.services.metalv1.models.port_convert_layer3_input import PortConvertLayer3Input
@@ -46,7 +46,7 @@ class PortsApi:
     @validate_call
     def assign_native_vlan(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         vnid: Annotated[StrictStr, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -109,8 +109,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -124,7 +123,7 @@ class PortsApi:
     @validate_call
     def assign_native_vlan_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         vnid: Annotated[StrictStr, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -187,8 +186,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -202,7 +200,7 @@ class PortsApi:
     @validate_call
     def assign_native_vlan_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         vnid: Annotated[StrictStr, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -265,8 +263,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -346,7 +343,7 @@ class PortsApi:
     @validate_call
     def assign_port(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -410,8 +407,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -425,7 +421,7 @@ class PortsApi:
     @validate_call
     def assign_port_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -489,8 +485,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -504,7 +499,7 @@ class PortsApi:
     @validate_call
     def assign_port_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -568,8 +563,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -660,7 +654,7 @@ class PortsApi:
     @validate_call
     def bond_port(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_enable: Annotated[Optional[StrictBool], Field(description="enable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -724,8 +718,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -739,7 +732,7 @@ class PortsApi:
     @validate_call
     def bond_port_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_enable: Annotated[Optional[StrictBool], Field(description="enable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -803,8 +796,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -818,7 +810,7 @@ class PortsApi:
     @validate_call
     def bond_port_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_enable: Annotated[Optional[StrictBool], Field(description="enable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -882,8 +874,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -963,7 +954,7 @@ class PortsApi:
     @validate_call
     def convert_layer2(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1027,8 +1018,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1042,7 +1032,7 @@ class PortsApi:
     @validate_call
     def convert_layer2_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1106,8 +1096,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1121,7 +1110,7 @@ class PortsApi:
     @validate_call
     def convert_layer2_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1185,8 +1174,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1277,7 +1265,7 @@ class PortsApi:
     @validate_call
     def convert_layer3(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         port_convert_layer3_input: Annotated[Optional[PortConvertLayer3Input], Field(description="IPs to request")] = None,
         _request_timeout: Union[
@@ -1341,8 +1329,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1356,7 +1343,7 @@ class PortsApi:
     @validate_call
     def convert_layer3_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         port_convert_layer3_input: Annotated[Optional[PortConvertLayer3Input], Field(description="IPs to request")] = None,
         _request_timeout: Union[
@@ -1420,8 +1407,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1435,7 +1421,7 @@ class PortsApi:
     @validate_call
     def convert_layer3_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         port_convert_layer3_input: Annotated[Optional[PortConvertLayer3Input], Field(description="IPs to request")] = None,
         _request_timeout: Union[
@@ -1499,8 +1485,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1591,7 +1576,7 @@ class PortsApi:
     @validate_call
     def create_port_vlan_assignment_batch(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_vlan_assignment_batch_create_input: Annotated[PortVlanAssignmentBatchCreateInput, Field(description="VLAN Assignment batch details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1655,8 +1640,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1670,7 +1654,7 @@ class PortsApi:
     @validate_call
     def create_port_vlan_assignment_batch_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_vlan_assignment_batch_create_input: Annotated[PortVlanAssignmentBatchCreateInput, Field(description="VLAN Assignment batch details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1734,8 +1718,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1749,7 +1732,7 @@ class PortsApi:
     @validate_call
     def create_port_vlan_assignment_batch_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_vlan_assignment_batch_create_input: Annotated[PortVlanAssignmentBatchCreateInput, Field(description="VLAN Assignment batch details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1813,8 +1796,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1905,7 +1887,7 @@ class PortsApi:
     @validate_call
     def delete_native_vlan(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1964,8 +1946,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1979,7 +1960,7 @@ class PortsApi:
     @validate_call
     def delete_native_vlan_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2038,8 +2019,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2053,7 +2033,7 @@ class PortsApi:
     @validate_call
     def delete_native_vlan_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2112,8 +2092,7 @@ class PortsApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2188,7 +2167,7 @@ class PortsApi:
     @validate_call
     def disbond_port(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_disable: Annotated[Optional[StrictBool], Field(description="disable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2252,8 +2231,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2267,7 +2245,7 @@ class PortsApi:
     @validate_call
     def disbond_port_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_disable: Annotated[Optional[StrictBool], Field(description="disable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2331,8 +2309,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2346,7 +2323,7 @@ class PortsApi:
     @validate_call
     def disbond_port_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         bulk_disable: Annotated[Optional[StrictBool], Field(description="disable both ports")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2410,8 +2387,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2491,7 +2467,7 @@ class PortsApi:
     @validate_call
     def find_port_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2549,8 +2525,7 @@ class PortsApi:
             '200': "Port",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2564,7 +2539,7 @@ class PortsApi:
     @validate_call
     def find_port_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2622,8 +2597,7 @@ class PortsApi:
             '200': "Port",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2637,7 +2611,7 @@ class PortsApi:
     @validate_call
     def find_port_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2695,8 +2669,7 @@ class PortsApi:
             '200': "Port",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2771,8 +2744,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batch_by_port_id_and_batch_id(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        batch_id: Annotated[StrictStr, Field(description="Batch ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        batch_id: Annotated[UUID, Field(description="Batch ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2834,8 +2807,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2849,8 +2821,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batch_by_port_id_and_batch_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        batch_id: Annotated[StrictStr, Field(description="Batch ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        batch_id: Annotated[UUID, Field(description="Batch ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2912,8 +2884,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2927,8 +2898,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batch_by_port_id_and_batch_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        batch_id: Annotated[StrictStr, Field(description="Batch ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        batch_id: Annotated[UUID, Field(description="Batch ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -2990,8 +2961,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3069,7 +3039,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batches(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3124,8 +3094,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3139,7 +3108,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batches_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3194,8 +3163,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3209,7 +3177,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_batches_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3264,8 +3232,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3334,8 +3301,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_by_port_id_and_assignment_id(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        assignment_id: Annotated[StrictStr, Field(description="Assignment ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        assignment_id: Annotated[UUID, Field(description="Assignment ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3397,8 +3364,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3412,8 +3378,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_by_port_id_and_assignment_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        assignment_id: Annotated[StrictStr, Field(description="Assignment ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        assignment_id: Annotated[UUID, Field(description="Assignment ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3475,8 +3441,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3490,8 +3455,8 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignment_by_port_id_and_assignment_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
-        assignment_id: Annotated[StrictStr, Field(description="Assignment ID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
+        assignment_id: Annotated[UUID, Field(description="Assignment ID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3553,8 +3518,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3632,7 +3596,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignments(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3691,8 +3655,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3706,7 +3669,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignments_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3765,8 +3728,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3780,7 +3742,7 @@ class PortsApi:
     @validate_call
     def find_port_vlan_assignments_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -3839,8 +3801,7 @@ class PortsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3915,7 +3876,7 @@ class PortsApi:
     @validate_call
     def unassign_port(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3979,8 +3940,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3994,7 +3954,7 @@ class PortsApi:
     @validate_call
     def unassign_port_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -4058,8 +4018,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4073,7 +4032,7 @@ class PortsApi:
     @validate_call
     def unassign_port_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         port_assign_input: Annotated[PortAssignInput, Field(description="Virtual Network ID. May be the UUID of the Virtual Network record, or the VLAN value itself (ex: '1001').")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -4137,8 +4096,7 @@ class PortsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

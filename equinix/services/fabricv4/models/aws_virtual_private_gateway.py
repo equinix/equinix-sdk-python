@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.aws_virtual_private_gateway_type import AWSVirtualPrivateGatewayType
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
 from typing import Optional, Set
@@ -26,8 +27,8 @@ class AWSVirtualPrivateGateway(BaseModel):
     """ # noqa: E501
     type: AWSVirtualPrivateGatewayType
     required: StrictBool
-    vpc_id: Optional[StrictStr] = Field(default=None, alias="vpcId")
-    subnet_id: Optional[StrictStr] = Field(default=None, alias="subnetId")
+    vpc_id: Optional[UUID] = Field(default=None, alias="vpcId")
+    subnet_id: Optional[UUID] = Field(default=None, alias="subnetId")
     deployment_properties: TopologyProperties = Field(alias="deploymentProperties")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "required", "vpcId", "subnetId", "deploymentProperties"]

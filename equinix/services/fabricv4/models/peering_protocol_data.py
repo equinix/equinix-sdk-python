@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.peering_connection_res_ipv4 import PeeringConnectionResIpv4
 from equinix.services.fabricv4.models.peering_connection_res_ipv6 import PeeringConnectionResIpv6
@@ -29,7 +30,7 @@ class PeeringProtocolData(BaseModel):
     PeeringProtocolData
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Peering Protocol URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Peering protocol identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Peering protocol identifier")
     type: Optional[PeeringProtocolDataType] = None
     name: Optional[StrictStr] = Field(default=None, description="Protocol Name")
     description: Optional[StrictStr] = Field(default=None, description="Protocol Description")

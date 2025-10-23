@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.spot_market_prices_list import SpotMarketPricesList
 from equinix.services.metalv1.models.spot_market_prices_per_metro_list import SpotMarketPricesPerMetroList
 from equinix.services.metalv1.models.spot_market_request import SpotMarketRequest
@@ -44,7 +44,7 @@ class SpotMarketApi:
     @validate_call
     def create_spot_market_request(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         spot_market_request_create_input: Annotated[SpotMarketRequestCreateInput, Field(description="Spot Market Request to create")],
         _request_timeout: Union[
             None,
@@ -103,8 +103,7 @@ class SpotMarketApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -118,7 +117,7 @@ class SpotMarketApi:
     @validate_call
     def create_spot_market_request_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         spot_market_request_create_input: Annotated[SpotMarketRequestCreateInput, Field(description="Spot Market Request to create")],
         _request_timeout: Union[
             None,
@@ -177,8 +176,7 @@ class SpotMarketApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -192,7 +190,7 @@ class SpotMarketApi:
     @validate_call
     def create_spot_market_request_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         spot_market_request_create_input: Annotated[SpotMarketRequestCreateInput, Field(description="Spot Market Request to create")],
         _request_timeout: Union[
             None,
@@ -251,8 +249,7 @@ class SpotMarketApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -337,7 +334,7 @@ class SpotMarketApi:
     @validate_call
     def delete_spot_market_request(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         force_termination: Annotated[Optional[StrictBool], Field(description="Terminate associated spot instances")] = None,
         _request_timeout: Union[
             None,
@@ -396,8 +393,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -411,7 +407,7 @@ class SpotMarketApi:
     @validate_call
     def delete_spot_market_request_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         force_termination: Annotated[Optional[StrictBool], Field(description="Terminate associated spot instances")] = None,
         _request_timeout: Union[
             None,
@@ -470,8 +466,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -485,7 +480,7 @@ class SpotMarketApi:
     @validate_call
     def delete_spot_market_request_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         force_termination: Annotated[Optional[StrictBool], Field(description="Terminate associated spot instances")] = None,
         _request_timeout: Union[
             None,
@@ -544,8 +539,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -677,8 +671,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -750,8 +743,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -823,8 +815,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -958,8 +949,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1031,8 +1021,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1104,8 +1093,7 @@ class SpotMarketApi:
             '200': "SpotMarketPricesList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1251,8 +1239,7 @@ class SpotMarketApi:
             '200': "SpotPricesHistoryReport",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1336,8 +1323,7 @@ class SpotMarketApi:
             '200': "SpotPricesHistoryReport",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1421,8 +1407,7 @@ class SpotMarketApi:
             '200': "SpotPricesHistoryReport",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1513,7 +1498,7 @@ class SpotMarketApi:
     @validate_call
     def find_spot_market_request_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1572,8 +1557,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1587,7 +1571,7 @@ class SpotMarketApi:
     @validate_call
     def find_spot_market_request_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1646,8 +1630,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1661,7 +1644,7 @@ class SpotMarketApi:
     @validate_call
     def find_spot_market_request_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="SpotMarketRequest UUID")],
+        id: Annotated[UUID, Field(description="SpotMarketRequest UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1720,8 +1703,7 @@ class SpotMarketApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1796,7 +1778,7 @@ class SpotMarketApi:
     @validate_call
     def list_spot_market_requests(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1850,8 +1832,7 @@ class SpotMarketApi:
             '200': "SpotMarketRequestList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1865,7 +1846,7 @@ class SpotMarketApi:
     @validate_call
     def list_spot_market_requests_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1919,8 +1900,7 @@ class SpotMarketApi:
             '200': "SpotMarketRequestList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1934,7 +1914,7 @@ class SpotMarketApi:
     @validate_call
     def list_spot_market_requests_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1988,8 +1968,7 @@ class SpotMarketApi:
             '200': "SpotMarketRequestList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

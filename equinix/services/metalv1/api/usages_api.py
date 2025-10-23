@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.device_usage_list import DeviceUsageList
 from equinix.services.metalv1.models.project_usage_list import ProjectUsageList
 
@@ -40,7 +40,7 @@ class UsagesApi:
     @validate_call
     def find_device_usages(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -102,8 +102,7 @@ class UsagesApi:
             '200': "DeviceUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -117,7 +116,7 @@ class UsagesApi:
     @validate_call
     def find_device_usages_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -179,8 +178,7 @@ class UsagesApi:
             '200': "DeviceUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -194,7 +192,7 @@ class UsagesApi:
     @validate_call
     def find_device_usages_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -256,8 +254,7 @@ class UsagesApi:
             '200': "DeviceUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -336,7 +333,7 @@ class UsagesApi:
     @validate_call
     def find_project_usage(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -398,8 +395,7 @@ class UsagesApi:
             '200': "ProjectUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -413,7 +409,7 @@ class UsagesApi:
     @validate_call
     def find_project_usage_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -475,8 +471,7 @@ class UsagesApi:
             '200': "ProjectUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -490,7 +485,7 @@ class UsagesApi:
     @validate_call
     def find_project_usage_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         created_after: Annotated[Optional[StrictStr], Field(description="Filter usages created after this date")] = None,
         created_before: Annotated[Optional[StrictStr], Field(description="Filter usages created before this date")] = None,
         _request_timeout: Union[
@@ -552,8 +547,7 @@ class UsagesApi:
             '200': "ProjectUsageList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

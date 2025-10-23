@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.virtual_network import VirtualNetwork
 from equinix.services.metalv1.models.virtual_network_create_input import VirtualNetworkCreateInput
 from equinix.services.metalv1.models.virtual_network_list import VirtualNetworkList
@@ -42,7 +42,7 @@ class VLANsApi:
     @validate_call
     def create_virtual_network(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         virtual_network_create_input: Annotated[VirtualNetworkCreateInput, Field(description="Virtual Network to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -110,8 +110,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -125,7 +124,7 @@ class VLANsApi:
     @validate_call
     def create_virtual_network_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         virtual_network_create_input: Annotated[VirtualNetworkCreateInput, Field(description="Virtual Network to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -193,8 +192,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -208,7 +206,7 @@ class VLANsApi:
     @validate_call
     def create_virtual_network_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         virtual_network_create_input: Annotated[VirtualNetworkCreateInput, Field(description="Virtual Network to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -276,8 +274,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -374,7 +371,7 @@ class VLANsApi:
     @validate_call
     def delete_virtual_network(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -438,8 +435,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -453,7 +449,7 @@ class VLANsApi:
     @validate_call
     def delete_virtual_network_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -517,8 +513,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -532,7 +527,7 @@ class VLANsApi:
     @validate_call
     def delete_virtual_network_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -596,8 +591,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -678,7 +672,7 @@ class VLANsApi:
     @validate_call
     def find_virtual_networks(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
@@ -749,8 +743,7 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -764,7 +757,7 @@ class VLANsApi:
     @validate_call
     def find_virtual_networks_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
@@ -835,8 +828,7 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -850,7 +842,7 @@ class VLANsApi:
     @validate_call
     def find_virtual_networks_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
@@ -921,8 +913,7 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1013,7 +1004,7 @@ class VLANsApi:
     @validate_call
     def get_virtual_network(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1077,8 +1068,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1092,7 +1082,7 @@ class VLANsApi:
     @validate_call
     def get_virtual_network_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1156,8 +1146,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1171,7 +1160,7 @@ class VLANsApi:
     @validate_call
     def get_virtual_network_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1235,8 +1224,7 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1317,7 +1305,7 @@ class VLANsApi:
     @validate_call
     def update_virtual_network(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         virtual_network_update_input: Annotated[VirtualNetworkUpdateInput, Field(description="Virtual network to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1386,8 +1374,7 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1401,7 +1388,7 @@ class VLANsApi:
     @validate_call
     def update_virtual_network_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         virtual_network_update_input: Annotated[VirtualNetworkUpdateInput, Field(description="Virtual network to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1470,8 +1457,7 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1485,7 +1471,7 @@ class VLANsApi:
     @validate_call
     def update_virtual_network_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Network UUID")],
+        id: Annotated[UUID, Field(description="Virtual Network UUID")],
         virtual_network_update_input: Annotated[VirtualNetworkUpdateInput, Field(description="Virtual network to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1554,8 +1540,7 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

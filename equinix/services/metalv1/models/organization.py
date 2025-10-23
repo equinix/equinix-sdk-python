@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.address import Address
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
@@ -36,7 +37,7 @@ class Organization(BaseModel):
     description: Optional[StrictStr] = None
     enforce_2fa_at: Optional[datetime] = Field(default=None, description="Force to all members to have enabled the two factor authentication after that date, unless the value is null")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     logo: Optional[StrictStr] = None
     members: Optional[List[Href]] = None
     memberships: Optional[List[Href]] = None

@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.facility_list import FacilityList
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
@@ -97,8 +97,7 @@ class FacilitiesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FacilityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -170,8 +169,7 @@ class FacilitiesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FacilityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -243,8 +241,7 @@ class FacilitiesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FacilityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -322,7 +319,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_organization(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -386,8 +383,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -401,7 +397,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_organization_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -465,8 +461,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -480,7 +475,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_organization_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -544,8 +539,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -626,7 +620,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_project(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -690,8 +684,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -705,7 +698,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_project_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -769,8 +762,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -784,7 +776,7 @@ class FacilitiesApi:
     @validate_call
     def find_facilities_by_project_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -848,8 +840,7 @@ class FacilitiesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

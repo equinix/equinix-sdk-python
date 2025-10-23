@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **contact_email** | **str** | The preferred email used for communication and notifications about the Equinix Fabric interconnection. Optional and defaults to the primary user email address when using a User API key or the organization owner email address when using a Project API key. | [optional] 
 **description** | **str** |  | [optional] 
-**fabric_provider** | [**VlanCSPConnectionCreateInputFabricProvider**](VlanCSPConnectionCreateInputFabricProvider.md) |  | 
+**fabric_provider** | [**AWSFabricProvider**](AWSFabricProvider.md) |  | 
 **href** | **str** |  | [optional] 
 **metro** | **str** | A Metro ID or code. When creating Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed), or shared connections, this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here. | 
 **name** | **str** |  | 

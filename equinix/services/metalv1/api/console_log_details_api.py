@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBytes, StrictStr
 from typing import Tuple, Union
 from typing_extensions import Annotated
+from uuid import UUID
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
 from equinix.services.metalv1.api_response import ApiResponse
@@ -38,7 +38,7 @@ class ConsoleLogDetailsApi:
     @validate_call
     def capture_screenshot(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -93,8 +93,7 @@ class ConsoleLogDetailsApi:
             '403': "Error",
             '404': "Error",
             '501': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -108,7 +107,7 @@ class ConsoleLogDetailsApi:
     @validate_call
     def capture_screenshot_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -163,8 +162,7 @@ class ConsoleLogDetailsApi:
             '403': "Error",
             '404': "Error",
             '501': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -178,7 +176,7 @@ class ConsoleLogDetailsApi:
     @validate_call
     def capture_screenshot_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -233,8 +231,7 @@ class ConsoleLogDetailsApi:
             '403': "Error",
             '404': "Error",
             '501': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

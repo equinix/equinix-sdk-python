@@ -65,7 +65,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -147,7 +146,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VLANsApi->delete_virtual_network: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -237,7 +235,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -322,7 +319,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VLANsApi->get_virtual_network: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -410,7 +406,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VLANsApi->update_virtual_network: %s\n" % e)
 ```
-
 
 
 ### Parameters

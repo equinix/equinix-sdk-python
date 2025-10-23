@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.facility import Facility
 from equinix.services.metalv1.models.plan import Plan
 from equinix.services.metalv1.models.project import Project
@@ -34,7 +35,7 @@ class HardwareReservation(BaseModel):
     device: Optional[Device] = None
     facility: Optional[Facility] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     need_of_service: Optional[StrictBool] = Field(default=None, description="Whether this Device requires assistance from Equinix Metal.")
     plan: Optional[Plan] = None
     project: Optional[Project] = None

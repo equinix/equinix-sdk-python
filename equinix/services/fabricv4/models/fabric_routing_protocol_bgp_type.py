@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.fabric_bgp_connection_ipv4 import FabricBGPConnectionIpv4
 from equinix.services.fabricv4.models.routing_protocol_bgp_type_type import RoutingProtocolBGPTypeType
 from equinix.services.fabricv4.models.topology_properties import TopologyProperties
@@ -27,7 +28,7 @@ class FabricRoutingProtocolBGPType(BaseModel):
     """ # noqa: E501
     type: RoutingProtocolBGPTypeType
     name: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned route protocol identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned route protocol identifier")
     bgp_ipv4: FabricBGPConnectionIpv4 = Field(alias="bgpIpv4")
     customer_asn: StrictInt = Field(description="Customer asn", alias="customerAsn")
     bgp_auth_key: StrictStr = Field(description="BGP authorization key", alias="bgpAuthKey")

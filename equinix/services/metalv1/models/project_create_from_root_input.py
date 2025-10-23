@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,8 +30,8 @@ class ProjectCreateFromRootInput(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     href: Optional[StrictStr] = None
     name: Annotated[str, Field(min_length=1, strict=True, max_length=80)] = Field(description="The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis.")
-    organization_id: Optional[StrictStr] = None
-    payment_method_id: Optional[StrictStr] = None
+    organization_id: Optional[UUID] = None
+    payment_method_id: Optional[UUID] = None
     tags: Optional[List[StrictStr]] = None
     type: Optional[StrictStr] = Field(default=None, description="The type of the project. If no type is specified the project type will automatically be `default` Projects of type 'vmce' are part of an in development feature and not available to all customers.")
     __properties: ClassVar[List[str]] = ["customdata", "href", "name", "organization_id", "payment_method_id", "tags", "type"]

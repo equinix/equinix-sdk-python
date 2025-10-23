@@ -9,14 +9,14 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.capacity_check_per_facility_list import CapacityCheckPerFacilityList
 from equinix.services.metalv1.models.capacity_check_per_metro_list import CapacityCheckPerMetroList
 from equinix.services.metalv1.models.capacity_input import CapacityInput
@@ -96,8 +96,7 @@ class CapacityApi:
             '200': "CapacityCheckPerFacilityList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -166,8 +165,7 @@ class CapacityApi:
             '200': "CapacityCheckPerFacilityList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -236,8 +234,7 @@ class CapacityApi:
             '200': "CapacityCheckPerFacilityList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -373,8 +370,7 @@ class CapacityApi:
             '200': "CapacityCheckPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -442,8 +438,7 @@ class CapacityApi:
             '200': "CapacityCheckPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -511,8 +506,7 @@ class CapacityApi:
             '200': "CapacityCheckPerMetroList",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -643,8 +637,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -707,8 +700,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -771,8 +763,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -887,8 +878,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -951,8 +941,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1015,8 +1004,7 @@ class CapacityApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CapacityList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1082,7 +1070,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_facility(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1136,8 +1124,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1151,7 +1138,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_facility_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1205,8 +1192,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1220,7 +1206,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_facility_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1274,8 +1260,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1344,7 +1329,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_metro(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1398,8 +1383,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1413,7 +1397,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_metro_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1467,8 +1451,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1482,7 +1465,7 @@ class CapacityApi:
     @validate_call
     def find_organization_capacity_per_metro_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1536,8 +1519,7 @@ class CapacityApi:
             '200': "CapacityList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

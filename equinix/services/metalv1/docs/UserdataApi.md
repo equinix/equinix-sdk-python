@@ -54,7 +54,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 

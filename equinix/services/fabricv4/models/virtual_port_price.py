@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.connectivity_source import ConnectivitySource
 from equinix.services.fabricv4.models.link_aggregation_group import LinkAggregationGroup
 from equinix.services.fabricv4.models.virtual_port_configuration import VirtualPortConfiguration
@@ -30,7 +31,7 @@ class VirtualPortPrice(BaseModel):
     """
     Preferences and settings for a virtual port connected to an internet service provider (ISP) or other Equinix platform entity.
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Unique identifier assigned to the virtual port. Either the uuid or the remaining attributes must be supplied.")
+    uuid: Optional[UUID] = Field(default=None, description="Unique identifier assigned to the virtual port. Either the uuid or the remaining attributes must be supplied.")
     type: Optional[VirtualPortType] = None
     location: Optional[VirtualPortLocation] = None
     lag: Optional[LinkAggregationGroup] = None

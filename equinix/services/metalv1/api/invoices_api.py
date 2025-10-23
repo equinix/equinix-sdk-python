@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.invoice import Invoice
 from equinix.services.metalv1.models.invoice_list import InvoiceList
 
@@ -40,7 +40,7 @@ class InvoicesApi:
     @validate_call
     def find_organization_invoices(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="per page")] = None,
         status: Annotated[Optional[StrictStr], Field(description="filter by status")] = None,
@@ -106,8 +106,7 @@ class InvoicesApi:
             '200': "InvoiceList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -121,7 +120,7 @@ class InvoicesApi:
     @validate_call
     def find_organization_invoices_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="per page")] = None,
         status: Annotated[Optional[StrictStr], Field(description="filter by status")] = None,
@@ -187,8 +186,7 @@ class InvoicesApi:
             '200': "InvoiceList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -202,7 +200,7 @@ class InvoicesApi:
     @validate_call
     def find_organization_invoices_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="per page")] = None,
         status: Annotated[Optional[StrictStr], Field(description="filter by status")] = None,
@@ -268,8 +266,7 @@ class InvoicesApi:
             '200': "InvoiceList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -353,7 +350,7 @@ class InvoicesApi:
     @validate_call
     def get_invoice_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Invoice UUID")],
+        id: Annotated[UUID, Field(description="Invoice UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -407,8 +404,7 @@ class InvoicesApi:
             '200': "Invoice",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -422,7 +418,7 @@ class InvoicesApi:
     @validate_call
     def get_invoice_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Invoice UUID")],
+        id: Annotated[UUID, Field(description="Invoice UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -476,8 +472,7 @@ class InvoicesApi:
             '200': "Invoice",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -491,7 +486,7 @@ class InvoicesApi:
     @validate_call
     def get_invoice_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Invoice UUID")],
+        id: Annotated[UUID, Field(description="Invoice UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -545,8 +540,7 @@ class InvoicesApi:
             '200': "Invoice",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

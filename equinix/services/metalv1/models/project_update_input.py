@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +31,7 @@ class ProjectUpdateInput(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     href: Optional[StrictStr] = None
     name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=80)]] = Field(default=None, description="The name of the project. Cannot contain characters encoded in greater than 3 bytes such as emojis.")
-    payment_method_id: Optional[StrictStr] = None
+    payment_method_id: Optional[UUID] = None
     tags: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ["backend_transfer_enabled", "customdata", "href", "name", "payment_method_id", "tags"]
 

@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.bgp_session_input import BGPSessionInput
 from equinix.services.metalv1.models.bgp_session import BgpSession
 from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
@@ -55,7 +55,7 @@ class DevicesApi:
     @validate_call
     def create_bgp_session(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         bgp_session_input: Annotated[BGPSessionInput, Field(description="BGP session to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -118,8 +118,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -133,7 +132,7 @@ class DevicesApi:
     @validate_call
     def create_bgp_session_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         bgp_session_input: Annotated[BGPSessionInput, Field(description="BGP session to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -196,8 +195,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -211,7 +209,7 @@ class DevicesApi:
     @validate_call
     def create_bgp_session_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         bgp_session_input: Annotated[BGPSessionInput, Field(description="BGP session to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -274,8 +272,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -366,7 +363,7 @@ class DevicesApi:
     @validate_call
     def create_device(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -434,8 +431,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -449,7 +445,7 @@ class DevicesApi:
     @validate_call
     def create_device_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -517,8 +513,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -532,7 +527,7 @@ class DevicesApi:
     @validate_call
     def create_device_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -600,8 +595,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -698,7 +692,7 @@ class DevicesApi:
     @validate_call
     def create_ip_assignment(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         ip_assignment_input: Annotated[IPAssignmentInput, Field(description="IPAssignment to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -765,8 +759,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -780,7 +773,7 @@ class DevicesApi:
     @validate_call
     def create_ip_assignment_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         ip_assignment_input: Annotated[IPAssignmentInput, Field(description="IPAssignment to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -847,8 +840,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -862,7 +854,7 @@ class DevicesApi:
     @validate_call
     def create_ip_assignment_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         ip_assignment_input: Annotated[IPAssignmentInput, Field(description="IPAssignment to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -929,8 +921,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1027,7 +1018,7 @@ class DevicesApi:
     @validate_call
     def delete_device(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         force_delete: Annotated[Optional[StrictBool], Field(description="Force the deletion of the device, by detaching any storage volume still active.")] = None,
         _request_timeout: Union[
             None,
@@ -1087,8 +1078,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1102,7 +1092,7 @@ class DevicesApi:
     @validate_call
     def delete_device_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         force_delete: Annotated[Optional[StrictBool], Field(description="Force the deletion of the device, by detaching any storage volume still active.")] = None,
         _request_timeout: Union[
             None,
@@ -1162,8 +1152,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1177,7 +1166,7 @@ class DevicesApi:
     @validate_call
     def delete_device_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         force_delete: Annotated[Optional[StrictBool], Field(description="Force the deletion of the device, by detaching any storage volume still active.")] = None,
         _request_timeout: Union[
             None,
@@ -1237,8 +1226,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1312,7 +1300,7 @@ class DevicesApi:
     @validate_call
     def find_bgp_sessions(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1370,8 +1358,7 @@ class DevicesApi:
             '200': "BgpSessionList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1385,7 +1372,7 @@ class DevicesApi:
     @validate_call
     def find_bgp_sessions_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1443,8 +1430,7 @@ class DevicesApi:
             '200': "BgpSessionList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1458,7 +1444,7 @@ class DevicesApi:
     @validate_call
     def find_bgp_sessions_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1516,8 +1502,7 @@ class DevicesApi:
             '200': "BgpSessionList",
             '401': "Error",
             '403': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1592,7 +1577,7 @@ class DevicesApi:
     @validate_call
     def find_device_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1655,8 +1640,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1670,7 +1654,7 @@ class DevicesApi:
     @validate_call
     def find_device_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1733,8 +1717,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1748,7 +1731,7 @@ class DevicesApi:
     @validate_call
     def find_device_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1811,8 +1794,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1893,7 +1875,7 @@ class DevicesApi:
     @validate_call
     def find_device_customdata(
         self,
-        id: Annotated[StrictStr, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Instance UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1948,8 +1930,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1963,7 +1944,7 @@ class DevicesApi:
     @validate_call
     def find_device_customdata_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Instance UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2018,8 +1999,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2033,7 +2013,7 @@ class DevicesApi:
     @validate_call
     def find_device_customdata_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Instance UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2088,8 +2068,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2158,7 +2137,7 @@ class DevicesApi:
     @validate_call
     def find_device_metadata_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2213,8 +2192,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2228,7 +2206,7 @@ class DevicesApi:
     @validate_call
     def find_device_metadata_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2283,8 +2261,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2298,7 +2275,7 @@ class DevicesApi:
     @validate_call
     def find_device_metadata_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2353,8 +2330,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2423,7 +2399,7 @@ class DevicesApi:
     @validate_call
     def find_device_userdata_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2478,8 +2454,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2493,7 +2468,7 @@ class DevicesApi:
     @validate_call
     def find_device_userdata_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2548,8 +2523,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2563,7 +2537,7 @@ class DevicesApi:
     @validate_call
     def find_device_userdata_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2618,8 +2592,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2688,7 +2661,7 @@ class DevicesApi:
     @validate_call
     def find_instance_bandwidth(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         var_from: Annotated[StrictStr, Field(description="Timestamp from range")],
         until: Annotated[StrictStr, Field(description="Timestamp to range")],
         _request_timeout: Union[
@@ -2750,8 +2723,7 @@ class DevicesApi:
             '200': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2765,7 +2737,7 @@ class DevicesApi:
     @validate_call
     def find_instance_bandwidth_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         var_from: Annotated[StrictStr, Field(description="Timestamp from range")],
         until: Annotated[StrictStr, Field(description="Timestamp to range")],
         _request_timeout: Union[
@@ -2827,8 +2799,7 @@ class DevicesApi:
             '200': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2842,7 +2813,7 @@ class DevicesApi:
     @validate_call
     def find_instance_bandwidth_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         var_from: Annotated[StrictStr, Field(description="Timestamp from range")],
         until: Annotated[StrictStr, Field(description="Timestamp to range")],
         _request_timeout: Union[
@@ -2904,8 +2875,7 @@ class DevicesApi:
             '200': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2984,8 +2954,8 @@ class DevicesApi:
     @validate_call
     def find_ip_assignment_customdata(
         self,
-        instance_id: Annotated[StrictStr, Field(description="Instance UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Assignment UUID")],
+        instance_id: Annotated[UUID, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Ip Assignment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3043,8 +3013,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3058,8 +3027,8 @@ class DevicesApi:
     @validate_call
     def find_ip_assignment_customdata_with_http_info(
         self,
-        instance_id: Annotated[StrictStr, Field(description="Instance UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Assignment UUID")],
+        instance_id: Annotated[UUID, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Ip Assignment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3117,8 +3086,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3132,8 +3100,8 @@ class DevicesApi:
     @validate_call
     def find_ip_assignment_customdata_without_preload_content(
         self,
-        instance_id: Annotated[StrictStr, Field(description="Instance UUID")],
-        id: Annotated[StrictStr, Field(description="Ip Assignment UUID")],
+        instance_id: Annotated[UUID, Field(description="Instance UUID")],
+        id: Annotated[UUID, Field(description="Ip Assignment UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3191,8 +3159,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3264,7 +3231,7 @@ class DevicesApi:
     @validate_call
     def find_ip_assignments(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3326,8 +3293,7 @@ class DevicesApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3341,7 +3307,7 @@ class DevicesApi:
     @validate_call
     def find_ip_assignments_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3403,8 +3369,7 @@ class DevicesApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3418,7 +3383,7 @@ class DevicesApi:
     @validate_call
     def find_ip_assignments_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3480,8 +3445,7 @@ class DevicesApi:
             '200': "IPAssignmentList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3560,7 +3524,7 @@ class DevicesApi:
 
 
     @validate_call
-    def find_organization_devices_all_pages(self, id : Annotated[StrictStr, Field(description="Organization UUID")], search : Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None, categories : Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None, facility : Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None, hostname : Annotated[Optional[StrictStr], Field(description="Filter by partial hostname")] = None, reserved : Annotated[Optional[StrictBool], Field(description="Filter only reserved instances. When set to true, only include reserved instances. When set to false, only include on-demand instances.")] = None, tag : Annotated[Optional[StrictStr], Field(description="Filter by device tag")] = None, type : Annotated[Optional[StrictStr], Field(description="Filter by instance type (ondemand,spot,reserved)")] = None, has_termination_time : Annotated[Optional[StrictBool], Field(description="Filter only instances marked for termination. When set to true, only include instances that have a termination time. When set to false, only include instances that do not have a termination time.")] = None, mac_address : Annotated[Optional[StrictStr], Field(description="Filter by MAC address")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> DeviceList:  # noqa: E501
+    def find_organization_devices_all_pages(self, id : Annotated[UUID, Field(description="Organization UUID")], search : Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None, categories : Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None, facility : Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None, hostname : Annotated[Optional[StrictStr], Field(description="Filter by partial hostname")] = None, reserved : Annotated[Optional[StrictBool], Field(description="Filter only reserved instances. When set to true, only include reserved instances. When set to false, only include on-demand instances.")] = None, tag : Annotated[Optional[StrictStr], Field(description="Filter by device tag")] = None, type : Annotated[Optional[StrictStr], Field(description="Filter by instance type (ondemand,spot,reserved)")] = None, has_termination_time : Annotated[Optional[StrictBool], Field(description="Filter only instances marked for termination. When set to true, only include instances that have a termination time. When set to false, only include instances that do not have a termination time.")] = None, mac_address : Annotated[Optional[StrictStr], Field(description="Filter by MAC address")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> DeviceList:  # noqa: E501
         """Retrieve all devices of an organization  # noqa: E501
 
         This method is the same as find_organization_devices, but fetches resources from all the pages.
@@ -3644,7 +3608,7 @@ class DevicesApi:
     @validate_call
     def find_organization_devices(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -3751,8 +3715,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3766,7 +3729,7 @@ class DevicesApi:
     @validate_call
     def find_organization_devices_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -3873,8 +3836,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3888,7 +3850,7 @@ class DevicesApi:
     @validate_call
     def find_organization_devices_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -3995,8 +3957,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4131,7 +4092,7 @@ class DevicesApi:
 
 
     @validate_call
-    def find_project_devices_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], search : Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None, categories : Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None, facility : Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None, metro : Annotated[Optional[StrictStr], Field(description="Filter by device metro")] = None, hostname : Annotated[Optional[StrictStr], Field(description="Filter by partial hostname")] = None, reserved : Annotated[Optional[StrictBool], Field(description="Filter only reserved instances. When set to true, only include reserved instances. When set to false, only include on-demand instances.")] = None, tag : Annotated[Optional[StrictStr], Field(description="Filter by device tag")] = None, type : Annotated[Optional[StrictStr], Field(description="Filter by instance type (ondemand,spot,reserved)")] = None, has_termination_time : Annotated[Optional[StrictBool], Field(description="Filter only instances marked for termination. When set to true, only include instances that have a termination time. When set to false, only include instances that do not have a termination time.")] = None, mac_address : Annotated[Optional[StrictStr], Field(description="Filter by MAC address")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> DeviceList:  # noqa: E501
+    def find_project_devices_all_pages(self, id : Annotated[UUID, Field(description="Project UUID")], search : Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None, categories : Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None, facility : Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None, metro : Annotated[Optional[StrictStr], Field(description="Filter by device metro")] = None, hostname : Annotated[Optional[StrictStr], Field(description="Filter by partial hostname")] = None, reserved : Annotated[Optional[StrictBool], Field(description="Filter only reserved instances. When set to true, only include reserved instances. When set to false, only include on-demand instances.")] = None, tag : Annotated[Optional[StrictStr], Field(description="Filter by device tag")] = None, type : Annotated[Optional[StrictStr], Field(description="Filter by instance type (ondemand,spot,reserved)")] = None, has_termination_time : Annotated[Optional[StrictBool], Field(description="Filter only instances marked for termination. When set to true, only include instances that have a termination time. When set to false, only include instances that do not have a termination time.")] = None, mac_address : Annotated[Optional[StrictStr], Field(description="Filter by MAC address")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> DeviceList:  # noqa: E501
         """Retrieve all devices of a project  # noqa: E501
 
         This method is the same as find_project_devices, but fetches resources from all the pages.
@@ -4218,7 +4179,7 @@ class DevicesApi:
     @validate_call
     def find_project_devices(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -4329,8 +4290,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4344,7 +4304,7 @@ class DevicesApi:
     @validate_call
     def find_project_devices_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -4455,8 +4415,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4470,7 +4429,7 @@ class DevicesApi:
     @validate_call
     def find_project_devices_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         search: Annotated[Optional[StrictStr], Field(description="Search by hostname, description, short_id, reservation short_id, tags, plan name, plan slug, facility code, facility name, operating system name, operating system slug, IP addresses.")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter by plan category")] = None,
         facility: Annotated[Optional[StrictStr], Field(description="Filter by device facility")] = None,
@@ -4581,8 +4540,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4724,7 +4682,7 @@ class DevicesApi:
     @validate_call
     def find_traffic(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         direction: Annotated[StrictStr, Field(description="Traffic direction")],
         interval: Annotated[Optional[StrictStr], Field(description="Traffic interval")] = None,
         bucket: Annotated[Optional[StrictStr], Field(description="Traffic bucket")] = None,
@@ -4795,8 +4753,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4810,7 +4767,7 @@ class DevicesApi:
     @validate_call
     def find_traffic_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         direction: Annotated[StrictStr, Field(description="Traffic direction")],
         interval: Annotated[Optional[StrictStr], Field(description="Traffic interval")] = None,
         bucket: Annotated[Optional[StrictStr], Field(description="Traffic bucket")] = None,
@@ -4881,8 +4838,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4896,7 +4852,7 @@ class DevicesApi:
     @validate_call
     def find_traffic_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         direction: Annotated[StrictStr, Field(description="Traffic direction")],
         interval: Annotated[Optional[StrictStr], Field(description="Traffic interval")] = None,
         bucket: Annotated[Optional[StrictStr], Field(description="Traffic bucket")] = None,
@@ -4967,8 +4923,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5057,7 +5012,7 @@ class DevicesApi:
     @validate_call
     def get_bgp_neighbor_data(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -5116,8 +5071,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5131,7 +5085,7 @@ class DevicesApi:
     @validate_call
     def get_bgp_neighbor_data_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -5190,8 +5144,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5205,7 +5158,7 @@ class DevicesApi:
     @validate_call
     def get_bgp_neighbor_data_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -5264,8 +5217,7 @@ class DevicesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5340,7 +5292,7 @@ class DevicesApi:
     @validate_call
     def get_device_firmware_sets(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5395,8 +5347,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5410,7 +5361,7 @@ class DevicesApi:
     @validate_call
     def get_device_firmware_sets_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5465,8 +5416,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5480,7 +5430,7 @@ class DevicesApi:
     @validate_call
     def get_device_firmware_sets_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5535,8 +5485,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5605,7 +5554,7 @@ class DevicesApi:
     @validate_call
     def get_device_health_rollup(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5660,8 +5609,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5675,7 +5623,7 @@ class DevicesApi:
     @validate_call
     def get_device_health_rollup_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5730,8 +5678,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5745,7 +5692,7 @@ class DevicesApi:
     @validate_call
     def get_device_health_rollup_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5800,8 +5747,7 @@ class DevicesApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5870,7 +5816,7 @@ class DevicesApi:
     @validate_call
     def perform_action(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_action_input: Annotated[DeviceActionInput, Field(description="Action to perform")],
         _request_timeout: Union[
             None,
@@ -5929,8 +5875,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5944,7 +5889,7 @@ class DevicesApi:
     @validate_call
     def perform_action_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_action_input: Annotated[DeviceActionInput, Field(description="Action to perform")],
         _request_timeout: Union[
             None,
@@ -6003,8 +5948,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6018,7 +5962,7 @@ class DevicesApi:
     @validate_call
     def perform_action_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_action_input: Annotated[DeviceActionInput, Field(description="Action to perform")],
         _request_timeout: Union[
             None,
@@ -6077,8 +6021,7 @@ class DevicesApi:
             '401': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6163,7 +6106,7 @@ class DevicesApi:
     @validate_call
     def update_device(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_update_input: Annotated[DeviceUpdateInput, Field(description="Device to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -6231,8 +6174,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6246,7 +6188,7 @@ class DevicesApi:
     @validate_call
     def update_device_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_update_input: Annotated[DeviceUpdateInput, Field(description="Device to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -6314,8 +6256,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6329,7 +6270,7 @@ class DevicesApi:
     @validate_call
     def update_device_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Device UUID")],
+        id: Annotated[UUID, Field(description="Device UUID")],
         device_update_input: Annotated[DeviceUpdateInput, Field(description="Device to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -6397,8 +6338,7 @@ class DevicesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

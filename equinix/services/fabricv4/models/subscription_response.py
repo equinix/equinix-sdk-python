@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.subscription_entitlement_response import SubscriptionEntitlementResponse
 from equinix.services.fabricv4.models.subscription_response_marketplace import SubscriptionResponseMarketplace
@@ -29,7 +30,7 @@ class SubscriptionResponse(BaseModel):
     Subscription Response
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Subscription URL")
-    uuid: Optional[StrictStr] = Field(default=None, description="Unique identifier of the Subscription")
+    uuid: Optional[UUID] = Field(default=None, description="Unique identifier of the Subscription")
     state: SubscriptionState
     marketplace: SubscriptionResponseMarketplace
     offer_type: Optional[SubscriptionResponseOfferType] = Field(default=None, alias="offerType")

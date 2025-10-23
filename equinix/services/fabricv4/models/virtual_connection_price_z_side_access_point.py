@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.price_location import PriceLocation
 from equinix.services.fabricv4.models.virtual_connection_price_a_side_access_point_port import VirtualConnectionPriceASideAccessPointPort
 from equinix.services.fabricv4.models.virtual_connection_price_access_point_type import VirtualConnectionPriceAccessPointType
@@ -27,7 +28,7 @@ class VirtualConnectionPriceZSideAccessPoint(BaseModel):
     """
     VirtualConnectionPriceZSideAccessPoint
     """ # noqa: E501
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     type: Optional[VirtualConnectionPriceAccessPointType] = None
     location: Optional[PriceLocation] = None
     port: Optional[VirtualConnectionPriceASideAccessPointPort] = None

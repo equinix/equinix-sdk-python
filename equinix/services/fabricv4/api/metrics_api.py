@@ -16,6 +16,7 @@ from datetime import datetime
 from pydantic import Field, StrictInt, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.get_metrics_by_asset_response import GetMetricsByAssetResponse
 from equinix.services.fabricv4.models.metric_asset_type import MetricAssetType
 from equinix.services.fabricv4.models.metrics_search_request import MetricsSearchRequest
@@ -42,7 +43,7 @@ class MetricsApi:
     def get_metric_by_asset_id(
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         name: Annotated[StrictStr, Field(description="Name of the metric types: <br> - equinix.fabric.connection.bandwidth_rx.usage <br> - equinix.fabric.connection.bandwidth_tx.usage <br> - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count <br> - equinix.fabric.port.bandwidth_rx.usage <br> - equinix.fabric.port.bandwidth_tx.usage <br> - equinix.fabric.port.packets_dropped_rx.count <br> - equinix.fabric.port.packets_dropped_tx.count <br> - equinix.fabric.port.packets_erred_rx.count <br> - equinix.fabric.port.packets_erred_tx.count <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg <br> ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
@@ -137,7 +138,7 @@ class MetricsApi:
     def get_metric_by_asset_id_with_http_info(
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         name: Annotated[StrictStr, Field(description="Name of the metric types: <br> - equinix.fabric.connection.bandwidth_rx.usage <br> - equinix.fabric.connection.bandwidth_tx.usage <br> - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count <br> - equinix.fabric.port.bandwidth_rx.usage <br> - equinix.fabric.port.bandwidth_tx.usage <br> - equinix.fabric.port.packets_dropped_rx.count <br> - equinix.fabric.port.packets_dropped_tx.count <br> - equinix.fabric.port.packets_erred_rx.count <br> - equinix.fabric.port.packets_erred_tx.count <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg <br> ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
@@ -232,7 +233,7 @@ class MetricsApi:
     def get_metric_by_asset_id_without_preload_content(
         self,
         asset: Annotated[MetricAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         name: Annotated[StrictStr, Field(description="Name of the metric types: <br> - equinix.fabric.connection.bandwidth_rx.usage <br> - equinix.fabric.connection.bandwidth_tx.usage <br> - equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count <br> - equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count <br> - equinix.fabric.port.bandwidth_rx.usage <br> - equinix.fabric.port.bandwidth_tx.usage <br> - equinix.fabric.port.packets_dropped_rx.count <br> - equinix.fabric.port.packets_dropped_tx.count <br> - equinix.fabric.port.packets_erred_rx.count <br> - equinix.fabric.port.packets_erred_tx.count <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.latency <br> - equinix.fabric.metro.{source_metro_code}_{destination_metro_code}.jitter_avg <br> ")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,

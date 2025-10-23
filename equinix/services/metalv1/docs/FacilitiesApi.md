@@ -60,7 +60,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -140,7 +139,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling FacilitiesApi->find_facilities_by_organization: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -225,7 +223,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling FacilitiesApi->find_facilities_by_project: %s\n" % e)
 ```
-
 
 
 ### Parameters

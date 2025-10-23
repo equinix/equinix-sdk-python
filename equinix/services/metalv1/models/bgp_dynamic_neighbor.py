@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.user_limited import UserLimited
 from equinix.services.metalv1.models.vrf_metal_gateway import VrfMetalGateway
 from typing import Optional, Set
@@ -34,7 +35,7 @@ class BgpDynamicNeighbor(BaseModel):
     created_at: Optional[datetime] = None
     created_by: Optional[UserLimited] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = Field(default=None, description="The unique identifier for the resource")
+    id: Optional[UUID] = Field(default=None, description="The unique identifier for the resource")
     metal_gateway: Optional[VrfMetalGateway] = None
     state: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None

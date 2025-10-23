@@ -16,6 +16,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.network_change_operation import NetworkChangeOperation
 from equinix.services.fabricv4.models.network_change_status import NetworkChangeStatus
 from equinix.services.fabricv4.models.network_change_type import NetworkChangeType
@@ -27,7 +28,7 @@ class NetworkChange(BaseModel):
     Current state of latest network change
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Network URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Uniquely identifies a change")
+    uuid: Optional[UUID] = Field(default=None, description="Uniquely identifies a change")
     type: Optional[NetworkChangeType] = None
     status: Optional[NetworkChangeStatus] = None
     created_date_time: Optional[datetime] = Field(default=None, description="Set when change flow starts", alias="createdDateTime")

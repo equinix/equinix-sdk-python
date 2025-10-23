@@ -13,9 +13,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.subscription_asset import SubscriptionAsset
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +25,7 @@ class SubscriptionEntitlementResponse(BaseModel):
     """
     Subscription entitlement
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Subscription Entitlement Id")
+    uuid: Optional[UUID] = Field(default=None, description="Subscription Entitlement Id")
     quantity_entitled: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Quantity entitled for the subscription", alias="quantityEntitled")
     quantity_consumed: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Quantity consumed from the entitlement", alias="quantityConsumed")
     quantity_available: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Quantity available from the entitlement", alias="quantityAvailable")
