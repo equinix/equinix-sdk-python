@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,7 +22,7 @@ class MetricSelector(BaseModel):
     """
     MetricSelector
     """ # noqa: E501
-    include: Optional[List[StrictStr]] = Field(default=None, description="Stream alert rule filtered by metric name")
+    include: List[StrictStr] = Field(description="Stream alert rule filtered by metric name")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["include"]
 

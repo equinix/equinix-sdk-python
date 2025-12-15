@@ -13,20 +13,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.deployment_search_expressions import DeploymentSearchExpressions
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DeploymentExpression(BaseModel):
+class MetricSelectorResponse(BaseModel):
     """
-    DeploymentExpression
+    MetricSelectorResponse
     """ # noqa: E501
-    var_and: Optional[List[DeploymentSearchExpressions]] = Field(default=None, alias="and")
-    var_or: Optional[List[DeploymentSearchExpressions]] = Field(default=None, alias="or")
+    include: Optional[List[StrictStr]] = Field(default=None, description="Stream alert rule filtered by metric name")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["and", "or"]
+    __properties: ClassVar[List[str]] = ["include"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -46,7 +44,7 @@ class DeploymentExpression(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DeploymentExpression from a JSON string"""
+        """Create an instance of MetricSelectorResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,20 +67,6 @@ class DeploymentExpression(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in var_and (list)
-        _items = []
-        if self.var_and:
-            for _item_var_and in self.var_and:
-                if _item_var_and:
-                    _items.append(_item_var_and.to_dict())
-            _dict['and'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in var_or (list)
-        _items = []
-        if self.var_or:
-            for _item_var_or in self.var_or:
-                if _item_var_or:
-                    _items.append(_item_var_or.to_dict())
-            _dict['or'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -92,7 +76,7 @@ class DeploymentExpression(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DeploymentExpression from a dict"""
+        """Create an instance of MetricSelectorResponse from a dict"""
         if obj is None:
             return None
 
@@ -100,8 +84,7 @@ class DeploymentExpression(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "and": [DeploymentSearchExpressions.from_dict(_item) for _item in obj["and"]] if obj.get("and") is not None else None,
-            "or": [DeploymentSearchExpressions.from_dict(_item) for _item in obj["or"]] if obj.get("or") is not None else None
+            "include": obj.get("include")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -13,21 +13,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.action_request import ActionRequest
-from equinix.services.fabricv4.models.deployment_action_type import DeploymentActionType
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.detection_method_operand import DetectionMethodOperand
+from equinix.services.fabricv4.models.detection_method_type import DetectionMethodType
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DeploymentActionRequest(BaseModel):
+class DetectionMethodResponse(BaseModel):
     """
-    DeploymentActionRequest
+    DetectionMethodResponse
     """ # noqa: E501
-    type: DeploymentActionType
-    data: List[ActionRequest]
+    type: Optional[DetectionMethodType] = None
+    window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
+    operand: Optional[DetectionMethodOperand] = None
+    warning_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric warning threshold", alias="warningThreshold")
+    critical_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric critical threshold", alias="criticalThreshold")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "data"]
+    __properties: ClassVar[List[str]] = ["type", "windowSize", "operand", "warningThreshold", "criticalThreshold"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -47,7 +50,7 @@ class DeploymentActionRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DeploymentActionRequest from a JSON string"""
+        """Create an instance of DetectionMethodResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,13 +73,6 @@ class DeploymentActionRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
-        _items = []
-        if self.data:
-            for _item_data in self.data:
-                if _item_data:
-                    _items.append(_item_data.to_dict())
-            _dict['data'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -86,7 +82,7 @@ class DeploymentActionRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DeploymentActionRequest from a dict"""
+        """Create an instance of DetectionMethodResponse from a dict"""
         if obj is None:
             return None
 
@@ -95,7 +91,10 @@ class DeploymentActionRequest(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "data": [ActionRequest.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "windowSize": obj.get("windowSize"),
+            "operand": obj.get("operand"),
+            "warningThreshold": obj.get("warningThreshold"),
+            "criticalThreshold": obj.get("criticalThreshold")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -14,24 +14,19 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class PeeringProtocolDataState(str, Enum):
+class StreamType(str, Enum):
     """
-    Protocol State
+    type
     """
 
     """
     allowed enum values
     """
-    PROVISIONED = 'PROVISIONED'
-    DEPROVISIONED = 'DEPROVISIONED'
-    PROVISIONING = 'PROVISIONING'
-    DEPROVISIONING = 'DEPROVISIONING'
-    REPROVISIONING = 'REPROVISIONING'
-    FAILED = 'FAILED'
+    TELEMETRY_STREAM = 'TELEMETRY_STREAM'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of PeeringProtocolDataState from a JSON string"""
+        """Create an instance of StreamType from a JSON string"""
         return cls(json.loads(json_str))
 
 

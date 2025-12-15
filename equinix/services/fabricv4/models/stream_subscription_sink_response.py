@@ -13,20 +13,28 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.peering_connection_res_ipv4_auth_keys_type import PeeringConnectionResIpv4AuthKeysType
+from equinix.services.fabricv4.models.stream_subscription_sink_credential import StreamSubscriptionSinkCredential
+from equinix.services.fabricv4.models.stream_subscription_sink_setting import StreamSubscriptionSinkSetting
+from equinix.services.fabricv4.models.stream_subscription_sink_type import StreamSubscriptionSinkType
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PeeringConnectionResIpv4AuthKeys(BaseModel):
+class StreamSubscriptionSinkResponse(BaseModel):
     """
-    PeeringConnectionResIpv4AuthKeys
+    Create Stream destination
     """ # noqa: E501
-    type: Optional[PeeringConnectionResIpv4AuthKeysType] = None
-    key: Optional[StrictStr] = Field(default=None, description="BGP authentication key")
+    uri: Optional[StrictStr] = Field(default=None, description="any publicly reachable http endpoint")
+    type: Optional[StreamSubscriptionSinkType] = None
+    batch_enabled: Optional[StrictBool] = Field(default=None, description="batch mode on/off", alias="batchEnabled")
+    batch_size_max: Optional[StrictInt] = Field(default=None, description="maximum batch size", alias="batchSizeMax")
+    batch_wait_time_max: Optional[StrictInt] = Field(default=None, description="maximum batch waiting time", alias="batchWaitTimeMax")
+    credential: Optional[StreamSubscriptionSinkCredential] = None
+    settings: Optional[StreamSubscriptionSinkSetting] = None
+    host: Optional[StrictStr] = Field(default=None, description="sink host")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "key"]
+    __properties: ClassVar[List[str]] = ["uri", "type", "batchEnabled", "batchSizeMax", "batchWaitTimeMax", "credential", "settings", "host"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -46,7 +54,7 @@ class PeeringConnectionResIpv4AuthKeys(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PeeringConnectionResIpv4AuthKeys from a JSON string"""
+        """Create an instance of StreamSubscriptionSinkResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,6 +77,12 @@ class PeeringConnectionResIpv4AuthKeys(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of credential
+        if self.credential:
+            _dict['credential'] = self.credential.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of settings
+        if self.settings:
+            _dict['settings'] = self.settings.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -78,7 +92,7 @@ class PeeringConnectionResIpv4AuthKeys(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PeeringConnectionResIpv4AuthKeys from a dict"""
+        """Create an instance of StreamSubscriptionSinkResponse from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +100,14 @@ class PeeringConnectionResIpv4AuthKeys(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "uri": obj.get("uri"),
             "type": obj.get("type"),
-            "key": obj.get("key")
+            "batchEnabled": obj.get("batchEnabled"),
+            "batchSizeMax": obj.get("batchSizeMax"),
+            "batchWaitTimeMax": obj.get("batchWaitTimeMax"),
+            "credential": StreamSubscriptionSinkCredential.from_dict(obj["credential"]) if obj.get("credential") is not None else None,
+            "settings": StreamSubscriptionSinkSetting.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
+            "host": obj.get("host")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

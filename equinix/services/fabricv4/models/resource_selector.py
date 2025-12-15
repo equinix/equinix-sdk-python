@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,7 +22,7 @@ class ResourceSelector(BaseModel):
     """
     ResourceSelector
     """ # noqa: E501
-    include: Optional[List[StrictStr]] = Field(default=None, description="### Supported metric names to use on filters with property /subject:   * `/fabric/v4/ports/<uuid>` - port metrics   * `/fabric/v4/connections/<uuid>` - connection metrics   * `/fabric/v4/metros/<metroCode>` - metro latency metrics ")
+    include: List[StrictStr] = Field(description="### Supported metric names to use on filters with property /subject:   * `/fabric/v4/ports/<uuid>` - port metrics   * `/fabric/v4/connections/<uuid>` - connection metrics   * `/fabric/v4/metros/<metroCode>` - metro latency metrics ")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["include"]
 

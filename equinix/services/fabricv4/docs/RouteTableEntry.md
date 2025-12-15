@@ -9,13 +9,12 @@ Name | Type | Description | Notes
 **type** | [**RouteTableEntryType**](RouteTableEntryType.md) |  | 
 **protocol_type** | [**RouteTableEntryProtocolType**](RouteTableEntryProtocolType.md) |  | [optional] 
 **state** | [**RouteTableEntryState**](RouteTableEntryState.md) |  | 
-**age** | **str** |  | [optional] 
 **prefix** | **str** |  | [optional] 
 **next_hop** | **str** |  | [optional] 
 **med** | **int** |  | [optional] 
 **local_preference** | **int** |  | [optional] 
 **as_path** | **List[str]** |  | [optional] 
-**connection** | [**ConnectionRouteTableEntryConnection**](ConnectionRouteTableEntryConnection.md) |  | [optional] 
+**connection** | [**RouteTableEntryConnection**](RouteTableEntryConnection.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | 
 
 ## Example

@@ -14,20 +14,24 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class DeploymentSearchExpressionsOperator(str, Enum):
+class StreamState(str, Enum):
     """
-    DeploymentSearchExpressionsOperator
+    Stream provision state
     """
 
     """
     allowed enum values
     """
-    EQUAL = '='
-    EXCLAMATION_EQUAL = '!='
+    PROVISIONING = 'PROVISIONING'
+    PROVISIONED = 'PROVISIONED'
+    REPROVISIONING = 'REPROVISIONING'
+    DEPROVISIONING = 'DEPROVISIONING'
+    DEPROVISIONED = 'DEPROVISIONED'
+    FAILED = 'FAILED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of DeploymentSearchExpressionsOperator from a JSON string"""
+        """Create an instance of StreamState from a JSON string"""
         return cls(json.loads(json_str))
 
 

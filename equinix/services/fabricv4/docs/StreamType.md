@@ -1,14 +1,10 @@
-# DeploymentActionType
+# StreamType
 
-Deployment action type
+type
 
 ## Enum
 
-* `DEPLOY` (value: `'DEPLOY'`)
-
-* `DRY_RUN` (value: `'DRY_RUN'`)
-
-* `DESTROY` (value: `'DESTROY'`)
+* `TELEMETRY_STREAM` (value: `'TELEMETRY_STREAM'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

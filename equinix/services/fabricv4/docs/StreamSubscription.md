@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
 **metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
-**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
+**sink** | [**StreamSubscriptionSinkResponse**](StreamSubscriptionSinkResponse.md) |  | [optional] 
 **operation** | [**StreamSubscriptionOperation**](StreamSubscriptionOperation.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 

@@ -6,7 +6,7 @@ Update Stream
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Customer-provided stream name | [optional] 
+**name** | **str** | Customer-provided stream name | 
 **description** | **str** | Customer-provided stream description | [optional] 
 
 ## Example

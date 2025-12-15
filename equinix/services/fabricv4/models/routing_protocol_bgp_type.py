@@ -31,12 +31,11 @@ class RoutingProtocolBGPType(BaseModel):
     bgp_ipv4: Optional[BGPConnectionIpv4] = Field(default=None, alias="bgpIpv4")
     bgp_ipv6: Optional[BGPConnectionIpv6] = Field(default=None, alias="bgpIpv6")
     customer_asn: Optional[StrictInt] = Field(default=None, description="Customer asn", alias="customerAsn")
-    equinix_asn: Optional[StrictInt] = Field(default=None, description="Equinix asn", alias="equinixAsn")
     bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authorization key", alias="bgpAuthKey")
     as_override_enabled: Optional[StrictBool] = Field(default=None, description="Enable AS number override", alias="asOverrideEnabled")
     bfd: Optional[RoutingProtocolBFD] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "bgpIpv4", "bgpIpv6", "customerAsn", "equinixAsn", "bgpAuthKey", "asOverrideEnabled", "bfd"]
+    __properties: ClassVar[List[str]] = ["type", "name", "bgpIpv4", "bgpIpv6", "customerAsn", "bgpAuthKey", "asOverrideEnabled", "bfd"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,7 +109,6 @@ class RoutingProtocolBGPType(BaseModel):
             "bgpIpv4": BGPConnectionIpv4.from_dict(obj["bgpIpv4"]) if obj.get("bgpIpv4") is not None else None,
             "bgpIpv6": BGPConnectionIpv6.from_dict(obj["bgpIpv6"]) if obj.get("bgpIpv6") is not None else None,
             "customerAsn": obj.get("customerAsn"),
-            "equinixAsn": obj.get("equinixAsn"),
             "bgpAuthKey": obj.get("bgpAuthKey"),
             "asOverrideEnabled": obj.get("asOverrideEnabled"),
             "bfd": RoutingProtocolBFD.from_dict(obj["bfd"]) if obj.get("bfd") is not None else None

@@ -6,13 +6,13 @@ Create Stream Alert Rules
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**AlertRulePostRequestType**](AlertRulePostRequestType.md) |  | [optional] 
-**name** | **str** | Customer-provided stream name | [optional] 
+**type** | [**AlertRulePostRequestType**](AlertRulePostRequestType.md) |  | 
+**name** | **str** | Customer-provided stream name | 
 **description** | **str** | Customer-provided stream description | [optional] 
 **enabled** | **bool** | Stream alert rule enabled status | [optional] [default to True]
-**metric_selector** | [**MetricSelector**](MetricSelector.md) |  | [optional] 
-**resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | [optional] 
-**detection_method** | [**DetectionMethod**](DetectionMethod.md) |  | [optional] 
+**metric_selector** | [**MetricSelector**](MetricSelector.md) |  | 
+**resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | 
+**detection_method** | [**DetectionMethod**](DetectionMethod.md) |  | 
 
 ## Example
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**include** | **List[str]** | Stream alert rule filtered by metric name | [optional] 
+**include** | **List[str]** | Stream alert rule filtered by metric name | 
 
 ## Example
 

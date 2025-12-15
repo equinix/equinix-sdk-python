@@ -26,13 +26,13 @@ class AlertRulePostRequest(BaseModel):
     """
     Create Stream Alert Rules
     """ # noqa: E501
-    type: Optional[AlertRulePostRequestType] = None
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
+    type: AlertRulePostRequestType
+    name: StrictStr = Field(description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     enabled: Optional[StrictBool] = Field(default=True, description="Stream alert rule enabled status")
-    metric_selector: Optional[MetricSelector] = Field(default=None, alias="metricSelector")
-    resource_selector: Optional[ResourceSelector] = Field(default=None, alias="resourceSelector")
-    detection_method: Optional[DetectionMethod] = Field(default=None, alias="detectionMethod")
+    metric_selector: MetricSelector = Field(alias="metricSelector")
+    resource_selector: ResourceSelector = Field(alias="resourceSelector")
+    detection_method: DetectionMethod = Field(alias="detectionMethod")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "description", "enabled", "metricSelector", "resourceSelector", "detectionMethod"]
 

@@ -15,20 +15,16 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.deployment_search_expressions_operator import DeploymentSearchExpressionsOperator
-from equinix.services.fabricv4.models.search_provider_field import SearchProviderField
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ProviderSearchExpressions(BaseModel):
+class ResourceSelectorResponse(BaseModel):
     """
-    ProviderSearchExpressions
+    ResourceSelectorResponse
     """ # noqa: E501
-    var_property: Optional[SearchProviderField] = Field(default=None, alias="property")
-    operator: Optional[DeploymentSearchExpressionsOperator] = None
-    values: Optional[List[StrictStr]] = None
+    include: Optional[List[StrictStr]] = Field(default=None, description="### Supported metric names to use on filters with property /subject:   * `/fabric/v4/ports/<uuid>` - port metrics   * `/fabric/v4/connections/<uuid>` - connection metrics   * `/fabric/v4/metros/<metroCode>` - metro latency metrics ")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["property", "operator", "values"]
+    __properties: ClassVar[List[str]] = ["include"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +44,7 @@ class ProviderSearchExpressions(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ProviderSearchExpressions from a JSON string"""
+        """Create an instance of ResourceSelectorResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,7 +76,7 @@ class ProviderSearchExpressions(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ProviderSearchExpressions from a dict"""
+        """Create an instance of ResourceSelectorResponse from a dict"""
         if obj is None:
             return None
 
@@ -88,9 +84,7 @@ class ProviderSearchExpressions(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "property": obj.get("property"),
-            "operator": obj.get("operator"),
-            "values": obj.get("values")
+            "include": obj.get("include")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

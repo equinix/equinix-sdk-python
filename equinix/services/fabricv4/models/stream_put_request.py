@@ -22,7 +22,7 @@ class StreamPutRequest(BaseModel):
     """
     Update Stream
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
+    name: StrictStr = Field(description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["name", "description"]

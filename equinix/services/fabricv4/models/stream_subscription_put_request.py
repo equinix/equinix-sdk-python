@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.stream_subscription_filter import StreamSubscriptionFilter
+from equinix.services.fabricv4.models.stream_subscription_post_request_type import StreamSubscriptionPostRequestType
 from equinix.services.fabricv4.models.stream_subscription_selector import StreamSubscriptionSelector
 from equinix.services.fabricv4.models.stream_subscription_sink import StreamSubscriptionSink
 from typing import Optional, Set
@@ -25,15 +26,16 @@ class StreamSubscriptionPutRequest(BaseModel):
     """
     Update Stream Subscription
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream subscription name")
+    type: StreamSubscriptionPostRequestType
+    name: StrictStr = Field(description="Customer-provided stream subscription name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream subscription description")
     enabled: Optional[StrictBool] = Field(default=None, description="Stream subscription enabled status")
     filters: Optional[StreamSubscriptionFilter] = None
     metric_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="metricSelector")
     event_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="eventSelector")
-    sink: Optional[StreamSubscriptionSink] = None
+    sink: StreamSubscriptionSink
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["name", "description", "enabled", "filters", "metricSelector", "eventSelector", "sink"]
+    __properties: ClassVar[List[str]] = ["type", "name", "description", "enabled", "filters", "metricSelector", "eventSelector", "sink"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +107,7 @@ class StreamSubscriptionPutRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "type": obj.get("type"),
             "name": obj.get("name"),
             "description": obj.get("description"),
             "enabled": obj.get("enabled"),

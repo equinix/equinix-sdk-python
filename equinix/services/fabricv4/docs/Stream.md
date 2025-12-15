@@ -8,14 +8,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** | Stream URI | [optional] [readonly] 
 **uuid** | **str** | Equinix-assigned access point identifier | [optional] 
-**state** | **str** | Stream provision state | [optional] 
-**assets_count** | **int** | Stream assets count | [optional] 
-**stream_subscriptions_count** | **int** | Stream subscriptions count | [optional] 
-**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
-**type** | [**StreamPostRequestType**](StreamPostRequestType.md) |  | [optional] 
+**type** | [**StreamType**](StreamType.md) |  | [optional] 
 **name** | **str** | Customer-provided stream name | [optional] 
 **description** | **str** | Customer-provided stream description | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
+**state** | [**StreamState**](StreamState.md) |  | [optional] 
+**assets_count** | **int** | Stream assets count | [optional] 
+**stream_subscriptions_count** | **int** | Stream subscriptions count | [optional] 
+**alert_rules_count** | **int** | Stream alert rules count | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
 

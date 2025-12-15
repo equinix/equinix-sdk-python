@@ -13,20 +13,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.provider_search_expressions import ProviderSearchExpressions
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ProviderExpression(BaseModel):
+class RouteTableEntryConnection(BaseModel):
     """
-    ProviderExpression
+    RouteTableEntryConnection
     """ # noqa: E501
-    var_and: Optional[List[ProviderSearchExpressions]] = Field(default=None, alias="and")
-    var_or: Optional[List[ProviderSearchExpressions]] = Field(default=None, alias="or")
+    uuid: Optional[StrictStr] = None
+    name: Optional[StrictStr] = None
+    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["and", "or"]
+    __properties: ClassVar[List[str]] = ["uuid", "name", "href"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -46,7 +46,7 @@ class ProviderExpression(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ProviderExpression from a JSON string"""
+        """Create an instance of RouteTableEntryConnection from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,20 +69,6 @@ class ProviderExpression(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in var_and (list)
-        _items = []
-        if self.var_and:
-            for _item_var_and in self.var_and:
-                if _item_var_and:
-                    _items.append(_item_var_and.to_dict())
-            _dict['and'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in var_or (list)
-        _items = []
-        if self.var_or:
-            for _item_var_or in self.var_or:
-                if _item_var_or:
-                    _items.append(_item_var_or.to_dict())
-            _dict['or'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -92,7 +78,7 @@ class ProviderExpression(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ProviderExpression from a dict"""
+        """Create an instance of RouteTableEntryConnection from a dict"""
         if obj is None:
             return None
 
@@ -100,8 +86,9 @@ class ProviderExpression(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "and": [ProviderSearchExpressions.from_dict(_item) for _item in obj["and"]] if obj.get("and") is not None else None,
-            "or": [ProviderSearchExpressions.from_dict(_item) for _item in obj["or"]] if obj.get("or") is not None else None
+            "uuid": obj.get("uuid"),
+            "name": obj.get("name"),
+            "href": obj.get("href")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

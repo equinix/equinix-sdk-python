@@ -24,7 +24,7 @@ class MetricsSearchRequest(BaseModel):
     """
     Search requests containing criteria
     """ # noqa: E501
-    filter: Optional[MetricFilters] = None
+    filter: MetricFilters
     pagination: Optional[PaginationRequest] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["filter", "pagination"]

@@ -6,10 +6,10 @@ Create Stream
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**StreamPostRequestType**](StreamPostRequestType.md) |  | [optional] 
-**name** | **str** | Customer-provided stream name | [optional] 
+**type** | [**StreamPostRequestType**](StreamPostRequestType.md) |  | 
+**name** | **str** | Customer-provided stream name | 
 **description** | **str** | Customer-provided stream description | [optional] 
-**project** | [**Project**](Project.md) |  | [optional] 
+**project** | [**Project**](Project.md) |  | 
 
 ## Example
 
