@@ -7,7 +7,7 @@ This is the official Python SDK for Equinix services.  This SDK is currently pro
 
 Each Equinix service supported by this SDK is maintained as a separate submodule that is generated from the OpenAPI specification for that service.  If any Equinix service is not supported by this SDK and you would like to see it added, please [submit a change request](CONTRIBUTING.md)
 
-## Installation
+## Installation 
 
 To import this library into your Python project:
 
