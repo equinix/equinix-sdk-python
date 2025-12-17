@@ -26,7 +26,7 @@ class StreamSubscriptionSink(BaseModel):
     Create Stream destination
     """ # noqa: E501
     uri: Optional[StrictStr] = Field(default=None, description="any publicly reachable http endpoint")
-    type: Optional[StreamSubscriptionSinkType] = None
+    type: StreamSubscriptionSinkType
     batch_enabled: Optional[StrictBool] = Field(default=None, description="batch mode on/off", alias="batchEnabled")
     batch_size_max: Optional[StrictInt] = Field(default=None, description="maximum batch size", alias="batchSizeMax")
     batch_wait_time_max: Optional[StrictInt] = Field(default=None, description="maximum batch waiting time", alias="batchWaitTimeMax")

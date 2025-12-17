@@ -24,7 +24,7 @@ class DetectionMethod(BaseModel):
     """
     DetectionMethod
     """ # noqa: E501
-    type: Optional[DetectionMethodType] = None
+    type: DetectionMethodType
     window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
     operand: Optional[DetectionMethodOperand] = None
     warning_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric warning threshold", alias="warningThreshold")

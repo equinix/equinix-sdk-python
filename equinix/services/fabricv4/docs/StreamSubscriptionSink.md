@@ -7,7 +7,7 @@ Create Stream destination
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** | any publicly reachable http endpoint | [optional] 
-**type** | [**StreamSubscriptionSinkType**](StreamSubscriptionSinkType.md) |  | [optional] 
+**type** | [**StreamSubscriptionSinkType**](StreamSubscriptionSinkType.md) |  | 
 **batch_enabled** | **bool** | batch mode on/off | [optional] 
 **batch_size_max** | **int** | maximum batch size | [optional] 
 **batch_wait_time_max** | **int** | maximum batch waiting time | [optional] 

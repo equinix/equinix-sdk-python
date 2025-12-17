@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **code** | **str** | Code Assigned to an Equinix IBX data center in a specified metropolitan area. | [optional] 
 **region** | **str** | Board geographic area in which the data center is located | [optional] 
 **name** | **str** | Name of the region in which the data center is located. | [optional] 
+**country** | **str** | Country code in which the data center is located. | [optional] 
 **equinix_asn** | **int** | Autonomous system number (ASN) for a specified Fabric metro. The ASN is a unique identifier that carries the network routing protocol and exchanges that data with other internal systems via border gateway protocol. | [optional] 
 **local_vc_bandwidth_max** | **int** | This field holds Max Connection speed with in the metro | [optional] 
 **geo_coordinates** | [**GeoCoordinates**](GeoCoordinates.md) |  | [optional] 

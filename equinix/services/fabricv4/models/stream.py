@@ -13,11 +13,12 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.project import Project
-from equinix.services.fabricv4.models.stream_post_request_type import StreamPostRequestType
+from equinix.services.fabricv4.models.stream_state import StreamState
+from equinix.services.fabricv4.models.stream_type import StreamType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,26 +28,17 @@ class Stream(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Stream URI")
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
-    state: Optional[StrictStr] = Field(default=None, description="Stream provision state")
-    assets_count: Optional[StrictInt] = Field(default=None, description="Stream assets count", alias="assetsCount")
-    stream_subscriptions_count: Optional[StrictInt] = Field(default=None, description="Stream subscriptions count", alias="streamSubscriptionsCount")
-    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
-    type: Optional[StreamPostRequestType] = None
+    type: Optional[StreamType] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     project: Optional[Project] = None
+    state: Optional[StreamState] = None
+    assets_count: Optional[StrictInt] = Field(default=None, description="Stream assets count", alias="assetsCount")
+    stream_subscriptions_count: Optional[StrictInt] = Field(default=None, description="Stream subscriptions count", alias="streamSubscriptionsCount")
+    alert_rules_count: Optional[StrictInt] = Field(default=None, description="Stream alert rules count", alias="alertRulesCount")
+    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "description", "project"]
-
-    @field_validator('state')
-    def state_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['PROVISIONING', 'PROVISIONED', 'REPROVISIONING', 'DEPROVISIONING', 'DEPROVISIONED', 'FAILED']):
-            raise ValueError("must be one of enum values ('PROVISIONING', 'PROVISIONED', 'REPROVISIONING', 'DEPROVISIONING', 'DEPROVISIONED', 'FAILED')")
-        return value
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "project", "state", "assetsCount", "streamSubscriptionsCount", "alertRulesCount", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +86,9 @@ class Stream(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of change_log
+        if self.change_log:
+            _dict['changeLog'] = self.change_log.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -111,10 +106,17 @@ class Stream(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "href": obj.get("href"),
+            "uuid": obj.get("uuid"),
             "type": obj.get("type"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None
+            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
+            "state": obj.get("state"),
+            "assetsCount": obj.get("assetsCount"),
+            "streamSubscriptionsCount": obj.get("streamSubscriptionsCount"),
+            "alertRulesCount": obj.get("alertRulesCount"),
+            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

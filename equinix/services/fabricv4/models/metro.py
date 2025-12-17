@@ -31,6 +31,7 @@ class Metro(BaseModel):
     code: Optional[StrictStr] = Field(default=None, description="Code Assigned to an Equinix IBX data center in a specified metropolitan area.")
     region: Optional[StrictStr] = Field(default=None, description="Board geographic area in which the data center is located")
     name: Optional[StrictStr] = Field(default=None, description="Name of the region in which the data center is located.")
+    country: Optional[StrictStr] = Field(default=None, description="Country code in which the data center is located.")
     equinix_asn: Optional[StrictInt] = Field(default=None, description="Autonomous system number (ASN) for a specified Fabric metro. The ASN is a unique identifier that carries the network routing protocol and exchanges that data with other internal systems via border gateway protocol.", alias="equinixAsn")
     local_vc_bandwidth_max: Optional[StrictInt] = Field(default=None, description="This field holds Max Connection speed with in the metro", alias="localVCBandwidthMax")
     geo_coordinates: Optional[GeoCoordinates] = Field(default=None, alias="geoCoordinates")
@@ -38,7 +39,7 @@ class Metro(BaseModel):
     services: Optional[List[Services]] = None
     geo_scopes: Optional[List[GeoScopeType]] = Field(default=None, description="List of supported geographic boundaries of a Fabric Metro.", alias="geoScopes")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"]
+    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -120,6 +121,7 @@ class Metro(BaseModel):
             "code": obj.get("code"),
             "region": obj.get("region"),
             "name": obj.get("name"),
+            "country": obj.get("country"),
             "equinixAsn": obj.get("equinixAsn"),
             "localVCBandwidthMax": obj.get("localVCBandwidthMax"),
             "geoCoordinates": GeoCoordinates.from_dict(obj["geoCoordinates"]) if obj.get("geoCoordinates") is not None else None,

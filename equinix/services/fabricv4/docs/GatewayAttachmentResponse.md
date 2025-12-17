@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **type** | [**GatewayAttachmentResponseType**](GatewayAttachmentResponseType.md) |  | [optional] 
 **uuid** | **str** |  | [optional] 
 **attachment_status** | [**GatewayAttachmentResponseAttachmentStatus**](GatewayAttachmentResponseAttachmentStatus.md) |  | [optional] 
+**errors** | [**List[Error]**](Error.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

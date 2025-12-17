@@ -24,8 +24,9 @@ class ConnectionRouteTableEntryConnection(BaseModel):
     """ # noqa: E501
     uuid: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
+    href: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "name"]
+    __properties: ClassVar[List[str]] = ["uuid", "name", "href"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +87,8 @@ class ConnectionRouteTableEntryConnection(BaseModel):
 
         _obj = cls.model_validate({
             "uuid": obj.get("uuid"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "href": obj.get("href")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

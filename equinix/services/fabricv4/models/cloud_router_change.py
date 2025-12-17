@@ -32,7 +32,7 @@ class CloudRouterChange(BaseModel):
     created_date_time: Optional[datetime] = Field(default=None, description="Set when change flow starts", alias="createdDateTime")
     updated_date_time: datetime = Field(description="Set when change object is updated", alias="updatedDateTime")
     information: Optional[StrictStr] = Field(default=None, description="Additional information")
-    data: Optional[CloudRouterChangeOperation] = None
+    data: Optional[List[CloudRouterChangeOperation]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid", "type", "status", "createdDateTime", "updatedDateTime", "information", "data"]
 
@@ -77,9 +77,13 @@ class CloudRouterChange(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of data
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
         if self.data:
-            _dict['data'] = self.data.to_dict()
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -103,7 +107,7 @@ class CloudRouterChange(BaseModel):
             "createdDateTime": obj.get("createdDateTime"),
             "updatedDateTime": obj.get("updatedDateTime"),
             "information": obj.get("information"),
-            "data": CloudRouterChangeOperation.from_dict(obj["data"]) if obj.get("data") is not None else None
+            "data": [CloudRouterChangeOperation.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -22,7 +22,7 @@ class RouteTableEntrySimpleExpression(BaseModel):
     """
     RouteTableEntrySimpleExpression
     """ # noqa: E501
-    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/type` - Route table entry type  * `/prefix` - Route table entry prefix  * `/nextHop` - Route table entry nextHop  * `/state` - Route table entry state  * `/*` - all-category search ", alias="property")
+    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/type` - Route table entry type  * `/prefix` - Route table entry prefix  * `/nextHop` - Route table entry nextHop  * `/state` - Route table entry state  * `/MED` - Route table entry med  * `/*` - all-category search ", alias="property")
     operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `!=` - not equal  * `>` - greater than  * `>=` - greater than or equal to  * `<` - less than  * `<=` - less than or equal to  * `[NOT] BETWEEN` - (not) between  * `[NOT] LIKE` - (not) like  * `[NOT] IN` - (not) in  * `~*` - case-insensitive like ")
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}

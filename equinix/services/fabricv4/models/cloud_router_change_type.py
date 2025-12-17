@@ -23,7 +23,6 @@ class CloudRouterChangeType(str, Enum):
     allowed enum values
     """
     ROUTER_UPDATE = 'ROUTER_UPDATE'
-    ROUTER_PACKAGE_UPDATE = 'ROUTER_PACKAGE_UPDATE'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

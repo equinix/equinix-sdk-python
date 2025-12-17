@@ -9,23 +9,9 @@
 
 * `GREATER_THAN` (value: `'>'`)
 
-* `GREATER_THAN_EQUAL` (value: `'>='`)
-
 * `LESS_THAN` (value: `'<'`)
 
-* `LESS_THAN_EQUAL` (value: `'<='`)
-
-* `BETWEEN` (value: `'BETWEEN'`)
-
-* `NOT_BETWEEN` (value: `'NOT BETWEEN'`)
-
 * `LIKE` (value: `'LIKE'`)
-
-* `NOT_LIKE` (value: `'NOT LIKE'`)
-
-* `IN` (value: `'IN'`)
-
-* `NOT_IN` (value: `'NOT IN'`)
 
 * `IS_NOT_NULL` (value: `'IS NOT NULL'`)
 

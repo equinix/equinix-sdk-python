@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **change** | [**PortChange**](PortChange.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
+**service_code** | [**PortServiceCode**](PortServiceCode.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 
 **available_bandwidth** | **int** | Equinix assigned response attribute for Port available bandwidth in Mbps | [optional] 
 **used_bandwidth** | **int** | Equinix assigned response attribute for Port used bandwidth in Mbps | [optional] 
@@ -48,6 +49,7 @@ Name | Type | Description | Notes
 **end_customer** | [**EndCustomer**](EndCustomer.md) |  | [optional] 
 **physical_ports** | [**List[PhysicalPort]**](PhysicalPort.md) | Physical ports that implement this port | [optional] 
 **loas** | [**List[PortLoa]**](PortLoa.md) | Port Loas | [optional] 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 
 ## Example
 

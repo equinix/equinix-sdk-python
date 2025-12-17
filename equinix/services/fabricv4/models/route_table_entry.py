@@ -16,7 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.connection_route_table_entry_connection import ConnectionRouteTableEntryConnection
+from equinix.services.fabricv4.models.route_table_entry_connection import RouteTableEntryConnection
 from equinix.services.fabricv4.models.route_table_entry_protocol_type import RouteTableEntryProtocolType
 from equinix.services.fabricv4.models.route_table_entry_state import RouteTableEntryState
 from equinix.services.fabricv4.models.route_table_entry_type import RouteTableEntryType
@@ -30,16 +30,15 @@ class RouteTableEntry(BaseModel):
     type: RouteTableEntryType
     protocol_type: Optional[RouteTableEntryProtocolType] = Field(default=None, alias="protocolType")
     state: RouteTableEntryState
-    age: Optional[StrictStr] = None
     prefix: Optional[StrictStr] = None
     next_hop: Optional[StrictStr] = Field(default=None, alias="nextHop")
     med: Optional[StrictInt] = Field(default=None, alias="MED")
     local_preference: Optional[StrictInt] = Field(default=None, alias="localPreference")
     as_path: Optional[List[StrictStr]] = Field(default=None, alias="asPath")
-    connection: Optional[ConnectionRouteTableEntryConnection] = None
+    connection: Optional[RouteTableEntryConnection] = None
     change_log: Changelog = Field(alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "protocolType", "state", "age", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"]
+    __properties: ClassVar[List[str]] = ["type", "protocolType", "state", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,13 +107,12 @@ class RouteTableEntry(BaseModel):
             "type": obj.get("type"),
             "protocolType": obj.get("protocolType"),
             "state": obj.get("state"),
-            "age": obj.get("age"),
             "prefix": obj.get("prefix"),
             "nextHop": obj.get("nextHop"),
             "MED": obj.get("MED"),
             "localPreference": obj.get("localPreference"),
             "asPath": obj.get("asPath"),
-            "connection": ConnectionRouteTableEntryConnection.from_dict(obj["connection"]) if obj.get("connection") is not None else None,
+            "connection": RouteTableEntryConnection.from_dict(obj["connection"]) if obj.get("connection") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

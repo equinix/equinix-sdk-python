@@ -877,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/json-patch+json
  - **Accept**: application/json
 
 ### HTTP response details

@@ -10,9 +10,7 @@ Service profile type
 
 * `IA_PROFILE` (value: `'IA_PROFILE'`)
 
-* `IX_PUBLIC_PROFILE` (value: `'IX_PUBLIC_PROFILE'`)
-
-* `IX_PRIVATE_PROFILE` (value: `'IX_PRIVATE_PROFILE'`)
+* `IX_PROFILE` (value: `'IX_PROFILE'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **bgp_ipv4** | [**BGPConnectionIpv4**](BGPConnectionIpv4.md) |  | [optional] 
 **bgp_ipv6** | [**BGPConnectionIpv6**](BGPConnectionIpv6.md) |  | [optional] 
 **customer_asn** | **int** | Customer asn | [optional] 
-**equinix_asn** | **int** | Equinix asn | [optional] 
 **bgp_auth_key** | **str** | BGP authorization key | [optional] 
 **as_override_enabled** | **bool** | Enable AS number override | [optional] 
 **bfd** | [**RoutingProtocolBFD**](RoutingProtocolBFD.md) |  | [optional] 

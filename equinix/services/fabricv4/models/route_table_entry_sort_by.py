@@ -28,6 +28,7 @@ class RouteTableEntrySortBy(str, Enum):
     SLASH_NEXT_HOP = '/nextHop'
     SLASH_CONNECTION_SLASH_NAME = '/connection/name'
     SLASH_TYPE = '/type'
+    SLASH_MED = '/MED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

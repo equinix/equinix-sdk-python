@@ -6,7 +6,7 @@ Update Stream Asset
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metrics_enabled** | **bool** | enable metric | [optional] 
+**metrics_enabled** | **bool** | enable metric | [optional] [default to False]
 
 ## Example
 

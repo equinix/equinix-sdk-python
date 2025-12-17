@@ -22,7 +22,7 @@ class StreamAssetPutRequest(BaseModel):
     """
     Update Stream Asset
     """ # noqa: E501
-    metrics_enabled: Optional[StrictBool] = Field(default=None, description="enable metric", alias="metricsEnabled")
+    metrics_enabled: Optional[StrictBool] = Field(default=False, description="enable metric", alias="metricsEnabled")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["metricsEnabled"]
 
@@ -84,7 +84,7 @@ class StreamAssetPutRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "metricsEnabled": obj.get("metricsEnabled")
+            "metricsEnabled": obj.get("metricsEnabled") if obj.get("metricsEnabled") is not None else False
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

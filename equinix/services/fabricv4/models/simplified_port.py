@@ -25,6 +25,7 @@ from equinix.services.fabricv4.models.port_encapsulation import PortEncapsulatio
 from equinix.services.fabricv4.models.port_interface import PortInterface
 from equinix.services.fabricv4.models.port_operation import PortOperation
 from equinix.services.fabricv4.models.port_redundancy import PortRedundancy
+from equinix.services.fabricv4.models.port_service_code import PortServiceCode
 from equinix.services.fabricv4.models.port_service_type import PortServiceType
 from equinix.services.fabricv4.models.port_settings import PortSettings
 from equinix.services.fabricv4.models.port_state import PortState
@@ -53,6 +54,7 @@ class SimplifiedPort(BaseModel):
     operation: Optional[PortOperation] = None
     account: Optional[SimplifiedAccount] = None
     service_type: Optional[PortServiceType] = Field(default=None, alias="serviceType")
+    service_code: Optional[PortServiceCode] = Field(default=None, alias="serviceCode")
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port bandwidth in Mbps")
     available_bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port available bandwidth in Mbps", alias="availableBandwidth")
     used_bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port used bandwidth in Mbps", alias="usedBandwidth")
@@ -70,7 +72,7 @@ class SimplifiedPort(BaseModel):
     additional_info: Optional[List[PortAdditionalInfo]] = Field(default=None, description="Port additional information", alias="additionalInfo")
     physical_ports: Optional[List[PhysicalPort]] = Field(default=None, description="Physical ports that implement this port", alias="physicalPorts")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "project", "state", "operation", "account", "serviceType", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "tether", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "physicalPortQuantity", "additionalInfo", "physicalPorts"]
+    __properties: ClassVar[List[str]] = ["href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "project", "state", "operation", "account", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "tether", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "physicalPortQuantity", "additionalInfo", "physicalPorts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -195,6 +197,7 @@ class SimplifiedPort(BaseModel):
             "operation": PortOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "serviceType": obj.get("serviceType"),
+            "serviceCode": obj.get("serviceCode"),
             "bandwidth": obj.get("bandwidth"),
             "availableBandwidth": obj.get("availableBandwidth"),
             "usedBandwidth": obj.get("usedBandwidth"),

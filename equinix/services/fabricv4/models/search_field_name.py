@@ -69,7 +69,6 @@ class SearchFieldName(str, Enum):
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_UUID = '/zSide/accessPoint/virtualDevice/uuid'
     SLASH_Z_SIDE_SLASH_SERVICE_TOKEN_SLASH_UUID = '/zSide/serviceToken/uuid'
     SLASH_Z_SIDE_SLASH_INTERNET_ACCESS_SLASH_UUID = '/zSide/internetAccess/uuid'
-    STAR = '*'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
