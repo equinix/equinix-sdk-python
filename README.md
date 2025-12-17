@@ -27,6 +27,6 @@ Or you can import individual services:
 from equinix.services import metalv1
 ```
 
-## Usage 
+## Usage
 
 You can see usage of the generated code in the [`examples` directory](https://github.com/equinix/equinix-sdk-python/tree/main/examples).
