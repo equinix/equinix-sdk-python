@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.detection_method_response import DetectionMethodResponse
 from equinix.services.fabricv4.models.metric_selector_response import MetricSelectorResponse
@@ -29,7 +30,7 @@ class StreamAlertRule(BaseModel):
     Stream object
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Stream Alert Rule URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     type: Optional[StreamAlertRuleType] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream alert rule name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream alert rule description")

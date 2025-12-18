@@ -12,9 +12,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictFloat, StrictInt
 from typing import List, Optional, Union
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.service_token import ServiceToken
 from equinix.services.fabricv4.models.service_token_action_request import ServiceTokenActionRequest
 from equinix.services.fabricv4.models.service_token_change_operation import ServiceTokenChangeOperation
@@ -345,7 +346,7 @@ class ServiceTokensApi:
     @validate_call
     def create_service_token_action(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_action_request: ServiceTokenActionRequest,
         _request_timeout: Union[
             None,
@@ -420,7 +421,7 @@ class ServiceTokensApi:
     @validate_call
     def create_service_token_action_with_http_info(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_action_request: ServiceTokenActionRequest,
         _request_timeout: Union[
             None,
@@ -495,7 +496,7 @@ class ServiceTokensApi:
     @validate_call
     def create_service_token_action_without_preload_content(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_action_request: ServiceTokenActionRequest,
         _request_timeout: Union[
             None,
@@ -646,7 +647,7 @@ class ServiceTokensApi:
     @validate_call
     def delete_service_token_by_uuid(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -716,7 +717,7 @@ class ServiceTokensApi:
     @validate_call
     def delete_service_token_by_uuid_with_http_info(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -786,7 +787,7 @@ class ServiceTokensApi:
     @validate_call
     def delete_service_token_by_uuid_without_preload_content(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -916,7 +917,7 @@ class ServiceTokensApi:
     @validate_call
     def get_service_token_by_uuid(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -986,7 +987,7 @@ class ServiceTokensApi:
     @validate_call
     def get_service_token_by_uuid_with_http_info(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1056,7 +1057,7 @@ class ServiceTokensApi:
     @validate_call
     def get_service_token_by_uuid_without_preload_content(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1789,7 +1790,7 @@ class ServiceTokensApi:
     @validate_call
     def update_service_token_by_uuid(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
@@ -1867,7 +1868,7 @@ class ServiceTokensApi:
     @validate_call
     def update_service_token_by_uuid_with_http_info(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
@@ -1945,7 +1946,7 @@ class ServiceTokensApi:
     @validate_call
     def update_service_token_by_uuid_without_preload_content(
         self,
-        service_token_id: Annotated[StrictStr, Field(description="Service Token UUID")],
+        service_token_id: Annotated[UUID, Field(description="Service Token UUID")],
         service_token_change_operation: Annotated[List[ServiceTokenChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[

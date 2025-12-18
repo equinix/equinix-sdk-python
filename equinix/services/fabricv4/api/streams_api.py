@@ -12,9 +12,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.asset import Asset
 from equinix.services.fabricv4.models.get_all_stream_asset_response import GetAllStreamAssetResponse
 from equinix.services.fabricv4.models.get_all_stream_response import GetAllStreamResponse
@@ -335,9 +336,9 @@ class StreamsApi:
     @validate_call
     def delete_stream_asset_by_uuid(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -415,9 +416,9 @@ class StreamsApi:
     @validate_call
     def delete_stream_asset_by_uuid_with_http_info(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -495,9 +496,9 @@ class StreamsApi:
     @validate_call
     def delete_stream_asset_by_uuid_without_preload_content(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -641,7 +642,7 @@ class StreamsApi:
     @validate_call
     def delete_stream_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,7 +714,7 @@ class StreamsApi:
     @validate_call
     def delete_stream_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -785,7 +786,7 @@ class StreamsApi:
     @validate_call
     def delete_stream_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -917,9 +918,9 @@ class StreamsApi:
     @validate_call
     def get_stream_asset_by_uuid(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -997,9 +998,9 @@ class StreamsApi:
     @validate_call
     def get_stream_asset_by_uuid_with_http_info(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1077,9 +1078,9 @@ class StreamsApi:
     @validate_call
     def get_stream_asset_by_uuid_without_preload_content(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1223,7 +1224,7 @@ class StreamsApi:
     @validate_call
     def get_stream_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1295,7 +1296,7 @@ class StreamsApi:
     @validate_call
     def get_stream_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1367,7 +1368,7 @@ class StreamsApi:
     @validate_call
     def get_stream_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2111,9 +2112,9 @@ class StreamsApi:
     @validate_call
     def update_stream_asset_by_uuid(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_asset_put_request: StreamAssetPutRequest,
         _request_timeout: Union[
             None,
@@ -2196,9 +2197,9 @@ class StreamsApi:
     @validate_call
     def update_stream_asset_by_uuid_with_http_info(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_asset_put_request: StreamAssetPutRequest,
         _request_timeout: Union[
             None,
@@ -2281,9 +2282,9 @@ class StreamsApi:
     @validate_call
     def update_stream_asset_by_uuid_without_preload_content(
         self,
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         asset: Annotated[Asset, Field(description="asset")],
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_asset_put_request: StreamAssetPutRequest,
         _request_timeout: Union[
             None,
@@ -2448,7 +2449,7 @@ class StreamsApi:
     @validate_call
     def update_stream_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_put_request: StreamPutRequest,
         _request_timeout: Union[
             None,
@@ -2525,7 +2526,7 @@ class StreamsApi:
     @validate_call
     def update_stream_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_put_request: StreamPutRequest,
         _request_timeout: Union[
             None,
@@ -2602,7 +2603,7 @@ class StreamsApi:
     @validate_call
     def update_stream_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         stream_put_request: StreamPutRequest,
         _request_timeout: Union[
             None,

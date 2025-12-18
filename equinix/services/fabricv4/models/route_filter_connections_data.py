@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_type import ConnectionType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +26,7 @@ class RouteFilterConnectionsData(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Connection URI")
     type: Optional[ConnectionType] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Route filter identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Route filter identifier")
     name: Optional[StrictStr] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name"]

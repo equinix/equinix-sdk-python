@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.spot_market_request_create_input_instance_parameters import SpotMarketRequestCreateInputInstanceParameters
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +31,7 @@ class SpotMarketRequestCreateInput(BaseModel):
     devices_max: Optional[StrictInt] = None
     devices_min: Optional[StrictInt] = None
     end_at: Optional[datetime] = None
-    facilities: Optional[List[StrictStr]] = None
+    facilities: Optional[List[UUID]] = None
     href: Optional[StrictStr] = None
     instance_parameters: Optional[SpotMarketRequestCreateInputInstanceParameters] = None
     max_bid_price: Optional[Union[StrictFloat, StrictInt]] = None

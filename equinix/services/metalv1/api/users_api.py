@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.invitation_list import InvitationList
 from equinix.services.metalv1.models.user import User
 from equinix.services.metalv1.models.user_create_input import UserCreateInput
@@ -105,8 +105,7 @@ class UsersApi:
             '202': None,
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -182,8 +181,7 @@ class UsersApi:
             '202': None,
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -259,8 +257,7 @@ class UsersApi:
             '202': None,
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -411,8 +408,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "User",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -483,8 +479,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "User",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -555,8 +550,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "User",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -697,8 +691,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -775,8 +768,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -853,8 +845,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -936,7 +927,7 @@ class UsersApi:
     @validate_call
     def find_user_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -999,8 +990,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1014,7 +1004,7 @@ class UsersApi:
     @validate_call
     def find_user_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1077,8 +1067,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1092,7 +1081,7 @@ class UsersApi:
     @validate_call
     def find_user_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1155,8 +1144,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1237,7 +1225,7 @@ class UsersApi:
     @validate_call
     def find_user_customdata(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1292,8 +1280,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1307,7 +1294,7 @@ class UsersApi:
     @validate_call
     def find_user_customdata_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1362,8 +1349,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1377,7 +1363,7 @@ class UsersApi:
     @validate_call
     def find_user_customdata_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="User UUID")],
+        id: Annotated[UUID, Field(description="User UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1432,8 +1418,7 @@ class UsersApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1619,8 +1604,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1699,8 +1683,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1779,8 +1762,7 @@ class UsersApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "UserList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1930,8 +1912,7 @@ class UsersApi:
             '200': "User",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2007,8 +1988,7 @@ class UsersApi:
             '200': "User",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2084,8 +2064,7 @@ class UsersApi:
             '200': "User",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

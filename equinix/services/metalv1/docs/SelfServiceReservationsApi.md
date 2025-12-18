@@ -61,7 +61,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -141,7 +140,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SelfServiceReservationsApi->find_self_service_reservation: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -225,7 +223,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SelfServiceReservationsApi->find_self_service_reservations: %s\n" % e)
 ```
-
 
 
 ### Parameters

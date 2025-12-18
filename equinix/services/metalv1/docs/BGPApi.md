@@ -60,7 +60,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -140,7 +139,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BGPApi->find_bgp_config_by_project: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -225,7 +223,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -305,7 +302,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BGPApi->find_global_bgp_ranges: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -388,7 +384,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -466,7 +461,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BGPApi->request_bgp_config: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -548,7 +542,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BGPApi->update_bgp_session: %s\n" % e)
 ```
-
 
 
 ### Parameters

@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +25,7 @@ class LogoResponse(BaseModel):
     Equinix Fabric Logo Response Object
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     type: Optional[StrictStr] = Field(default=None, description="Type of logo")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None

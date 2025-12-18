@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.device_actions_inner import DeviceActionsInner
 from equinix.services.metalv1.models.device_created_by import DeviceCreatedBy
 from equinix.services.metalv1.models.device_metro import DeviceMetro
@@ -47,11 +48,11 @@ class Device(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     description: Optional[StrictStr] = None
     facility: Optional[Facility] = None
-    firmware_set_id: Optional[StrictStr] = Field(default=None, description="The UUID of the firmware set to associate with the device.")
+    firmware_set_id: Optional[UUID] = Field(default=None, description="The UUID of the firmware set to associate with the device.")
     hardware_reservation: Optional[HardwareReservation] = None
     hostname: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     image_url: Optional[StrictStr] = None
     ip_addresses: Optional[List[IPAssignment]] = None
     ipxe_script_url: Optional[StrictStr] = None

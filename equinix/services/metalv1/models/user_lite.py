@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class UserLite(BaseModel):
     first_name: Optional[StrictStr] = Field(default=None, description="First name of the User")
     full_name: Optional[StrictStr] = Field(default=None, description="Full name of the User")
     href: Optional[StrictStr] = Field(default=None, description="API URL uniquely representing the User")
-    id: StrictStr = Field(description="ID of the User")
+    id: UUID = Field(description="ID of the User")
     last_name: Optional[StrictStr] = Field(default=None, description="Last name of the User")
     short_id: StrictStr = Field(description="Short ID of the User")
     updated_at: Optional[datetime] = Field(default=None, description="When the user details were last updated")

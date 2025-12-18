@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.get_route_aggregation_rules_response import GetRouteAggregationRulesResponse
 from equinix.services.fabricv4.models.route_aggregation_rules_base import RouteAggregationRulesBase
 from equinix.services.fabricv4.models.route_aggregation_rules_change_data import RouteAggregationRulesChangeData
@@ -1248,7 +1249,7 @@ class RouteAggregationRulesApi:
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
         route_aggregation_rule_id: Annotated[StrictStr, Field(description="Route Aggregation Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Aggregation Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Aggregation Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1328,7 +1329,7 @@ class RouteAggregationRulesApi:
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
         route_aggregation_rule_id: Annotated[StrictStr, Field(description="Route Aggregation Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Aggregation Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Aggregation Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1408,7 +1409,7 @@ class RouteAggregationRulesApi:
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
         route_aggregation_rule_id: Annotated[StrictStr, Field(description="Route Aggregation Rules Id")],
-        change_id: Annotated[StrictStr, Field(description="Route Aggregation Rule Change UUID")],
+        change_id: Annotated[UUID, Field(description="Route Aggregation Rule Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

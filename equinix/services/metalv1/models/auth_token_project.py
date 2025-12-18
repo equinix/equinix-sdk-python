@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -34,7 +35,7 @@ class AuthTokenProject(BaseModel):
     customdata: Optional[Dict[str, Any]] = None
     devices: Optional[List[Href]] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     invitations: Optional[List[Href]] = None
     max_devices: Optional[Dict[str, Any]] = None
     members: Optional[List[Href]] = None

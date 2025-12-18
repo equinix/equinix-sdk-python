@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.link import Link
 from equinix.services.fabricv4.models.network_operation import NetworkOperation
@@ -32,7 +33,7 @@ class SimplifiedNetwork(BaseModel):
     Network specification
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Network URI")
-    uuid: StrictStr = Field(description="Equinix-assigned network identifier")
+    uuid: UUID = Field(description="Equinix-assigned network identifier")
     name: Optional[StrictStr] = Field(default=None, description="Customer-assigned network name")
     state: Optional[NetworkState] = None
     account: Optional[SimplifiedAccount] = None

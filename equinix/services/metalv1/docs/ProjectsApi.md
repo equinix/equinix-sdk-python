@@ -71,7 +71,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -154,7 +153,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->create_project_invitation: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -243,7 +241,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -324,7 +321,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -401,7 +397,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->find_ip_reservation_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -487,7 +482,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -565,7 +559,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->find_project_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -649,7 +642,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->find_project_invitations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -737,7 +729,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->find_project_memberships: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -828,7 +819,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -916,7 +906,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ProjectsApi->update_project: %s\n" % e)
 ```
-
 
 
 ### Parameters

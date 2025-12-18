@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.address import Address
 from equinix.services.metalv1.models.device_metro import DeviceMetro
 from typing import Optional, Set
@@ -31,7 +32,7 @@ class IPReservationFacility(BaseModel):
     code: Optional[StrictStr] = None
     features: Optional[List[StrictStr]] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="IP ranges registered in facility. Can be used for GeoIP location")
     metro: Optional[DeviceMetro] = None
     name: Optional[StrictStr] = None

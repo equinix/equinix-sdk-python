@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +30,7 @@ class UserLimited(BaseModel):
     avatar_url: Optional[StrictStr] = Field(default=None, description="Avatar URL of the User")
     full_name: Optional[StrictStr] = Field(default=None, description="Full name of the User")
     href: Optional[StrictStr] = Field(default=None, description="API URL uniquely representing the User")
-    id: StrictStr = Field(description="ID of the User")
+    id: UUID = Field(description="ID of the User")
     __properties: ClassVar[List[str]] = ["avatar_thumb_url", "avatar_url", "full_name", "href", "id"]
 
     model_config = ConfigDict(

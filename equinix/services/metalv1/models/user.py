@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,15 +32,15 @@ class User(BaseModel):
     avatar_url: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
     customdata: Optional[Dict[str, Any]] = None
-    default_organization_id: Optional[StrictStr] = None
-    default_project_id: Optional[StrictStr] = None
+    default_organization_id: Optional[UUID] = None
+    default_project_id: Optional[UUID] = None
     email: Optional[StrictStr] = None
     emails: Optional[List[Href]] = None
     first_name: Optional[StrictStr] = None
     fraud_score: Optional[StrictStr] = None
     full_name: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     last_login_at: Optional[datetime] = None
     last_name: Optional[StrictStr] = None
     max_organizations: Optional[StrictInt] = None

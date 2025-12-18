@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.port_order_purchase_order import PortOrderPurchaseOrder
 from equinix.services.fabricv4.models.port_order_signature import PortOrderSignature
 from typing import Optional, Set
@@ -28,7 +29,7 @@ class PortOrder(BaseModel):
     order_id: Optional[StrictStr] = Field(default=None, description="Order Identification", alias="orderId")
     customer_reference_id: Optional[StrictStr] = Field(default=None, description="Customer order reference Id", alias="customerReferenceId")
     order_number: Optional[StrictStr] = Field(default=None, description="Order Reference Number", alias="orderNumber")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned order identifier, this is a derived response atrribute")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned order identifier, this is a derived response atrribute")
     signature: Optional[PortOrderSignature] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["purchaseOrder", "orderId", "customerReferenceId", "orderNumber", "uuid", "signature"]

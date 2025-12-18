@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.all_physical_ports_response import AllPhysicalPortsResponse
 from equinix.services.fabricv4.models.all_ports_response import AllPortsResponse
 from equinix.services.fabricv4.models.bulk_physical_port import BulkPhysicalPort
@@ -45,7 +46,7 @@ class PortsApi:
     @validate_call
     def add_to_lag(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         bulk_physical_port: BulkPhysicalPort,
         _request_timeout: Union[
             None,
@@ -120,7 +121,7 @@ class PortsApi:
     @validate_call
     def add_to_lag_with_http_info(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         bulk_physical_port: BulkPhysicalPort,
         _request_timeout: Union[
             None,
@@ -195,7 +196,7 @@ class PortsApi:
     @validate_call
     def add_to_lag_without_preload_content(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         bulk_physical_port: BulkPhysicalPort,
         _request_timeout: Union[
             None,
@@ -649,7 +650,7 @@ class PortsApi:
     @validate_call
     def delete_port(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
@@ -724,7 +725,7 @@ class PortsApi:
     @validate_call
     def delete_port_with_http_info(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
@@ -799,7 +800,7 @@ class PortsApi:
     @validate_call
     def delete_port_without_preload_content(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
             None,
@@ -939,7 +940,7 @@ class PortsApi:
     @validate_call
     def get_port_by_uuid(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1009,7 +1010,7 @@ class PortsApi:
     @validate_call
     def get_port_by_uuid_with_http_info(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1079,7 +1080,7 @@ class PortsApi:
     @validate_call
     def get_port_by_uuid_without_preload_content(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1484,7 +1485,7 @@ class PortsApi:
     @validate_call
     def get_vlans(
         self,
-        port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        port_uuid: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1553,7 +1554,7 @@ class PortsApi:
     @validate_call
     def get_vlans_with_http_info(
         self,
-        port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        port_uuid: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1622,7 +1623,7 @@ class PortsApi:
     @validate_call
     def get_vlans_without_preload_content(
         self,
-        port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        port_uuid: Annotated[UUID, Field(description="Port UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2037,7 +2038,7 @@ class PortsApi:
     @validate_call
     def update_port_by_uuid(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
@@ -2116,7 +2117,7 @@ class PortsApi:
     @validate_call
     def update_port_by_uuid_with_http_info(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[
@@ -2195,7 +2196,7 @@ class PortsApi:
     @validate_call
     def update_port_by_uuid_without_preload_content(
         self,
-        port_id: Annotated[StrictStr, Field(description="Port UUID")],
+        port_id: Annotated[UUID, Field(description="Port UUID")],
         port_change_operation: Annotated[List[PortChangeOperation], Field(min_length=1)],
         dry_run: Annotated[Optional[StrictBool], Field(description="option to verify that API calls will succeed")] = None,
         _request_timeout: Union[

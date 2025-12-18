@@ -9,14 +9,14 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.create_email_input import CreateEmailInput
 from equinix.services.metalv1.models.email import Email
 from equinix.services.metalv1.models.update_email_input import UpdateEmailInput
@@ -95,8 +95,7 @@ class EmailsApi:
             '201': "Email",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -165,8 +164,7 @@ class EmailsApi:
             '201': "Email",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -235,8 +233,7 @@ class EmailsApi:
             '201': "Email",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -318,7 +315,7 @@ class EmailsApi:
     @validate_call
     def delete_email(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -373,8 +370,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -388,7 +384,7 @@ class EmailsApi:
     @validate_call
     def delete_email_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -443,8 +439,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -458,7 +453,7 @@ class EmailsApi:
     @validate_call
     def delete_email_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -513,8 +508,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -583,7 +577,7 @@ class EmailsApi:
     @validate_call
     def find_email_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -638,8 +632,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -653,7 +646,7 @@ class EmailsApi:
     @validate_call
     def find_email_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -708,8 +701,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -723,7 +715,7 @@ class EmailsApi:
     @validate_call
     def find_email_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -778,8 +770,7 @@ class EmailsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -848,7 +839,7 @@ class EmailsApi:
     @validate_call
     def update_email(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         update_email_input: Annotated[UpdateEmailInput, Field(description="email to update")],
         _request_timeout: Union[
             None,
@@ -908,8 +899,7 @@ class EmailsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -923,7 +913,7 @@ class EmailsApi:
     @validate_call
     def update_email_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         update_email_input: Annotated[UpdateEmailInput, Field(description="email to update")],
         _request_timeout: Union[
             None,
@@ -983,8 +973,7 @@ class EmailsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -998,7 +987,7 @@ class EmailsApi:
     @validate_call
     def update_email_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Email UUID")],
+        id: Annotated[UUID, Field(description="Email UUID")],
         update_email_input: Annotated[UpdateEmailInput, Field(description="email to update")],
         _request_timeout: Union[
             None,
@@ -1058,8 +1047,7 @@ class EmailsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

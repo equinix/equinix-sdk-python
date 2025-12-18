@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.bgp_action_data import BGPActionData
 from equinix.services.fabricv4.models.bgp_action_request import BGPActionRequest
 from equinix.services.fabricv4.models.bgp_actions_bulk_data import BGPActionsBulkData
@@ -663,7 +664,7 @@ class RoutingProtocolsApi:
     @validate_call
     def delete_connection_routing_protocol_by_uuid(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -740,7 +741,7 @@ class RoutingProtocolsApi:
     @validate_call
     def delete_connection_routing_protocol_by_uuid_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -817,7 +818,7 @@ class RoutingProtocolsApi:
     @validate_call
     def delete_connection_routing_protocol_by_uuid_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -957,7 +958,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_all_bgp_actions(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
@@ -1042,7 +1043,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_all_bgp_actions_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
@@ -1127,7 +1128,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_all_bgp_actions_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
@@ -1285,7 +1286,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_by_uuid(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -1362,7 +1363,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_by_uuid_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -1439,7 +1440,7 @@ class RoutingProtocolsApi:
     @validate_call
     def get_connection_routing_protocol_by_uuid_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         _request_timeout: Union[
             None,
@@ -1890,8 +1891,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_bgp_action_by_uuid(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        action_id: Annotated[StrictStr, Field(description="BGP Action UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        action_id: Annotated[UUID, Field(description="BGP Action UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1970,8 +1971,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_bgp_action_by_uuid_with_http_info(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        action_id: Annotated[StrictStr, Field(description="BGP Action UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        action_id: Annotated[UUID, Field(description="BGP Action UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2050,8 +2051,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_bgp_action_by_uuid_without_preload_content(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        action_id: Annotated[StrictStr, Field(description="BGP Action UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        action_id: Annotated[UUID, Field(description="BGP Action UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2196,8 +2197,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_change_by_uuid(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2276,8 +2277,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_change_by_uuid_with_http_info(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2356,8 +2357,8 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_change_by_uuid_without_preload_content(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2502,7 +2503,7 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_changes(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -2586,7 +2587,7 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_changes_with_http_info(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -2670,7 +2671,7 @@ class RoutingProtocolsApi:
     def get_connection_routing_protocols_changes_without_preload_content(
         self,
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -2826,7 +2827,7 @@ class RoutingProtocolsApi:
     @validate_call
     def patch_connection_routing_protocol_by_uuid(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
@@ -2907,7 +2908,7 @@ class RoutingProtocolsApi:
     @validate_call
     def patch_connection_routing_protocol_by_uuid_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
@@ -2988,7 +2989,7 @@ class RoutingProtocolsApi:
     @validate_call
     def patch_connection_routing_protocol_by_uuid_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         connection_change_operation: Annotated[List[ConnectionChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
@@ -3150,7 +3151,7 @@ class RoutingProtocolsApi:
     @validate_call
     def post_connection_routing_protocol_bgp_action_by_uuid(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         bgp_action_request: BGPActionRequest,
         _request_timeout: Union[
@@ -3231,7 +3232,7 @@ class RoutingProtocolsApi:
     @validate_call
     def post_connection_routing_protocol_bgp_action_by_uuid_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         bgp_action_request: BGPActionRequest,
         _request_timeout: Union[
@@ -3312,7 +3313,7 @@ class RoutingProtocolsApi:
     @validate_call
     def post_connection_routing_protocol_bgp_action_by_uuid_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         bgp_action_request: BGPActionRequest,
         _request_timeout: Union[
@@ -3472,7 +3473,7 @@ class RoutingProtocolsApi:
     @validate_call
     def replace_connection_routing_protocol_by_uuid(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         routing_protocol_base: RoutingProtocolBase,
         _request_timeout: Union[
@@ -3553,7 +3554,7 @@ class RoutingProtocolsApi:
     @validate_call
     def replace_connection_routing_protocol_by_uuid_with_http_info(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         routing_protocol_base: RoutingProtocolBase,
         _request_timeout: Union[
@@ -3634,7 +3635,7 @@ class RoutingProtocolsApi:
     @validate_call
     def replace_connection_routing_protocol_by_uuid_without_preload_content(
         self,
-        routing_protocol_id: Annotated[StrictStr, Field(description="Routing Protocol Id")],
+        routing_protocol_id: Annotated[UUID, Field(description="Routing Protocol Id")],
         connection_id: Annotated[StrictStr, Field(description="Connection Id")],
         routing_protocol_base: RoutingProtocolBase,
         _request_timeout: Union[
@@ -3794,7 +3795,7 @@ class RoutingProtocolsApi:
     @validate_call
     def validate_routing_protocol(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         validate_request: ValidateRequest,
         _request_timeout: Union[
             None,
@@ -3866,7 +3867,7 @@ class RoutingProtocolsApi:
     @validate_call
     def validate_routing_protocol_with_http_info(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         validate_request: ValidateRequest,
         _request_timeout: Union[
             None,
@@ -3938,7 +3939,7 @@ class RoutingProtocolsApi:
     @validate_call
     def validate_routing_protocol_without_preload_content(
         self,
-        router_id: Annotated[StrictStr, Field(description="Cloud Router UUID")],
+        router_id: Annotated[UUID, Field(description="Cloud Router UUID")],
         validate_request: ValidateRequest,
         _request_timeout: Union[
             None,

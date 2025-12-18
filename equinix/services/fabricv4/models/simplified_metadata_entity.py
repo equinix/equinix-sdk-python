@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +25,7 @@ class SimplifiedMetadataEntity(BaseModel):
     Configuration details for port used at the access point.
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="url to entity")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix assigned Identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix assigned Identifier")
     type: Optional[StrictStr] = Field(default=None, description="Type of Port")
     cvp_id: Optional[StrictInt] = Field(default=None, description="Customer virtual port Id", alias="cvpId")
     bandwidth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Port Bandwidth")

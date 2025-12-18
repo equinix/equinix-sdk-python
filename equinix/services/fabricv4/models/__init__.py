@@ -8,7 +8,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from equinix.services.fabricv4.models.access_point import AccessPoint
 from equinix.services.fabricv4.models.access_point_role import AccessPointRole
@@ -658,3 +657,4 @@ from equinix.services.fabricv4.models.virtual_port_redundancy import VirtualPort
 from equinix.services.fabricv4.models.virtual_port_service_type import VirtualPortServiceType
 from equinix.services.fabricv4.models.virtual_port_type import VirtualPortType
 from equinix.services.fabricv4.models.vpic_interface import VpicInterface
+

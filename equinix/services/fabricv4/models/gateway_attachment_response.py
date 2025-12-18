@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.error import Error
 from equinix.services.fabricv4.models.gateway_attachment_response_attachment_status import GatewayAttachmentResponseAttachmentStatus
@@ -28,7 +29,7 @@ class GatewayAttachmentResponse(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = None
     type: Optional[GatewayAttachmentResponseType] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     attachment_status: Optional[GatewayAttachmentResponseAttachmentStatus] = Field(default=None, alias="attachmentStatus")
     errors: Optional[List[Error]] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")

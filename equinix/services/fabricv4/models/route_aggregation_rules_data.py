@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.route_aggregation_rule_state import RouteAggregationRuleState
 from equinix.services.fabricv4.models.route_aggregation_rules_change import RouteAggregationRulesChange
@@ -28,7 +29,7 @@ class RouteAggregationRulesData(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Route Aggregation Rules URI")
     type: Optional[RouteAggregationRulesDataType] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Route Aggregation Rule identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Route Aggregation Rule identifier")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided Route Aggregation Rule description")
     state: Optional[RouteAggregationRuleState] = None

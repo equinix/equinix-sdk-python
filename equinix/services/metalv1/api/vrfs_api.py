@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
 from equinix.services.metalv1.models.vrf import Vrf
 from equinix.services.metalv1.models.vrf_bgp_neighbors_list import VrfBGPNeighborsList
@@ -51,7 +51,7 @@ class VRFsApi:
     @validate_call
     def bgp_dynamic_neighbors_id_get(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -113,8 +113,7 @@ class VRFsApi:
             '200': "BgpDynamicNeighbor",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -128,7 +127,7 @@ class VRFsApi:
     @validate_call
     def bgp_dynamic_neighbors_id_get_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -190,8 +189,7 @@ class VRFsApi:
             '200': "BgpDynamicNeighbor",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -205,7 +203,7 @@ class VRFsApi:
     @validate_call
     def bgp_dynamic_neighbors_id_get_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -267,8 +265,7 @@ class VRFsApi:
             '200': "BgpDynamicNeighbor",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -349,7 +346,7 @@ class VRFsApi:
     @validate_call
     def create_vrf(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         vrf_create_input: Annotated[VrfCreateInput, Field(description="VRF to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -416,8 +413,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -431,7 +427,7 @@ class VRFsApi:
     @validate_call
     def create_vrf_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         vrf_create_input: Annotated[VrfCreateInput, Field(description="VRF to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -498,8 +494,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -513,7 +508,7 @@ class VRFsApi:
     @validate_call
     def create_vrf_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         vrf_create_input: Annotated[VrfCreateInput, Field(description="VRF to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -580,8 +575,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -678,7 +672,7 @@ class VRFsApi:
     @validate_call
     def create_vrf_route(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_route_create_input: VrfRouteCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -746,8 +740,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -761,7 +754,7 @@ class VRFsApi:
     @validate_call
     def create_vrf_route_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_route_create_input: VrfRouteCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -829,8 +822,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -844,7 +836,7 @@ class VRFsApi:
     @validate_call
     def create_vrf_route_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_route_create_input: VrfRouteCreateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -912,8 +904,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1010,7 +1001,7 @@ class VRFsApi:
     @validate_call
     def delete_bgp_dynamic_neighbor_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1073,8 +1064,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1088,7 +1078,7 @@ class VRFsApi:
     @validate_call
     def delete_bgp_dynamic_neighbor_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1151,8 +1141,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1166,7 +1155,7 @@ class VRFsApi:
     @validate_call
     def delete_bgp_dynamic_neighbor_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="BGP Dynamic Neighbor UUID")],
+        id: Annotated[UUID, Field(description="BGP Dynamic Neighbor UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1229,8 +1218,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1311,7 +1299,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1366,8 +1354,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1381,7 +1368,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1436,8 +1423,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1451,7 +1437,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1506,8 +1492,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1576,7 +1561,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf_route_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1639,8 +1624,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1654,7 +1638,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf_route_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1717,8 +1701,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1732,7 +1715,7 @@ class VRFsApi:
     @validate_call
     def delete_vrf_route_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1795,8 +1778,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1877,7 +1859,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1940,8 +1922,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1955,7 +1936,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2018,8 +1999,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2033,7 +2013,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2096,8 +2076,7 @@ class VRFsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2178,8 +2157,8 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservation(
         self,
-        vrf_id: Annotated[StrictStr, Field(description="VRF UUID")],
-        id: Annotated[StrictStr, Field(description="IP UUID")],
+        vrf_id: Annotated[UUID, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="IP UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2244,8 +2223,7 @@ class VRFsApi:
             '200': "VrfIpReservation",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2259,8 +2237,8 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservation_with_http_info(
         self,
-        vrf_id: Annotated[StrictStr, Field(description="VRF UUID")],
-        id: Annotated[StrictStr, Field(description="IP UUID")],
+        vrf_id: Annotated[UUID, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="IP UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2325,8 +2303,7 @@ class VRFsApi:
             '200': "VrfIpReservation",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2340,8 +2317,8 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservation_without_preload_content(
         self,
-        vrf_id: Annotated[StrictStr, Field(description="VRF UUID")],
-        id: Annotated[StrictStr, Field(description="IP UUID")],
+        vrf_id: Annotated[UUID, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="IP UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2406,8 +2383,7 @@ class VRFsApi:
             '200': "VrfIpReservation",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2491,7 +2467,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservations(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2553,8 +2529,7 @@ class VRFsApi:
             '200': "VrfIpReservationList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2568,7 +2543,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservations_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2630,8 +2605,7 @@ class VRFsApi:
             '200': "VrfIpReservationList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2645,7 +2619,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_ip_reservations_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2707,8 +2681,7 @@ class VRFsApi:
             '200': "VrfIpReservationList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2789,7 +2762,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_route_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2851,8 +2824,7 @@ class VRFsApi:
             '200': "VrfRoute",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2866,7 +2838,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_route_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2928,8 +2900,7 @@ class VRFsApi:
             '200': "VrfRoute",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2943,7 +2914,7 @@ class VRFsApi:
     @validate_call
     def find_vrf_route_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3005,8 +2976,7 @@ class VRFsApi:
             '200': "VrfRoute",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3087,7 +3057,7 @@ class VRFsApi:
     @validate_call
     def find_vrfs(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
@@ -3153,8 +3123,7 @@ class VRFsApi:
             '200': "VrfList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3168,7 +3137,7 @@ class VRFsApi:
     @validate_call
     def find_vrfs_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
@@ -3234,8 +3203,7 @@ class VRFsApi:
             '200': "VrfList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3249,7 +3217,7 @@ class VRFsApi:
     @validate_call
     def find_vrfs_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
@@ -3315,8 +3283,7 @@ class VRFsApi:
             '200': "VrfList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3402,7 +3369,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_bgp_neighbors(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3456,8 +3423,7 @@ class VRFsApi:
             '200': "VrfBGPNeighborsList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3471,7 +3437,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_bgp_neighbors_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3525,8 +3491,7 @@ class VRFsApi:
             '200': "VrfBGPNeighborsList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3540,7 +3505,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_bgp_neighbors_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3594,8 +3559,7 @@ class VRFsApi:
             '200': "VrfBGPNeighborsList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3664,7 +3628,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_learned_routes(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3718,8 +3682,7 @@ class VRFsApi:
             '200': "VrfLearnedRoutesList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3733,7 +3696,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_learned_routes_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3787,8 +3750,7 @@ class VRFsApi:
             '200': "VrfLearnedRoutesList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3802,7 +3764,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_learned_routes_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3856,8 +3818,7 @@ class VRFsApi:
             '200': "VrfLearnedRoutesList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3926,7 +3887,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_routes(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3988,8 +3949,7 @@ class VRFsApi:
             '200': "VrfRouteList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4003,7 +3963,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_routes_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -4065,8 +4025,7 @@ class VRFsApi:
             '200': "VrfRouteList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4080,7 +4039,7 @@ class VRFsApi:
     @validate_call
     def get_vrf_routes_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -4142,8 +4101,7 @@ class VRFsApi:
             '200': "VrfRouteList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4224,7 +4182,7 @@ class VRFsApi:
     @validate_call
     def update_vrf(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_update_input: Annotated[VrfUpdateInput, Field(description="VRF to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4292,8 +4250,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4307,7 +4264,7 @@ class VRFsApi:
     @validate_call
     def update_vrf_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_update_input: Annotated[VrfUpdateInput, Field(description="VRF to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4375,8 +4332,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4390,7 +4346,7 @@ class VRFsApi:
     @validate_call
     def update_vrf_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF UUID")],
+        id: Annotated[UUID, Field(description="VRF UUID")],
         vrf_update_input: Annotated[VrfUpdateInput, Field(description="VRF to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4458,8 +4414,7 @@ class VRFsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4556,7 +4511,7 @@ class VRFsApi:
     @validate_call
     def update_vrf_route_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         vrf_route_update_input: VrfRouteUpdateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4625,8 +4580,7 @@ class VRFsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4640,7 +4594,7 @@ class VRFsApi:
     @validate_call
     def update_vrf_route_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         vrf_route_update_input: VrfRouteUpdateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4709,8 +4663,7 @@ class VRFsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4724,7 +4677,7 @@ class VRFsApi:
     @validate_call
     def update_vrf_route_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="VRF Route UUID")],
+        id: Annotated[UUID, Field(description="VRF Route UUID")],
         vrf_route_update_input: VrfRouteUpdateInput,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4793,8 +4746,7 @@ class VRFsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

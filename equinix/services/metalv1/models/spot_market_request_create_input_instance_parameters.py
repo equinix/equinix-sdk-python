@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,11 +40,11 @@ class SpotMarketRequestCreateInputInstanceParameters(BaseModel):
     operating_system: Optional[StrictStr] = None
     plan: Optional[StrictStr] = None
     private_ipv4_subnet_size: Optional[StrictInt] = None
-    project_ssh_keys: Optional[List[StrictStr]] = None
+    project_ssh_keys: Optional[List[UUID]] = None
     public_ipv4_subnet_size: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
     termination_time: Optional[datetime] = None
-    user_ssh_keys: Optional[List[StrictStr]] = Field(default=None, description="The UUIDs of users whose SSH keys should be included on the provisioned device.")
+    user_ssh_keys: Optional[List[UUID]] = Field(default=None, description="The UUIDs of users whose SSH keys should be included on the provisioned device.")
     userdata: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["always_pxe", "billing_cycle", "customdata", "description", "features", "hostname", "hostnames", "href", "locked", "no_ssh_keys", "operating_system", "plan", "private_ipv4_subnet_size", "project_ssh_keys", "public_ipv4_subnet_size", "tags", "termination_time", "user_ssh_keys", "userdata"]
 

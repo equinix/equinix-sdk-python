@@ -74,7 +74,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -164,7 +163,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -248,7 +246,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling EventsApi->find_events: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -337,7 +334,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling EventsApi->find_interconnection_events: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -432,7 +428,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -520,7 +515,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling EventsApi->find_organization_events: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -614,7 +608,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -706,7 +699,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -793,7 +785,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling EventsApi->find_vrf_route_events: %s\n" % e)
 ```
-
 
 
 ### Parameters

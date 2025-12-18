@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_virtual_device_type import SimplifiedVirtualDeviceType
 from typing import Optional, Set
@@ -25,7 +26,7 @@ class SimplifiedVirtualDevice(BaseModel):
     SimplifiedVirtualDevice
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="url to entity")
-    uuid: Optional[StrictStr] = Field(default=None, description="Network Edge assigned Virtual Device Identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Network Edge assigned Virtual Device Identifier")
     name: Optional[StrictStr] = Field(default=None, description="Customer-assigned Virtual Device name")
     type: Optional[SimplifiedVirtualDeviceType] = None
     account: Optional[SimplifiedAccount] = None

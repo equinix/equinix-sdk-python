@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.metadata_network import MetadataNetwork
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,7 @@ class Metadata(BaseModel):
     facility: Optional[StrictStr] = Field(default=None, description="The facility code of the instance")
     hostname: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     iqn: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro code of the instance")
     network: Optional[MetadataNetwork] = None
