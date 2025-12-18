@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **var_and** | [**List[SearchExpression]**](SearchExpression.md) |  | [optional] 
 **var_or** | [**List[SearchExpression]**](SearchExpression.md) |  | [optional] 
 **var_property** | **str** |  | [optional] 
-**operator** | [**ExpressionOperator**](ExpressionOperator.md) |  | [optional] 
+**operator** | [**SearchExpressionOperator**](SearchExpressionOperator.md) |  | [optional] 
 **values** | **List[str]** |  | [optional] 
 
 ## Example

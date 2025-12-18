@@ -6,14 +6,10 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**href** | **str** | Equinix assigned response attribute for an absolute URL that is the subject of the link&#39;s context. | [optional] [readonly] 
 **type** | [**PortType**](PortType.md) |  | 
-**id** | **int** | Equinix assigned response attribute for Port Id | [optional] 
-**uuid** | **str** | Equinix assigned response attribute for  port identifier | [optional] 
 **name** | **str** | Equinix assigned response attribute for Port name | [optional] 
 **description** | **str** | Equinix assigned response attribute for Port description | [optional] 
 **physical_ports_speed** | **int** | Physical Ports Speed in Mbps | 
-**connections_count** | **int** | Equinix assigned response attribute for Connection count | [optional] 
 **physical_ports_type** | [**PortPhysicalPortsType**](PortPhysicalPortsType.md) |  | 
 **physical_ports_count** | **int** |  | [optional] 
 **connectivity_source_type** | [**PortConnectivitySourceType**](PortConnectivitySourceType.md) |  | 
@@ -21,14 +17,10 @@ Name | Type | Description | Notes
 **project** | [**Project**](Project.md) |  | [optional] 
 **state** | [**PortState**](PortState.md) |  | [optional] 
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 
-**operation** | [**PortOperation**](PortOperation.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | 
-**change** | [**PortChange**](PortChange.md) |  | [optional] 
-**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
+**service_code** | [**PortServiceCode**](PortServiceCode.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 
-**available_bandwidth** | **int** | Equinix assigned response attribute for Port available bandwidth in Mbps | [optional] 
-**used_bandwidth** | **int** | Equinix assigned response attribute for Port used bandwidth in Mbps | [optional] 
 **location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | 
 **device** | [**PortDevice**](PortDevice.md) |  | [optional] 
 **interface** | [**PortInterface**](PortInterface.md) |  | [optional] 
@@ -48,6 +40,7 @@ Name | Type | Description | Notes
 **end_customer** | [**EndCustomer**](EndCustomer.md) |  | [optional] 
 **physical_ports** | [**List[PhysicalPort]**](PhysicalPort.md) | Physical ports that implement this port | [optional] 
 **loas** | [**List[PortLoa]**](PortLoa.md) | Port Loas | [optional] 
+**marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 
 ## Example
 

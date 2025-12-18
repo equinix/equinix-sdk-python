@@ -16,9 +16,9 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.detection_method import DetectionMethod
-from equinix.services.fabricv4.models.metric_selector import MetricSelector
-from equinix.services.fabricv4.models.resource_selector import ResourceSelector
+from equinix.services.fabricv4.models.detection_method_response import DetectionMethodResponse
+from equinix.services.fabricv4.models.metric_selector_response import MetricSelectorResponse
+from equinix.services.fabricv4.models.resource_selector_response import ResourceSelectorResponse
 from equinix.services.fabricv4.models.stream_alert_rule_state import StreamAlertRuleState
 from equinix.services.fabricv4.models.stream_alert_rule_type import StreamAlertRuleType
 from typing import Optional, Set
@@ -35,9 +35,9 @@ class StreamAlertRule(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream alert rule description")
     state: Optional[StreamAlertRuleState] = None
     enabled: Optional[StrictBool] = Field(default=True, description="Stream alert rule enabled status")
-    metric_selector: Optional[MetricSelector] = Field(default=None, alias="metricSelector")
-    resource_selector: Optional[ResourceSelector] = Field(default=None, alias="resourceSelector")
-    detection_method: Optional[DetectionMethod] = Field(default=None, alias="detectionMethod")
+    metric_selector: Optional[MetricSelectorResponse] = Field(default=None, alias="metricSelector")
+    resource_selector: Optional[ResourceSelectorResponse] = Field(default=None, alias="resourceSelector")
+    detection_method: Optional[DetectionMethodResponse] = Field(default=None, alias="detectionMethod")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "state", "enabled", "metricSelector", "resourceSelector", "detectionMethod", "changeLog"]
@@ -121,9 +121,9 @@ class StreamAlertRule(BaseModel):
             "description": obj.get("description"),
             "state": obj.get("state"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
-            "metricSelector": MetricSelector.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
-            "resourceSelector": ResourceSelector.from_dict(obj["resourceSelector"]) if obj.get("resourceSelector") is not None else None,
-            "detectionMethod": DetectionMethod.from_dict(obj["detectionMethod"]) if obj.get("detectionMethod") is not None else None,
+            "metricSelector": MetricSelectorResponse.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
+            "resourceSelector": ResourceSelectorResponse.from_dict(obj["resourceSelector"]) if obj.get("resourceSelector") is not None else None,
+            "detectionMethod": DetectionMethodResponse.from_dict(obj["detectionMethod"]) if obj.get("detectionMethod") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **created_date_time** | **datetime** | Set when change flow starts | [optional] 
 **updated_date_time** | **datetime** | Set when change object is updated | 
 **information** | **str** | Additional information | [optional] 
-**data** | [**CloudRouterChangeOperation**](CloudRouterChangeOperation.md) |  | [optional] 
+**data** | [**List[CloudRouterChangeOperation]**](CloudRouterChangeOperation.md) |  | [optional] 
 
 ## Example
 

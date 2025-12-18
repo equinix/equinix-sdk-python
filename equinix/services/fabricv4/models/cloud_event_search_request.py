@@ -24,7 +24,7 @@ class CloudEventSearchRequest(BaseModel):
     """
     Search requests containing criteria
     """ # noqa: E501
-    filter: Optional[CloudEventFilters] = None
+    filter: CloudEventFilters
     pagination: Optional[PaginationRequest] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["filter", "pagination"]

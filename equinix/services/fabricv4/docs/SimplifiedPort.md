@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **operation** | [**PortOperation**](PortOperation.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
 **service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
+**service_code** | [**PortServiceCode**](PortServiceCode.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 
 **available_bandwidth** | **int** | Equinix assigned response attribute for Port available bandwidth in Mbps | [optional] 
 **used_bandwidth** | **int** | Equinix assigned response attribute for Port used bandwidth in Mbps | [optional] 

@@ -18,7 +18,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.stream_subscription_operation import StreamSubscriptionOperation
 from equinix.services.fabricv4.models.stream_subscription_selector import StreamSubscriptionSelector
-from equinix.services.fabricv4.models.stream_subscription_sink import StreamSubscriptionSink
+from equinix.services.fabricv4.models.stream_subscription_sink_response import StreamSubscriptionSinkResponse
 from equinix.services.fabricv4.models.stream_subscription_state import StreamSubscriptionState
 from equinix.services.fabricv4.models.stream_subscription_type import StreamSubscriptionType
 from typing import Optional, Set
@@ -37,7 +37,7 @@ class StreamSubscription(BaseModel):
     enabled: Optional[StrictBool] = Field(default=None, description="Stream subscription enabled status")
     metric_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="metricSelector")
     event_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="eventSelector")
-    sink: Optional[StreamSubscriptionSink] = None
+    sink: Optional[StreamSubscriptionSinkResponse] = None
     operation: Optional[StreamSubscriptionOperation] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
@@ -127,7 +127,7 @@ class StreamSubscription(BaseModel):
             "enabled": obj.get("enabled"),
             "metricSelector": StreamSubscriptionSelector.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
             "eventSelector": StreamSubscriptionSelector.from_dict(obj["eventSelector"]) if obj.get("eventSelector") is not None else None,
-            "sink": StreamSubscriptionSink.from_dict(obj["sink"]) if obj.get("sink") is not None else None,
+            "sink": StreamSubscriptionSinkResponse.from_dict(obj["sink"]) if obj.get("sink") is not None else None,
             "operation": StreamSubscriptionOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })

@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **description** | **str** | Customer-provided stream alert rule description | [optional] 
 **state** | [**StreamAlertRuleState**](StreamAlertRuleState.md) |  | [optional] 
 **enabled** | **bool** | Stream alert rule enabled status | [optional] [default to True]
-**metric_selector** | [**MetricSelector**](MetricSelector.md) |  | [optional] 
-**resource_selector** | [**ResourceSelector**](ResourceSelector.md) |  | [optional] 
-**detection_method** | [**DetectionMethod**](DetectionMethod.md) |  | [optional] 
+**metric_selector** | [**MetricSelectorResponse**](MetricSelectorResponse.md) |  | [optional] 
+**resource_selector** | [**ResourceSelectorResponse**](ResourceSelectorResponse.md) |  | [optional] 
+**detection_method** | [**DetectionMethodResponse**](DetectionMethodResponse.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

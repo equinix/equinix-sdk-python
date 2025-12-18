@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **state** | [**CloudRouterAccessPointState**](CloudRouterAccessPointState.md) |  | [optional] 
 **equinix_asn** | **int** | Equinix ASN | [optional] 
 **connections_count** | **int** | Number of connections associated with this Access point | [optional] 
-**gateway_attachments_count** | **int** | Number of gateway attachments associated with this Access point | [optional] 
 **marketplace_subscription** | [**MarketplaceSubscription**](MarketplaceSubscription.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 **change** | [**CloudRouterChange**](CloudRouterChange.md) |  | [optional] 

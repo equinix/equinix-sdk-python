@@ -40,7 +40,6 @@ class CloudRouter(BaseModel):
     state: Optional[CloudRouterAccessPointState] = None
     equinix_asn: Optional[StrictInt] = Field(default=None, description="Equinix ASN", alias="equinixAsn")
     connections_count: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Number of connections associated with this Access point", alias="connectionsCount")
-    gateway_attachments_count: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Number of gateway attachments associated with this Access point", alias="gatewayAttachmentsCount")
     marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     change: Optional[CloudRouterChange] = None

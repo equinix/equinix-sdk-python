@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
+from equinix.services.fabricv4.models.error import Error
 from equinix.services.fabricv4.models.gateway_attachment_response_attachment_status import GatewayAttachmentResponseAttachmentStatus
 from equinix.services.fabricv4.models.gateway_attachment_response_type import GatewayAttachmentResponseType
 from typing import Optional, Set
@@ -29,9 +30,10 @@ class GatewayAttachmentResponse(BaseModel):
     type: Optional[GatewayAttachmentResponseType] = None
     uuid: Optional[StrictStr] = None
     attachment_status: Optional[GatewayAttachmentResponseAttachmentStatus] = Field(default=None, alias="attachmentStatus")
+    errors: Optional[List[Error]] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus", "errors", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +76,13 @@ class GatewayAttachmentResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in errors (list)
+        _items = []
+        if self.errors:
+            for _item_errors in self.errors:
+                if _item_errors:
+                    _items.append(_item_errors.to_dict())
+            _dict['errors'] = _items
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -98,6 +107,7 @@ class GatewayAttachmentResponse(BaseModel):
             "type": obj.get("type"),
             "uuid": obj.get("uuid"),
             "attachmentStatus": obj.get("attachmentStatus"),
+            "errors": [Error.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

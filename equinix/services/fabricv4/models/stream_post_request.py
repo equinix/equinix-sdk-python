@@ -24,10 +24,10 @@ class StreamPostRequest(BaseModel):
     """
     Create Stream
     """ # noqa: E501
-    type: Optional[StreamPostRequestType] = None
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
+    type: StreamPostRequestType
+    name: StrictStr = Field(description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
-    project: Optional[Project] = None
+    project: Project
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "description", "project"]
 

@@ -25,13 +25,13 @@ class StreamSubscriptionPostRequest(BaseModel):
     """
     Create Stream Subscription
     """ # noqa: E501
-    type: Optional[StreamSubscriptionPostRequestType] = None
-    name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream subscription name")
+    type: StreamSubscriptionPostRequestType
+    name: StrictStr = Field(description="Customer-provided stream subscription name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream subscription description")
-    enabled: Optional[StrictBool] = Field(default=None, description="Stream subscription enabled status")
+    enabled: Optional[StrictBool] = Field(default=True, description="Stream subscription enabled status")
     metric_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="metricSelector")
     event_selector: Optional[StreamSubscriptionSelector] = Field(default=None, alias="eventSelector")
-    sink: Optional[StreamSubscriptionSink] = None
+    sink: StreamSubscriptionSink
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "description", "enabled", "metricSelector", "eventSelector", "sink"]
 
@@ -105,7 +105,7 @@ class StreamSubscriptionPostRequest(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "enabled": obj.get("enabled"),
+            "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
             "metricSelector": StreamSubscriptionSelector.from_dict(obj["metricSelector"]) if obj.get("metricSelector") is not None else None,
             "eventSelector": StreamSubscriptionSelector.from_dict(obj["eventSelector"]) if obj.get("eventSelector") is not None else None,
             "sink": StreamSubscriptionSink.from_dict(obj["sink"]) if obj.get("sink") is not None else None

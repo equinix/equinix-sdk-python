@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.expression_operator import ExpressionOperator
+from equinix.services.fabricv4.models.search_expression_operator import SearchExpressionOperator
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class SearchExpression(BaseModel):
     var_and: Optional[List[SearchExpression]] = Field(default=None, alias="and")
     var_or: Optional[List[SearchExpression]] = Field(default=None, alias="or")
     var_property: Optional[StrictStr] = Field(default=None, alias="property")
-    operator: Optional[ExpressionOperator] = None
+    operator: Optional[SearchExpressionOperator] = None
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["and", "or", "property", "operator", "values"]

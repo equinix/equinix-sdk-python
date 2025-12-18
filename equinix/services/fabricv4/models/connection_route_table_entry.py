@@ -30,7 +30,6 @@ class ConnectionRouteTableEntry(BaseModel):
     type: RouteTableEntryType
     protocol_type: Optional[RouteTableEntryProtocolType] = Field(default=None, alias="protocolType")
     state: ConnectionRouteTableEntryState
-    age: Optional[StrictStr] = None
     prefix: Optional[StrictStr] = None
     next_hop: Optional[StrictStr] = Field(default=None, alias="nextHop")
     med: Optional[StrictInt] = Field(default=None, alias="MED")
@@ -39,7 +38,7 @@ class ConnectionRouteTableEntry(BaseModel):
     connection: Optional[ConnectionRouteTableEntryConnection] = None
     change_log: Changelog = Field(alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "protocolType", "state", "age", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"]
+    __properties: ClassVar[List[str]] = ["type", "protocolType", "state", "prefix", "nextHop", "MED", "localPreference", "asPath", "connection", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,7 +107,6 @@ class ConnectionRouteTableEntry(BaseModel):
             "type": obj.get("type"),
             "protocolType": obj.get("protocolType"),
             "state": obj.get("state"),
-            "age": obj.get("age"),
             "prefix": obj.get("prefix"),
             "nextHop": obj.get("nextHop"),
             "MED": obj.get("MED"),

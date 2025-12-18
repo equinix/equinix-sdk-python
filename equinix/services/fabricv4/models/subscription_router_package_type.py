@@ -13,9 +13,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.subscription_router_package_type_code import SubscriptionRouterPackageTypeCode
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +22,7 @@ class SubscriptionRouterPackageType(BaseModel):
     """
     Cloud Router Package Type
     """ # noqa: E501
-    code: Optional[SubscriptionRouterPackageTypeCode] = None
+    code: Optional[StrictStr] = Field(default=None, description="Cloud Router package code")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["code"]
 

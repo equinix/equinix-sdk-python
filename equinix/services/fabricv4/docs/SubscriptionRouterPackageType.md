@@ -6,7 +6,7 @@ Cloud Router Package Type
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | [**SubscriptionRouterPackageTypeCode**](SubscriptionRouterPackageTypeCode.md) |  | [optional] 
+**code** | **str** | Cloud Router package code | [optional] 
 
 ## Example
 

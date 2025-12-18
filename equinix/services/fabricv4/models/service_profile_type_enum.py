@@ -25,8 +25,7 @@ class ServiceProfileTypeEnum(str, Enum):
     L2_PROFILE = 'L2_PROFILE'
     L3_PROFILE = 'L3_PROFILE'
     IA_PROFILE = 'IA_PROFILE'
-    IX_PUBLIC_PROFILE = 'IX_PUBLIC_PROFILE'
-    IX_PRIVATE_PROFILE = 'IX_PRIVATE_PROFILE'
+    IX_PROFILE = 'IX_PROFILE'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

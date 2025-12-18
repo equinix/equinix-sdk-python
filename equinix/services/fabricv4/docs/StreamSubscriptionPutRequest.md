@@ -6,13 +6,14 @@ Update Stream Subscription
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Customer-provided stream subscription name | [optional] 
+**type** | [**StreamSubscriptionPostRequestType**](StreamSubscriptionPostRequestType.md) |  | 
+**name** | **str** | Customer-provided stream subscription name | 
 **description** | **str** | Customer-provided stream subscription description | [optional] 
 **enabled** | **bool** | Stream subscription enabled status | [optional] 
 **filters** | [**StreamSubscriptionFilter**](StreamSubscriptionFilter.md) |  | [optional] 
 **metric_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
 **event_selector** | [**StreamSubscriptionSelector**](StreamSubscriptionSelector.md) |  | [optional] 
-**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | [optional] 
+**sink** | [**StreamSubscriptionSink**](StreamSubscriptionSink.md) |  | 
 
 ## Example
 
