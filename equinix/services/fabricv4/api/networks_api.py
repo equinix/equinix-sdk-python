@@ -12,9 +12,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import Field, StrictBool
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.network import Network
 from equinix.services.fabricv4.models.network_change import NetworkChange
 from equinix.services.fabricv4.models.network_change_operation import NetworkChangeOperation
@@ -354,7 +355,7 @@ class NetworksApi:
     @validate_call
     def delete_network_by_uuid(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -425,7 +426,7 @@ class NetworksApi:
     @validate_call
     def delete_network_by_uuid_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -496,7 +497,7 @@ class NetworksApi:
     @validate_call
     def delete_network_by_uuid_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -627,7 +628,7 @@ class NetworksApi:
     @validate_call
     def get_connections_by_network_uuid(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -698,7 +699,7 @@ class NetworksApi:
     @validate_call
     def get_connections_by_network_uuid_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -769,7 +770,7 @@ class NetworksApi:
     @validate_call
     def get_connections_by_network_uuid_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -900,7 +901,7 @@ class NetworksApi:
     @validate_call
     def get_network_by_uuid(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -970,7 +971,7 @@ class NetworksApi:
     @validate_call
     def get_network_by_uuid_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1040,7 +1041,7 @@ class NetworksApi:
     @validate_call
     def get_network_by_uuid_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1170,8 +1171,8 @@ class NetworksApi:
     @validate_call
     def get_network_change_by_uuid(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
-        change_id: Annotated[StrictStr, Field(description="Network Change UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
+        change_id: Annotated[UUID, Field(description="Network Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1245,8 +1246,8 @@ class NetworksApi:
     @validate_call
     def get_network_change_by_uuid_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
-        change_id: Annotated[StrictStr, Field(description="Network Change UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
+        change_id: Annotated[UUID, Field(description="Network Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1320,8 +1321,8 @@ class NetworksApi:
     @validate_call
     def get_network_change_by_uuid_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
-        change_id: Annotated[StrictStr, Field(description="Network Change UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
+        change_id: Annotated[UUID, Field(description="Network Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1458,7 +1459,7 @@ class NetworksApi:
     @validate_call
     def get_network_changes(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1529,7 +1530,7 @@ class NetworksApi:
     @validate_call
     def get_network_changes_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1600,7 +1601,7 @@ class NetworksApi:
     @validate_call
     def get_network_changes_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2017,7 +2018,7 @@ class NetworksApi:
     @validate_call
     def update_network_by_uuid(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         network_change_operation: Annotated[List[NetworkChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,
@@ -2093,7 +2094,7 @@ class NetworksApi:
     @validate_call
     def update_network_by_uuid_with_http_info(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         network_change_operation: Annotated[List[NetworkChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,
@@ -2169,7 +2170,7 @@ class NetworksApi:
     @validate_call
     def update_network_by_uuid_without_preload_content(
         self,
-        network_id: Annotated[StrictStr, Field(description="Network UUID")],
+        network_id: Annotated[UUID, Field(description="Network UUID")],
         network_change_operation: Annotated[List[NetworkChangeOperation], Field(min_length=1)],
         _request_timeout: Union[
             None,

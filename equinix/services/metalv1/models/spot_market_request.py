@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.spot_market_request_metro import SpotMarketRequestMetro
 from typing import Optional, Set
@@ -34,7 +35,7 @@ class SpotMarketRequest(BaseModel):
     end_at: Optional[datetime] = None
     facilities: Optional[Href] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     instances: Optional[Href] = None
     max_bid_price: Optional[Union[StrictFloat, StrictInt]] = None
     metro: Optional[SpotMarketRequestMetro] = None

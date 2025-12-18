@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_route_aggregation_data_attachment_status import ConnectionRouteAggregationDataAttachmentStatus
 from equinix.services.fabricv4.models.connection_route_aggregation_data_type import ConnectionRouteAggregationDataType
 from typing import Optional, Set
@@ -26,7 +27,7 @@ class ConnectionRouteAggregationData(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Route Aggregation URI")
     type: Optional[ConnectionRouteAggregationDataType] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Route Aggregation identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Route Aggregation identifier")
     attachment_status: Optional[ConnectionRouteAggregationDataAttachmentStatus] = Field(default=None, alias="attachmentStatus")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus"]

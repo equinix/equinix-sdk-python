@@ -12,9 +12,10 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.alert_rule_post_request import AlertRulePostRequest
 from equinix.services.fabricv4.models.alert_rule_put_request import AlertRulePutRequest
 from equinix.services.fabricv4.models.get_all_stream_alert_rule_response import GetAllStreamAlertRuleResponse
@@ -41,7 +42,7 @@ class StreamAlertRulesApi:
     @validate_call
     def create_stream_alert_rules(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         alert_rule_post_request: AlertRulePostRequest,
         _request_timeout: Union[
             None,
@@ -117,7 +118,7 @@ class StreamAlertRulesApi:
     @validate_call
     def create_stream_alert_rules_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         alert_rule_post_request: AlertRulePostRequest,
         _request_timeout: Union[
             None,
@@ -193,7 +194,7 @@ class StreamAlertRulesApi:
     @validate_call
     def create_stream_alert_rules_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         alert_rule_post_request: AlertRulePostRequest,
         _request_timeout: Union[
             None,
@@ -345,8 +346,8 @@ class StreamAlertRulesApi:
     @validate_call
     def delete_stream_alert_rule_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -421,8 +422,8 @@ class StreamAlertRulesApi:
     @validate_call
     def delete_stream_alert_rule_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -497,8 +498,8 @@ class StreamAlertRulesApi:
     @validate_call
     def delete_stream_alert_rule_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -636,8 +637,8 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rule_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -712,8 +713,8 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rule_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -788,8 +789,8 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rule_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -927,7 +928,7 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rules(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -1006,7 +1007,7 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rules_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -1085,7 +1086,7 @@ class StreamAlertRulesApi:
     @validate_call
     def get_stream_alert_rules_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -1234,8 +1235,8 @@ class StreamAlertRulesApi:
     @validate_call
     def update_stream_alert_rule_by_uuid(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         alert_rule_put_request: AlertRulePutRequest,
         _request_timeout: Union[
             None,
@@ -1315,8 +1316,8 @@ class StreamAlertRulesApi:
     @validate_call
     def update_stream_alert_rule_by_uuid_with_http_info(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         alert_rule_put_request: AlertRulePutRequest,
         _request_timeout: Union[
             None,
@@ -1396,8 +1397,8 @@ class StreamAlertRulesApi:
     @validate_call
     def update_stream_alert_rule_by_uuid_without_preload_content(
         self,
-        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
-        alert_rule_id: Annotated[StrictStr, Field(description="alert rule UUID")],
+        stream_id: Annotated[UUID, Field(description="Stream UUID")],
+        alert_rule_id: Annotated[UUID, Field(description="alert rule UUID")],
         alert_rule_put_request: AlertRulePutRequest,
         _request_timeout: Union[
             None,

@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.metal_gateway_lite import MetalGatewayLite
 from equinix.services.metalv1.models.metro import Metro
@@ -41,7 +42,7 @@ class VrfIpReservation(BaseModel):
     details: Optional[StrictStr] = None
     gateway: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     manageable: Optional[StrictBool] = None
     management: Optional[StrictBool] = None
     metal_gateway: Optional[MetalGatewayLite] = None

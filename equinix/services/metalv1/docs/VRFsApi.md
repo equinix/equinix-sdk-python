@@ -74,7 +74,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -158,7 +157,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->create_vrf: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -248,7 +246,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -335,7 +332,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -413,7 +409,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->delete_vrf: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -498,7 +493,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -581,7 +575,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->find_vrf_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -669,7 +662,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -754,7 +746,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -836,7 +827,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->find_vrf_route_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -923,7 +913,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1006,7 +995,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1084,7 +1072,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->get_vrf_learned_routes: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1166,7 +1153,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->get_vrf_routes: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1252,7 +1238,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->update_vrf: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1341,7 +1326,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling VRFsApi->update_vrf_route_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters

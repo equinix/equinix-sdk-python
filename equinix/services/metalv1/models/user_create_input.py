@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.email_input import EmailInput
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +34,7 @@ class UserCreateInput(BaseModel):
     emails: List[EmailInput]
     first_name: StrictStr
     href: Optional[StrictStr] = None
-    invitation_id: Optional[StrictStr] = None
+    invitation_id: Optional[UUID] = None
     last_name: StrictStr
     level: Optional[StrictStr] = None
     nonce: Optional[StrictStr] = None

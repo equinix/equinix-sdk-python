@@ -60,7 +60,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -143,7 +142,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -221,7 +219,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IPAddressesApi->find_ip_address_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -303,7 +300,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IPAddressesApi->find_ip_availabilities: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -389,7 +385,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IPAddressesApi->find_ip_reservations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -480,7 +475,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -567,7 +561,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling IPAddressesApi->update_ip_address: %s\n" % e)
 ```
-
 
 
 ### Parameters

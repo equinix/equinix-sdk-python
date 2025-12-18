@@ -19,6 +19,7 @@ import json
 from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.line_item_adjustment import LineItemAdjustment
 from equinix.services.metalv1.models.plan_id_name import PlanIdName
 from equinix.services.metalv1.models.project_id_name import ProjectIdName
@@ -40,10 +41,10 @@ class LineItem(BaseModel):
     item_type: Optional[StrictStr] = None
     location: Optional[StrictStr] = None
     plan: Optional[PlanIdName] = None
-    plan_id: Optional[StrictStr] = None
+    plan_id: Optional[UUID] = None
     project: Optional[ProjectIdName] = None
-    project_id: Optional[StrictStr] = None
-    service_id: Optional[StrictStr] = None
+    project_id: Optional[UUID] = None
+    service_id: Optional[UUID] = None
     start_date: Optional[date] = None
     unit: Optional[StrictStr] = None
     unit_price: Optional[Union[StrictFloat, StrictInt]] = None

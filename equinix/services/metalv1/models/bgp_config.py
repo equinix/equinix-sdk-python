@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.bgp_session import BgpSession
 from equinix.services.metalv1.models.global_bgp_range import GlobalBgpRange
 from equinix.services.metalv1.models.href import Href
@@ -34,7 +35,7 @@ class BgpConfig(BaseModel):
     created_at: Optional[datetime] = None
     deployment_type: Optional[StrictStr] = Field(default=None, description="In a Local BGP deployment, a customer uses an internal ASN to control routes within a single Equinix Metal datacenter. This means that the routes are never advertised to the global Internet. Global BGP, on the other hand, requires a customer to have a registered ASN and IP space. ")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     max_prefix: Optional[StrictInt] = Field(default=10, description="The maximum number of route filters allowed per server")
     md5: Optional[StrictStr] = Field(default=None, description="(Optional) Password for BGP session in plaintext (not a checksum)")
     project: Optional[Href] = None

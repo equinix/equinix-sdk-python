@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.interconnection_metro_list_metros_inner_all_of_providers_inner import InterconnectionMetroListMetrosInnerAllOfProvidersInner
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +30,7 @@ class InterconnectionMetroListMetrosInner(BaseModel):
     code: Optional[StrictStr] = None
     country: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     name: Optional[StrictStr] = None
     providers: Optional[List[InterconnectionMetroListMetrosInnerAllOfProvidersInner]] = Field(default=None, description="A list of providers and their equivalent regions available for connecting to the provider network.")
     __properties: ClassVar[List[str]] = ["code", "country", "href", "id", "name", "providers"]

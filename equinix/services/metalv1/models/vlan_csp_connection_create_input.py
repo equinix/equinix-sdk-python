@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.metalv1.models.vlan_csp_connection_create_input_fabric_provider import VlanCSPConnectionCreateInputFabricProvider
+from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class VlanCSPConnectionCreateInput(BaseModel):
     """ # noqa: E501
     contact_email: Optional[StrictStr] = Field(default=None, description="The preferred email used for communication and notifications about the Equinix Fabric interconnection. Optional and defaults to the primary user email address when using a User API key or the organization owner email address when using a Project API key.")
     description: Optional[StrictStr] = None
-    fabric_provider: VlanCSPConnectionCreateInputFabricProvider
+    fabric_provider: AWSFabricProvider
     href: Optional[StrictStr] = None
     metro: StrictStr = Field(description="A Metro ID or code. When creating Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed), or shared connections, this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here.")
     name: StrictStr
@@ -102,7 +102,7 @@ class VlanCSPConnectionCreateInput(BaseModel):
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
-            "fabric_provider": VlanCSPConnectionCreateInputFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
+            "fabric_provider": AWSFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
             "href": obj.get("href"),
             "metro": obj.get("metro"),
             "name": obj.get("name"),

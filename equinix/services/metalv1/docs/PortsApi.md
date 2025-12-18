@@ -72,7 +72,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -158,7 +157,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -242,7 +240,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->bond_port: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -331,7 +328,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -416,7 +412,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->convert_layer3: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -505,7 +500,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -590,7 +584,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -672,7 +665,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->disbond_port: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -759,7 +751,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -840,7 +831,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->find_port_vlan_assignment_batch_by_port_id_and_batch_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -925,7 +915,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1006,7 +995,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->find_port_vlan_assignment_by_port_id_and_assignment_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1092,7 +1080,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1175,7 +1162,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PortsApi->unassign_port: %s\n" % e)
 ```
-
 
 
 ### Parameters

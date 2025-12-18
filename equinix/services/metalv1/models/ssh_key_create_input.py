@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class SSHKeyCreateInput(BaseModel):
     SSHKeyCreateInput
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    instances_ids: Optional[List[StrictStr]] = Field(default=None, description="List of instance UUIDs to associate SSH key with, when empty array is sent all instances belonging       to entity will be included")
+    instances_ids: Optional[List[UUID]] = Field(default=None, description="List of instance UUIDs to associate SSH key with, when empty array is sent all instances belonging       to entity will be included")
     key: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None

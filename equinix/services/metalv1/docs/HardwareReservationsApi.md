@@ -65,7 +65,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -149,7 +148,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling HardwareReservationsApi->find_hardware_reservation_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -239,7 +237,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling HardwareReservationsApi->find_project_hardware_reservations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -334,7 +331,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling HardwareReservationsApi->move_hardware_reservation: %s\n" % e)
 ```
-
 
 
 ### Parameters

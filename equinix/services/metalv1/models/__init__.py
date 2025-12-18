@@ -11,7 +11,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 from equinix.services.metalv1.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
@@ -107,7 +106,6 @@ from equinix.services.metalv1.models.ip_reservation_request_input import IPReser
 from equinix.services.metalv1.models.instances_batch_create_input import InstancesBatchCreateInput
 from equinix.services.metalv1.models.instances_batch_create_input_batches_inner import InstancesBatchCreateInputBatchesInner
 from equinix.services.metalv1.models.interconnection import Interconnection
-from equinix.services.metalv1.models.interconnection_fabric_provider import InterconnectionFabricProvider
 from equinix.services.metalv1.models.interconnection_list import InterconnectionList
 from equinix.services.metalv1.models.interconnection_metro_list import InterconnectionMetroList
 from equinix.services.metalv1.models.interconnection_metro_list_metros_inner import InterconnectionMetroListMetrosInner
@@ -243,7 +241,6 @@ from equinix.services.metalv1.models.virtual_network_create_input import Virtual
 from equinix.services.metalv1.models.virtual_network_list import VirtualNetworkList
 from equinix.services.metalv1.models.virtual_network_update_input import VirtualNetworkUpdateInput
 from equinix.services.metalv1.models.vlan_csp_connection_create_input import VlanCSPConnectionCreateInput
-from equinix.services.metalv1.models.vlan_csp_connection_create_input_fabric_provider import VlanCSPConnectionCreateInputFabricProvider
 from equinix.services.metalv1.models.vlan_fabric_vc_create_input import VlanFabricVcCreateInput
 from equinix.services.metalv1.models.vlan_virtual_circuit import VlanVirtualCircuit
 from equinix.services.metalv1.models.vlan_virtual_circuit_create_input import VlanVirtualCircuitCreateInput
@@ -269,3 +266,4 @@ from equinix.services.metalv1.models.vrf_update_input import VrfUpdateInput
 from equinix.services.metalv1.models.vrf_virtual_circuit import VrfVirtualCircuit
 from equinix.services.metalv1.models.vrf_virtual_circuit_create_input import VrfVirtualCircuitCreateInput
 from equinix.services.metalv1.models.vrf_virtual_circuit_update_input import VrfVirtualCircuitUpdateInput
+

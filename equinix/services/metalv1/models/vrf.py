@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.metro import Metro
 from equinix.services.metalv1.models.project import Project
 from equinix.services.metalv1.models.user import User
@@ -38,7 +39,7 @@ class Vrf(BaseModel):
     created_by: Optional[User] = None
     description: Optional[StrictStr] = Field(default=None, description="Optional field that can be set to describe the VRF")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     ip_ranges: Optional[List[StrictStr]] = Field(default=None, description="A list of CIDR network addresses. Like [\"10.0.0.0/16\", \"2001:d78::/59\"].")
     local_asn: Optional[Annotated[int, Field(le=4294967295, strict=True, ge=0)]] = Field(default=None, description="A 4-byte ASN associated with the VRF.")
     metro: Optional[Metro] = None

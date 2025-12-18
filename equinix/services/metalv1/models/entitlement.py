@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class Entitlement(BaseModel):
     description: Optional[StrictStr] = None
     feature_access: Optional[Dict[str, Any]] = None
     href: Optional[StrictStr] = None
-    id: StrictStr
+    id: UUID
     instance_quota: Optional[Dict[str, Any]] = None
     ip_quota: Optional[Dict[str, Any]] = None
     name: Optional[StrictStr] = None

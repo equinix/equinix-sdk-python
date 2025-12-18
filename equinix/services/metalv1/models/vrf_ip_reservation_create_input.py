@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class VrfIpReservationCreateInput(BaseModel):
     network: StrictStr = Field(description="The starting address for this VRF IP Reservation's subnet. Both IPv4 and IPv6 are supported.")
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="Must be set to 'vrf'")
-    vrf_id: StrictStr = Field(description="The ID of the VRF in which this VRF IP Reservation is created. The VRF must have an existing IP Range that contains the requested subnet. This field may be aliased as just 'vrf'.")
+    vrf_id: UUID = Field(description="The ID of the VRF in which this VRF IP Reservation is created. The VRF must have an existing IP Range that contains the requested subnet. This field may be aliased as just 'vrf'.")
     __properties: ClassVar[List[str]] = ["cidr", "customdata", "details", "href", "network", "tags", "type", "vrf_id"]
 
     model_config = ConfigDict(

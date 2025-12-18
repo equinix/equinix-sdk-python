@@ -65,7 +65,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -145,7 +144,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling LicensesApi->delete_license: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -228,7 +226,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling LicensesApi->find_license_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -317,7 +314,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -404,7 +400,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling LicensesApi->update_license: %s\n" % e)
 ```
-
 
 
 ### Parameters

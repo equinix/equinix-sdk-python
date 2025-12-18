@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +29,7 @@ class License(BaseModel):
     """ # noqa: E501
     description: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     license_key: Optional[StrictStr] = None
     licensee_product: Optional[Href] = None
     project: Optional[Href] = None

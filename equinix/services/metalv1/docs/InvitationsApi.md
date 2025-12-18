@@ -60,7 +60,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -137,7 +136,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InvitationsApi->decline_invitation: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -219,7 +217,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InvitationsApi->find_invitation_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters

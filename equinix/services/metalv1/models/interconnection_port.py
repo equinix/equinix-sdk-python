@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +28,7 @@ class InterconnectionPort(BaseModel):
     InterconnectionPort
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     link_status: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     organization: Optional[Href] = None

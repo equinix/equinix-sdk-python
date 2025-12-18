@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +24,7 @@ class VirtualNetwork(BaseModel):
     Virtual Network Information
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="The Canonical URL at which the resource resides.")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned Virtual Network identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned Virtual Network identifier")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "uuid"]
 

@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.payment_method_billing_address import PaymentMethodBillingAddress
 from typing import Optional, Set
@@ -38,7 +39,7 @@ class PaymentMethod(BaseModel):
     expiration_month: Optional[StrictStr] = None
     expiration_year: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     name: Optional[StrictStr] = None
     organization: Optional[Href] = None
     projects: Optional[List[Href]] = None

@@ -12,8 +12,9 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictStr
+from pydantic import Field
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.subscription_response import SubscriptionResponse
 
 from equinix.services.fabricv4.api_client import ApiClient, RequestSerialized
@@ -37,7 +38,7 @@ class MarketplaceSubscriptionsApi:
     @validate_call
     def get_subscription_by_id(
         self,
-        subscription_id: Annotated[StrictStr, Field(description="Subscription UUID")],
+        subscription_id: Annotated[UUID, Field(description="Subscription UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -108,7 +109,7 @@ class MarketplaceSubscriptionsApi:
     @validate_call
     def get_subscription_by_id_with_http_info(
         self,
-        subscription_id: Annotated[StrictStr, Field(description="Subscription UUID")],
+        subscription_id: Annotated[UUID, Field(description="Subscription UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -179,7 +180,7 @@ class MarketplaceSubscriptionsApi:
     @validate_call
     def get_subscription_by_id_without_preload_content(
         self,
-        subscription_id: Annotated[StrictStr, Field(description="Subscription UUID")],
+        subscription_id: Annotated[UUID, Field(description="Subscription UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

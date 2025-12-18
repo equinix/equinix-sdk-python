@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,7 @@ class SSHKey(BaseModel):
     entity: Optional[Href] = None
     fingerprint: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     key: Optional[StrictStr] = None
     label: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None

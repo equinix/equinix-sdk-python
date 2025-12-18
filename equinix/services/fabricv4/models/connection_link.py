@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_link_type import ConnectionLinkType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +26,7 @@ class ConnectionLink(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = None
     type: Optional[ConnectionLinkType] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "type", "uuid"]
 

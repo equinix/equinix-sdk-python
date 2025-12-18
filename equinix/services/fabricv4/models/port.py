@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.end_customer import EndCustomer
 from equinix.services.fabricv4.models.marketplace_subscription import MarketplaceSubscription
@@ -54,7 +55,7 @@ class Port(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for an absolute URL that is the subject of the link's context.")
     type: Optional[PortType] = None
     id: Optional[StrictInt] = Field(default=None, description="Equinix assigned response attribute for Port Id")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for  port identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix assigned response attribute for  port identifier")
     name: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port name")
     description: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port description")
     physical_ports_speed: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Physical Ports Speed in Mbps", alias="physicalPortsSpeed")

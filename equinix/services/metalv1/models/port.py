@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.bond_port_data import BondPortData
 from equinix.services.metalv1.models.port_data import PortData
 from typing import Optional, Set
@@ -31,7 +32,7 @@ class Port(BaseModel):
     data: Optional[PortData] = None
     disbond_operation_supported: Optional[StrictBool] = Field(default=None, description="Indicates whether or not the bond can be broken on the port (when applicable).")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     name: Optional[StrictStr] = None
     native_virtual_network: Optional[VirtualNetwork] = None
     network_type: Optional[StrictStr] = Field(default=None, description="Composite network type of the bond")

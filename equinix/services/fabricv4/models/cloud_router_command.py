@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.cloud_router_command_request_response import CloudRouterCommandRequestResponse
 from equinix.services.fabricv4.models.cloud_router_command_response import CloudRouterCommandResponse
@@ -30,7 +31,7 @@ class CloudRouterCommand(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = None
     type: Optional[CloudRouterCommandType] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided Cloud Router name")
     description: Optional[StrictStr] = None
     state: Optional[CloudRouterCommandState] = None

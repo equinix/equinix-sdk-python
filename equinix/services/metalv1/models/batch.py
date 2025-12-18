@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,7 @@ class Batch(BaseModel):
     devices: Optional[List[Href]] = None
     error_messages: Optional[List[StrictStr]] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     project: Optional[Href] = None
     quantity: Optional[StrictInt] = None
     state: Optional[StrictStr] = None

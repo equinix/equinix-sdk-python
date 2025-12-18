@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.activate_hardware_reservation_request import ActivateHardwareReservationRequest
 from equinix.services.metalv1.models.hardware_reservation import HardwareReservation
 from equinix.services.metalv1.models.hardware_reservation_list import HardwareReservationList
@@ -42,7 +42,7 @@ class HardwareReservationsApi:
     @validate_call
     def activate_hardware_reservation(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         activate_hardware_reservation_request: Annotated[Optional[ActivateHardwareReservationRequest], Field(description="Note to attach to the reservation")] = None,
@@ -109,8 +109,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -124,7 +123,7 @@ class HardwareReservationsApi:
     @validate_call
     def activate_hardware_reservation_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         activate_hardware_reservation_request: Annotated[Optional[ActivateHardwareReservationRequest], Field(description="Note to attach to the reservation")] = None,
@@ -191,8 +190,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -206,7 +204,7 @@ class HardwareReservationsApi:
     @validate_call
     def activate_hardware_reservation_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         activate_hardware_reservation_request: Annotated[Optional[ActivateHardwareReservationRequest], Field(description="Note to attach to the reservation")] = None,
@@ -273,8 +271,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -371,7 +368,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_hardware_reservation_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="HardwareReservation UUID")],
+        id: Annotated[UUID, Field(description="HardwareReservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -434,8 +431,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -449,7 +445,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_hardware_reservation_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="HardwareReservation UUID")],
+        id: Annotated[UUID, Field(description="HardwareReservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -512,8 +508,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -527,7 +522,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_hardware_reservation_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="HardwareReservation UUID")],
+        id: Annotated[UUID, Field(description="HardwareReservation UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -590,8 +585,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -670,7 +664,7 @@ class HardwareReservationsApi:
 
 
     @validate_call
-    def find_project_hardware_reservations_all_pages(self, id : Annotated[StrictStr, Field(description="Project UUID")], query : Annotated[Optional[StrictStr], Field(description="Search by facility code, plan name, project name, reservation short ID or device hostname")] = None, state : Annotated[Optional[StrictStr], Field(description="Filter by hardware reservation state")] = None, provisionable : Annotated[Optional[StrictStr], Field(description="Filter hardware reservation that is provisionable")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> HardwareReservationList:  # noqa: E501
+    def find_project_hardware_reservations_all_pages(self, id : Annotated[UUID, Field(description="Project UUID")], query : Annotated[Optional[StrictStr], Field(description="Search by facility code, plan name, project name, reservation short ID or device hostname")] = None, state : Annotated[Optional[StrictStr], Field(description="Filter by hardware reservation state")] = None, provisionable : Annotated[Optional[StrictStr], Field(description="Filter hardware reservation that is provisionable")] = None, include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> HardwareReservationList:  # noqa: E501
         """Retrieve all hardware reservations for a given project  # noqa: E501
 
         This method is the same as find_project_hardware_reservations, but fetches resources from all the pages.
@@ -736,7 +730,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_project_hardware_reservations(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by facility code, plan name, project name, reservation short ID or device hostname")] = None,
         state: Annotated[Optional[StrictStr], Field(description="Filter by hardware reservation state")] = None,
         provisionable: Annotated[Optional[StrictStr], Field(description="Filter hardware reservation that is provisionable")] = None,
@@ -819,8 +813,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -834,7 +827,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_project_hardware_reservations_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by facility code, plan name, project name, reservation short ID or device hostname")] = None,
         state: Annotated[Optional[StrictStr], Field(description="Filter by hardware reservation state")] = None,
         provisionable: Annotated[Optional[StrictStr], Field(description="Filter hardware reservation that is provisionable")] = None,
@@ -917,8 +910,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -932,7 +924,7 @@ class HardwareReservationsApi:
     @validate_call
     def find_project_hardware_reservations_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         query: Annotated[Optional[StrictStr], Field(description="Search by facility code, plan name, project name, reservation short ID or device hostname")] = None,
         state: Annotated[Optional[StrictStr], Field(description="Filter by hardware reservation state")] = None,
         provisionable: Annotated[Optional[StrictStr], Field(description="Filter hardware reservation that is provisionable")] = None,
@@ -1015,8 +1007,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1122,7 +1113,7 @@ class HardwareReservationsApi:
     @validate_call
     def move_hardware_reservation(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         move_hardware_reservation_request: Annotated[MoveHardwareReservationRequest, Field(description="Destination Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1189,8 +1180,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1204,7 +1194,7 @@ class HardwareReservationsApi:
     @validate_call
     def move_hardware_reservation_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         move_hardware_reservation_request: Annotated[MoveHardwareReservationRequest, Field(description="Destination Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1271,8 +1261,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1286,7 +1275,7 @@ class HardwareReservationsApi:
     @validate_call
     def move_hardware_reservation_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Hardware Reservation UUID")],
+        id: Annotated[UUID, Field(description="Hardware Reservation UUID")],
         move_hardware_reservation_request: Annotated[MoveHardwareReservationRequest, Field(description="Destination Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1353,8 +1342,7 @@ class HardwareReservationsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

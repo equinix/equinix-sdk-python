@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.custom_field import CustomField
 from equinix.services.fabricv4.models.marketing_info import MarketingInfo
 from equinix.services.fabricv4.models.service_metro import ServiceMetro
@@ -35,7 +36,7 @@ class SimplifiedServiceProfile(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="Service Profile URI response attribute")
     type: Optional[ServiceProfileTypeEnum] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Customer-assigned service profile name")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned service profile identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned service profile identifier")
     description: Optional[StrictStr] = Field(default=None, description="User-provided service description should be of maximum length 375")
     notifications: Optional[List[SimplifiedNotification]] = Field(default=None, description="Recipients of notifications on service profile change")
     tags: Optional[List[StrictStr]] = None

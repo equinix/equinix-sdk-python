@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.network_change_type import NetworkChangeType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +25,7 @@ class SimplifiedNetworkChange(BaseModel):
     Current state of latest network change
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Network URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Uniquely identifies a change")
+    uuid: Optional[UUID] = Field(default=None, description="Uniquely identifies a change")
     type: Optional[NetworkChangeType] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "uuid", "type"]

@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,9 +27,9 @@ class MetalGatewayCreateInput(BaseModel):
     MetalGatewayCreateInput
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    ip_reservation_id: Optional[StrictStr] = Field(default=None, description="The UUID of an IP reservation that belongs to the same project as where the metal gateway will be created in. This field is required unless the private IPv4 subnet size is specified.")
+    ip_reservation_id: Optional[UUID] = Field(default=None, description="The UUID of an IP reservation that belongs to the same project as where the metal gateway will be created in. This field is required unless the private IPv4 subnet size is specified.")
     private_ipv4_subnet_size: Optional[StrictInt] = Field(default=None, description="The subnet size (8, 16, 32, 64, or 128) of the private IPv4 reservation that will be created for the metal gateway. This field is required unless a project IP reservation was specified.           Please keep in mind that the number of private metal gateway ranges are limited per project. If you would like to increase the limit per project, please contact support for assistance.")
-    virtual_network_id: StrictStr = Field(description="The UUID of a metro virtual network that belongs to the same project as where the metal gateway will be created in.")
+    virtual_network_id: UUID = Field(description="The UUID of a metro virtual network that belongs to the same project as where the metal gateway will be created in.")
     __properties: ClassVar[List[str]] = ["href", "ip_reservation_id", "private_ipv4_subnet_size", "virtual_network_id"]
 
     model_config = ConfigDict(

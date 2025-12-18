@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.ip_block_type import IpBlockType
 from equinix.services.fabricv4.models.price_location import PriceLocation
 from typing import Optional, Set
@@ -24,7 +25,7 @@ class IpBlockPrice(BaseModel):
     """
     IP Block Product configuration
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Either uuid or rest of attributes are required")
+    uuid: Optional[UUID] = Field(default=None, description="Either uuid or rest of attributes are required")
     type: Optional[IpBlockType] = None
     prefix_length: Optional[StrictInt] = Field(default=None, alias="prefixLength")
     location: Optional[PriceLocation] = None

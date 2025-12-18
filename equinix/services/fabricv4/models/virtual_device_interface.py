@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.virtual_device_interface_type import VirtualDeviceInterfaceType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +26,7 @@ class VirtualDeviceInterface(BaseModel):
     """ # noqa: E501
     type: Optional[VirtualDeviceInterfaceType] = None
     id: Optional[StrictInt] = Field(default=None, description="Network Edge assigned identifier")
-    uuid: Optional[StrictStr] = Field(default=None, description="Interface identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Interface identifier")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "id", "uuid"]
 

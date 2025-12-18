@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.cloud_router_action_state import CloudRouterActionState
 from equinix.services.fabricv4.models.cloud_router_action_type import CloudRouterActionType
@@ -28,7 +29,7 @@ class CloudRouterActionResponse(BaseModel):
     Cloud router actions response object
     """ # noqa: E501
     type: CloudRouterActionType
-    uuid: StrictStr
+    uuid: UUID
     description: Optional[StrictStr] = None
     state: CloudRouterActionState
     change_log: Changelog = Field(alias="changeLog")

@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.ipv4 import Ipv4
 from equinix.services.fabricv4.models.md5 import Md5
@@ -39,7 +40,7 @@ class PrecisionTimeServiceResponse(BaseModel):
     href: StrictStr = Field(description="Precision Time Service URI.")
     type: PrecisionTimeServiceResponseType
     name: Optional[StrictStr] = Field(default=None, description="Precision Time Service Name.")
-    uuid: StrictStr = Field(description="Precision Time Service UUID.")
+    uuid: UUID = Field(description="Precision Time Service UUID.")
     state: PrecisionTimeServiceResponseState
     operation: Optional[TimeServiceOperation] = None
     package: PrecisionTimePackagePostResponse

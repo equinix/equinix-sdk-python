@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.get_service_profiles_view_point_parameter import GetServiceProfilesViewPointParameter
 from equinix.services.fabricv4.models.json_patch_operation import JsonPatchOperation
 from equinix.services.fabricv4.models.service_metros import ServiceMetros
@@ -331,7 +332,7 @@ class ServiceProfilesApi:
     @validate_call
     def delete_service_profile_by_uuid(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -403,7 +404,7 @@ class ServiceProfilesApi:
     @validate_call
     def delete_service_profile_by_uuid_with_http_info(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -475,7 +476,7 @@ class ServiceProfilesApi:
     @validate_call
     def delete_service_profile_by_uuid_without_preload_content(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -608,7 +609,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_by_uuid(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
@@ -683,7 +684,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_by_uuid_with_http_info(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
@@ -758,7 +759,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_by_uuid_without_preload_content(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
@@ -899,7 +900,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_metros_by_uuid(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -978,7 +979,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_metros_by_uuid_with_http_info(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -1057,7 +1058,7 @@ class ServiceProfilesApi:
     @validate_call
     def get_service_profile_metros_by_uuid_without_preload_content(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
@@ -1517,7 +1518,7 @@ class ServiceProfilesApi:
     @validate_call
     def put_service_profile_by_uuid(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         service_profile_request: ServiceProfileRequest,
         _request_timeout: Union[
@@ -1597,7 +1598,7 @@ class ServiceProfilesApi:
     @validate_call
     def put_service_profile_by_uuid_with_http_info(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         service_profile_request: ServiceProfileRequest,
         _request_timeout: Union[
@@ -1677,7 +1678,7 @@ class ServiceProfilesApi:
     @validate_call
     def put_service_profile_by_uuid_without_preload_content(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         service_profile_request: ServiceProfileRequest,
         _request_timeout: Union[
@@ -2138,7 +2139,7 @@ class ServiceProfilesApi:
     @validate_call
     def update_service_profile_by_uuid(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         json_patch_operation: List[JsonPatchOperation],
         _request_timeout: Union[
@@ -2219,7 +2220,7 @@ class ServiceProfilesApi:
     @validate_call
     def update_service_profile_by_uuid_with_http_info(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         json_patch_operation: List[JsonPatchOperation],
         _request_timeout: Union[
@@ -2300,7 +2301,7 @@ class ServiceProfilesApi:
     @validate_call
     def update_service_profile_by_uuid_without_preload_content(
         self,
-        service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
+        service_profile_id: Annotated[UUID, Field(description="Service Profile UUID")],
         if_match: Annotated[StrictStr, Field(description="conditional request")],
         json_patch_operation: List[JsonPatchOperation],
         _request_timeout: Union[

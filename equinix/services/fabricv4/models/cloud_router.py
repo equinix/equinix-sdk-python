@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.cloud_router_access_point_state import CloudRouterAccessPointState
 from equinix.services.fabricv4.models.cloud_router_change import CloudRouterChange
@@ -35,7 +36,7 @@ class CloudRouter(BaseModel):
     Fabric Cloud Router object
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Cloud Routers URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided Cloud Router name")
     state: Optional[CloudRouterAccessPointState] = None
     equinix_asn: Optional[StrictInt] = Field(default=None, description="Equinix ASN", alias="equinixAsn")

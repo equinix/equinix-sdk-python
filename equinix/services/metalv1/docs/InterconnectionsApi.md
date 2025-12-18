@@ -77,7 +77,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -161,7 +160,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->create_organization_interconnection: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -251,7 +249,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -334,7 +331,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->delete_interconnection: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -420,7 +416,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -504,7 +499,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -585,7 +579,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -663,7 +656,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->get_interconnection_port: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -747,7 +739,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -824,7 +815,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->get_virtual_circuit: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -911,7 +901,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -994,7 +983,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1072,7 +1060,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->list_interconnection_virtual_circuits: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1154,7 +1141,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->organization_list_interconnections: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1240,7 +1226,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->project_list_interconnections: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1333,7 +1318,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1418,7 +1402,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling InterconnectionsApi->update_virtual_circuit: %s\n" % e)
 ```
-
 
 
 ### Parameters

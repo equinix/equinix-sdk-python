@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +34,7 @@ class VrfVirtualCircuit(BaseModel):
     customer_ipv6: Optional[StrictStr] = Field(default=None, description="An IPv6 address from the subnet IPv6 that will be used on the Customer side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet IPv6 as the Metal IPv6. By default, the last usable IP address in the subnet IPv6 will be used.")
     description: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     md5: Optional[StrictStr] = Field(default=None, description="The MD5 password for the BGP peering in plaintext (not a checksum).")
     metal_ip: Optional[StrictStr] = Field(default=None, description="An IPv4 address from the subnet that will be used on the Metal side. This parameter is optional, but if supplied, we will use the other usable IP address in the subnet as the Customer IP. By default, the first usable IP address in the subnet will be used.")
     metal_ipv6: Optional[StrictStr] = Field(default=None, description="An IPv6 address from the subnet IPv6 that will be used on the Metal side. This parameter is optional, but if supplied, we will use the other usable IPv6 address in the subnet IPv6 as the Customer IP. By default, the first usable IPv6 address in the subnet IPv6 will be used.")

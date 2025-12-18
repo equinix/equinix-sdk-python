@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,10 +31,10 @@ class VlanVirtualCircuitCreateInput(BaseModel):
     href: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     nni_vlan: Optional[Annotated[int, Field(le=4094, strict=True, ge=2)]] = None
-    project_id: StrictStr
+    project_id: UUID
     speed: Optional[StrictStr] = Field(default=None, description="speed can be passed as integer number representing bps speed or string (e.g. '52m' or '100g' or '4 gbps')")
     tags: Optional[List[StrictStr]] = None
-    vnid: Optional[StrictStr] = Field(default=None, description="A Virtual Network record UUID or the VNID of a Metro Virtual Network in your project (sent as integer).")
+    vnid: Optional[UUID] = Field(default=None, description="A Virtual Network record UUID or the VNID of a Metro Virtual Network in your project (sent as integer).")
     __properties: ClassVar[List[str]] = ["description", "href", "name", "nni_vlan", "project_id", "speed", "tags", "vnid"]
 
     model_config = ConfigDict(

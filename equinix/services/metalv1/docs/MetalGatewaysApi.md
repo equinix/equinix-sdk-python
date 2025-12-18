@@ -69,7 +69,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -158,7 +157,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MetalGatewaysApi->create_metal_gateway: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -250,7 +248,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -337,7 +334,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -419,7 +415,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MetalGatewaysApi->find_metal_gateway_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -505,7 +500,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MetalGatewaysApi->find_metal_gateways_by_project: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -596,7 +590,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -678,7 +671,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MetalGatewaysApi->get_metal_gateway_elastic_ips: %s\n" % e)
 ```
-
 
 
 ### Parameters

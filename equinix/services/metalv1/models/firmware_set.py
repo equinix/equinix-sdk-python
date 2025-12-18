@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.attribute import Attribute
 from equinix.services.metalv1.models.component import Component
 from typing import Optional, Set
@@ -34,7 +35,7 @@ class FirmwareSet(BaseModel):
     href: Optional[StrictStr] = None
     name: StrictStr = Field(description="Firmware Set Name")
     updated_at: Optional[datetime] = Field(default=None, description="Datetime when the block was updated.")
-    uuid: StrictStr = Field(description="Firmware Set UUID")
+    uuid: UUID = Field(description="Firmware Set UUID")
     __properties: ClassVar[List[str]] = ["attributes", "component_firmware", "created_at", "href", "name", "updated_at", "uuid"]
 
     model_config = ConfigDict(

@@ -63,7 +63,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -144,7 +143,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -223,7 +221,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -296,7 +293,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling CapacityApi->find_capacity_for_metro: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -372,7 +368,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling CapacityApi->find_organization_capacity_per_facility: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -452,7 +447,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling CapacityApi->find_organization_capacity_per_metro: %s\n" % e)
 ```
-
 
 
 ### Parameters

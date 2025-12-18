@@ -13,8 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,7 +23,7 @@ class InternetAccess(BaseModel):
     """
     Internet Access Details
     """ # noqa: E501
-    uuid: Optional[StrictStr] = Field(default=None, description="Internet Access Service Identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Internet Access Service Identifier")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid"]
 

@@ -16,6 +16,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.service_token_connection import ServiceTokenConnection
@@ -33,7 +34,7 @@ class ServiceToken(BaseModel):
     type: Optional[ServiceTokenType] = None
     href: Optional[StrictStr] = Field(default=None, description="An absolute URL that is the subject of the link's context.")
     expiry: Optional[StrictInt] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned service token identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned service token identifier")
     issuer_side: Optional[StrictStr] = Field(default=None, description="information about token side", alias="issuerSide")
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided service token name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided service token description")

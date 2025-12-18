@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.direct_connection_ipv4 import DirectConnectionIpv4
 from equinix.services.fabricv4.models.direct_connection_ipv6 import DirectConnectionIpv6
@@ -34,7 +35,7 @@ class RoutingProtocolDirectData(BaseModel):
     direct_ipv4: Optional[DirectConnectionIpv4] = Field(default=None, alias="directIpv4")
     direct_ipv6: Optional[DirectConnectionIpv6] = Field(default=None, alias="directIpv6")
     href: Optional[StrictStr] = Field(default=None, description="Routing Protocol URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Routing protocol identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Routing protocol identifier")
     state: Optional[RoutingProtocolBGPDataState] = None
     operation: Optional[RoutingProtocolOperation] = None
     change: Optional[RoutingProtocolChange] = None

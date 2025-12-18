@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class BondPortData(BaseModel):
     BondPortData
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = Field(default=None, description="ID of the bonding port")
+    id: Optional[UUID] = Field(default=None, description="ID of the bonding port")
     name: Optional[StrictStr] = Field(default=None, description="Name of the port interface for the bond (\"bond0\")")
     __properties: ClassVar[List[str]] = ["href", "id", "name"]
 

@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.route_filter_state import RouteFilterState
 from equinix.services.fabricv4.models.route_filters_base_type import RouteFiltersBaseType
@@ -30,7 +31,7 @@ class RouteFiltersData(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Route filter URI")
     type: Optional[RouteFiltersBaseType] = None
-    uuid: Optional[StrictStr] = Field(default=None, description="Route filter identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Route filter identifier")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided connection description")
     state: Optional[RouteFilterState] = None

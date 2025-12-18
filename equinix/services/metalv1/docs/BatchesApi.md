@@ -62,7 +62,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -141,7 +140,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BatchesApi->delete_batch: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -225,7 +223,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -305,7 +302,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling BatchesApi->find_batches_by_project: %s\n" % e)
 ```
-
 
 
 ### Parameters

@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.bgp_action_states import BGPActionStates
 from equinix.services.fabricv4.models.bgp_actions import BGPActions
 from equinix.services.fabricv4.models.changelog import Changelog
@@ -26,7 +27,7 @@ class BGPActionData(BaseModel):
     BGPActionData
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Routing Protocol URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Routing protocol identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Routing protocol identifier")
     type: Optional[BGPActions] = None
     description: Optional[StrictStr] = Field(default=None, description="BGP action description")
     state: Optional[BGPActionStates] = None

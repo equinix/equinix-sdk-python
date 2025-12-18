@@ -19,10 +19,11 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
+from equinix.services.metalv1.models.aws_fabric_provider import AWSFabricProvider
 from equinix.services.metalv1.models.fabric_service_token import FabricServiceToken
 from equinix.services.metalv1.models.facility import Facility
 from equinix.services.metalv1.models.href import Href
-from equinix.services.metalv1.models.interconnection_fabric_provider import InterconnectionFabricProvider
 from equinix.services.metalv1.models.interconnection_port import InterconnectionPort
 from equinix.services.metalv1.models.metro import Metro
 from equinix.services.metalv1.models.organization import Organization
@@ -38,10 +39,10 @@ class Interconnection(BaseModel):
     contact_email: Optional[StrictStr] = None
     created_at: Optional[datetime] = None
     description: Optional[StrictStr] = None
-    fabric_provider: Optional[InterconnectionFabricProvider] = None
+    fabric_provider: Optional[AWSFabricProvider] = None
     facility: Optional[Facility] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     metro: Optional[Metro] = Field(default=None, description="The location of where the shared or Dedicated Port is located. For interconnections with Dedicated Ports,   this will be the location of the Dedicated Ports. For Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports   as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed),    this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here.")
     mode: Optional[StrictStr] = Field(default=None, description="The mode of the interconnection (only relevant to Dedicated Ports). Shared connections won't have this field. Can be either 'standard' or 'tunnel'.   The default mode of an interconnection on a Dedicated Port is 'standard'. The mode can only be changed when there are no associated virtual circuits on the interconnection.   In tunnel mode, an 802.1q tunnel is added to a port to send/receive double tagged packets from server instances.")
     name: Optional[StrictStr] = None
@@ -54,7 +55,7 @@ class Interconnection(BaseModel):
     speed: Optional[StrictInt] = Field(default=None, description="For interconnections on Dedicated Ports and shared connections, this represents the interconnection's speed in bps. For Fabric VCs, this field refers to the maximum speed of the interconnection in bps. This value will default to 10Gbps for Fabric VCs (Fabric Billed).")
     status: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
-    token: Optional[StrictStr] = Field(default=None, description="This token is used for shared interconnections to be used as the Fabric Token. This field is entirely deprecated.")
+    token: Optional[UUID] = Field(default=None, description="This token is used for shared interconnections to be used as the Fabric Token. This field is entirely deprecated.")
     type: Optional[StrictStr] = Field(default=None, description="The 'shared' type of interconnection refers to shared connections, or later also known as Fabric Virtual Connections (or Fabric VCs). The 'dedicated' type of interconnection refers to interconnections created with Dedicated Ports. The 'shared_port_vlan' type of interconnection refers to shared connections created without service tokens. The 'shared_port_vlan_to_csp' type of interconnection refers to connections created directly to a supported cloud service provider.")
     updated_at: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ["authorization_code", "contact_email", "created_at", "description", "fabric_provider", "facility", "href", "id", "metro", "mode", "name", "organization", "ports", "project", "redundancy", "requested_by", "service_tokens", "speed", "status", "tags", "token", "type", "updated_at"]
@@ -176,7 +177,7 @@ class Interconnection(BaseModel):
             "contact_email": obj.get("contact_email"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
-            "fabric_provider": InterconnectionFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
+            "fabric_provider": AWSFabricProvider.from_dict(obj["fabric_provider"]) if obj.get("fabric_provider") is not None else None,
             "facility": Facility.from_dict(obj["facility"]) if obj.get("facility") is not None else None,
             "href": obj.get("href"),
             "id": obj.get("id"),

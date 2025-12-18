@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.membership import Membership
 from equinix.services.metalv1.models.membership_input import MembershipInput
 
@@ -40,7 +40,7 @@ class MembershipsApi:
     @validate_call
     def delete_membership(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -95,8 +95,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -110,7 +109,7 @@ class MembershipsApi:
     @validate_call
     def delete_membership_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -165,8 +164,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -180,7 +178,7 @@ class MembershipsApi:
     @validate_call
     def delete_membership_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -235,8 +233,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -305,7 +302,7 @@ class MembershipsApi:
     @validate_call
     def find_membership_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -364,8 +361,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -379,7 +375,7 @@ class MembershipsApi:
     @validate_call
     def find_membership_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -438,8 +434,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -453,7 +448,7 @@ class MembershipsApi:
     @validate_call
     def find_membership_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -512,8 +507,7 @@ class MembershipsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -588,7 +582,7 @@ class MembershipsApi:
     @validate_call
     def update_membership(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         membership_input: Annotated[MembershipInput, Field(description="Membership to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -652,8 +646,7 @@ class MembershipsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -667,7 +660,7 @@ class MembershipsApi:
     @validate_call
     def update_membership_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         membership_input: Annotated[MembershipInput, Field(description="Membership to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -731,8 +724,7 @@ class MembershipsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -746,7 +738,7 @@ class MembershipsApi:
     @validate_call
     def update_membership_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Membership UUID")],
+        id: Annotated[UUID, Field(description="Membership UUID")],
         membership_input: Annotated[MembershipInput, Field(description="Membership to update")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -810,8 +802,7 @@ class MembershipsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

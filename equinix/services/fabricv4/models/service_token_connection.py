@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.service_token_connection_type import ServiceTokenConnectionType
 from equinix.services.fabricv4.models.service_token_side import ServiceTokenSide
 from typing import Optional, Set
@@ -27,7 +28,7 @@ class ServiceTokenConnection(BaseModel):
     """ # noqa: E501
     type: Optional[ServiceTokenConnectionType] = None
     href: Optional[StrictStr] = Field(default=None, description="An absolute URL that is the subject of the link's context.")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned connection identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned connection identifier")
     allow_remote_connection: Optional[StrictBool] = Field(default=False, description="Authorization to connect remotely", alias="allowRemoteConnection")
     allow_custom_bandwidth: Optional[StrictBool] = Field(default=False, description="Allow custom bandwidth value", alias="allowCustomBandwidth")
     bandwidth_limit: Optional[Annotated[int, Field(le=100000, strict=True, ge=0)]] = Field(default=None, description="Connection bandwidth limit in Mbps", alias="bandwidthLimit")

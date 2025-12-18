@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.batch import Batch
 from equinix.services.metalv1.models.batches_list import BatchesList
 from equinix.services.metalv1.models.instances_batch_create_input import InstancesBatchCreateInput
@@ -41,7 +41,7 @@ class BatchesApi:
     @validate_call
     def create_device_batch(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         instances_batch_create_input: Annotated[InstancesBatchCreateInput, Field(description="Batches to create")],
         _request_timeout: Union[
             None,
@@ -101,8 +101,7 @@ class BatchesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -116,7 +115,7 @@ class BatchesApi:
     @validate_call
     def create_device_batch_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         instances_batch_create_input: Annotated[InstancesBatchCreateInput, Field(description="Batches to create")],
         _request_timeout: Union[
             None,
@@ -176,8 +175,7 @@ class BatchesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -191,7 +189,7 @@ class BatchesApi:
     @validate_call
     def create_device_batch_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         instances_batch_create_input: Annotated[InstancesBatchCreateInput, Field(description="Batches to create")],
         _request_timeout: Union[
             None,
@@ -251,8 +249,7 @@ class BatchesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -337,7 +334,7 @@ class BatchesApi:
     @validate_call
     def delete_batch(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         remove_associated_instances: Annotated[Optional[StrictBool], Field(description="Delete all instances created from this batch")] = None,
         _request_timeout: Union[
             None,
@@ -395,8 +392,7 @@ class BatchesApi:
             '204': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -410,7 +406,7 @@ class BatchesApi:
     @validate_call
     def delete_batch_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         remove_associated_instances: Annotated[Optional[StrictBool], Field(description="Delete all instances created from this batch")] = None,
         _request_timeout: Union[
             None,
@@ -468,8 +464,7 @@ class BatchesApi:
             '204': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -483,7 +478,7 @@ class BatchesApi:
     @validate_call
     def delete_batch_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         remove_associated_instances: Annotated[Optional[StrictBool], Field(description="Delete all instances created from this batch")] = None,
         _request_timeout: Union[
             None,
@@ -541,8 +536,7 @@ class BatchesApi:
             '204': None,
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -616,7 +610,7 @@ class BatchesApi:
     @validate_call
     def find_batch_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -674,8 +668,7 @@ class BatchesApi:
             '200': "Batch",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -689,7 +682,7 @@ class BatchesApi:
     @validate_call
     def find_batch_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -747,8 +740,7 @@ class BatchesApi:
             '200': "Batch",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -762,7 +754,7 @@ class BatchesApi:
     @validate_call
     def find_batch_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Batch UUID")],
+        id: Annotated[UUID, Field(description="Batch UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -820,8 +812,7 @@ class BatchesApi:
             '200': "Batch",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -896,7 +887,7 @@ class BatchesApi:
     @validate_call
     def find_batches_by_project(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -955,8 +946,7 @@ class BatchesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -970,7 +960,7 @@ class BatchesApi:
     @validate_call
     def find_batches_by_project_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1029,8 +1019,7 @@ class BatchesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1044,7 +1033,7 @@ class BatchesApi:
     @validate_call
     def find_batches_by_project_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -1103,8 +1092,7 @@ class BatchesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from equinix.services.metalv1.models.plan import Plan
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,11 +31,11 @@ class SelfServiceReservationItemResponse(BaseModel):
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
     metro_code: Optional[StrictStr] = None
-    metro_id: Optional[StrictStr] = None
+    metro_id: Optional[UUID] = None
     metro_name: Optional[StrictStr] = None
     plan: Optional[Plan] = None
     plan_categories: Optional[List[StrictStr]] = None
-    plan_id: Optional[StrictStr] = None
+    plan_id: Optional[UUID] = None
     plan_name: Optional[StrictStr] = None
     plan_slug: Optional[StrictStr] = None
     quantity: Optional[StrictInt] = None

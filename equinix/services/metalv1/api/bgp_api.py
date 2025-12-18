@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.bgp_config import BgpConfig
 from equinix.services.metalv1.models.bgp_config_request_input import BgpConfigRequestInput
 from equinix.services.metalv1.models.bgp_session import BgpSession
@@ -43,7 +43,7 @@ class BGPApi:
     @validate_call
     def delete_bgp_session(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -98,8 +98,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -113,7 +112,7 @@ class BGPApi:
     @validate_call
     def delete_bgp_session_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -168,8 +167,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -183,7 +181,7 @@ class BGPApi:
     @validate_call
     def delete_bgp_session_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -238,8 +236,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -308,7 +305,7 @@ class BGPApi:
     @validate_call
     def find_bgp_config_by_project(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -367,8 +364,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -382,7 +378,7 @@ class BGPApi:
     @validate_call
     def find_bgp_config_by_project_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -441,8 +437,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -456,7 +451,7 @@ class BGPApi:
     @validate_call
     def find_bgp_config_by_project_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -515,8 +510,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -591,7 +585,7 @@ class BGPApi:
     @validate_call
     def find_bgp_session_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -650,8 +644,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -665,7 +658,7 @@ class BGPApi:
     @validate_call
     def find_bgp_session_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -724,8 +717,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -739,7 +731,7 @@ class BGPApi:
     @validate_call
     def find_bgp_session_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
             None,
@@ -798,8 +790,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -874,7 +865,7 @@ class BGPApi:
     @validate_call
     def find_global_bgp_ranges(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -929,8 +920,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -944,7 +934,7 @@ class BGPApi:
     @validate_call
     def find_global_bgp_ranges_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -999,8 +989,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1014,7 +1003,7 @@ class BGPApi:
     @validate_call
     def find_global_bgp_ranges_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1069,8 +1058,7 @@ class BGPApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1139,7 +1127,7 @@ class BGPApi:
     @validate_call
     def find_project_bgp_sessions(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1193,8 +1181,7 @@ class BGPApi:
             '200': "BgpSessionList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1208,7 +1195,7 @@ class BGPApi:
     @validate_call
     def find_project_bgp_sessions_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1262,8 +1249,7 @@ class BGPApi:
             '200': "BgpSessionList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1277,7 +1263,7 @@ class BGPApi:
     @validate_call
     def find_project_bgp_sessions_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1331,8 +1317,7 @@ class BGPApi:
             '200': "BgpSessionList",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1401,7 +1386,7 @@ class BGPApi:
     @validate_call
     def request_bgp_config(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         bgp_config_request_input: Annotated[BgpConfigRequestInput, Field(description="BGP config Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1465,8 +1450,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1480,7 +1464,7 @@ class BGPApi:
     @validate_call
     def request_bgp_config_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         bgp_config_request_input: Annotated[BgpConfigRequestInput, Field(description="BGP config Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1544,8 +1528,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1559,7 +1542,7 @@ class BGPApi:
     @validate_call
     def request_bgp_config_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         bgp_config_request_input: Annotated[BgpConfigRequestInput, Field(description="BGP config Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1623,8 +1606,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1715,7 +1697,7 @@ class BGPApi:
     @validate_call
     def update_bgp_session(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         body: Annotated[StrictBool, Field(description="Default route")],
         _request_timeout: Union[
             None,
@@ -1775,8 +1757,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1790,7 +1771,7 @@ class BGPApi:
     @validate_call
     def update_bgp_session_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         body: Annotated[StrictBool, Field(description="Default route")],
         _request_timeout: Union[
             None,
@@ -1850,8 +1831,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1865,7 +1845,7 @@ class BGPApi:
     @validate_call
     def update_bgp_session_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="BGP session UUID")],
+        id: Annotated[UUID, Field(description="BGP session UUID")],
         body: Annotated[StrictBool, Field(description="Default route")],
         _request_timeout: Union[
             None,
@@ -1925,8 +1905,7 @@ class BGPApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

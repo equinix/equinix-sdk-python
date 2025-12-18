@@ -15,6 +15,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.connection_route_aggregation_data import ConnectionRouteAggregationData
 from equinix.services.fabricv4.models.get_all_connection_route_aggregations_response import GetAllConnectionRouteAggregationsResponse
 from equinix.services.fabricv4.models.get_route_aggregation_get_connections_response import GetRouteAggregationGetConnectionsResponse
@@ -2059,7 +2060,7 @@ class RouteAggregationsApi:
     def get_route_aggregation_change_by_uuid(
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2135,7 +2136,7 @@ class RouteAggregationsApi:
     def get_route_aggregation_change_by_uuid_with_http_info(
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2211,7 +2212,7 @@ class RouteAggregationsApi:
     def get_route_aggregation_change_by_uuid_without_preload_content(
         self,
         route_aggregation_id: Annotated[StrictStr, Field(description="Route Aggregations Id")],
-        change_id: Annotated[StrictStr, Field(description="Routing Protocol Change UUID")],
+        change_id: Annotated[UUID, Field(description="Routing Protocol Change UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

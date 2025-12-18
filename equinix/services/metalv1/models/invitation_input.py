@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,8 +29,8 @@ class InvitationInput(BaseModel):
     href: Optional[StrictStr] = None
     invitee: StrictStr
     message: Optional[StrictStr] = None
-    organization_id: Optional[StrictStr] = None
-    projects_ids: Optional[List[StrictStr]] = None
+    organization_id: Optional[UUID] = None
+    projects_ids: Optional[List[UUID]] = None
     roles: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ["href", "invitee", "message", "organization_id", "projects_ids", "roles"]
 

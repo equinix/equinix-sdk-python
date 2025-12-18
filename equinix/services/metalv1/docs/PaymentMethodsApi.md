@@ -56,7 +56,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -135,7 +134,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PaymentMethodsApi->find_payment_method_by_id: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -219,7 +217,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PaymentMethodsApi->update_payment_method: %s\n" % e)
 ```
-
 
 
 ### Parameters

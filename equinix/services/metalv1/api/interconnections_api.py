@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
 from equinix.services.metalv1.models.interconnection import Interconnection
 from equinix.services.metalv1.models.interconnection_list import InterconnectionList
@@ -50,8 +50,8 @@ class InterconnectionsApi:
     @validate_call
     def create_interconnection_port_virtual_circuit(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         virtual_circuit_create_input: Annotated[VirtualCircuitCreateInput, Field(description="Virtual Circuit details")],
         _request_timeout: Union[
             None,
@@ -112,8 +112,7 @@ class InterconnectionsApi:
             '201': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -127,8 +126,8 @@ class InterconnectionsApi:
     @validate_call
     def create_interconnection_port_virtual_circuit_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         virtual_circuit_create_input: Annotated[VirtualCircuitCreateInput, Field(description="Virtual Circuit details")],
         _request_timeout: Union[
             None,
@@ -189,8 +188,7 @@ class InterconnectionsApi:
             '201': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -204,8 +202,8 @@ class InterconnectionsApi:
     @validate_call
     def create_interconnection_port_virtual_circuit_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         virtual_circuit_create_input: Annotated[VirtualCircuitCreateInput, Field(description="Virtual Circuit details")],
         _request_timeout: Union[
             None,
@@ -266,8 +264,7 @@ class InterconnectionsApi:
             '201': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -355,7 +352,7 @@ class InterconnectionsApi:
     @validate_call
     def create_organization_interconnection(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -422,8 +419,7 @@ class InterconnectionsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -437,7 +433,7 @@ class InterconnectionsApi:
     @validate_call
     def create_organization_interconnection_with_http_info(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -504,8 +500,7 @@ class InterconnectionsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -519,7 +514,7 @@ class InterconnectionsApi:
     @validate_call
     def create_organization_interconnection_without_preload_content(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -586,8 +581,7 @@ class InterconnectionsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -684,7 +678,7 @@ class InterconnectionsApi:
     @validate_call
     def create_project_interconnection(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -750,8 +744,7 @@ class InterconnectionsApi:
             '201': "Interconnection",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -765,7 +758,7 @@ class InterconnectionsApi:
     @validate_call
     def create_project_interconnection_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -831,8 +824,7 @@ class InterconnectionsApi:
             '201': "Interconnection",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -846,7 +838,7 @@ class InterconnectionsApi:
     @validate_call
     def create_project_interconnection_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         create_organization_interconnection_request: Annotated[CreateOrganizationInterconnectionRequest, Field(description="Dedicated port or shared interconnection (also known as Fabric VC) creation request.  Shared interconnections can be created with the following request types: * `VlanCSPConnectionCreateInput` creates a layer 2 interconnection directly to your Cloud Service Provider. * `SharedPortVCVlanCreateInput` creates a layer 2 interconnection that you can finish configuration in Fabric. For new connections, this type is preferred to `VlanFabricVCCreateInput`. * `VlanFabricVCCreateInput` creates a layer 2 interconnection that you can connect through Fabric with a service token. * `VrfFabricVCCreateInput` creates a layer 3 interconnection that you can connect through Fabric with a service token. ")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -912,8 +904,7 @@ class InterconnectionsApi:
             '201': "Interconnection",
             '403': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1010,7 +1001,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_interconnection(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1072,8 +1063,7 @@ class InterconnectionsApi:
             '202': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1087,7 +1077,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_interconnection_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1149,8 +1139,7 @@ class InterconnectionsApi:
             '202': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1164,7 +1153,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_interconnection_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1226,8 +1215,7 @@ class InterconnectionsApi:
             '202': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1308,7 +1296,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_virtual_circuit(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1370,8 +1358,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1385,7 +1372,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_virtual_circuit_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1447,8 +1434,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1462,7 +1448,7 @@ class InterconnectionsApi:
     @validate_call
     def delete_virtual_circuit_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1524,8 +1510,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1606,7 +1591,7 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1668,8 +1653,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1683,7 +1667,7 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1745,8 +1729,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1760,7 +1743,7 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -1822,8 +1805,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1954,8 +1936,7 @@ class InterconnectionsApi:
             '200': "InterconnectionMetroList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2019,8 +2000,7 @@ class InterconnectionsApi:
             '200': "InterconnectionMetroList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2084,8 +2064,7 @@ class InterconnectionsApi:
             '200': "InterconnectionMetroList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2151,8 +2130,8 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection_port(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2217,8 +2196,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPort",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2232,8 +2210,8 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection_port_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2298,8 +2276,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPort",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2313,8 +2290,8 @@ class InterconnectionsApi:
     @validate_call
     def get_interconnection_port_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        id: Annotated[StrictStr, Field(description="Port UUID")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        id: Annotated[UUID, Field(description="Port UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2379,8 +2356,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPort",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2514,8 +2490,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPricingList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2579,8 +2554,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPricingList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2644,8 +2618,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPricingList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2711,7 +2684,7 @@ class InterconnectionsApi:
     @validate_call
     def get_virtual_circuit(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2773,8 +2746,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2788,7 +2760,7 @@ class InterconnectionsApi:
     @validate_call
     def get_virtual_circuit_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2850,8 +2822,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2865,7 +2836,7 @@ class InterconnectionsApi:
     @validate_call
     def get_virtual_circuit_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -2927,8 +2898,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3009,8 +2979,8 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_port_virtual_circuits(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3075,8 +3045,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3090,8 +3059,8 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_port_virtual_circuits_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3156,8 +3125,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3171,8 +3139,8 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_port_virtual_circuits_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
-        port_id: Annotated[StrictStr, Field(description="UUID of the interconnection port")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
+        port_id: Annotated[UUID, Field(description="UUID of the interconnection port")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3237,8 +3205,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3322,7 +3289,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_ports(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3376,8 +3343,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPortList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3391,7 +3357,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_ports_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3445,8 +3411,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPortList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3460,7 +3425,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_ports_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3514,8 +3479,7 @@ class InterconnectionsApi:
             '200': "InterconnectionPortList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3584,7 +3548,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_virtual_circuits(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3638,8 +3602,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3653,7 +3616,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_virtual_circuits_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3707,8 +3670,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3722,7 +3684,7 @@ class InterconnectionsApi:
     @validate_call
     def list_interconnection_virtual_circuits_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="UUID of the interconnection")],
+        connection_id: Annotated[UUID, Field(description="UUID of the interconnection")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3776,8 +3738,7 @@ class InterconnectionsApi:
             '200': "VirtualCircuitList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3846,7 +3807,7 @@ class InterconnectionsApi:
     @validate_call
     def organization_list_interconnections(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3908,8 +3869,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3923,7 +3883,7 @@ class InterconnectionsApi:
     @validate_call
     def organization_list_interconnections_with_http_info(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -3985,8 +3945,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4000,7 +3959,7 @@ class InterconnectionsApi:
     @validate_call
     def organization_list_interconnections_without_preload_content(
         self,
-        organization_id: Annotated[StrictStr, Field(description="UUID of the organization")],
+        organization_id: Annotated[UUID, Field(description="UUID of the organization")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -4062,8 +4021,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4142,7 +4100,7 @@ class InterconnectionsApi:
 
 
     @validate_call
-    def project_list_interconnections_all_pages(self, project_id : Annotated[StrictStr, Field(description="UUID of the project")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> InterconnectionList:  # noqa: E501
+    def project_list_interconnections_all_pages(self, project_id : Annotated[UUID, Field(description="UUID of the project")], include : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None, exclude : Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None, per_page : Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None, **kwargs) -> InterconnectionList:  # noqa: E501
         """List project connections  # noqa: E501
 
         This method is the same as project_list_interconnections, but fetches resources from all the pages.
@@ -4199,7 +4157,7 @@ class InterconnectionsApi:
     @validate_call
     def project_list_interconnections(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -4269,8 +4227,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4284,7 +4241,7 @@ class InterconnectionsApi:
     @validate_call
     def project_list_interconnections_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -4354,8 +4311,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4369,7 +4325,7 @@ class InterconnectionsApi:
     @validate_call
     def project_list_interconnections_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="UUID of the project")],
+        project_id: Annotated[UUID, Field(description="UUID of the project")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
@@ -4439,8 +4395,7 @@ class InterconnectionsApi:
             '200': "InterconnectionList",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4531,7 +4486,7 @@ class InterconnectionsApi:
     @validate_call
     def update_interconnection(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         interconnection_update_input: Annotated[InterconnectionUpdateInput, Field(description="Updated interconnection details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4597,8 +4552,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4612,7 +4566,7 @@ class InterconnectionsApi:
     @validate_call
     def update_interconnection_with_http_info(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         interconnection_update_input: Annotated[InterconnectionUpdateInput, Field(description="Updated interconnection details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4678,8 +4632,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4693,7 +4646,7 @@ class InterconnectionsApi:
     @validate_call
     def update_interconnection_without_preload_content(
         self,
-        connection_id: Annotated[StrictStr, Field(description="Interconnection UUID")],
+        connection_id: Annotated[UUID, Field(description="Interconnection UUID")],
         interconnection_update_input: Annotated[InterconnectionUpdateInput, Field(description="Updated interconnection details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4759,8 +4712,7 @@ class InterconnectionsApi:
             '200': "Interconnection",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4857,7 +4809,7 @@ class InterconnectionsApi:
     @validate_call
     def update_virtual_circuit(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         virtual_circuit_update_input: Annotated[VirtualCircuitUpdateInput, Field(description="Updated Virtual Circuit details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -4924,8 +4876,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4939,7 +4890,7 @@ class InterconnectionsApi:
     @validate_call
     def update_virtual_circuit_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         virtual_circuit_update_input: Annotated[VirtualCircuitUpdateInput, Field(description="Updated Virtual Circuit details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -5006,8 +4957,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5021,7 +4971,7 @@ class InterconnectionsApi:
     @validate_call
     def update_virtual_circuit_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Virtual Circuit UUID")],
+        id: Annotated[UUID, Field(description="Virtual Circuit UUID")],
         virtual_circuit_update_input: Annotated[VirtualCircuitUpdateInput, Field(description="Updated Virtual Circuit details")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -5088,8 +5038,7 @@ class InterconnectionsApi:
             '202': "VirtualCircuit",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

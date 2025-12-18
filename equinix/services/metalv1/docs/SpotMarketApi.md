@@ -65,7 +65,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -143,7 +142,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SpotMarketApi->delete_spot_market_request: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -228,7 +226,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -308,7 +305,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SpotMarketApi->find_spot_market_prices: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -395,7 +391,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -480,7 +475,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -560,7 +554,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling SpotMarketApi->list_spot_market_requests: %s\n" % e)
 ```
-
 
 
 ### Parameters

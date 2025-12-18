@@ -60,7 +60,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -142,7 +141,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling UsagesApi->find_project_usage: %s\n" % e)
 ```
-
 
 
 ### Parameters

@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.stream_state import StreamState
@@ -27,7 +28,7 @@ class Stream(BaseModel):
     Stream object
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Stream URI")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix-assigned access point identifier")
     type: Optional[StreamType] = None
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")

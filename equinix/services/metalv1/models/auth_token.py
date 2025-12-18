@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.auth_token_project import AuthTokenProject
 from equinix.services.metalv1.models.auth_token_user import AuthTokenUser
 from typing import Optional, Set
@@ -31,7 +32,7 @@ class AuthToken(BaseModel):
     created_at: Optional[datetime] = None
     description: Optional[StrictStr] = Field(default=None, description="Available only for API keys")
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     project: Optional[AuthTokenProject] = None
     read_only: Optional[StrictBool] = None
     token: Optional[StrictStr] = None

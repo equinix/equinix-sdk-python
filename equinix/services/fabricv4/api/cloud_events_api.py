@@ -13,9 +13,10 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.cloud_event import CloudEvent
 from equinix.services.fabricv4.models.cloud_event_asset_type import CloudEventAssetType
 from equinix.services.fabricv4.models.cloud_event_search_request import CloudEventSearchRequest
@@ -42,7 +43,7 @@ class CloudEventsApi:
     @validate_call
     def get_cloud_event(
         self,
-        cloud_event_id: Annotated[StrictStr, Field(description="Cloud Event UUID")],
+        cloud_event_id: Annotated[UUID, Field(description="Cloud Event UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -113,7 +114,7 @@ class CloudEventsApi:
     @validate_call
     def get_cloud_event_with_http_info(
         self,
-        cloud_event_id: Annotated[StrictStr, Field(description="Cloud Event UUID")],
+        cloud_event_id: Annotated[UUID, Field(description="Cloud Event UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -184,7 +185,7 @@ class CloudEventsApi:
     @validate_call
     def get_cloud_event_without_preload_content(
         self,
-        cloud_event_id: Annotated[StrictStr, Field(description="Cloud Event UUID")],
+        cloud_event_id: Annotated[UUID, Field(description="Cloud Event UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -316,7 +317,7 @@ class CloudEventsApi:
     def get_cloud_event_by_asset_id(
         self,
         asset: Annotated[CloudEventAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
@@ -407,7 +408,7 @@ class CloudEventsApi:
     def get_cloud_event_by_asset_id_with_http_info(
         self,
         asset: Annotated[CloudEventAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
@@ -498,7 +499,7 @@ class CloudEventsApi:
     def get_cloud_event_by_asset_id_without_preload_content(
         self,
         asset: Annotated[CloudEventAssetType, Field(description="asset")],
-        asset_id: Annotated[StrictStr, Field(description="asset UUID")],
+        asset_id: Annotated[UUID, Field(description="asset UUID")],
         from_date_time: Annotated[Optional[datetime], Field(description="Start date and time")] = None,
         to_date_time: Annotated[Optional[datetime], Field(description="End date and time")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,

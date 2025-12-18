@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.fabricv4.models.physical_port_settings import PhysicalPortSettings
 from equinix.services.fabricv4.models.physical_port_type import PhysicalPortType
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
@@ -42,7 +43,7 @@ class PhysicalPort(BaseModel):
     account: Optional[SimplifiedAccount] = None
     interface_speed: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Physical Port Speed in Mbps", alias="interfaceSpeed")
     interface_type: Optional[StrictStr] = Field(default=None, description="Physical Port Interface Type", alias="interfaceType")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for physical port identifier")
+    uuid: Optional[UUID] = Field(default=None, description="Equinix assigned response attribute for physical port identifier")
     tether: Optional[PortTether] = None
     demarcation_point: Optional[PortDemarcationPoint] = Field(default=None, alias="demarcationPoint")
     settings: Optional[PhysicalPortSettings] = None

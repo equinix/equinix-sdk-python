@@ -57,7 +57,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -130,7 +129,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OperatingSystemsApi->find_operating_systems: %s\n" % e)
 ```
-
 
 
 ### Parameters

@@ -57,7 +57,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 This endpoint does not need any parameter.
@@ -131,7 +130,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling MetrosApi->get_metro: %s\n" % e)
 ```
-
 
 
 ### Parameters

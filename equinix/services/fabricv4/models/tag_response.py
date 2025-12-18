@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +24,7 @@ class TagResponse(BaseModel):
     Equinix Fabric Tag Response Object
     """ # noqa: E501
     href: Optional[StrictStr] = None
-    uuid: Optional[StrictStr] = None
+    uuid: Optional[UUID] = None
     type: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     display_name: Optional[StrictStr] = Field(default=None, alias="displayName")

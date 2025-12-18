@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,7 +30,7 @@ class PortVlanAssignment(BaseModel):
     """ # noqa: E501
     created_at: Optional[datetime] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     native: Optional[StrictBool] = None
     port: Optional[Href] = None
     state: Optional[StrictStr] = None

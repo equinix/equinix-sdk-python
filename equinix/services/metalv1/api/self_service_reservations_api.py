@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.create_self_service_reservation_request import CreateSelfServiceReservationRequest
 from equinix.services.metalv1.models.self_service_reservation_list import SelfServiceReservationList
 from equinix.services.metalv1.models.self_service_reservation_response import SelfServiceReservationResponse
@@ -41,7 +41,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def create_self_service_reservation(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_self_service_reservation_request: Annotated[CreateSelfServiceReservationRequest, Field(description="reservation to create")],
         _request_timeout: Union[
             None,
@@ -99,8 +99,7 @@ class SelfServiceReservationsApi:
             '201': "SelfServiceReservationResponse",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -114,7 +113,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def create_self_service_reservation_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_self_service_reservation_request: Annotated[CreateSelfServiceReservationRequest, Field(description="reservation to create")],
         _request_timeout: Union[
             None,
@@ -172,8 +171,7 @@ class SelfServiceReservationsApi:
             '201': "SelfServiceReservationResponse",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -187,7 +185,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def create_self_service_reservation_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         create_self_service_reservation_request: Annotated[CreateSelfServiceReservationRequest, Field(description="reservation to create")],
         _request_timeout: Union[
             None,
@@ -245,8 +243,7 @@ class SelfServiceReservationsApi:
             '201': "SelfServiceReservationResponse",
             '401': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -331,8 +328,8 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservation(
         self,
-        id: Annotated[StrictStr, Field(description="Reservation short_id")],
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Reservation short_id")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -389,8 +386,7 @@ class SelfServiceReservationsApi:
             '200': "SelfServiceReservationResponse",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -404,8 +400,8 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservation_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Reservation short_id")],
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Reservation short_id")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -462,8 +458,7 @@ class SelfServiceReservationsApi:
             '200': "SelfServiceReservationResponse",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -477,8 +472,8 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservation_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Reservation short_id")],
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Reservation short_id")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -535,8 +530,7 @@ class SelfServiceReservationsApi:
             '200': "SelfServiceReservationResponse",
             '401': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -608,7 +602,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservations(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter reservations by items category")] = None,
@@ -673,8 +667,7 @@ class SelfServiceReservationsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SelfServiceReservationList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -688,7 +681,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservations_with_http_info(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter reservations by items category")] = None,
@@ -753,8 +746,7 @@ class SelfServiceReservationsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SelfServiceReservationList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -768,7 +760,7 @@ class SelfServiceReservationsApi:
     @validate_call
     def find_self_service_reservations_without_preload_content(
         self,
-        project_id: Annotated[StrictStr, Field(description="Project UUID")],
+        project_id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[Annotated[int, Field(le=100000, strict=True, ge=1)]], Field(description="Page to return")] = None,
         per_page: Annotated[Optional[Annotated[int, Field(le=1000, strict=True, ge=1)]], Field(description="Items returned per page")] = None,
         categories: Annotated[Optional[List[StrictStr]], Field(description="Filter reservations by items category")] = None,
@@ -833,8 +825,7 @@ class SelfServiceReservationsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "SelfServiceReservationList",
             '401': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

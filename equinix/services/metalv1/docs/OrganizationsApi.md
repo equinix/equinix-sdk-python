@@ -76,7 +76,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -160,7 +159,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->create_organization_invitation: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -250,7 +248,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -336,7 +333,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -414,7 +410,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->delete_organization: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -495,7 +490,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->find_operating_systems_by_organization: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -581,7 +575,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -659,7 +652,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->find_organization_customdata: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -743,7 +735,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->find_organization_invitations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -830,7 +821,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->find_organization_payment_methods: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -920,7 +910,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1008,7 +997,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1092,7 +1080,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->find_organizations: %s\n" % e)
 ```
-
 
 
 ### Parameters
@@ -1183,7 +1170,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 ```
 
 
-
 ### Parameters
 
 
@@ -1268,7 +1254,6 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling OrganizationsApi->update_organization: %s\n" % e)
 ```
-
 
 
 ### Parameters

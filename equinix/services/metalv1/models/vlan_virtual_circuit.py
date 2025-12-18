@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from equinix.services.metalv1.models.project import Project
 from typing import Optional, Set
@@ -33,7 +34,7 @@ class VlanVirtualCircuit(BaseModel):
     created_at: Optional[datetime] = None
     description: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     name: Optional[StrictStr] = None
     nni_vlan: Optional[StrictInt] = None
     port: Optional[InterconnectionPort] = None

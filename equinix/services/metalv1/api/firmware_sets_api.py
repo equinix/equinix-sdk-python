@@ -9,15 +9,15 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictInt
 from typing import Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.firmware_set_list_response import FirmwareSetListResponse
 
 from equinix.services.metalv1.api_client import ApiClient, RequestSerialized
@@ -39,7 +39,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_organization_firmware_sets(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -102,8 +102,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -117,7 +116,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_organization_firmware_sets_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -180,8 +179,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -195,7 +193,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_organization_firmware_sets_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Organization UUID")],
+        id: Annotated[UUID, Field(description="Organization UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -258,8 +256,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -338,7 +335,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_project_firmware_sets(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -401,8 +398,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -416,7 +412,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_project_firmware_sets_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -479,8 +475,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -494,7 +489,7 @@ class FirmwareSetsApi:
     @validate_call
     def get_project_firmware_sets_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         page: Annotated[Optional[StrictInt], Field(description="page number to return")] = None,
         per_page: Annotated[Optional[StrictInt], Field(description="items returned per page.")] = None,
         _request_timeout: Union[
@@ -557,8 +552,7 @@ class FirmwareSetsApi:
             '401': None,
             '404': None,
             '500': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

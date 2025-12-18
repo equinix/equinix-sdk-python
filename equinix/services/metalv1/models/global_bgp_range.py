@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from equinix.services.metalv1.models.href import Href
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +29,7 @@ class GlobalBgpRange(BaseModel):
     """ # noqa: E501
     address_family: Optional[StrictInt] = None
     href: Optional[StrictStr] = None
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     project: Optional[Href] = None
     range: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["address_family", "href", "id", "project", "range"]

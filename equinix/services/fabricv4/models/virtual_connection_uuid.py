@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,7 +25,7 @@ class VirtualConnectionUuid(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Connection URI")
     type: Optional[StrictStr] = Field(default=None, description="Connection Type")
-    uuid: StrictStr = Field(description="Connection UUID.")
+    uuid: UUID = Field(description="Connection UUID.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "type", "uuid"]
 

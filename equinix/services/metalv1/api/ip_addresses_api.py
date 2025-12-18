@@ -9,7 +9,6 @@
 
     Do not edit the class manually.
 """  # noqa: E501
-
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -18,6 +17,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
+from uuid import UUID
 from equinix.services.metalv1.models.find_ip_address_by_id200_response import FindIPAddressById200Response
 from equinix.services.metalv1.models.ip_assignment_update_input import IPAssignmentUpdateInput
 from equinix.services.metalv1.models.ip_availabilities_list import IPAvailabilitiesList
@@ -44,7 +44,7 @@ class IPAddressesApi:
     @validate_call
     def delete_ip_address(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -99,8 +99,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -114,7 +113,7 @@ class IPAddressesApi:
     @validate_call
     def delete_ip_address_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -169,8 +168,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -184,7 +182,7 @@ class IPAddressesApi:
     @validate_call
     def delete_ip_address_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -239,8 +237,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -309,7 +306,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_by_id(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -372,8 +369,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -387,7 +383,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_by_id_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -450,8 +446,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -465,7 +460,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_by_id_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -528,8 +523,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -610,7 +604,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_customdata(
         self,
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -665,8 +659,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -680,7 +673,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_customdata_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -735,8 +728,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -750,7 +742,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_address_customdata_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Ip Reservation UUID")],
+        id: Annotated[UUID, Field(description="Ip Reservation UUID")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -805,8 +797,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -875,7 +866,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_availabilities(
         self,
-        id: Annotated[StrictStr, Field(description="IP Reservation UUID")],
+        id: Annotated[UUID, Field(description="IP Reservation UUID")],
         cidr: Annotated[StrictStr, Field(description="Size of subnets in bits")],
         _request_timeout: Union[
             None,
@@ -934,8 +925,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -949,7 +939,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_availabilities_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="IP Reservation UUID")],
+        id: Annotated[UUID, Field(description="IP Reservation UUID")],
         cidr: Annotated[StrictStr, Field(description="Size of subnets in bits")],
         _request_timeout: Union[
             None,
@@ -1008,8 +998,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1023,7 +1012,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_availabilities_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="IP Reservation UUID")],
+        id: Annotated[UUID, Field(description="IP Reservation UUID")],
         cidr: Annotated[StrictStr, Field(description="Size of subnets in bits")],
         _request_timeout: Union[
             None,
@@ -1082,8 +1071,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1157,7 +1145,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_reservations(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter project IP reservations by reservation type")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1228,8 +1216,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1243,7 +1230,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_reservations_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter project IP reservations by reservation type")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1314,8 +1301,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1329,7 +1315,7 @@ class IPAddressesApi:
     @validate_call
     def find_ip_reservations_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         types: Annotated[Optional[List[StrictStr]], Field(description="Filter project IP reservations by reservation type")] = None,
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1400,8 +1386,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1493,7 +1478,7 @@ class IPAddressesApi:
     @validate_call
     def request_ip_reservation(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         request_ip_reservation_request: Annotated[RequestIPReservationRequest, Field(description="IP Reservation Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1561,8 +1546,7 @@ class IPAddressesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1576,7 +1560,7 @@ class IPAddressesApi:
     @validate_call
     def request_ip_reservation_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         request_ip_reservation_request: Annotated[RequestIPReservationRequest, Field(description="IP Reservation Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1644,8 +1628,7 @@ class IPAddressesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1659,7 +1642,7 @@ class IPAddressesApi:
     @validate_call
     def request_ip_reservation_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="Project UUID")],
+        id: Annotated[UUID, Field(description="Project UUID")],
         request_ip_reservation_request: Annotated[RequestIPReservationRequest, Field(description="IP Reservation Request to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
@@ -1727,8 +1710,7 @@ class IPAddressesApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1825,7 +1807,7 @@ class IPAddressesApi:
     @validate_call
     def update_ip_address(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         ip_assignment_update_input: Optional[IPAssignmentUpdateInput] = None,
@@ -1892,8 +1874,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1907,7 +1888,7 @@ class IPAddressesApi:
     @validate_call
     def update_ip_address_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         ip_assignment_update_input: Optional[IPAssignmentUpdateInput] = None,
@@ -1974,8 +1955,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1989,7 +1969,7 @@ class IPAddressesApi:
     @validate_call
     def update_ip_address_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="IP Address UUID")],
+        id: Annotated[UUID, Field(description="IP Address UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         ip_assignment_update_input: Optional[IPAssignmentUpdateInput] = None,
@@ -2056,8 +2036,7 @@ class IPAddressesApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }
-        response_data = self.api_client.call_api(
+        }        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
