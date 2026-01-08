@@ -9,6 +9,7 @@
 
     Do not edit the class manually.
 """  # noqa: E501
+
 import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -110,7 +111,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -192,7 +194,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -274,7 +277,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -304,7 +308,9 @@ class VLANsApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -327,11 +333,12 @@ class VLANsApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
@@ -435,7 +442,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -513,7 +521,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -591,7 +600,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -620,7 +630,9 @@ class VLANsApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -641,11 +653,12 @@ class VLANsApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -743,7 +756,8 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -828,7 +842,8 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -913,7 +928,8 @@ class VLANsApi:
             '401': "Error",
             '403': "Error",
             '404': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -944,7 +960,9 @@ class VLANsApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -973,11 +991,12 @@ class VLANsApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1068,7 +1087,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1146,7 +1166,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1224,7 +1245,8 @@ class VLANsApi:
             '403': "Error",
             '404': "Error",
             '422': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1253,7 +1275,9 @@ class VLANsApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1274,11 +1298,12 @@ class VLANsApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
 
         # authentication setting
@@ -1374,7 +1399,8 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1457,7 +1483,8 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1540,7 +1567,8 @@ class VLANsApi:
             '404': "Error",
             '422': "Error",
             '429': "Error",
-        }        response_data = self.api_client.call_api(
+        }
+        response_data = self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1570,7 +1598,9 @@ class VLANsApi:
         _query_params: List[Tuple[str, str]] = []
         _header_params: Dict[str, Optional[str]] = _headers or {}
         _form_params: List[Tuple[str, str]] = []
-        _files: Dict[str, str] = {}
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
         _body_params: Optional[bytes] = None
 
         # process the path parameters
@@ -1593,11 +1623,12 @@ class VLANsApi:
 
 
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
-        )
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
 
         # set the HTTP header `Content-Type`
         if _content_type:
