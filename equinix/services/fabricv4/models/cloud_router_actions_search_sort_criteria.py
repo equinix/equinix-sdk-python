@@ -88,7 +88,7 @@ class CloudRouterActionsSearchSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else CloudRouterActionsSearchSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else CloudRouterActionsSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else CloudRouterActionsSearchSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
