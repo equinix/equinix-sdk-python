@@ -1,13 +1,478 @@
-diff --git a/equinix/services/fabricv4/models/cloud_router_actions_search_sort_criteria.py b/equinix/services/fabricv4/models/cloud_router_actions_search_sort_criteria.py
+diff --git a/equinix/services/fabricv4/models/cloud_router_sort_criteria.py b/equinix/services/fabricv4/models/cloud_router_sort_criteria.py
 index 5e00735..d7e5f1a 100644
---- a/equinix/services/fabricv4/models/cloud_router_actions_search_sort_criteria.py
-+++ b/equinix/services/fabricv4/models/cloud_router_actions_search_sort_criteria.py
-@@ -88,7 +88,7 @@ class CloudRouterActionsSearchSortCriteria(BaseModel):
+--- a/equinix/services/fabricv4/models/cloud_router_sort_criteria.py
++++ b/equinix/services/fabricv4/models/cloud_router_sort_criteria.py
+@@ -25,7 +25,7 @@ class CloudRouterSortCriteria(BaseModel):
+     CloudRouterSortCriteria
+     """ # noqa: E501
+     direction: Optional[CloudRouterSortDirection] = CloudRouterSortDirection.DESC
+-    var_property: Optional[CloudRouterSortBy] = Field(default=CloudRouterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[CloudRouterSortBy] = Field(default=CloudRouterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class CloudRouterSortCriteria(BaseModel):
  
          _obj = cls.model_validate({
-             "direction": obj.get("direction") if obj.get("direction") is not None else CloudRouterActionsSearchSortDirection.DESC,
--            "property": obj.get("property") if obj.get("property") is not None else CloudRouterActionsSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
-+            "property": obj.get("property") if obj.get("property") is not None else CloudRouterActionsSearchSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+             "direction": obj.get("direction") if obj.get("direction") is not None else CloudRouterSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else CloudRouterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else CloudRouterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
          })
          # store additional fields in additional_properties
          for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/connection_route_sort_criteria.py b/equinix/services/fabricv4/models/connection_route_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/connection_route_sort_criteria.py
++++ b/equinix/services/fabricv4/models/connection_route_sort_criteria.py
+@@ -25,7 +25,7 @@ class ConnectionRouteSortCriteria(BaseModel):
+     ConnectionRouteSortCriteria
+     """ # noqa: E501
+     direction: Optional[ConnectionRouteEntrySortDirection] = ConnectionRouteEntrySortDirection.DESC
+-    var_property: Optional[ConnectionRouteEntrySortBy] = Field(default=ConnectionRouteEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[ConnectionRouteEntrySortBy] = Field(default=ConnectionRouteEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class ConnectionRouteSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else ConnectionRouteEntrySortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else ConnectionRouteEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else ConnectionRouteEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/network_sort_criteria.py b/equinix/services/fabricv4/models/network_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/network_sort_criteria.py
++++ b/equinix/services/fabricv4/models/network_sort_criteria.py
+@@ -25,7 +25,7 @@ class NetworkSortCriteria(BaseModel):
+     NetworkSortCriteria
+     """ # noqa: E501
+     direction: Optional[NetworkSortDirection] = NetworkSortDirection.DESC
+-    var_property: Optional[NetworkSortBy] = Field(default=NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[NetworkSortBy] = Field(default=NetworkSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class NetworkSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else NetworkSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else NetworkSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/network_sort_criteria_response.py b/equinix/services/fabricv4/models/network_sort_criteria_response.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/network_sort_criteria_response.py
++++ b/equinix/services/fabricv4/models/network_sort_criteria_response.py
+@@ -25,7 +25,7 @@ class NetworkSortCriteriaResponse(BaseModel):
+     NetworkSortCriteriaResponse
+     """ # noqa: E501
+     direction: Optional[NetworkSortDirectionResponse] = NetworkSortDirectionResponse.DESC
+-    var_property: Optional[NetworkSortByResponse] = Field(default=NetworkSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[NetworkSortByResponse] = Field(default=NetworkSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class NetworkSortCriteriaResponse(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else NetworkSortDirectionResponse.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else NetworkSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else NetworkSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/route_aggregation_sort_item.py b/equinix/services/fabricv4/models/route_aggregation_sort_item.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/route_aggregation_sort_item.py
++++ b/equinix/services/fabricv4/models/route_aggregation_sort_item.py
+@@ -24,7 +24,7 @@ class RouteAggregationSortItem(BaseModel):
+     """
+     RouteAggregationSortItem
+     """ # noqa: E501
+-    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=RouteAggregationSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     direction: Optional[SortItemDirection] = SortItemDirection.DESC
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["property", "direction"]
+@@ -87,7 +87,7 @@ class RouteAggregationSortItem(BaseModel):
+             return cls.model_validate(obj)
+ 
+         _obj = cls.model_validate({
+-            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
++            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+             "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
+         })
+         # store additional fields in additional_properties
+diff --git a/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py b/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
++++ b/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
+@@ -25,7 +25,7 @@ class RouteTableEntrySortCriteria(BaseModel):
+     RouteTableEntrySortCriteria
+     """ # noqa: E501
+     direction: Optional[RouteTableEntrySortDirection] = RouteTableEntrySortDirection.DESC
+-    var_property: Optional[RouteTableEntrySortBy] = Field(default=RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[RouteTableEntrySortBy] = Field(default=RouteTableEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class RouteTableEntrySortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else RouteTableEntrySortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else RouteTableEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/service_profile_sort_criteria.py b/equinix/services/fabricv4/models/service_profile_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/service_profile_sort_criteria.py
++++ b/equinix/services/fabricv4/models/service_profile_sort_criteria.py
+@@ -25,7 +25,7 @@ class ServiceProfileSortCriteria(BaseModel):
+     ServiceProfileSortCriteria
+     """ # noqa: E501
+     direction: Optional[ServiceProfileSortDirection] = ServiceProfileSortDirection.DESC
+-    var_property: Optional[ServiceProfileSortBy] = Field(default=ServiceProfileSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[ServiceProfileSortBy] = Field(default=ServiceProfileSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class ServiceProfileSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else ServiceProfileSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else ServiceProfileSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else ServiceProfileSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_criteria.py b/equinix/services/fabricv4/models/sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_criteria.py
++++ b/equinix/services/fabricv4/models/sort_criteria.py
+@@ -25,7 +25,7 @@ class SortCriteria(BaseModel):
+     SortCriteria
+     """ # noqa: E501
+     direction: Optional[SortDirection] = SortDirection.DESC
+-    var_property: Optional[SortBy] = Field(default=SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortBy] = Field(default=SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class SortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else SortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_criteria_response.py b/equinix/services/fabricv4/models/sort_criteria_response.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_criteria_response.py
++++ b/equinix/services/fabricv4/models/sort_criteria_response.py
+@@ -25,7 +25,7 @@ class SortCriteriaResponse(BaseModel):
+     SortCriteriaResponse
+     """ # noqa: E501
+     direction: Optional[SortDirection] = SortDirection.DESC
+-    var_property: Optional[SortBy] = Field(default=SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortBy] = Field(default=SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class SortCriteriaResponse(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else SortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_item.py b/equinix/services/fabricv4/models/sort_item.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_item.py
++++ b/equinix/services/fabricv4/models/sort_item.py
+@@ -24,7 +24,7 @@ class SortItem(BaseModel):
+     """
+     SortItem
+     """ # noqa: E501
+-    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     direction: Optional[SortItemDirection] = SortItemDirection.DESC
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["property", "direction"]
+@@ -87,7 +87,7 @@ class SortItem(BaseModel):
+             return cls.model_validate(obj)
+ 
+         _obj = cls.model_validate({
+-            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
++            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+             "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
+         })
+         # store additional fields in additional_properties
+diff --git a/equinix/services/fabricv4/models/time_service_sort_criteria.py b/equinix/services/fabricv4/models/time_service_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/time_service_sort_criteria.py
++++ b/equinix/services/fabricv4/models/time_service_sort_criteria.py
+@@ -25,7 +25,7 @@ class TimeServiceSortCriteria(BaseModel):
+     TimeServiceSortCriteria
+     """ # noqa: E501
+     direction: Optional[TimeServiceSortDirection] = TimeServiceSortDirection.DESC
+-    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class TimeServiceSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else TimeServiceSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+     """ # noqa: E501
+     direction: Optional[CloudRouterSortDirection] = CloudRouterSortDirection.DESC
+-    var_property: Optional[CloudRouterSortBy] = Field(default=CloudRouterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[CloudRouterSortBy] = Field(default=CloudRouterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class CloudRouterSortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else CloudRouterSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else CloudRouterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else CloudRouterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/connection_route_sort_criteria.py b/equinix/services/fabricv4/models/connection_route_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/connection_route_sort_criteria.py
++++ b/equinix/services/fabricv4/models/connection_route_sort_criteria.py
+@@ -25,7 +25,7 @@ class ConnectionRouteSortCriteria(BaseModel):
+     ConnectionRouteSortCriteria
+    """ # noqa: E501
+    direction: Optional[ConnectionRouteEntrySortDirection] = ConnectionRouteEntrySortDirection.DESC
+-    var_property: Optional[ConnectionRouteEntrySortBy] = Field(default=ConnectionRouteEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[ConnectionRouteEntrySortBy] = Field(default=ConnectionRouteEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class ConnectionRouteSortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else ConnectionRouteEntrySortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else ConnectionRouteEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else ConnectionRouteEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/network_sort_criteria_response.py b/equinix/services/fabricv4/models/network_sort_criteria_response.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/network_sort_criteria_response.py
++++ b/equinix/services/fabricv4/models/network_sort_criteria_response.py
+@@ -25,7 +25,7 @@ class NetworkSortCriteriaResponse(BaseModel):
+    NetworkSortCriteriaResponse
+    """ # noqa: E501
+    direction: Optional[NetworkSortDirectionResponse] = NetworkSortDirectionResponse.DESC
+-    var_property: Optional[NetworkSortByResponse] = Field(default=NetworkSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[NetworkSortByResponse] = Field(default=NetworkSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class NetworkSortCriteriaResponse(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else NetworkSortDirectionResponse.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else NetworkSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else NetworkSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/network_sort_criteria.py b/equinix/services/fabricv4/models/network_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/network_sort_criteria.py
++++ b/equinix/services/fabricv4/models/network_sort_criteria.py
+@@ -25,7 +25,7 @@ class NetworkSortCriteria(BaseModel):
+    NetworkSortCriteria
+    """ # noqa: E501
+    direction: Optional[NetworkSortDirection] = NetworkSortDirection.DESC
+-    var_property: Optional[NetworkSortBy] = Field(default=NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[NetworkSortBy] = Field(default=NetworkSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class NetworkSortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else NetworkSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else NetworkSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else NetworkSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/route_aggregation_sort_item.py b/equinix/services/fabricv4/models/route_aggregation_sort_item.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/route_aggregation_sort_item.py
++++ b/equinix/services/fabricv4/models/route_aggregation_sort_item.py
+@@ -24,7 +24,7 @@ class RouteAggregationSortItem(BaseModel):
+    """
+    RouteAggregationSortItem
+    """ # noqa: E501
+-    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[RouteAggregationSortItemProperty] = Field(default=RouteAggregationSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    direction: Optional[SortItemDirection] = SortItemDirection.DESC
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["property", "direction"]
+@@ -87,7 +87,7 @@ class RouteAggregationSortItem(BaseModel):
+            return cls.model_validate(obj)
+
+        _obj = cls.model_validate({
+-            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
++            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
+        })
+        # store additional fields in additional_properties
+diff --git a/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py b/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
++++ b/equinix/services/fabricv4/models/route_table_entry_sort_criteria.py
+@@ -25,7 +25,7 @@ class RouteTableEntrySortCriteria(BaseModel):
+    RouteTableEntrySortCriteria
+    """ # noqa: E501
+    direction: Optional[RouteTableEntrySortDirection] = RouteTableEntrySortDirection.DESC
+-    var_property: Optional[RouteTableEntrySortBy] = Field(default=RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[RouteTableEntrySortBy] = Field(default=RouteTableEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class RouteTableEntrySortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else RouteTableEntrySortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else RouteTableEntrySortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else RouteTableEntrySortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/service_profile_sort_criteria.py b/equinix/services/fabricv4/models/service_profile_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/service_profile_sort_criteria.py
++++ b/equinix/services/fabricv4/models/service_profile_sort_criteria.py
+@@ -25,7 +25,7 @@ class ServiceProfileSortCriteria(BaseModel):
+    ServiceProfileSortCriteria
+    """ # noqa: E501
+    direction: Optional[ServiceProfileSortDirection] = ServiceProfileSortDirection.DESC
+-    var_property: Optional[ServiceProfileSortBy] = Field(default=ServiceProfileSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[ServiceProfileSortBy] = Field(default=ServiceProfileSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class ServiceProfileSortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else ServiceProfileSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else ServiceProfileSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else ServiceProfileSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_criteria_response.py b/equinix/services/fabricv4/models/sort_criteria_response.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_criteria_response.py
++++ b/equinix/services/fabricv4/models/sort_criteria_response.py
+@@ -25,7 +25,7 @@ class SortCriteriaResponse(BaseModel):
+    SortCriteriaResponse
+    """ # noqa: E501
+    direction: Optional[SortDirection] = SortDirection.DESC
+-    var_property: Optional[SortBy] = Field(default=SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortBy] = Field(default=SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class SortCriteriaResponse(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_criteria.py b/equinix/services/fabricv4/models/sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_criteria.py
++++ b/equinix/services/fabricv4/models/sort_criteria.py
+@@ -25,7 +25,7 @@ class SortCriteria(BaseModel):
+    SortCriteria
+    """ # noqa: E501
+    direction: Optional[SortDirection] = SortDirection.DESC
+-    var_property: Optional[SortBy] = Field(default=SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortBy] = Field(default=SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class SortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else SortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else SortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/time_service_sort_criteria.py b/equinix/services/fabricv4/models/time_service_sort_criteria.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/time_service_sort_criteria.py
++++ b/equinix/services/fabricv4/models/time_service_sort_criteria.py
+@@ -25,7 +25,7 @@ class TimeServiceSortCriteria(BaseModel):
+    TimeServiceSortCriteria
+    """ # noqa: E501
+    direction: Optional[TimeServiceSortDirection] = TimeServiceSortDirection.DESC
+-    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["direction", "property"]
+
+@@ -88,7 +88,7 @@ class TimeServiceSortCriteria(BaseModel):
+
+        _obj = cls.model_validate({
+            "direction": obj.get("direction") if obj.get("direction") is not None else TimeServiceSortDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+        })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/sort_item.py b/equinix/services/fabricv4/models/sort_item.py
+index 5e00735..d7e5f1a 100644
+--- a/equinix/services/fabricv4/models/sort_item.py
++++ b/equinix/services/fabricv4/models/sort_item.py
+@@ -24,7 +24,7 @@ class SortItem(BaseModel):
+    """
+    SortItem
+    """ # noqa: E501
+-    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    direction: Optional[SortItemDirection] = SortItemDirection.DESC
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["property", "direction"]
+@@ -87,7 +87,7 @@ class SortItem(BaseModel):
+            return cls.model_validate(obj)
+
+        _obj = cls.model_validate({
+-            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
++            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+            "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
+        })
+        # store additional fields in additional_properties
