@@ -24,7 +24,7 @@ class SortItem(BaseModel):
     """
     SortItem
     """ # noqa: E501
-    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[SortItemProperty] = Field(default=SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     direction: Optional[SortItemDirection] = SortItemDirection.DESC
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "direction"]
@@ -87,7 +87,7 @@ class SortItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
+            "property": obj.get("property") if obj.get("property") is not None else SortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
             "direction": obj.get("direction") if obj.get("direction") is not None else SortItemDirection.DESC
         })
         # store additional fields in additional_properties
