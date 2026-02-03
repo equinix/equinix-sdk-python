@@ -25,7 +25,7 @@ class CloudRouterActionsSearchSortCriteria(BaseModel):
     CloudRouterActionsSearchSortCriteria
     """ # noqa: E501
     direction: Optional[CloudRouterActionsSearchSortDirection] = CloudRouterActionsSearchSortDirection.DESC
-    var_property: Optional[CloudRouterActionsSearchSortBy] = Field(default=CloudRouterActionsSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[CloudRouterActionsSearchSortBy] = Field(default=CloudRouterActionsSearchSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 

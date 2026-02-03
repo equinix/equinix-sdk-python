@@ -25,7 +25,7 @@ class TimeServiceSortCriteria(BaseModel):
     TimeServiceSortCriteria
     """ # noqa: E501
     direction: Optional[TimeServiceSortDirection] = TimeServiceSortDirection.DESC
-    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[TimeServiceSortBy] = Field(default=TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class TimeServiceSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else TimeServiceSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else TimeServiceSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

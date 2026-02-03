@@ -25,7 +25,7 @@ class CloudRouterCommandSearchSortCriteria(BaseModel):
     CloudRouterCommandSearchSortCriteria
     """ # noqa: E501
     direction: Optional[CloudRouterCommandSearchSortDirection] = CloudRouterCommandSearchSortDirection.DESC
-    var_property: Optional[CloudRouterCommandSearchSortBy] = Field(default=CloudRouterCommandSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[CloudRouterCommandSearchSortBy] = Field(default=CloudRouterCommandSearchSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class CloudRouterCommandSearchSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else CloudRouterCommandSearchSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else CloudRouterCommandSearchSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else CloudRouterCommandSearchSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
