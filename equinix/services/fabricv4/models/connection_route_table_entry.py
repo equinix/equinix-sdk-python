@@ -29,7 +29,7 @@ class ConnectionRouteTableEntry(BaseModel):
     """ # noqa: E501
     type: RouteTableEntryType
     protocol_type: Optional[RouteTableEntryProtocolType] = Field(default=None, alias="protocolType")
-    state: ConnectionRouteTableEntryState
+    state: Optional[ConnectionRouteTableEntryState] = None
     prefix: Optional[StrictStr] = None
     next_hop: Optional[StrictStr] = Field(default=None, alias="nextHop")
     med: Optional[StrictInt] = Field(default=None, alias="MED")

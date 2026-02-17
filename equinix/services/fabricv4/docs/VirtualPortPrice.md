@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **service_type** | [**VirtualPortServiceType**](VirtualPortServiceType.md) |  | [optional] [default to VirtualPortServiceType.MSP]
 **settings** | [**VirtualPortConfiguration**](VirtualPortConfiguration.md) |  | [optional] 
 **package** | [**VirtualPortPackage**](VirtualPortPackage.md) |  | [optional] 
+**service_code** | **str** | Port service code. | [optional] 
 
 ## Example
 

@@ -12,12 +12,15 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **state** | **object** |  | [optional] 
+**metros** | [**List[CompanyMetro]**](CompanyMetro.md) |  | [optional] 
 **logo** | [**CompanyLogo**](CompanyLogo.md) |  | [optional] 
 **tags** | [**List[TagResponse]**](TagResponse.md) |  | [optional] 
 **service_profiles** | [**List[CompanyServiceProfile]**](CompanyServiceProfile.md) |  | [optional] 
 **private_services** | [**List[PrivateService]**](PrivateService.md) |  | [optional] 
 **notifications** | **List[object]** |  | [optional] 
 **web_url** | **str** |  | [optional] 
+**contact_url** | **str** |  | [optional] 
+**change** | [**CompanyProfileChange**](CompanyProfileChange.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

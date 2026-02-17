@@ -53,6 +53,7 @@ class EquinixStatus(str, Enum):
     DRAFT = 'DRAFT'
     CANCELLED = 'CANCELLED'
     PENDING_INTERFACE_CONFIGURATION = 'PENDING_INTERFACE_CONFIGURATION'
+    PENDING_ACTIVATION = 'PENDING_ACTIVATION'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

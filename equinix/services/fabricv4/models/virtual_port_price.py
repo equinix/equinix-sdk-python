@@ -41,8 +41,9 @@ class VirtualPortPrice(BaseModel):
     service_type: Optional[VirtualPortServiceType] = Field(default=VirtualPortServiceType.MSP, alias="serviceType")
     settings: Optional[VirtualPortConfiguration] = None
     package: Optional[VirtualPortPackage] = None
+    service_code: Optional[StrictStr] = Field(default=None, description="Port service code.", alias="serviceCode")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings", "package"]
+    __properties: ClassVar[List[str]] = ["uuid", "type", "location", "lag", "physicalPortsQuantity", "bandwidth", "redundancy", "connectivitySource", "serviceType", "settings", "package", "serviceCode"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -130,7 +131,8 @@ class VirtualPortPrice(BaseModel):
             "connectivitySource": ConnectivitySource.from_dict(obj["connectivitySource"]) if obj.get("connectivitySource") is not None else None,
             "serviceType": obj.get("serviceType") if obj.get("serviceType") is not None else VirtualPortServiceType.MSP,
             "settings": VirtualPortConfiguration.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
-            "package": VirtualPortPackage.from_dict(obj["package"]) if obj.get("package") is not None else None
+            "package": VirtualPortPackage.from_dict(obj["package"]) if obj.get("package") is not None else None,
+            "serviceCode": obj.get("serviceCode")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

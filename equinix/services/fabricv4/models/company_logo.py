@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,8 +24,9 @@ class CompanyLogo(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = None
     uuid: Optional[StrictStr] = None
+    extension_type: Optional[StrictStr] = Field(default=None, alias="extensionType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "extensionType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +87,8 @@ class CompanyLogo(BaseModel):
 
         _obj = cls.model_validate({
             "href": obj.get("href"),
-            "uuid": obj.get("uuid")
+            "uuid": obj.get("uuid"),
+            "extensionType": obj.get("extensionType")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

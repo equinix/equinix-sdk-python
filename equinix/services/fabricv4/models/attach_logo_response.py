@@ -26,8 +26,9 @@ class AttachLogoResponse(BaseModel):
     type: StrictStr = Field(description="Type of the logo or attachment")
     uuid: StrictStr = Field(description="Unique identifier for the logo")
     attachment_status: Optional[StrictStr] = Field(default=None, description="Status of the attachment operation", alias="attachmentStatus")
+    extension_type: Optional[StrictStr] = Field(default=None, description="Extension type of logo", alias="extensionType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus", "extensionType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +91,8 @@ class AttachLogoResponse(BaseModel):
             "href": obj.get("href"),
             "type": obj.get("type"),
             "uuid": obj.get("uuid"),
-            "attachmentStatus": obj.get("attachmentStatus")
+            "attachmentStatus": obj.get("attachmentStatus"),
+            "extensionType": obj.get("extensionType")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

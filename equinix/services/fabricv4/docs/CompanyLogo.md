@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** |  | [optional] 
 **uuid** | **str** |  | [optional] 
+**extension_type** | **str** |  | [optional] 
 
 ## Example
 

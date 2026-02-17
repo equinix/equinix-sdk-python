@@ -20,9 +20,9 @@ from typing_extensions import Self
 
 class PortOrderSignatureDelegate(BaseModel):
     """
-    delegate oder details
+    order delegate details
     """ # noqa: E501
-    first_name: Optional[StrictStr] = Field(default=None, description="name of delegate", alias="firstName")
+    first_name: Optional[StrictStr] = Field(default=None, description="first name of delegate", alias="firstName")
     last_name: Optional[StrictStr] = Field(default=None, description="last Name of delegate", alias="lastName")
     email: Optional[StrictStr] = Field(default=None, description="email of delegate")
     additional_properties: Dict[str, Any] = {}

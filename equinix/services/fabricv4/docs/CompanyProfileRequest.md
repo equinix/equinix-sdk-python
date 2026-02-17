@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | 
 **notifications** | **List[object]** |  | [optional] 
 **web_url** | **str** |  | [optional] 
+**contact_url** | **str** |  | [optional] 
 
 ## Example
 

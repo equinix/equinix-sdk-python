@@ -29,8 +29,9 @@ class CompanyProfileRequest(BaseModel):
     description: Annotated[str, Field(min_length=1, strict=True, max_length=450)]
     notifications: Optional[List[Dict[str, Any]]] = None
     web_url: Optional[StrictStr] = Field(default=None, alias="webUrl")
+    contact_url: Optional[StrictStr] = Field(default=None, alias="contactUrl")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "summary", "description", "notifications", "webUrl"]
+    __properties: ClassVar[List[str]] = ["type", "name", "summary", "description", "notifications", "webUrl", "contactUrl"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +96,8 @@ class CompanyProfileRequest(BaseModel):
             "summary": obj.get("summary"),
             "description": obj.get("description"),
             "notifications": obj.get("notifications"),
-            "webUrl": obj.get("webUrl")
+            "webUrl": obj.get("webUrl"),
+            "contactUrl": obj.get("contactUrl")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
+**weight** | **int** |  | [optional] 
 
 ## Example
 

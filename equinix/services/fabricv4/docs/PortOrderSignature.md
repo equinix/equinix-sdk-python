@@ -1,6 +1,6 @@
 # PortOrderSignature
 
-Port signature Type
+Port signature details
 
 ## Properties
 

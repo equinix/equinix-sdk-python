@@ -23,6 +23,8 @@ class PatchOperationOp(str, Enum):
     allowed enum values
     """
     REPLACE = 'replace'
+    ADD = 'add'
+    REMOVE = 'remove'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
