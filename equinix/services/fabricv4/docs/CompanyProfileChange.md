@@ -5,9 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **created_date_time** | **datetime** |  | [optional] 
+**updated_date_time** | **datetime** |  | [optional] 
 **data** | **object** |  | [optional] 
 
 ## Example

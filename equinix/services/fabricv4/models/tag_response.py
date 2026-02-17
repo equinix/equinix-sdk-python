@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +27,9 @@ class TagResponse(BaseModel):
     type: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     display_name: Optional[StrictStr] = Field(default=None, alias="displayName")
+    weight: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName", "weight"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +93,8 @@ class TagResponse(BaseModel):
             "uuid": obj.get("uuid"),
             "type": obj.get("type"),
             "name": obj.get("name"),
-            "displayName": obj.get("displayName")
+            "displayName": obj.get("displayName"),
+            "weight": obj.get("weight")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

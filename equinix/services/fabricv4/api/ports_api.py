@@ -363,7 +363,7 @@ class PortsApi:
     ) -> Port:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric? Port.
 
         :param port_request: (required)
         :type port_request: PortRequest
@@ -438,7 +438,7 @@ class PortsApi:
     ) -> ApiResponse[Port]:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric? Port.
 
         :param port_request: (required)
         :type port_request: PortRequest
@@ -513,7 +513,7 @@ class PortsApi:
     ) -> RESTResponseType:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric? Port.
 
         :param port_request: (required)
         :type port_request: PortRequest

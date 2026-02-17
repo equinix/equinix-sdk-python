@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**RouteTableEntryType**](RouteTableEntryType.md) |  | 
 **protocol_type** | [**RouteTableEntryProtocolType**](RouteTableEntryProtocolType.md) |  | [optional] 
-**state** | [**ConnectionRouteTableEntryState**](ConnectionRouteTableEntryState.md) |  | 
+**state** | [**ConnectionRouteTableEntryState**](ConnectionRouteTableEntryState.md) |  | [optional] 
 **prefix** | **str** |  | [optional] 
 **next_hop** | **str** |  | [optional] 
 **med** | **int** |  | [optional] 

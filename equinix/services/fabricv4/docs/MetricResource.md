@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **href** | **str** | Metric resource href | [optional] 
 **uuid** | **str** | Metric resource UUID | [optional] 
 **type** | **str** | Metric resource type | [optional] 
+**state** | **str** | Metric resource state | [optional] 
 **name** | **str** | Metric resource name | [optional] 
 **description** | **str** | Metric resource description | [optional] 
 

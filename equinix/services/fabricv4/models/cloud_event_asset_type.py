@@ -25,6 +25,7 @@ class CloudEventAssetType(str, Enum):
     PORTS = 'ports'
     CONNECTIONS = 'connections'
     ROUTERS = 'routers'
+    METROS = 'metros'
     SERVICETOKENS = 'serviceTokens'
     NETWORKS = 'networks'
     PROJECTS = 'projects'

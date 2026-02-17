@@ -29,9 +29,10 @@ class LogoResponse(BaseModel):
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
+    extension_type: Optional[StrictStr] = Field(default=None, alias="extensionType")
     changelog: Optional[Changelog] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "status", "changelog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "status", "extensionType", "changelog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,6 +101,7 @@ class LogoResponse(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "status": obj.get("status"),
+            "extensionType": obj.get("extensionType"),
             "changelog": Changelog.from_dict(obj["changelog"]) if obj.get("changelog") is not None else None
         })
         # store additional fields in additional_properties

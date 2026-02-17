@@ -23,12 +23,14 @@ class CompanyProfileChange(BaseModel):
     """
     CompanyProfileChange
     """ # noqa: E501
+    uuid: Optional[StrictStr] = None
     type: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     created_date_time: Optional[datetime] = Field(default=None, alias="createdDateTime")
+    updated_date_time: Optional[datetime] = Field(default=None, alias="updatedDateTime")
     data: Optional[Dict[str, Any]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "status", "createdDateTime", "data"]
+    __properties: ClassVar[List[str]] = ["uuid", "type", "status", "createdDateTime", "updatedDateTime", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,9 +90,11 @@ class CompanyProfileChange(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "uuid": obj.get("uuid"),
             "type": obj.get("type"),
             "status": obj.get("status"),
             "createdDateTime": obj.get("createdDateTime"),
+            "updatedDateTime": obj.get("updatedDateTime"),
             "data": obj.get("data")
         })
         # store additional fields in additional_properties

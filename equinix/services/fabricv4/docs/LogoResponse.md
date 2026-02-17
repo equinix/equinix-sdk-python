@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
+**extension_type** | **str** |  | [optional] 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

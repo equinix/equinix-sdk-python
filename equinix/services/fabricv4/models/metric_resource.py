@@ -25,10 +25,11 @@ class MetricResource(BaseModel):
     href: Optional[StrictStr] = Field(default=None, description="Metric resource href")
     uuid: Optional[StrictStr] = Field(default=None, description="Metric resource UUID")
     type: Optional[StrictStr] = Field(default=None, description="Metric resource type")
+    state: Optional[StrictStr] = Field(default=None, description="Metric resource state")
     name: Optional[StrictStr] = Field(default=None, description="Metric resource name")
     description: Optional[StrictStr] = Field(default=None, description="Metric resource description")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "state", "name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class MetricResource(BaseModel):
             "href": obj.get("href"),
             "uuid": obj.get("uuid"),
             "type": obj.get("type"),
+            "state": obj.get("state"),
             "name": obj.get("name"),
             "description": obj.get("description")
         })

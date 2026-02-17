@@ -18,6 +18,8 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.company_logo import CompanyLogo
+from equinix.services.fabricv4.models.company_metro import CompanyMetro
+from equinix.services.fabricv4.models.company_profile_change import CompanyProfileChange
 from equinix.services.fabricv4.models.company_service_profile import CompanyServiceProfile
 from equinix.services.fabricv4.models.private_service import PrivateService
 from equinix.services.fabricv4.models.tag_response import TagResponse
@@ -35,15 +37,18 @@ class CompanyProfileResponse(BaseModel):
     summary: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=125)]] = None
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=450)]] = None
     state: Optional[Dict[str, Any]] = None
+    metros: Optional[List[CompanyMetro]] = None
     logo: Optional[CompanyLogo] = None
     tags: Optional[List[TagResponse]] = None
     service_profiles: Optional[List[CompanyServiceProfile]] = Field(default=None, alias="serviceProfiles")
     private_services: Optional[List[PrivateService]] = Field(default=None, alias="privateServices")
     notifications: Optional[List[Dict[str, Any]]] = None
     web_url: Optional[StrictStr] = Field(default=None, alias="webUrl")
+    contact_url: Optional[StrictStr] = Field(default=None, alias="contactUrl")
+    change: Optional[CompanyProfileChange] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +91,13 @@ class CompanyProfileResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in metros (list)
+        _items = []
+        if self.metros:
+            for _item_metros in self.metros:
+                if _item_metros:
+                    _items.append(_item_metros.to_dict())
+            _dict['metros'] = _items
         # override the default output from pydantic by calling `to_dict()` of logo
         if self.logo:
             _dict['logo'] = self.logo.to_dict()
@@ -110,6 +122,9 @@ class CompanyProfileResponse(BaseModel):
                 if _item_private_services:
                     _items.append(_item_private_services.to_dict())
             _dict['privateServices'] = _items
+        # override the default output from pydantic by calling `to_dict()` of change
+        if self.change:
+            _dict['change'] = self.change.to_dict()
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -137,12 +152,15 @@ class CompanyProfileResponse(BaseModel):
             "summary": obj.get("summary"),
             "description": obj.get("description"),
             "state": obj.get("state"),
+            "metros": [CompanyMetro.from_dict(_item) for _item in obj["metros"]] if obj.get("metros") is not None else None,
             "logo": CompanyLogo.from_dict(obj["logo"]) if obj.get("logo") is not None else None,
             "tags": [TagResponse.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "serviceProfiles": [CompanyServiceProfile.from_dict(_item) for _item in obj["serviceProfiles"]] if obj.get("serviceProfiles") is not None else None,
             "privateServices": [PrivateService.from_dict(_item) for _item in obj["privateServices"]] if obj.get("privateServices") is not None else None,
             "notifications": obj.get("notifications"),
             "webUrl": obj.get("webUrl"),
+            "contactUrl": obj.get("contactUrl"),
+            "change": CompanyProfileChange.from_dict(obj["change"]) if obj.get("change") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

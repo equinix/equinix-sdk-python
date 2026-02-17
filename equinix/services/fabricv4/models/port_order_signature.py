@@ -22,7 +22,7 @@ from typing_extensions import Self
 
 class PortOrderSignature(BaseModel):
     """
-    Port signature Type
+    Port signature details
     """ # noqa: E501
     signatory: Optional[PortOrderSignatureSignatory] = None
     delegate: Optional[PortOrderSignatureDelegate] = None

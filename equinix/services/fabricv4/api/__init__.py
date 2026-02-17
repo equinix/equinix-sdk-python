@@ -3,8 +3,10 @@
 # import apis into api package
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
+from equinix.services.fabricv4.api.company_profiles_api import CompanyProfilesApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
 from equinix.services.fabricv4.api.health_api import HealthApi
+from equinix.services.fabricv4.api.logos_api import LogosApi
 from equinix.services.fabricv4.api.marketplace_subscriptions_api import MarketplaceSubscriptionsApi
 from equinix.services.fabricv4.api.metrics_api import MetricsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
@@ -24,4 +26,5 @@ from equinix.services.fabricv4.api.statistics_api import StatisticsApi
 from equinix.services.fabricv4.api.stream_alert_rules_api import StreamAlertRulesApi
 from equinix.services.fabricv4.api.stream_subscriptions_api import StreamSubscriptionsApi
 from equinix.services.fabricv4.api.streams_api import StreamsApi
+from equinix.services.fabricv4.api.tags_api import TagsApi
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type** | **str** | Type of the logo or attachment | 
 **uuid** | **str** | Unique identifier for the logo | 
 **attachment_status** | **str** | Status of the attachment operation | [optional] 
+**extension_type** | **str** | Extension type of logo | [optional] 
 
 ## Example
 

@@ -15,8 +15,10 @@ __version__ = "0.14.2"
 # import apis into sdk package
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
+from equinix.services.fabricv4.api.company_profiles_api import CompanyProfilesApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
 from equinix.services.fabricv4.api.health_api import HealthApi
+from equinix.services.fabricv4.api.logos_api import LogosApi
 from equinix.services.fabricv4.api.marketplace_subscriptions_api import MarketplaceSubscriptionsApi
 from equinix.services.fabricv4.api.metrics_api import MetricsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
@@ -36,6 +38,7 @@ from equinix.services.fabricv4.api.statistics_api import StatisticsApi
 from equinix.services.fabricv4.api.stream_alert_rules_api import StreamAlertRulesApi
 from equinix.services.fabricv4.api.stream_subscriptions_api import StreamSubscriptionsApi
 from equinix.services.fabricv4.api.streams_api import StreamsApi
+from equinix.services.fabricv4.api.tags_api import TagsApi
 
 # import ApiClient
 from equinix.services.fabricv4.api_response import ApiResponse
@@ -151,6 +154,7 @@ from equinix.services.fabricv4.models.cloud_router_sort_criteria import CloudRou
 from equinix.services.fabricv4.models.cloud_router_sort_direction import CloudRouterSortDirection
 from equinix.services.fabricv4.models.code import Code
 from equinix.services.fabricv4.models.company_logo import CompanyLogo
+from equinix.services.fabricv4.models.company_metro import CompanyMetro
 from equinix.services.fabricv4.models.company_profile_action_request import CompanyProfileActionRequest
 from equinix.services.fabricv4.models.company_profile_change import CompanyProfileChange
 from equinix.services.fabricv4.models.company_profile_request import CompanyProfileRequest
@@ -158,7 +162,7 @@ from equinix.services.fabricv4.models.company_profile_response import CompanyPro
 from equinix.services.fabricv4.models.company_profile_search_filter import CompanyProfileSearchFilter
 from equinix.services.fabricv4.models.company_profile_search_request import CompanyProfileSearchRequest
 from equinix.services.fabricv4.models.company_profile_search_response import CompanyProfileSearchResponse
-from equinix.services.fabricv4.models.company_profile_update_response import CompanyProfileUpdateResponse
+from equinix.services.fabricv4.models.company_profile_sort_direction import CompanyProfileSortDirection
 from equinix.services.fabricv4.models.company_service_profile import CompanyServiceProfile
 from equinix.services.fabricv4.models.connected_metro import ConnectedMetro
 from equinix.services.fabricv4.models.connection import Connection
@@ -238,6 +242,7 @@ from equinix.services.fabricv4.models.get_all_stream_response import GetAllStrea
 from equinix.services.fabricv4.models.get_all_stream_subscription_response import GetAllStreamSubscriptionResponse
 from equinix.services.fabricv4.models.get_cloud_events_by_asset_response import GetCloudEventsByAssetResponse
 from equinix.services.fabricv4.models.get_metrics_by_asset_response import GetMetricsByAssetResponse
+from equinix.services.fabricv4.models.get_metrics_by_name_response import GetMetricsByNameResponse
 from equinix.services.fabricv4.models.get_response import GetResponse
 from equinix.services.fabricv4.models.get_route_aggregation_get_connections_response import GetRouteAggregationGetConnectionsResponse
 from equinix.services.fabricv4.models.get_route_aggregation_rules_response import GetRouteAggregationRulesResponse
@@ -331,6 +336,7 @@ from equinix.services.fabricv4.models.peering_type import PeeringType
 from equinix.services.fabricv4.models.physical_port import PhysicalPort
 from equinix.services.fabricv4.models.physical_port_settings import PhysicalPortSettings
 from equinix.services.fabricv4.models.physical_port_type import PhysicalPortType
+from equinix.services.fabricv4.models.platform_changelog import PlatformChangelog
 from equinix.services.fabricv4.models.port import Port
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
 from equinix.services.fabricv4.models.port_bmmr_type import PortBmmrType
@@ -427,6 +433,10 @@ from equinix.services.fabricv4.models.replace_operation import ReplaceOperation
 from equinix.services.fabricv4.models.resource_data import ResourceData
 from equinix.services.fabricv4.models.resource_selector import ResourceSelector
 from equinix.services.fabricv4.models.resource_selector_response import ResourceSelectorResponse
+from equinix.services.fabricv4.models.response_incomplete_details import ResponseIncompleteDetails
+from equinix.services.fabricv4.models.response_incomplete_details_reason import ResponseIncompleteDetailsReason
+from equinix.services.fabricv4.models.response_usage_input_tokens_details import ResponseUsageInputTokensDetails
+from equinix.services.fabricv4.models.response_usage_output_tokens_details import ResponseUsageOutputTokensDetails
 from equinix.services.fabricv4.models.route_aggregation_change_data import RouteAggregationChangeData
 from equinix.services.fabricv4.models.route_aggregation_change_data_response import RouteAggregationChangeDataResponse
 from equinix.services.fabricv4.models.route_aggregation_connections_data import RouteAggregationConnectionsData
@@ -585,6 +595,7 @@ from equinix.services.fabricv4.models.simplified_token_network_scope import Simp
 from equinix.services.fabricv4.models.simplified_token_network_type import SimplifiedTokenNetworkType
 from equinix.services.fabricv4.models.simplified_virtual_device import SimplifiedVirtualDevice
 from equinix.services.fabricv4.models.simplified_virtual_device_type import SimplifiedVirtualDeviceType
+from equinix.services.fabricv4.models.sort import Sort
 from equinix.services.fabricv4.models.sort_by import SortBy
 from equinix.services.fabricv4.models.sort_criteria import SortCriteria
 from equinix.services.fabricv4.models.sort_criteria_response import SortCriteriaResponse

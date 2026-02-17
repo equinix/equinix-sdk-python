@@ -1,12 +1,12 @@
 # PortOrderSignatureDelegate
 
-delegate oder details
+order delegate details
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** | name of delegate | [optional] 
+**first_name** | **str** | first name of delegate | [optional] 
 **last_name** | **str** | last Name of delegate | [optional] 
 **email** | **str** | email of delegate | [optional] 
 

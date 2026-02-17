@@ -25,6 +25,10 @@ class GeoScopeType(str, Enum):
     CANADA = 'CANADA'
     CONUS = 'CONUS'
     JAPAN = 'JAPAN'
+    UK = 'UK'
+    AUSTRALIA = 'AUSTRALIA'
+    BRAZIL = 'BRAZIL'
+    SWITZERLAND = 'SWITZERLAND'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

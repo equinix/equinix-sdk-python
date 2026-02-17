@@ -13,21 +13,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.company_profile_change import CompanyProfileChange
-from equinix.services.fabricv4.models.company_profile_response import CompanyProfileResponse
+from equinix.services.fabricv4.models.company_profile_sort_direction import CompanyProfileSortDirection
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CompanyProfileUpdateResponse(BaseModel):
+class Sort(BaseModel):
     """
-    CompanyProfileUpdateResponse
+    Sort
     """ # noqa: E501
-    company_profile: Optional[CompanyProfileResponse] = Field(default=None, alias="companyProfile")
-    change: Optional[CompanyProfileChange] = None
+    var_property: Optional[StrictStr] = Field(default=None, description="Property to sort by", alias="property")
+    direction: Optional[CompanyProfileSortDirection] = CompanyProfileSortDirection.ASC
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["companyProfile", "change"]
+    __properties: ClassVar[List[str]] = ["property", "direction"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -47,7 +46,7 @@ class CompanyProfileUpdateResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CompanyProfileUpdateResponse from a JSON string"""
+        """Create an instance of Sort from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,12 +69,6 @@ class CompanyProfileUpdateResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of company_profile
-        if self.company_profile:
-            _dict['companyProfile'] = self.company_profile.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of change
-        if self.change:
-            _dict['change'] = self.change.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -85,7 +78,7 @@ class CompanyProfileUpdateResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CompanyProfileUpdateResponse from a dict"""
+        """Create an instance of Sort from a dict"""
         if obj is None:
             return None
 
@@ -93,8 +86,8 @@ class CompanyProfileUpdateResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "companyProfile": CompanyProfileResponse.from_dict(obj["companyProfile"]) if obj.get("companyProfile") is not None else None,
-            "change": CompanyProfileChange.from_dict(obj["change"]) if obj.get("change") is not None else None
+            "property": obj.get("property"),
+            "direction": obj.get("direction") if obj.get("direction") is not None else CompanyProfileSortDirection.ASC
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
