@@ -20,6 +20,7 @@ from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.company_logo import CompanyLogo
 from equinix.services.fabricv4.models.company_metro import CompanyMetro
 from equinix.services.fabricv4.models.company_profile_change import CompanyProfileChange
+from equinix.services.fabricv4.models.company_profile_response_account import CompanyProfileResponseAccount
 from equinix.services.fabricv4.models.company_service_profile import CompanyServiceProfile
 from equinix.services.fabricv4.models.private_service import PrivateService
 from equinix.services.fabricv4.models.tag_response import TagResponse
@@ -37,6 +38,7 @@ class CompanyProfileResponse(BaseModel):
     summary: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=125)]] = None
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=450)]] = None
     state: Optional[Dict[str, Any]] = None
+    account: Optional[CompanyProfileResponseAccount] = None
     metros: Optional[List[CompanyMetro]] = None
     logo: Optional[CompanyLogo] = None
     tags: Optional[List[TagResponse]] = None
@@ -48,7 +50,7 @@ class CompanyProfileResponse(BaseModel):
     change: Optional[CompanyProfileChange] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +93,9 @@ class CompanyProfileResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in metros (list)
         _items = []
         if self.metros:
@@ -152,6 +157,7 @@ class CompanyProfileResponse(BaseModel):
             "summary": obj.get("summary"),
             "description": obj.get("description"),
             "state": obj.get("state"),
+            "account": CompanyProfileResponseAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "metros": [CompanyMetro.from_dict(_item) for _item in obj["metros"]] if obj.get("metros") is not None else None,
             "logo": CompanyLogo.from_dict(obj["logo"]) if obj.get("logo") is not None else None,
             "tags": [TagResponse.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,

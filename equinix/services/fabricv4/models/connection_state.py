@@ -29,9 +29,7 @@ class ConnectionState(str, Enum):
     DRAFT = 'DRAFT'
     FAILED = 'FAILED'
     PENDING = 'PENDING'
-    PROVISIONED = 'PROVISIONED'
     PROVISIONING = 'PROVISIONING'
-    REPROVISIONING = 'REPROVISIONING'
     EMPTY = ''
 
     @classmethod

@@ -360,7 +360,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StreamAlertRule:
-        """Update Stream Alert Rules
+        """Delete Stream Alert Rules
 
         This API provides capability to delete a user's stream alert rule
 
@@ -436,7 +436,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StreamAlertRule]:
-        """Update Stream Alert Rules
+        """Delete Stream Alert Rules
 
         This API provides capability to delete a user's stream alert rule
 
@@ -512,7 +512,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update Stream Alert Rules
+        """Delete Stream Alert Rules
 
         This API provides capability to delete a user's stream alert rule
 

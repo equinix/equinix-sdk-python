@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **direction** | [**PortSortDirection**](PortSortDirection.md) |  | [optional] [default to PortSortDirection.DESC]
-**var_property** | [**PortSortBy**](PortSortBy.md) |  | [optional] [default to PortSortBy.SLASH_DEVICE_SLASH_NAME]
+**var_property** | [**PortSortBy**](PortSortBy.md) |  | [optional] [default to PortSortBy.DEVICE_SLASH_NAME]
 
 ## Example
 

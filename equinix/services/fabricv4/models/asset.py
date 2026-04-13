@@ -28,6 +28,8 @@ class Asset(str, Enum):
     METROS = 'metros'
     ORGANIZATIONS = 'organizations'
     PROJECTS = 'projects'
+    NETWORKEDGEDEVICES = 'networkEdgeDevices'
+    COMPANYPROFILES = 'companyProfiles'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

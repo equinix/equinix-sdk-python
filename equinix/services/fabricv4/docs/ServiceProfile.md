@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **state** | [**ServiceProfileStateEnum**](ServiceProfileStateEnum.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) | Seller Account for Service Profile. | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
+**change** | [**ServiceProfileChange**](ServiceProfileChange.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) | Seller Account for Service Profile. | [optional] 
 **href** | **str** | Service Profile URI response attribute | [optional] [readonly] 
 **type** | [**ServiceProfileTypeEnum**](ServiceProfileTypeEnum.md) |  | [optional] 

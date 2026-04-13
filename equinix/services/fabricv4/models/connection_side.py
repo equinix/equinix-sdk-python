@@ -16,10 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.access_point import AccessPoint
-from equinix.services.fabricv4.models.connection_company_profile import ConnectionCompanyProfile
-from equinix.services.fabricv4.models.connection_invitation import ConnectionInvitation
 from equinix.services.fabricv4.models.connection_side_additional_info import ConnectionSideAdditionalInfo
-from equinix.services.fabricv4.models.internet_access import InternetAccess
 from equinix.services.fabricv4.models.service_token import ServiceToken
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,12 +27,9 @@ class ConnectionSide(BaseModel):
     """ # noqa: E501
     service_token: Optional[ServiceToken] = Field(default=None, alias="serviceToken")
     access_point: Optional[AccessPoint] = Field(default=None, alias="accessPoint")
-    internet_access: Optional[InternetAccess] = Field(default=None, alias="internetAccess")
-    company_profile: Optional[ConnectionCompanyProfile] = Field(default=None, alias="companyProfile")
-    invitation: Optional[ConnectionInvitation] = None
     additional_info: Optional[List[ConnectionSideAdditionalInfo]] = Field(default=None, description="Any additional information, which is not part of connection metadata or configuration", alias="additionalInfo")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["serviceToken", "accessPoint", "internetAccess", "companyProfile", "invitation", "additionalInfo"]
+    __properties: ClassVar[List[str]] = ["serviceToken", "accessPoint", "additionalInfo"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -84,15 +78,6 @@ class ConnectionSide(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of access_point
         if self.access_point:
             _dict['accessPoint'] = self.access_point.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of internet_access
-        if self.internet_access:
-            _dict['internetAccess'] = self.internet_access.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of company_profile
-        if self.company_profile:
-            _dict['companyProfile'] = self.company_profile.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of invitation
-        if self.invitation:
-            _dict['invitation'] = self.invitation.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in additional_info (list)
         _items = []
         if self.additional_info:
@@ -119,9 +104,6 @@ class ConnectionSide(BaseModel):
         _obj = cls.model_validate({
             "serviceToken": ServiceToken.from_dict(obj["serviceToken"]) if obj.get("serviceToken") is not None else None,
             "accessPoint": AccessPoint.from_dict(obj["accessPoint"]) if obj.get("accessPoint") is not None else None,
-            "internetAccess": InternetAccess.from_dict(obj["internetAccess"]) if obj.get("internetAccess") is not None else None,
-            "companyProfile": ConnectionCompanyProfile.from_dict(obj["companyProfile"]) if obj.get("companyProfile") is not None else None,
-            "invitation": ConnectionInvitation.from_dict(obj["invitation"]) if obj.get("invitation") is not None else None,
             "additionalInfo": [ConnectionSideAdditionalInfo.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None
         })
         # store additional fields in additional_properties

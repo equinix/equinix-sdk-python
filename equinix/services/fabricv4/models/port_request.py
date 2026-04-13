@@ -16,8 +16,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix.services.fabricv4.models.end_customer import EndCustomer
-from equinix.services.fabricv4.models.marketplace_subscription import MarketplaceSubscription
 from equinix.services.fabricv4.models.package import Package
 from equinix.services.fabricv4.models.physical_port import PhysicalPort
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
@@ -79,12 +77,10 @@ class PortRequest(BaseModel):
     physical_port_quantity: Optional[StrictInt] = Field(default=None, description="Number of physical ports", alias="physicalPortQuantity")
     notifications: Optional[List[PortNotification]] = Field(default=None, description="Notification preferences")
     additional_info: Optional[List[PortAdditionalInfo]] = Field(default=None, description="Port additional information", alias="additionalInfo")
-    end_customer: Optional[EndCustomer] = Field(default=None, alias="endCustomer")
     physical_ports: Optional[List[PhysicalPort]] = Field(default=None, description="Physical ports that implement this port", alias="physicalPorts")
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
-    marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"]
+    __properties: ClassVar[List[str]] = ["type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "physicalPorts", "loas"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -177,9 +173,6 @@ class PortRequest(BaseModel):
                 if _item_additional_info:
                     _items.append(_item_additional_info.to_dict())
             _dict['additionalInfo'] = _items
-        # override the default output from pydantic by calling `to_dict()` of end_customer
-        if self.end_customer:
-            _dict['endCustomer'] = self.end_customer.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in physical_ports (list)
         _items = []
         if self.physical_ports:
@@ -194,9 +187,6 @@ class PortRequest(BaseModel):
                 if _item_loas:
                     _items.append(_item_loas.to_dict())
             _dict['loas'] = _items
-        # override the default output from pydantic by calling `to_dict()` of marketplace_subscription
-        if self.marketplace_subscription:
-            _dict['marketplaceSubscription'] = self.marketplace_subscription.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -245,10 +235,8 @@ class PortRequest(BaseModel):
             "physicalPortQuantity": obj.get("physicalPortQuantity"),
             "notifications": [PortNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
             "additionalInfo": [PortAdditionalInfo.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None,
-            "endCustomer": EndCustomer.from_dict(obj["endCustomer"]) if obj.get("endCustomer") is not None else None,
             "physicalPorts": [PhysicalPort.from_dict(_item) for _item in obj["physicalPorts"]] if obj.get("physicalPorts") is not None else None,
-            "loas": [PortLoa.from_dict(_item) for _item in obj["loas"]] if obj.get("loas") is not None else None,
-            "marketplaceSubscription": MarketplaceSubscription.from_dict(obj["marketplaceSubscription"]) if obj.get("marketplaceSubscription") is not None else None
+            "loas": [PortLoa.from_dict(_item) for _item in obj["loas"]] if obj.get("loas") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

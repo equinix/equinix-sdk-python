@@ -23,7 +23,7 @@ class Sort(BaseModel):
     """
     Sort
     """ # noqa: E501
-    var_property: Optional[StrictStr] = Field(default=None, description="Property to sort by", alias="property")
+    var_property: Optional[StrictStr] = Field(default=None, description="Property to sort by((currently supports tags with filter syntax)", alias="property")
     direction: Optional[CompanyProfileSortDirection] = CompanyProfileSortDirection.ASC
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "direction"]

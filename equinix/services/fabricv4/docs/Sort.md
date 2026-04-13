@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_property** | **str** | Property to sort by | [optional] 
+**var_property** | **str** | Property to sort by((currently supports tags with filter syntax) | [optional] 
 **direction** | [**CompanyProfileSortDirection**](CompanyProfileSortDirection.md) |  | [optional] [default to CompanyProfileSortDirection.ASC]
 
 ## Example

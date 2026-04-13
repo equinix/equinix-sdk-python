@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **provider_connection_id** | **str** | Provider assigned Connection Id | [optional] 
 **virtual_network** | [**VirtualNetwork**](VirtualNetwork.md) |  | [optional] 
 **interconnection** | [**MetalInterconnection**](MetalInterconnection.md) |  | [optional] 
-**vpic_interface** | [**VpicInterface**](VpicInterface.md) |  | [optional] 
 **role** | [**AccessPointRole**](AccessPointRole.md) |  | [optional] 
 
 ## Example

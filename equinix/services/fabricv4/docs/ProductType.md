@@ -14,6 +14,8 @@ Product type
 
 * `PRECISION_TIME_PRODUCT` (value: `'PRECISION_TIME_PRODUCT'`)
 
+* `METRO_CONNECT_PRODUCT` (value: `'METRO_CONNECT_PRODUCT'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

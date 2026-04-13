@@ -1839,10 +1839,10 @@ class CloudRoutersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CloudRouterActionResponse:
+    ) -> CloudRouterActionsSearchResponse:
         """Get Route Table Actions
 
-        This API provides capability to fetch action status
+        This API provides capability to fetch all actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str
@@ -1880,7 +1880,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterActionResponse",
+            '200': "CloudRouterActionsSearchResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
@@ -1916,10 +1916,10 @@ class CloudRoutersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CloudRouterActionResponse]:
+    ) -> ApiResponse[CloudRouterActionsSearchResponse]:
         """Get Route Table Actions
 
-        This API provides capability to fetch action status
+        This API provides capability to fetch all actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str
@@ -1957,7 +1957,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterActionResponse",
+            '200': "CloudRouterActionsSearchResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
@@ -1996,7 +1996,7 @@ class CloudRoutersApi:
     ) -> RESTResponseType:
         """Get Route Table Actions
 
-        This API provides capability to fetch action status
+        This API provides capability to fetch all actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str
@@ -2034,7 +2034,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterActionResponse",
+            '200': "CloudRouterActionsSearchResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
@@ -5089,7 +5089,7 @@ class CloudRoutersApi:
     ) -> CloudRouterActionsSearchResponse:
         """Search Route Table Actions
 
-        This API provides capability to refresh route table and bgp session summary information
+        This API provides capability to search route table actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str
@@ -5166,7 +5166,7 @@ class CloudRoutersApi:
     ) -> ApiResponse[CloudRouterActionsSearchResponse]:
         """Search Route Table Actions
 
-        This API provides capability to refresh route table and bgp session summary information
+        This API provides capability to search route table actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str
@@ -5243,7 +5243,7 @@ class CloudRoutersApi:
     ) -> RESTResponseType:
         """Search Route Table Actions
 
-        This API provides capability to refresh route table and bgp session summary information
+        This API provides capability to search route table actions for a given cloud router
 
         :param router_id: Router UUID (required)
         :type router_id: str

@@ -16,9 +16,9 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.change_status import ChangeStatus
 from equinix.services.fabricv4.models.change_type import ChangeType
 from equinix.services.fabricv4.models.connection_change_operation import ConnectionChangeOperation
+from equinix.services.fabricv4.models.service_profile_change_status import ServiceProfileChangeStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class Change(BaseModel):
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="Uniquely identifies a change")
     type: ChangeType
-    status: Optional[ChangeStatus] = None
+    status: Optional[ServiceProfileChangeStatus] = None
     created_date_time: datetime = Field(description="Set when change flow starts", alias="createdDateTime")
     updated_date_time: Optional[datetime] = Field(default=None, description="Set when change object is updated", alias="updatedDateTime")
     information: Optional[StrictStr] = Field(default=None, description="Additional information")

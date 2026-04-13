@@ -25,10 +25,15 @@ class ExpressionOperator(str, Enum):
     EQUAL = '='
     EXCLAMATION_EQUAL = '!='
     GREATER_THAN = '>'
+    GREATER_THAN_EQUAL = '>='
     LESS_THAN = '<'
+    LESS_THAN_EQUAL = '<='
     LIKE = 'LIKE'
+    ILKE = 'ILKE'
     IS_NOT_NULL = 'IS NOT NULL'
     IS_NULL = 'IS NULL'
+    IN = 'IN'
+    BETWEEN = 'BETWEEN'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

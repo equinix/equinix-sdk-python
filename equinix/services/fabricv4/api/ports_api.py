@@ -402,7 +402,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Port",
-            '201': "Port",
+            '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
             '500': "List[Error]",
@@ -477,7 +477,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Port",
-            '201': "Port",
+            '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
             '500': "List[Error]",
@@ -552,7 +552,7 @@ class PortsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Port",
-            '201': "Port",
+            '202': "Port",
             '400': "List[Error]",
             '401': "List[Error]",
             '500': "List[Error]",

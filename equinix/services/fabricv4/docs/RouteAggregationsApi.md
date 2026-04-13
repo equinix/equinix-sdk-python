@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_route_aggregation_changes**](RouteAggregationsApi.md#get_route_aggregation_changes) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes
 [**get_route_aggregation_connections**](RouteAggregationsApi.md#get_route_aggregation_connections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation
 [**patch_route_aggregation_by_uuid**](RouteAggregationsApi.md#patch_route_aggregation_by_uuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation
+[**search_cloud_router_route_aggregation_attachments**](RouteAggregationsApi.md#search_cloud_router_route_aggregation_attachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments
 [**search_route_aggregations**](RouteAggregationsApi.md#search_route_aggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations
 
 
@@ -947,6 +948,93 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Route Aggregation ID Not Found |  -  |
+**415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_cloud_router_route_aggregation_attachments**
+> CloudRouterRouteAggregationsSearchResponse search_cloud_router_route_aggregation_attachments(router_id, cloud_router_route_aggregations_search_base)
+
+Search Cloud Router Route Aggregation Attachments
+
+This API provides capability to search route aggregation attachments for a given cloud router <font color="red"> <sup color='red'>Beta</sup></font>
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.cloud_router_route_aggregations_search_base import CloudRouterRouteAggregationsSearchBase
+from equinix.services.fabricv4.models.cloud_router_route_aggregations_search_response import CloudRouterRouteAggregationsSearchResponse
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
+    router_id = 'router_id_example' # str | Cloud Router UUID
+    cloud_router_route_aggregations_search_base = equinix.services.fabricv4.CloudRouterRouteAggregationsSearchBase() # CloudRouterRouteAggregationsSearchBase | 
+
+    try:
+        # Search Cloud Router Route Aggregation Attachments
+        api_response = api_instance.search_cloud_router_route_aggregation_attachments(router_id, cloud_router_route_aggregations_search_base)
+        print("The response of RouteAggregationsApi->search_cloud_router_route_aggregation_attachments:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RouteAggregationsApi->search_cloud_router_route_aggregation_attachments: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **router_id** | **str**| Cloud Router UUID | 
+ **cloud_router_route_aggregations_search_base** | [**CloudRouterRouteAggregationsSearchBase**](CloudRouterRouteAggregationsSearchBase.md)|  | 
+
+### Return type
+
+[**CloudRouterRouteAggregationsSearchResponse**](CloudRouterRouteAggregationsSearchResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |

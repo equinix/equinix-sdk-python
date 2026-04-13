@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -29,8 +29,9 @@ class Order(BaseModel):
     order_id: Optional[StrictStr] = Field(default=None, description="Order Identification", alias="orderId")
     order_number: Optional[StrictStr] = Field(default=None, description="Order Reference Number", alias="orderNumber")
     term_length: Optional[Annotated[int, Field(le=36, strict=True, ge=1)]] = Field(default=1, description="Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case).", alias="termLength")
+    contracted_bandwidth: Optional[StrictInt] = Field(default=None, description="Contracted bandwidth", alias="contractedBandwidth")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["purchaseOrderNumber", "customerReferenceNumber", "billingTier", "orderId", "orderNumber", "termLength"]
+    __properties: ClassVar[List[str]] = ["purchaseOrderNumber", "customerReferenceNumber", "billingTier", "orderId", "orderNumber", "termLength", "contractedBandwidth"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +96,8 @@ class Order(BaseModel):
             "billingTier": obj.get("billingTier"),
             "orderId": obj.get("orderId"),
             "orderNumber": obj.get("orderNumber"),
-            "termLength": obj.get("termLength") if obj.get("termLength") is not None else 1
+            "termLength": obj.get("termLength") if obj.get("termLength") is not None else 1,
+            "contractedBandwidth": obj.get("contractedBandwidth")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

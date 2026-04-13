@@ -8,9 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **service_token** | [**ServiceToken**](ServiceToken.md) |  | [optional] 
 **access_point** | [**AccessPoint**](AccessPoint.md) |  | [optional] 
-**internet_access** | [**InternetAccess**](InternetAccess.md) |  | [optional] 
-**company_profile** | [**ConnectionCompanyProfile**](ConnectionCompanyProfile.md) |  | [optional] 
-**invitation** | [**ConnectionInvitation**](ConnectionInvitation.md) |  | [optional] 
 **additional_info** | [**List[ConnectionSideAdditionalInfo]**](ConnectionSideAdditionalInfo.md) | Any additional information, which is not part of connection metadata or configuration | [optional] 
 
 ## Example
