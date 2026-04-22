@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Uniquely identifies a change | [optional] 
 **type** | [**ChangeType**](ChangeType.md) |  | 
-**status** | [**ChangeStatus**](ChangeStatus.md) |  | [optional] 
+**status** | [**ServiceProfileChangeStatus**](ServiceProfileChangeStatus.md) |  | [optional] 
 **created_date_time** | **datetime** | Set when change flow starts | 
 **updated_date_time** | **datetime** | Set when change object is updated | [optional] 
 **information** | **str** | Additional information | [optional] 

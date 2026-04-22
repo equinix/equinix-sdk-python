@@ -14,24 +14,21 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class ChangeStatus(str, Enum):
+class CloudRouterRouteFilterSimpleExpressionProperty(str, Enum):
     """
-    Current outcome of the change flow
+    CloudRouterRouteFilterSimpleExpressionProperty
     """
 
     """
     allowed enum values
     """
-    APPROVED = 'APPROVED'
-    COMPLETED = 'COMPLETED'
-    FAILED = 'FAILED'
-    REJECTED = 'REJECTED'
-    REQUESTED = 'REQUESTED'
-    SUBMITTED_FOR_APPROVAL = 'SUBMITTED_FOR_APPROVAL'
+    SLASH_TYPE = '/type'
+    SLASH_DIRECTION = '/direction'
+    SLASH_ATTACHMENT_STATUS = '/attachmentStatus'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of ChangeStatus from a JSON string"""
+        """Create an instance of CloudRouterRouteFilterSimpleExpressionProperty from a JSON string"""
         return cls(json.loads(json_str))
 
 

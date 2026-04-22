@@ -28,6 +28,8 @@ class SimplifiedNotificationType(str, Enum):
     PROFILE_LIFECYCLE = 'PROFILE_LIFECYCLE'
     ALL = 'ALL'
     SALES_REP_NOTIFICATIONS = 'SALES_REP_NOTIFICATIONS'
+    TECHNICAL = 'TECHNICAL'
+    ORDERING = 'ORDERING'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

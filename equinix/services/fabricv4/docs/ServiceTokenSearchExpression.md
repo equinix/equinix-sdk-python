@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_and** | [**List[ServiceTokenSearchExpression]**](ServiceTokenSearchExpression.md) |  | [optional] 
+**var_or** | [**List[ServiceTokenSearchExpression]**](ServiceTokenSearchExpression.md) |  | [optional] 
 **var_property** | [**ServiceTokenSearchFieldName**](ServiceTokenSearchFieldName.md) |  | [optional] 
 **operator** | [**ServiceTokenSearchExpressionOperator**](ServiceTokenSearchExpressionOperator.md) |  | [optional] 
 **values** | **List[str]** |  | [optional] 

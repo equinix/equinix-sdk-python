@@ -1,4 +1,4 @@
-# ChangeStatus
+# ServiceProfileChangeStatus
 
 Current outcome of the change flow
 

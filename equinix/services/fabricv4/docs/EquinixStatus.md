@@ -12,22 +12,6 @@ Connection status
 
 * `PROVISIONED` (value: `'PROVISIONED'`)
 
-* `BEING_REPROVISIONED` (value: `'BEING_REPROVISIONED'`)
-
-* `BEING_DEPROVISIONED` (value: `'BEING_DEPROVISIONED'`)
-
-* `BEING_PROVISIONED` (value: `'BEING_PROVISIONED'`)
-
-* `CREATED` (value: `'CREATED'`)
-
-* `ERRORED` (value: `'ERRORED'`)
-
-* `PENDING_DEPROVISIONING` (value: `'PENDING_DEPROVISIONING'`)
-
-* `APPROVED` (value: `'APPROVED'`)
-
-* `ORDERING` (value: `'ORDERING'`)
-
 * `PENDING_APPROVAL` (value: `'PENDING_APPROVAL'`)
 
 * `NOT_PROVISIONED` (value: `'NOT_PROVISIONED'`)
@@ -48,15 +32,7 @@ Connection status
 
 * `DELETED` (value: `'DELETED'`)
 
-* `PENDING_BANDWIDTH_APPROVAL` (value: `'PENDING_BANDWIDTH_APPROVAL'`)
-
 * `AUTO_APPROVAL_FAILED` (value: `'AUTO_APPROVAL_FAILED'`)
-
-* `UPDATE_PENDING` (value: `'UPDATE_PENDING'`)
-
-* `DELETED_API` (value: `'DELETED_API'`)
-
-* `MODIFIED` (value: `'MODIFIED'`)
 
 * `PENDING_PROVIDER_VLAN_ERROR` (value: `'PENDING_PROVIDER_VLAN_ERROR'`)
 
@@ -65,8 +41,6 @@ Connection status
 * `CANCELLED` (value: `'CANCELLED'`)
 
 * `PENDING_INTERFACE_CONFIGURATION` (value: `'PENDING_INTERFACE_CONFIGURATION'`)
-
-* `PENDING_ACTIVATION` (value: `'PENDING_ACTIVATION'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -27,6 +27,7 @@ class ProductType(str, Enum):
     VIRTUAL_PORT_PRODUCT = 'VIRTUAL_PORT_PRODUCT'
     CLOUD_ROUTER_PRODUCT = 'CLOUD_ROUTER_PRODUCT'
     PRECISION_TIME_PRODUCT = 'PRECISION_TIME_PRODUCT'
+    METRO_CONNECT_PRODUCT = 'METRO_CONNECT_PRODUCT'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

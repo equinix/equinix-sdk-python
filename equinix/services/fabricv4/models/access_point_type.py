@@ -32,6 +32,7 @@ class AccessPointType(str, Enum):
     NETWORK = 'NETWORK'
     METAL_NETWORK = 'METAL_NETWORK'
     VPIC_INTERFACE = 'VPIC_INTERFACE'
+    APP_LINK = 'APP_LINK'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

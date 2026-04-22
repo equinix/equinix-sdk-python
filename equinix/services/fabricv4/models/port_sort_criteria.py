@@ -25,7 +25,7 @@ class PortSortCriteria(BaseModel):
     PortSortCriteria
     """ # noqa: E501
     direction: Optional[PortSortDirection] = PortSortDirection.DESC
-    var_property: Optional[PortSortBy] = Field(default=PortSortBy.SLASH_DEVICE_SLASH_NAME, alias="property")
+    var_property: Optional[PortSortBy] = Field(default=PortSortBy.DEVICE_SLASH_NAME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class PortSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else PortSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else PortSortBy.SLASH_DEVICE_SLASH_NAME
+            "property": obj.get("property") if obj.get("property") is not None else PortSortBy.DEVICE_SLASH_NAME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **order_id** | **str** | Order Identification | [optional] 
 **order_number** | **str** | Order Reference Number | [optional] 
 **term_length** | **int** | Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case). | [optional] [default to 1]
+**contracted_bandwidth** | **int** | Contracted bandwidth | [optional] 
 
 ## Example
 

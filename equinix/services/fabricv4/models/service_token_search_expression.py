@@ -25,11 +25,12 @@ class ServiceTokenSearchExpression(BaseModel):
     ServiceTokenSearchExpression
     """ # noqa: E501
     var_and: Optional[List[ServiceTokenSearchExpression]] = Field(default=None, alias="and")
+    var_or: Optional[List[ServiceTokenSearchExpression]] = Field(default=None, alias="or")
     var_property: Optional[ServiceTokenSearchFieldName] = Field(default=None, alias="property")
     operator: Optional[ServiceTokenSearchExpressionOperator] = None
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["and", "property", "operator", "values"]
+    __properties: ClassVar[List[str]] = ["and", "or", "property", "operator", "values"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,13 @@ class ServiceTokenSearchExpression(BaseModel):
                 if _item_var_and:
                     _items.append(_item_var_and.to_dict())
             _dict['and'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in var_or (list)
+        _items = []
+        if self.var_or:
+            for _item_var_or in self.var_or:
+                if _item_var_or:
+                    _items.append(_item_var_or.to_dict())
+            _dict['or'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -97,6 +105,7 @@ class ServiceTokenSearchExpression(BaseModel):
 
         _obj = cls.model_validate({
             "and": [ServiceTokenSearchExpression.from_dict(_item) for _item in obj["and"]] if obj.get("and") is not None else None,
+            "or": [ServiceTokenSearchExpression.from_dict(_item) for _item in obj["or"]] if obj.get("or") is not None else None,
             "property": obj.get("property"),
             "operator": obj.get("operator"),
             "values": obj.get("values")

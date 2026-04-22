@@ -29,7 +29,6 @@ from equinix.services.fabricv4.models.simplified_port import SimplifiedPort
 from equinix.services.fabricv4.models.simplified_service_profile import SimplifiedServiceProfile
 from equinix.services.fabricv4.models.virtual_device import VirtualDevice
 from equinix.services.fabricv4.models.virtual_network import VirtualNetwork
-from equinix.services.fabricv4.models.vpic_interface import VpicInterface
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -53,10 +52,9 @@ class AccessPoint(BaseModel):
     provider_connection_id: Optional[StrictStr] = Field(default=None, description="Provider assigned Connection Id", alias="providerConnectionId")
     virtual_network: Optional[VirtualNetwork] = Field(default=None, alias="virtualNetwork")
     interconnection: Optional[MetalInterconnection] = None
-    vpic_interface: Optional[VpicInterface] = None
     role: Optional[AccessPointRole] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "vpic_interface", "role"]
+    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,9 +130,6 @@ class AccessPoint(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of interconnection
         if self.interconnection:
             _dict['interconnection'] = self.interconnection.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of vpic_interface
-        if self.vpic_interface:
-            _dict['vpic_interface'] = self.vpic_interface.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -168,7 +163,6 @@ class AccessPoint(BaseModel):
             "providerConnectionId": obj.get("providerConnectionId"),
             "virtualNetwork": VirtualNetwork.from_dict(obj["virtualNetwork"]) if obj.get("virtualNetwork") is not None else None,
             "interconnection": MetalInterconnection.from_dict(obj["interconnection"]) if obj.get("interconnection") is not None else None,
-            "vpic_interface": VpicInterface.from_dict(obj["vpic_interface"]) if obj.get("vpic_interface") is not None else None,
             "role": obj.get("role")
         })
         # store additional fields in additional_properties

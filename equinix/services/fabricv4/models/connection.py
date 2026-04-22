@@ -23,7 +23,6 @@ from equinix.services.fabricv4.models.connection_operation import ConnectionOper
 from equinix.services.fabricv4.models.connection_redundancy import ConnectionRedundancy
 from equinix.services.fabricv4.models.connection_side import ConnectionSide
 from equinix.services.fabricv4.models.connection_side_additional_info import ConnectionSideAdditionalInfo
-from equinix.services.fabricv4.models.connection_state import ConnectionState
 from equinix.services.fabricv4.models.connection_type import ConnectionType
 from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
 from equinix.services.fabricv4.models.marketplace_subscription import MarketplaceSubscription
@@ -43,7 +42,6 @@ class Connection(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned connection identifier")
     name: StrictStr = Field(description="Customer-provided connection name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided connection description")
-    state: Optional[ConnectionState] = None
     change: Optional[Change] = None
     operation: Optional[ConnectionOperation] = None
     order: Optional[Order] = None
@@ -61,7 +59,7 @@ class Connection(BaseModel):
     additional_info: Optional[List[ConnectionSideAdditionalInfo]] = Field(default=None, description="Connection additional information", alias="additionalInfo")
     project: Optional[Project] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "state", "change", "operation", "order", "notifications", "account", "changeLog", "bandwidth", "geoScope", "redundancy", "isRemote", "direction", "aSide", "zSide", "marketplaceSubscription", "additionalInfo", "project"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "change", "operation", "order", "notifications", "account", "changeLog", "bandwidth", "geoScope", "redundancy", "isRemote", "direction", "aSide", "zSide", "marketplaceSubscription", "additionalInfo", "project"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -172,7 +170,6 @@ class Connection(BaseModel):
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "state": obj.get("state"),
             "change": Change.from_dict(obj["change"]) if obj.get("change") is not None else None,
             "operation": ConnectionOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "order": Order.from_dict(obj["order"]) if obj.get("order") is not None else None,

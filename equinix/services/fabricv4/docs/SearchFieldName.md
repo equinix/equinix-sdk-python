@@ -22,10 +22,6 @@ Possible field names to use on filters
 
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_ROUTER_SLASH_UUID` (value: `'/aSide/accessPoint/router/uuid'`)
 
-* `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_C_TAG` (value: `'/aSide/accessPoint/linkProtocol/vlanCTag'`)
-
-* `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_S_TAG` (value: `'/aSide/accessPoint/linkProtocol/vlanSTag'`)
-
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MIN` (value: `'/aSide/accessPoint/linkProtocol/vlanTagMin'`)
 
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MAX` (value: `'/aSide/accessPoint/linkProtocol/vlanTagMax'`)
@@ -48,7 +44,13 @@ Possible field names to use on filters
 
 * `SLASH_A_SIDE_SLASH_SERVICE_TOKEN_SLASH_UUID` (value: `'/aSide/serviceToken/uuid'`)
 
+* `SLASH_BANDWIDTH` (value: `'/bandwidth'`)
+
 * `SLASH_CHANGE_SLASH_STATUS` (value: `'/change/status'`)
+
+* `SLASH_CHANGE_LOG_SLASH_CREATED_BY` (value: `'/changeLog/createdBy'`)
+
+* `SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME` (value: `'/changeLog/createdDateTime'`)
 
 * `SLASH_OPERATION_SLASH_EQUINIX_STATUS` (value: `'/operation/equinixStatus'`)
 
@@ -63,10 +65,6 @@ Possible field names to use on filters
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ACCOUNT_SLASH_ACCOUNT_NAME` (value: `'/zSide/accessPoint/account/accountName'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_AUTHENTICATION_KEY` (value: `'/zSide/accessPoint/authenticationKey'`)
-
-* `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_C_TAG` (value: `'/zSide/accessPoint/linkProtocol/vlanCTag'`)
-
-* `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_S_TAG` (value: `'/zSide/accessPoint/linkProtocol/vlanSTag'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MIN` (value: `'/zSide/accessPoint/linkProtocol/vlanTagMin'`)
 

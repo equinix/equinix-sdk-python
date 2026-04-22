@@ -532,11 +532,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cloud_router_actions**
-> CloudRouterActionResponse get_cloud_router_actions(router_id, state=state)
+> CloudRouterActionsSearchResponse get_cloud_router_actions(router_id, state=state)
 
 Get Route Table Actions
 
-This API provides capability to fetch action status
+This API provides capability to fetch all actions for a given cloud router
 
 ### Example
 
@@ -544,8 +544,8 @@ This API provides capability to fetch action status
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.cloud_router_action_response import CloudRouterActionResponse
 from equinix.services.fabricv4.models.cloud_router_action_state import CloudRouterActionState
+from equinix.services.fabricv4.models.cloud_router_actions_search_response import CloudRouterActionsSearchResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CloudRouterActionResponse**](CloudRouterActionResponse.md)
+[**CloudRouterActionsSearchResponse**](CloudRouterActionsSearchResponse.md)
 
 ### Authorization
 
@@ -1476,7 +1476,7 @@ Name | Type | Description  | Notes
 
 Search Route Table Actions
 
-This API provides capability to refresh route table and bgp session summary information
+This API provides capability to search route table actions for a given cloud router
 
 ### Example
 

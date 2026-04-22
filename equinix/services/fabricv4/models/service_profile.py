@@ -23,6 +23,7 @@ from equinix.services.fabricv4.models.service_metro import ServiceMetro
 from equinix.services.fabricv4.models.service_profile_access_point_colo import ServiceProfileAccessPointCOLO
 from equinix.services.fabricv4.models.service_profile_access_point_type import ServiceProfileAccessPointType
 from equinix.services.fabricv4.models.service_profile_access_point_vd import ServiceProfileAccessPointVD
+from equinix.services.fabricv4.models.service_profile_change import ServiceProfileChange
 from equinix.services.fabricv4.models.service_profile_state_enum import ServiceProfileStateEnum
 from equinix.services.fabricv4.models.service_profile_type_enum import ServiceProfileTypeEnum
 from equinix.services.fabricv4.models.service_profile_visibility_enum import ServiceProfileVisibilityEnum
@@ -37,6 +38,7 @@ class ServiceProfile(BaseModel):
     state: Optional[ServiceProfileStateEnum] = None
     account: Optional[Any] = Field(default=None, description="Seller Account for Service Profile.")
     project: Optional[Project] = None
+    change: Optional[ServiceProfileChange] = None
     change_log: Optional[Any] = Field(default=None, description="Seller Account for Service Profile.", alias="changeLog")
     href: Optional[StrictStr] = Field(default=None, description="Service Profile URI response attribute")
     type: Optional[ServiceProfileTypeEnum] = None

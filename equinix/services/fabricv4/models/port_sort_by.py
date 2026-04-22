@@ -23,6 +23,16 @@ class PortSortBy(str, Enum):
     allowed enum values
     """
     SLASH_DEVICE_SLASH_NAME = '/device/name'
+    SLASH_NAME = '/name'
+    SLASH_STATE = '/state'
+    SLASH_LOCATION_SLASH_METRO_NAME = '/location/metroName'
+    SLASH_DEMARCATION_POINT_IBX = '/demarcationPointIbx'
+    SLASH_DEVICE_SLASH_REDUNDANCY_SLASH_PRIORITY = '/device/redundancy/priority'
+    SLASH_LAG_ENABLED = '/lagEnabled'
+    SLASH_PHYSICAL_PORTS_SPEED = '/physicalPortsSpeed'
+    SLASH_ENCAPSULATION_SLASH_TYPE = '/encapsulation/type'
+    SLASH_PHYSICAL_PORTS_SLASH_TETHER_SLASH_CROSS_CONNECT_ID = '/physicalPorts/tether/crossConnectId'
+    SLASH_PACKAGE_SLASH_CODE = '/package/code'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
