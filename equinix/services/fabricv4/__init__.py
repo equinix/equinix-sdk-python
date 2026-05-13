@@ -10,7 +10,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.16.0"
+__version__ = "0.17.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.agent_templates_api import AgentTemplatesApi
