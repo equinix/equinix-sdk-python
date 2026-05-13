@@ -115,7 +115,8 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../../components/schemas/DeviceCreateInMetroInput.yaml'
+          oneOf:
+          - $ref: '../../../components/schemas/DeviceCreateInMetroInput.yaml'
     description: Device to create
     required: true
   responses:
