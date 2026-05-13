@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_device**
-> Device create_device(id, device_create_in_metro_input, include=include, exclude=exclude)
+> Device create_device(id, create_device_request, include=include, exclude=exclude)
 
 Create a device
 
@@ -127,8 +127,8 @@ Creates a new device and provisions it in the specified location.  Device type-s
 
 ```python
 import equinix.services.metalv1
+from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
 from equinix.services.metalv1.models.device import Device
-from equinix.services.metalv1.models.device_create_in_metro_input import DeviceCreateInMetroInput
 from equinix.services.metalv1.rest import ApiException
 from pprint import pprint
 
@@ -154,13 +154,13 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.metalv1.DevicesApi(api_client)
     id = 'id_example' # str | Project UUID
-    device_create_in_metro_input = equinix.services.metalv1.DeviceCreateInMetroInput() # DeviceCreateInMetroInput | Device to create
+    create_device_request = equinix.services.metalv1.CreateDeviceRequest() # CreateDeviceRequest | Device to create
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
 
     try:
         # Create a device
-        api_response = api_instance.create_device(id, device_create_in_metro_input, include=include, exclude=exclude)
+        api_response = api_instance.create_device(id, create_device_request, include=include, exclude=exclude)
         print("The response of DevicesApi->create_device:\n")
         pprint(api_response)
     except Exception as e:
@@ -175,7 +175,7 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Project UUID | 
- **device_create_in_metro_input** | [**DeviceCreateInMetroInput**](DeviceCreateInMetroInput.md)| Device to create | 
+ **create_device_request** | [**CreateDeviceRequest**](CreateDeviceRequest.md)| Device to create | 
  **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
  **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
 

@@ -46,6 +46,7 @@ from equinix.services.metalv1.models.capacity_level_per_baremetal import Capacit
 from equinix.services.metalv1.models.capacity_list import CapacityList
 from equinix.services.metalv1.models.component import Component
 from equinix.services.metalv1.models.coordinates import Coordinates
+from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
 from equinix.services.metalv1.models.create_email_input import CreateEmailInput
 from equinix.services.metalv1.models.create_metal_gateway_request import CreateMetalGatewayRequest
 from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
