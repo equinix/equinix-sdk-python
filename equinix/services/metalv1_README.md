@@ -331,6 +331,7 @@ Class | Method | HTTP request | Description
  - [CapacityList](equinix/services/metalv1/docs/CapacityList.md)
  - [Component](equinix/services/metalv1/docs/Component.md)
  - [Coordinates](equinix/services/metalv1/docs/Coordinates.md)
+ - [CreateDeviceRequest](equinix/services/metalv1/docs/CreateDeviceRequest.md)
  - [CreateEmailInput](equinix/services/metalv1/docs/CreateEmailInput.md)
  - [CreateMetalGatewayRequest](equinix/services/metalv1/docs/CreateMetalGatewayRequest.md)
  - [CreateOrganizationInterconnectionRequest](equinix/services/metalv1/docs/CreateOrganizationInterconnectionRequest.md)
