@@ -43,7 +43,7 @@ delete:
 get:
   summary: Retrieve a BGP Dynamic Neighbor
   description: Return a single BGP Dynamic Neighbor resource
-  operation: findBgpDynamicNeighborById
+  operationId: findBgpDynamicNeighborById
   parameters:
     - description: BGP Dynamic Neighbor UUID
       in: path

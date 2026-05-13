@@ -59,7 +59,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SpotMarketRequest:
-        """Create a spot market request
+        """(Deprecated) Create a spot market request
 
         Creates a new spot market request.  Type-specific options (such as operating_system for baremetal devices) should be included in the main data structure alongside hostname and plan.  The features attribute allows you to optionally specify what features your server should have. For example, if you require a server with a TPM chip, you may specify `{ \"features\": { \"tpm\": \"required\" } }` (or `{ \"features\": [\"tpm\"] }` in shorthand).  The request will fail if there are no available servers matching your criteria. Alternatively, if you do not require a certain feature, but would prefer to be assigned a server with that feature if there are any available, you may specify that feature with a preferred value (see the example request below).  The request will not fail if we have no servers with that feature in our inventory.
 
@@ -88,6 +88,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._create_spot_market_request_serialize(
             id=id,
@@ -133,7 +134,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SpotMarketRequest]:
-        """Create a spot market request
+        """(Deprecated) Create a spot market request
 
         Creates a new spot market request.  Type-specific options (such as operating_system for baremetal devices) should be included in the main data structure alongside hostname and plan.  The features attribute allows you to optionally specify what features your server should have. For example, if you require a server with a TPM chip, you may specify `{ \"features\": { \"tpm\": \"required\" } }` (or `{ \"features\": [\"tpm\"] }` in shorthand).  The request will fail if there are no available servers matching your criteria. Alternatively, if you do not require a certain feature, but would prefer to be assigned a server with that feature if there are any available, you may specify that feature with a preferred value (see the example request below).  The request will not fail if we have no servers with that feature in our inventory.
 
@@ -162,6 +163,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._create_spot_market_request_serialize(
             id=id,
@@ -207,7 +209,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create a spot market request
+        """(Deprecated) Create a spot market request
 
         Creates a new spot market request.  Type-specific options (such as operating_system for baremetal devices) should be included in the main data structure alongside hostname and plan.  The features attribute allows you to optionally specify what features your server should have. For example, if you require a server with a TPM chip, you may specify `{ \"features\": { \"tpm\": \"required\" } }` (or `{ \"features\": [\"tpm\"] }` in shorthand).  The request will fail if there are no available servers matching your criteria. Alternatively, if you do not require a certain feature, but would prefer to be assigned a server with that feature if there are any available, you may specify that feature with a preferred value (see the example request below).  The request will not fail if we have no servers with that feature in our inventory.
 
@@ -236,6 +238,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._create_spot_market_request_serialize(
             id=id,
@@ -634,7 +637,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SpotMarketPricesPerMetroList:
-        """Get current spot market prices for metros
+        """(Deprecated) Get current spot market prices for metros
 
         Get Equinix Metal current spot market prices for all metros.
 
@@ -663,6 +666,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/metros is deprecated.", DeprecationWarning)
 
         _param = self._find_metro_spot_market_prices_serialize(
             metro=metro,
@@ -707,7 +711,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SpotMarketPricesPerMetroList]:
-        """Get current spot market prices for metros
+        """(Deprecated) Get current spot market prices for metros
 
         Get Equinix Metal current spot market prices for all metros.
 
@@ -736,6 +740,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/metros is deprecated.", DeprecationWarning)
 
         _param = self._find_metro_spot_market_prices_serialize(
             metro=metro,
@@ -780,7 +785,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get current spot market prices for metros
+        """(Deprecated) Get current spot market prices for metros
 
         Get Equinix Metal current spot market prices for all metros.
 
@@ -809,6 +814,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/metros is deprecated.", DeprecationWarning)
 
         _param = self._find_metro_spot_market_prices_serialize(
             metro=metro,
@@ -915,7 +921,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SpotMarketPricesList:
-        """Get current spot market prices
+        """(Deprecated) Get current spot market prices
 
         Get Equinix Metal current spot market prices.
 
@@ -944,6 +950,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_serialize(
             facility=facility,
@@ -988,7 +995,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SpotMarketPricesList]:
-        """Get current spot market prices
+        """(Deprecated) Get current spot market prices
 
         Get Equinix Metal current spot market prices.
 
@@ -1017,6 +1024,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_serialize(
             facility=facility,
@@ -1061,7 +1069,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get current spot market prices
+        """(Deprecated) Get current spot market prices
 
         Get Equinix Metal current spot market prices.
 
@@ -1090,6 +1098,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_serialize(
             facility=facility,
@@ -1199,7 +1208,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SpotPricesHistoryReport:
-        """Get spot market prices for a given period of time
+        """(Deprecated) Get spot market prices for a given period of time
 
         Get spot market prices for a given plan and facility in a fixed period of time  *Note: In the `200` response, the property `datapoints` contains arrays of `[float, integer]`.*
 
@@ -1234,6 +1243,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/history is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_history_serialize(
             facility=facility,
@@ -1284,7 +1294,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SpotPricesHistoryReport]:
-        """Get spot market prices for a given period of time
+        """(Deprecated) Get spot market prices for a given period of time
 
         Get spot market prices for a given plan and facility in a fixed period of time  *Note: In the `200` response, the property `datapoints` contains arrays of `[float, integer]`.*
 
@@ -1319,6 +1329,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/history is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_history_serialize(
             facility=facility,
@@ -1369,7 +1380,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get spot market prices for a given period of time
+        """(Deprecated) Get spot market prices for a given period of time
 
         Get spot market prices for a given plan and facility in a fixed period of time  *Note: In the `200` response, the property `datapoints` contains arrays of `[float, integer]`.*
 
@@ -1404,6 +1415,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /market/spot/prices/history is deprecated.", DeprecationWarning)
 
         _param = self._find_spot_market_prices_history_serialize(
             facility=facility,
@@ -1810,7 +1822,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SpotMarketRequestList:
-        """List spot market requests
+        """(Deprecated) List spot market requests
 
         View all spot market requests for a given project.
 
@@ -1837,6 +1849,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._list_spot_market_requests_serialize(
             id=id,
@@ -1879,7 +1892,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SpotMarketRequestList]:
-        """List spot market requests
+        """(Deprecated) List spot market requests
 
         View all spot market requests for a given project.
 
@@ -1906,6 +1919,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._list_spot_market_requests_serialize(
             id=id,
@@ -1948,7 +1962,7 @@ class SpotMarketApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List spot market requests
+        """(Deprecated) List spot market requests
 
         View all spot market requests for a given project.
 
@@ -1975,6 +1989,7 @@ class SpotMarketApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /projects/{id}/spot-market-requests is deprecated.", DeprecationWarning)
 
         _param = self._list_spot_market_requests_serialize(
             id=id,

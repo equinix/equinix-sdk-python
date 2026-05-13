@@ -8,9 +8,6 @@ properties:
     format: email
   description:
     type: string
-  facility_id:
-    type: string
-    x-deprecated: true
   metro:
     description: A Metro ID or code. For interconnections with Dedicated Ports, this will be the location of the issued Dedicated Ports.
     type: string
@@ -35,7 +32,7 @@ properties:
     description: |-
       A interconnection speed, in bps, mbps, or gbps. For Dedicated Ports, this can be 10Gbps or 100Gbps.
     type: string
-    example: 10000000000
+    example: "10000000000"
   tags:
     items:
       type: string

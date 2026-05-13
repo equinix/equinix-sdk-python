@@ -4,13 +4,13 @@ All URIs are relative to *https://api.equinix.com/metal/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**capture_screenshot**](ConsoleLogDetailsApi.md#capture_screenshot) | **GET** /devices/{id}/diagnostics/screenshot | 
+[**capture_screenshot**](ConsoleLogDetailsApi.md#capture_screenshot) | **GET** /devices/{id}/diagnostics/screenshot | Capture device screenshot
 
 
 # **capture_screenshot**
 > bytearray capture_screenshot(id)
 
-
+Capture device screenshot
 
 Capture a screenshot from the device, if supported, via the BMC.
 
@@ -47,6 +47,7 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     id = 'id_example' # str | Device UUID
 
     try:
+        # Capture device screenshot
         api_response = api_instance.capture_screenshot(id)
         print("The response of ConsoleLogDetailsApi->capture_screenshot:\n")
         pprint(api_response)

@@ -56,7 +56,7 @@ class SelfServiceReservationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SelfServiceReservationResponse:
-        """Create a reservation
+        """(Deprecated) Create a reservation
 
         Creates a reservation.
 
@@ -85,6 +85,7 @@ class SelfServiceReservationsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{project_id}/self-service/reservations is deprecated.", DeprecationWarning)
 
         _param = self._create_self_service_reservation_serialize(
             project_id=project_id,
@@ -129,7 +130,7 @@ class SelfServiceReservationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SelfServiceReservationResponse]:
-        """Create a reservation
+        """(Deprecated) Create a reservation
 
         Creates a reservation.
 
@@ -158,6 +159,7 @@ class SelfServiceReservationsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{project_id}/self-service/reservations is deprecated.", DeprecationWarning)
 
         _param = self._create_self_service_reservation_serialize(
             project_id=project_id,
@@ -202,7 +204,7 @@ class SelfServiceReservationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create a reservation
+        """(Deprecated) Create a reservation
 
         Creates a reservation.
 
@@ -231,6 +233,7 @@ class SelfServiceReservationsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("POST /projects/{project_id}/self-service/reservations is deprecated.", DeprecationWarning)
 
         _param = self._create_self_service_reservation_serialize(
             project_id=project_id,

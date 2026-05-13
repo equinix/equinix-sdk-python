@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**available_servers** | **int** |  | [optional] 
 **href** | **str** |  | [optional] 
 **level** | **str** |  | [optional] 
 

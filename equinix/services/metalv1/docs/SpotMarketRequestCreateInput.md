@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **devices_max** | **int** |  | [optional] 
 **devices_min** | **int** |  | [optional] 
 **end_at** | **datetime** |  | [optional] 
-**facilities** | **List[str]** |  | [optional] 
 **href** | **str** |  | [optional] 
 **instance_parameters** | [**SpotMarketRequestCreateInputInstanceParameters**](SpotMarketRequestCreateInputInstanceParameters.md) |  | [optional] 
 **max_bid_price** | **float** |  | [optional] 

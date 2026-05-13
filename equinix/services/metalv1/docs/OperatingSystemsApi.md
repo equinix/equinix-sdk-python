@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 Retrieve all operating systems
 
-Provides a listing of available operating systems to provision your new device with.
+Returns a list of available operating systems to provision your new device with.
 
 ### Example
 

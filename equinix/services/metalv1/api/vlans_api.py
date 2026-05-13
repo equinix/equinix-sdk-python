@@ -681,7 +681,6 @@ class VLANsApi:
         id: Annotated[StrictStr, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
-        facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
         _request_timeout: Union[
             None,
@@ -706,8 +705,6 @@ class VLANsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
-        :param facility: Filter by Facility ID (uuid) or Facility Code
-        :type facility: str
         :param metro: Filter by Metro ID (uuid) or Metro Code
         :type metro: str
         :param _request_timeout: timeout setting for this request. If one
@@ -736,7 +733,6 @@ class VLANsApi:
             id=id,
             include=include,
             exclude=exclude,
-            facility=facility,
             metro=metro,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -767,7 +763,6 @@ class VLANsApi:
         id: Annotated[StrictStr, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
-        facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
         _request_timeout: Union[
             None,
@@ -792,8 +787,6 @@ class VLANsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
-        :param facility: Filter by Facility ID (uuid) or Facility Code
-        :type facility: str
         :param metro: Filter by Metro ID (uuid) or Metro Code
         :type metro: str
         :param _request_timeout: timeout setting for this request. If one
@@ -822,7 +815,6 @@ class VLANsApi:
             id=id,
             include=include,
             exclude=exclude,
-            facility=facility,
             metro=metro,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -853,7 +845,6 @@ class VLANsApi:
         id: Annotated[StrictStr, Field(description="Project UUID")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
-        facility: Annotated[Optional[StrictStr], Field(description="Filter by Facility ID (uuid) or Facility Code")] = None,
         metro: Annotated[Optional[StrictStr], Field(description="Filter by Metro ID (uuid) or Metro Code")] = None,
         _request_timeout: Union[
             None,
@@ -878,8 +869,6 @@ class VLANsApi:
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
         :type exclude: List[str]
-        :param facility: Filter by Facility ID (uuid) or Facility Code
-        :type facility: str
         :param metro: Filter by Metro ID (uuid) or Metro Code
         :type metro: str
         :param _request_timeout: timeout setting for this request. If one
@@ -908,7 +897,6 @@ class VLANsApi:
             id=id,
             include=include,
             exclude=exclude,
-            facility=facility,
             metro=metro,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -934,7 +922,6 @@ class VLANsApi:
         id,
         include,
         exclude,
-        facility,
         metro,
         _request_auth,
         _content_type,
@@ -967,10 +954,6 @@ class VLANsApi:
         if exclude is not None:
             
             _query_params.append(('exclude', exclude))
-            
-        if facility is not None:
-            
-            _query_params.append(('facility', facility))
             
         if metro is not None:
             

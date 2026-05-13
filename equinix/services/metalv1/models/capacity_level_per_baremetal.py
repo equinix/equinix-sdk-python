@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,9 +25,10 @@ class CapacityLevelPerBaremetal(BaseModel):
     """
     CapacityLevelPerBaremetal
     """ # noqa: E501
+    available_servers: Optional[StrictInt] = None
     href: Optional[StrictStr] = None
     level: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["href", "level"]
+    __properties: ClassVar[List[str]] = ["available_servers", "href", "level"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +81,7 @@ class CapacityLevelPerBaremetal(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "available_servers": obj.get("available_servers"),
             "href": obj.get("href"),
             "level": obj.get("level")
         })

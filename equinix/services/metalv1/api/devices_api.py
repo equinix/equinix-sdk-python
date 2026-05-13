@@ -22,9 +22,9 @@ from equinix.services.metalv1.models.bgp_session_input import BGPSessionInput
 from equinix.services.metalv1.models.bgp_session import BgpSession
 from equinix.services.metalv1.models.bgp_session_list import BgpSessionList
 from equinix.services.metalv1.models.bgp_session_neighbors import BgpSessionNeighbors
-from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
 from equinix.services.metalv1.models.device import Device
 from equinix.services.metalv1.models.device_action_input import DeviceActionInput
+from equinix.services.metalv1.models.device_create_in_metro_input import DeviceCreateInMetroInput
 from equinix.services.metalv1.models.device_health_rollup import DeviceHealthRollup
 from equinix.services.metalv1.models.device_list import DeviceList
 from equinix.services.metalv1.models.device_update_input import DeviceUpdateInput
@@ -367,7 +367,7 @@ class DevicesApi:
     def create_device(
         self,
         id: Annotated[StrictStr, Field(description="Project UUID")],
-        create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
+        device_create_in_metro_input: Annotated[DeviceCreateInMetroInput, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -389,8 +389,8 @@ class DevicesApi:
 
         :param id: Project UUID (required)
         :type id: str
-        :param create_device_request: Device to create (required)
-        :type create_device_request: CreateDeviceRequest
+        :param device_create_in_metro_input: Device to create (required)
+        :type device_create_in_metro_input: DeviceCreateInMetroInput
         :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
@@ -419,7 +419,7 @@ class DevicesApi:
 
         _param = self._create_device_serialize(
             id=id,
-            create_device_request=create_device_request,
+            device_create_in_metro_input=device_create_in_metro_input,
             include=include,
             exclude=exclude,
             _request_auth=_request_auth,
@@ -450,7 +450,7 @@ class DevicesApi:
     def create_device_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Project UUID")],
-        create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
+        device_create_in_metro_input: Annotated[DeviceCreateInMetroInput, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -472,8 +472,8 @@ class DevicesApi:
 
         :param id: Project UUID (required)
         :type id: str
-        :param create_device_request: Device to create (required)
-        :type create_device_request: CreateDeviceRequest
+        :param device_create_in_metro_input: Device to create (required)
+        :type device_create_in_metro_input: DeviceCreateInMetroInput
         :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
@@ -502,7 +502,7 @@ class DevicesApi:
 
         _param = self._create_device_serialize(
             id=id,
-            create_device_request=create_device_request,
+            device_create_in_metro_input=device_create_in_metro_input,
             include=include,
             exclude=exclude,
             _request_auth=_request_auth,
@@ -533,7 +533,7 @@ class DevicesApi:
     def create_device_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Project UUID")],
-        create_device_request: Annotated[CreateDeviceRequest, Field(description="Device to create")],
+        device_create_in_metro_input: Annotated[DeviceCreateInMetroInput, Field(description="Device to create")],
         include: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.")] = None,
         exclude: Annotated[Optional[List[StrictStr]], Field(description="Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.")] = None,
         _request_timeout: Union[
@@ -555,8 +555,8 @@ class DevicesApi:
 
         :param id: Project UUID (required)
         :type id: str
-        :param create_device_request: Device to create (required)
-        :type create_device_request: CreateDeviceRequest
+        :param device_create_in_metro_input: Device to create (required)
+        :type device_create_in_metro_input: DeviceCreateInMetroInput
         :param include: Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects.
         :type include: List[str]
         :param exclude: Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects.
@@ -585,7 +585,7 @@ class DevicesApi:
 
         _param = self._create_device_serialize(
             id=id,
-            create_device_request=create_device_request,
+            device_create_in_metro_input=device_create_in_metro_input,
             include=include,
             exclude=exclude,
             _request_auth=_request_auth,
@@ -611,7 +611,7 @@ class DevicesApi:
     def _create_device_serialize(
         self,
         id,
-        create_device_request,
+        device_create_in_metro_input,
         include,
         exclude,
         _request_auth,
@@ -649,8 +649,8 @@ class DevicesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if create_device_request is not None:
-            _body_params = create_device_request
+        if device_create_in_metro_input is not None:
+            _body_params = device_create_in_metro_input
 
 
         # set the HTTP header `Accept`
@@ -5392,8 +5392,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -5462,8 +5463,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -5532,8 +5534,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -5657,8 +5660,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeviceHealthRollup",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -5727,8 +5731,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeviceHealthRollup",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -5797,8 +5802,9 @@ class DevicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DeviceHealthRollup",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(

@@ -26,12 +26,11 @@ class VirtualNetworkCreateInput(BaseModel):
     VirtualNetworkCreateInput
     """ # noqa: E501
     description: Optional[StrictStr] = None
-    facility: Optional[StrictStr] = Field(default=None, description="The UUID (or facility code) for the Facility in which to create this Virtual network.")
     href: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The UUID (or metro code) for the Metro in which to create this Virtual Network.")
     tags: Optional[List[StrictStr]] = None
     vxlan: Optional[StrictInt] = Field(default=None, description="VLAN ID between 2-3999. Must be unique for the project within the Metro in which this Virtual Network is being created. If no value is specified, the next-available VLAN ID in the range 1000-1999 will be automatically selected.")
-    __properties: ClassVar[List[str]] = ["description", "facility", "href", "metro", "tags", "vxlan"]
+    __properties: ClassVar[List[str]] = ["description", "href", "metro", "tags", "vxlan"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,7 +84,6 @@ class VirtualNetworkCreateInput(BaseModel):
 
         _obj = cls.model_validate({
             "description": obj.get("description"),
-            "facility": obj.get("facility"),
             "href": obj.get("href"),
             "metro": obj.get("metro"),
             "tags": obj.get("tags"),

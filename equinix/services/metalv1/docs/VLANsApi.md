@@ -184,7 +184,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **find_virtual_networks**
-> VirtualNetworkList find_virtual_networks(id, include=include, exclude=exclude, facility=facility, metro=metro)
+> VirtualNetworkList find_virtual_networks(id, include=include, exclude=exclude, metro=metro)
 
 Retrieve all virtual networks
 
@@ -224,12 +224,11 @@ with equinix.services.metalv1.ApiClient(configuration) as api_client:
     id = 'id_example' # str | Project UUID
     include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
     exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
-    facility = 'facility_example' # str | Filter by Facility ID (uuid) or Facility Code (optional)
     metro = 'metro_example' # str | Filter by Metro ID (uuid) or Metro Code (optional)
 
     try:
         # Retrieve all virtual networks
-        api_response = api_instance.find_virtual_networks(id, include=include, exclude=exclude, facility=facility, metro=metro)
+        api_response = api_instance.find_virtual_networks(id, include=include, exclude=exclude, metro=metro)
         print("The response of VLANsApi->find_virtual_networks:\n")
         pprint(api_response)
     except Exception as e:
@@ -246,7 +245,6 @@ Name | Type | Description  | Notes
  **id** | **str**| Project UUID | 
  **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
  **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
- **facility** | **str**| Filter by Facility ID (uuid) or Facility Code | [optional] 
  **metro** | **str**| Filter by Metro ID (uuid) or Metro Code | [optional] 
 
 ### Return type

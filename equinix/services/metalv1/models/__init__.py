@@ -46,7 +46,6 @@ from equinix.services.metalv1.models.capacity_level_per_baremetal import Capacit
 from equinix.services.metalv1.models.capacity_list import CapacityList
 from equinix.services.metalv1.models.component import Component
 from equinix.services.metalv1.models.coordinates import Coordinates
-from equinix.services.metalv1.models.create_device_request import CreateDeviceRequest
 from equinix.services.metalv1.models.create_email_input import CreateEmailInput
 from equinix.services.metalv1.models.create_metal_gateway_request import CreateMetalGatewayRequest
 from equinix.services.metalv1.models.create_organization_interconnection_request import CreateOrganizationInterconnectionRequest
@@ -129,6 +128,9 @@ from equinix.services.metalv1.models.license_list import LicenseList
 from equinix.services.metalv1.models.license_update_input import LicenseUpdateInput
 from equinix.services.metalv1.models.line_item import LineItem
 from equinix.services.metalv1.models.line_item_adjustment import LineItemAdjustment
+from equinix.services.metalv1.models.member import Member
+from equinix.services.metalv1.models.member_list import MemberList
+from equinix.services.metalv1.models.member_update_input import MemberUpdateInput
 from equinix.services.metalv1.models.membership import Membership
 from equinix.services.metalv1.models.membership_input import MembershipInput
 from equinix.services.metalv1.models.membership_list import MembershipList
@@ -145,6 +147,7 @@ from equinix.services.metalv1.models.metal_gateway_list_metal_gateways_inner imp
 from equinix.services.metalv1.models.metal_gateway_lite import MetalGatewayLite
 from equinix.services.metalv1.models.metro import Metro
 from equinix.services.metalv1.models.metro_input import MetroInput
+from equinix.services.metalv1.models.metro_input_metro import MetroInputMetro
 from equinix.services.metalv1.models.metro_list import MetroList
 from equinix.services.metalv1.models.mount import Mount
 from equinix.services.metalv1.models.move_hardware_reservation_request import MoveHardwareReservationRequest
@@ -196,6 +199,9 @@ from equinix.services.metalv1.models.project_usage_list import ProjectUsageList
 from equinix.services.metalv1.models.raid import Raid
 from equinix.services.metalv1.models.request_ip_reservation201_response import RequestIPReservation201Response
 from equinix.services.metalv1.models.request_ip_reservation_request import RequestIPReservationRequest
+from equinix.services.metalv1.models.role import Role
+from equinix.services.metalv1.models.role_list import RoleList
+from equinix.services.metalv1.models.role_list_roles_inner import RoleListRolesInner
 from equinix.services.metalv1.models.ssh_key import SSHKey
 from equinix.services.metalv1.models.ssh_key_create_input import SSHKeyCreateInput
 from equinix.services.metalv1.models.ssh_key_input import SSHKeyInput

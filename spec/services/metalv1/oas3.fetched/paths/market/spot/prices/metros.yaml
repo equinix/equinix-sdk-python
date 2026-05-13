@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   description: Get Equinix Metal current spot market prices for all metros.
   operationId: findMetroSpotMarketPrices
   parameters:

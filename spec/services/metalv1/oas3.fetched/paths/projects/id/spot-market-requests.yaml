@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   description: View all spot market requests for a given project.
   operationId: listSpotMarketRequests
   parameters:
@@ -32,6 +33,7 @@ get:
   tags:
   - SpotMarket
 post:
+  deprecated: true
   description: |-
     Creates a new spot market request.
 

@@ -9,7 +9,6 @@ from equinix.services.metalv1.api.console_log_details_api import ConsoleLogDetai
 from equinix.services.metalv1.api.devices_api import DevicesApi
 from equinix.services.metalv1.api.emails_api import EmailsApi
 from equinix.services.metalv1.api.events_api import EventsApi
-from equinix.services.metalv1.api.facilities_api import FacilitiesApi
 from equinix.services.metalv1.api.firmware_sets_api import FirmwareSetsApi
 from equinix.services.metalv1.api.hardware_reservations_api import HardwareReservationsApi
 from equinix.services.metalv1.api.ip_addresses_api import IPAddressesApi
@@ -28,6 +27,7 @@ from equinix.services.metalv1.api.payment_methods_api import PaymentMethodsApi
 from equinix.services.metalv1.api.plans_api import PlansApi
 from equinix.services.metalv1.api.ports_api import PortsApi
 from equinix.services.metalv1.api.projects_api import ProjectsApi
+from equinix.services.metalv1.api.roles_api import RolesApi
 from equinix.services.metalv1.api.ssh_keys_api import SSHKeysApi
 from equinix.services.metalv1.api.self_service_reservations_api import SelfServiceReservationsApi
 from equinix.services.metalv1.api.spot_market_api import SpotMarketApi

@@ -1,4 +1,5 @@
 get:
+  deprecated: true
   description: |-
     Get spot market prices for a given plan and facility in a fixed period of time
 
