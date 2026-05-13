@@ -20,9 +20,23 @@ get:
           schema:
             $ref: '../../../components/schemas/FirmwareSetResponse.yaml'
     "401":
-      $ref: '../../../components/schemas/Error.yaml'
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: unauthorized
+    "403":
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: forbidden
     "404":
-      $ref: '../../../components/schemas/Error.yaml'
+      content:
+        application/json:
+          schema:
+            $ref: '../../../components/schemas/Error.yaml'
+      description: not found
     "500":
       description: Internal Server Error
       content:

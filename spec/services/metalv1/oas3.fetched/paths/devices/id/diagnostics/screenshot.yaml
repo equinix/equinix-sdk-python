@@ -1,4 +1,5 @@
 get:
+  summary: Capture device screenshot
   description: Capture a screenshot from the device, if supported, via the BMC.
   operationId: captureScreenshot
   parameters:

@@ -21,7 +21,6 @@ get:
         enum:
           - compute
           - storage
-          - vmce
           - legacy_gen
           - current_gen
         example: compute
@@ -42,6 +41,7 @@ get:
   tags:
   - SelfServiceReservations
 post:
+  deprecated: true
   description: Creates a reservation.
   operationId: createSelfServiceReservation
   parameters:
