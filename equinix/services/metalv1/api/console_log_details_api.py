@@ -52,7 +52,7 @@ class ConsoleLogDetailsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> bytearray:
-        """capture_screenshot
+        """Capture device screenshot
 
         Capture a screenshot from the device, if supported, via the BMC.
 
@@ -122,7 +122,7 @@ class ConsoleLogDetailsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[bytearray]:
-        """capture_screenshot
+        """Capture device screenshot
 
         Capture a screenshot from the device, if supported, via the BMC.
 
@@ -192,7 +192,7 @@ class ConsoleLogDetailsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """capture_screenshot
+        """Capture device screenshot
 
         Capture a screenshot from the device, if supported, via the BMC.
 

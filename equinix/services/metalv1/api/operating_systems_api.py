@@ -295,7 +295,7 @@ class OperatingSystemsApi:
     ) -> OperatingSystemList:
         """Retrieve all operating systems
 
-        Provides a listing of available operating systems to provision your new device with.
+        Returns a list of available operating systems to provision your new device with.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -359,7 +359,7 @@ class OperatingSystemsApi:
     ) -> ApiResponse[OperatingSystemList]:
         """Retrieve all operating systems
 
-        Provides a listing of available operating systems to provision your new device with.
+        Returns a list of available operating systems to provision your new device with.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -423,7 +423,7 @@ class OperatingSystemsApi:
     ) -> RESTResponseType:
         """Retrieve all operating systems
 
-        Provides a listing of available operating systems to provision your new device with.
+        Returns a list of available operating systems to provision your new device with.
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

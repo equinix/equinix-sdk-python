@@ -25,12 +25,11 @@ class ServerInfo(BaseModel):
     """
     ServerInfo
     """ # noqa: E501
-    facility: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
     metro: Optional[StrictStr] = Field(default=None, description="The metro ID or code to check the capacity in.")
     plan: Optional[StrictStr] = Field(default=None, description="The plan ID or slug to check the capacity of.")
     quantity: Optional[StrictStr] = Field(default=None, description="The number of servers to check the capacity of.")
-    __properties: ClassVar[List[str]] = ["facility", "href", "metro", "plan", "quantity"]
+    __properties: ClassVar[List[str]] = ["href", "metro", "plan", "quantity"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +82,6 @@ class ServerInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "facility": obj.get("facility"),
             "href": obj.get("href"),
             "metro": obj.get("metro"),
             "plan": obj.get("plan"),

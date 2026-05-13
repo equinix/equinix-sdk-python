@@ -4,12 +4,12 @@ All URIs are relative to *https://api.equinix.com/metal/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bgp_dynamic_neighbors_id_get**](VRFsApi.md#bgp_dynamic_neighbors_id_get) | **GET** /bgp-dynamic-neighbors/{id} | Retrieve a BGP Dynamic Neighbor
 [**create_vrf**](VRFsApi.md#create_vrf) | **POST** /projects/{id}/vrfs | Create a new VRF in the specified project
 [**create_vrf_route**](VRFsApi.md#create_vrf_route) | **POST** /vrfs/{id}/routes | Create a VRF route
 [**delete_bgp_dynamic_neighbor_by_id**](VRFsApi.md#delete_bgp_dynamic_neighbor_by_id) | **DELETE** /bgp-dynamic-neighbors/{id} | Delete a VRF BGP Dynamic Neighbor
 [**delete_vrf**](VRFsApi.md#delete_vrf) | **DELETE** /vrfs/{id} | Delete the VRF
 [**delete_vrf_route_by_id**](VRFsApi.md#delete_vrf_route_by_id) | **DELETE** /routes/{id} | Delete a VRF Route
+[**find_bgp_dynamic_neighbor_by_id**](VRFsApi.md#find_bgp_dynamic_neighbor_by_id) | **GET** /bgp-dynamic-neighbors/{id} | Retrieve a BGP Dynamic Neighbor
 [**find_vrf_by_id**](VRFsApi.md#find_vrf_by_id) | **GET** /vrfs/{id} | Retrieve a VRF
 [**find_vrf_ip_reservation**](VRFsApi.md#find_vrf_ip_reservation) | **GET** /vrfs/{vrf_id}/ips/{id} | Retrieve the Specified VRF IP Reservation
 [**find_vrf_ip_reservations**](VRFsApi.md#find_vrf_ip_reservations) | **GET** /vrfs/{id}/ips | Retrieve all VRF IP Reservations in the VRF
@@ -22,90 +22,6 @@ Method | HTTP request | Description
 [**update_vrf_route_by_id**](VRFsApi.md#update_vrf_route_by_id) | **PUT** /routes/{id} | Update a VRF Route
 
 
-# **bgp_dynamic_neighbors_id_get**
-> BgpDynamicNeighbor bgp_dynamic_neighbors_id_get(id, include=include, exclude=exclude)
-
-Retrieve a BGP Dynamic Neighbor
-
-Return a single BGP Dynamic Neighbor resource
-
-### Example
-
-* Api Key Authentication (x_auth_token):
-
-```python
-import equinix.services.metalv1
-from equinix.services.metalv1.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
-from equinix.services.metalv1.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
-# See configuration.py for a list of all supported configuration parameters.
-configuration = equinix.services.metalv1.Configuration(
-    host = "https://api.equinix.com/metal/v1"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x_auth_token
-configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with equinix.services.metalv1.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = equinix.services.metalv1.VRFsApi(api_client)
-    id = 'id_example' # str | BGP Dynamic Neighbor UUID
-    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
-    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
-
-    try:
-        # Retrieve a BGP Dynamic Neighbor
-        api_response = api_instance.bgp_dynamic_neighbors_id_get(id, include=include, exclude=exclude)
-        print("The response of VRFsApi->bgp_dynamic_neighbors_id_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling VRFsApi->bgp_dynamic_neighbors_id_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| BGP Dynamic Neighbor UUID | 
- **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
- **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
-
-### Return type
-
-[**BgpDynamicNeighbor**](BgpDynamicNeighbor.md)
-
-### Authorization
-
-[x_auth_token](../README.md#x_auth_token)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 # **create_vrf**
 > Vrf create_vrf(id, vrf_create_input, include=include, exclude=exclude)
 
@@ -528,6 +444,90 @@ Name | Type | Description  | Notes
 **202** | Accepted |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+# **find_bgp_dynamic_neighbor_by_id**
+> BgpDynamicNeighbor find_bgp_dynamic_neighbor_by_id(id, include=include, exclude=exclude)
+
+Retrieve a BGP Dynamic Neighbor
+
+Return a single BGP Dynamic Neighbor resource
+
+### Example
+
+* Api Key Authentication (x_auth_token):
+
+```python
+import equinix.services.metalv1
+from equinix.services.metalv1.models.bgp_dynamic_neighbor import BgpDynamicNeighbor
+from equinix.services.metalv1.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com/metal/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.metalv1.Configuration(
+    host = "https://api.equinix.com/metal/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x_auth_token
+configuration.api_key['x_auth_token'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x_auth_token'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with equinix.services.metalv1.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.metalv1.VRFsApi(api_client)
+    id = 'id_example' # str | BGP Dynamic Neighbor UUID
+    include = ['include_example'] # List[str] | Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. (optional)
+    exclude = ['exclude_example'] # List[str] | Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. (optional)
+
+    try:
+        # Retrieve a BGP Dynamic Neighbor
+        api_response = api_instance.find_bgp_dynamic_neighbor_by_id(id, include=include, exclude=exclude)
+        print("The response of VRFsApi->find_bgp_dynamic_neighbor_by_id:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling VRFsApi->find_bgp_dynamic_neighbor_by_id: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| BGP Dynamic Neighbor UUID | 
+ **include** | [**List[str]**](str.md)| Nested attributes to include. Included objects will return their full attributes. Attribute names can be dotted (up to 3 levels) to included deeply nested objects. | [optional] 
+ **exclude** | [**List[str]**](str.md)| Nested attributes to exclude. Excluded objects will return only the href attribute. Attribute names can be dotted (up to 3 levels) to exclude deeply nested objects. | [optional] 
+
+### Return type
+
+[**BgpDynamicNeighbor**](BgpDynamicNeighbor.md)
+
+### Authorization
+
+[x_auth_token](../README.md#x_auth_token)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
 **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

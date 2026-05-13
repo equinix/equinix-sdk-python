@@ -99,8 +99,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -177,8 +178,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -255,8 +257,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -398,8 +401,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -476,8 +480,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -554,8 +559,9 @@ class FirmwareSetsApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FirmwareSetListResponse",
-            '401': None,
-            '404': None,
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(

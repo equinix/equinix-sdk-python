@@ -27,7 +27,6 @@ class VrfFabricVcCreateInput(BaseModel):
     """ # noqa: E501
     contact_email: Optional[StrictStr] = Field(default=None, description="The preferred email used for communication and notifications about the Equinix Fabric interconnection. Optional and defaults to the primary user email address when using a User API key or the organization owner email address when using a Project API key.")
     description: Optional[StrictStr] = None
-    facility_id: Optional[StrictStr] = None
     href: Optional[StrictStr] = None
     metro: StrictStr = Field(description="A Metro ID or code. When creating Fabric VCs (Metal Billed), this is where interconnection will be originating from, as we pre-authorize the use of one of our shared ports as the origin of the interconnection using A-Side service tokens. We only allow local connections for Fabric VCs (Metal Billed), so the destination location must be the same as the origin. For Fabric VCs (Fabric Billed), or shared connections, this will be the destination of the interconnection. We allow remote connections for Fabric VCs (Fabric Billed), so the origin of the interconnection can be a different metro set here.")
     name: StrictStr
@@ -38,7 +37,7 @@ class VrfFabricVcCreateInput(BaseModel):
     tags: Optional[List[StrictStr]] = None
     type: StrictStr = Field(description="When requesting for a Fabric VC, the value of this field should be 'shared'.")
     vrfs: List[StrictStr] = Field(description="This field holds a list of VRF UUIDs that will be set automatically on the virtual circuits of Fabric VCs on creation, and can hold up to two UUIDs. Two UUIDs are required when requesting redundant Fabric VCs. The first UUID will be set on the primary virtual circuit, while the second UUID will be set on the secondary. The two UUIDs can be the same if both the primary and secondary virtual circuits will be in the same VRF. This parameter is included in the specification as a developer preview and is generally unavailable. Please contact our Support team for more details.")
-    __properties: ClassVar[List[str]] = ["contact_email", "description", "facility_id", "href", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vrfs"]
+    __properties: ClassVar[List[str]] = ["contact_email", "description", "href", "metro", "name", "project", "redundancy", "service_token_type", "speed", "tags", "type", "vrfs"]
 
     @field_validator('service_token_type')
     def service_token_type_validate_enum(cls, value):
@@ -107,7 +106,6 @@ class VrfFabricVcCreateInput(BaseModel):
         _obj = cls.model_validate({
             "contact_email": obj.get("contact_email"),
             "description": obj.get("description"),
-            "facility_id": obj.get("facility_id"),
             "href": obj.get("href"),
             "metro": obj.get("metro"),
             "name": obj.get("name"),

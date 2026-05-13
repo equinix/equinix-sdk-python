@@ -26,23 +26,23 @@ class OperatingSystem(BaseModel):
     """
     OperatingSystem
     """ # noqa: E501
-    build_date: Optional[date] = Field(default=None, description="The date on which the current OS image was build and released")
+    build_date: Optional[date] = Field(default=None, description="The date when Metal's current OS image was built and released.")
     default_operating_system: Optional[StrictBool] = Field(default=None, description="Default operating system for the distro.")
-    deprecation_date: Optional[date] = Field(default=None, description="The date when the OS is deprecated")
+    deprecation_date: Optional[date] = Field(default=None, description="The date when the OS is deprecated. This is the date set by the upstream operating system maintainer.")
     distro: Optional[StrictStr] = None
     distro_label: Optional[StrictStr] = None
-    end_of_life_date: Optional[date] = Field(default=None, description="The OS no longer receives any updates and may be disabled at any time")
-    end_of_service_date: Optional[date] = Field(default=None, description="When the OS is nearing end of life, typically 30 days before end of life")
+    end_of_life_date: Optional[date] = Field(default=None, description="The date when the Metal OS image no longer receives any updates and may be disabled at any time. Typically the same as the deprecation date set by the upstream OS maintainers.")
+    end_of_service_date: Optional[date] = Field(default=None, description="Metal-set date for when the OS is nearing end of life, typically 30 days before end of life.")
     href: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    licensed: Optional[StrictBool] = Field(default=None, description="Licenced OS is priced according to pricing property")
-    lifecycle_state: Optional[StrictStr] = Field(default=None, description="Where in the support lifecycle the OS is")
+    licensed: Optional[StrictBool] = Field(default=None, description="Indicates if the OS is licensed or not. Licensed operating systems are priced according to pricing property.")
+    lifecycle_state: Optional[StrictStr] = Field(default=None, description="Where in the lifecycle the OS image is. Possible states are - `\"testing\"`, `\"pre_release\"`, `\"active\"`, `\"deprecated\"`, `\"end_of_service\"`, or `\"end_of_life\"`.")
     name: Optional[StrictStr] = None
-    preinstallable: Optional[StrictBool] = Field(default=None, description="Servers can be already preinstalled with OS in order to shorten provision time.")
-    pricing: Optional[Dict[str, Any]] = Field(default=None, description="This object contains price per time unit and optional multiplier value if licence price depends on hardware plan or components (e.g. number of cores)")
+    preinstallable: Optional[StrictBool] = Field(default=None, description="Indicates whether servers can be preinstalled with OS image in order to shorten provision time.")
+    pricing: Optional[Dict[str, Any]] = Field(default=None, description="This object contains price per time unit and optional multiplier value if license price depends on hardware plan or components (e.g. number of cores).")
     provisionable_on: Optional[List[StrictStr]] = None
-    release_date: Optional[date] = Field(default=None, description="The date when the OS was released")
-    release_notes: Optional[StrictStr] = Field(default=None, description="The current release notes for this OS image, typically in Markdown format")
+    release_date: Optional[date] = Field(default=None, description="The date the upstream operating system maintainer released this version of the OS.")
+    release_notes: Optional[StrictStr] = Field(default=None, description="The current release notes for this OS image, typically in Markdown format.")
     slug: Optional[StrictStr] = None
     version: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["build_date", "default_operating_system", "deprecation_date", "distro", "distro_label", "end_of_life_date", "end_of_service_date", "href", "id", "licensed", "lifecycle_state", "name", "preinstallable", "pricing", "provisionable_on", "release_date", "release_notes", "slug", "version"]
