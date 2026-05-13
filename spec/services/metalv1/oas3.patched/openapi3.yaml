@@ -6567,6 +6567,9 @@ components:
           format: uri
           type: string
       type: object
+    createDevice_request:
+      oneOf:
+      - $ref: '#/components/schemas/DeviceCreateInMetroInput'
     createMetalGateway_request:
       oneOf:
       - $ref: '#/components/schemas/MetalGatewayCreateInput'
@@ -14728,7 +14731,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeviceCreateInMetroInput'
+              $ref: '#/components/schemas/createDevice_request'
         description: Device to create
         required: true
       responses:
