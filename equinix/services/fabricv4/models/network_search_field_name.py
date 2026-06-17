@@ -26,12 +26,17 @@ class NetworkSearchFieldName(str, Enum):
     SLASH_UUID = '/uuid'
     SLASH_SCOPE = '/scope'
     SLASH_TYPE = '/type'
+    SLASH_STATE = '/state'
     SLASH_OPERATION_SLASH_EQUINIX_STATUS = '/operation/equinixStatus'
     SLASH_LOCATION_SLASH_REGION = '/location/region'
+    SLASH_LOCATION_SLASH_METRO_CODE = '/location/metroCode'
+    SLASH_CONNECTIONS_COUNT = '/connectionsCount'
     SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
     SLASH_ACCOUNT_SLASH_GLOBAL_CUST_ID = '/account/globalCustId'
     SLASH_ACCOUNT_SLASH_ORG_ID = '/account/orgId'
-    SLASH_DELETED_DATE = '/deletedDate'
+    SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
+    SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
+    SLASH_CHANGE_LOG_SLASH_DELETED_DATE_TIME = '/changeLog/deletedDateTime'
     SLASH_STAR = '/*'
 
     @classmethod

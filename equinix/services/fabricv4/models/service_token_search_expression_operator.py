@@ -23,6 +23,17 @@ class ServiceTokenSearchExpressionOperator(str, Enum):
     allowed enum values
     """
     EQUAL = '='
+    EXCLAMATION_EQUAL = '!='
+    LIKE = 'LIKE'
+    ILIKE = 'ILIKE'
+    LESS_THAN = '<'
+    GREATER_THAN = '>'
+    LESS_THAN_EQUAL = '<='
+    GREATER_THAN_EQUAL = '>='
+    IN = 'IN'
+    NOT_IN = 'NOT IN'
+    BETWEEN = 'BETWEEN'
+    NOT_BETWEEN = 'NOT BETWEEN'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

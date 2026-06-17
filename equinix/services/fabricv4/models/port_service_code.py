@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class PortServiceCode(str, Enum):
     """
-    type of product
+    Identifies the service type associated with this port
     """
 
     """

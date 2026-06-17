@@ -19,11 +19,13 @@ from typing_extensions import Annotated
 from equinix.services.fabricv4.models.custom_field import CustomField
 from equinix.services.fabricv4.models.marketing_info import MarketingInfo
 from equinix.services.fabricv4.models.project import Project
+from equinix.services.fabricv4.models.provider_environment import ProviderEnvironment
 from equinix.services.fabricv4.models.service_metro import ServiceMetro
 from equinix.services.fabricv4.models.service_profile_access_point_colo import ServiceProfileAccessPointCOLO
 from equinix.services.fabricv4.models.service_profile_access_point_type import ServiceProfileAccessPointType
 from equinix.services.fabricv4.models.service_profile_access_point_vd import ServiceProfileAccessPointVD
 from equinix.services.fabricv4.models.service_profile_change import ServiceProfileChange
+from equinix.services.fabricv4.models.service_profile_last_mile_config import ServiceProfileLastMileConfig
 from equinix.services.fabricv4.models.service_profile_state_enum import ServiceProfileStateEnum
 from equinix.services.fabricv4.models.service_profile_type_enum import ServiceProfileTypeEnum
 from equinix.services.fabricv4.models.service_profile_visibility_enum import ServiceProfileVisibilityEnum
@@ -55,10 +57,12 @@ class ServiceProfile(BaseModel):
     ports: Optional[List[ServiceProfileAccessPointCOLO]] = None
     virtual_devices: Optional[List[ServiceProfileAccessPointVD]] = Field(default=None, alias="virtualDevices")
     metros: Optional[List[ServiceMetro]] = Field(default=None, description="Derived response attribute.")
+    environments: Optional[List[ProviderEnvironment]] = Field(default=None, description="Provider environments associated with this IC_PROFILE service profile.")
     self_profile: Optional[StrictBool] = Field(default=None, description="response attribute indicates whether the profile belongs to the same organization as the api-invoker.", alias="selfProfile")
     project_id: Optional[StrictStr] = Field(default=None, alias="projectId")
+    last_mile_config: Optional[ServiceProfileLastMileConfig] = Field(default=None, alias="lastMileConfig")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "selfProfile", "projectId"]
+    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "environments", "selfProfile", "projectId", "lastMileConfig"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -148,6 +152,16 @@ class ServiceProfile(BaseModel):
                 if _item_metros:
                     _items.append(_item_metros.to_dict())
             _dict['metros'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in environments (list)
+        _items = []
+        if self.environments:
+            for _item_environments in self.environments:
+                if _item_environments:
+                    _items.append(_item_environments.to_dict())
+            _dict['environments'] = _items
+        # override the default output from pydantic by calling `to_dict()` of last_mile_config
+        if self.last_mile_config:
+            _dict['lastMileConfig'] = self.last_mile_config.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -180,8 +194,10 @@ class ServiceProfile(BaseModel):
             "ports": [ServiceProfileAccessPointCOLO.from_dict(_item) for _item in obj["ports"]] if obj.get("ports") is not None else None,
             "virtualDevices": [ServiceProfileAccessPointVD.from_dict(_item) for _item in obj["virtualDevices"]] if obj.get("virtualDevices") is not None else None,
             "metros": [ServiceMetro.from_dict(_item) for _item in obj["metros"]] if obj.get("metros") is not None else None,
+            "environments": [ProviderEnvironment.from_dict(_item) for _item in obj["environments"]] if obj.get("environments") is not None else None,
             "selfProfile": obj.get("selfProfile"),
-            "projectId": obj.get("projectId")
+            "projectId": obj.get("projectId"),
+            "lastMileConfig": ServiceProfileLastMileConfig.from_dict(obj["lastMileConfig"]) if obj.get("lastMileConfig") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

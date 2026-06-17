@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create Agent
 
-This API provides capability to create user's agent
+This API provides capability to create user's agent <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 Delete Agent by UUID
 
-This API provides capability to delete an agent by uuid
+This API provides capability to delete an agent by uuid <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 Get Agent Activities
 
-This API provides capability to retrieve an agent activities
+This API provides capability to retrieve an agent activities <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 Get Agent by UUID
 
-This API provides capability to retrieve an agent by uuid
+This API provides capability to retrieve an agent by uuid <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 Get Agents
 
-This API provides capability to retrieve agents
+This API provides capability to retrieve agents <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 Update Agent by UUID
 
-This API provides capability to update an agent by uuid
+This API provides capability to update an agent by uuid <font color="red"> <sup color='red'>Beta</sup></font>
 
 ### Example
 

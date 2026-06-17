@@ -12,6 +12,10 @@ Service profile type
 
 * `IX_PROFILE` (value: `'IX_PROFILE'`)
 
+* `IC_PROFILE` (value: `'IC_PROFILE'`)
+
+* `LMAAS_PROFILE` (value: `'LMAAS_PROFILE'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

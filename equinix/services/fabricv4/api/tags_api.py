@@ -56,7 +56,7 @@ class TagsApi:
     ) -> TagResponse:
         """Create Tag
 
-        Create Tag for Equinix Fabric?.
+        Create Tag for Equinix Fabric™.
 
         :param tag_request: (required)
         :type tag_request: TagRequest
@@ -127,7 +127,7 @@ class TagsApi:
     ) -> ApiResponse[TagResponse]:
         """Create Tag
 
-        Create Tag for Equinix Fabric?.
+        Create Tag for Equinix Fabric™.
 
         :param tag_request: (required)
         :type tag_request: TagRequest
@@ -198,7 +198,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Create Tag
 
-        Create Tag for Equinix Fabric?.
+        Create Tag for Equinix Fabric™.
 
         :param tag_request: (required)
         :type tag_request: TagRequest

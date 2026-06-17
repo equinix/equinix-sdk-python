@@ -26,6 +26,12 @@ class ServiceTokenSearchFieldName(str, Enum):
     SLASH_STATE = '/state'
     SLASH_NAME = '/name'
     SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
+    SLASH_TYPE = '/type'
+    SLASH_EXPIRATION_DATE_TIME = '/expirationDateTime'
+    SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
+    SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
+    SLASH_CONNECTION_SLASH_A_SIDE_SLASH_ACCESS_POINT_SELECTORS_SLASH_PORT_SLASH_UUID = '/connection/aSide/accessPointSelectors/port/uuid'
+    SLASH_CONNECTION_SLASH_Z_SIDE_SLASH_ACCESS_POINT_SELECTORS_SLASH_PORT_SLASH_UUID = '/connection/zSide/accessPointSelectors/port/uuid'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

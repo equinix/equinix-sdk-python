@@ -4,8 +4,6 @@ Port encapsulation protocol type
 
 ## Enum
 
-* `NULL` (value: `'NULL'`)
-
 * `DOT1Q` (value: `'DOT1Q'`)
 
 * `QINQ` (value: `'QINQ'`)

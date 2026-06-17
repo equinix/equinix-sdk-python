@@ -28,8 +28,12 @@ class CloudRouterSortBy(str, Enum):
     SLASH_LOCATION_SLASH_METRO_CODE = '/location/metroCode'
     SLASH_LOCATION_SLASH_METRO_NAME = '/location/metroName'
     SLASH_PACKAGE_SLASH_CODE = '/package/code'
+    SLASH_TYPE = '/type'
+    SLASH_CONNECTIONS_COUNT = '/connectionsCount'
     SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
     SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
+    SLASH_CHANGE_LOG_SLASH_DELETED_DATE_TIME = '/changeLog/deletedDateTime'
+    SLASH_ORDER_SLASH_TERM_LENGTH = '/order/termLength'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

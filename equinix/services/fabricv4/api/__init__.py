@@ -8,6 +8,8 @@ from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.company_profiles_api import CompanyProfilesApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
 from equinix.services.fabricv4.api.health_api import HealthApi
+from equinix.services.fabricv4.api.internet_access_services_api import InternetAccessServicesApi
+from equinix.services.fabricv4.api.ip_blocks_api import IpBlocksApi
 from equinix.services.fabricv4.api.logos_api import LogosApi
 from equinix.services.fabricv4.api.marketplace_subscriptions_api import MarketplaceSubscriptionsApi
 from equinix.services.fabricv4.api.metrics_api import MetricsApi

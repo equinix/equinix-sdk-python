@@ -53,7 +53,6 @@ class Port(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for an absolute URL that is the subject of the link's context.")
     type: Optional[PortType] = None
-    id: Optional[StrictInt] = Field(default=None, description="Equinix assigned response attribute for Port Id")
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for  port identifier")
     name: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port name")
     description: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port description")
@@ -96,7 +95,7 @@ class Port(BaseModel):
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
     marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "id", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "physicalPortsSpeed", "connectionsCount", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "operation", "account", "change", "changeLog", "serviceType", "serviceCode", "bandwidth", "availableBandwidth", "usedBandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "endCustomer", "physicalPorts", "loas", "marketplaceSubscription"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -239,7 +238,6 @@ class Port(BaseModel):
         _obj = cls.model_validate({
             "href": obj.get("href"),
             "type": obj.get("type"),
-            "id": obj.get("id"),
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "description": obj.get("description"),

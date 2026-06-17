@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **operation** | [**RoutingProtocolOperation**](RoutingProtocolOperation.md) |  | [optional] 
 **change** | [**RoutingProtocolChange**](RoutingProtocolChange.md) |  | [optional] 
 **changelog** | [**Changelog**](Changelog.md) |  | [optional] 
+**project** | [**RoutingProtocolProject**](RoutingProtocolProject.md) |  | [optional] 
+**connection** | [**RoutingProtocolConnection**](RoutingProtocolConnection.md) |  | [optional] 
 **direct_ipv4** | [**DirectConnectionIpv4**](DirectConnectionIpv4.md) |  | [optional] 
 **direct_ipv6** | [**DirectConnectionIpv6**](DirectConnectionIpv6.md) |  | [optional] 
 

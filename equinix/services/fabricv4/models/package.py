@@ -16,7 +16,6 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.package_code import PackageCode
-from equinix.services.fabricv4.models.package_type import PackageType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -25,9 +24,8 @@ class Package(BaseModel):
     Package settings for port
     """ # noqa: E501
     code: Optional[PackageCode] = None
-    type: Optional[PackageType] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["code", "type"]
+    __properties: ClassVar[List[str]] = ["code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,8 +85,7 @@ class Package(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "type": obj.get("type")
+            "code": obj.get("code")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -22,7 +22,7 @@ class SubInterface(BaseModel):
     """
     Sub Interface information
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="name of subinterafce of a port")
+    name: Optional[StrictStr] = Field(default=None, description="name of subInterface of a port")
     unit: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["name", "unit"]

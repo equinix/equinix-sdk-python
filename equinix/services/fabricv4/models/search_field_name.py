@@ -46,6 +46,9 @@ class SearchFieldName(str, Enum):
     SLASH_CHANGE_SLASH_STATUS = '/change/status'
     SLASH_CHANGE_LOG_SLASH_CREATED_BY = '/changeLog/createdBy'
     SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
+    SLASH_CHANGE_LOG_SLASH_DELETED_BY = '/changeLog/deletedBy'
+    SLASH_CHANGE_LOG_SLASH_DELETED_DATE_TIME = '/changeLog/deletedDateTime'
+    SLASH_CHANGE_LOG_SLASH_LAST_UPDATED_BY = '/changeLog/lastUpdatedBy'
     SLASH_OPERATION_SLASH_EQUINIX_STATUS = '/operation/equinixStatus'
     SLASH_OPERATION_SLASH_PROVIDER_STATUS = '/operation/providerStatus'
     SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
@@ -57,6 +60,7 @@ class SearchFieldName(str, Enum):
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MAX = '/zSide/accessPoint/linkProtocol/vlanTagMax'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_CODE = '/zSide/accessPoint/location/metroCode'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_NAME = '/zSide/accessPoint/location/metroName'
+    SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_SELLER_REGION = '/zSide/accessPoint/sellerRegion'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_NAME = '/zSide/accessPoint/name'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_PORT_SLASH_UUID = '/zSide/accessPoint/port/uuid'
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_NETWORK_SLASH_UUID = '/zSide/accessPoint/network/uuid'
@@ -68,6 +72,7 @@ class SearchFieldName(str, Enum):
     SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_VIRTUAL_DEVICE_SLASH_UUID = '/zSide/accessPoint/virtualDevice/uuid'
     SLASH_Z_SIDE_SLASH_SERVICE_TOKEN_SLASH_UUID = '/zSide/serviceToken/uuid'
     SLASH_Z_SIDE_SLASH_INTERNET_ACCESS_SLASH_UUID = '/zSide/internetAccess/uuid'
+    SLASH_STATE = '/state'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

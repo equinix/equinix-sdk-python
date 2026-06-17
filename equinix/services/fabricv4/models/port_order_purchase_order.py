@@ -13,7 +13,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.port_order_purchase_order_selection_type import PortOrderPurchaseOrderSelectionType
@@ -23,12 +22,12 @@ from typing_extensions import Self
 
 class PortOrderPurchaseOrder(BaseModel):
     """
-    purchase order
+    Purchase Order information associate to the account
     """ # noqa: E501
     number: Optional[StrictStr] = Field(default=None, description="purchase order number")
     amount: Optional[StrictStr] = Field(default=None, description="purchase order amount")
-    start_date: Optional[datetime] = Field(default=None, alias="startDate")
-    end_date: Optional[datetime] = Field(default=None, alias="endDate")
+    start_date: Optional[StrictStr] = Field(default=None, alias="startDate")
+    end_date: Optional[StrictStr] = Field(default=None, alias="endDate")
     attachment_id: Optional[StrictStr] = Field(default=None, alias="attachmentId")
     selection_type: Optional[PortOrderPurchaseOrderSelectionType] = Field(default=None, alias="selectionType")
     type: Optional[PortOrderPurchaseOrderType] = None

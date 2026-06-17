@@ -26,7 +26,7 @@ from equinix.services.fabricv4.models.route_filter_change_data_response import R
 from equinix.services.fabricv4.models.route_filters_base import RouteFiltersBase
 from equinix.services.fabricv4.models.route_filters_data import RouteFiltersData
 from equinix.services.fabricv4.models.route_filters_patch_request_item import RouteFiltersPatchRequestItem
-from equinix.services.fabricv4.models.route_filters_search_base import RouteFiltersSearchBase
+from equinix.services.fabricv4.models.route_filters_search_request import RouteFiltersSearchRequest
 from equinix.services.fabricv4.models.route_filters_search_response import RouteFiltersSearchResponse
 
 from equinix.services.fabricv4.api_client import ApiClient, RequestSerialized
@@ -3585,7 +3585,7 @@ class RouteFiltersApi:
     @validate_call
     def search_route_filters(
         self,
-        route_filters_search_base: RouteFiltersSearchBase,
+        route_filters_search_request: RouteFiltersSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3603,8 +3603,8 @@ class RouteFiltersApi:
 
         This API provides capability to search Route Filters
 
-        :param route_filters_search_base: (required)
-        :type route_filters_search_base: RouteFiltersSearchBase
+        :param route_filters_search_request: (required)
+        :type route_filters_search_request: RouteFiltersSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3628,7 +3628,7 @@ class RouteFiltersApi:
         """ # noqa: E501
 
         _param = self._search_route_filters_serialize(
-            route_filters_search_base=route_filters_search_base,
+            route_filters_search_request=route_filters_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3658,7 +3658,7 @@ class RouteFiltersApi:
     @validate_call
     def search_route_filters_with_http_info(
         self,
-        route_filters_search_base: RouteFiltersSearchBase,
+        route_filters_search_request: RouteFiltersSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3676,8 +3676,8 @@ class RouteFiltersApi:
 
         This API provides capability to search Route Filters
 
-        :param route_filters_search_base: (required)
-        :type route_filters_search_base: RouteFiltersSearchBase
+        :param route_filters_search_request: (required)
+        :type route_filters_search_request: RouteFiltersSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3701,7 +3701,7 @@ class RouteFiltersApi:
         """ # noqa: E501
 
         _param = self._search_route_filters_serialize(
-            route_filters_search_base=route_filters_search_base,
+            route_filters_search_request=route_filters_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3731,7 +3731,7 @@ class RouteFiltersApi:
     @validate_call
     def search_route_filters_without_preload_content(
         self,
-        route_filters_search_base: RouteFiltersSearchBase,
+        route_filters_search_request: RouteFiltersSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3749,8 +3749,8 @@ class RouteFiltersApi:
 
         This API provides capability to search Route Filters
 
-        :param route_filters_search_base: (required)
-        :type route_filters_search_base: RouteFiltersSearchBase
+        :param route_filters_search_request: (required)
+        :type route_filters_search_request: RouteFiltersSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3774,7 +3774,7 @@ class RouteFiltersApi:
         """ # noqa: E501
 
         _param = self._search_route_filters_serialize(
-            route_filters_search_base=route_filters_search_base,
+            route_filters_search_request=route_filters_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3799,7 +3799,7 @@ class RouteFiltersApi:
 
     def _search_route_filters_serialize(
         self,
-        route_filters_search_base,
+        route_filters_search_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3825,8 +3825,8 @@ class RouteFiltersApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if route_filters_search_base is not None:
-            _body_params = route_filters_search_base
+        if route_filters_search_request is not None:
+            _body_params = route_filters_search_request
 
 
         # set the HTTP header `Accept`

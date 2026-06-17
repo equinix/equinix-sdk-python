@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type** | [**ConnectionRouteAggregationDataType**](ConnectionRouteAggregationDataType.md) |  | [optional] 
 **uuid** | **str** | Route Aggregation identifier | [optional] 
 **attachment_status** | [**ConnectionRouteAggregationDataAttachmentStatus**](ConnectionRouteAggregationDataAttachmentStatus.md) |  | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
 

@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **view_port_permission** | **bool** |  | [optional] 
 **place_vc_order_permission** | **bool** |  | [optional] 
 **layer3_enabled** | **bool** |  | [optional] 
-**shared_port_type** | **bool** |  | [optional] 
-**shared_port_product** | [**PortSettingsSharedPortProduct**](PortSettingsSharedPortProduct.md) |  | [optional] 
 **package_type** | [**PortSettingsPackageType**](PortSettingsPackageType.md) |  | [optional] 
 
 ## Example
