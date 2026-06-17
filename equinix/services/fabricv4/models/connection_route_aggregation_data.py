@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.connection_route_aggregation_data_attachment_status import ConnectionRouteAggregationDataAttachmentStatus
 from equinix.services.fabricv4.models.connection_route_aggregation_data_type import ConnectionRouteAggregationDataType
 from typing import Optional, Set
@@ -28,8 +29,9 @@ class ConnectionRouteAggregationData(BaseModel):
     type: Optional[ConnectionRouteAggregationDataType] = None
     uuid: Optional[StrictStr] = Field(default=None, description="Route Aggregation identifier")
     attachment_status: Optional[ConnectionRouteAggregationDataAttachmentStatus] = Field(default=None, alias="attachmentStatus")
+    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "attachmentStatus", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,9 @@ class ConnectionRouteAggregationData(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of change_log
+        if self.change_log:
+            _dict['changeLog'] = self.change_log.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -92,7 +97,8 @@ class ConnectionRouteAggregationData(BaseModel):
             "href": obj.get("href"),
             "type": obj.get("type"),
             "uuid": obj.get("uuid"),
-            "attachmentStatus": obj.get("attachmentStatus")
+            "attachmentStatus": obj.get("attachmentStatus"),
+            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -6,10 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **purchase_order** | [**PortOrderPurchaseOrder**](PortOrderPurchaseOrder.md) |  | [optional] 
-**order_id** | **str** | Order Identification | [optional] 
 **customer_reference_id** | **str** | Customer order reference Id | [optional] 
-**order_number** | **str** | Order Reference Number | [optional] 
-**uuid** | **str** | Equinix-assigned order identifier, this is a derived response atrribute | [optional] 
 **signature** | [**PortOrderSignature**](PortOrderSignature.md) |  | [optional] 
 
 ## Example

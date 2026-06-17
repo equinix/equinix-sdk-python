@@ -1,6 +1,6 @@
 # PortOrderPurchaseOrder
 
-purchase order
+Purchase Order information associate to the account
 
 ## Properties
 
@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **number** | **str** | purchase order number | [optional] 
 **amount** | **str** | purchase order amount | [optional] 
-**start_date** | **datetime** |  | [optional] 
-**end_date** | **datetime** |  | [optional] 
+**start_date** | **str** |  | [optional] 
+**end_date** | **str** |  | [optional] 
 **attachment_id** | **str** |  | [optional] 
 **selection_type** | [**PortOrderPurchaseOrderSelectionType**](PortOrderPurchaseOrderSelectionType.md) |  | [optional] 
 **type** | [**PortOrderPurchaseOrderType**](PortOrderPurchaseOrderType.md) |  | [optional] 

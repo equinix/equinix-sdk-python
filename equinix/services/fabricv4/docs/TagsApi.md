@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Create Tag
 
-Create Tag for Equinix Fabric?.
+Create Tag for Equinix Fabric™.
 
 ### Example
 

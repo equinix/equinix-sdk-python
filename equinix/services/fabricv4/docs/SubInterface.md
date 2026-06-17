@@ -6,7 +6,7 @@ Sub Interface information
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of subinterafce of a port | [optional] 
+**name** | **str** | name of subInterface of a port | [optional] 
 **unit** | **int** |  | [optional] 
 
 ## Example

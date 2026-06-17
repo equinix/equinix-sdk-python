@@ -33,6 +33,10 @@ class PortSortBy(str, Enum):
     SLASH_ENCAPSULATION_SLASH_TYPE = '/encapsulation/type'
     SLASH_PHYSICAL_PORTS_SLASH_TETHER_SLASH_CROSS_CONNECT_ID = '/physicalPorts/tether/crossConnectId'
     SLASH_PACKAGE_SLASH_CODE = '/package/code'
+    SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
+    SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
+    SLASH_BANDWIDTH = '/bandwidth'
+    SLASH_SERVICE_CODE = '/serviceCode'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

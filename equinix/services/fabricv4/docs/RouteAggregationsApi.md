@@ -1045,7 +1045,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_route_aggregations**
-> RouteAggregationsSearchResponse search_route_aggregations(route_aggregations_search_base)
+> RouteAggregationsSearchResponse search_route_aggregations(route_aggregations_search_request)
 
 Search Aggregations
 
@@ -1057,7 +1057,7 @@ This API provides capability to search Route Aggregations
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.route_aggregations_search_base import RouteAggregationsSearchBase
+from equinix.services.fabricv4.models.route_aggregations_search_request import RouteAggregationsSearchRequest
 from equinix.services.fabricv4.models.route_aggregations_search_response import RouteAggregationsSearchResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
@@ -1082,11 +1082,11 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregations_search_base = equinix.services.fabricv4.RouteAggregationsSearchBase() # RouteAggregationsSearchBase | 
+    route_aggregations_search_request = equinix.services.fabricv4.RouteAggregationsSearchRequest() # RouteAggregationsSearchRequest | 
 
     try:
         # Search Aggregations
-        api_response = api_instance.search_route_aggregations(route_aggregations_search_base)
+        api_response = api_instance.search_route_aggregations(route_aggregations_search_request)
         print("The response of RouteAggregationsApi->search_route_aggregations:\n")
         pprint(api_response)
     except Exception as e:
@@ -1100,7 +1100,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **route_aggregations_search_base** | [**RouteAggregationsSearchBase**](RouteAggregationsSearchBase.md)|  | 
+ **route_aggregations_search_request** | [**RouteAggregationsSearchRequest**](RouteAggregationsSearchRequest.md)|  | 
 
 ### Return type
 

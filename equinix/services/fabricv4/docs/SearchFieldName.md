@@ -52,6 +52,12 @@ Possible field names to use on filters
 
 * `SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME` (value: `'/changeLog/createdDateTime'`)
 
+* `SLASH_CHANGE_LOG_SLASH_DELETED_BY` (value: `'/changeLog/deletedBy'`)
+
+* `SLASH_CHANGE_LOG_SLASH_DELETED_DATE_TIME` (value: `'/changeLog/deletedDateTime'`)
+
+* `SLASH_CHANGE_LOG_SLASH_LAST_UPDATED_BY` (value: `'/changeLog/lastUpdatedBy'`)
+
 * `SLASH_OPERATION_SLASH_EQUINIX_STATUS` (value: `'/operation/equinixStatus'`)
 
 * `SLASH_OPERATION_SLASH_PROVIDER_STATUS` (value: `'/operation/providerStatus'`)
@@ -74,6 +80,8 @@ Possible field names to use on filters
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_LOCATION_SLASH_METRO_NAME` (value: `'/zSide/accessPoint/location/metroName'`)
 
+* `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_SELLER_REGION` (value: `'/zSide/accessPoint/sellerRegion'`)
+
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_NAME` (value: `'/zSide/accessPoint/name'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_PORT_SLASH_UUID` (value: `'/zSide/accessPoint/port/uuid'`)
@@ -95,6 +103,8 @@ Possible field names to use on filters
 * `SLASH_Z_SIDE_SLASH_SERVICE_TOKEN_SLASH_UUID` (value: `'/zSide/serviceToken/uuid'`)
 
 * `SLASH_Z_SIDE_SLASH_INTERNET_ACCESS_SLASH_UUID` (value: `'/zSide/internetAccess/uuid'`)
+
+* `SLASH_STATE` (value: `'/state'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

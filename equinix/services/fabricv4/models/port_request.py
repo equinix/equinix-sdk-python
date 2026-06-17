@@ -18,27 +18,22 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.package import Package
 from equinix.services.fabricv4.models.physical_port import PhysicalPort
-from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
-from equinix.services.fabricv4.models.port_bmmr_type import PortBmmrType
 from equinix.services.fabricv4.models.port_connectivity_source_type import PortConnectivitySourceType
 from equinix.services.fabricv4.models.port_demarcation_point import PortDemarcationPoint
-from equinix.services.fabricv4.models.port_device import PortDevice
 from equinix.services.fabricv4.models.port_encapsulation import PortEncapsulation
-from equinix.services.fabricv4.models.port_interface import PortInterface
-from equinix.services.fabricv4.models.port_lag import PortLag
 from equinix.services.fabricv4.models.port_loa import PortLoa
 from equinix.services.fabricv4.models.port_notification import PortNotification
 from equinix.services.fabricv4.models.port_order import PortOrder
-from equinix.services.fabricv4.models.port_physical_ports_type import PortPhysicalPortsType
 from equinix.services.fabricv4.models.port_redundancy import PortRedundancy
+from equinix.services.fabricv4.models.port_request_bmmr_type import PortRequestBmmrType
+from equinix.services.fabricv4.models.port_request_physical_ports_type import PortRequestPhysicalPortsType
 from equinix.services.fabricv4.models.port_service_code import PortServiceCode
 from equinix.services.fabricv4.models.port_service_type import PortServiceType
 from equinix.services.fabricv4.models.port_settings import PortSettings
-from equinix.services.fabricv4.models.port_state import PortState
 from equinix.services.fabricv4.models.port_type import PortType
 from equinix.services.fabricv4.models.project import Project
-from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
-from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
+from equinix.services.fabricv4.models.simplified_account_request import SimplifiedAccountRequest
+from equinix.services.fabricv4.models.simplified_location_request import SimplifiedLocationRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -47,40 +42,31 @@ class PortRequest(BaseModel):
     PortRequest is the Request Object for creating single and bulk fabric ports
     """ # noqa: E501
     type: PortType
-    name: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port name")
-    description: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for Port description")
     physical_ports_speed: Annotated[int, Field(strict=True, ge=0)] = Field(description="Physical Ports Speed in Mbps", alias="physicalPortsSpeed")
-    physical_ports_type: PortPhysicalPortsType = Field(alias="physicalPortsType")
+    physical_ports_type: PortRequestPhysicalPortsType = Field(alias="physicalPortsType")
     physical_ports_count: Optional[StrictInt] = Field(default=None, alias="physicalPortsCount")
     connectivity_source_type: PortConnectivitySourceType = Field(alias="connectivitySourceType")
-    bmmr_type: Optional[PortBmmrType] = Field(default=None, alias="bmmrType")
-    project: Optional[Project] = None
-    state: Optional[PortState] = None
+    bmmr_type: Optional[PortRequestBmmrType] = Field(default=None, alias="bmmrType")
+    project: Project
     order: Optional[PortOrder] = None
-    account: SimplifiedAccount
+    account: SimplifiedAccountRequest
     service_type: Optional[PortServiceType] = Field(default=None, alias="serviceType")
     service_code: Optional[PortServiceCode] = Field(default=None, alias="serviceCode")
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port bandwidth in Mbps")
-    location: SimplifiedLocation
-    device: Optional[PortDevice] = None
-    interface: Optional[PortInterface] = None
+    location: SimplifiedLocationRequest
     demarcation_point_ibx: Optional[StrictStr] = Field(default=None, description="A-side/Equinix ibx", alias="demarcationPointIbx")
     tether_ibx: Optional[StrictStr] = Field(default=None, description="z-side/Equinix ibx", alias="tetherIbx")
     demarcation_point: Optional[PortDemarcationPoint] = Field(default=None, alias="demarcationPoint")
     redundancy: Optional[PortRedundancy] = None
     encapsulation: PortEncapsulation
-    lag_enabled: Optional[StrictBool] = Field(default=None, description="If LAG enabled", alias="lagEnabled")
-    lag: Optional[PortLag] = None
-    asn: Optional[StrictInt] = Field(default=None, description="Port ASN")
+    lag_enabled: Optional[StrictBool] = Field(default=None, description="Indicates whether Link Aggregation Group (LAG) is enabled on this port", alias="lagEnabled")
     package: Optional[Package] = None
-    settings: PortSettings
-    physical_port_quantity: Optional[StrictInt] = Field(default=None, description="Number of physical ports", alias="physicalPortQuantity")
+    settings: Optional[PortSettings] = None
     notifications: Optional[List[PortNotification]] = Field(default=None, description="Notification preferences")
-    additional_info: Optional[List[PortAdditionalInfo]] = Field(default=None, description="Port additional information", alias="additionalInfo")
     physical_ports: Optional[List[PhysicalPort]] = Field(default=None, description="Physical ports that implement this port", alias="physicalPorts")
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "description", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "state", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "device", "interface", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "lag", "asn", "package", "settings", "physicalPortQuantity", "notifications", "additionalInfo", "physicalPorts", "loas"]
+    __properties: ClassVar[List[str]] = ["type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "notifications", "physicalPorts", "loas"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -135,12 +121,6 @@ class PortRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of location
         if self.location:
             _dict['location'] = self.location.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of device
-        if self.device:
-            _dict['device'] = self.device.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of interface
-        if self.interface:
-            _dict['interface'] = self.interface.to_dict()
         # override the default output from pydantic by calling `to_dict()` of demarcation_point
         if self.demarcation_point:
             _dict['demarcationPoint'] = self.demarcation_point.to_dict()
@@ -150,9 +130,6 @@ class PortRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of encapsulation
         if self.encapsulation:
             _dict['encapsulation'] = self.encapsulation.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of lag
-        if self.lag:
-            _dict['lag'] = self.lag.to_dict()
         # override the default output from pydantic by calling `to_dict()` of package
         if self.package:
             _dict['package'] = self.package.to_dict()
@@ -166,13 +143,6 @@ class PortRequest(BaseModel):
                 if _item_notifications:
                     _items.append(_item_notifications.to_dict())
             _dict['notifications'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in additional_info (list)
-        _items = []
-        if self.additional_info:
-            for _item_additional_info in self.additional_info:
-                if _item_additional_info:
-                    _items.append(_item_additional_info.to_dict())
-            _dict['additionalInfo'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in physical_ports (list)
         _items = []
         if self.physical_ports:
@@ -205,36 +175,27 @@ class PortRequest(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "name": obj.get("name"),
-            "description": obj.get("description"),
             "physicalPortsSpeed": obj.get("physicalPortsSpeed"),
             "physicalPortsType": obj.get("physicalPortsType"),
             "physicalPortsCount": obj.get("physicalPortsCount"),
             "connectivitySourceType": obj.get("connectivitySourceType"),
             "bmmrType": obj.get("bmmrType"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
-            "state": obj.get("state"),
             "order": PortOrder.from_dict(obj["order"]) if obj.get("order") is not None else None,
-            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "account": SimplifiedAccountRequest.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "serviceType": obj.get("serviceType"),
             "serviceCode": obj.get("serviceCode"),
             "bandwidth": obj.get("bandwidth"),
-            "location": SimplifiedLocation.from_dict(obj["location"]) if obj.get("location") is not None else None,
-            "device": PortDevice.from_dict(obj["device"]) if obj.get("device") is not None else None,
-            "interface": PortInterface.from_dict(obj["interface"]) if obj.get("interface") is not None else None,
+            "location": SimplifiedLocationRequest.from_dict(obj["location"]) if obj.get("location") is not None else None,
             "demarcationPointIbx": obj.get("demarcationPointIbx"),
             "tetherIbx": obj.get("tetherIbx"),
             "demarcationPoint": PortDemarcationPoint.from_dict(obj["demarcationPoint"]) if obj.get("demarcationPoint") is not None else None,
             "redundancy": PortRedundancy.from_dict(obj["redundancy"]) if obj.get("redundancy") is not None else None,
             "encapsulation": PortEncapsulation.from_dict(obj["encapsulation"]) if obj.get("encapsulation") is not None else None,
             "lagEnabled": obj.get("lagEnabled"),
-            "lag": PortLag.from_dict(obj["lag"]) if obj.get("lag") is not None else None,
-            "asn": obj.get("asn"),
             "package": Package.from_dict(obj["package"]) if obj.get("package") is not None else None,
             "settings": PortSettings.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
-            "physicalPortQuantity": obj.get("physicalPortQuantity"),
             "notifications": [PortNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
-            "additionalInfo": [PortAdditionalInfo.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None,
             "physicalPorts": [PhysicalPort.from_dict(_item) for _item in obj["physicalPorts"]] if obj.get("physicalPorts") is not None else None,
             "loas": [PortLoa.from_dict(_item) for _item in obj["loas"]] if obj.get("loas") is not None else None
         })

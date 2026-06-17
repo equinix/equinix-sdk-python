@@ -1,6 +1,6 @@
 # PortServiceCode
 
-type of product
+Identifies the service type associated with this port
 
 ## Enum
 

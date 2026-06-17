@@ -25,13 +25,10 @@ class PortOrder(BaseModel):
     PortOrder
     """ # noqa: E501
     purchase_order: Optional[PortOrderPurchaseOrder] = Field(default=None, alias="purchaseOrder")
-    order_id: Optional[StrictStr] = Field(default=None, description="Order Identification", alias="orderId")
     customer_reference_id: Optional[StrictStr] = Field(default=None, description="Customer order reference Id", alias="customerReferenceId")
-    order_number: Optional[StrictStr] = Field(default=None, description="Order Reference Number", alias="orderNumber")
-    uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned order identifier, this is a derived response atrribute")
     signature: Optional[PortOrderSignature] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["purchaseOrder", "orderId", "customerReferenceId", "orderNumber", "uuid", "signature"]
+    __properties: ClassVar[List[str]] = ["purchaseOrder", "customerReferenceId", "signature"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,10 +95,7 @@ class PortOrder(BaseModel):
 
         _obj = cls.model_validate({
             "purchaseOrder": PortOrderPurchaseOrder.from_dict(obj["purchaseOrder"]) if obj.get("purchaseOrder") is not None else None,
-            "orderId": obj.get("orderId"),
             "customerReferenceId": obj.get("customerReferenceId"),
-            "orderNumber": obj.get("orderNumber"),
-            "uuid": obj.get("uuid"),
             "signature": PortOrderSignature.from_dict(obj["signature"]) if obj.get("signature") is not None else None
         })
         # store additional fields in additional_properties

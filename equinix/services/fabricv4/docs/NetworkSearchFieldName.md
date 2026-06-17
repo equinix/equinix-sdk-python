@@ -12,9 +12,15 @@ Possible field names to use on filters
 
 * `SLASH_TYPE` (value: `'/type'`)
 
+* `SLASH_STATE` (value: `'/state'`)
+
 * `SLASH_OPERATION_SLASH_EQUINIX_STATUS` (value: `'/operation/equinixStatus'`)
 
 * `SLASH_LOCATION_SLASH_REGION` (value: `'/location/region'`)
+
+* `SLASH_LOCATION_SLASH_METRO_CODE` (value: `'/location/metroCode'`)
+
+* `SLASH_CONNECTIONS_COUNT` (value: `'/connectionsCount'`)
 
 * `SLASH_PROJECT_SLASH_PROJECT_ID` (value: `'/project/projectId'`)
 
@@ -22,7 +28,11 @@ Possible field names to use on filters
 
 * `SLASH_ACCOUNT_SLASH_ORG_ID` (value: `'/account/orgId'`)
 
-* `SLASH_DELETED_DATE` (value: `'/deletedDate'`)
+* `SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME` (value: `'/changeLog/createdDateTime'`)
+
+* `SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME` (value: `'/changeLog/updatedDateTime'`)
+
+* `SLASH_CHANGE_LOG_SLASH_DELETED_DATE_TIME` (value: `'/changeLog/deletedDateTime'`)
 
 * `SLASH_STAR` (value: `'/*'`)
 

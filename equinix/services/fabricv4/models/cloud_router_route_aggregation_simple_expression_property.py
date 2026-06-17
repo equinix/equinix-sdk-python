@@ -24,6 +24,8 @@ class CloudRouterRouteAggregationSimpleExpressionProperty(str, Enum):
     """
     SLASH_TYPE = '/type'
     SLASH_ATTACHMENT_STATUS = '/attachmentStatus'
+    SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
+    SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

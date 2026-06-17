@@ -57,7 +57,7 @@ class AgentTemplatesApi:
     ) -> AgentTemplates:
         """Get Agent Template by UUID
 
-        This API provides capability to retrieve an agent template by uuid
+        This API provides capability to retrieve an agent template by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_template_id: Agent Template UUID (required)
         :type agent_template_id: str
@@ -136,7 +136,7 @@ class AgentTemplatesApi:
     ) -> ApiResponse[AgentTemplates]:
         """Get Agent Template by UUID
 
-        This API provides capability to retrieve an agent template by uuid
+        This API provides capability to retrieve an agent template by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_template_id: Agent Template UUID (required)
         :type agent_template_id: str
@@ -215,7 +215,7 @@ class AgentTemplatesApi:
     ) -> RESTResponseType:
         """Get Agent Template by UUID
 
-        This API provides capability to retrieve an agent template by uuid
+        This API provides capability to retrieve an agent template by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_template_id: Agent Template UUID (required)
         :type agent_template_id: str
@@ -363,7 +363,7 @@ class AgentTemplatesApi:
     ) -> AgentTemplateGetAllResponse:
         """Get Agent Templates
 
-        This API provides capability to retrieve agent templates
+        This API provides capability to retrieve agent templates <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int
@@ -438,7 +438,7 @@ class AgentTemplatesApi:
     ) -> ApiResponse[AgentTemplateGetAllResponse]:
         """Get Agent Templates
 
-        This API provides capability to retrieve agent templates
+        This API provides capability to retrieve agent templates <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int
@@ -513,7 +513,7 @@ class AgentTemplatesApi:
     ) -> RESTResponseType:
         """Get Agent Templates
 
-        This API provides capability to retrieve agent templates
+        This API provides capability to retrieve agent templates <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int

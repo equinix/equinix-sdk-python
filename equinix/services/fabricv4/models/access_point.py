@@ -21,6 +21,7 @@ from equinix.services.fabricv4.models.cloud_router import CloudRouter
 from equinix.services.fabricv4.models.interface import Interface
 from equinix.services.fabricv4.models.metal_interconnection import MetalInterconnection
 from equinix.services.fabricv4.models.peering_type import PeeringType
+from equinix.services.fabricv4.models.provider_environment import ProviderEnvironment
 from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_link_protocol import SimplifiedLinkProtocol
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
@@ -46,15 +47,17 @@ class AccessPoint(BaseModel):
     virtual_device: Optional[VirtualDevice] = Field(default=None, alias="virtualDevice")
     interface: Optional[Interface] = None
     network: Optional[SimplifiedNetwork] = None
+    environment: Optional[ProviderEnvironment] = None
     seller_region: Optional[StrictStr] = Field(default=None, description="Access point seller region", alias="sellerRegion")
     peering_type: Optional[PeeringType] = Field(default=None, alias="peeringType")
     authentication_key: Optional[StrictStr] = Field(default=None, description="Access point authentication key", alias="authenticationKey")
+    activation_key: Optional[StrictStr] = Field(default=None, description="Access point activation key", alias="activationKey")
     provider_connection_id: Optional[StrictStr] = Field(default=None, description="Provider assigned Connection Id", alias="providerConnectionId")
     virtual_network: Optional[VirtualNetwork] = Field(default=None, alias="virtualNetwork")
     interconnection: Optional[MetalInterconnection] = None
     role: Optional[AccessPointRole] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "sellerRegion", "peeringType", "authenticationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"]
+    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,6 +127,9 @@ class AccessPoint(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of network
         if self.network:
             _dict['network'] = self.network.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of environment
+        if self.environment:
+            _dict['environment'] = self.environment.to_dict()
         # override the default output from pydantic by calling `to_dict()` of virtual_network
         if self.virtual_network:
             _dict['virtualNetwork'] = self.virtual_network.to_dict()
@@ -157,9 +163,11 @@ class AccessPoint(BaseModel):
             "virtualDevice": VirtualDevice.from_dict(obj["virtualDevice"]) if obj.get("virtualDevice") is not None else None,
             "interface": Interface.from_dict(obj["interface"]) if obj.get("interface") is not None else None,
             "network": SimplifiedNetwork.from_dict(obj["network"]) if obj.get("network") is not None else None,
+            "environment": ProviderEnvironment.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "sellerRegion": obj.get("sellerRegion"),
             "peeringType": obj.get("peeringType"),
             "authenticationKey": obj.get("authenticationKey"),
+            "activationKey": obj.get("activationKey"),
             "providerConnectionId": obj.get("providerConnectionId"),
             "virtualNetwork": VirtualNetwork.from_dict(obj["virtualNetwork"]) if obj.get("virtualNetwork") is not None else None,
             "interconnection": MetalInterconnection.from_dict(obj["interconnection"]) if obj.get("interconnection") is not None else None,

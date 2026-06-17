@@ -58,7 +58,7 @@ class AgentsApi:
     ) -> Agents:
         """Create Agent
 
-        This API provides capability to create user's agent
+        This API provides capability to create user's agent <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_post_request: (required)
         :type agent_post_request: AgentPostRequest
@@ -130,7 +130,7 @@ class AgentsApi:
     ) -> ApiResponse[Agents]:
         """Create Agent
 
-        This API provides capability to create user's agent
+        This API provides capability to create user's agent <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_post_request: (required)
         :type agent_post_request: AgentPostRequest
@@ -202,7 +202,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Create Agent
 
-        This API provides capability to create user's agent
+        This API provides capability to create user's agent <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_post_request: (required)
         :type agent_post_request: AgentPostRequest
@@ -349,7 +349,7 @@ class AgentsApi:
     ) -> Agents:
         """Delete Agent by UUID
 
-        This API provides capability to delete an agent by uuid
+        This API provides capability to delete an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -428,7 +428,7 @@ class AgentsApi:
     ) -> ApiResponse[Agents]:
         """Delete Agent by UUID
 
-        This API provides capability to delete an agent by uuid
+        This API provides capability to delete an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -507,7 +507,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Delete Agent by UUID
 
-        This API provides capability to delete an agent by uuid
+        This API provides capability to delete an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -656,7 +656,7 @@ class AgentsApi:
     ) -> AgentGetActivities:
         """Get Agent Activities
 
-        This API provides capability to retrieve an agent activities
+        This API provides capability to retrieve an agent activities <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -735,7 +735,7 @@ class AgentsApi:
     ) -> ApiResponse[AgentGetActivities]:
         """Get Agent Activities
 
-        This API provides capability to retrieve an agent activities
+        This API provides capability to retrieve an agent activities <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -814,7 +814,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Get Agent Activities
 
-        This API provides capability to retrieve an agent activities
+        This API provides capability to retrieve an agent activities <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -963,7 +963,7 @@ class AgentsApi:
     ) -> Agents:
         """Get Agent by UUID
 
-        This API provides capability to retrieve an agent by uuid
+        This API provides capability to retrieve an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -1042,7 +1042,7 @@ class AgentsApi:
     ) -> ApiResponse[Agents]:
         """Get Agent by UUID
 
-        This API provides capability to retrieve an agent by uuid
+        This API provides capability to retrieve an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -1121,7 +1121,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Get Agent by UUID
 
-        This API provides capability to retrieve an agent by uuid
+        This API provides capability to retrieve an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -1269,7 +1269,7 @@ class AgentsApi:
     ) -> AgentGetAllResponse:
         """Get Agents
 
-        This API provides capability to retrieve agents
+        This API provides capability to retrieve agents <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int
@@ -1344,7 +1344,7 @@ class AgentsApi:
     ) -> ApiResponse[AgentGetAllResponse]:
         """Get Agents
 
-        This API provides capability to retrieve agents
+        This API provides capability to retrieve agents <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int
@@ -1419,7 +1419,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Get Agents
 
-        This API provides capability to retrieve agents
+        This API provides capability to retrieve agents <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param offset: offset
         :type offset: int
@@ -1561,7 +1561,7 @@ class AgentsApi:
     ) -> Agents:
         """Update Agent by UUID
 
-        This API provides capability to update an agent by uuid
+        This API provides capability to update an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -1636,7 +1636,7 @@ class AgentsApi:
     ) -> ApiResponse[Agents]:
         """Update Agent by UUID
 
-        This API provides capability to update an agent by uuid
+        This API provides capability to update an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str
@@ -1711,7 +1711,7 @@ class AgentsApi:
     ) -> RESTResponseType:
         """Update Agent by UUID
 
-        This API provides capability to update an agent by uuid
+        This API provides capability to update an agent by uuid <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
         :param agent_id: Agent UUID (required)
         :type agent_id: str

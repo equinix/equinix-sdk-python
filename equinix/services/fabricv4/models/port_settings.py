@@ -16,7 +16,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.port_settings_package_type import PortSettingsPackageType
-from equinix.services.fabricv4.models.port_settings_shared_port_product import PortSettingsSharedPortProduct
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +27,9 @@ class PortSettings(BaseModel):
     view_port_permission: Optional[StrictBool] = Field(default=None, alias="viewPortPermission")
     place_vc_order_permission: Optional[StrictBool] = Field(default=None, alias="placeVcOrderPermission")
     layer3_enabled: Optional[StrictBool] = Field(default=None, alias="layer3Enabled")
-    shared_port_type: Optional[StrictBool] = Field(default=None, alias="sharedPortType")
-    shared_port_product: Optional[PortSettingsSharedPortProduct] = Field(default=None, alias="sharedPortProduct")
     package_type: Optional[PortSettingsPackageType] = Field(default=None, alias="packageType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["buyout", "viewPortPermission", "placeVcOrderPermission", "layer3Enabled", "sharedPortType", "sharedPortProduct", "packageType"]
+    __properties: ClassVar[List[str]] = ["buyout", "viewPortPermission", "placeVcOrderPermission", "layer3Enabled", "packageType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,8 +93,6 @@ class PortSettings(BaseModel):
             "viewPortPermission": obj.get("viewPortPermission"),
             "placeVcOrderPermission": obj.get("placeVcOrderPermission"),
             "layer3Enabled": obj.get("layer3Enabled"),
-            "sharedPortType": obj.get("sharedPortType"),
-            "sharedPortProduct": obj.get("sharedPortProduct"),
             "packageType": obj.get("packageType")
         })
         # store additional fields in additional_properties
