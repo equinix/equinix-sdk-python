@@ -25,7 +25,7 @@ from equinix.services.fabricv4.models.route_aggregation_change_data_response imp
 from equinix.services.fabricv4.models.route_aggregations_base import RouteAggregationsBase
 from equinix.services.fabricv4.models.route_aggregations_data import RouteAggregationsData
 from equinix.services.fabricv4.models.route_aggregations_patch_request_item import RouteAggregationsPatchRequestItem
-from equinix.services.fabricv4.models.route_aggregations_search_base import RouteAggregationsSearchBase
+from equinix.services.fabricv4.models.route_aggregations_search_request import RouteAggregationsSearchRequest
 from equinix.services.fabricv4.models.route_aggregations_search_response import RouteAggregationsSearchResponse
 
 from equinix.services.fabricv4.api_client import ApiClient, RequestSerialized
@@ -3556,7 +3556,7 @@ class RouteAggregationsApi:
     @validate_call
     def search_route_aggregations(
         self,
-        route_aggregations_search_base: RouteAggregationsSearchBase,
+        route_aggregations_search_request: RouteAggregationsSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3574,8 +3574,8 @@ class RouteAggregationsApi:
 
         This API provides capability to search Route Aggregations
 
-        :param route_aggregations_search_base: (required)
-        :type route_aggregations_search_base: RouteAggregationsSearchBase
+        :param route_aggregations_search_request: (required)
+        :type route_aggregations_search_request: RouteAggregationsSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3599,7 +3599,7 @@ class RouteAggregationsApi:
         """ # noqa: E501
 
         _param = self._search_route_aggregations_serialize(
-            route_aggregations_search_base=route_aggregations_search_base,
+            route_aggregations_search_request=route_aggregations_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3629,7 +3629,7 @@ class RouteAggregationsApi:
     @validate_call
     def search_route_aggregations_with_http_info(
         self,
-        route_aggregations_search_base: RouteAggregationsSearchBase,
+        route_aggregations_search_request: RouteAggregationsSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3647,8 +3647,8 @@ class RouteAggregationsApi:
 
         This API provides capability to search Route Aggregations
 
-        :param route_aggregations_search_base: (required)
-        :type route_aggregations_search_base: RouteAggregationsSearchBase
+        :param route_aggregations_search_request: (required)
+        :type route_aggregations_search_request: RouteAggregationsSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3672,7 +3672,7 @@ class RouteAggregationsApi:
         """ # noqa: E501
 
         _param = self._search_route_aggregations_serialize(
-            route_aggregations_search_base=route_aggregations_search_base,
+            route_aggregations_search_request=route_aggregations_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3702,7 +3702,7 @@ class RouteAggregationsApi:
     @validate_call
     def search_route_aggregations_without_preload_content(
         self,
-        route_aggregations_search_base: RouteAggregationsSearchBase,
+        route_aggregations_search_request: RouteAggregationsSearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3720,8 +3720,8 @@ class RouteAggregationsApi:
 
         This API provides capability to search Route Aggregations
 
-        :param route_aggregations_search_base: (required)
-        :type route_aggregations_search_base: RouteAggregationsSearchBase
+        :param route_aggregations_search_request: (required)
+        :type route_aggregations_search_request: RouteAggregationsSearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3745,7 +3745,7 @@ class RouteAggregationsApi:
         """ # noqa: E501
 
         _param = self._search_route_aggregations_serialize(
-            route_aggregations_search_base=route_aggregations_search_base,
+            route_aggregations_search_request=route_aggregations_search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3770,7 +3770,7 @@ class RouteAggregationsApi:
 
     def _search_route_aggregations_serialize(
         self,
-        route_aggregations_search_base,
+        route_aggregations_search_request,
         _request_auth,
         _content_type,
         _headers,
@@ -3796,8 +3796,8 @@ class RouteAggregationsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if route_aggregations_search_base is not None:
-            _body_params = route_aggregations_search_base
+        if route_aggregations_search_request is not None:
+            _body_params = route_aggregations_search_request
 
 
         # set the HTTP header `Accept`

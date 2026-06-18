@@ -20,8 +20,10 @@ from equinix.services.fabricv4.models.direct_connection_ipv4 import DirectConnec
 from equinix.services.fabricv4.models.direct_connection_ipv6 import DirectConnectionIpv6
 from equinix.services.fabricv4.models.routing_protocol_bgp_data_state import RoutingProtocolBGPDataState
 from equinix.services.fabricv4.models.routing_protocol_change import RoutingProtocolChange
+from equinix.services.fabricv4.models.routing_protocol_connection import RoutingProtocolConnection
 from equinix.services.fabricv4.models.routing_protocol_direct_type_type import RoutingProtocolDirectTypeType
 from equinix.services.fabricv4.models.routing_protocol_operation import RoutingProtocolOperation
+from equinix.services.fabricv4.models.routing_protocol_project import RoutingProtocolProject
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,8 +41,10 @@ class RoutingProtocolDirectData(BaseModel):
     operation: Optional[RoutingProtocolOperation] = None
     change: Optional[RoutingProtocolChange] = None
     changelog: Optional[Changelog] = None
+    project: Optional[RoutingProtocolProject] = None
+    connection: Optional[RoutingProtocolConnection] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "directIpv4", "directIpv6", "href", "uuid", "state", "operation", "change", "changelog"]
+    __properties: ClassVar[List[str]] = ["type", "name", "directIpv4", "directIpv6", "href", "uuid", "state", "operation", "change", "changelog", "project", "connection"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +102,12 @@ class RoutingProtocolDirectData(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of changelog
         if self.changelog:
             _dict['changelog'] = self.changelog.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of project
+        if self.project:
+            _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of connection
+        if self.connection:
+            _dict['connection'] = self.connection.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -124,7 +134,9 @@ class RoutingProtocolDirectData(BaseModel):
             "state": obj.get("state"),
             "operation": RoutingProtocolOperation.from_dict(obj["operation"]) if obj.get("operation") is not None else None,
             "change": RoutingProtocolChange.from_dict(obj["change"]) if obj.get("change") is not None else None,
-            "changelog": Changelog.from_dict(obj["changelog"]) if obj.get("changelog") is not None else None
+            "changelog": Changelog.from_dict(obj["changelog"]) if obj.get("changelog") is not None else None,
+            "project": RoutingProtocolProject.from_dict(obj["project"]) if obj.get("project") is not None else None,
+            "connection": RoutingProtocolConnection.from_dict(obj["connection"]) if obj.get("connection") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

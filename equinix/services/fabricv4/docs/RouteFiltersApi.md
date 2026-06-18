@@ -1048,7 +1048,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_route_filters**
-> RouteFiltersSearchResponse search_route_filters(route_filters_search_base)
+> RouteFiltersSearchResponse search_route_filters(route_filters_search_request)
 
 Search Route Filters
 
@@ -1060,7 +1060,7 @@ This API provides capability to search Route Filters
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.route_filters_search_base import RouteFiltersSearchBase
+from equinix.services.fabricv4.models.route_filters_search_request import RouteFiltersSearchRequest
 from equinix.services.fabricv4.models.route_filters_search_response import RouteFiltersSearchResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
@@ -1085,11 +1085,11 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filters_search_base = equinix.services.fabricv4.RouteFiltersSearchBase() # RouteFiltersSearchBase | 
+    route_filters_search_request = equinix.services.fabricv4.RouteFiltersSearchRequest() # RouteFiltersSearchRequest | 
 
     try:
         # Search Route Filters
-        api_response = api_instance.search_route_filters(route_filters_search_base)
+        api_response = api_instance.search_route_filters(route_filters_search_request)
         print("The response of RouteFiltersApi->search_route_filters:\n")
         pprint(api_response)
     except Exception as e:
@@ -1103,7 +1103,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **route_filters_search_base** | [**RouteFiltersSearchBase**](RouteFiltersSearchBase.md)|  | 
+ **route_filters_search_request** | [**RouteFiltersSearchRequest**](RouteFiltersSearchRequest.md)|  | 
 
 ### Return type
 

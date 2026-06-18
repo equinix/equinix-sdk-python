@@ -21,8 +21,10 @@ Name | Type | Description | Notes
 **ports** | [**List[ServiceProfileAccessPointCOLO]**](ServiceProfileAccessPointCOLO.md) |  | [optional] 
 **virtual_devices** | [**List[ServiceProfileAccessPointVD]**](ServiceProfileAccessPointVD.md) |  | [optional] 
 **metros** | [**List[ServiceMetro]**](ServiceMetro.md) | Derived response attribute. | [optional] 
+**environments** | [**List[ProviderEnvironment]**](ProviderEnvironment.md) | Provider environments associated with this IC_PROFILE service profile. | [optional] 
 **self_profile** | **bool** | response attribute indicates whether the profile belongs to the same organization as the api-invoker. | [optional] 
 **project_id** | **str** |  | [optional] 
+**last_mile_config** | [**ServiceProfileLastMileConfig**](ServiceProfileLastMileConfig.md) |  | [optional] 
 
 ## Example
 

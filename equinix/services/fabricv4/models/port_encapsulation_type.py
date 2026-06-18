@@ -22,7 +22,6 @@ class PortEncapsulationType(str, Enum):
     """
     allowed enum values
     """
-    NULL = 'NULL'
     DOT1Q = 'DOT1Q'
     QINQ = 'QINQ'
     UNTAGGED = 'UNTAGGED'

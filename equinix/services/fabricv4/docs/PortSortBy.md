@@ -26,6 +26,14 @@ Possible field names to use on sorting
 
 * `SLASH_PACKAGE_SLASH_CODE` (value: `'/package/code'`)
 
+* `SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME` (value: `'/changeLog/updatedDateTime'`)
+
+* `SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME` (value: `'/changeLog/createdDateTime'`)
+
+* `SLASH_BANDWIDTH` (value: `'/bandwidth'`)
+
+* `SLASH_SERVICE_CODE` (value: `'/serviceCode'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

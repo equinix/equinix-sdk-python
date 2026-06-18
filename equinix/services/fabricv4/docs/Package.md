@@ -7,7 +7,6 @@ Package settings for port
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | [**PackageCode**](PackageCode.md) |  | [optional] 
-**type** | [**PackageType**](PackageType.md) |  | [optional] 
 
 ## Example
 

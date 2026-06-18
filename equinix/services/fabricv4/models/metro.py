@@ -18,13 +18,14 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.connected_metro import ConnectedMetro
 from equinix.services.fabricv4.models.geo_coordinates import GeoCoordinates
 from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
+from equinix.services.fabricv4.models.geo_zone import GeoZone
 from equinix.services.fabricv4.models.services import Services
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Metro(BaseModel):
     """
-    GET Metros retrieves all Equinix? Fabric? metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
+    GET Metros retrieves all Equinix® Fabric™ metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="The Canonical URL at which the resource resides.")
     type: Optional[StrictStr] = Field(default=None, description="Indicator of a Fabric Metro")
@@ -38,8 +39,9 @@ class Metro(BaseModel):
     connected_metros: Optional[List[ConnectedMetro]] = Field(default=None, alias="connectedMetros")
     services: Optional[List[Services]] = None
     geo_scopes: Optional[List[GeoScopeType]] = Field(default=None, description="List of supported geographic boundaries of a Fabric Metro.", alias="geoScopes")
+    geo_zones: Optional[List[GeoZone]] = Field(default=None, description="List of supported geographic zones of a Fabric Metro.", alias="geoZones")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes"]
+    __properties: ClassVar[List[str]] = ["href", "type", "code", "region", "name", "country", "equinixAsn", "localVCBandwidthMax", "geoCoordinates", "connectedMetros", "services", "geoScopes", "geoZones"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +101,13 @@ class Metro(BaseModel):
                 if _item_services:
                     _items.append(_item_services.to_dict())
             _dict['services'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in geo_zones (list)
+        _items = []
+        if self.geo_zones:
+            for _item_geo_zones in self.geo_zones:
+                if _item_geo_zones:
+                    _items.append(_item_geo_zones.to_dict())
+            _dict['geoZones'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -127,7 +136,8 @@ class Metro(BaseModel):
             "geoCoordinates": GeoCoordinates.from_dict(obj["geoCoordinates"]) if obj.get("geoCoordinates") is not None else None,
             "connectedMetros": [ConnectedMetro.from_dict(_item) for _item in obj["connectedMetros"]] if obj.get("connectedMetros") is not None else None,
             "services": [Services.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None,
-            "geoScopes": obj.get("geoScopes")
+            "geoScopes": obj.get("geoScopes"),
+            "geoZones": [GeoZone.from_dict(_item) for _item in obj["geoZones"]] if obj.get("geoZones") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

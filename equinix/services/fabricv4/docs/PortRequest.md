@@ -7,36 +7,27 @@ PortRequest is the Request Object for creating single and bulk fabric ports
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**PortType**](PortType.md) |  | 
-**name** | **str** | Equinix assigned response attribute for Port name | [optional] 
-**description** | **str** | Equinix assigned response attribute for Port description | [optional] 
 **physical_ports_speed** | **int** | Physical Ports Speed in Mbps | 
-**physical_ports_type** | [**PortPhysicalPortsType**](PortPhysicalPortsType.md) |  | 
+**physical_ports_type** | [**PortRequestPhysicalPortsType**](PortRequestPhysicalPortsType.md) |  | 
 **physical_ports_count** | **int** |  | [optional] 
 **connectivity_source_type** | [**PortConnectivitySourceType**](PortConnectivitySourceType.md) |  | 
-**bmmr_type** | [**PortBmmrType**](PortBmmrType.md) |  | [optional] 
-**project** | [**Project**](Project.md) |  | [optional] 
-**state** | [**PortState**](PortState.md) |  | [optional] 
+**bmmr_type** | [**PortRequestBmmrType**](PortRequestBmmrType.md) |  | [optional] 
+**project** | [**Project**](Project.md) |  | 
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 
-**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | 
+**account** | [**SimplifiedAccountRequest**](SimplifiedAccountRequest.md) |  | 
 **service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
 **service_code** | [**PortServiceCode**](PortServiceCode.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 
-**location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | 
-**device** | [**PortDevice**](PortDevice.md) |  | [optional] 
-**interface** | [**PortInterface**](PortInterface.md) |  | [optional] 
+**location** | [**SimplifiedLocationRequest**](SimplifiedLocationRequest.md) |  | 
 **demarcation_point_ibx** | **str** | A-side/Equinix ibx | [optional] 
 **tether_ibx** | **str** | z-side/Equinix ibx | [optional] 
 **demarcation_point** | [**PortDemarcationPoint**](PortDemarcationPoint.md) |  | [optional] 
 **redundancy** | [**PortRedundancy**](PortRedundancy.md) |  | [optional] 
 **encapsulation** | [**PortEncapsulation**](PortEncapsulation.md) |  | 
-**lag_enabled** | **bool** | If LAG enabled | [optional] 
-**lag** | [**PortLag**](PortLag.md) |  | [optional] 
-**asn** | **int** | Port ASN | [optional] 
+**lag_enabled** | **bool** | Indicates whether Link Aggregation Group (LAG) is enabled on this port | [optional] 
 **package** | [**Package**](Package.md) |  | [optional] 
-**settings** | [**PortSettings**](PortSettings.md) |  | 
-**physical_port_quantity** | **int** | Number of physical ports | [optional] 
+**settings** | [**PortSettings**](PortSettings.md) |  | [optional] 
 **notifications** | [**List[PortNotification]**](PortNotification.md) | Notification preferences | [optional] 
-**additional_info** | [**List[PortAdditionalInfo]**](PortAdditionalInfo.md) | Port additional information | [optional] 
 **physical_ports** | [**List[PhysicalPort]**](PhysicalPort.md) | Physical ports that implement this port | [optional] 
 **loas** | [**List[PortLoa]**](PortLoa.md) | Port Loas | [optional] 
 

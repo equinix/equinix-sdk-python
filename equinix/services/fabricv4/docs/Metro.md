@@ -1,6 +1,6 @@
 # Metro
 
-GET Metros retrieves all Equinix? Fabric? metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
+GET Metros retrieves all Equinix® Fabric™ metros, as well as latency data for each location.This performance data helps network planning engineers and administrators make strategic decisions about port locations and traffic routes.
 
 ## Properties
 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **connected_metros** | [**List[ConnectedMetro]**](ConnectedMetro.md) |  | [optional] 
 **services** | [**List[Services]**](Services.md) |  | [optional] 
 **geo_scopes** | [**List[GeoScopeType]**](GeoScopeType.md) | List of supported geographic boundaries of a Fabric Metro. | [optional] 
+**geo_zones** | [**List[GeoZone]**](GeoZone.md) | List of supported geographic zones of a Fabric Metro. | [optional] 
 
 ## Example
 

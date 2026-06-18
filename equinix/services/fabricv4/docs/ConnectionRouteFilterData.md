@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | Route Filter identifier | [optional] 
 **attachment_status** | [**ConnectionRouteAggregationDataAttachmentStatus**](ConnectionRouteAggregationDataAttachmentStatus.md) |  | [optional] 
 **direction** | [**ConnectionRouteFilterDataDirection**](ConnectionRouteFilterDataDirection.md) |  | [optional] 
+**change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example
 

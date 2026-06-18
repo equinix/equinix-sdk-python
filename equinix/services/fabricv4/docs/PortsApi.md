@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 Create Port
 
-Creates Equinix Fabric? Port.
+Creates Equinix Fabric™ Port.
 
 ### Example
 
