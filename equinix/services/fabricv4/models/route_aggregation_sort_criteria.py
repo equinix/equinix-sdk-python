@@ -25,7 +25,7 @@ class RouteAggregationSortCriteria(BaseModel):
     RouteAggregationSortCriteria
     """ # noqa: E501
     direction: Optional[RouteAggregationSortDirection] = RouteAggregationSortDirection.DESC
-    var_property: Optional[RouteAggregationSortBy] = Field(default=RouteAggregationSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[RouteAggregationSortBy] = Field(default=RouteAggregationSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class RouteAggregationSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else RouteAggregationSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else RouteAggregationSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

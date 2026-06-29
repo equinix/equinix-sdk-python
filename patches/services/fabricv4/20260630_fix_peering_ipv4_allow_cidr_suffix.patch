@@ -1,0 +1,48 @@
+diff --git a/equinix/services/fabricv4/models/internet_access_peering_ipv4.py b/equinix/services/fabricv4/models/internet_access_peering_ipv4.py
+index 14c3d6e..6b33a7f 100644
+--- a/equinix/services/fabricv4/models/internet_access_peering_ipv4.py
++++ b/equinix/services/fabricv4/models/internet_access_peering_ipv4.py
+@@ -48,8 +48,8 @@ class InternetAccessPeeringIpv4(BaseModel):
+         if value is None:
+             return value
+ 
+-        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", value):
+-            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/")
++        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$", value):
++            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$/")
+         return value
+ 
+     @field_validator('customer_peer_ip')
+@@ -58,8 +58,8 @@ class InternetAccessPeeringIpv4(BaseModel):
+         if value is None:
+             return value
+ 
+-        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", value):
+-            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/")
++        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$", value):
++            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$/")
+         return value
+ 
+     @field_validator('equinix_vrrp_ip')
+@@ -68,8 +68,8 @@ class InternetAccessPeeringIpv4(BaseModel):
+         if value is None:
+             return value
+ 
+-        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", value):
+-            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/")
++        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$", value):
++            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$/")
+         return value
+ 
+     @field_validator('customer_vrrp_ip')
+@@ -78,8 +78,8 @@ class InternetAccessPeeringIpv4(BaseModel):
+         if value is None:
+             return value
+ 
+-        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$", value):
+-            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/")
++        if not re.match(r"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$", value):
++            raise ValueError(r"must validate the regular expression /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?$/")
+         return value
+ 
+     model_config = ConfigDict(

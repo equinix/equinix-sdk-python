@@ -65,3 +65,8 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 .openapi-generator
+
+# Fabric integration tests — test data / reports (never commit)
+env.json
+file.json
+reports/
