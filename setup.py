@@ -32,5 +32,5 @@ setup(
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     license="MIT",
-    package_data={"equinix.services.metalv1": ["py.typed"]},
+    package_data={"equinix.services.fabricv4": ["py.typed"]},
 )

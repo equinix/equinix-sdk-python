@@ -1,1 +1,0 @@
-../equinix_metal
