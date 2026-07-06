@@ -1,8 +1,5 @@
 # Equinix Python SDK
 
-> [!WARNING]
-> With the upcoming EoL of Equinix Metal on June 30, 2026, support for the Metal (`metalv1`) service will be removed from this SDK
-
 [![Release](https://img.shields.io/github/v/release/equinix/equinix-sdk-python)](https://github.com/equinix/equinix-sdk-python/releases/latest)
 [![PyPi](https://img.shields.io/pypi/v/equinix)](https://pypi.org/project/equinix)
 
@@ -27,7 +24,7 @@ import equinix
 Or you can import individual services:
 
 ```python
-from equinix.services import metalv1
+from equinix.services import fabricv4
 ```
 
 ## Usage
