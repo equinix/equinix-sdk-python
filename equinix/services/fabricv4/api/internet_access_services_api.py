@@ -94,6 +94,7 @@ class InternetAccessServicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '202': "InternetAccessService",
+            '201': "InternetAccessService",
             '400': "List[Error]",
             '403': "List[Error]",
             '500': "List[Error]",
@@ -164,6 +165,7 @@ class InternetAccessServicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '202': "InternetAccessService",
+            '201': "InternetAccessService",
             '400': "List[Error]",
             '403': "List[Error]",
             '500': "List[Error]",
@@ -234,6 +236,7 @@ class InternetAccessServicesApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '202': "InternetAccessService",
+            '201': "InternetAccessService",
             '400': "List[Error]",
             '403': "List[Error]",
             '500': "List[Error]",
@@ -376,7 +379,7 @@ class InternetAccessServicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "InternetAccessService",
+            '202': None,
             '404': "List[Error]",
             '409': "List[Error]",
         }
@@ -445,7 +448,7 @@ class InternetAccessServicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "InternetAccessService",
+            '202': None,
             '404': "List[Error]",
             '409': "List[Error]",
         }
@@ -514,7 +517,7 @@ class InternetAccessServicesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "InternetAccessService",
+            '202': None,
             '404': "List[Error]",
             '409': "List[Error]",
         }

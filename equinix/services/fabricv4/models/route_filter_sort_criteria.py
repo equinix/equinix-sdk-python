@@ -25,7 +25,7 @@ class RouteFilterSortCriteria(BaseModel):
     RouteFilterSortCriteria
     """ # noqa: E501
     direction: Optional[RouteFilterSortDirection] = RouteFilterSortDirection.DESC
-    var_property: Optional[RouteFilterSortBy] = Field(default=RouteFilterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[RouteFilterSortBy] = Field(default=RouteFilterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class RouteFilterSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else RouteFilterSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else RouteFilterSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else RouteFilterSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

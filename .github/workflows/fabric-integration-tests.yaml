@@ -1,0 +1,101 @@
+name: Fabric integration tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      env_url:
+        description: "Fabric base URL the tests run against"
+        required: true
+        default: "https://uatapi.equinix.com"
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    if: >-
+      ${{ github.event_name == 'workflow_dispatch'
+          || (github.event_name == 'pull_request'
+              && github.event.label.name == 'run-fabric-tests'
+              && startsWith(github.head_ref, 'sync/gh')) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6
+        with:
+          python-version-file: .python-version
+
+      - name: Install SDK and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install -r tests/requirements.txt
+
+      - name: Write test data
+        env:
+          TEST_DATA_UAT: ${{ secrets.TEST_DATA_UAT }}
+        run: |
+          if [ -z "$TEST_DATA_UAT" ]; then
+            echo "::error::TEST_DATA_UAT secret is not set"
+            exit 1
+          fi
+          printf '%s' "$TEST_DATA_UAT" > env.json
+
+      - name: Run integration tests
+        env:
+          ENV_URL: ${{ inputs.env_url || 'https://uatapi.equinix.com' }}
+        run: |
+          # The suite auto-loads env.json from the repo root (written above).
+          ./run_fabric_tests.sh
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fabric-test-reports
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Summarize results
+        if: always()
+        id: summary
+        run: |
+          passed=0; failed=0; total=0
+          if [ -f reports/fabric-tests.json ]; then
+            passed=$(python -c "import json;s=json.load(open('reports/fabric-tests.json'))['summary'];print(s.get('passed',0))")
+            failed=$(python -c "import json;s=json.load(open('reports/fabric-tests.json'))['summary'];print(s.get('failed',0)+s.get('error',0))")
+            total=$(python -c "import json;s=json.load(open('reports/fabric-tests.json'))['summary'];print(s.get('total',0))")
+          fi
+          echo "passed=$passed" >> "$GITHUB_OUTPUT"
+          echo "failed=$failed" >> "$GITHUB_OUTPUT"
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Slack
+        if: always()
+        uses: slackapi/slack-github-action@v2
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          payload: |
+            channel: digin-panthers-gha-automation
+            attachments:
+              - color: ${{ job.status == 'success' && 'good' || job.status == 'failure' && 'danger' || 'warning' }}
+                text: |
+                  *Repository:* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|${{ github.repository }}>
+                  *Workflow:* ${{ github.workflow }}
+                  *Status:* ${{ job.status }}
+                  *Test Runs:* ${{ steps.summary.outputs.total }}
+                  *Results:* ${{ steps.summary.outputs.passed }} Passed, ${{ steps.summary.outputs.failed }} Failed
+                  *Triggered by:* <@${{ github.actor }}>
+
+      - name: Clean up test data
+        if: always()
+        run: rm -f env.json

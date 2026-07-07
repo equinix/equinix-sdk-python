@@ -1,0 +1,28 @@
+diff --git a/equinix/services/fabricv4/models/internet_access_service.py b/equinix/services/fabricv4/models/internet_access_service.py
+index ca936ea..55496c9 100644
+--- a/equinix/services/fabricv4/models/internet_access_service.py
++++ b/equinix/services/fabricv4/models/internet_access_service.py
+@@ -40,15 +40,15 @@ class InternetAccessService(BaseModel):
+     bandwidth: Optional[StrictInt] = Field(default=None, description="Bandwidth of the service")
+     bandwidth_commit: Optional[StrictInt] = Field(default=None, description="Minimum bandwidth commit for burst billing variant of the service", alias="bandwidthCommit")
+     state: InternetAccessServiceState
+-    change: InternetAccessChange
++    change: Optional[InternetAccessChange] = None
+     locations: Optional[List[InternetAccessLocation]] = Field(default=None, description="List of locations associated with the service")
+-    routing_protocol: InternetAccessRoutingProtocol = Field(alias="routingProtocol")
+-    billing: InternetAccessBilling
+-    account: InternetAccessAccount
+-    project: Project
+-    order: InternetAccessOrder
+-    change_log: Changelog = Field(alias="changeLog")
+-    use_case: InternetAccessUseCase = Field(alias="useCase")
++    routing_protocol: Optional[InternetAccessRoutingProtocol] = Field(default=None, alias="routingProtocol")
++    billing: Optional[InternetAccessBilling] = None
++    account: Optional[InternetAccessAccount] = None
++    project: Optional[Project] = None
++    order: Optional[InternetAccessOrder] = None
++    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
++    use_case: Optional[InternetAccessUseCase] = Field(default=None, alias="useCase")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "bandwidth", "bandwidthCommit", "state", "change", "locations", "routingProtocol", "billing", "account", "project", "order", "changeLog", "useCase"]
+ 
