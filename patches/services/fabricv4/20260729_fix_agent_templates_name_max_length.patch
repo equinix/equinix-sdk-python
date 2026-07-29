@@ -1,0 +1,21 @@
+diff --git a/equinix/services/fabricv4/models/agent_templates.py b/equinix/services/fabricv4/models/agent_templates.py
+index c8b90c2..48dcea4 100644
+--- a/equinix/services/fabricv4/models/agent_templates.py
++++ b/equinix/services/fabricv4/models/agent_templates.py
+@@ -15,7 +15,6 @@ import json
+ 
+ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+ from typing import Any, ClassVar, Dict, List, Optional
+-from typing_extensions import Annotated
+ from equinix.services.fabricv4.models.agent_definition import AgentDefinition
+ from equinix.services.fabricv4.models.agent_templates_state import AgentTemplatesState
+ from equinix.services.fabricv4.models.changelog import Changelog
+@@ -29,7 +28,7 @@ class AgentTemplates(BaseModel):
+     href: Optional[StrictStr] = Field(default=None, description="Agent Template URI")
+     type: Optional[StrictStr] = Field(default=None, description="type")
+     uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier")
+-    name: Optional[Annotated[str, Field(min_length=3, strict=True, max_length=50)]] = Field(default=None, description="Equinix-provided agent template name")
++    name: Optional[StrictStr] = Field(default=None, description="Equinix-provided agent template name")
+     description: Optional[StrictStr] = Field(default=None, description="Equinix-provided agent template description")
+     state: Optional[AgentTemplatesState] = None
+     enabled: Optional[StrictBool] = Field(default=None, description="Equinix-provided agent template enabled status")
