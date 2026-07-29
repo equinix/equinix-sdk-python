@@ -25,6 +25,8 @@ class Apis:
         self.statistics = fabricv4.StatisticsApi(api_client)
         self.internet_access_services = fabricv4.InternetAccessServicesApi(api_client)
         self.ip_blocks = fabricv4.IpBlocksApi(api_client)
+        self.agents = fabricv4.AgentsApi(api_client)
+        self.agent_templates = fabricv4.AgentTemplatesApi(api_client)
 
 
 def for_user(user_name: UserName) -> Apis:
