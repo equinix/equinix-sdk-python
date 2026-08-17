@@ -17,6 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.fabric_cloud_router_price import FabricCloudRouterPrice
 from equinix.services.fabricv4.models.ip_block_price import IpBlockPrice
+from equinix.services.fabricv4.models.optical_connect_price import OpticalConnectPrice
 from equinix.services.fabricv4.models.price_category import PriceCategory
 from equinix.services.fabricv4.models.price_charge import PriceCharge
 from equinix.services.fabricv4.models.price_term_length import PriceTermLength
@@ -47,8 +48,9 @@ class Price(BaseModel):
     router: Optional[FabricCloudRouterPrice] = None
     port: Optional[VirtualPortPrice] = None
     time_service: Optional[TimeServicePrice] = Field(default=None, alias="timeService")
+    optical_connect: Optional[OpticalConnectPrice] = Field(default=None, alias="opticalConnect")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "code", "name", "description", "account", "charges", "currency", "termLength", "catgory", "connection", "ipBlock", "router", "port", "timeService"]
+    __properties: ClassVar[List[str]] = ["href", "type", "code", "name", "description", "account", "charges", "currency", "termLength", "catgory", "connection", "ipBlock", "router", "port", "timeService", "opticalConnect"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +118,9 @@ class Price(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of time_service
         if self.time_service:
             _dict['timeService'] = self.time_service.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of optical_connect
+        if self.optical_connect:
+            _dict['opticalConnect'] = self.optical_connect.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -147,7 +152,8 @@ class Price(BaseModel):
             "ipBlock": IpBlockPrice.from_dict(obj["ipBlock"]) if obj.get("ipBlock") is not None else None,
             "router": FabricCloudRouterPrice.from_dict(obj["router"]) if obj.get("router") is not None else None,
             "port": VirtualPortPrice.from_dict(obj["port"]) if obj.get("port") is not None else None,
-            "timeService": TimeServicePrice.from_dict(obj["timeService"]) if obj.get("timeService") is not None else None
+            "timeService": TimeServicePrice.from_dict(obj["timeService"]) if obj.get("timeService") is not None else None,
+            "opticalConnect": OpticalConnectPrice.from_dict(obj["opticalConnect"]) if obj.get("opticalConnect") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

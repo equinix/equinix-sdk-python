@@ -25,7 +25,7 @@ class StreamAssetSearchRequest(BaseModel):
     """
     Search requests containing criteria
     """ # noqa: E501
-    filter: StreamAssetFilters
+    filter: Optional[StreamAssetFilters] = None
     pagination: Optional[PaginationRequest] = None
     sort: Optional[List[StreamAssetSortCriteria]] = None
     additional_properties: Dict[str, Any] = {}

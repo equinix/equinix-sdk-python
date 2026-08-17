@@ -20,9 +20,11 @@ from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.company_logo import CompanyLogo
 from equinix.services.fabricv4.models.company_metro import CompanyMetro
 from equinix.services.fabricv4.models.company_profile_change import CompanyProfileChange
+from equinix.services.fabricv4.models.company_profile_contact import CompanyProfileContact
 from equinix.services.fabricv4.models.company_profile_response_account import CompanyProfileResponseAccount
 from equinix.services.fabricv4.models.company_service_profile import CompanyServiceProfile
 from equinix.services.fabricv4.models.private_service import PrivateService
+from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
 from equinix.services.fabricv4.models.tag_response import TagResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,20 +39,22 @@ class CompanyProfileResponse(BaseModel):
     name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=50)]] = None
     summary: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=125)]] = None
     description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=450)]] = None
-    state: Optional[Dict[str, Any]] = None
+    state: Optional[StrictStr] = Field(default=None, description="Company Profile State")
     account: Optional[CompanyProfileResponseAccount] = None
     metros: Optional[List[CompanyMetro]] = None
     logo: Optional[CompanyLogo] = None
     tags: Optional[List[TagResponse]] = None
     service_profiles: Optional[List[CompanyServiceProfile]] = Field(default=None, alias="serviceProfiles")
     private_services: Optional[List[PrivateService]] = Field(default=None, alias="privateServices")
-    notifications: Optional[List[Dict[str, Any]]] = None
+    point_of_contacts: Optional[List[CompanyProfileContact]] = Field(default=None, alias="pointOfContacts")
+    notifications: Optional[List[SimplifiedNotification]] = None
+    overview: Optional[StrictStr] = None
     web_url: Optional[StrictStr] = Field(default=None, alias="webUrl")
     contact_url: Optional[StrictStr] = Field(default=None, alias="contactUrl")
     change: Optional[CompanyProfileChange] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "notifications", "webUrl", "contactUrl", "change", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "summary", "description", "state", "account", "metros", "logo", "tags", "serviceProfiles", "privateServices", "pointOfContacts", "notifications", "overview", "webUrl", "contactUrl", "change", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -127,6 +131,20 @@ class CompanyProfileResponse(BaseModel):
                 if _item_private_services:
                     _items.append(_item_private_services.to_dict())
             _dict['privateServices'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in point_of_contacts (list)
+        _items = []
+        if self.point_of_contacts:
+            for _item_point_of_contacts in self.point_of_contacts:
+                if _item_point_of_contacts:
+                    _items.append(_item_point_of_contacts.to_dict())
+            _dict['pointOfContacts'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
+        _items = []
+        if self.notifications:
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
+            _dict['notifications'] = _items
         # override the default output from pydantic by calling `to_dict()` of change
         if self.change:
             _dict['change'] = self.change.to_dict()
@@ -163,7 +181,9 @@ class CompanyProfileResponse(BaseModel):
             "tags": [TagResponse.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "serviceProfiles": [CompanyServiceProfile.from_dict(_item) for _item in obj["serviceProfiles"]] if obj.get("serviceProfiles") is not None else None,
             "privateServices": [PrivateService.from_dict(_item) for _item in obj["privateServices"]] if obj.get("privateServices") is not None else None,
-            "notifications": obj.get("notifications"),
+            "pointOfContacts": [CompanyProfileContact.from_dict(_item) for _item in obj["pointOfContacts"]] if obj.get("pointOfContacts") is not None else None,
+            "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
+            "overview": obj.get("overview"),
             "webUrl": obj.get("webUrl"),
             "contactUrl": obj.get("contactUrl"),
             "change": CompanyProfileChange.from_dict(obj["change"]) if obj.get("change") is not None else None,

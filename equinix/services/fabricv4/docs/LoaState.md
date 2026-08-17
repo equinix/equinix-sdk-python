@@ -1,6 +1,6 @@
 # LoaState
 
-Loa State
+Current lifecycle state of the LOA.
 
 ## Enum
 
@@ -11,8 +11,6 @@ Loa State
 * `PENDING_AUTHORIZATION` (value: `'PENDING_AUTHORIZATION'`)
 
 * `PENDING_ACCEPTANCE` (value: `'PENDING_ACCEPTANCE'`)
-
-* `REJECTED` (value: `'REJECTED'`)
 
 * `CANCELLED` (value: `'CANCELLED'`)
 

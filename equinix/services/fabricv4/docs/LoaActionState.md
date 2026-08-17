@@ -1,6 +1,6 @@
 # LoaActionState
 
-Loa Action State
+Action State
 
 ## Enum
 

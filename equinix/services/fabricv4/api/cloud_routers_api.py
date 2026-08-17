@@ -28,6 +28,7 @@ from equinix.services.fabricv4.models.cloud_router_command_search_request import
 from equinix.services.fabricv4.models.cloud_router_command_search_response import CloudRouterCommandSearchResponse
 from equinix.services.fabricv4.models.cloud_router_package import CloudRouterPackage
 from equinix.services.fabricv4.models.cloud_router_post_request import CloudRouterPostRequest
+from equinix.services.fabricv4.models.cloud_router_read_response import CloudRouterReadResponse
 from equinix.services.fabricv4.models.cloud_router_search_request import CloudRouterSearchRequest
 from equinix.services.fabricv4.models.connection_route_search_request import ConnectionRouteSearchRequest
 from equinix.services.fabricv4.models.connection_route_table_entry_search_response import ConnectionRouteTableEntrySearchResponse
@@ -2445,7 +2446,7 @@ class CloudRoutersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CloudRouter:
+    ) -> CloudRouterReadResponse:
         """Get Routers
 
         This API provides capability to retrieve user's Cloud Routers
@@ -2483,7 +2484,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouter",
+            '200': "CloudRouterReadResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -2516,7 +2517,7 @@ class CloudRoutersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CloudRouter]:
+    ) -> ApiResponse[CloudRouterReadResponse]:
         """Get Routers
 
         This API provides capability to retrieve user's Cloud Routers
@@ -2554,7 +2555,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouter",
+            '200': "CloudRouterReadResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",
@@ -2625,7 +2626,7 @@ class CloudRoutersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouter",
+            '200': "CloudRouterReadResponse",
             '401': "List[Error]",
             '403': "List[Error]",
             '404': "List[Error]",

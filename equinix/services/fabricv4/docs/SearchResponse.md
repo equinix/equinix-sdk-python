@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pagination** | [**Pagination**](Pagination.md) |  | [optional] 
-**data** | [**List[CloudRouter]**](CloudRouter.md) | Data returned from the API call. | [optional] 
+**data** | [**List[CloudRouterReadResponse]**](CloudRouterReadResponse.md) | Data returned from the API call. | [optional] 
 
 ## Example
 

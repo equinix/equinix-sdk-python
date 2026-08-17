@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.op_enum import OpEnum
+from equinix.services.fabricv4.models.replace_operation_op import ReplaceOperationOp
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +23,7 @@ class ReplaceOperation(BaseModel):
     """
     Replace attribute value or sub-resource in the existing model
     """ # noqa: E501
-    op: OpEnum
+    op: ReplaceOperationOp
     path: StrictStr = Field(description="A JSON Pointer path.")
     value: Dict[str, Any] = Field(description="value to replace with")
     additional_properties: Dict[str, Any] = {}

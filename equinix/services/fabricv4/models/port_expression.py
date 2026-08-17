@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.ip_block_and_query_operator import IpBlockAndQueryOperator
+from equinix.services.fabricv4.models.port_expression_operator import PortExpressionOperator
 from equinix.services.fabricv4.models.port_search_field_name import PortSearchFieldName
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class PortExpression(BaseModel):
     var_and: Optional[List[PortExpression]] = Field(default=None, alias="and")
     var_or: Optional[List[PortExpression]] = Field(default=None, alias="or")
     var_property: Optional[PortSearchFieldName] = Field(default=None, alias="property")
-    operator: Optional[IpBlockAndQueryOperator] = None
+    operator: Optional[PortExpressionOperator] = None
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["and", "or", "property", "operator", "values"]

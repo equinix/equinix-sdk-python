@@ -1,20 +1,27 @@
 # flake8: noqa
 
 # import apis into api package
-from equinix.services.fabricv4.api.agent_templates_api import AgentTemplatesApi
-from equinix.services.fabricv4.api.agents_api import AgentsApi
+from equinix.services.fabricv4.api.application_domains_api import ApplicationDomainsApi
+from equinix.services.fabricv4.api.application_links_api import ApplicationLinksApi
+from equinix.services.fabricv4.api.application_services_api import ApplicationServicesApi
+from equinix.services.fabricv4.api.application_subscriptions_api import ApplicationSubscriptionsApi
 from equinix.services.fabricv4.api.cloud_events_api import CloudEventsApi
 from equinix.services.fabricv4.api.cloud_routers_api import CloudRoutersApi
 from equinix.services.fabricv4.api.company_profiles_api import CompanyProfilesApi
 from equinix.services.fabricv4.api.connections_api import ConnectionsApi
+from equinix.services.fabricv4.api.fabric_one_api import FabricOneApi
+from equinix.services.fabricv4.api.gateways_api import GatewaysApi
 from equinix.services.fabricv4.api.health_api import HealthApi
+from equinix.services.fabricv4.api.ip_blocks_api import IPBlocksApi
 from equinix.services.fabricv4.api.internet_access_services_api import InternetAccessServicesApi
-from equinix.services.fabricv4.api.ip_blocks_api import IpBlocksApi
+from equinix.services.fabricv4.api.internet_exchange_services_api import InternetExchangeServicesApi
+from equinix.services.fabricv4.api.loas_api import LoasApi
 from equinix.services.fabricv4.api.logos_api import LogosApi
 from equinix.services.fabricv4.api.marketplace_subscriptions_api import MarketplaceSubscriptionsApi
 from equinix.services.fabricv4.api.metrics_api import MetricsApi
 from equinix.services.fabricv4.api.metros_api import MetrosApi
 from equinix.services.fabricv4.api.networks_api import NetworksApi
+from equinix.services.fabricv4.api.optical_metro_connects_api import OpticalMetroConnectsApi
 from equinix.services.fabricv4.api.port_packages_api import PortPackagesApi
 from equinix.services.fabricv4.api.ports_api import PortsApi
 from equinix.services.fabricv4.api.precision_time_api import PrecisionTimeApi

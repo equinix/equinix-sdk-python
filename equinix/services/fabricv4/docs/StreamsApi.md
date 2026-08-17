@@ -10,7 +10,8 @@ Method | HTTP request | Description
 [**get_stream_asset_by_uuid**](StreamsApi.md#get_stream_asset_by_uuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset
 [**get_stream_by_uuid**](StreamsApi.md#get_stream_by_uuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream
 [**get_streams**](StreamsApi.md#get_streams) | **GET** /fabric/v4/streams | Get Streams
-[**get_streams_assets**](StreamsApi.md#get_streams_assets) | **POST** /fabric/v4/streamAssets/search | Get Assets
+[**search_stream_assets**](StreamsApi.md#search_stream_assets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets
+[**search_streams**](StreamsApi.md#search_streams) | **POST** /fabric/v4/streams/search | Search Streams
 [**update_stream_asset_by_uuid**](StreamsApi.md#update_stream_asset_by_uuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 [**update_stream_by_uuid**](StreamsApi.md#update_stream_by_uuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
 
@@ -525,12 +526,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_streams_assets**
-> GetAllStreamAssetResponse get_streams_assets(stream_asset_search_request, offset=offset, limit=limit)
+# **search_stream_assets**
+> SearchStreamAssetResponse search_stream_assets(stream_asset_search_request)
 
-Get Assets
+Search Stream Assets
 
-This API provides capability to retrieve stream assets
+This API provides capability to search stream assets
 
 ### Example
 
@@ -538,7 +539,7 @@ This API provides capability to retrieve stream assets
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.get_all_stream_asset_response import GetAllStreamAssetResponse
+from equinix.services.fabricv4.models.search_stream_asset_response import SearchStreamAssetResponse
 from equinix.services.fabricv4.models.stream_asset_search_request import StreamAssetSearchRequest
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
@@ -564,16 +565,14 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
     stream_asset_search_request = equinix.services.fabricv4.StreamAssetSearchRequest() # StreamAssetSearchRequest | 
-    offset = 1 # int | offset (optional)
-    limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get Assets
-        api_response = api_instance.get_streams_assets(stream_asset_search_request, offset=offset, limit=limit)
-        print("The response of StreamsApi->get_streams_assets:\n")
+        # Search Stream Assets
+        api_response = api_instance.search_stream_assets(stream_asset_search_request)
+        print("The response of StreamsApi->search_stream_assets:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StreamsApi->get_streams_assets: %s\n" % e)
+        print("Exception when calling StreamsApi->search_stream_assets: %s\n" % e)
 ```
 
 
@@ -584,12 +583,94 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stream_asset_search_request** | [**StreamAssetSearchRequest**](StreamAssetSearchRequest.md)|  | 
- **offset** | **int**| offset | [optional] 
- **limit** | **int**| number of records to fetch | [optional] 
 
 ### Return type
 
-[**GetAllStreamAssetResponse**](GetAllStreamAssetResponse.md)
+[**SearchStreamAssetResponse**](SearchStreamAssetResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_streams**
+> SearchStreamResponse search_streams(stream_search_request=stream_search_request)
+
+Search Streams
+
+This API provides capability to search streams
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.search_stream_response import SearchStreamResponse
+from equinix.services.fabricv4.models.stream_search_request import StreamSearchRequest
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.StreamsApi(api_client)
+    stream_search_request = equinix.services.fabricv4.StreamSearchRequest() # StreamSearchRequest |  (optional)
+
+    try:
+        # Search Streams
+        api_response = api_instance.search_streams(stream_search_request=stream_search_request)
+        print("The response of StreamsApi->search_streams:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StreamsApi->search_streams: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stream_search_request** | [**StreamSearchRequest**](StreamSearchRequest.md)|  | [optional] 
+
+### Return type
+
+[**SearchStreamResponse**](SearchStreamResponse.md)
 
 ### Authorization
 

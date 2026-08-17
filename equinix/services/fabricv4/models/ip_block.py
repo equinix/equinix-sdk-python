@@ -35,8 +35,8 @@ class IpBlock(BaseModel):
     """
     IpBlock
     """ # noqa: E501
-    uuid: StrictStr = Field(description="Unique identifier for the Ip Block")
-    href: StrictStr = Field(description="Resource URL path for the Ip Block")
+    uuid: StrictStr = Field(description="Unique identifier for the IP Block")
+    href: StrictStr = Field(description="Resource URL path for the IP Block")
     type: TypeOfIpBlockProduct
     state: IpBlockState
     ownership: IpBlockOwnership
@@ -47,7 +47,7 @@ class IpBlock(BaseModel):
     account: Optional[IpBlockAccount] = None
     project: IpBlockProject
     regulations: Optional[IpBlockRegulations] = None
-    assets: Optional[List[IpBlockAsset]] = Field(default=None, description="Products using this Ip Block")
+    assets: Optional[List[IpBlockAsset]] = Field(default=None, description="Products using this IP Block")
     change: Optional[IpBlockChange] = None
     change_log: IpBlockChangeLog = Field(alias="changeLog")
     error: Optional[Error] = None

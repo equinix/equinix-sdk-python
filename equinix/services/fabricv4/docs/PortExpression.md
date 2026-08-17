@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **var_and** | [**List[PortExpression]**](PortExpression.md) |  | [optional] 
 **var_or** | [**List[PortExpression]**](PortExpression.md) |  | [optional] 
 **var_property** | [**PortSearchFieldName**](PortSearchFieldName.md) |  | [optional] 
-**operator** | [**IpBlockAndQueryOperator**](IpBlockAndQueryOperator.md) |  | [optional] 
+**operator** | [**PortExpressionOperator**](PortExpressionOperator.md) |  | [optional] 
 **values** | **List[str]** |  | [optional] 
 
 ## Example

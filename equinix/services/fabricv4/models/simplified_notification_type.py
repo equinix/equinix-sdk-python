@@ -30,6 +30,7 @@ class SimplifiedNotificationType(str, Enum):
     SALES_REP_NOTIFICATIONS = 'SALES_REP_NOTIFICATIONS'
     TECHNICAL = 'TECHNICAL'
     ORDERING = 'ORDERING'
+    QUOTE_NOTIFICATIONS = 'QUOTE_NOTIFICATIONS'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.op_enum import OpEnum
+from equinix.services.fabricv4.models.remove_operation_op import RemoveOperationOp
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +23,7 @@ class RemoveOperation(BaseModel):
     """
     Remove sub-resource from an existing model
     """ # noqa: E501
-    op: OpEnum
+    op: RemoveOperationOp
     path: StrictStr = Field(description="A JSON Pointer path.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["op", "path"]

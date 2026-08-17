@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** | Unique identifier for the Ip Block | 
-**href** | **str** | Resource URL path for the Ip Block | 
+**uuid** | **str** | Unique identifier for the IP Block | 
+**href** | **str** | Resource URL path for the IP Block | 
 **type** | [**TypeOfIpBlockProduct**](TypeOfIpBlockProduct.md) |  | 
 **state** | [**IpBlockState**](IpBlockState.md) |  | 
 **ownership** | [**IpBlockOwnership**](IpBlockOwnership.md) |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **account** | [**IpBlockAccount**](IpBlockAccount.md) |  | [optional] 
 **project** | [**IpBlockProject**](IpBlockProject.md) |  | 
 **regulations** | [**IpBlockRegulations**](IpBlockRegulations.md) |  | [optional] 
-**assets** | [**List[IpBlockAsset]**](IpBlockAsset.md) | Products using this Ip Block | [optional] 
+**assets** | [**List[IpBlockAsset]**](IpBlockAsset.md) | Products using this IP Block | [optional] 
 **change** | [**IpBlockChange**](IpBlockChange.md) |  | [optional] 
 **change_log** | [**IpBlockChangeLog**](IpBlockChangeLog.md) |  | 
 **error** | [**Error**](Error.md) |  | [optional] 

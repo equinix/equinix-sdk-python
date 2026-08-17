@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class IpBlockState(str, Enum):
     """
-    Current state of the Ip Block
+    Current state of the IP Block
     """
 
     """

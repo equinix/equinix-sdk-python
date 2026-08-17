@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **var_and** | [**List[NetworkFilter]**](NetworkFilter.md) |  | [optional] 
 **var_or** | [**List[NetworkFilter]**](NetworkFilter.md) |  | [optional] 
 **var_property** | [**NetworkSearchFieldName**](NetworkSearchFieldName.md) |  | [optional] 
-**operator** | [**NetworkFilterOperator**](NetworkFilterOperator.md) |  | [optional] 
+**operator** | [**InterconnectFilterOperator**](InterconnectFilterOperator.md) |  | [optional] 
 **values** | **List[str]** |  | [optional] 
 
 ## Example

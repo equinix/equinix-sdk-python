@@ -953,7 +953,7 @@ class CompanyProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CompanyProfileResponse",
+            '202': "CompanyProfileResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
@@ -1023,7 +1023,7 @@ class CompanyProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CompanyProfileResponse",
+            '202': "CompanyProfileResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",
@@ -1093,7 +1093,7 @@ class CompanyProfilesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CompanyProfileResponse",
+            '202': "CompanyProfileResponse",
             '400': "List[Error]",
             '401': "List[Error]",
             '403': "List[Error]",

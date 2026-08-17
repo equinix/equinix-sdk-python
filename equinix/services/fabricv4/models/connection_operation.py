@@ -19,6 +19,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.connection_operation_operational_status import ConnectionOperationOperationalStatus
 from equinix.services.fabricv4.models.equinix_status import EquinixStatus
 from equinix.services.fabricv4.models.error import Error
+from equinix.services.fabricv4.models.maintenance_state import MaintenanceState
 from equinix.services.fabricv4.models.provider_status import ProviderStatus
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,8 +33,9 @@ class ConnectionOperation(BaseModel):
     operational_status: Optional[ConnectionOperationOperationalStatus] = Field(default=None, alias="operationalStatus")
     errors: Optional[List[Error]] = None
     op_status_changed_at: Optional[datetime] = Field(default=None, description="When connection transitioned into current operational status", alias="opStatusChangedAt")
+    maintenance_status: Optional[MaintenanceState] = Field(default=None, alias="maintenanceStatus")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt"]
+    __properties: ClassVar[List[str]] = ["providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +106,8 @@ class ConnectionOperation(BaseModel):
             "equinixStatus": obj.get("equinixStatus"),
             "operationalStatus": obj.get("operationalStatus"),
             "errors": [Error.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
-            "opStatusChangedAt": obj.get("opStatusChangedAt")
+            "opStatusChangedAt": obj.get("opStatusChangedAt"),
+            "maintenanceStatus": obj.get("maintenanceStatus")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

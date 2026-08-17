@@ -7,8 +7,8 @@ Equinix Fabric Tag Request Object
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** | Type of tag | 
-**name** | **str** | Name of the Tag | 
 **display_name** | **str** | Display name of the Tag | 
+**notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) |  | [optional] 
 
 ## Example
 

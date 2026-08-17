@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fg_vc_count** | **int** | Total number of connections. | [optional] 
 **access_vc_count** | **int** | Total number of connections. | [optional] 
 **op_status_changed_at** | **datetime** | Date and time at which port availability changed. | [optional] 
+**maintenance_status** | [**MaintenanceState**](MaintenanceState.md) |  | [optional] 
 
 ## Example
 

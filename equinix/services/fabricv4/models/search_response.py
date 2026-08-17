@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.cloud_router import CloudRouter
+from equinix.services.fabricv4.models.cloud_router_read_response import CloudRouterReadResponse
 from equinix.services.fabricv4.models.pagination import Pagination
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +25,7 @@ class SearchResponse(BaseModel):
     SearchResponse
     """ # noqa: E501
     pagination: Optional[Pagination] = None
-    data: Optional[List[CloudRouter]] = Field(default=None, description="Data returned from the API call.")
+    data: Optional[List[CloudRouterReadResponse]] = Field(default=None, description="Data returned from the API call.")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["pagination", "data"]
 
@@ -98,7 +98,7 @@ class SearchResponse(BaseModel):
 
         _obj = cls.model_validate({
             "pagination": Pagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
-            "data": [CloudRouter.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "data": [CloudRouterReadResponse.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

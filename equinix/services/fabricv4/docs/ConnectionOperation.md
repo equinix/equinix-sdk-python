@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **operational_status** | [**ConnectionOperationOperationalStatus**](ConnectionOperationOperationalStatus.md) |  | [optional] 
 **errors** | [**List[Error]**](Error.md) |  | [optional] 
 **op_status_changed_at** | **datetime** | When connection transitioned into current operational status | [optional] 
+**maintenance_status** | [**MaintenanceState**](MaintenanceState.md) |  | [optional] 
 
 ## Example
 

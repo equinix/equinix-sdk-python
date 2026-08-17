@@ -23,6 +23,7 @@ class StreamAssetSortBy(str, Enum):
     allowed enum values
     """
     SLASH_UUID = '/uuid'
+    SLASH_STREAM_UUID = '/streamUuid'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

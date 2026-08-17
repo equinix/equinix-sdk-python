@@ -20,6 +20,7 @@ from equinix.services.fabricv4.models.internet_access_connection_bgp_request imp
 from equinix.services.fabricv4.models.internet_access_customer_asn_range import InternetAccessCustomerAsnRange
 from equinix.services.fabricv4.models.internet_access_customer_route_request import InternetAccessCustomerRouteRequest
 from equinix.services.fabricv4.models.internet_access_export_policy import InternetAccessExportPolicy
+from equinix.services.fabricv4.models.internet_access_routing_protocol_bgp_request_asn import InternetAccessRoutingProtocolBgpRequestAsn
 from equinix.services.fabricv4.models.internet_access_routing_protocol_request import InternetAccessRoutingProtocolRequest
 from equinix.services.fabricv4.models.internet_access_routing_protocol_type import InternetAccessRoutingProtocolType
 from typing import Optional, Set
@@ -31,11 +32,12 @@ class InternetAccessRoutingProtocolBgpRequest(InternetAccessRoutingProtocolReque
     """ # noqa: E501
     connections: Annotated[List[InternetAccessConnectionBgpRequest], Field(min_length=1, max_length=2)]
     export_policy: InternetAccessExportPolicy = Field(alias="exportPolicy")
+    asn: Optional[InternetAccessRoutingProtocolBgpRequestAsn] = None
     customer_asn: Optional[StrictInt] = Field(default=None, description="Customer ASN. Valid range is 1-64495 or 65536-4199999999.", alias="customerAsn")
     bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authentication key", alias="bgpAuthKey")
     customer_asn_range: Optional[InternetAccessCustomerAsnRange] = Field(default=None, alias="customerAsnRange")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "customerAsn", "bgpAuthKey", "customerAsnRange"]
+    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "customerAsnRange"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,6 +94,9 @@ class InternetAccessRoutingProtocolBgpRequest(InternetAccessRoutingProtocolReque
                 if _item_connections:
                     _items.append(_item_connections.to_dict())
             _dict['connections'] = _items
+        # override the default output from pydantic by calling `to_dict()` of asn
+        if self.asn:
+            _dict['asn'] = self.asn.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -113,6 +118,7 @@ class InternetAccessRoutingProtocolBgpRequest(InternetAccessRoutingProtocolReque
             "customerRoutes": [InternetAccessCustomerRouteRequest.from_dict(_item) for _item in obj["customerRoutes"]] if obj.get("customerRoutes") is not None else None,
             "connections": [InternetAccessConnectionBgpRequest.from_dict(_item) for _item in obj["connections"]] if obj.get("connections") is not None else None,
             "exportPolicy": obj.get("exportPolicy"),
+            "asn": InternetAccessRoutingProtocolBgpRequestAsn.from_dict(obj["asn"]) if obj.get("asn") is not None else None,
             "customerAsn": obj.get("customerAsn"),
             "bgpAuthKey": obj.get("bgpAuthKey"),
             "customerAsnRange": obj.get("customerAsnRange")

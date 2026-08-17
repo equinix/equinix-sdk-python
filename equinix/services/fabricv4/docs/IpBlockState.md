@@ -1,6 +1,6 @@
 # IpBlockState
 
-Current state of the Ip Block
+Current state of the IP Block
 
 ## Enum
 

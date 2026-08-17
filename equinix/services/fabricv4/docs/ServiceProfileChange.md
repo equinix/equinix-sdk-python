@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **created_date_time** | **datetime** | Set when change flow starts | 
 **updated_date_time** | **datetime** | Set when change object is updated | [optional] 
 **information** | **str** | Additional information | [optional] 
-**data** | [**List[JsonPatchOperation]**](JsonPatchOperation.md) |  | [optional] 
+**data** | [**List[ServiceProfileUpdateOperation]**](ServiceProfileUpdateOperation.md) |  | [optional] 
 
 ## Example
 

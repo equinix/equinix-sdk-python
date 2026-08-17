@@ -62,6 +62,10 @@ Possible field names to use on filters
 
 * `SLASH_OPERATION_SLASH_PROVIDER_STATUS` (value: `'/operation/providerStatus'`)
 
+* `SLASH_OPERATION_SLASH_MAINTENANCE_STATUS` (value: `'/operation/maintenanceStatus'`)
+
+* `SLASH_OPERATION_SLASH_LOCK_ENABLED` (value: `'/operation/lockEnabled'`)
+
 * `SLASH_PROJECT_SLASH_PROJECT_ID` (value: `'/project/projectId'`)
 
 * `SLASH_REDUNDANCY_SLASH_GROUP` (value: `'/redundancy/group'`)

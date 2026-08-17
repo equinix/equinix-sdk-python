@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **connections** | [**List[InternetAccessConnectionBgpRequest]**](InternetAccessConnectionBgpRequest.md) |  | 
 **export_policy** | [**InternetAccessExportPolicy**](InternetAccessExportPolicy.md) |  | 
+**asn** | [**InternetAccessRoutingProtocolBgpRequestAsn**](InternetAccessRoutingProtocolBgpRequestAsn.md) |  | [optional] 
 **customer_asn** | **int** | Customer ASN. Valid range is 1-64495 or 65536-4199999999. | [optional] 
 **bgp_auth_key** | **str** | BGP authentication key | [optional] 
 **customer_asn_range** | [**InternetAccessCustomerAsnRange**](InternetAccessCustomerAsnRange.md) |  | [optional] 

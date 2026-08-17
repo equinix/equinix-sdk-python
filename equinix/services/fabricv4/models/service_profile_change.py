@@ -16,8 +16,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.json_patch_operation import JsonPatchOperation
 from equinix.services.fabricv4.models.service_profile_change_status import ServiceProfileChangeStatus
+from equinix.services.fabricv4.models.service_profile_update_operation import ServiceProfileUpdateOperation
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class ServiceProfileChange(BaseModel):
     created_date_time: datetime = Field(description="Set when change flow starts", alias="createdDateTime")
     updated_date_time: Optional[datetime] = Field(default=None, description="Set when change object is updated", alias="updatedDateTime")
     information: Optional[StrictStr] = Field(default=None, description="Additional information")
-    data: Optional[List[JsonPatchOperation]] = None
+    data: Optional[List[ServiceProfileUpdateOperation]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid", "type", "status", "createdDateTime", "updatedDateTime", "information", "data"]
 
@@ -106,7 +106,7 @@ class ServiceProfileChange(BaseModel):
             "createdDateTime": obj.get("createdDateTime"),
             "updatedDateTime": obj.get("updatedDateTime"),
             "information": obj.get("information"),
-            "data": [JsonPatchOperation.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
+            "data": [ServiceProfileUpdateOperation.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

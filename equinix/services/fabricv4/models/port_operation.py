@@ -16,6 +16,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.maintenance_state import MaintenanceState
 from equinix.services.fabricv4.models.port_operation_operational_status import PortOperationOperationalStatus
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,8 +31,9 @@ class PortOperation(BaseModel):
     fg_vc_count: Optional[StrictInt] = Field(default=None, description="Total number of connections.", alias="fgVCCount")
     access_vc_count: Optional[StrictInt] = Field(default=None, description="Total number of connections.", alias="accessVCCount")
     op_status_changed_at: Optional[datetime] = Field(default=None, description="Date and time at which port availability changed.", alias="opStatusChangedAt")
+    maintenance_status: Optional[MaintenanceState] = Field(default=None, alias="maintenanceStatus")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt"]
+    __properties: ClassVar[List[str]] = ["operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,7 +98,8 @@ class PortOperation(BaseModel):
             "evplVCCount": obj.get("evplVCCount"),
             "fgVCCount": obj.get("fgVCCount"),
             "accessVCCount": obj.get("accessVCCount"),
-            "opStatusChangedAt": obj.get("opStatusChangedAt")
+            "opStatusChangedAt": obj.get("opStatusChangedAt"),
+            "maintenanceStatus": obj.get("maintenanceStatus")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

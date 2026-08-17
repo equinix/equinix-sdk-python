@@ -16,6 +16,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from equinix.services.fabricv4.models.company_profile_contact import CompanyProfileContact
+from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,11 +29,13 @@ class CompanyProfileRequest(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True, max_length=50)]
     summary: Annotated[str, Field(min_length=1, strict=True, max_length=125)]
     description: Annotated[str, Field(min_length=1, strict=True, max_length=450)]
-    notifications: Optional[List[Dict[str, Any]]] = None
-    web_url: Optional[StrictStr] = Field(default=None, alias="webUrl")
+    point_of_contacts: Optional[List[CompanyProfileContact]] = Field(default=None, alias="pointOfContacts")
+    notifications: Optional[List[SimplifiedNotification]] = None
+    overview: Optional[StrictStr] = None
+    web_url: StrictStr = Field(alias="webUrl")
     contact_url: Optional[StrictStr] = Field(default=None, alias="contactUrl")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "summary", "description", "notifications", "webUrl", "contactUrl"]
+    __properties: ClassVar[List[str]] = ["type", "name", "summary", "description", "pointOfContacts", "notifications", "overview", "webUrl", "contactUrl"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +78,20 @@ class CompanyProfileRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in point_of_contacts (list)
+        _items = []
+        if self.point_of_contacts:
+            for _item_point_of_contacts in self.point_of_contacts:
+                if _item_point_of_contacts:
+                    _items.append(_item_point_of_contacts.to_dict())
+            _dict['pointOfContacts'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
+        _items = []
+        if self.notifications:
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
+            _dict['notifications'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -95,7 +113,9 @@ class CompanyProfileRequest(BaseModel):
             "name": obj.get("name"),
             "summary": obj.get("summary"),
             "description": obj.get("description"),
-            "notifications": obj.get("notifications"),
+            "pointOfContacts": [CompanyProfileContact.from_dict(_item) for _item in obj["pointOfContacts"]] if obj.get("pointOfContacts") is not None else None,
+            "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
+            "overview": obj.get("overview"),
             "webUrl": obj.get("webUrl"),
             "contactUrl": obj.get("contactUrl")
         })

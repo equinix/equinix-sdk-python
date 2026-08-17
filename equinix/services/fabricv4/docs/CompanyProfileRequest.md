@@ -9,8 +9,10 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **summary** | **str** |  | 
 **description** | **str** |  | 
-**notifications** | **List[object]** |  | [optional] 
-**web_url** | **str** |  | [optional] 
+**point_of_contacts** | [**List[CompanyProfileContact]**](CompanyProfileContact.md) |  | [optional] 
+**notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) |  | [optional] 
+**overview** | **str** |  | [optional] 
+**web_url** | **str** |  | 
 **contact_url** | **str** |  | [optional] 
 
 ## Example

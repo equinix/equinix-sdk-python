@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.phone import Phone
 from equinix.services.fabricv4.models.simplified_notification_type import SimplifiedNotificationType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,8 +28,9 @@ class SimplifiedNotification(BaseModel):
     send_interval: Optional[StrictStr] = Field(default=None, alias="sendInterval")
     emails: List[StrictStr] = Field(description="Array of contact emails")
     registered_users: Optional[List[StrictStr]] = Field(default=None, description="Array of registered users", alias="registeredUsers")
+    phone: Optional[List[Phone]] = Field(default=None, description="Array of contact phone numbers")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "sendInterval", "emails", "registeredUsers"]
+    __properties: ClassVar[List[str]] = ["type", "sendInterval", "emails", "registeredUsers", "phone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +73,13 @@ class SimplifiedNotification(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in phone (list)
+        _items = []
+        if self.phone:
+            for _item_phone in self.phone:
+                if _item_phone:
+                    _items.append(_item_phone.to_dict())
+            _dict['phone'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -91,7 +100,8 @@ class SimplifiedNotification(BaseModel):
             "type": obj.get("type"),
             "sendInterval": obj.get("sendInterval"),
             "emails": obj.get("emails"),
-            "registeredUsers": obj.get("registeredUsers")
+            "registeredUsers": obj.get("registeredUsers"),
+            "phone": [Phone.from_dict(_item) for _item in obj["phone"]] if obj.get("phone") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

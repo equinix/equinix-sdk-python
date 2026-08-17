@@ -17,12 +17,13 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.provider_environment_type_enum import ProviderEnvironmentTypeEnum
+from equinix.services.fabricv4.models.service_metro import ServiceMetro
 from typing import Optional, Set
 from typing_extensions import Self
 
 class ProviderEnvironment(BaseModel):
     """
-    Provider Environment associated with an IC_PROFILE service profile
+    Provider Environment associated with an IC_PROFILE service profile <font color=\"red\"> <sup color='red'>Beta</sup></font>
     """ # noqa: E501
     href: Optional[StrictStr] = Field(default=None, description="Provider Environment URI")
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned provider environment identifier")
@@ -31,9 +32,11 @@ class ProviderEnvironment(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Provider environment description")
     region: Optional[StrictStr] = Field(default=None, description="Cloud provider region identifier")
     supported_bandwidths: Optional[List[StrictInt]] = Field(default=None, description="Supported bandwidths in Mbps", alias="supportedBandwidths")
+    metros: Optional[List[ServiceMetro]] = Field(default=None, description="Derived response attribute.")
+    supported_features: Optional[List[StrictStr]] = Field(default=None, description="Supported Feature Types", alias="supportedFeatures")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +81,13 @@ class ProviderEnvironment(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in metros (list)
+        _items = []
+        if self.metros:
+            for _item_metros in self.metros:
+                if _item_metros:
+                    _items.append(_item_metros.to_dict())
+            _dict['metros'] = _items
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -105,6 +115,8 @@ class ProviderEnvironment(BaseModel):
             "description": obj.get("description"),
             "region": obj.get("region"),
             "supportedBandwidths": obj.get("supportedBandwidths"),
+            "metros": [ServiceMetro.from_dict(_item) for _item in obj["metros"]] if obj.get("metros") is not None else None,
+            "supportedFeatures": obj.get("supportedFeatures"),
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

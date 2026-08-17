@@ -57,7 +57,7 @@ class ServiceProfile(BaseModel):
     ports: Optional[List[ServiceProfileAccessPointCOLO]] = None
     virtual_devices: Optional[List[ServiceProfileAccessPointVD]] = Field(default=None, alias="virtualDevices")
     metros: Optional[List[ServiceMetro]] = Field(default=None, description="Derived response attribute.")
-    environments: Optional[List[ProviderEnvironment]] = Field(default=None, description="Provider environments associated with this IC_PROFILE service profile.")
+    environments: Optional[List[ProviderEnvironment]] = Field(default=None, description="Provider environments associated with this IC_PROFILE service profile. <font color=\"red\"> <sup color='red'>Beta</sup></font>")
     self_profile: Optional[StrictBool] = Field(default=None, description="response attribute indicates whether the profile belongs to the same organization as the api-invoker.", alias="selfProfile")
     project_id: Optional[StrictStr] = Field(default=None, alias="projectId")
     last_mile_config: Optional[ServiceProfileLastMileConfig] = Field(default=None, alias="lastMileConfig")
@@ -95,10 +95,12 @@ class ServiceProfile(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
             "href",
+            "self_profile",
             "additional_properties",
         ])
 

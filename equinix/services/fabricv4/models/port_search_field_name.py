@@ -32,6 +32,8 @@ class PortSearchFieldName(str, Enum):
     SLASH_ACCOUNT_SLASH_ORG_ID = '/account/orgId'
     SLASH_ACCOUNT_SLASH_ACCOUNT_NUMBER = '/account/accountNumber'
     SLASH_LOCATION_SLASH_METRO_CODE = '/location/metroCode'
+    SLASH_OPERATION_SLASH_MAINTENANCE_STATUS = '/operation/maintenanceStatus'
+    SLASH_OPERATION_SLASH_LOCK_ENABLED = '/operation/lockEnabled'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

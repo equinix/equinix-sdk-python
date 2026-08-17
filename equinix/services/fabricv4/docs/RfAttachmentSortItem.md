@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_property** | [**RfAttachmentSortItemProperty**](RfAttachmentSortItemProperty.md) |  | [optional] [default to RfAttachmentSortItemProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
-**direction** | [**RfAttachmentSortItemDirection**](RfAttachmentSortItemDirection.md) |  | [optional] [default to RfAttachmentSortItemDirection.DESC]
+**direction** | [**ExchangeServiceSearchSortCriteriaDirection**](ExchangeServiceSearchSortCriteriaDirection.md) |  | [optional] [default to ExchangeServiceSearchSortCriteriaDirection.DESC]
 
 ## Example
 

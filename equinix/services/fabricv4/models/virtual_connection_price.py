@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from equinix.services.fabricv4.models.geo_scope_type import GeoScopeType
 from equinix.services.fabricv4.models.virtual_connection_price_a_side import VirtualConnectionPriceASide
 from equinix.services.fabricv4.models.virtual_connection_price_connection_type import VirtualConnectionPriceConnectionType
 from equinix.services.fabricv4.models.virtual_connection_price_z_side import VirtualConnectionPriceZSide
@@ -31,8 +32,9 @@ class VirtualConnectionPrice(BaseModel):
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = None
     a_side: Optional[VirtualConnectionPriceASide] = Field(default=None, alias="aSide")
     z_side: Optional[VirtualConnectionPriceZSide] = Field(default=None, alias="zSide")
+    geo_scope: Optional[GeoScopeType] = Field(default=None, alias="geoScope")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["uuid", "type", "bandwidth", "aSide", "zSide"]
+    __properties: ClassVar[List[str]] = ["uuid", "type", "bandwidth", "aSide", "zSide", "geoScope"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,7 +104,8 @@ class VirtualConnectionPrice(BaseModel):
             "type": obj.get("type"),
             "bandwidth": obj.get("bandwidth"),
             "aSide": VirtualConnectionPriceASide.from_dict(obj["aSide"]) if obj.get("aSide") is not None else None,
-            "zSide": VirtualConnectionPriceZSide.from_dict(obj["zSide"]) if obj.get("zSide") is not None else None
+            "zSide": VirtualConnectionPriceZSide.from_dict(obj["zSide"]) if obj.get("zSide") is not None else None,
+            "geoScope": obj.get("geoScope")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

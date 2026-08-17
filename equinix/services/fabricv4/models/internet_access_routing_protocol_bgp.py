@@ -20,6 +20,7 @@ from equinix.services.fabricv4.models.internet_access_customer_asn_range import 
 from equinix.services.fabricv4.models.internet_access_customer_route import InternetAccessCustomerRoute
 from equinix.services.fabricv4.models.internet_access_export_policy import InternetAccessExportPolicy
 from equinix.services.fabricv4.models.internet_access_routing_protocol import InternetAccessRoutingProtocol
+from equinix.services.fabricv4.models.internet_access_routing_protocol_bgp_asn import InternetAccessRoutingProtocolBgpAsn
 from equinix.services.fabricv4.models.internet_access_routing_protocol_type import InternetAccessRoutingProtocolType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +30,12 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
     InternetAccessRoutingProtocolBgp
     """ # noqa: E501
     export_policy: InternetAccessExportPolicy = Field(alias="exportPolicy")
+    asn: Optional[InternetAccessRoutingProtocolBgpAsn] = None
     customer_asn: Optional[StrictInt] = Field(default=None, description="Customer ASN. Valid range is 1-64495 or 131072-4199999999. Currently this option is only available for EIA over dedicated port.", alias="customerAsn")
     bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authentication key", alias="bgpAuthKey")
     customer_asn_range: InternetAccessCustomerAsnRange = Field(alias="customerAsnRange")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "customerAsn", "bgpAuthKey", "customerAsnRange"]
+    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "customerAsnRange"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +92,9 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
                 if _item_connections:
                     _items.append(_item_connections.to_dict())
             _dict['connections'] = _items
+        # override the default output from pydantic by calling `to_dict()` of asn
+        if self.asn:
+            _dict['asn'] = self.asn.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -111,6 +116,7 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
             "customerRoutes": [InternetAccessCustomerRoute.from_dict(_item) for _item in obj["customerRoutes"]] if obj.get("customerRoutes") is not None else None,
             "connections": [InternetAccessConnection.from_dict(_item) for _item in obj["connections"]] if obj.get("connections") is not None else None,
             "exportPolicy": obj.get("exportPolicy"),
+            "asn": InternetAccessRoutingProtocolBgpAsn.from_dict(obj["asn"]) if obj.get("asn") is not None else None,
             "customerAsn": obj.get("customerAsn"),
             "bgpAuthKey": obj.get("bgpAuthKey"),
             "customerAsnRange": obj.get("customerAsnRange")

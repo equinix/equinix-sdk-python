@@ -13,8 +13,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.changelog import Changelog
+from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
+from equinix.services.fabricv4.models.tag_response_state import TagResponseState
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,9 +30,11 @@ class TagResponse(BaseModel):
     type: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     display_name: Optional[StrictStr] = Field(default=None, alias="displayName")
-    weight: Optional[StrictInt] = None
+    state: Optional[TagResponseState] = None
+    notifications: Optional[List[SimplifiedNotification]] = None
+    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName", "weight"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName", "state", "notifications", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +77,16 @@ class TagResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
+        _items = []
+        if self.notifications:
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
+            _dict['notifications'] = _items
+        # override the default output from pydantic by calling `to_dict()` of change_log
+        if self.change_log:
+            _dict['changeLog'] = self.change_log.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -94,7 +109,9 @@ class TagResponse(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "displayName": obj.get("displayName"),
-            "weight": obj.get("weight")
+            "state": obj.get("state"),
+            "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
+            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
