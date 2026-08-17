@@ -25,7 +25,7 @@ class InterconnectSortCriteriaResponse(BaseModel):
     InterconnectSortCriteriaResponse
     """ # noqa: E501
     direction: Optional[InterconnectSortDirectionResponse] = InterconnectSortDirectionResponse.DESC
-    var_property: Optional[InterconnectSortByResponse] = Field(default=InterconnectSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[InterconnectSortByResponse] = Field(default=InterconnectSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class InterconnectSortCriteriaResponse(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else InterconnectSortDirectionResponse.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else InterconnectSortByResponse.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else InterconnectSortByResponse.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -25,7 +25,7 @@ class LoaSortCriteria(BaseModel):
     LoaSortCriteria
     """ # noqa: E501
     direction: Optional[ExchangeServiceSearchSortCriteriaDirection] = ExchangeServiceSearchSortCriteriaDirection.DESC
-    var_property: Optional[LoaSortCriteriaProperty] = Field(default=LoaSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[LoaSortCriteriaProperty] = Field(default=LoaSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class LoaSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else ExchangeServiceSearchSortCriteriaDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else LoaSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else LoaSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

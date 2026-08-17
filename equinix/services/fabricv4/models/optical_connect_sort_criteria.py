@@ -25,7 +25,7 @@ class OpticalConnectSortCriteria(BaseModel):
     Sorting to apply to search results.
     """ # noqa: E501
     direction: Optional[OpticalConnectSortDirection] = OpticalConnectSortDirection.DESC
-    var_property: Optional[OpticalConnectSortBy] = Field(default=OpticalConnectSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    var_property: Optional[OpticalConnectSortBy] = Field(default=OpticalConnectSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class OpticalConnectSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else OpticalConnectSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else OpticalConnectSortBy.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "property": obj.get("property") if obj.get("property") is not None else OpticalConnectSortBy.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():
