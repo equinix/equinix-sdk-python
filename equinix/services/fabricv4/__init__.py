@@ -10,7 +10,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.19.0"
+__version__ = "0.20.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.application_domains_api import ApplicationDomainsApi
