@@ -51,6 +51,8 @@ class SearchFieldName(str, Enum):
     SLASH_CHANGE_LOG_SLASH_LAST_UPDATED_BY = '/changeLog/lastUpdatedBy'
     SLASH_OPERATION_SLASH_EQUINIX_STATUS = '/operation/equinixStatus'
     SLASH_OPERATION_SLASH_PROVIDER_STATUS = '/operation/providerStatus'
+    SLASH_OPERATION_SLASH_MAINTENANCE_STATUS = '/operation/maintenanceStatus'
+    SLASH_OPERATION_SLASH_LOCK_ENABLED = '/operation/lockEnabled'
     SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
     SLASH_REDUNDANCY_SLASH_GROUP = '/redundancy/group'
     SLASH_REDUNDANCY_SLASH_PRIORITY = '/redundancy/priority'

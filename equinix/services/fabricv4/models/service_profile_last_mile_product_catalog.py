@@ -25,11 +25,12 @@ class ServiceProfileLastMileProductCatalog(BaseModel):
     Last-mile provider catalog details.
     """ # noqa: E501
     name: Optional[StrictStr] = Field(default=None, description="Last-mile provider or catalog name.")
+    id: Optional[StrictStr] = Field(default=None, description="Last-mile provider or catalog identifier.")
     web_url: Optional[StrictStr] = Field(default=None, description="Last-mile catalog or provider website URL.", alias="webUrl")
     delivery_date: Optional[ServiceProfileLastMileDeliveryDateRange] = Field(default=None, alias="deliveryDate")
     offerings: Optional[List[ServiceProfileLastMileOffering]] = Field(default=None, description="Available last-mile offerings.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["name", "webUrl", "deliveryDate", "offerings"]
+    __properties: ClassVar[List[str]] = ["name", "id", "webUrl", "deliveryDate", "offerings"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,6 +101,7 @@ class ServiceProfileLastMileProductCatalog(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
+            "id": obj.get("id"),
             "webUrl": obj.get("webUrl"),
             "deliveryDate": ServiceProfileLastMileDeliveryDateRange.from_dict(obj["deliveryDate"]) if obj.get("deliveryDate") is not None else None,
             "offerings": [ServiceProfileLastMileOffering.from_dict(_item) for _item in obj["offerings"]] if obj.get("offerings") is not None else None

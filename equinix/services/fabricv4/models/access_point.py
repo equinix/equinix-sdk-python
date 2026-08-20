@@ -15,12 +15,16 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from equinix.services.fabricv4.models.access_point_role import AccessPointRole
 from equinix.services.fabricv4.models.access_point_type import AccessPointType
+from equinix.services.fabricv4.models.address import Address
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
+from equinix.services.fabricv4.models.interconnect import Interconnect
 from equinix.services.fabricv4.models.interface import Interface
 from equinix.services.fabricv4.models.metal_interconnection import MetalInterconnection
 from equinix.services.fabricv4.models.peering_type import PeeringType
+from equinix.services.fabricv4.models.product_offering import ProductOffering
 from equinix.services.fabricv4.models.provider_environment import ProviderEnvironment
 from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_link_protocol import SimplifiedLinkProtocol
@@ -47,6 +51,7 @@ class AccessPoint(BaseModel):
     virtual_device: Optional[VirtualDevice] = Field(default=None, alias="virtualDevice")
     interface: Optional[Interface] = None
     network: Optional[SimplifiedNetwork] = None
+    interconnect: Optional[Interconnect] = None
     environment: Optional[ProviderEnvironment] = None
     seller_region: Optional[StrictStr] = Field(default=None, description="Access point seller region", alias="sellerRegion")
     peering_type: Optional[PeeringType] = Field(default=None, alias="peeringType")
@@ -56,8 +61,12 @@ class AccessPoint(BaseModel):
     virtual_network: Optional[VirtualNetwork] = Field(default=None, alias="virtualNetwork")
     interconnection: Optional[MetalInterconnection] = None
     role: Optional[AccessPointRole] = None
+    product_offering: Optional[ProductOffering] = Field(default=None, alias="productOffering")
+    bandwidth_commit: Optional[Annotated[int, Field(le=100000, strict=True, ge=0)]] = Field(default=None, description="Bandwidth commit in Mbps", alias="bandwidthCommit")
+    provider_identifier: Optional[StrictStr] = Field(default=None, description="Provider identifier", alias="providerIdentifier")
+    address: Optional[Address] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role"]
+    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "interconnect", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -127,6 +136,9 @@ class AccessPoint(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of network
         if self.network:
             _dict['network'] = self.network.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of interconnect
+        if self.interconnect:
+            _dict['interconnect'] = self.interconnect.to_dict()
         # override the default output from pydantic by calling `to_dict()` of environment
         if self.environment:
             _dict['environment'] = self.environment.to_dict()
@@ -136,6 +148,12 @@ class AccessPoint(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of interconnection
         if self.interconnection:
             _dict['interconnection'] = self.interconnection.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of product_offering
+        if self.product_offering:
+            _dict['productOffering'] = self.product_offering.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of address
+        if self.address:
+            _dict['address'] = self.address.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -163,6 +181,7 @@ class AccessPoint(BaseModel):
             "virtualDevice": VirtualDevice.from_dict(obj["virtualDevice"]) if obj.get("virtualDevice") is not None else None,
             "interface": Interface.from_dict(obj["interface"]) if obj.get("interface") is not None else None,
             "network": SimplifiedNetwork.from_dict(obj["network"]) if obj.get("network") is not None else None,
+            "interconnect": Interconnect.from_dict(obj["interconnect"]) if obj.get("interconnect") is not None else None,
             "environment": ProviderEnvironment.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "sellerRegion": obj.get("sellerRegion"),
             "peeringType": obj.get("peeringType"),
@@ -171,7 +190,11 @@ class AccessPoint(BaseModel):
             "providerConnectionId": obj.get("providerConnectionId"),
             "virtualNetwork": VirtualNetwork.from_dict(obj["virtualNetwork"]) if obj.get("virtualNetwork") is not None else None,
             "interconnection": MetalInterconnection.from_dict(obj["interconnection"]) if obj.get("interconnection") is not None else None,
-            "role": obj.get("role")
+            "role": obj.get("role"),
+            "productOffering": ProductOffering.from_dict(obj["productOffering"]) if obj.get("productOffering") is not None else None,
+            "bandwidthCommit": obj.get("bandwidthCommit"),
+            "providerIdentifier": obj.get("providerIdentifier"),
+            "address": Address.from_dict(obj["address"]) if obj.get("address") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -16,14 +16,15 @@ from typing_extensions import Self
 
 class LoaType(str, Enum):
     """
-    Loa Type
+    Type of Letter of Authorization 
     """
 
     """
     allowed enum values
     """
-    PATCH_PANEL_PORT_LOA = 'PATCH_PANEL_PORT_LOA'
     CAGE_LOA = 'CAGE_LOA'
+    PATCH_PANEL_LOA = 'PATCH_PANEL_LOA'
+    PATCH_PANEL_PORT_LOA = 'PATCH_PANEL_PORT_LOA'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

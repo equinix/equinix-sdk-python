@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **send_interval** | **str** |  | [optional] 
 **emails** | **List[str]** | Array of contact emails | 
 **registered_users** | **List[str]** | Array of registered users | [optional] 
+**phone** | [**List[Phone]**](Phone.md) | Array of contact phone numbers | [optional] 
 
 ## Example
 

@@ -708,7 +708,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cloud_router_by_uuid**
-> CloudRouter get_cloud_router_by_uuid(router_id)
+> CloudRouterReadResponse get_cloud_router_by_uuid(router_id)
 
 Get Routers
 
@@ -720,7 +720,7 @@ This API provides capability to retrieve user's Cloud Routers
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.cloud_router import CloudRouter
+from equinix.services.fabricv4.models.cloud_router_read_response import CloudRouterReadResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CloudRouter**](CloudRouter.md)
+[**CloudRouterReadResponse**](CloudRouterReadResponse.md)
 
 ### Authorization
 

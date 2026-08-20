@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **bandwidth** | **int** |  | [optional] 
 **a_side** | [**VirtualConnectionPriceASide**](VirtualConnectionPriceASide.md) |  | [optional] 
 **z_side** | [**VirtualConnectionPriceZSide**](VirtualConnectionPriceZSide.md) |  | [optional] 
+**geo_scope** | [**GeoScopeType**](GeoScopeType.md) |  | [optional] 
 
 ## Example
 

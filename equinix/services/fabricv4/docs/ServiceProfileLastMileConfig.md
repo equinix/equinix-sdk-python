@@ -6,9 +6,8 @@ Last-mile configuration for the service profile.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**ServiceProfileLastMileAddress**](ServiceProfileLastMileAddress.md) |  | [optional] 
+**api_integration** | [**ServiceProfileLastMileApiIntegration**](ServiceProfileLastMileApiIntegration.md) |  | [optional] 
 **product_catalogs** | [**List[ServiceProfileLastMileProductCatalog]**](ServiceProfileLastMileProductCatalog.md) | Last-mile provider catalogs. | [optional] 
-**notifications** | [**List[ServiceProfileLastMileNotification]**](ServiceProfileLastMileNotification.md) | Contact details for notifications related to last-mile provisioning and ordering. | [optional] 
 
 ## Example
 

@@ -6,7 +6,7 @@ Add Sub-Resource to the existing model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**OpEnum**](OpEnum.md) |  | 
+**op** | [**AddOperationOp**](AddOperationOp.md) |  | 
 **path** | **str** | A JSON Pointer path. | 
 **value** | **object** | value to add | 
 

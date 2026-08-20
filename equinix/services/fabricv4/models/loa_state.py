@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class LoaState(str, Enum):
     """
-    Loa State
+    Current lifecycle state of the LOA.
     """
 
     """
@@ -26,7 +26,6 @@ class LoaState(str, Enum):
     FAILED = 'FAILED'
     PENDING_AUTHORIZATION = 'PENDING_AUTHORIZATION'
     PENDING_ACCEPTANCE = 'PENDING_ACCEPTANCE'
-    REJECTED = 'REJECTED'
     CANCELLED = 'CANCELLED'
     INACTIVE = 'INACTIVE'
     ACTIVE = 'ACTIVE'

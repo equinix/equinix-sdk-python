@@ -6,7 +6,7 @@ Replace attribute value or sub-resource in the existing model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**OpEnum**](OpEnum.md) |  | 
+**op** | [**ReplaceOperationOp**](ReplaceOperationOp.md) |  | 
 **path** | **str** | A JSON Pointer path. | 
 **value** | **object** | value to replace with | 
 

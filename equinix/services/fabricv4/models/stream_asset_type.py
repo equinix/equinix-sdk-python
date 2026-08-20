@@ -30,6 +30,11 @@ class StreamAssetType(str, Enum):
     XF_ROUTER = 'XF_ROUTER'
     ORGANIZATION = 'ORGANIZATION'
     PROJECT = 'PROJECT'
+    DATA = 'DATA'
+    MGMT = 'MGMT'
+    SSH = 'SSH'
+    FAB = 'FAB'
+    CTRL = 'CTRL'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

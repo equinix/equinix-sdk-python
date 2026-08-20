@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_property** | **str** |  | 
-**operator** | [**IpBlockAndQueryOperator**](IpBlockAndQueryOperator.md) |  | 
+**operator** | [**ExchangeServicePropertyExpressionOperator**](ExchangeServicePropertyExpressionOperator.md) |  | 
 **values** | **List[str]** |  | 
 
 ## Example

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **virtual_device** | [**VirtualDevice**](VirtualDevice.md) |  | [optional] 
 **interface** | [**Interface**](Interface.md) |  | [optional] 
 **network** | [**SimplifiedNetwork**](SimplifiedNetwork.md) |  | [optional] 
+**interconnect** | [**Interconnect**](Interconnect.md) |  | [optional] 
 **environment** | [**ProviderEnvironment**](ProviderEnvironment.md) |  | [optional] 
 **seller_region** | **str** | Access point seller region | [optional] 
 **peering_type** | [**PeeringType**](PeeringType.md) |  | [optional] 
@@ -25,6 +26,10 @@ Name | Type | Description | Notes
 **virtual_network** | [**VirtualNetwork**](VirtualNetwork.md) |  | [optional] 
 **interconnection** | [**MetalInterconnection**](MetalInterconnection.md) |  | [optional] 
 **role** | [**AccessPointRole**](AccessPointRole.md) |  | [optional] 
+**product_offering** | [**ProductOffering**](ProductOffering.md) |  | [optional] 
+**bandwidth_commit** | **int** | Bandwidth commit in Mbps | [optional] 
+**provider_identifier** | **str** | Provider identifier | [optional] 
+**address** | [**Address**](Address.md) |  | [optional] 
 
 ## Example
 

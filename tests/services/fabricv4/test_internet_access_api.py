@@ -19,6 +19,8 @@ STATE_MAX_ATTEMPTS = 5
 CONNECTION_RETRY_INTERVAL_S = 20
 CONNECTION_MAX_ATTEMPTS = 15
 CONNECTION_CREATE_MAX_ATTEMPTS = 5
+EIA_CREATE_MAX_ATTEMPTS = 3
+EIA_CREATE_RETRY_INTERVAL_S = 10
 DUPLICATE_VLAN_ERROR_CODE = "EQ-3142570"
 CONNECTION_ALREADY_DELETED_ERROR_CODE = "EQ-3142509"
 INITIAL_BANDWIDTH = 50
@@ -47,6 +49,8 @@ class TestInternetAccessApi:
 
     @classmethod
     def teardown_class(cls) -> None:
+        if cls.created_service_uuid is not None:
+            cls._delete_eia_service(cls.created_service_uuid)
         service_deleted = cls._wait_for_service_deleted()
         cls._delete_created_connections()
         cls._delete_created_ip_block()
@@ -422,9 +426,18 @@ class TestInternetAccessApi:
             ),
         )
 
-        response = self.apis.internet_access_services.create_eia_service_with_http_info(
-            request_body
-        )
+        for attempt in range(1, EIA_CREATE_MAX_ATTEMPTS + 1):
+            try:
+                response = self.apis.internet_access_services.create_eia_service_with_http_info(
+                    request_body
+                )
+                break
+            except ApiException as e:
+                if e.status == 500 and attempt < EIA_CREATE_MAX_ATTEMPTS:
+                    print(f"EIA create attempt {attempt} returned 500, retrying: {e.body}")
+                    time.sleep(EIA_CREATE_RETRY_INTERVAL_S)
+                    continue
+                raise
         service = response.data
         assert response.status_code == 201
 

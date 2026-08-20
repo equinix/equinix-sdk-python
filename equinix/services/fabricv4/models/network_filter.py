@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.network_filter_operator import NetworkFilterOperator
+from equinix.services.fabricv4.models.interconnect_filter_operator import InterconnectFilterOperator
 from equinix.services.fabricv4.models.network_search_field_name import NetworkSearchFieldName
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class NetworkFilter(BaseModel):
     var_and: Optional[List[NetworkFilter]] = Field(default=None, alias="and")
     var_or: Optional[List[NetworkFilter]] = Field(default=None, alias="or")
     var_property: Optional[NetworkSearchFieldName] = Field(default=None, alias="property")
-    operator: Optional[NetworkFilterOperator] = None
+    operator: Optional[InterconnectFilterOperator] = None
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["and", "or", "property", "operator", "values"]

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **router** | [**FabricCloudRouterPrice**](FabricCloudRouterPrice.md) |  | [optional] 
 **port** | [**VirtualPortPrice**](VirtualPortPrice.md) |  | [optional] 
 **time_service** | [**TimeServicePrice**](TimeServicePrice.md) |  | [optional] 
+**optical_connect** | [**OpticalConnectPrice**](OpticalConnectPrice.md) |  | [optional] 
 
 ## Example
 

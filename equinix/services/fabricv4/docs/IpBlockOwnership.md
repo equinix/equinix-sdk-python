@@ -1,6 +1,6 @@
 # IpBlockOwnership
 
-IpBlockOwnership of the Ip Block
+IpBlockOwnership of the IP Block
 
 ## Enum
 

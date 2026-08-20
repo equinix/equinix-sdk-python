@@ -7,6 +7,7 @@ Last-mile provider catalog details.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Last-mile provider or catalog name. | [optional] 
+**id** | **str** | Last-mile provider or catalog identifier. | [optional] 
 **web_url** | **str** | Last-mile catalog or provider website URL. | [optional] 
 **delivery_date** | [**ServiceProfileLastMileDeliveryDateRange**](ServiceProfileLastMileDeliveryDateRange.md) |  | [optional] 
 **offerings** | [**List[ServiceProfileLastMileOffering]**](ServiceProfileLastMileOffering.md) | Available last-mile offerings. | [optional] 

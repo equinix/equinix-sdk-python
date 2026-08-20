@@ -6,7 +6,7 @@ Remove sub-resource from an existing model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**OpEnum**](OpEnum.md) |  | 
+**op** | [**RemoveOperationOp**](RemoveOperationOp.md) |  | 
 **path** | **str** | A JSON Pointer path. | 
 
 ## Example

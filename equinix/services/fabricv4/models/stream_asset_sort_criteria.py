@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from equinix.services.fabricv4.models.stream_asset_sort_by import StreamAssetSortBy
 from equinix.services.fabricv4.models.stream_asset_sort_direction import StreamAssetSortDirection
 from typing import Optional, Set
@@ -24,8 +24,8 @@ class StreamAssetSortCriteria(BaseModel):
     """
     StreamAssetSortCriteria
     """ # noqa: E501
-    direction: Optional[StreamAssetSortDirection] = StreamAssetSortDirection.DESC
-    var_property: Optional[StreamAssetSortBy] = Field(default=StreamAssetSortBy.SLASH_UUID, alias="property")
+    direction: StreamAssetSortDirection
+    var_property: StreamAssetSortBy = Field(alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class StreamAssetSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else StreamAssetSortDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else StreamAssetSortBy.SLASH_UUID
+            "property": obj.get("property") if obj.get("property") is not None else StreamAssetSortBy.UUID
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

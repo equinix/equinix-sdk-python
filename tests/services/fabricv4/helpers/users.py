@@ -48,13 +48,16 @@ class UserData:
                     return data[key]
             return default
 
+        def str_or_none(v):
+            return str(v) if v is not None else None
+
         return cls(
             name=name or pick("name"),
             client_id=pick("client_id", "clientId"),
             client_secret=pick("client_secret", "clientSecret"),
             project_id=pick("projectId", "project_id"),
-            account_number=pick("accountNumber", "account_number"),
-            account_number_eia=pick("accountNumberEIA", "account_number_eia"),
+            account_number=str_or_none(pick("accountNumber", "account_number")),
+            account_number_eia=str_or_none(pick("accountNumberEIA", "account_number_eia")),
             ia_profile_uuid=pick("iaProfileUuid", "ia_profile_uuid"),
             resources=Resources.from_json(pick("resources")),
         )

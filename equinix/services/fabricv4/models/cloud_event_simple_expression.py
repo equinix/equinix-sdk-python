@@ -23,7 +23,7 @@ class CloudEventSimpleExpression(BaseModel):
     CloudEventSimpleExpression
     """ # noqa: E501
     var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/id` - Cloud Event identifier  * `/subject` - Cloud Event subject description  * `/type` - Cloud Event type  * `/time` - Time of Cloud Events  * `/equinixproject` - Equinix Project of Cloud Events  * `/equinixorganization` - Equinix Organization of Cloud Events  * `/equinixalert` - Equinix Alert Identifier for raise/clear Cloud Events  * `/severitytext` - cloud event severity text  * `/authid` - Equinix user key to identify the user that performed the action that triggered the Cloud Event  * `/authtype` - Equinix user type either user or system ", alias="property")
-    operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `!=` - not equal  * `>` - greater than  * `>=` - greater than or equal to  * `<` - less than  * `<=` - less than or equal to  * `BETWEEN` - between  * `IN` - in  * `LIKE` - like  * `ILIKE` - like case-insensitive  * `NOT IN` - not in  * `IS NULL` - is null  * `IS NOT NULL` - is not null ")
+    operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `!=` - not equal  * `>` - greater than  * `>=` - greater than or equal to  * `<` - less than  * `<=` - less than or equal to  * `BETWEEN` - between  * `IN` - in  * `LIKE` - like  * `ILIKE` - like case-insensitive  * `IS NULL` - is null  * `IS NOT NULL` - is not null ")
     values: Optional[List[StrictStr]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "operator", "values"]

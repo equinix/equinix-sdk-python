@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Company profile created successfully |  -  |
+**202** | Company profile created and pending for approval |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |

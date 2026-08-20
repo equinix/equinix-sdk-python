@@ -36,7 +36,8 @@ class ConnectionType(str, Enum):
     IA_VC = 'IA_VC'
     MC_VC = 'MC_VC'
     IX_VC = 'IX_VC'
-    IC_VC = 'IC_VC'
+    GW_VC = 'GW_VC'
+    IPX_VC = 'IPX_VC'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

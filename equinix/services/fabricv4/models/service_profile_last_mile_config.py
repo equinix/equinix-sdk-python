@@ -15,8 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.service_profile_last_mile_address import ServiceProfileLastMileAddress
-from equinix.services.fabricv4.models.service_profile_last_mile_notification import ServiceProfileLastMileNotification
+from equinix.services.fabricv4.models.service_profile_last_mile_api_integration import ServiceProfileLastMileApiIntegration
 from equinix.services.fabricv4.models.service_profile_last_mile_product_catalog import ServiceProfileLastMileProductCatalog
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,11 +24,10 @@ class ServiceProfileLastMileConfig(BaseModel):
     """
     Last-mile configuration for the service profile.
     """ # noqa: E501
-    address: Optional[ServiceProfileLastMileAddress] = None
+    api_integration: Optional[ServiceProfileLastMileApiIntegration] = Field(default=None, alias="apiIntegration")
     product_catalogs: Optional[List[ServiceProfileLastMileProductCatalog]] = Field(default=None, description="Last-mile provider catalogs.", alias="productCatalogs")
-    notifications: Optional[List[ServiceProfileLastMileNotification]] = Field(default=None, description="Contact details for notifications related to last-mile provisioning and ordering.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["address", "productCatalogs", "notifications"]
+    __properties: ClassVar[List[str]] = ["apiIntegration", "productCatalogs"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,9 +70,9 @@ class ServiceProfileLastMileConfig(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of address
-        if self.address:
-            _dict['address'] = self.address.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of api_integration
+        if self.api_integration:
+            _dict['apiIntegration'] = self.api_integration.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in product_catalogs (list)
         _items = []
         if self.product_catalogs:
@@ -82,13 +80,6 @@ class ServiceProfileLastMileConfig(BaseModel):
                 if _item_product_catalogs:
                     _items.append(_item_product_catalogs.to_dict())
             _dict['productCatalogs'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
-        _items = []
-        if self.notifications:
-            for _item_notifications in self.notifications:
-                if _item_notifications:
-                    _items.append(_item_notifications.to_dict())
-            _dict['notifications'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -106,9 +97,8 @@ class ServiceProfileLastMileConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "address": ServiceProfileLastMileAddress.from_dict(obj["address"]) if obj.get("address") is not None else None,
-            "productCatalogs": [ServiceProfileLastMileProductCatalog.from_dict(_item) for _item in obj["productCatalogs"]] if obj.get("productCatalogs") is not None else None,
-            "notifications": [ServiceProfileLastMileNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None
+            "apiIntegration": ServiceProfileLastMileApiIntegration.from_dict(obj["apiIntegration"]) if obj.get("apiIntegration") is not None else None,
+            "productCatalogs": [ServiceProfileLastMileProductCatalog.from_dict(_item) for _item in obj["productCatalogs"]] if obj.get("productCatalogs") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

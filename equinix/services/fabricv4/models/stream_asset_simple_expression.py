@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,9 +23,9 @@ class StreamAssetSimpleExpression(BaseModel):
     """
     StreamAssetSimpleExpression
     """ # noqa: E501
-    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/uuid` - Asset uuid  * `/streamUuid` - Stream uuid  * `/projectId` - Asset projectId  * `/*` - all-category search ", alias="property")
-    operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `!=` - not equal  * `>` - greater than  * `>=` - greater than or equal to  * `<` - less than  * `<=` - less than or equal to  * `[NOT] BETWEEN` - (not) between  * `[NOT] LIKE` - (not) like  * `[NOT] IN` - (not) in  * `ILIKE` - case-insensitive like ")
-    values: Optional[List[StrictStr]] = None
+    var_property: Optional[StrictStr] = Field(default=None, description="Possible field names to use on filters:  * `/uuid` - Asset uuid (`=` and `IN` only)  * `/streamUuid` - Stream uuid (`=` and `IN` only)  * `/attachmentStatus` - Asset attachment status (`=`, `IN`, and `NOT IN`) ", alias="property")
+    operator: Optional[StrictStr] = Field(default=None, description="Possible operators to use on filters:  * `=` - equal  * `IN` - in  * `NOT IN` - not in ")
+    values: Optional[Annotated[List[StrictStr], Field(min_length=1)]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "operator", "values"]
 

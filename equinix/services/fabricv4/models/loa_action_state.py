@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class LoaActionState(str, Enum):
     """
-    Loa Action State
+    Action State
     """
 
     """

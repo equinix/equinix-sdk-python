@@ -16,17 +16,17 @@ from typing_extensions import Self
 
 class LoaActionType(str, Enum):
     """
-    Loa Action Type
+    Action to perform on the LOA.
     """
 
     """
     allowed enum values
     """
-    AUTHORIZE_LOA = 'AUTHORIZE_LOA'
-    ACCEPT_LOA = 'ACCEPT_LOA'
-    COPY_LOA = 'COPY_LOA'
-    SEND_LOA = 'SEND_LOA'
-    CANCEL_LOA = 'CANCEL_LOA'
+    LOA_ISSUER_AUTHORIZATION = 'LOA_ISSUER_AUTHORIZATION'
+    LOA_REQUESTOR_ACCEPTANCE = 'LOA_REQUESTOR_ACCEPTANCE'
+    LOA_COPY_LINK = 'LOA_COPY_LINK'
+    LOA_SEND_EMAIL_NOTIFICATION = 'LOA_SEND_EMAIL_NOTIFICATION'
+    LOA_CANCEL = 'LOA_CANCEL'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

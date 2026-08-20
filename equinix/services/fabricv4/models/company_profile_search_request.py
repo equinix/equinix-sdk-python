@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.company_profile_search_filter import CompanyProfileSearchFilter
+from equinix.services.fabricv4.models.company_profile_search_filters import CompanyProfileSearchFilters
 from equinix.services.fabricv4.models.pagination import Pagination
 from equinix.services.fabricv4.models.sort import Sort
 from typing import Optional, Set
@@ -25,7 +25,7 @@ class CompanyProfileSearchRequest(BaseModel):
     """
     CompanyProfileSearchRequest
     """ # noqa: E501
-    filter: Optional[CompanyProfileSearchFilter] = None
+    filter: Optional[CompanyProfileSearchFilters] = None
     pagination: Optional[Pagination] = None
     sort: Optional[Sort] = None
     additional_properties: Dict[str, Any] = {}
@@ -98,7 +98,7 @@ class CompanyProfileSearchRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "filter": CompanyProfileSearchFilter.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
+            "filter": CompanyProfileSearchFilters.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
             "pagination": Pagination.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "sort": Sort.from_dict(obj["sort"]) if obj.get("sort") is not None else None
         })

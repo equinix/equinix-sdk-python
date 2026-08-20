@@ -1,6 +1,6 @@
 # ProviderEnvironment
 
-Provider Environment associated with an IC_PROFILE service profile
+Provider Environment associated with an IC_PROFILE service profile <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
 ## Properties
 
@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **description** | **str** | Provider environment description | [optional] 
 **region** | **str** | Cloud provider region identifier | [optional] 
 **supported_bandwidths** | **List[int]** | Supported bandwidths in Mbps | [optional] 
+**metros** | [**List[ServiceMetro]**](ServiceMetro.md) | Derived response attribute. | [optional] 
+**supported_features** | **List[str]** | Supported Feature Types | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
 
 ## Example

@@ -8,10 +8,12 @@ Method | HTTP request | Description
 [**create_service_profile_action**](ServiceProfilesApi.md#create_service_profile_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions
 [**delete_service_profile_by_uuid**](ServiceProfilesApi.md#delete_service_profile_by_uuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile
 [**get_service_profile_by_uuid**](ServiceProfilesApi.md#get_service_profile_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile
+[**get_service_profile_environments_by_uuid**](ServiceProfilesApi.md#get_service_profile_environments_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments
 [**get_service_profile_metros_by_uuid**](ServiceProfilesApi.md#get_service_profile_metros_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros
 [**get_service_profiles**](ServiceProfilesApi.md#get_service_profiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles
 [**put_service_profile_by_uuid**](ServiceProfilesApi.md#put_service_profile_by_uuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile
 [**search_service_profiles**](ServiceProfilesApi.md#search_service_profiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search
+[**service_profile_environment_action**](ServiceProfilesApi.md#service_profile_environment_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions
 [**update_service_profile_by_uuid**](ServiceProfilesApi.md#update_service_profile_by_uuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile
 
 
@@ -345,6 +347,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  * ETag -  <br>  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_service_profile_environments_by_uuid**
+> ProviderEnvironments get_service_profile_environments_by_uuid(service_profile_id, offset=offset, limit=limit)
+
+Get Profile Environments
+
+Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>.
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.provider_environments import ProviderEnvironments
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
+    service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
+    offset = 1 # int | offset (optional)
+    limit = 10 # int | number of records to fetch (optional)
+
+    try:
+        # Get Profile Environments
+        api_response = api_instance.get_service_profile_environments_by_uuid(service_profile_id, offset=offset, limit=limit)
+        print("The response of ServiceProfilesApi->get_service_profile_environments_by_uuid:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ServiceProfilesApi->get_service_profile_environments_by_uuid: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_profile_id** | **str**| Service Profile UUID | 
+ **offset** | **int**| offset | [optional] 
+ **limit** | **int**| number of records to fetch | [optional] 
+
+### Return type
+
+[**ProviderEnvironments**](ProviderEnvironments.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json; charset=UTF-8, application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
@@ -698,12 +786,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_service_profile_by_uuid**
-> ServiceProfile update_service_profile_by_uuid(service_profile_id, json_patch_operation)
+# **service_profile_environment_action**
+> EnvironmentActionResponse service_profile_environment_action(service_profile_id, environment_id, environment_action_request)
 
-Update Profile
+Service Profile Environment Actions
 
-Update Service Profile by UUID
+This API provides capability to perform actions on a service profile environment, such as validating an activation key.<sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -711,8 +799,8 @@ Update Service Profile by UUID
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.json_patch_operation import JsonPatchOperation
-from equinix.services.fabricv4.models.service_profile import ServiceProfile
+from equinix.services.fabricv4.models.environment_action_request import EnvironmentActionRequest
+from equinix.services.fabricv4.models.environment_action_response import EnvironmentActionResponse
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
 
@@ -737,11 +825,98 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
-    json_patch_operation = [equinix.services.fabricv4.JsonPatchOperation()] # List[JsonPatchOperation] | 
+    environment_id = 'environment_id_example' # str | Provider Environment Reference
+    environment_action_request = {"type":"VALIDATE_ACTIVATION_KEY","keyDetails":{"value":"key_here"}} # EnvironmentActionRequest | 
+
+    try:
+        # Service Profile Environment Actions
+        api_response = api_instance.service_profile_environment_action(service_profile_id, environment_id, environment_action_request)
+        print("The response of ServiceProfilesApi->service_profile_environment_action:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ServiceProfilesApi->service_profile_environment_action: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service_profile_id** | **str**| Service Profile UUID | 
+ **environment_id** | **str**| Provider Environment Reference | 
+ **environment_action_request** | [**EnvironmentActionRequest**](EnvironmentActionRequest.md)|  | 
+
+### Return type
+
+[**EnvironmentActionResponse**](EnvironmentActionResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Successful service profile environment action operation |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_service_profile_by_uuid**
+> ServiceProfile update_service_profile_by_uuid(service_profile_id, service_profile_update_operation)
+
+Update Profile
+
+Update Service Profile by UUID
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.service_profile import ServiceProfile
+from equinix.services.fabricv4.models.service_profile_update_operation import ServiceProfileUpdateOperation
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
+    service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
+    service_profile_update_operation = [equinix.services.fabricv4.ServiceProfileUpdateOperation()] # List[ServiceProfileUpdateOperation] | 
 
     try:
         # Update Profile
-        api_response = api_instance.update_service_profile_by_uuid(service_profile_id, json_patch_operation)
+        api_response = api_instance.update_service_profile_by_uuid(service_profile_id, service_profile_update_operation)
         print("The response of ServiceProfilesApi->update_service_profile_by_uuid:\n")
         pprint(api_response)
     except Exception as e:
@@ -756,7 +931,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_profile_id** | **str**| Service Profile UUID | 
- **json_patch_operation** | [**List[JsonPatchOperation]**](JsonPatchOperation.md)|  | 
+ **service_profile_update_operation** | [**List[ServiceProfileUpdateOperation]**](ServiceProfileUpdateOperation.md)|  | 
 
 ### Return type
 

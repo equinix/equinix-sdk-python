@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class IpBlockOwnership(str, Enum):
     """
-    IpBlockOwnership of the Ip Block
+    IpBlockOwnership of the IP Block
     """
 
     """

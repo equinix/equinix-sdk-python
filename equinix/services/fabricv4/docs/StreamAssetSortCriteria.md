@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**StreamAssetSortDirection**](StreamAssetSortDirection.md) |  | [optional] [default to StreamAssetSortDirection.DESC]
-**var_property** | [**StreamAssetSortBy**](StreamAssetSortBy.md) |  | [optional] [default to StreamAssetSortBy.SLASH_UUID]
+**direction** | [**StreamAssetSortDirection**](StreamAssetSortDirection.md) |  | [default to StreamAssetSortDirection.DESC]
+**var_property** | [**StreamAssetSortBy**](StreamAssetSortBy.md) |  | [default to StreamAssetSortBy.UUID]
 
 ## Example
 

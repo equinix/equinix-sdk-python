@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.ip_block_and_query_operator import IpBlockAndQueryOperator
+from equinix.services.fabricv4.models.exchange_service_property_expression_operator import ExchangeServicePropertyExpressionOperator
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,7 +24,7 @@ class IpBlockAndQuery(BaseModel):
     IpBlockAndQuery
     """ # noqa: E501
     var_property: StrictStr = Field(alias="property")
-    operator: IpBlockAndQueryOperator
+    operator: ExchangeServicePropertyExpressionOperator
     values: List[StrictStr]
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "operator", "values"]

@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.op_enum import OpEnum
+from equinix.services.fabricv4.models.add_operation_op import AddOperationOp
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +23,7 @@ class AddOperation(BaseModel):
     """
     Add Sub-Resource to the existing model
     """ # noqa: E501
-    op: OpEnum
+    op: AddOperationOp
     path: StrictStr = Field(description="A JSON Pointer path.")
     value: Dict[str, Any] = Field(description="value to add")
     additional_properties: Dict[str, Any] = {}
