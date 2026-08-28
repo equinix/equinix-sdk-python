@@ -25,6 +25,7 @@ class Apis:
         self.statistics = fabricv4.StatisticsApi(api_client)
         self.internet_access_services = fabricv4.InternetAccessServicesApi(api_client)
         self.ip_blocks = fabricv4.IPBlocksApi(api_client)
+        self.loa = fabricv4.LoasApi(api_client)
 
 
 def for_user(user_name: UserName) -> Apis:
