@@ -8,6 +8,7 @@ from typing import Any, Dict, List, Optional
 class UserName(str, Enum):
     PANTHERS_FCR = "fcr"
     PANTHERS_FNV = "fnv"
+    PANTHERS_OMC = "omc"
 
 
 @dataclass

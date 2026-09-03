@@ -27,7 +27,7 @@ class Apis:
         self.ip_blocks = fabricv4.IPBlocksApi(api_client)
         self.loa = fabricv4.LoasApi(api_client)
         self.ix = fabricv4.InternetExchangeServicesApi(api_client)
-
+        self.omc = fabricv4.OpticalMetroConnectsApi(api_client)
 
 def for_user(user_name: UserName) -> Apis:
     return Apis(token_generator.get_api_client(user_name))
