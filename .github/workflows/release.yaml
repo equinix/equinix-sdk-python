@@ -24,7 +24,7 @@ jobs:
 
       - name: Create GitHub release
         id: release
-        uses: cycjimmy/semantic-release-action@v4
+        uses: cycjimmy/semantic-release-action@1989a0fefc4aea321e07f717680ed8e345925dc1 # v7.1.2
         with:
           extra_plugins: |
             @semantic-release/exec@6.0.3
