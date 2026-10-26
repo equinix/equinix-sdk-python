@@ -5,7 +5,7 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_metro_by_code**](MetrosApi.md#get_metro_by_code) | **GET** /fabric/v4/metros/{metroCode} | Get Metro by Code
-[**get_metros**](MetrosApi.md#get_metros) | **GET** /fabric/v4/metros | Get all Metros
+[**get_metros**](MetrosApi.md#get_metros) | **GET** /fabric/v4/metros | Get Metros
 
 
 # **get_metro_by_code**
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get Metro by Code
 
-GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
+GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location
 
 ### Example
 
@@ -92,9 +92,9 @@ Name | Type | Description  | Notes
 # **get_metros**
 > MetroResponse get_metros(presence=presence, offset=offset, limit=limit)
 
-Get all Metros
+Get Metros
 
-GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
+GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location
 
 ### Example
 
@@ -132,7 +132,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get all Metros
+        # Get Metros
         api_response = api_instance.get_metros(presence=presence, offset=offset, limit=limit)
         print("The response of MetrosApi->get_metros:\n")
         pprint(api_response)

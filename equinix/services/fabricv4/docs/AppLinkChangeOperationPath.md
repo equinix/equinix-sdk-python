@@ -10,7 +10,7 @@ path inside document leading to updated parameter
 
 * `SLASH_BANDWIDTH` (value: `'/bandwidth'`)
 
-* `SLASH_IPV4_ADDRESS` (value: `'/ipv4Address'`)
+* `SLASH_IPV4_SUBNET` (value: `'/ipv4Subnet'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

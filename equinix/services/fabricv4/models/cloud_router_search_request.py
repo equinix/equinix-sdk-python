@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.cloud_router_filters import CloudRouterFilters
+from equinix.services.fabricv4.models.cloud_router_expression import CloudRouterExpression
 from equinix.services.fabricv4.models.cloud_router_sort_criteria import CloudRouterSortCriteria
 from equinix.services.fabricv4.models.pagination_request import PaginationRequest
 from typing import Optional, Set
@@ -25,7 +25,7 @@ class CloudRouterSearchRequest(BaseModel):
     """
     Search requests containing criteria
     """ # noqa: E501
-    filter: Optional[CloudRouterFilters] = None
+    filter: Optional[CloudRouterExpression] = None
     pagination: Optional[PaginationRequest] = None
     sort: Optional[List[CloudRouterSortCriteria]] = None
     additional_properties: Dict[str, Any] = {}
@@ -102,7 +102,7 @@ class CloudRouterSearchRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "filter": CloudRouterFilters.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
+            "filter": CloudRouterExpression.from_dict(obj["filter"]) if obj.get("filter") is not None else None,
             "pagination": PaginationRequest.from_dict(obj["pagination"]) if obj.get("pagination") is not None else None,
             "sort": [CloudRouterSortCriteria.from_dict(_item) for _item in obj["sort"]] if obj.get("sort") is not None else None
         })

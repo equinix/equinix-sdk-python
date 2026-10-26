@@ -4,18 +4,18 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_app_domain**](ApplicationDomainsApi.md#create_app_domain) | **POST** /fabric/v4/appDomains | Create App Domain
-[**delete_app_domain_by_uuid**](ApplicationDomainsApi.md#delete_app_domain_by_uuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete App Domain
-[**get_app_domain_by_uuid**](ApplicationDomainsApi.md#get_app_domain_by_uuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get App Domain
-[**get_attached_app_links_by_app_domain_id**](ApplicationDomainsApi.md#get_attached_app_links_by_app_domain_id) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get attached App Links for App Domain
-[**search_app_domains**](ApplicationDomainsApi.md#search_app_domains) | **POST** /fabric/v4/appDomains/search | Search App Domains
-[**update_app_domain_by_uuid**](ApplicationDomainsApi.md#update_app_domain_by_uuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update App Domain
+[**create_app_domain**](ApplicationDomainsApi.md#create_app_domain) | **POST** /fabric/v4/appDomains | Create Domain
+[**delete_app_domain_by_uuid**](ApplicationDomainsApi.md#delete_app_domain_by_uuid) | **DELETE** /fabric/v4/appDomains/{appDomainId} | Delete Domain
+[**get_app_domain_by_uuid**](ApplicationDomainsApi.md#get_app_domain_by_uuid) | **GET** /fabric/v4/appDomains/{appDomainId} | Get Domain
+[**get_attached_app_links_by_app_domain_id**](ApplicationDomainsApi.md#get_attached_app_links_by_app_domain_id) | **GET** /fabric/v4/appDomains/{appDomainId}/appLinks | Get Attached Links for Domain
+[**search_app_domains**](ApplicationDomainsApi.md#search_app_domains) | **POST** /fabric/v4/appDomains/search | Search Domains
+[**update_app_domain_by_uuid**](ApplicationDomainsApi.md#update_app_domain_by_uuid) | **PATCH** /fabric/v4/appDomains/{appDomainId} | Update Domain
 
 
 # **create_app_domain**
 > AppDomain create_app_domain(app_domain_post_request)
 
-Create App Domain
+Create Domain
 
 This API provides capability to create user's App Domain
 
@@ -53,7 +53,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_domain_post_request = equinix.services.fabricv4.AppDomainPostRequest() # AppDomainPostRequest | 
 
     try:
-        # Create App Domain
+        # Create Domain
         api_response = api_instance.create_app_domain(app_domain_post_request)
         print("The response of ApplicationDomainsApi->create_app_domain:\n")
         pprint(api_response)
@@ -99,9 +99,9 @@ Name | Type | Description  | Notes
 # **delete_app_domain_by_uuid**
 > AppDomain delete_app_domain_by_uuid(app_domain_id)
 
-Delete App Domain
+Delete Domain
 
-This API provides capability to delete user's App Domain
+This API provides capability to delete user's Domain
 
 ### Example
 
@@ -136,7 +136,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_domain_id = 'app_domain_id_example' # str | App Domain UUID
 
     try:
-        # Delete App Domain
+        # Delete Domain
         api_response = api_instance.delete_app_domain_by_uuid(app_domain_id)
         print("The response of ApplicationDomainsApi->delete_app_domain_by_uuid:\n")
         pprint(api_response)
@@ -182,9 +182,9 @@ Name | Type | Description  | Notes
 # **get_app_domain_by_uuid**
 > AppDomain get_app_domain_by_uuid(app_domain_id)
 
-Get App Domain
+Get Domain
 
-This API provides capability to retrieve user's App Domain
+This API provides capability to retrieve user's Domain
 
 ### Example
 
@@ -219,7 +219,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_domain_id = 'app_domain_id_example' # str | App Domain UUID
 
     try:
-        # Get App Domain
+        # Get Domain
         api_response = api_instance.get_app_domain_by_uuid(app_domain_id)
         print("The response of ApplicationDomainsApi->get_app_domain_by_uuid:\n")
         pprint(api_response)
@@ -264,9 +264,9 @@ Name | Type | Description  | Notes
 # **get_attached_app_links_by_app_domain_id**
 > AppDomainAttachedAppLinks get_attached_app_links_by_app_domain_id(app_domain_id, offset=offset, limit=limit, state=state, order=order, style=style)
 
-Get attached App Links for App Domain
+Get Attached Links for Domain
 
-This API provides capability to retrieve App Links attached to an App Domain.
+This API provides capability to retrieve App Links attached to an App Domain
 
 ### Example
 
@@ -309,7 +309,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     style = MEDIUM # Style | Detail level of the response. (optional) (default to MEDIUM)
 
     try:
-        # Get attached App Links for App Domain
+        # Get Attached Links for Domain
         api_response = api_instance.get_attached_app_links_by_app_domain_id(app_domain_id, offset=offset, limit=limit, state=state, order=order, style=style)
         print("The response of ApplicationDomainsApi->get_attached_app_links_by_app_domain_id:\n")
         pprint(api_response)
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 # **search_app_domains**
 > AppDomainSearchResponse search_app_domains(app_domain_search_request)
 
-Search App Domains
+Search Domains
 
 The API provides capability to get list of user's App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -398,7 +398,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_domain_search_request = equinix.services.fabricv4.AppDomainSearchRequest() # AppDomainSearchRequest | 
 
     try:
-        # Search App Domains
+        # Search Domains
         api_response = api_instance.search_app_domains(app_domain_search_request)
         print("The response of ApplicationDomainsApi->search_app_domains:\n")
         pprint(api_response)
@@ -444,9 +444,9 @@ Name | Type | Description  | Notes
 # **update_app_domain_by_uuid**
 > AppDomain update_app_domain_by_uuid(app_domain_id, app_domain_change_operation)
 
-Update App Domain
+Update Domain
 
-This API provides capability to update user's App Domain
+This API provides capability to update user's Domain
 
 ### Example
 
@@ -483,7 +483,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_domain_change_operation = [equinix.services.fabricv4.AppDomainChangeOperation()] # List[AppDomainChangeOperation] | 
 
     try:
-        # Update App Domain
+        # Update Domain
         api_response = api_instance.update_app_domain_by_uuid(app_domain_id, app_domain_change_operation)
         print("The response of ApplicationDomainsApi->update_app_domain_by_uuid:\n")
         pprint(api_response)

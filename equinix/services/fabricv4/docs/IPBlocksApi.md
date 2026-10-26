@@ -4,17 +4,17 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_ip_block_by_id**](IPBlocksApi.md#delete_ip_block_by_id) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by UUID
-[**get_ip_block**](IPBlocksApi.md#get_ip_block) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by UUID
-[**patch_ip_block_by_id**](IPBlocksApi.md#patch_ip_block_by_id) | **PATCH** /fabric/v4/ipBlocks/{uuid} | patch IP Block by UUID
-[**search_ip_blocks**](IPBlocksApi.md#search_ip_blocks) | **POST** /fabric/v4/ipBlocks/search | Search for IP Blocks
-[**submit_ip_block**](IPBlocksApi.md#submit_ip_block) | **POST** /fabric/v4/ipBlocks | Submits new Equinix owned or customer owned IP Block request
+[**delete_ip_block_by_id**](IPBlocksApi.md#delete_ip_block_by_id) | **DELETE** /fabric/v4/ipBlocks/{uuid} | Delete IP Block by ID
+[**get_ip_block**](IPBlocksApi.md#get_ip_block) | **GET** /fabric/v4/ipBlocks/{uuid} | Retrieve IP Block by ID
+[**patch_ip_block_by_id**](IPBlocksApi.md#patch_ip_block_by_id) | **PATCH** /fabric/v4/ipBlocks/{uuid} | Update IP Block by ID
+[**search_ip_blocks**](IPBlocksApi.md#search_ip_blocks) | **POST** /fabric/v4/ipBlocks/search | Search IP Blocks
+[**submit_ip_block**](IPBlocksApi.md#submit_ip_block) | **POST** /fabric/v4/ipBlocks | Create IP Block
 
 
 # **delete_ip_block_by_id**
 > IpBlock delete_ip_block_by_id(uuid)
 
-Delete IP Block by UUID
+Delete IP Block by ID
 
 Delete IP Block by UUID
 
@@ -51,7 +51,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | UUID of the IP Block
 
     try:
-        # Delete IP Block by UUID
+        # Delete IP Block by ID
         api_response = api_instance.delete_ip_block_by_id(uuid)
         print("The response of IPBlocksApi->delete_ip_block_by_id:\n")
         pprint(api_response)
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 # **get_ip_block**
 > IpBlock get_ip_block(uuid)
 
-Retrieve IP Block by UUID
+Retrieve IP Block by ID
 
 Retrieve IP Block by UUID
 
@@ -134,7 +134,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | UUID of the IP Block
 
     try:
-        # Retrieve IP Block by UUID
+        # Retrieve IP Block by ID
         api_response = api_instance.get_ip_block(uuid)
         print("The response of IPBlocksApi->get_ip_block:\n")
         pprint(api_response)
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 # **patch_ip_block_by_id**
 > IpBlock patch_ip_block_by_id(uuid, patch_ip_block_request_body_item)
 
-patch IP Block by UUID
+Update IP Block by ID
 
 patch IP Block by UUID
 
@@ -217,7 +217,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     patch_ip_block_request_body_item = [equinix.services.fabricv4.PatchIpBlockRequestBodyItem()] # List[PatchIpBlockRequestBodyItem] | 
 
     try:
-        # patch IP Block by UUID
+        # Update IP Block by ID
         api_response = api_instance.patch_ip_block_by_id(uuid, patch_ip_block_request_body_item)
         print("The response of IPBlocksApi->patch_ip_block_by_id:\n")
         pprint(api_response)
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 # **search_ip_blocks**
 > IpBlockSearchResponseBody search_ip_blocks(ip_blocks_search_request_body)
 
-Search for IP Blocks
+Search IP Blocks
 
 Search for IP Blocks based on criteria
 
@@ -299,7 +299,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     ip_blocks_search_request_body = equinix.services.fabricv4.IpBlocksSearchRequestBody() # IpBlocksSearchRequestBody | 
 
     try:
-        # Search for IP Blocks
+        # Search IP Blocks
         api_response = api_instance.search_ip_blocks(ip_blocks_search_request_body)
         print("The response of IPBlocksApi->search_ip_blocks:\n")
         pprint(api_response)
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 # **submit_ip_block**
 > IpBlock submit_ip_block(submit_ip_block_request_body)
 
-Submits new Equinix owned or customer owned IP Block request
+Create IP Block
 
 Submits new Equinix owned or customer owned IP Block request
 
@@ -380,7 +380,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     submit_ip_block_request_body = equinix.services.fabricv4.SubmitIpBlockRequestBody() # SubmitIpBlockRequestBody | 
 
     try:
-        # Submits new Equinix owned or customer owned IP Block request
+        # Create IP Block
         api_response = api_instance.submit_ip_block(submit_ip_block_request_body)
         print("The response of IPBlocksApi->submit_ip_block:\n")
         pprint(api_response)

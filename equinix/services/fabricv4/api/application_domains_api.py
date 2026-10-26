@@ -60,7 +60,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomain:
-        """Create App Domain
+        """Create Domain
 
         This API provides capability to create user's App Domain
 
@@ -132,7 +132,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomain]:
-        """Create App Domain
+        """Create Domain
 
         This API provides capability to create user's App Domain
 
@@ -204,7 +204,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create App Domain
+        """Create Domain
 
         This API provides capability to create user's App Domain
 
@@ -349,9 +349,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomain:
-        """Delete App Domain
+        """Delete Domain
 
-        This API provides capability to delete user's App Domain
+        This API provides capability to delete user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -421,9 +421,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomain]:
-        """Delete App Domain
+        """Delete Domain
 
-        This API provides capability to delete user's App Domain
+        This API provides capability to delete user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -493,9 +493,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete App Domain
+        """Delete Domain
 
-        This API provides capability to delete user's App Domain
+        This API provides capability to delete user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -625,9 +625,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomain:
-        """Get App Domain
+        """Get Domain
 
-        This API provides capability to retrieve user's App Domain
+        This API provides capability to retrieve user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -696,9 +696,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomain]:
-        """Get App Domain
+        """Get Domain
 
-        This API provides capability to retrieve user's App Domain
+        This API provides capability to retrieve user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -767,9 +767,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get App Domain
+        """Get Domain
 
-        This API provides capability to retrieve user's App Domain
+        This API provides capability to retrieve user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -903,9 +903,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomainAttachedAppLinks:
-        """Get attached App Links for App Domain
+        """Get Attached Links for Domain
 
-        This API provides capability to retrieve App Links attached to an App Domain.
+        This API provides capability to retrieve App Links attached to an App Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -995,9 +995,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomainAttachedAppLinks]:
-        """Get attached App Links for App Domain
+        """Get Attached Links for Domain
 
-        This API provides capability to retrieve App Links attached to an App Domain.
+        This API provides capability to retrieve App Links attached to an App Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -1087,9 +1087,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Links for App Domain
+        """Get Attached Links for Domain
 
-        This API provides capability to retrieve App Links attached to an App Domain.
+        This API provides capability to retrieve App Links attached to an App Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -1260,7 +1260,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomainSearchResponse:
-        """Search App Domains
+        """Search Domains
 
         The API provides capability to get list of user's App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -1332,7 +1332,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomainSearchResponse]:
-        """Search App Domains
+        """Search Domains
 
         The API provides capability to get list of user's App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -1404,7 +1404,7 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search App Domains
+        """Search Domains
 
         The API provides capability to get list of user's App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -1550,9 +1550,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppDomain:
-        """Update App Domain
+        """Update Domain
 
-        This API provides capability to update user's App Domain
+        This API provides capability to update user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -1627,9 +1627,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppDomain]:
-        """Update App Domain
+        """Update Domain
 
-        This API provides capability to update user's App Domain
+        This API provides capability to update user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str
@@ -1704,9 +1704,9 @@ class ApplicationDomainsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update App Domain
+        """Update Domain
 
-        This API provides capability to update user's App Domain
+        This API provides capability to update user's Domain
 
         :param app_domain_id: App Domain UUID (required)
         :type app_domain_id: str

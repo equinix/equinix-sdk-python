@@ -23,6 +23,15 @@ class ExchangeServicePropertyExpressionOperator(str, Enum):
     allowed enum values
     """
     EQUAL = '='
+    EXCLAMATION_EQUAL = '!='
+    BETWEEN = 'BETWEEN'
+    LESS_THAN = '<'
+    LESS_THAN_EQUAL = '<='
+    GREATER_THAN = '>'
+    GREATER_THAN_EQUAL = '>='
+    LIKE = 'LIKE'
+    ILIKE = 'ILIKE'
+    IN = 'IN'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

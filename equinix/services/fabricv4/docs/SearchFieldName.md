@@ -22,6 +22,8 @@ Possible field names to use on filters
 
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_ROUTER_SLASH_UUID` (value: `'/aSide/accessPoint/router/uuid'`)
 
+* `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_INTERCONNECT_SLASH_UUID` (value: `'/aSide/accessPoint/interconnect/uuid'`)
+
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MIN` (value: `'/aSide/accessPoint/linkProtocol/vlanTagMin'`)
 
 * `SLASH_A_SIDE_SLASH_ACCESS_POINT_SLASH_LINK_PROTOCOL_SLASH_VLAN_TAG_MAX` (value: `'/aSide/accessPoint/linkProtocol/vlanTagMax'`)
@@ -71,6 +73,10 @@ Possible field names to use on filters
 * `SLASH_REDUNDANCY_SLASH_GROUP` (value: `'/redundancy/group'`)
 
 * `SLASH_REDUNDANCY_SLASH_PRIORITY` (value: `'/redundancy/priority'`)
+
+* `SLASH_REDUNDANCY_SLASH_NAME` (value: `'/redundancy/name'`)
+
+* `SLASH_REDUNDANCY_SLASH_DESCRIPTION` (value: `'/redundancy/description'`)
 
 * `SLASH_Z_SIDE_SLASH_ACCESS_POINT_SLASH_ACCOUNT_SLASH_ACCOUNT_NAME` (value: `'/zSide/accessPoint/account/accountName'`)
 

@@ -24,8 +24,8 @@ class RoutingProtocolResponse(BaseModel):
     """
     RoutingProtocolResponse
     """ # noqa: E501
-    customer_asn: Optional[StrictStr] = Field(default=None, alias="customerAsn")
-    mac_address: Optional[StrictStr] = Field(default=None, alias="macAddress")
+    customer_asn: Optional[StrictInt] = Field(default=None, description="Customer Autonomous System Number (ASN)", alias="customerAsn")
+    mac_address: Optional[StrictStr] = Field(default=None, description="MAC address of the customer interface", alias="macAddress")
     vlan: Optional[StrictInt] = Field(default=None, description="VLAN ID")
     route_server_asn: Optional[StrictInt] = Field(default=None, description="Equinix Route Server ASN", alias="routeServerAsn")
     bgp_ipv4: Optional[ExchangeServiceResponseBgp] = Field(default=None, alias="bgpIpv4")

@@ -969,7 +969,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFilterRulesData:
-        """Get Route Filter Rule By UUID
+        """Get Route Filter Rule by ID
 
         This API provides capability to view a Route Filter Rule by UUID
 
@@ -1046,7 +1046,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFilterRulesData]:
-        """Get Route Filter Rule By UUID
+        """Get Route Filter Rule by ID
 
         This API provides capability to view a Route Filter Rule by UUID
 
@@ -1123,7 +1123,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Route Filter Rule By UUID
+        """Get Route Filter Rule by ID
 
         This API provides capability to view a Route Filter Rule by UUID
 
@@ -1571,7 +1571,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFilterRulesChangeDataResponse:
-        """Get All Changes
+        """Get Route Filter Rule Changes
 
         This API provides capability to retrieve all of a Route Filter Rule's Changes
 
@@ -1655,7 +1655,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFilterRulesChangeDataResponse]:
-        """Get All Changes
+        """Get Route Filter Rule Changes
 
         This API provides capability to retrieve all of a Route Filter Rule's Changes
 
@@ -1739,7 +1739,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Changes
+        """Get Route Filter Rule Changes
 
         This API provides capability to retrieve all of a Route Filter Rule's Changes
 
@@ -2205,7 +2205,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFilterRulesData:
-        """Patch Route Filter Rule
+        """Update Route Filter Rule
 
         This API provides capability to partially update a Route Filter Rule
 
@@ -2286,7 +2286,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFilterRulesData]:
-        """Patch Route Filter Rule
+        """Update Route Filter Rule
 
         This API provides capability to partially update a Route Filter Rule
 
@@ -2367,7 +2367,7 @@ class RouteFilterRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Route Filter Rule
+        """Update Route Filter Rule
 
         This API provides capability to partially update a Route Filter Rule
 

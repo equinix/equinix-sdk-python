@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.connection_operation_operational_status import ConnectionOperationOperationalStatus
 from equinix.services.fabricv4.models.equinix_status import EquinixStatus
@@ -34,8 +34,9 @@ class ConnectionOperation(BaseModel):
     errors: Optional[List[Error]] = None
     op_status_changed_at: Optional[datetime] = Field(default=None, description="When connection transitioned into current operational status", alias="opStatusChangedAt")
     maintenance_status: Optional[MaintenanceState] = Field(default=None, alias="maintenanceStatus")
+    lock_enabled: Optional[StrictBool] = Field(default=None, description="Indicates whether the connection configuration is locked due to an ongoing or scheduled maintenance.", alias="lockEnabled")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus"]
+    __properties: ClassVar[List[str]] = ["providerStatus", "equinixStatus", "operationalStatus", "errors", "opStatusChangedAt", "maintenanceStatus", "lockEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,7 +108,8 @@ class ConnectionOperation(BaseModel):
             "operationalStatus": obj.get("operationalStatus"),
             "errors": [Error.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
             "opStatusChangedAt": obj.get("opStatusChangedAt"),
-            "maintenanceStatus": obj.get("maintenanceStatus")
+            "maintenanceStatus": obj.get("maintenanceStatus"),
+            "lockEnabled": obj.get("lockEnabled")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

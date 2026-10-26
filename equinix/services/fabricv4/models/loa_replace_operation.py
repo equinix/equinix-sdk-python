@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.loa_op_enum import LoaOpEnum
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +25,7 @@ class LoaReplaceOperation(BaseModel):
     """ # noqa: E501
     op: LoaOpEnum
     path: StrictStr = Field(description="### A JSON Pointer path.   * `/name` - Name of the Loa   * `/description` - Description of the Loa   * `/requestor/email` - Email of the requestor contact   * `/requestor/orgName` - Organization name of the requestor   * `/issuer/email` - Email of the issuer contact   * `/issuer/orgName` - Organization name of the issuer   * `/demarcationPoint/patchPanelId` - Patch Panel Identifier   * `/demarcationPoint/patchPanelPortA` - Patch Panel Port A   * `/demarcationPoint/patchPanelPortB` - Patch Panel Port B   * `/demarcationPoint/connectorType` - Connector Type   * `/demarcationPoint/cageUniqueSpaceId` - Cage Unique Space Identifier   * `/expirationDateTime` - Expiration date and time of the Loa   * `/location/ibxCode` - IBX code of the Eligible location ")
-    value: Dict[str, Any] = Field(description="New value for updated parameter")
+    value: Optional[Any] = Field(description="New value for updated parameter")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["op", "path", "value"]
 
@@ -74,6 +74,11 @@ class LoaReplaceOperation(BaseModel):
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
+
+        # set to None if value (nullable) is None
+        # and model_fields_set contains the field
+        if self.value is None and "value" in self.model_fields_set:
+            _dict['value'] = None
 
         return _dict
 

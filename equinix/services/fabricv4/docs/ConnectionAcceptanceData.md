@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **z_side** | [**ConnectionSide**](ConnectionSide.md) |  | [optional] 
 **provider_bandwidth** | **int** | Authorization key bandwidth in Mbps | [optional] [readonly] 
+**operation** | [**ConnectionOperation**](ConnectionOperation.md) |  | [optional] 
 
 ## Example
 

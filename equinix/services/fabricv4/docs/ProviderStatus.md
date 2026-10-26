@@ -36,6 +36,8 @@ Connection provider readiness status
 
 * `N_SLASH_A` (value: `'N/A'`)
 
+* `QUOTING` (value: `'QUOTING'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

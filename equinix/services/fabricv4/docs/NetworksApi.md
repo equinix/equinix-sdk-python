@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_network_by_uuid**](NetworksApi.md#get_network_by_uuid) | **GET** /fabric/v4/networks/{networkId} | Get Network By ID
 [**get_network_change_by_uuid**](NetworksApi.md#get_network_change_by_uuid) | **GET** /fabric/v4/networks/{networkId}/changes/{changeId} | Get Change By ID
 [**get_network_changes**](NetworksApi.md#get_network_changes) | **GET** /fabric/v4/networks/{networkId}/changes | Get Network Changes
-[**search_networks**](NetworksApi.md#search_networks) | **POST** /fabric/v4/networks/search | Search Network
+[**search_networks**](NetworksApi.md#search_networks) | **POST** /fabric/v4/networks/search | Search Networks
 [**update_network_by_uuid**](NetworksApi.md#update_network_by_uuid) | **PATCH** /fabric/v4/networks/{networkId} | Update Network By ID
 
 
@@ -515,9 +515,9 @@ Name | Type | Description  | Notes
 # **search_networks**
 > NetworkSearchResponse search_networks(network_search_request)
 
-Search Network
+Search Networks
 
-The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting
+The API provides capability to search user's Fabric Network using search criteria, including optional filtering, pagination and sorting
 
 ### Example
 
@@ -553,7 +553,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     network_search_request = equinix.services.fabricv4.NetworkSearchRequest() # NetworkSearchRequest | 
 
     try:
-        # Search Network
+        # Search Networks
         api_response = api_instance.search_networks(network_search_request)
         print("The response of NetworksApi->search_networks:\n")
         pprint(api_response)

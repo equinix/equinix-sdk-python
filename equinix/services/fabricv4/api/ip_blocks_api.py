@@ -56,7 +56,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IpBlock:
-        """Delete IP Block by UUID
+        """Delete IP Block by ID
 
         Delete IP Block by UUID
 
@@ -128,7 +128,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IpBlock]:
-        """Delete IP Block by UUID
+        """Delete IP Block by ID
 
         Delete IP Block by UUID
 
@@ -200,7 +200,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete IP Block by UUID
+        """Delete IP Block by ID
 
         Delete IP Block by UUID
 
@@ -332,7 +332,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IpBlock:
-        """Retrieve IP Block by UUID
+        """Retrieve IP Block by ID
 
         Retrieve IP Block by UUID
 
@@ -402,7 +402,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IpBlock]:
-        """Retrieve IP Block by UUID
+        """Retrieve IP Block by ID
 
         Retrieve IP Block by UUID
 
@@ -472,7 +472,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve IP Block by UUID
+        """Retrieve IP Block by ID
 
         Retrieve IP Block by UUID
 
@@ -603,7 +603,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IpBlock:
-        """patch IP Block by UUID
+        """Update IP Block by ID
 
         patch IP Block by UUID
 
@@ -676,7 +676,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IpBlock]:
-        """patch IP Block by UUID
+        """Update IP Block by ID
 
         patch IP Block by UUID
 
@@ -749,7 +749,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """patch IP Block by UUID
+        """Update IP Block by ID
 
         patch IP Block by UUID
 
@@ -898,7 +898,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IpBlockSearchResponseBody:
-        """Search for IP Blocks
+        """Search IP Blocks
 
         Search for IP Blocks based on criteria
 
@@ -967,7 +967,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IpBlockSearchResponseBody]:
-        """Search for IP Blocks
+        """Search IP Blocks
 
         Search for IP Blocks based on criteria
 
@@ -1036,7 +1036,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search for IP Blocks
+        """Search IP Blocks
 
         Search for IP Blocks based on criteria
 
@@ -1178,7 +1178,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> IpBlock:
-        """Submits new Equinix owned or customer owned IP Block request
+        """Create IP Block
 
         Submits new Equinix owned or customer owned IP Block request
 
@@ -1248,7 +1248,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[IpBlock]:
-        """Submits new Equinix owned or customer owned IP Block request
+        """Create IP Block
 
         Submits new Equinix owned or customer owned IP Block request
 
@@ -1318,7 +1318,7 @@ class IPBlocksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Submits new Equinix owned or customer owned IP Block request
+        """Create IP Block
 
         Submits new Equinix owned or customer owned IP Block request
 

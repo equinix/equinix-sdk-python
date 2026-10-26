@@ -5,16 +5,16 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_connection_route_filter**](RouteFiltersApi.md#attach_connection_route_filter) | **PUT** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Attach Route Filter
-[**create_route_filter**](RouteFiltersApi.md#create_route_filter) | **POST** /fabric/v4/routeFilters | Create Route Filters
+[**create_route_filter**](RouteFiltersApi.md#create_route_filter) | **POST** /fabric/v4/routeFilters | Create Route Filter
 [**delete_route_filter_by_uuid**](RouteFiltersApi.md#delete_route_filter_by_uuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId} | Delete Route Filter
 [**detach_connection_route_filter**](RouteFiltersApi.md#detach_connection_route_filter) | **DELETE** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Detach Route Filter
 [**get_connection_route_filter_by_uuid**](RouteFiltersApi.md#get_connection_route_filter_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routeFilters/{routeFilterId} | Get Route Filter
-[**get_connection_route_filters**](RouteFiltersApi.md#get_connection_route_filters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get All Route Filters
-[**get_route_filter_by_uuid**](RouteFiltersApi.md#get_route_filter_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter By UUID
+[**get_connection_route_filters**](RouteFiltersApi.md#get_connection_route_filters) | **GET** /fabric/v4/connections/{connectionId}/routeFilters | Get Connection Route Filters
+[**get_route_filter_by_uuid**](RouteFiltersApi.md#get_route_filter_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId} | Get Route Filter by ID
 [**get_route_filter_change_by_uuid**](RouteFiltersApi.md#get_route_filter_change_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes/{changeId} | Get Change By ID
-[**get_route_filter_changes**](RouteFiltersApi.md#get_route_filter_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get All Changes
+[**get_route_filter_changes**](RouteFiltersApi.md#get_route_filter_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/changes | Get Route Filter Changes
 [**get_route_filter_connections**](RouteFiltersApi.md#get_route_filter_connections) | **GET** /fabric/v4/routeFilters/{routeFilterId}/connections | Get All Connections on Route Filter
-[**patch_route_filter_by_uuid**](RouteFiltersApi.md#patch_route_filter_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Patch Route Filter
+[**patch_route_filter_by_uuid**](RouteFiltersApi.md#patch_route_filter_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId} | Update Route Filter
 [**search_cloud_router_route_filter_attachments**](RouteFiltersApi.md#search_cloud_router_route_filter_attachments) | **POST** /fabric/v4/routers/{routerId}/routeFilters/search | Search Cloud Router Route Filter Attachments
 [**search_route_filters**](RouteFiltersApi.md#search_route_filters) | **POST** /fabric/v4/routeFilters/search | Search Route Filters
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 # **create_route_filter**
 > RouteFiltersData create_route_filter(route_filters_base)
 
-Create Route Filters
+Create Route Filter
 
 This API provides capability to create a Route Filter
 
@@ -149,7 +149,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filters_base = equinix.services.fabricv4.RouteFiltersBase() # RouteFiltersBase | 
 
     try:
-        # Create Route Filters
+        # Create Route Filter
         api_response = api_instance.create_route_filter(route_filters_base)
         print("The response of RouteFiltersApi->create_route_filter:\n")
         pprint(api_response)
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 # **get_connection_route_filters**
 > GetAllConnectionRouteFiltersResponse get_connection_route_filters(connection_id)
 
-Get All Route Filters
+Get Connection Route Filters
 
 This API provides capability to view all Route Filters attached to a Connection
 
@@ -489,7 +489,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_id = 'connection_id_example' # str | Connection Id
 
     try:
-        # Get All Route Filters
+        # Get Connection Route Filters
         api_response = api_instance.get_connection_route_filters(connection_id)
         print("The response of RouteFiltersApi->get_connection_route_filters:\n")
         pprint(api_response)
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_by_uuid**
 > RouteFiltersData get_route_filter_by_uuid(route_filter_id)
 
-Get Route Filter By UUID
+Get Route Filter by ID
 
 This API provides capability to view a Route Filter by UUID
 
@@ -573,7 +573,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_id = 'route_filter_id_example' # str | Route Filters Id
 
     try:
-        # Get Route Filter By UUID
+        # Get Route Filter by ID
         api_response = api_instance.get_route_filter_by_uuid(route_filter_id)
         print("The response of RouteFiltersApi->get_route_filter_by_uuid:\n")
         pprint(api_response)
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_changes**
 > RouteFilterChangeDataResponse get_route_filter_changes(route_filter_id, offset=offset, limit=limit)
 
-Get All Changes
+Get Route Filter Changes
 
 This API provides capability to retrieve all of a Route Filter's Changes
 
@@ -744,7 +744,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get All Changes
+        # Get Route Filter Changes
         api_response = api_instance.get_route_filter_changes(route_filter_id, offset=offset, limit=limit)
         print("The response of RouteFiltersApi->get_route_filter_changes:\n")
         pprint(api_response)
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 # **patch_route_filter_by_uuid**
 > RouteFiltersData patch_route_filter_by_uuid(route_filter_id, route_filters_patch_request_item)
 
-Patch Route Filter
+Update Route Filter
 
 This API provides capability to partially update a Route Filter
 
@@ -915,7 +915,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filters_patch_request_item = [equinix.services.fabricv4.RouteFiltersPatchRequestItem()] # List[RouteFiltersPatchRequestItem] | 
 
     try:
-        # Patch Route Filter
+        # Update Route Filter
         api_response = api_instance.patch_route_filter_by_uuid(route_filter_id, route_filters_patch_request_item)
         print("The response of RouteFiltersApi->patch_route_filter_by_uuid:\n")
         pprint(api_response)

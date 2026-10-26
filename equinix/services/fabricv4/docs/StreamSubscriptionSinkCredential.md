@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **api_key** | **str** | passed as Authorization header value | [optional] 
 **username** | **str** | passed as Authorization header value | [optional] 
 **password** | **str** | passed as Authorization header value | [optional] 
+**api_token** | **str** | passed as Authorization header value | [optional] 
 
 ## Example
 

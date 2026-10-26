@@ -15,8 +15,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
+from equinix.services.fabricv4.models.app_domain_change_operation_op import AppDomainChangeOperationOp
 from equinix.services.fabricv4.models.app_service_change_operation_path import AppServiceChangeOperationPath
-from equinix.services.fabricv4.models.precision_time_change_operation_op import PrecisionTimeChangeOperationOp
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,7 +24,7 @@ class AppServiceChangeOperation(BaseModel):
     """
     App Service change operation data
     """ # noqa: E501
-    op: PrecisionTimeChangeOperationOp
+    op: AppDomainChangeOperationOp
     path: AppServiceChangeOperationPath
     value: Dict[str, Any] = Field(description="new value for updated parameter")
     additional_properties: Dict[str, Any] = {}

@@ -30,11 +30,11 @@ class AppLinkPostRequest(BaseModel):
     name: Annotated[str, Field(min_length=1, strict=True, max_length=50)] = Field(description="Customer-provided App Link name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided App Link description")
     router: AppLinkPostRequestRouter
-    ipv4_address: Optional[StrictStr] = Field(default=None, description="AppLink IP address", alias="ipv4Address")
+    ipv4_subnet: StrictStr = Field(description="Customer-provided IP subnet for AppLink setup (/29 or larger subnet)", alias="ipv4Subnet")
     bandwidth: StrictInt = Field(description="App Link aggregated data transfer capacity in Mbps")
     project: Project
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "description", "router", "ipv4Address", "bandwidth", "project"]
+    __properties: ClassVar[List[str]] = ["type", "name", "description", "router", "ipv4Subnet", "bandwidth", "project"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +104,7 @@ class AppLinkPostRequest(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "router": AppLinkPostRequestRouter.from_dict(obj["router"]) if obj.get("router") is not None else None,
-            "ipv4Address": obj.get("ipv4Address"),
+            "ipv4Subnet": obj.get("ipv4Subnet"),
             "bandwidth": obj.get("bandwidth"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None
         })

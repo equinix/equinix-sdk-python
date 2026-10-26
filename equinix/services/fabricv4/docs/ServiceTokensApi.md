@@ -5,11 +5,11 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_service_token**](ServiceTokensApi.md#create_service_token) | **POST** /fabric/v4/serviceTokens | Create Service Token
-[**create_service_token_action**](ServiceTokensApi.md#create_service_token_action) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | ServiceToken Actions
-[**delete_service_token_by_uuid**](ServiceTokensApi.md#delete_service_token_by_uuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Token by uuid
-[**get_service_token_by_uuid**](ServiceTokensApi.md#get_service_token_by_uuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Token by uuid
-[**get_service_tokens**](ServiceTokensApi.md#get_service_tokens) | **GET** /fabric/v4/serviceTokens | Get All Tokens
-[**search_service_tokens**](ServiceTokensApi.md#search_service_tokens) | **POST** /fabric/v4/serviceTokens/search | Search servicetokens
+[**create_service_token_action**](ServiceTokensApi.md#create_service_token_action) | **POST** /fabric/v4/serviceTokens/{serviceTokenId}/actions | Create Service Token Action
+[**delete_service_token_by_uuid**](ServiceTokensApi.md#delete_service_token_by_uuid) | **DELETE** /fabric/v4/serviceTokens/{serviceTokenId} | Delete Service Token by ID
+[**get_service_token_by_uuid**](ServiceTokensApi.md#get_service_token_by_uuid) | **GET** /fabric/v4/serviceTokens/{serviceTokenId} | Get Service Token by ID
+[**get_service_tokens**](ServiceTokensApi.md#get_service_tokens) | **GET** /fabric/v4/serviceTokens | Get Service Tokens
+[**search_service_tokens**](ServiceTokensApi.md#search_service_tokens) | **POST** /fabric/v4/serviceTokens/search | Search Service Tokens
 [**update_service_token_by_uuid**](ServiceTokensApi.md#update_service_token_by_uuid) | **PATCH** /fabric/v4/serviceTokens/{serviceTokenId} | Update Token By ID
 
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 # **create_service_token_action**
 > ServiceToken create_service_token_action(service_token_id, service_token_action_request)
 
-ServiceToken Actions
+Create Service Token Action
 
 This API provides capability to accept/reject user's servicetokens
 
@@ -139,7 +139,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_token_action_request = equinix.services.fabricv4.ServiceTokenActionRequest() # ServiceTokenActionRequest | 
 
     try:
-        # ServiceToken Actions
+        # Create Service Token Action
         api_response = api_instance.create_service_token_action(service_token_id, service_token_action_request)
         print("The response of ServiceTokensApi->create_service_token_action:\n")
         pprint(api_response)
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
 # **delete_service_token_by_uuid**
 > ServiceToken delete_service_token_by_uuid(service_token_id)
 
-Delete Token by uuid
+Delete Service Token by ID
 
-Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
 
 ### Example
 
@@ -222,7 +222,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_token_id = 'service_token_id_example' # str | Service Token UUID
 
     try:
-        # Delete Token by uuid
+        # Delete Service Token by ID
         api_response = api_instance.delete_service_token_by_uuid(service_token_id)
         print("The response of ServiceTokensApi->delete_service_token_by_uuid:\n")
         pprint(api_response)
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 # **get_service_token_by_uuid**
 > ServiceToken get_service_token_by_uuid(service_token_id)
 
-Get Token by uuid
+Get Service Token by ID
 
 Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.
 
@@ -303,7 +303,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_token_id = 'service_token_id_example' # str | Service Token UUID
 
     try:
-        # Get Token by uuid
+        # Get Service Token by ID
         api_response = api_instance.get_service_token_by_uuid(service_token_id)
         print("The response of ServiceTokensApi->get_service_token_by_uuid:\n")
         pprint(api_response)
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 # **get_service_tokens**
 > ServiceTokens get_service_tokens(offset=offset, limit=limit)
 
-Get All Tokens
+Get Service Tokens
 
 Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.
 
@@ -385,7 +385,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 3.4 # float | number of records to fetch (optional)
 
     try:
-        # Get All Tokens
+        # Get Service Tokens
         api_response = api_instance.get_service_tokens(offset=offset, limit=limit)
         print("The response of ServiceTokensApi->get_service_tokens:\n")
         pprint(api_response)
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 # **search_service_tokens**
 > ServiceTokens search_service_tokens(service_token_search_request, offset=offset, limit=limit)
 
-Search servicetokens
+Search Service Tokens
 
 The API provides capability to get list of user's servicetokens using search criteria, including optional filtering, pagination and sorting
 
@@ -468,7 +468,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 3.4 # float | number of records to fetch (optional)
 
     try:
-        # Search servicetokens
+        # Search Service Tokens
         api_response = api_instance.search_service_tokens(service_token_search_request, offset=offset, limit=limit)
         print("The response of ServiceTokensApi->search_service_tokens:\n")
         pprint(api_response)

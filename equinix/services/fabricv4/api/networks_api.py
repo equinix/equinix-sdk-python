@@ -1745,9 +1745,9 @@ class NetworksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NetworkSearchResponse:
-        """Search Network
+        """Search Networks
 
-        The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting
+        The API provides capability to search user's Fabric Network using search criteria, including optional filtering, pagination and sorting
 
         :param network_search_request: (required)
         :type network_search_request: NetworkSearchRequest
@@ -1816,9 +1816,9 @@ class NetworksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NetworkSearchResponse]:
-        """Search Network
+        """Search Networks
 
-        The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting
+        The API provides capability to search user's Fabric Network using search criteria, including optional filtering, pagination and sorting
 
         :param network_search_request: (required)
         :type network_search_request: NetworkSearchRequest
@@ -1887,9 +1887,9 @@ class NetworksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search Network
+        """Search Networks
 
-        The API provides capability to get list of user's Fabric Network using search criteria, including optional filtering, pagination and sorting
+        The API provides capability to search user's Fabric Network using search criteria, including optional filtering, pagination and sorting
 
         :param network_search_request: (required)
         :type network_search_request: NetworkSearchRequest

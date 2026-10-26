@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **virtual_device** | [**VirtualDevice**](VirtualDevice.md) |  | [optional] 
 **interface** | [**Interface**](Interface.md) |  | [optional] 
 **network** | [**SimplifiedNetwork**](SimplifiedNetwork.md) |  | [optional] 
-**interconnect** | [**Interconnect**](Interconnect.md) |  | [optional] 
 **environment** | [**ProviderEnvironment**](ProviderEnvironment.md) |  | [optional] 
 **seller_region** | **str** | Access point seller region | [optional] 
 **peering_type** | [**PeeringType**](PeeringType.md) |  | [optional] 

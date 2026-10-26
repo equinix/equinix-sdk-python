@@ -7,13 +7,16 @@ Method | HTTP request | Description
 [**create_streams**](StreamsApi.md#create_streams) | **POST** /fabric/v4/streams | Create Stream
 [**delete_stream_asset_by_uuid**](StreamsApi.md#delete_stream_asset_by_uuid) | **DELETE** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Detach Asset
 [**delete_stream_by_uuid**](StreamsApi.md#delete_stream_by_uuid) | **DELETE** /fabric/v4/streams/{streamId} | Delete Stream
+[**delete_stream_device**](StreamsApi.md#delete_stream_device) | **DELETE** /fabric/v4/streams/{streamId}/devices/{deviceId} | Detach Network Edge Device
 [**get_stream_asset_by_uuid**](StreamsApi.md#get_stream_asset_by_uuid) | **GET** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Get Asset
 [**get_stream_by_uuid**](StreamsApi.md#get_stream_by_uuid) | **GET** /fabric/v4/streams/{streamId} | Get Stream
+[**get_stream_device**](StreamsApi.md#get_stream_device) | **GET** /fabric/v4/streams/{streamId}/devices/{deviceId} | Get Network Edge Device
 [**get_streams**](StreamsApi.md#get_streams) | **GET** /fabric/v4/streams | Get Streams
 [**search_stream_assets**](StreamsApi.md#search_stream_assets) | **POST** /fabric/v4/streamAssets/search | Search Stream Assets
 [**search_streams**](StreamsApi.md#search_streams) | **POST** /fabric/v4/streams/search | Search Streams
 [**update_stream_asset_by_uuid**](StreamsApi.md#update_stream_asset_by_uuid) | **PUT** /fabric/v4/streams/{streamId}/{asset}/{assetId} | Attach Asset
 [**update_stream_by_uuid**](StreamsApi.md#update_stream_by_uuid) | **PUT** /fabric/v4/streams/{streamId} | Update Stream
+[**update_stream_device**](StreamsApi.md#update_stream_device) | **PUT** /fabric/v4/streams/{streamId}/devices/{deviceId} | Attach Network Edge Device Interfaces
 
 
 # **create_streams**
@@ -271,6 +274,91 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_stream_device**
+> StreamAsset delete_stream_device(stream_id, device_id)
+
+Detach Network Edge Device
+
+This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.stream_asset import StreamAsset
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.StreamsApi(api_client)
+    stream_id = 'stream_id_example' # str | Stream UUID
+    device_id = 'device_id_example' # str | Network Edge Device UUID
+
+    try:
+        # Detach Network Edge Device
+        api_response = api_instance.delete_stream_device(stream_id, device_id)
+        print("The response of StreamsApi->delete_stream_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StreamsApi->delete_stream_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stream_id** | **str**| Stream UUID | 
+ **device_id** | **str**| Network Edge Device UUID | 
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Stream Network Edge Device asset object |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_stream_asset_by_uuid**
 > StreamAsset get_stream_asset_by_uuid(asset_id, asset, stream_id)
 
@@ -434,6 +522,91 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Stream object |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_stream_device**
+> StreamAsset get_stream_device(stream_id, device_id)
+
+Get Network Edge Device
+
+This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.stream_asset import StreamAsset
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.StreamsApi(api_client)
+    stream_id = 'stream_id_example' # str | Stream UUID
+    device_id = 'device_id_example' # str | Network Edge Device UUID
+
+    try:
+        # Get Network Edge Device
+        api_response = api_instance.get_stream_device(stream_id, device_id)
+        print("The response of StreamsApi->get_stream_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StreamsApi->get_stream_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stream_id** | **str**| Stream UUID | 
+ **device_id** | **str**| Network Edge Device UUID | 
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Stream Network Edge Device asset object |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
@@ -863,6 +1036,96 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Stream object |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**415** | Unsupported Media Type |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_stream_device**
+> StreamAsset update_stream_device(stream_id, device_id, stream_device_put_request)
+
+Attach Network Edge Device Interfaces
+
+This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided.
+
+
+### Example
+
+* Bearer (JWT) Authentication (BearerAuth):
+
+```python
+import equinix.services.fabricv4
+from equinix.services.fabricv4.models.stream_asset import StreamAsset
+from equinix.services.fabricv4.models.stream_device_put_request import StreamDevicePutRequest
+from equinix.services.fabricv4.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.equinix.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = equinix.services.fabricv4.Configuration(
+    host = "https://api.equinix.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization (JWT): BearerAuth
+configuration = equinix.services.fabricv4.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with equinix.services.fabricv4.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = equinix.services.fabricv4.StreamsApi(api_client)
+    stream_id = 'stream_id_example' # str | Stream UUID
+    device_id = 'device_id_example' # str | Network Edge Device UUID
+    stream_device_put_request = equinix.services.fabricv4.StreamDevicePutRequest() # StreamDevicePutRequest | 
+
+    try:
+        # Attach Network Edge Device Interfaces
+        api_response = api_instance.update_stream_device(stream_id, device_id, stream_device_put_request)
+        print("The response of StreamsApi->update_stream_device:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling StreamsApi->update_stream_device: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stream_id** | **str**| Stream UUID | 
+ **device_id** | **str**| Network Edge Device UUID | 
+ **stream_device_put_request** | [**StreamDevicePutRequest**](StreamDevicePutRequest.md)|  | 
+
+### Return type
+
+[**StreamAsset**](StreamAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Stream Network Edge Device asset object |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |

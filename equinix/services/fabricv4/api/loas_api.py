@@ -1777,7 +1777,7 @@ class LoasApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> LoaActionResponse:
-        """Loa Actions
+        """Create LOA Action
 
         The API provides capability to perform actions on Loa
 
@@ -1853,7 +1853,7 @@ class LoasApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[LoaActionResponse]:
-        """Loa Actions
+        """Create LOA Action
 
         The API provides capability to perform actions on Loa
 
@@ -1929,7 +1929,7 @@ class LoasApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Loa Actions
+        """Create LOA Action
 
         The API provides capability to perform actions on Loa
 
@@ -2931,7 +2931,7 @@ class LoasApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json'
+                        'application/json-patch+json'
                     ]
                 )
             )

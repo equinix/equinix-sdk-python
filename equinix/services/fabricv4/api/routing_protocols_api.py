@@ -64,7 +64,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RoutingProtocolData:
-        """Create Protocol
+        """Create Routing Protocol
 
         This API provides capability to create Routing Protocol for connections
 
@@ -141,7 +141,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RoutingProtocolData]:
-        """Create Protocol
+        """Create Routing Protocol
 
         This API provides capability to create Routing Protocol for connections
 
@@ -218,7 +218,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Protocol
+        """Create Routing Protocol
 
         This API provides capability to create Routing Protocol for connections
 
@@ -371,7 +371,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetResponse:
-        """Bulk Create Protocol
+        """Bulk Create Routing Protocols
 
         This API provides capability to create Routing Protocol for connections
 
@@ -448,7 +448,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetResponse]:
-        """Bulk Create Protocol
+        """Bulk Create Routing Protocols
 
         This API provides capability to create Routing Protocol for connections
 
@@ -525,7 +525,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Bulk Create Protocol
+        """Bulk Create Routing Protocols
 
         This API provides capability to create Routing Protocol for connections
 
@@ -1595,7 +1595,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetResponse:
-        """GetRoutingProtocols
+        """Get Routing Protocols
 
         This API provides capability to get Routing Protocols for connections
 
@@ -1675,7 +1675,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetResponse]:
-        """GetRoutingProtocols
+        """Get Routing Protocols
 
         This API provides capability to get Routing Protocols for connections
 
@@ -1755,7 +1755,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """GetRoutingProtocols
+        """Get Routing Protocols
 
         This API provides capability to get Routing Protocols for connections
 
@@ -2518,7 +2518,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RoutingProtocolChangeDataResponse:
-        """Get Changes
+        """Get Routing Protocol Changes
 
         This API provides capability to retrieve user's Routing Protocol Changes
 
@@ -2602,7 +2602,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RoutingProtocolChangeDataResponse]:
-        """Get Changes
+        """Get Routing Protocol Changes
 
         This API provides capability to retrieve user's Routing Protocol Changes
 
@@ -2686,7 +2686,7 @@ class RoutingProtocolsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Changes
+        """Get Routing Protocol Changes
 
         This API provides capability to retrieve user's Routing Protocol Changes
 

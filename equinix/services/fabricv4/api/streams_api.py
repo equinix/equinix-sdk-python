@@ -23,6 +23,7 @@ from equinix.services.fabricv4.models.stream import Stream
 from equinix.services.fabricv4.models.stream_asset import StreamAsset
 from equinix.services.fabricv4.models.stream_asset_put_request import StreamAssetPutRequest
 from equinix.services.fabricv4.models.stream_asset_search_request import StreamAssetSearchRequest
+from equinix.services.fabricv4.models.stream_device_put_request import StreamDevicePutRequest
 from equinix.services.fabricv4.models.stream_post_request import StreamPostRequest
 from equinix.services.fabricv4.models.stream_put_request import StreamPutRequest
 from equinix.services.fabricv4.models.stream_search_request import StreamSearchRequest
@@ -917,6 +918,297 @@ class StreamsApi:
 
 
     @validate_call
+    def delete_stream_device(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> StreamAsset:
+        """Detach Network Edge Device
+
+        This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def delete_stream_device_with_http_info(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[StreamAsset]:
+        """Detach Network Edge Device
+
+        This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def delete_stream_device_without_preload_content(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Detach Network Edge Device
+
+        This API provides capability to detach a Network Edge Device and all of its interfaces from a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_stream_device_serialize(
+        self,
+        stream_id,
+        device_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if stream_id is not None:
+            _path_params['streamId'] = stream_id
+        if device_id is not None:
+            _path_params['deviceId'] = device_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/fabric/v4/streams/{streamId}/devices/{deviceId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def get_stream_asset_by_uuid(
         self,
         asset_id: Annotated[StrictStr, Field(description="asset UUID")],
@@ -1483,6 +1775,297 @@ class StreamsApi:
         return self.api_client.param_serialize(
             method='GET',
             resource_path='/fabric/v4/streams/{streamId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_stream_device(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> StreamAsset:
+        """Get Network Edge Device
+
+        This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_stream_device_with_http_info(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[StreamAsset]:
+        """Get Network Edge Device
+
+        This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_stream_device_without_preload_content(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Network Edge Device
+
+        This API provides capability to get a Network Edge Device and its interfaces attached to a stream
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_stream_device_serialize(
+        self,
+        stream_id,
+        device_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if stream_id is not None:
+            _path_params['streamId'] = stream_id
+        if device_id is not None:
+            _path_params['deviceId'] = device_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/fabric/v4/streams/{streamId}/devices/{deviceId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2994,6 +3577,328 @@ class StreamsApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/fabric/v4/streams/{streamId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_stream_device(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        stream_device_put_request: StreamDevicePutRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> StreamAsset:
+        """Attach Network Edge Device Interfaces
+
+        This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param stream_device_put_request: (required)
+        :type stream_device_put_request: StreamDevicePutRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            stream_device_put_request=stream_device_put_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def update_stream_device_with_http_info(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        stream_device_put_request: StreamDevicePutRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[StreamAsset]:
+        """Attach Network Edge Device Interfaces
+
+        This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param stream_device_put_request: (required)
+        :type stream_device_put_request: StreamDevicePutRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            stream_device_put_request=stream_device_put_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def update_stream_device_without_preload_content(
+        self,
+        stream_id: Annotated[StrictStr, Field(description="Stream UUID")],
+        device_id: Annotated[StrictStr, Field(description="Network Edge Device UUID")],
+        stream_device_put_request: StreamDevicePutRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Attach Network Edge Device Interfaces
+
+        This API provides capability to attach a Network Edge Device and its interfaces to a stream. The provided interfaces list is the complete desired set: interfaces not in the list are detached, new interfaces are attached. An empty or absent interfaces list detaches all currently attached interfaces. metricsEnabled must be true when interfaces are provided. 
+
+        :param stream_id: Stream UUID (required)
+        :type stream_id: str
+        :param device_id: Network Edge Device UUID (required)
+        :type device_id: str
+        :param stream_device_put_request: (required)
+        :type stream_device_put_request: StreamDevicePutRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_stream_device_serialize(
+            stream_id=stream_id,
+            device_id=device_id,
+            stream_device_put_request=stream_device_put_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "StreamAsset",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_stream_device_serialize(
+        self,
+        stream_id,
+        device_id,
+        stream_device_put_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if stream_id is not None:
+            _path_params['streamId'] = stream_id
+        if device_id is not None:
+            _path_params['deviceId'] = device_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if stream_device_put_request is not None:
+            _body_params = stream_device_put_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/fabric/v4/streams/{streamId}/devices/{deviceId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

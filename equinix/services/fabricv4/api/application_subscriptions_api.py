@@ -56,9 +56,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppSubscription:
-        """Create App Subscription
+        """Create Subscription
 
-        This API provides capability to create user's App Subscription
+        This API provides capability to create user's Subscription
 
         :param app_subscription_post_request: (required)
         :type app_subscription_post_request: AppSubscriptionPostRequest
@@ -127,9 +127,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppSubscription]:
-        """Create App Subscription
+        """Create Subscription
 
-        This API provides capability to create user's App Subscription
+        This API provides capability to create user's Subscription
 
         :param app_subscription_post_request: (required)
         :type app_subscription_post_request: AppSubscriptionPostRequest
@@ -198,9 +198,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create App Subscription
+        """Create Subscription
 
-        This API provides capability to create user's App Subscription
+        This API provides capability to create user's Subscription
 
         :param app_subscription_post_request: (required)
         :type app_subscription_post_request: AppSubscriptionPostRequest
@@ -342,9 +342,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppSubscription:
-        """Delete App Subscription
+        """Delete Subscription
 
-        This API provides capability to delete user's App Subscription
+        This API provides capability to delete user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -414,9 +414,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppSubscription]:
-        """Delete App Subscription
+        """Delete Subscription
 
-        This API provides capability to delete user's App Subscription
+        This API provides capability to delete user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -486,9 +486,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete App Subscription
+        """Delete Subscription
 
-        This API provides capability to delete user's App Subscription
+        This API provides capability to delete user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -618,9 +618,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppSubscription:
-        """Get App Subscription
+        """Get Subscription
 
-        This API provides capability to retrieve user's App Subscription
+        This API provides capability to retrieve user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -689,9 +689,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppSubscription]:
-        """Get App Subscription
+        """Get Subscription
 
-        This API provides capability to retrieve user's App Subscription
+        This API provides capability to retrieve user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -760,9 +760,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get App Subscription
+        """Get Subscription
 
-        This API provides capability to retrieve user's App Subscription
+        This API provides capability to retrieve user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -891,7 +891,7 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppSubscriptionSearchResponse:
-        """Search App Subscriptions
+        """Search Subscriptions
 
         The API provides capability to get list of user's App Subscriptions using search criteria, including optional filtering, pagination and sorting
 
@@ -963,7 +963,7 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppSubscriptionSearchResponse]:
-        """Search App Subscriptions
+        """Search Subscriptions
 
         The API provides capability to get list of user's App Subscriptions using search criteria, including optional filtering, pagination and sorting
 
@@ -1035,7 +1035,7 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search App Subscriptions
+        """Search Subscriptions
 
         The API provides capability to get list of user's App Subscriptions using search criteria, including optional filtering, pagination and sorting
 
@@ -1181,9 +1181,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppSubscription:
-        """Update App Subscription
+        """Update Subscription
 
-        This API provides capability to update user's App Subscription
+        This API provides capability to update user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -1258,9 +1258,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppSubscription]:
-        """Update App Subscription
+        """Update Subscription
 
-        This API provides capability to update user's App Subscription
+        This API provides capability to update user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str
@@ -1335,9 +1335,9 @@ class ApplicationSubscriptionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update App Subscription
+        """Update Subscription
 
-        This API provides capability to update user's App Subscription
+        This API provides capability to update user's Subscription
 
         :param app_subscription_id: App Subscription UUID (required)
         :type app_subscription_id: str

@@ -23,10 +23,13 @@ class AppLinkAttachState(str, Enum):
     allowed enum values
     """
     ATTACHING = 'ATTACHING'
+    ATTACHING_FAILED = 'ATTACHING_FAILED'
     ATTACHED = 'ATTACHED'
     DETACHING = 'DETACHING'
+    DETACHING_FAILED = 'DETACHING_FAILED'
     DETACHED = 'DETACHED'
-    FAILED = 'FAILED'
+    REATTACHING = 'REATTACHING'
+    REATTACHING_FAILED = 'REATTACHING_FAILED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

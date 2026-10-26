@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**get_loa_by_uuid**](LoasApi.md#get_loa_by_uuid) | **GET** /fabric/v4/loas/{loaId} | Get Loa
 [**get_loa_consumers_by_loa_id**](LoasApi.md#get_loa_consumers_by_loa_id) | **GET** /fabric/v4/loas/{loaId}/consumers | Get Loa Consumers
 [**get_loa_notes_by_uuid**](LoasApi.md#get_loa_notes_by_uuid) | **GET** /fabric/v4/loas/{loaId}/notes | Get Loa Notes
-[**perform_loa_action**](LoasApi.md#perform_loa_action) | **POST** /fabric/v4/loas/{loaId}/actions | Loa Actions
+[**perform_loa_action**](LoasApi.md#perform_loa_action) | **POST** /fabric/v4/loas/{loaId}/actions | Create LOA Action
 [**search_loa**](LoasApi.md#search_loa) | **POST** /fabric/v4/loas/search | Search Loas
 [**search_loa_action**](LoasApi.md#search_loa_action) | **POST** /fabric/v4/loas/{loaId}/actions/search | Search Loa Actions
 [**update_loa_by_uuid**](LoasApi.md#update_loa_by_uuid) | **PATCH** /fabric/v4/loas/{loaId} | Update Loa
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 # **perform_loa_action**
 > LoaActionResponse perform_loa_action(loa_id, loa_action_request)
 
-Loa Actions
+Create LOA Action
 
 The API provides capability to perform actions on Loa
 
@@ -562,7 +562,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     loa_action_request = equinix.services.fabricv4.LoaActionRequest() # LoaActionRequest | 
 
     try:
-        # Loa Actions
+        # Create LOA Action
         api_response = api_instance.perform_loa_action(loa_id, loa_action_request)
         print("The response of LoasApi->perform_loa_action:\n")
         pprint(api_response)
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json-patch+json
  - **Accept**: application/json
 
 ### HTTP response details

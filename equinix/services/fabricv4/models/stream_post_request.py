@@ -15,7 +15,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from equinix.services.fabricv4.models.project import Project
+from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
+from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
 from equinix.services.fabricv4.models.stream_post_request_type import StreamPostRequestType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +31,10 @@ class StreamPostRequest(BaseModel):
     name: StrictStr = Field(description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     project: Project
+    account: Optional[SimplifiedAccount] = None
+    notifications: Optional[Annotated[List[SimplifiedNotification], Field(max_length=1)]] = Field(default=None, description="Preferences for stream notifications. Optional; at most one entry, of type ALL, with up to 12 emails. Set at creation only.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "name", "description", "project"]
+    __properties: ClassVar[List[str]] = ["type", "name", "description", "project", "account", "notifications"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -75,6 +80,16 @@ class StreamPostRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
+        _items = []
+        if self.notifications:
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
+            _dict['notifications'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -95,7 +110,9 @@ class StreamPostRequest(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None
+            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
+            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

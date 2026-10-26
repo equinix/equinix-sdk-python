@@ -12,7 +12,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr
+from pydantic import Field, StrictBool, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.all_physical_ports_response import AllPhysicalPortsResponse
@@ -363,7 +363,7 @@ class PortsApi:
     ) -> Port:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric™ Port
 
         :param port_request: (required)
         :type port_request: PortRequest
@@ -438,7 +438,7 @@ class PortsApi:
     ) -> ApiResponse[Port]:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric™ Port
 
         :param port_request: (required)
         :type port_request: PortRequest
@@ -513,7 +513,7 @@ class PortsApi:
     ) -> RESTResponseType:
         """Create Port
 
-        Creates Equinix Fabric™ Port.
+        Creates Equinix Fabric™ Port
 
         :param port_request: (required)
         :type port_request: PortRequest
@@ -664,7 +664,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Port:
-        """Delete a single port
+        """Delete Port
 
         The API provides capability to delete a single port
 
@@ -739,7 +739,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Port]:
-        """Delete a single port
+        """Delete Port
 
         The API provides capability to delete a single port
 
@@ -814,7 +814,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete a single port
+        """Delete Port
 
         The API provides capability to delete a single port
 
@@ -953,9 +953,9 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Port:
-        """Get Port by uuid
+        """Get Port by ID
 
-        Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+        Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -1023,9 +1023,9 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Port]:
-        """Get Port by uuid
+        """Get Port by ID
 
-        Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+        Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -1093,9 +1093,9 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Port by uuid
+        """Get Port by ID
 
-        Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+        Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
 
         :param port_id: Port UUID (required)
         :type port_id: str
@@ -1225,7 +1225,7 @@ class PortsApi:
     ) -> AllPortsResponse:
         """Get All Ports
 
-        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
 
         :param name: port name to be provided if specific port(s) to be retrieved
         :type name: str
@@ -1296,7 +1296,7 @@ class PortsApi:
     ) -> ApiResponse[AllPortsResponse]:
         """Get All Ports
 
-        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
 
         :param name: port name to be provided if specific port(s) to be retrieved
         :type name: str
@@ -1367,7 +1367,7 @@ class PortsApi:
     ) -> RESTResponseType:
         """Get All Ports
 
-        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+        Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
 
         :param name: port name to be provided if specific port(s) to be retrieved
         :type name: str
@@ -1485,6 +1485,8 @@ class PortsApi:
     def get_vlans(
         self,
         port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1500,10 +1502,14 @@ class PortsApi:
     ) -> LinkProtocolGetResponse:
         """Get Vlans
 
-        The API provides capability to retrieve Vlans for a Port.
+        The API provides capability to retrieve Vlans for a Port
 
         :param port_uuid: Port UUID (required)
         :type port_uuid: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1528,6 +1534,8 @@ class PortsApi:
 
         _param = self._get_vlans_serialize(
             port_uuid=port_uuid,
+            offset=offset,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1554,6 +1562,8 @@ class PortsApi:
     def get_vlans_with_http_info(
         self,
         port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1569,10 +1579,14 @@ class PortsApi:
     ) -> ApiResponse[LinkProtocolGetResponse]:
         """Get Vlans
 
-        The API provides capability to retrieve Vlans for a Port.
+        The API provides capability to retrieve Vlans for a Port
 
         :param port_uuid: Port UUID (required)
         :type port_uuid: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1597,6 +1611,8 @@ class PortsApi:
 
         _param = self._get_vlans_serialize(
             port_uuid=port_uuid,
+            offset=offset,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1623,6 +1639,8 @@ class PortsApi:
     def get_vlans_without_preload_content(
         self,
         port_uuid: Annotated[StrictStr, Field(description="Port UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1638,10 +1656,14 @@ class PortsApi:
     ) -> RESTResponseType:
         """Get Vlans
 
-        The API provides capability to retrieve Vlans for a Port.
+        The API provides capability to retrieve Vlans for a Port
 
         :param port_uuid: Port UUID (required)
         :type port_uuid: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1666,6 +1688,8 @@ class PortsApi:
 
         _param = self._get_vlans_serialize(
             port_uuid=port_uuid,
+            offset=offset,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1687,6 +1711,8 @@ class PortsApi:
     def _get_vlans_serialize(
         self,
         port_uuid,
+        offset,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -1711,6 +1737,14 @@ class PortsApi:
         if port_uuid is not None:
             _path_params['portUuid'] = port_uuid
         # process the query parameters
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -1765,7 +1799,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AllPortsResponse:
-        """Search ports
+        """Search Ports
 
         The API provides capability to get list of user's virtual ports using search criteria, including optional filtering, pagination and sorting
 
@@ -1836,7 +1870,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AllPortsResponse]:
-        """Search ports
+        """Search Ports
 
         The API provides capability to get list of user's virtual ports using search criteria, including optional filtering, pagination and sorting
 
@@ -1907,7 +1941,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search ports
+        """Search Ports
 
         The API provides capability to get list of user's virtual ports using search criteria, including optional filtering, pagination and sorting
 
@@ -2053,7 +2087,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AllPortsResponse:
-        """Update by UUID
+        """Update Port by ID
 
         Update Port by UUID
 
@@ -2132,7 +2166,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AllPortsResponse]:
-        """Update by UUID
+        """Update Port by ID
 
         Update Port by UUID
 
@@ -2211,7 +2245,7 @@ class PortsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update by UUID
+        """Update Port by ID
 
         Update Port by UUID
 

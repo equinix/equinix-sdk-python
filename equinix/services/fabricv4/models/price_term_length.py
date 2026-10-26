@@ -26,6 +26,7 @@ class PriceTermLength(int, Enum):
     NUMBER_12 = 12
     NUMBER_24 = 24
     NUMBER_36 = 36
+    NUMBER_60 = 60
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

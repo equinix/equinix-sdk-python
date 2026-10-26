@@ -56,7 +56,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InternetAccessService:
-        """Creates Internet Access Service
+        """Create Internet Access Service
 
         Creates Internet Access Service
 
@@ -127,7 +127,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InternetAccessService]:
-        """Creates Internet Access Service
+        """Create Internet Access Service
 
         Creates Internet Access Service
 
@@ -198,7 +198,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Creates Internet Access Service
+        """Create Internet Access Service
 
         Creates Internet Access Service
 
@@ -342,7 +342,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InternetAccessService:
-        """Delete Internet Access Service by UUID
+        """Delete Internet Access Service by ID
 
         Delete Internet Access Service by UUID
 
@@ -411,7 +411,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InternetAccessService]:
-        """Delete Internet Access Service by UUID
+        """Delete Internet Access Service by ID
 
         Delete Internet Access Service by UUID
 
@@ -480,7 +480,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Internet Access Service by UUID
+        """Delete Internet Access Service by ID
 
         Delete Internet Access Service by UUID
 
@@ -609,7 +609,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InternetAccessService:
-        """Retrieve Internet Access Service by UUID
+        """Get Internet Access Service by ID
 
         Retrieve Internet Access Service by UUID
 
@@ -677,7 +677,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InternetAccessService]:
-        """Retrieve Internet Access Service by UUID
+        """Get Internet Access Service by ID
 
         Retrieve Internet Access Service by UUID
 
@@ -745,7 +745,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Retrieve Internet Access Service by UUID
+        """Get Internet Access Service by ID
 
         Retrieve Internet Access Service by UUID
 
@@ -874,7 +874,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InternetAccessService:
-        """Patch Internet Access Service by UUID
+        """Update Internet Access Service by ID
 
         Patch Internet Access Service by UUID
 
@@ -946,7 +946,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InternetAccessService]:
-        """Patch Internet Access Service by UUID
+        """Update Internet Access Service by ID
 
         Patch Internet Access Service by UUID
 
@@ -1018,7 +1018,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Internet Access Service by UUID
+        """Update Internet Access Service by ID
 
         Patch Internet Access Service by UUID
 
@@ -1166,7 +1166,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> InternetAccessServices:
-        """Search for Internet Access Services
+        """Search Internet Access Services
 
         Search for Internet Access Services
 
@@ -1236,7 +1236,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[InternetAccessServices]:
-        """Search for Internet Access Services
+        """Search Internet Access Services
 
         Search for Internet Access Services
 
@@ -1306,7 +1306,7 @@ class InternetAccessServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search for Internet Access Services
+        """Search Internet Access Services
 
         Search for Internet Access Services
 

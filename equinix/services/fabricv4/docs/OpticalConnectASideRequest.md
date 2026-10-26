@@ -6,10 +6,7 @@ A-Side configuration. Always a patch panel port from your cage.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**patch_panel_id** | **str** | Unique identifier of the patch panel. | [optional] 
-**patch_panel_port_a** | **str** | Specify the desired port number for Port A. &lt;br&gt; When ports are not provided, next available ports will be used.  | [optional] 
-**patch_panel_port_b** | **str** | Specify the desired port number for Port B. &lt;br&gt; When ports are not provided, next available ports will be used. &lt;br&gt; Required for Connector type FC, SC and ST only.  | [optional] 
-**connector_type** | [**OpticalConnectPatchPanelFieldsConnectorType**](OpticalConnectPatchPanelFieldsConnectorType.md) |  | [optional] 
+**demarcation_point** | [**OpticalConnectDemarcationPoint**](OpticalConnectDemarcationPoint.md) |  | [optional] 
 
 ## Example
 

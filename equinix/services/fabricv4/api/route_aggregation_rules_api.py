@@ -61,7 +61,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesData:
-        """Create RARule
+        """Create Route Aggregation Rule
 
         This API provides capability to create a Route Aggregation Rule
 
@@ -138,7 +138,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesData]:
-        """Create RARule
+        """Create Route Aggregation Rule
 
         This API provides capability to create a Route Aggregation Rule
 
@@ -215,7 +215,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create RARule
+        """Create Route Aggregation Rule
 
         This API provides capability to create a Route Aggregation Rule
 
@@ -368,7 +368,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetRouteAggregationRulesResponse:
-        """Bulk RARules
+        """Bulk Create Route Aggregation Rules
 
         This API provides capability to create bulk route aggregation rules
 
@@ -445,7 +445,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetRouteAggregationRulesResponse]:
-        """Bulk RARules
+        """Bulk Create Route Aggregation Rules
 
         This API provides capability to create bulk route aggregation rules
 
@@ -522,7 +522,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Bulk RARules
+        """Bulk Create Route Aggregation Rules
 
         This API provides capability to create bulk route aggregation rules
 
@@ -675,7 +675,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesData:
-        """DeleteRARule
+        """Delete Route Aggregation Rule
 
         This API provides capability to delete a Route aggregation Rule
 
@@ -752,7 +752,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesData]:
-        """DeleteRARule
+        """Delete Route Aggregation Rule
 
         This API provides capability to delete a Route aggregation Rule
 
@@ -829,7 +829,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """DeleteRARule
+        """Delete Route Aggregation Rule
 
         This API provides capability to delete a Route aggregation Rule
 
@@ -969,7 +969,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesData:
-        """GetRARule By UUID
+        """Get Route Aggregation Rule by ID
 
         This API provides capability to view a Route Aggregation Rule by UUID
 
@@ -1046,7 +1046,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesData]:
-        """GetRARule By UUID
+        """Get Route Aggregation Rule by ID
 
         This API provides capability to view a Route Aggregation Rule by UUID
 
@@ -1123,7 +1123,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """GetRARule By UUID
+        """Get Route Aggregation Rule by ID
 
         This API provides capability to view a Route Aggregation Rule by UUID
 
@@ -1571,7 +1571,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesChangeDataResponse:
-        """Get All Changes
+        """Get Route Aggregation Rule Changes
 
         This API provides capability to retrieve all of a Route Aggregation Rule's Changes
 
@@ -1655,7 +1655,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesChangeDataResponse]:
-        """Get All Changes
+        """Get Route Aggregation Rule Changes
 
         This API provides capability to retrieve all of a Route Aggregation Rule's Changes
 
@@ -1739,7 +1739,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Changes
+        """Get Route Aggregation Rule Changes
 
         This API provides capability to retrieve all of a Route Aggregation Rule's Changes
 
@@ -1895,7 +1895,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetRouteAggregationRulesResponse:
-        """GetRARules
+        """Get Route Aggregation Rules
 
         This API provides capability to get all Route Aggregations Rules for Fabric
 
@@ -1975,7 +1975,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetRouteAggregationRulesResponse]:
-        """GetRARules
+        """Get Route Aggregation Rules
 
         This API provides capability to get all Route Aggregations Rules for Fabric
 
@@ -2055,7 +2055,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """GetRARules
+        """Get Route Aggregation Rules
 
         This API provides capability to get all Route Aggregations Rules for Fabric
 
@@ -2205,7 +2205,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesData:
-        """PatchRARule
+        """Update Route Aggregation Rule
 
         This API provides capability to partially update a Route Aggregation Rule
 
@@ -2286,7 +2286,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesData]:
-        """PatchRARule
+        """Update Route Aggregation Rule
 
         This API provides capability to partially update a Route Aggregation Rule
 
@@ -2367,7 +2367,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """PatchRARule
+        """Update Route Aggregation Rule
 
         This API provides capability to partially update a Route Aggregation Rule
 
@@ -2529,7 +2529,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationRulesData:
-        """ReplaceRARule
+        """Replace Route Aggregation Rule
 
         This API provides capability to replace a Route Aggregation Rule completely
 
@@ -2610,7 +2610,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationRulesData]:
-        """ReplaceRARule
+        """Replace Route Aggregation Rule
 
         This API provides capability to replace a Route Aggregation Rule completely
 
@@ -2691,7 +2691,7 @@ class RouteAggregationRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """ReplaceRARule
+        """Replace Route Aggregation Rule
 
         This API provides capability to replace a Route Aggregation Rule completely
 

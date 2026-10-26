@@ -4,15 +4,15 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_status**](HealthApi.md#get_status) | **GET** /fabric/v4/health | Get service status
+[**get_status**](HealthApi.md#get_status) | **GET** /fabric/v4/health | Get Service Status
 
 
 # **get_status**
 > HealthResponse get_status()
 
-Get service status
+Get Service Status
 
-GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
 
 ### Example
 
@@ -46,7 +46,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.HealthApi(api_client)
 
     try:
-        # Get service status
+        # Get Service Status
         api_response = api_instance.get_status()
         print("The response of HealthApi->get_status:\n")
         pprint(api_response)

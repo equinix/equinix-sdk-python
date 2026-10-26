@@ -6,7 +6,7 @@ App Link change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
+**op** | [**AppDomainChangeOperationOp**](AppDomainChangeOperationOp.md) |  | 
 **path** | [**AppLinkChangeOperationPath**](AppLinkChangeOperationPath.md) |  | 
 **value** | **object** | new value for updated parameter | 
 

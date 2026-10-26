@@ -25,7 +25,7 @@ class CustomField(BaseModel):
     """ # noqa: E501
     label: StrictStr
     description: Optional[StrictStr] = None
-    required: Optional[StrictBool] = None
+    required: StrictBool
     data_type: CustomFieldDataType = Field(alias="dataType")
     options: Optional[List[StrictStr]] = None
     capture_in_email: Optional[StrictBool] = Field(default=None, description="capture this field as a part of email notification", alias="captureInEmail")

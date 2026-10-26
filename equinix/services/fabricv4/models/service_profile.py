@@ -16,6 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.custom_field import CustomField
 from equinix.services.fabricv4.models.marketing_info import MarketingInfo
 from equinix.services.fabricv4.models.project import Project
@@ -29,6 +30,7 @@ from equinix.services.fabricv4.models.service_profile_last_mile_config import Se
 from equinix.services.fabricv4.models.service_profile_state_enum import ServiceProfileStateEnum
 from equinix.services.fabricv4.models.service_profile_type_enum import ServiceProfileTypeEnum
 from equinix.services.fabricv4.models.service_profile_visibility_enum import ServiceProfileVisibilityEnum
+from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
 from typing import Optional, Set
 from typing_extensions import Self
@@ -38,10 +40,10 @@ class ServiceProfile(BaseModel):
     Service Profile is a software definition for a named provider service and it's network connectivity requirements. This includes the basic marketing information and one or more sets of access points (a set per each access point type) fulfilling the provider service. 
     """ # noqa: E501
     state: Optional[ServiceProfileStateEnum] = None
-    account: Optional[Any] = Field(default=None, description="Seller Account for Service Profile.")
+    account: Optional[SimplifiedAccount] = None
     project: Optional[Project] = None
     change: Optional[ServiceProfileChange] = None
-    change_log: Optional[Any] = Field(default=None, description="Seller Account for Service Profile.", alias="changeLog")
+    change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     href: Optional[StrictStr] = Field(default=None, description="Service Profile URI response attribute")
     type: Optional[ServiceProfileTypeEnum] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Customer-assigned service profile name")

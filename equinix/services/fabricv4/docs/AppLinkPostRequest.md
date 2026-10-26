@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided App Link name | 
 **description** | **str** | Customer-provided App Link description | [optional] 
 **router** | [**AppLinkPostRequestRouter**](AppLinkPostRequestRouter.md) |  | 
-**ipv4_address** | **str** | AppLink IP address | [optional] 
+**ipv4_subnet** | **str** | Customer-provided IP subnet for AppLink setup (/29 or larger subnet) | 
 **bandwidth** | **int** | App Link aggregated data transfer capacity in Mbps | 
 **project** | [**Project**](Project.md) |  | 
 

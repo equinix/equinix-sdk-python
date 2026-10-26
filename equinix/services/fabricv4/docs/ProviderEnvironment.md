@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **type** | [**ProviderEnvironmentTypeEnum**](ProviderEnvironmentTypeEnum.md) |  | [optional] 
 **name** | **str** | Provider environment name | [optional] 
 **description** | **str** | Provider environment description | [optional] 
-**region** | **str** | Cloud provider region identifier | [optional] 
+**seller_region** | **str** | Cloud provider region identifier | [optional] 
 **supported_bandwidths** | **List[int]** | Supported bandwidths in Mbps | [optional] 
 **metros** | [**List[ServiceMetro]**](ServiceMetro.md) | Derived response attribute. | [optional] 
 **supported_features** | **List[str]** | Supported Feature Types | [optional] 

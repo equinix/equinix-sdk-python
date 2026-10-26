@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**detach_private_service_from_profile**](CompanyProfilesApi.md#detach_private_service_from_profile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/privateServices/{privateServiceId} | Detach Private Service
 [**detach_service_profile_from_profile**](CompanyProfilesApi.md#detach_service_profile_from_profile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles/{serviceProfileId} | Detach Service Profile
 [**detach_tag_from_profile**](CompanyProfilesApi.md#detach_tag_from_profile) | **DELETE** /fabric/v4/companyProfiles/{companyProfileId}/tags/{tagId} | Detach Tag
-[**get_company_profile**](CompanyProfilesApi.md#get_company_profile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by UUID
+[**get_company_profile**](CompanyProfilesApi.md#get_company_profile) | **GET** /fabric/v4/companyProfiles/{companyProfileId} | Get Company Profile by ID
 [**get_company_profile_private_services**](CompanyProfilesApi.md#get_company_profile_private_services) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/privateServices | Get Private Services
 [**get_company_profile_service_profiles**](CompanyProfilesApi.md#get_company_profile_service_profiles) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/serviceProfiles | Get Service Profiles
 [**get_tags**](CompanyProfilesApi.md#get_tags) | **GET** /fabric/v4/companyProfiles/{companyProfileId}/tags | Get Tags
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 # **get_company_profile**
 > CompanyProfileResponse get_company_profile(company_profile_id)
 
-Get Company Profile by UUID
+Get Company Profile by ID
 
 Get company profile details by UUID <font color="red"> <sup color='red'>Beta</sup></font>
 
@@ -720,7 +720,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     company_profile_id = 'company_profile_id_example' # str | Company Profile UUID
 
     try:
-        # Get Company Profile by UUID
+        # Get Company Profile by ID
         api_response = api_instance.get_company_profile(company_profile_id)
         print("The response of CompanyProfilesApi->get_company_profile:\n")
         pprint(api_response)

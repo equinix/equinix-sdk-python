@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Create Logo
 
-Create Logo for Equinix Fabric™ Company Profile.
+Create Logo for Equinix Fabric™ Company Profile
 
 ### Example
 

@@ -56,7 +56,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Statistics:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
@@ -138,7 +138,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Statistics]:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
@@ -220,7 +220,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level metrics so that you can view access and gather key information required to manage service subscription sizing and capacity **(DEPRECATED)**
 
@@ -394,7 +394,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Statistics:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
@@ -473,7 +473,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Statistics]:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 
@@ -552,7 +552,7 @@ class StatisticsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) Get Stats by uuid **(DEPRECATED)**
+        """(Deprecated) Get Stats by ID (DEPRECATED)
 
         This API provides service-level traffic metrics so that you can view access and gather key information required to manage service subscription sizing and capacity.**(DEPRECATED)**
 

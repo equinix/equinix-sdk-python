@@ -56,7 +56,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StreamAlertRule:
-        """Create Stream Alert Rules
+        """Create Stream Alert Rule
 
         This API provides capability to create user's Stream Alert Rules
 
@@ -132,7 +132,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StreamAlertRule]:
-        """Create Stream Alert Rules
+        """Create Stream Alert Rule
 
         This API provides capability to create user's Stream Alert Rules
 
@@ -208,7 +208,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Stream Alert Rules
+        """Create Stream Alert Rule
 
         This API provides capability to create user's Stream Alert Rules
 
@@ -360,7 +360,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StreamAlertRule:
-        """Delete Stream Alert Rules
+        """Delete Stream Alert Rule
 
         This API provides capability to delete a user's stream alert rule
 
@@ -436,7 +436,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StreamAlertRule]:
-        """Delete Stream Alert Rules
+        """Delete Stream Alert Rule
 
         This API provides capability to delete a user's stream alert rule
 
@@ -512,7 +512,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Stream Alert Rules
+        """Delete Stream Alert Rule
 
         This API provides capability to delete a user's stream alert rule
 
@@ -651,9 +651,9 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StreamAlertRule:
-        """Get Stream Alert Rules
+        """Get Stream Alert Rule
 
-        This API provides capability to get user's stream alert rules
+        This API provides capability to get user's stream alert rule
 
         :param stream_id: Stream UUID (required)
         :type stream_id: str
@@ -727,9 +727,9 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StreamAlertRule]:
-        """Get Stream Alert Rules
+        """Get Stream Alert Rule
 
-        This API provides capability to get user's stream alert rules
+        This API provides capability to get user's stream alert rule
 
         :param stream_id: Stream UUID (required)
         :type stream_id: str
@@ -803,9 +803,9 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Stream Alert Rules
+        """Get Stream Alert Rule
 
-        This API provides capability to get user's stream alert rules
+        This API provides capability to get user's stream alert rule
 
         :param stream_id: Stream UUID (required)
         :type stream_id: str
@@ -1250,7 +1250,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StreamAlertRule:
-        """Update Stream Alert Rules
+        """Update Stream Alert Rule
 
         This API provides capability to update a user's stream alert rule
 
@@ -1331,7 +1331,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StreamAlertRule]:
-        """Update Stream Alert Rules
+        """Update Stream Alert Rule
 
         This API provides capability to update a user's stream alert rule
 
@@ -1412,7 +1412,7 @@ class StreamAlertRulesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update Stream Alert Rules
+        """Update Stream Alert Rule
 
         This API provides capability to update a user's stream alert rule
 

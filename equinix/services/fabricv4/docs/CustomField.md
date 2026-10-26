@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **str** |  | 
 **description** | **str** |  | [optional] 
-**required** | **bool** |  | [optional] 
+**required** | **bool** |  | 
 **data_type** | [**CustomFieldDataType**](CustomFieldDataType.md) |  | 
 **options** | **List[str]** |  | [optional] 
 **capture_in_email** | **bool** | capture this field as a part of email notification | [optional] 

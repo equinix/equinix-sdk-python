@@ -4,7 +4,7 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_metric_by_asset_id**](MetricsApi.md#get_metric_by_asset_id) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id
+[**get_metric_by_asset_id**](MetricsApi.md#get_metric_by_asset_id) | **GET** /fabric/v4/{asset}/{assetId}/metrics | Get Metrics by Asset Id (Deprecated)
 [**get_metric_by_name**](MetricsApi.md#get_metric_by_name) | **GET** /fabric/v4/metrics | Get Metrics by Name
 [**search_metrics**](MetricsApi.md#search_metrics) | **POST** /fabric/v4/metrics/search | Search Metrics
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 # **get_metric_by_asset_id**
 > GetMetricsByAssetResponse get_metric_by_asset_id(asset, asset_id, name, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
 
-Get Metrics by Asset Id
+Get Metrics by Asset Id (Deprecated)
 
 This API provides capability to retrieve Metrics of an asset id
 
@@ -56,7 +56,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 20 # int | limit (optional) (default to 20)
 
     try:
-        # Get Metrics by Asset Id
+        # Get Metrics by Asset Id (Deprecated)
         api_response = api_instance.get_metric_by_asset_id(asset, asset_id, name, from_date_time=from_date_time, to_date_time=to_date_time, offset=offset, limit=limit)
         print("The response of MetricsApi->get_metric_by_asset_id:\n")
         pprint(api_response)

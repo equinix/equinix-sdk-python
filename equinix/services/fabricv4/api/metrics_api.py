@@ -62,7 +62,7 @@ class MetricsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetMetricsByAssetResponse:
-        """Get Metrics by Asset Id
+        """(Deprecated) Get Metrics by Asset Id (Deprecated)
 
         This API provides capability to retrieve Metrics of an asset id
 
@@ -101,6 +101,7 @@ class MetricsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/{asset}/{assetId}/metrics is deprecated.", DeprecationWarning)
 
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,
@@ -157,7 +158,7 @@ class MetricsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetMetricsByAssetResponse]:
-        """Get Metrics by Asset Id
+        """(Deprecated) Get Metrics by Asset Id (Deprecated)
 
         This API provides capability to retrieve Metrics of an asset id
 
@@ -196,6 +197,7 @@ class MetricsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/{asset}/{assetId}/metrics is deprecated.", DeprecationWarning)
 
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,
@@ -252,7 +254,7 @@ class MetricsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Metrics by Asset Id
+        """(Deprecated) Get Metrics by Asset Id (Deprecated)
 
         This API provides capability to retrieve Metrics of an asset id
 
@@ -291,6 +293,7 @@ class MetricsApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /fabric/v4/{asset}/{assetId}/metrics is deprecated.", DeprecationWarning)
 
         _param = self._get_metric_by_asset_id_serialize(
             asset=asset,

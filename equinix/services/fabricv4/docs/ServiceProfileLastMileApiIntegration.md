@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **poq_enabled** | **bool** | Whether product qualification is enabled for the last-mile provider. | [optional] 
 **quote_enabled** | **bool** | Whether quote generation is enabled for the last-mile provider. | [optional] 
 **place_order_enabled** | **bool** | Whether place order is enabled for the last-mile provider. | [optional] 
+**quote_via_aggregator_enabled** | **bool** | Whether quote via aggregator is enabled for the last-mile provider. | [optional] 
 
 ## Example
 

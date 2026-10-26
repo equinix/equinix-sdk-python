@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **access_vc_count** | **int** | Total number of connections. | [optional] 
 **op_status_changed_at** | **datetime** | Date and time at which port availability changed. | [optional] 
 **maintenance_status** | [**MaintenanceState**](MaintenanceState.md) |  | [optional] 
+**lock_enabled** | **bool** | Indicates whether the port configuration is locked due to an ongoing or scheduled maintenance. | [optional] 
 
 ## Example
 

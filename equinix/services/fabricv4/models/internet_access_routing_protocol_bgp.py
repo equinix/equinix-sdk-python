@@ -15,6 +15,7 @@ import json
 
 from pydantic import ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.internet_access_bgp_auth_type import InternetAccessBgpAuthType
 from equinix.services.fabricv4.models.internet_access_connection import InternetAccessConnection
 from equinix.services.fabricv4.models.internet_access_customer_asn_range import InternetAccessCustomerAsnRange
 from equinix.services.fabricv4.models.internet_access_customer_route import InternetAccessCustomerRoute
@@ -32,10 +33,11 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
     export_policy: InternetAccessExportPolicy = Field(alias="exportPolicy")
     asn: Optional[InternetAccessRoutingProtocolBgpAsn] = None
     customer_asn: Optional[StrictInt] = Field(default=None, description="Customer ASN. Valid range is 1-64495 or 131072-4199999999. Currently this option is only available for EIA over dedicated port.", alias="customerAsn")
-    bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authentication key", alias="bgpAuthKey")
-    customer_asn_range: InternetAccessCustomerAsnRange = Field(alias="customerAsnRange")
+    bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authentication key. This field is deprecated and will be removed in future releases. Please use bgpAuthType instead to determine if a BGP authentication key is configured.", alias="bgpAuthKey")
+    bgp_auth_type: Optional[InternetAccessBgpAuthType] = Field(default=InternetAccessBgpAuthType.NUMBER_NONE, alias="bgpAuthType")
+    customer_asn_range: Optional[InternetAccessCustomerAsnRange] = Field(default=None, alias="customerAsnRange")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "customerAsnRange"]
+    __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "bgpAuthType", "customerAsnRange"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,7 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
             "asn": InternetAccessRoutingProtocolBgpAsn.from_dict(obj["asn"]) if obj.get("asn") is not None else None,
             "customerAsn": obj.get("customerAsn"),
             "bgpAuthKey": obj.get("bgpAuthKey"),
+            "bgpAuthType": obj.get("bgpAuthType") if obj.get("bgpAuthType") is not None else InternetAccessBgpAuthType.NUMBER_NONE,
             "customerAsnRange": obj.get("customerAsnRange")
         })
         # store additional fields in additional_properties

@@ -17,6 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.service_profile_last_mile_delivery_date_range import ServiceProfileLastMileDeliveryDateRange
 from equinix.services.fabricv4.models.service_profile_last_mile_offering import ServiceProfileLastMileOffering
+from equinix.services.fabricv4.models.service_profile_last_mile_product_catalog_billing_terms_inner import ServiceProfileLastMileProductCatalogBillingTermsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,9 +29,10 @@ class ServiceProfileLastMileProductCatalog(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="Last-mile provider or catalog identifier.")
     web_url: Optional[StrictStr] = Field(default=None, description="Last-mile catalog or provider website URL.", alias="webUrl")
     delivery_date: Optional[ServiceProfileLastMileDeliveryDateRange] = Field(default=None, alias="deliveryDate")
+    billing_terms: Optional[List[ServiceProfileLastMileProductCatalogBillingTermsInner]] = Field(default=None, description="Available billing terms in months.", alias="billingTerms")
     offerings: Optional[List[ServiceProfileLastMileOffering]] = Field(default=None, description="Available last-mile offerings.")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["name", "id", "webUrl", "deliveryDate", "offerings"]
+    __properties: ClassVar[List[str]] = ["name", "id", "webUrl", "deliveryDate", "billingTerms", "offerings"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +90,11 @@ class ServiceProfileLastMileProductCatalog(BaseModel):
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
 
+        # set to None if billing_terms (nullable) is None
+        # and model_fields_set contains the field
+        if self.billing_terms is None and "billing_terms" in self.model_fields_set:
+            _dict['billingTerms'] = None
+
         return _dict
 
     @classmethod
@@ -104,6 +111,7 @@ class ServiceProfileLastMileProductCatalog(BaseModel):
             "id": obj.get("id"),
             "webUrl": obj.get("webUrl"),
             "deliveryDate": ServiceProfileLastMileDeliveryDateRange.from_dict(obj["deliveryDate"]) if obj.get("deliveryDate") is not None else None,
+            "billingTerms": obj.get("billingTerms"),
             "offerings": [ServiceProfileLastMileOffering.from_dict(_item) for _item in obj["offerings"]] if obj.get("offerings") is not None else None
         })
         # store additional fields in additional_properties

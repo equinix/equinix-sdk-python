@@ -17,21 +17,27 @@ from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.app_link import AppLink
 from equinix.services.fabricv4.models.app_link_app_domain_attachment import AppLinkAppDomainAttachment
+from equinix.services.fabricv4.models.app_link_app_processor_attachment import AppLinkAppProcessorAttachment
 from equinix.services.fabricv4.models.app_link_app_service_attachment import AppLinkAppServiceAttachment
 from equinix.services.fabricv4.models.app_link_app_service_attachment_change_operation import AppLinkAppServiceAttachmentChangeOperation
 from equinix.services.fabricv4.models.app_link_attach_domain_search_request import AppLinkAttachDomainSearchRequest
 from equinix.services.fabricv4.models.app_link_attach_domain_search_response import AppLinkAttachDomainSearchResponse
+from equinix.services.fabricv4.models.app_link_attach_processor_request import AppLinkAttachProcessorRequest
+from equinix.services.fabricv4.models.app_link_attach_processor_search_request import AppLinkAttachProcessorSearchRequest
+from equinix.services.fabricv4.models.app_link_attach_processor_search_response import AppLinkAttachProcessorSearchResponse
 from equinix.services.fabricv4.models.app_link_attach_service_request import AppLinkAttachServiceRequest
 from equinix.services.fabricv4.models.app_link_attach_service_search_request import AppLinkAttachServiceSearchRequest
 from equinix.services.fabricv4.models.app_link_attach_service_search_response import AppLinkAttachServiceSearchResponse
 from equinix.services.fabricv4.models.app_link_attach_state import AppLinkAttachState
 from equinix.services.fabricv4.models.app_link_attached_app_domains import AppLinkAttachedAppDomains
+from equinix.services.fabricv4.models.app_link_attached_app_processors import AppLinkAttachedAppProcessors
 from equinix.services.fabricv4.models.app_link_attached_app_services import AppLinkAttachedAppServices
 from equinix.services.fabricv4.models.app_link_change_operation import AppLinkChangeOperation
 from equinix.services.fabricv4.models.app_link_post_request import AppLinkPostRequest
 from equinix.services.fabricv4.models.app_link_search_request import AppLinkSearchRequest
 from equinix.services.fabricv4.models.app_link_search_response import AppLinkSearchResponse
 from equinix.services.fabricv4.models.attached_app_domain_order import AttachedAppDomainOrder
+from equinix.services.fabricv4.models.attached_app_processor_order import AttachedAppProcessorOrder
 from equinix.services.fabricv4.models.attached_app_service_order import AttachedAppServiceOrder
 from equinix.services.fabricv4.models.style import Style
 
@@ -71,9 +77,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppDomainAttachment:
-        """Attach App Domain to App Link
+        """Attach Domain to Link
 
-        This API provides ability to attach the user's App Domain to App Link.
+        This API provides ability to attach the user's App Domain to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -147,9 +153,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppDomainAttachment]:
-        """Attach App Domain to App Link
+        """Attach Domain to Link
 
-        This API provides ability to attach the user's App Domain to App Link.
+        This API provides ability to attach the user's App Domain to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -223,9 +229,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Attach App Domain to App Link
+        """Attach Domain to Link
 
-        This API provides ability to attach the user's App Domain to App Link.
+        This API provides ability to attach the user's App Domain to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -345,6 +351,328 @@ class ApplicationLinksApi:
 
 
     @validate_call
+    def attach_app_processor_to_app_link(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        app_link_attach_processor_request: AppLinkAttachProcessorRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AppLinkAppProcessorAttachment:
+        """Attach Processor to Link
+
+        This API provides ability to attach an App Processor to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param app_link_attach_processor_request: (required)
+        :type app_link_attach_processor_request: AppLinkAttachProcessorRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._attach_app_processor_to_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            app_link_attach_processor_request=app_link_attach_processor_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def attach_app_processor_to_app_link_with_http_info(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        app_link_attach_processor_request: AppLinkAttachProcessorRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AppLinkAppProcessorAttachment]:
+        """Attach Processor to Link
+
+        This API provides ability to attach an App Processor to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param app_link_attach_processor_request: (required)
+        :type app_link_attach_processor_request: AppLinkAttachProcessorRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._attach_app_processor_to_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            app_link_attach_processor_request=app_link_attach_processor_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def attach_app_processor_to_app_link_without_preload_content(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        app_link_attach_processor_request: AppLinkAttachProcessorRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Attach Processor to Link
+
+        This API provides ability to attach an App Processor to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param app_link_attach_processor_request: (required)
+        :type app_link_attach_processor_request: AppLinkAttachProcessorRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._attach_app_processor_to_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            app_link_attach_processor_request=app_link_attach_processor_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _attach_app_processor_to_app_link_serialize(
+        self,
+        app_link_id,
+        app_processor_id,
+        app_link_attach_processor_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if app_link_id is not None:
+            _path_params['appLinkId'] = app_link_id
+        if app_processor_id is not None:
+            _path_params['appProcessorId'] = app_processor_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if app_link_attach_processor_request is not None:
+            _body_params = app_link_attach_processor_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def attach_app_service_to_app_link(
         self,
         app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
@@ -363,9 +691,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppServiceAttachment:
-        """Attach App Service to App Link
+        """Attach Service to Link
 
-        This API provides ability to attach the user's App Service to App Link.
+        This API provides ability to attach the user's App Service to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -442,9 +770,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppServiceAttachment]:
-        """Attach App Service to App Link
+        """Attach Service to Link
 
-        This API provides ability to attach the user's App Service to App Link.
+        This API provides ability to attach the user's App Service to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -521,9 +849,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Attach App Service to App Link
+        """Attach Service to Link
 
-        This API provides ability to attach the user's App Service to App Link.
+        This API provides ability to attach the user's App Service to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -677,9 +1005,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLink:
-        """Create App Link
+        """Create Link
 
-        This API provides capability to create user's App Link
+        This API provides capability to create user's Link
 
         :param app_link_post_request: (required)
         :type app_link_post_request: AppLinkPostRequest
@@ -749,9 +1077,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLink]:
-        """Create App Link
+        """Create Link
 
-        This API provides capability to create user's App Link
+        This API provides capability to create user's Link
 
         :param app_link_post_request: (required)
         :type app_link_post_request: AppLinkPostRequest
@@ -821,9 +1149,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create App Link
+        """Create Link
 
-        This API provides capability to create user's App Link
+        This API provides capability to create user's Link
 
         :param app_link_post_request: (required)
         :type app_link_post_request: AppLinkPostRequest
@@ -966,9 +1294,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLink:
-        """Delete App Link
+        """Delete Link
 
-        This API provides capability to delete user's App Link
+        This API provides capability to delete user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -1038,9 +1366,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLink]:
-        """Delete App Link
+        """Delete Link
 
-        This API provides capability to delete user's App Link
+        This API provides capability to delete user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -1110,9 +1438,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete App Link
+        """Delete Link
 
-        This API provides capability to delete user's App Link
+        This API provides capability to delete user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -1243,7 +1571,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppDomainAttachment:
-        """Detach App Domain from App Link
+        """Detach Domain from Link
 
         This API provides ability to detach App Domain from App Link
 
@@ -1319,7 +1647,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppDomainAttachment]:
-        """Detach App Domain from App Link
+        """Detach Domain from Link
 
         This API provides ability to detach App Domain from App Link
 
@@ -1395,7 +1723,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Detach App Domain from App Link
+        """Detach Domain from Link
 
         This API provides ability to detach App Domain from App Link
 
@@ -1517,6 +1845,297 @@ class ApplicationLinksApi:
 
 
     @validate_call
+    def detach_app_processor_from_app_link(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AppLinkAppProcessorAttachment:
+        """Detach App Processor from App Link
+
+        This API provides ability to detach an App Processor from an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._detach_app_processor_from_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def detach_app_processor_from_app_link_with_http_info(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AppLinkAppProcessorAttachment]:
+        """Detach App Processor from App Link
+
+        This API provides ability to detach an App Processor from an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._detach_app_processor_from_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def detach_app_processor_from_app_link_without_preload_content(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Detach App Processor from App Link
+
+        This API provides ability to detach an App Processor from an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._detach_app_processor_from_app_link_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "AppLinkAppProcessorAttachment",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _detach_app_processor_from_app_link_serialize(
+        self,
+        app_link_id,
+        app_processor_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if app_link_id is not None:
+            _path_params['appLinkId'] = app_link_id
+        if app_processor_id is not None:
+            _path_params['appProcessorId'] = app_processor_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def detach_app_service_from_app_link(
         self,
         app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
@@ -1534,7 +2153,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppServiceAttachment:
-        """Detach App Service from App Link
+        """Detach Service from Link
 
         This API provides ability to detach App Service from App Link
 
@@ -1610,7 +2229,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppServiceAttachment]:
-        """Detach App Service from App Link
+        """Detach Service from Link
 
         This API provides ability to detach App Service from App Link
 
@@ -1686,7 +2305,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Detach App Service from App Link
+        """Detach Service from Link
 
         This API provides ability to detach App Service from App Link
 
@@ -1824,9 +2443,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLink:
-        """Get App Link
+        """Get Link
 
-        This API provides capability to retrieve user's App Link
+        This API provides capability to retrieve user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -1895,9 +2514,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLink]:
-        """Get App Link
+        """Get Link
 
-        This API provides capability to retrieve user's App Link
+        This API provides capability to retrieve user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -1966,9 +2585,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get App Link
+        """Get Link
 
-        This API provides capability to retrieve user's App Link
+        This API provides capability to retrieve user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2098,9 +2717,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppDomainAttachment:
-        """Get attached App Domain for App Link
+        """Get Attached Domain for Link
 
-        This API provides ability to retrieve an App Domain attached to an App Link.
+        This API provides ability to retrieve an App Domain attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2173,9 +2792,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppDomainAttachment]:
-        """Get attached App Domain for App Link
+        """Get Attached Domain for Link
 
-        This API provides ability to retrieve an App Domain attached to an App Link.
+        This API provides ability to retrieve an App Domain attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2248,9 +2867,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Domain for App Link
+        """Get Attached Domain for Link
 
-        This API provides ability to retrieve an App Domain attached to an App Link.
+        This API provides ability to retrieve an App Domain attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2390,9 +3009,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAttachedAppDomains:
-        """Get attached App Domains for App Link
+        """Get Attached Domains for Link
 
-        This API provides capability to retrieve App Domains attached to an App Link.
+        This API provides capability to retrieve App Domains attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2482,9 +3101,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAttachedAppDomains]:
-        """Get attached App Domains for App Link
+        """Get Attached Domains for Link
 
-        This API provides capability to retrieve App Domains attached to an App Link.
+        This API provides capability to retrieve App Domains attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2574,9 +3193,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Domains for App Link
+        """Get Attached Domains for Link
 
-        This API provides capability to retrieve App Domains attached to an App Link.
+        This API provides capability to retrieve App Domains attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2731,6 +3350,656 @@ class ApplicationLinksApi:
 
 
     @validate_call
+    def get_attached_app_processor(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AppLinkAppProcessorAttachment:
+        """Get attached App Processor for App Link
+
+        This API provides ability to get an App Processor attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processor_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAppProcessorAttachment",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_attached_app_processor_with_http_info(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AppLinkAppProcessorAttachment]:
+        """Get attached App Processor for App Link
+
+        This API provides ability to get an App Processor attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processor_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAppProcessorAttachment",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_attached_app_processor_without_preload_content(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_processor_id: Annotated[StrictStr, Field(description="App Processor UUID")],
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get attached App Processor for App Link
+
+        This API provides ability to get an App Processor attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_processor_id: App Processor UUID (required)
+        :type app_processor_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processor_serialize(
+            app_link_id=app_link_id,
+            app_processor_id=app_processor_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAppProcessorAttachment",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_attached_app_processor_serialize(
+        self,
+        app_link_id,
+        app_processor_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if app_link_id is not None:
+            _path_params['appLinkId'] = app_link_id
+        if app_processor_id is not None:
+            _path_params['appProcessorId'] = app_processor_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/fabric/v4/appLinks/{appLinkId}/appProcessors/{appProcessorId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_attached_app_processors_by_app_link_id(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        attachment_status: Annotated[Optional[List[AppLinkAttachState]], Field(description="Filter attached App Processors by one or more attachment lifecycle states.")] = None,
+        order: Annotated[Optional[AttachedAppProcessorOrder], Field(description="Sort order for attached App Processors.")] = None,
+        style: Annotated[Optional[Style], Field(description="Detail level of the response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AppLinkAttachedAppProcessors:
+        """Get attached Processors for Link
+
+        This API provides capability to retrieve App Processors attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param attachment_status: Filter attached App Processors by one or more attachment lifecycle states.
+        :type attachment_status: List[AppLinkAttachState]
+        :param order: Sort order for attached App Processors.
+        :type order: AttachedAppProcessorOrder
+        :param style: Detail level of the response.
+        :type style: Style
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processors_by_app_link_id_serialize(
+            app_link_id=app_link_id,
+            offset=offset,
+            limit=limit,
+            attachment_status=attachment_status,
+            order=order,
+            style=style,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachedAppProcessors",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_attached_app_processors_by_app_link_id_with_http_info(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        attachment_status: Annotated[Optional[List[AppLinkAttachState]], Field(description="Filter attached App Processors by one or more attachment lifecycle states.")] = None,
+        order: Annotated[Optional[AttachedAppProcessorOrder], Field(description="Sort order for attached App Processors.")] = None,
+        style: Annotated[Optional[Style], Field(description="Detail level of the response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AppLinkAttachedAppProcessors]:
+        """Get attached Processors for Link
+
+        This API provides capability to retrieve App Processors attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param attachment_status: Filter attached App Processors by one or more attachment lifecycle states.
+        :type attachment_status: List[AppLinkAttachState]
+        :param order: Sort order for attached App Processors.
+        :type order: AttachedAppProcessorOrder
+        :param style: Detail level of the response.
+        :type style: Style
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processors_by_app_link_id_serialize(
+            app_link_id=app_link_id,
+            offset=offset,
+            limit=limit,
+            attachment_status=attachment_status,
+            order=order,
+            style=style,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachedAppProcessors",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_attached_app_processors_by_app_link_id_without_preload_content(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
+        attachment_status: Annotated[Optional[List[AppLinkAttachState]], Field(description="Filter attached App Processors by one or more attachment lifecycle states.")] = None,
+        order: Annotated[Optional[AttachedAppProcessorOrder], Field(description="Sort order for attached App Processors.")] = None,
+        style: Annotated[Optional[Style], Field(description="Detail level of the response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get attached Processors for Link
+
+        This API provides capability to retrieve App Processors attached to an App Link.
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param offset: offset
+        :type offset: int
+        :param limit: number of records to fetch
+        :type limit: int
+        :param attachment_status: Filter attached App Processors by one or more attachment lifecycle states.
+        :type attachment_status: List[AppLinkAttachState]
+        :param order: Sort order for attached App Processors.
+        :type order: AttachedAppProcessorOrder
+        :param style: Detail level of the response.
+        :type style: Style
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_attached_app_processors_by_app_link_id_serialize(
+            app_link_id=app_link_id,
+            offset=offset,
+            limit=limit,
+            attachment_status=attachment_status,
+            order=order,
+            style=style,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachedAppProcessors",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '404': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_attached_app_processors_by_app_link_id_serialize(
+        self,
+        app_link_id,
+        offset,
+        limit,
+        attachment_status,
+        order,
+        style,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'attachmentStatus': 'csv',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if app_link_id is not None:
+            _path_params['appLinkId'] = app_link_id
+        # process the query parameters
+        if offset is not None:
+            
+            _query_params.append(('offset', offset))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
+            
+        if attachment_status is not None:
+            
+            _query_params.append(('attachmentStatus', attachment_status))
+            
+        if order is not None:
+            
+            _query_params.append(('order', order.value))
+            
+        if style is not None:
+            
+            _query_params.append(('style', style.value))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/fabric/v4/appLinks/{appLinkId}/appProcessors',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def get_attached_app_service_by_uuid(
         self,
         app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
@@ -2748,9 +4017,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppServiceAttachment:
-        """Get attached App Service for App Link
+        """Get Attached Service for Link
 
-        This API provides ability to retrieve an App Service attached to an App Link.
+        This API provides ability to retrieve an App Service attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2823,9 +4092,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppServiceAttachment]:
-        """Get attached App Service for App Link
+        """Get Attached Service for Link
 
-        This API provides ability to retrieve an App Service attached to an App Link.
+        This API provides ability to retrieve an App Service attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -2898,9 +4167,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Service for App Link
+        """Get Attached Service for Link
 
-        This API provides ability to retrieve an App Service attached to an App Link.
+        This API provides ability to retrieve an App Service attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -3040,9 +4309,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAttachedAppServices:
-        """Get attached App Services for App Link
+        """Get Attached Services for Link
 
-        This API provides capability to retrieve App Services attached to an App Link.
+        This API provides capability to retrieve App Services attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -3132,9 +4401,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAttachedAppServices]:
-        """Get attached App Services for App Link
+        """Get Attached Services for Link
 
-        This API provides capability to retrieve App Services attached to an App Link.
+        This API provides capability to retrieve App Services attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -3224,9 +4493,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Services for App Link
+        """Get Attached Services for Link
 
-        This API provides capability to retrieve App Services attached to an App Link.
+        This API provides capability to retrieve App Services attached to an App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -3397,7 +4666,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkSearchResponse:
-        """Search App Links
+        """Search Links
 
         The API provides capability to get list of user's App Links using search criteria, including optional filtering, pagination and sorting
 
@@ -3469,7 +4738,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkSearchResponse]:
-        """Search App Links
+        """Search Links
 
         The API provides capability to get list of user's App Links using search criteria, including optional filtering, pagination and sorting
 
@@ -3541,7 +4810,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search App Links
+        """Search Links
 
         The API provides capability to get list of user's App Links using search criteria, including optional filtering, pagination and sorting
 
@@ -3687,7 +4956,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAttachDomainSearchResponse:
-        """Search attached App Domain to App Link
+        """Search Attached Domains for Link
 
         The API provides capability to get list of user's attached App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -3763,7 +5032,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAttachDomainSearchResponse]:
-        """Search attached App Domain to App Link
+        """Search Attached Domains for Link
 
         The API provides capability to get list of user's attached App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -3839,7 +5108,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search attached App Domain to App Link
+        """Search Attached Domains for Link
 
         The API provides capability to get list of user's attached App Domains using search criteria, including optional filtering, pagination and sorting
 
@@ -3974,6 +5243,310 @@ class ApplicationLinksApi:
 
 
     @validate_call
+    def search_attached_app_processors(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AppLinkAttachProcessorSearchResponse:
+        """Search attached Processors to Link
+
+        The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_link_attach_processor_search_request: (required)
+        :type app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_attached_app_processors_serialize(
+            app_link_id=app_link_id,
+            app_link_attach_processor_search_request=app_link_attach_processor_search_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachProcessorSearchResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def search_attached_app_processors_with_http_info(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AppLinkAttachProcessorSearchResponse]:
+        """Search attached Processors to Link
+
+        The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_link_attach_processor_search_request: (required)
+        :type app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_attached_app_processors_serialize(
+            app_link_id=app_link_id,
+            app_link_attach_processor_search_request=app_link_attach_processor_search_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachProcessorSearchResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def search_attached_app_processors_without_preload_content(
+        self,
+        app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
+        app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Search attached Processors to Link
+
+        The API provides capability to get list of App Processors attached to an App Link using search criteria, including optional filtering, pagination and sorting
+
+        :param app_link_id: App Link UUID (required)
+        :type app_link_id: str
+        :param app_link_attach_processor_search_request: (required)
+        :type app_link_attach_processor_search_request: AppLinkAttachProcessorSearchRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._search_attached_app_processors_serialize(
+            app_link_id=app_link_id,
+            app_link_attach_processor_search_request=app_link_attach_processor_search_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AppLinkAttachProcessorSearchResponse",
+            '400': "List[Error]",
+            '401': "List[Error]",
+            '403': "List[Error]",
+            '415': "List[Error]",
+            '500': "List[Error]",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _search_attached_app_processors_serialize(
+        self,
+        app_link_id,
+        app_link_attach_processor_search_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if app_link_id is not None:
+            _path_params['appLinkId'] = app_link_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if app_link_attach_processor_search_request is not None:
+            _body_params = app_link_attach_processor_search_request
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/fabric/v4/appLinks/{appLinkId}/appProcessors/search',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def search_attached_app_services(
         self,
         app_link_id: Annotated[StrictStr, Field(description="App Link UUID")],
@@ -3991,7 +5564,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAttachServiceSearchResponse:
-        """Search attached App Service to App Link
+        """Search Attached Services for Link
 
         The API provides capability to get list of user's attached App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -4067,7 +5640,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAttachServiceSearchResponse]:
-        """Search attached App Service to App Link
+        """Search Attached Services for Link
 
         The API provides capability to get list of user's attached App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -4143,7 +5716,7 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search attached App Service to App Link
+        """Search Attached Services for Link
 
         The API provides capability to get list of user's attached App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -4295,9 +5868,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLink:
-        """Update App Link
+        """Update Link
 
-        This API provides capability to update user's App Link
+        This API provides capability to update user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -4372,9 +5945,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLink]:
-        """Update App Link
+        """Update Link
 
-        This API provides capability to update user's App Link
+        This API provides capability to update user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -4449,9 +6022,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update App Link
+        """Update Link
 
-        This API provides capability to update user's App Link
+        This API provides capability to update user's Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -4604,9 +6177,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppLinkAppServiceAttachment:
-        """Update App Service attachment to App Link
+        """Update Service Attachment for Link
 
-        This API provides ability to update the App Service attachment to App Link.
+        This API provides ability to update the App Service attachment to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -4685,9 +6258,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppLinkAppServiceAttachment]:
-        """Update App Service attachment to App Link
+        """Update Service Attachment for Link
 
-        This API provides ability to update the App Service attachment to App Link.
+        This API provides ability to update the App Service attachment to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str
@@ -4766,9 +6339,9 @@ class ApplicationLinksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update App Service attachment to App Link
+        """Update Service Attachment for Link
 
-        This API provides ability to update the App Service attachment to App Link.
+        This API provides ability to update the App Service attachment to App Link
 
         :param app_link_id: App Link UUID (required)
         :type app_link_id: str

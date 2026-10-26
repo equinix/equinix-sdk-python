@@ -368,7 +368,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ConnectionAction:
-        """Connection Actions
+        """Create Connection Action
 
         This API provides capability to accept/reject user's virtual connection
 
@@ -443,7 +443,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ConnectionAction]:
-        """Connection Actions
+        """Create Connection Action
 
         This API provides capability to accept/reject user's virtual connection
 
@@ -518,7 +518,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Connection Actions
+        """Create Connection Action
 
         This API provides capability to accept/reject user's virtual connection
 
@@ -668,7 +668,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Connection:
-        """Delete by ID
+        """Delete Connection by ID
 
         Delete Connection by ID
 
@@ -740,7 +740,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Connection]:
-        """Delete by ID
+        """Delete Connection by ID
 
         Delete Connection by ID
 
@@ -812,7 +812,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete by ID
+        """Delete Connection by ID
 
         Delete Connection by ID
 
@@ -1231,7 +1231,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ConnectionSearchResponse:
-        """Search connections
+        """Search Connections
 
         The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting
 
@@ -1302,7 +1302,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ConnectionSearchResponse]:
-        """Search connections
+        """Search Connections
 
         The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting
 
@@ -1373,7 +1373,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search connections
+        """Search Connections
 
         The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting
 
@@ -1519,7 +1519,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Connection:
-        """Update by ID
+        """Update Connection by ID
 
         Update Connection by ID
 
@@ -1599,7 +1599,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Connection]:
-        """Update by ID
+        """Update Connection by ID
 
         Update Connection by ID
 
@@ -1679,7 +1679,7 @@ class ConnectionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update by ID
+        """Update Connection by ID
 
         Update Connection by ID
 

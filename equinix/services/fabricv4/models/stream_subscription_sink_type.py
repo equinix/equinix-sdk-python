@@ -23,6 +23,7 @@ class StreamSubscriptionSinkType(str, Enum):
     allowed enum values
     """
     DATADOG = 'DATADOG'
+    DYNATRACE = 'DYNATRACE'
     GOOGLE_PUBSUB = 'GOOGLE_PUBSUB'
     PAGERDUTY = 'PAGERDUTY'
     SERVICENOW = 'SERVICENOW'

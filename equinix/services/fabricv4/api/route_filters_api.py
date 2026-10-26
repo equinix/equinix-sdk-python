@@ -386,7 +386,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFiltersData:
-        """Create Route Filters
+        """Create Route Filter
 
         This API provides capability to create a Route Filter
 
@@ -459,7 +459,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFiltersData]:
-        """Create Route Filters
+        """Create Route Filter
 
         This API provides capability to create a Route Filter
 
@@ -532,7 +532,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Route Filters
+        """Create Route Filter
 
         This API provides capability to create a Route Filter
 
@@ -1545,7 +1545,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetAllConnectionRouteFiltersResponse:
-        """Get All Route Filters
+        """Get Connection Route Filters
 
         This API provides capability to view all Route Filters attached to a Connection
 
@@ -1618,7 +1618,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetAllConnectionRouteFiltersResponse]:
-        """Get All Route Filters
+        """Get Connection Route Filters
 
         This API provides capability to view all Route Filters attached to a Connection
 
@@ -1691,7 +1691,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Route Filters
+        """Get Connection Route Filters
 
         This API provides capability to view all Route Filters attached to a Connection
 
@@ -1824,7 +1824,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFiltersData:
-        """Get Route Filter By UUID
+        """Get Route Filter by ID
 
         This API provides capability to view a Route Filter by UUID
 
@@ -1897,7 +1897,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFiltersData]:
-        """Get Route Filter By UUID
+        """Get Route Filter by ID
 
         This API provides capability to view a Route Filter by UUID
 
@@ -1970,7 +1970,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Route Filter By UUID
+        """Get Route Filter by ID
 
         This API provides capability to view a Route Filter by UUID
 
@@ -2396,7 +2396,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFilterChangeDataResponse:
-        """Get All Changes
+        """Get Route Filter Changes
 
         This API provides capability to retrieve all of a Route Filter's Changes
 
@@ -2476,7 +2476,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFilterChangeDataResponse]:
-        """Get All Changes
+        """Get Route Filter Changes
 
         This API provides capability to retrieve all of a Route Filter's Changes
 
@@ -2556,7 +2556,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Changes
+        """Get Route Filter Changes
 
         This API provides capability to retrieve all of a Route Filter's Changes
 
@@ -2984,7 +2984,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteFiltersData:
-        """Patch Route Filter
+        """Update Route Filter
 
         This API provides capability to partially update a Route Filter
 
@@ -3061,7 +3061,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteFiltersData]:
-        """Patch Route Filter
+        """Update Route Filter
 
         This API provides capability to partially update a Route Filter
 
@@ -3138,7 +3138,7 @@ class RouteFiltersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Route Filter
+        """Update Route Filter
 
         This API provides capability to partially update a Route Filter
 

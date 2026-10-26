@@ -10,7 +10,9 @@ Maintenance lifecycle state
 
 * `COMPLETED` (value: `'COMPLETED'`)
 
-* `DEFERRED` (value: `'DEFERRED'`)
+* `CANCELLED` (value: `'CANCELLED'`)
+
+* `POSTPONED` (value: `'POSTPONED'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

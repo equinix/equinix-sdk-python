@@ -6,12 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_to_lag**](PortsApi.md#add_to_lag) | **POST** /fabric/v4/ports/{portId}/physicalPorts/bulk | Add to Lag
 [**create_port**](PortsApi.md#create_port) | **POST** /fabric/v4/ports | Create Port
-[**delete_port**](PortsApi.md#delete_port) | **DELETE** /fabric/v4/ports/{portId} | Delete a single port
-[**get_port_by_uuid**](PortsApi.md#get_port_by_uuid) | **GET** /fabric/v4/ports/{portId} | Get Port by uuid
+[**delete_port**](PortsApi.md#delete_port) | **DELETE** /fabric/v4/ports/{portId} | Delete Port
+[**get_port_by_uuid**](PortsApi.md#get_port_by_uuid) | **GET** /fabric/v4/ports/{portId} | Get Port by ID
 [**get_ports**](PortsApi.md#get_ports) | **GET** /fabric/v4/ports | Get All Ports
 [**get_vlans**](PortsApi.md#get_vlans) | **GET** /fabric/v4/ports/{portUuid}/linkProtocols | Get Vlans
-[**search_ports**](PortsApi.md#search_ports) | **POST** /fabric/v4/ports/search | Search ports
-[**update_port_by_uuid**](PortsApi.md#update_port_by_uuid) | **PATCH** /fabric/v4/ports/{portId} | Update by UUID
+[**search_ports**](PortsApi.md#search_ports) | **POST** /fabric/v4/ports/search | Search Ports
+[**update_port_by_uuid**](PortsApi.md#update_port_by_uuid) | **PATCH** /fabric/v4/ports/{portId} | Update Port by ID
 
 
 # **add_to_lag**
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 Create Port
 
-Creates Equinix Fabric™ Port.
+Creates Equinix Fabric™ Port
 
 ### Example
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 # **delete_port**
 > Port delete_port(port_id, dry_run=dry_run)
 
-Delete a single port
+Delete Port
 
 The API provides capability to delete a single port
 
@@ -225,7 +225,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
-        # Delete a single port
+        # Delete Port
         api_response = api_instance.delete_port(port_id, dry_run=dry_run)
         print("The response of PortsApi->delete_port:\n")
         pprint(api_response)
@@ -271,9 +271,9 @@ Name | Type | Description  | Notes
 # **get_port_by_uuid**
 > Port get_port_by_uuid(port_id)
 
-Get Port by uuid
+Get Port by ID
 
-Get Port By uuid returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection.
+Get Port by ID returns details of assigned and available Equinix Fabric port for the specified user credentials. The metro code attribute in the response shows the origin of the proposed connection
 
 ### Example
 
@@ -308,7 +308,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     port_id = 'port_id_example' # str | Port UUID
 
     try:
-        # Get Port by uuid
+        # Get Port by ID
         api_response = api_instance.get_port_by_uuid(port_id)
         print("The response of PortsApi->get_port_by_uuid:\n")
         pprint(api_response)
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 Get All Ports
 
-Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection.
+Get All Ports returns details of all assigned and available ports for the specified user credentials. The metro attribute in the response shows the origin of the proposed connection
 
 ### Example
 
@@ -432,11 +432,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_vlans**
-> LinkProtocolGetResponse get_vlans(port_uuid)
+> LinkProtocolGetResponse get_vlans(port_uuid, offset=offset, limit=limit)
 
 Get Vlans
 
-The API provides capability to retrieve Vlans for a Port.
+The API provides capability to retrieve Vlans for a Port
 
 ### Example
 
@@ -469,10 +469,12 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
     port_uuid = 'port_uuid_example' # str | Port UUID
+    offset = 1 # int | offset (optional)
+    limit = 10 # int | number of records to fetch (optional)
 
     try:
         # Get Vlans
-        api_response = api_instance.get_vlans(port_uuid)
+        api_response = api_instance.get_vlans(port_uuid, offset=offset, limit=limit)
         print("The response of PortsApi->get_vlans:\n")
         pprint(api_response)
     except Exception as e:
@@ -487,6 +489,8 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **port_uuid** | **str**| Port UUID | 
+ **offset** | **int**| offset | [optional] 
+ **limit** | **int**| number of records to fetch | [optional] 
 
 ### Return type
 
@@ -514,7 +518,7 @@ Name | Type | Description  | Notes
 # **search_ports**
 > AllPortsResponse search_ports(port_v4_search_request)
 
-Search ports
+Search Ports
 
 The API provides capability to get list of user's virtual ports using search criteria, including optional filtering, pagination and sorting
 
@@ -552,7 +556,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     port_v4_search_request = equinix.services.fabricv4.PortV4SearchRequest() # PortV4SearchRequest | 
 
     try:
-        # Search ports
+        # Search Ports
         api_response = api_instance.search_ports(port_v4_search_request)
         print("The response of PortsApi->search_ports:\n")
         pprint(api_response)
@@ -597,7 +601,7 @@ Name | Type | Description  | Notes
 # **update_port_by_uuid**
 > AllPortsResponse update_port_by_uuid(port_id, port_change_operation, dry_run=dry_run)
 
-Update by UUID
+Update Port by ID
 
 Update Port by UUID
 
@@ -637,7 +641,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
-        # Update by UUID
+        # Update Port by ID
         api_response = api_instance.update_port_by_uuid(port_id, port_change_operation, dry_run=dry_run)
         print("The response of PortsApi->update_port_by_uuid:\n")
         pprint(api_response)

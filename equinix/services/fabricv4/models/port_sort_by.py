@@ -37,6 +37,7 @@ class PortSortBy(str, Enum):
     SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME = '/changeLog/createdDateTime'
     SLASH_BANDWIDTH = '/bandwidth'
     SLASH_SERVICE_CODE = '/serviceCode'
+    SLASH_OPERATION_SLASH_MAINTENANCE_STATUS = '/operation/maintenanceStatus'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

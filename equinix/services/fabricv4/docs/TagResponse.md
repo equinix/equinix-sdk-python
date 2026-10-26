@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **state** | [**TagResponseState**](TagResponseState.md) |  | [optional] 
 **notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) |  | [optional] 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 
+**weight** | **int** |  | [optional] 
 
 ## Example
 

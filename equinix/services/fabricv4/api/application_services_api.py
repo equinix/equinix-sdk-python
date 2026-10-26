@@ -65,9 +65,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppService:
-        """Create App Service
+        """Create Service
 
-        This API provides capability to create user's App Service
+        This API provides capability to create user's Service
 
         :param app_service_post_request: (required)
         :type app_service_post_request: AppServicePostRequest
@@ -137,9 +137,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppService]:
-        """Create App Service
+        """Create Service
 
-        This API provides capability to create user's App Service
+        This API provides capability to create user's Service
 
         :param app_service_post_request: (required)
         :type app_service_post_request: AppServicePostRequest
@@ -209,9 +209,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create App Service
+        """Create Service
 
-        This API provides capability to create user's App Service
+        This API provides capability to create user's Service
 
         :param app_service_post_request: (required)
         :type app_service_post_request: AppServicePostRequest
@@ -354,9 +354,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppService:
-        """Delete App Service
+        """Delete Service
 
-        This API provides capability to delete user's App Service
+        This API provides capability to delete user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -426,9 +426,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppService]:
-        """Delete App Service
+        """Delete Service
 
-        This API provides capability to delete user's App Service
+        This API provides capability to delete user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -498,9 +498,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete App Service
+        """Delete Service
 
-        This API provides capability to delete user's App Service
+        This API provides capability to delete user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -630,9 +630,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppService:
-        """Get App Service
+        """Get Service
 
-        This API provides capability to retrieve user's App Service
+        This API provides capability to retrieve user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -701,9 +701,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppService]:
-        """Get App Service
+        """Get Service
 
-        This API provides capability to retrieve user's App Service
+        This API provides capability to retrieve user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -772,9 +772,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get App Service
+        """Get Service
 
-        This API provides capability to retrieve user's App Service
+        This API provides capability to retrieve user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -908,9 +908,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppServiceAttachedAppLinks:
-        """Get attached App Links for App Service
+        """Get Attached Links for Service
 
-        This API provides capability to retrieve App Links attached to an App Service.
+        This API provides capability to retrieve App Links attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1000,9 +1000,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppServiceAttachedAppLinks]:
-        """Get attached App Links for App Service
+        """Get Attached Links for Service
 
-        This API provides capability to retrieve App Links attached to an App Service.
+        This API provides capability to retrieve App Links attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1092,9 +1092,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Links for App Service
+        """Get Attached Links for Service
 
-        This API provides capability to retrieve App Links attached to an App Service.
+        This API provides capability to retrieve App Links attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1270,9 +1270,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppServiceAttachedAppSubscriptions:
-        """Get attached App Subscriptions for App Service
+        """Get Attached Subscriptions for Service
 
-        This API provides capability to retrieve App Subscriptions attached to an App Service.
+        This API provides capability to retrieve App Subscriptions attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1362,9 +1362,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppServiceAttachedAppSubscriptions]:
-        """Get attached App Subscriptions for App Service
+        """Get Attached Subscriptions for Service
 
-        This API provides capability to retrieve App Subscriptions attached to an App Service.
+        This API provides capability to retrieve App Subscriptions attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1454,9 +1454,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get attached App Subscriptions for App Service
+        """Get Attached Subscriptions for Service
 
-        This API provides capability to retrieve App Subscriptions attached to an App Service.
+        This API provides capability to retrieve App Subscriptions attached to an App Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1627,7 +1627,7 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppServiceSearchResponse:
-        """Search App Services
+        """Search Services
 
         The API provides capability to get list of user's App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -1699,7 +1699,7 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppServiceSearchResponse]:
-        """Search App Services
+        """Search Services
 
         The API provides capability to get list of user's App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -1771,7 +1771,7 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search App Services
+        """Search Services
 
         The API provides capability to get list of user's App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -1917,9 +1917,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppServiceAttachedAppSubscriptionSearchResponse:
-        """Search attached App Subscriptions
+        """Search Attached Subscriptions
 
-        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -1993,9 +1993,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppServiceAttachedAppSubscriptionSearchResponse]:
-        """Search attached App Subscriptions
+        """Search Attached Subscriptions
 
-        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -2069,9 +2069,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search attached App Subscriptions
+        """Search Attached Subscriptions
 
-        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+        The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -2221,9 +2221,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppService:
-        """Update App Service
+        """Update Service
 
-        This API provides capability to update user's App Service
+        This API provides capability to update user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -2298,9 +2298,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppService]:
-        """Update App Service
+        """Update Service
 
-        This API provides capability to update user's App Service
+        This API provides capability to update user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str
@@ -2375,9 +2375,9 @@ class ApplicationServicesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update App Service
+        """Update Service
 
-        This API provides capability to update user's App Service
+        This API provides capability to update user's Service
 
         :param app_service_id: App Service UUID (required)
         :type app_service_id: str

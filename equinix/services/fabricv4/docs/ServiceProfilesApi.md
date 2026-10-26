@@ -4,25 +4,25 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_service_profile**](ServiceProfilesApi.md#create_service_profile) | **POST** /fabric/v4/serviceProfiles | Create Profile
-[**create_service_profile_action**](ServiceProfilesApi.md#create_service_profile_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Profile Actions
-[**delete_service_profile_by_uuid**](ServiceProfilesApi.md#delete_service_profile_by_uuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Profile
-[**get_service_profile_by_uuid**](ServiceProfilesApi.md#get_service_profile_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Profile
-[**get_service_profile_environments_by_uuid**](ServiceProfilesApi.md#get_service_profile_environments_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Profile Environments
-[**get_service_profile_metros_by_uuid**](ServiceProfilesApi.md#get_service_profile_metros_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Profile Metros
-[**get_service_profiles**](ServiceProfilesApi.md#get_service_profiles) | **GET** /fabric/v4/serviceProfiles | Get all Profiles
-[**put_service_profile_by_uuid**](ServiceProfilesApi.md#put_service_profile_by_uuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Profile
-[**search_service_profiles**](ServiceProfilesApi.md#search_service_profiles) | **POST** /fabric/v4/serviceProfiles/search | Profile Search
-[**service_profile_environment_action**](ServiceProfilesApi.md#service_profile_environment_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Service Profile Environment Actions
-[**update_service_profile_by_uuid**](ServiceProfilesApi.md#update_service_profile_by_uuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Profile
+[**create_service_profile**](ServiceProfilesApi.md#create_service_profile) | **POST** /fabric/v4/serviceProfiles | Create Service Profile
+[**create_service_profile_action**](ServiceProfilesApi.md#create_service_profile_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/actions | Create Service Profile Action
+[**delete_service_profile_by_uuid**](ServiceProfilesApi.md#delete_service_profile_by_uuid) | **DELETE** /fabric/v4/serviceProfiles/{serviceProfileId} | Delete Service Profile
+[**get_service_profile_by_uuid**](ServiceProfilesApi.md#get_service_profile_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId} | Get Service Profile
+[**get_service_profile_environments_by_uuid**](ServiceProfilesApi.md#get_service_profile_environments_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/environments | Get Service Profile Environments
+[**get_service_profile_metros_by_uuid**](ServiceProfilesApi.md#get_service_profile_metros_by_uuid) | **GET** /fabric/v4/serviceProfiles/{serviceProfileId}/metros | Get Service Profile Metros
+[**list_service_profiles**](ServiceProfilesApi.md#list_service_profiles) | **GET** /fabric/v4/serviceProfiles | List Service Profiles
+[**put_service_profile_by_uuid**](ServiceProfilesApi.md#put_service_profile_by_uuid) | **PUT** /fabric/v4/serviceProfiles/{serviceProfileId} | Replace Service Profile
+[**search_service_profiles**](ServiceProfilesApi.md#search_service_profiles) | **POST** /fabric/v4/serviceProfiles/search | Search Service Profiles
+[**service_profile_environment_action**](ServiceProfilesApi.md#service_profile_environment_action) | **POST** /fabric/v4/serviceProfiles/{serviceProfileId}/environments/{environmentId}/actions | Create Service Profile Environment Action
+[**update_service_profile_by_uuid**](ServiceProfilesApi.md#update_service_profile_by_uuid) | **PATCH** /fabric/v4/serviceProfiles/{serviceProfileId} | Update Service Profile
 
 
 # **create_service_profile**
 > ServiceProfile create_service_profile(service_profile_request)
 
-Create Profile
+Create Service Profile
 
-Create Service Profile creates Equinix Fabric™ Service Profile.
+Create Service Profile creates Equinix Fabric™ Service Profile
 
 ### Example
 
@@ -58,7 +58,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_profile_request = equinix.services.fabricv4.ServiceProfileRequest() # ServiceProfileRequest | 
 
     try:
-        # Create Profile
+        # Create Service Profile
         api_response = api_instance.create_service_profile(service_profile_request)
         print("The response of ServiceProfilesApi->create_service_profile:\n")
         pprint(api_response)
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 # **create_service_profile_action**
 > ServiceProfileActionResponse create_service_profile_action(service_profile_id, service_profile_action_request)
 
-Profile Actions
+Create Service Profile Action
 
 This API provides capability to accept/reject service profile update requests
 
@@ -142,7 +142,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_profile_action_request = equinix.services.fabricv4.ServiceProfileActionRequest() # ServiceProfileActionRequest | 
 
     try:
-        # Profile Actions
+        # Create Service Profile Action
         api_response = api_instance.create_service_profile_action(service_profile_id, service_profile_action_request)
         print("The response of ServiceProfilesApi->create_service_profile_action:\n")
         pprint(api_response)
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 # **delete_service_profile_by_uuid**
 > ServiceProfile delete_service_profile_by_uuid(service_profile_id)
 
-Delete Profile
+Delete Service Profile
 
 delete Service Profile by UUID
 
@@ -226,7 +226,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
 
     try:
-        # Delete Profile
+        # Delete Service Profile
         api_response = api_instance.delete_service_profile_by_uuid(service_profile_id)
         print("The response of ServiceProfilesApi->delete_service_profile_by_uuid:\n")
         pprint(api_response)
@@ -272,9 +272,9 @@ Name | Type | Description  | Notes
 # **get_service_profile_by_uuid**
 > ServiceProfile get_service_profile_by_uuid(service_profile_id, view_point=view_point)
 
-Get Profile
+Get Service Profile
 
-Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.
+Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view
 
 ### Example
 
@@ -282,7 +282,7 @@ Get service profile by UUID. View Point parameter if set to zSide will give sell
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.get_service_profiles_view_point_parameter import GetServiceProfilesViewPointParameter
+from equinix.services.fabricv4.models.list_service_profiles_view_point_parameter import ListServiceProfilesViewPointParameter
 from equinix.services.fabricv4.models.service_profile import ServiceProfile
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
@@ -308,10 +308,10 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
-    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
+    view_point = aSide # ListServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
-        # Get Profile
+        # Get Service Profile
         api_response = api_instance.get_service_profile_by_uuid(service_profile_id, view_point=view_point)
         print("The response of ServiceProfilesApi->get_service_profile_by_uuid:\n")
         pprint(api_response)
@@ -327,7 +327,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_profile_id** | **str**| Service Profile UUID | 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
+ **view_point** | [**ListServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 
@@ -357,9 +357,9 @@ Name | Type | Description  | Notes
 # **get_service_profile_environments_by_uuid**
 > ProviderEnvironments get_service_profile_environments_by_uuid(service_profile_id, offset=offset, limit=limit)
 
-Get Profile Environments
+Get Service Profile Environments
 
-Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>.
+Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>
 
 ### Example
 
@@ -396,7 +396,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get Profile Environments
+        # Get Service Profile Environments
         api_response = api_instance.get_service_profile_environments_by_uuid(service_profile_id, offset=offset, limit=limit)
         print("The response of ServiceProfilesApi->get_service_profile_environments_by_uuid:\n")
         pprint(api_response)
@@ -443,9 +443,9 @@ Name | Type | Description  | Notes
 # **get_service_profile_metros_by_uuid**
 > ServiceMetros get_service_profile_metros_by_uuid(service_profile_id, offset=offset, limit=limit)
 
-Get Profile Metros
+Get Service Profile Metros
 
-Get service profile metros by UUID.
+Get service profile metros by UUID
 
 ### Example
 
@@ -482,7 +482,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get Profile Metros
+        # Get Service Profile Metros
         api_response = api_instance.get_service_profile_metros_by_uuid(service_profile_id, offset=offset, limit=limit)
         print("The response of ServiceProfilesApi->get_service_profile_metros_by_uuid:\n")
         pprint(api_response)
@@ -526,12 +526,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_profiles**
-> ServiceProfiles get_service_profiles(offset=offset, limit=limit, view_point=view_point)
+# **list_service_profiles**
+> ServiceProfiles list_service_profiles(offset=offset, limit=limit, view_point=view_point)
 
-Get all Profiles
+List Service Profiles
 
-The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
 
 ### Example
 
@@ -539,7 +539,7 @@ The API request returns all Equinix Fabric Service Profiles in accordance with t
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.get_service_profiles_view_point_parameter import GetServiceProfilesViewPointParameter
+from equinix.services.fabricv4.models.list_service_profiles_view_point_parameter import ListServiceProfilesViewPointParameter
 from equinix.services.fabricv4.models.service_profiles import ServiceProfiles
 from equinix.services.fabricv4.rest import ApiException
 from pprint import pprint
@@ -566,15 +566,15 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
-    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
+    view_point = aSide # ListServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
-        # Get all Profiles
-        api_response = api_instance.get_service_profiles(offset=offset, limit=limit, view_point=view_point)
-        print("The response of ServiceProfilesApi->get_service_profiles:\n")
+        # List Service Profiles
+        api_response = api_instance.list_service_profiles(offset=offset, limit=limit, view_point=view_point)
+        print("The response of ServiceProfilesApi->list_service_profiles:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ServiceProfilesApi->get_service_profiles: %s\n" % e)
+        print("Exception when calling ServiceProfilesApi->list_service_profiles: %s\n" % e)
 ```
 
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **int**| offset | [optional] 
  **limit** | **int**| number of records to fetch | [optional] 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
+ **view_point** | [**ListServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 # **put_service_profile_by_uuid**
 > ServiceProfile put_service_profile_by_uuid(service_profile_id, if_match, service_profile_request)
 
-Replace Profile
+Replace Service Profile
 
 This API request replaces a service profile definition
 
@@ -656,7 +656,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_profile_request = equinix.services.fabricv4.ServiceProfileRequest() # ServiceProfileRequest | 
 
     try:
-        # Replace Profile
+        # Replace Service Profile
         api_response = api_instance.put_service_profile_by_uuid(service_profile_id, if_match, service_profile_request)
         print("The response of ServiceProfilesApi->put_service_profile_by_uuid:\n")
         pprint(api_response)
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 # **search_service_profiles**
 > ServiceProfiles search_service_profiles(service_profile_search_request, view_point=view_point)
 
-Profile Search
+Search Service Profiles
 
 Search service profiles by search criteria
 
@@ -714,7 +714,7 @@ Search service profiles by search criteria
 
 ```python
 import equinix.services.fabricv4
-from equinix.services.fabricv4.models.get_service_profiles_view_point_parameter import GetServiceProfilesViewPointParameter
+from equinix.services.fabricv4.models.list_service_profiles_view_point_parameter import ListServiceProfilesViewPointParameter
 from equinix.services.fabricv4.models.service_profile_search_request import ServiceProfileSearchRequest
 from equinix.services.fabricv4.models.service_profiles import ServiceProfiles
 from equinix.services.fabricv4.rest import ApiException
@@ -741,10 +741,10 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_search_request = equinix.services.fabricv4.ServiceProfileSearchRequest() # ServiceProfileSearchRequest | 
-    view_point = aSide # GetServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
+    view_point = aSide # ListServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
-        # Profile Search
+        # Search Service Profiles
         api_response = api_instance.search_service_profiles(service_profile_search_request, view_point=view_point)
         print("The response of ServiceProfilesApi->search_service_profiles:\n")
         pprint(api_response)
@@ -760,7 +760,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_profile_search_request** | [**ServiceProfileSearchRequest**](ServiceProfileSearchRequest.md)|  | 
- **view_point** | [**GetServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
+ **view_point** | [**ListServiceProfilesViewPointParameter**](.md)| flips view between buyer and seller representation | [optional] [default to aSide]
 
 ### Return type
 
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 # **service_profile_environment_action**
 > EnvironmentActionResponse service_profile_environment_action(service_profile_id, environment_id, environment_action_request)
 
-Service Profile Environment Actions
+Create Service Profile Environment Action
 
 This API provides capability to perform actions on a service profile environment, such as validating an activation key.<sup color='red'>Beta</sup></font>
 
@@ -829,7 +829,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     environment_action_request = {"type":"VALIDATE_ACTIVATION_KEY","keyDetails":{"value":"key_here"}} # EnvironmentActionRequest | 
 
     try:
-        # Service Profile Environment Actions
+        # Create Service Profile Environment Action
         api_response = api_instance.service_profile_environment_action(service_profile_id, environment_id, environment_action_request)
         print("The response of ServiceProfilesApi->service_profile_environment_action:\n")
         pprint(api_response)
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 # **update_service_profile_by_uuid**
 > ServiceProfile update_service_profile_by_uuid(service_profile_id, service_profile_update_operation)
 
-Update Profile
+Update Service Profile
 
 Update Service Profile by UUID
 
@@ -915,7 +915,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     service_profile_update_operation = [equinix.services.fabricv4.ServiceProfileUpdateOperation()] # List[ServiceProfileUpdateOperation] | 
 
     try:
-        # Update Profile
+        # Update Service Profile
         api_response = api_instance.update_service_profile_by_uuid(service_profile_id, service_profile_update_operation)
         print("The response of ServiceProfilesApi->update_service_profile_by_uuid:\n")
         pprint(api_response)

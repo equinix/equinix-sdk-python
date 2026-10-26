@@ -4,17 +4,17 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_eia_service**](InternetAccessServicesApi.md#create_eia_service) | **POST** /fabric/v4/internetAccessServices | Creates Internet Access Service
-[**delete_eia_service**](InternetAccessServicesApi.md#delete_eia_service) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by UUID
-[**get_eia_service**](InternetAccessServicesApi.md#get_eia_service) | **GET** /fabric/v4/internetAccessServices/{uuid} | Retrieve Internet Access Service by UUID
-[**patch_eia_service**](InternetAccessServicesApi.md#patch_eia_service) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Patch Internet Access Service by UUID
-[**search_eia_services**](InternetAccessServicesApi.md#search_eia_services) | **POST** /fabric/v4/internetAccessServices/search | Search for Internet Access Services
+[**create_eia_service**](InternetAccessServicesApi.md#create_eia_service) | **POST** /fabric/v4/internetAccessServices | Create Internet Access Service
+[**delete_eia_service**](InternetAccessServicesApi.md#delete_eia_service) | **DELETE** /fabric/v4/internetAccessServices/{uuid} | Delete Internet Access Service by ID
+[**get_eia_service**](InternetAccessServicesApi.md#get_eia_service) | **GET** /fabric/v4/internetAccessServices/{uuid} | Get Internet Access Service by ID
+[**patch_eia_service**](InternetAccessServicesApi.md#patch_eia_service) | **PATCH** /fabric/v4/internetAccessServices/{uuid} | Update Internet Access Service by ID
+[**search_eia_services**](InternetAccessServicesApi.md#search_eia_services) | **POST** /fabric/v4/internetAccessServices/search | Search Internet Access Services
 
 
 # **create_eia_service**
 > InternetAccessService create_eia_service(internet_access_post_request)
 
-Creates Internet Access Service
+Create Internet Access Service
 
 Creates Internet Access Service
 
@@ -52,7 +52,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     internet_access_post_request = equinix.services.fabricv4.InternetAccessPostRequest() # InternetAccessPostRequest | 
 
     try:
-        # Creates Internet Access Service
+        # Create Internet Access Service
         api_response = api_instance.create_eia_service(internet_access_post_request)
         print("The response of InternetAccessServicesApi->create_eia_service:\n")
         pprint(api_response)
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 # **delete_eia_service**
 > InternetAccessService delete_eia_service(uuid)
 
-Delete Internet Access Service by UUID
+Delete Internet Access Service by ID
 
 Delete Internet Access Service by UUID
 
@@ -133,7 +133,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | UUID of the EIA Service
 
     try:
-        # Delete Internet Access Service by UUID
+        # Delete Internet Access Service by ID
         api_response = api_instance.delete_eia_service(uuid)
         print("The response of InternetAccessServicesApi->delete_eia_service:\n")
         pprint(api_response)
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 # **get_eia_service**
 > InternetAccessService get_eia_service(uuid)
 
-Retrieve Internet Access Service by UUID
+Get Internet Access Service by ID
 
 Retrieve Internet Access Service by UUID
 
@@ -213,7 +213,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     uuid = 'uuid_example' # str | UUID of the EIA Service
 
     try:
-        # Retrieve Internet Access Service by UUID
+        # Get Internet Access Service by ID
         api_response = api_instance.get_eia_service(uuid)
         print("The response of InternetAccessServicesApi->get_eia_service:\n")
         pprint(api_response)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 # **patch_eia_service**
 > InternetAccessService patch_eia_service(uuid, internet_access_patch_operation_update)
 
-Patch Internet Access Service by UUID
+Update Internet Access Service by ID
 
 Patch Internet Access Service by UUID
 
@@ -294,7 +294,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     internet_access_patch_operation_update = [equinix.services.fabricv4.InternetAccessPatchOperationUpdate()] # List[InternetAccessPatchOperationUpdate] | 
 
     try:
-        # Patch Internet Access Service by UUID
+        # Update Internet Access Service by ID
         api_response = api_instance.patch_eia_service(uuid, internet_access_patch_operation_update)
         print("The response of InternetAccessServicesApi->patch_eia_service:\n")
         pprint(api_response)
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 # **search_eia_services**
 > InternetAccessServices search_eia_services(internet_access_search_request)
 
-Search for Internet Access Services
+Search Internet Access Services
 
 Search for Internet Access Services
 
@@ -375,7 +375,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     internet_access_search_request = equinix.services.fabricv4.InternetAccessSearchRequest() # InternetAccessSearchRequest | 
 
     try:
-        # Search for Internet Access Services
+        # Search Internet Access Services
         api_response = api_instance.search_eia_services(internet_access_search_request)
         print("The response of InternetAccessServicesApi->search_eia_services:\n")
         pprint(api_response)

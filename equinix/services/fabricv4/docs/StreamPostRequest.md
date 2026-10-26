@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided stream name | 
 **description** | **str** | Customer-provided stream description | [optional] 
 **project** | [**Project**](Project.md) |  | 
+**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
+**notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) | Preferences for stream notifications. Optional; at most one entry, of type ALL, with up to 12 emails. Set at creation only. | [optional] 
 
 ## Example
 

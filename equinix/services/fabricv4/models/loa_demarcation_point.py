@@ -24,12 +24,13 @@ class LoaDemarcationPoint(BaseModel):
     Specifies the demarcation point. <br> For CAGE_LOA - cageUniqueSpaceId is required. <br> For PATCH_PANEL_LOA - patchPanelId is required. <br> For PATCH_PANEL_PORT_LOA - patchPanelId, patchPanelPortA, patchPanelPortB      and connectorType is required. 
     """ # noqa: E501
     cage_unique_space_id: Optional[StrictStr] = Field(default=None, description="Unique identifier of the Cage.", alias="cageUniqueSpaceId")
+    cabinet_unique_space_id: Optional[StrictStr] = Field(default=None, description="Unique identifier of the Cabinet.", alias="cabinetUniqueSpaceId")
     patch_panel_id: Optional[StrictStr] = Field(default=None, description="Unique identifier of the Patch Panel. ", alias="patchPanelId")
     patch_panel_port_a: Optional[StrictInt] = Field(default=None, description="Specify the desired port number. <br> When ports are not provided, next available ports will be used. ", alias="patchPanelPortA")
     patch_panel_port_b: Optional[StrictInt] = Field(default=None, description="Specify the desired port number. <br> When ports are not provided, next available ports will be used. <br> Required for Connector type FC and ST only. ", alias="patchPanelPortB")
     connector_type: Optional[LoaPatchPanelConnectorType] = Field(default=None, alias="connectorType")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["cageUniqueSpaceId", "patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType"]
+    __properties: ClassVar[List[str]] = ["cageUniqueSpaceId", "cabinetUniqueSpaceId", "patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +91,7 @@ class LoaDemarcationPoint(BaseModel):
 
         _obj = cls.model_validate({
             "cageUniqueSpaceId": obj.get("cageUniqueSpaceId"),
+            "cabinetUniqueSpaceId": obj.get("cabinetUniqueSpaceId"),
             "patchPanelId": obj.get("patchPanelId"),
             "patchPanelPortA": obj.get("patchPanelPortA"),
             "patchPanelPortB": obj.get("patchPanelPortB"),

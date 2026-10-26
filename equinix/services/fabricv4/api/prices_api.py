@@ -50,7 +50,7 @@ class PricesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PriceSearchResponse:
-        """Get Prices
+        """Search Prices
 
         Search prices by search criteria
 
@@ -119,7 +119,7 @@ class PricesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PriceSearchResponse]:
-        """Get Prices
+        """Search Prices
 
         Search prices by search criteria
 
@@ -188,7 +188,7 @@ class PricesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Prices
+        """Search Prices
 
         Search prices by search criteria
 

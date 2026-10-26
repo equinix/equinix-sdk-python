@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customer_asn** | **str** |  | [optional] 
-**mac_address** | **str** |  | [optional] 
+**customer_asn** | **int** | Customer Autonomous System Number (ASN) | [optional] 
+**mac_address** | **str** | MAC address of the customer interface | [optional] 
 **vlan** | **int** | VLAN ID | [optional] 
 **route_server_asn** | **int** | Equinix Route Server ASN | [optional] 
 **bgp_ipv4** | [**ExchangeServiceResponseBgp**](ExchangeServiceResponseBgp.md) |  | [optional] 

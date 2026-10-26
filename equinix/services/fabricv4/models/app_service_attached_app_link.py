@@ -33,11 +33,12 @@ class AppServiceAttachedAppLink(BaseModel):
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided App Link description")
     state: Optional[AppLinkState] = None
     router: Optional[AppLinkCloudRouter] = None
+    ipv4_subnet: Optional[StrictStr] = Field(default=None, description="Customer-provided IP subnet for AppLink setup (/29 or larger subnet)", alias="ipv4Subnet")
     ipv4_address: Optional[StrictStr] = Field(default=None, description="App Link IP address", alias="ipv4Address")
     bandwidth: Optional[StrictInt] = Field(default=None, description="App Link aggregated data transfer capacity in Mbps")
     project: Optional[Project] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "state", "router", "ipv4Address", "bandwidth", "project"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "state", "router", "ipv4Subnet", "ipv4Address", "bandwidth", "project"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -112,6 +113,7 @@ class AppServiceAttachedAppLink(BaseModel):
             "description": obj.get("description"),
             "state": obj.get("state"),
             "router": AppLinkCloudRouter.from_dict(obj["router"]) if obj.get("router") is not None else None,
+            "ipv4Subnet": obj.get("ipv4Subnet"),
             "ipv4Address": obj.get("ipv4Address"),
             "bandwidth": obj.get("bandwidth"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None

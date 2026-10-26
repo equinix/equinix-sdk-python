@@ -4,22 +4,22 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_app_service**](ApplicationServicesApi.md#create_app_service) | **POST** /fabric/v4/appServices | Create App Service
-[**delete_app_service_by_uuid**](ApplicationServicesApi.md#delete_app_service_by_uuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete App Service
-[**get_app_service_by_uuid**](ApplicationServicesApi.md#get_app_service_by_uuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get App Service
-[**get_attached_app_links_by_app_service_id**](ApplicationServicesApi.md#get_attached_app_links_by_app_service_id) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get attached App Links for App Service
-[**get_attached_app_subscriptions_by_app_service_id**](ApplicationServicesApi.md#get_attached_app_subscriptions_by_app_service_id) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get attached App Subscriptions for App Service
-[**search_app_services**](ApplicationServicesApi.md#search_app_services) | **POST** /fabric/v4/appServices/search | Search App Services
-[**search_attached_app_subscriptions_by_app_service_id**](ApplicationServicesApi.md#search_attached_app_subscriptions_by_app_service_id) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search attached App Subscriptions
-[**update_app_service_by_uuid**](ApplicationServicesApi.md#update_app_service_by_uuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update App Service
+[**create_app_service**](ApplicationServicesApi.md#create_app_service) | **POST** /fabric/v4/appServices | Create Service
+[**delete_app_service_by_uuid**](ApplicationServicesApi.md#delete_app_service_by_uuid) | **DELETE** /fabric/v4/appServices/{appServiceId} | Delete Service
+[**get_app_service_by_uuid**](ApplicationServicesApi.md#get_app_service_by_uuid) | **GET** /fabric/v4/appServices/{appServiceId} | Get Service
+[**get_attached_app_links_by_app_service_id**](ApplicationServicesApi.md#get_attached_app_links_by_app_service_id) | **GET** /fabric/v4/appServices/{appServiceId}/appLinks | Get Attached Links for Service
+[**get_attached_app_subscriptions_by_app_service_id**](ApplicationServicesApi.md#get_attached_app_subscriptions_by_app_service_id) | **GET** /fabric/v4/appServices/{appServiceId}/appSubscriptions | Get Attached Subscriptions for Service
+[**search_app_services**](ApplicationServicesApi.md#search_app_services) | **POST** /fabric/v4/appServices/search | Search Services
+[**search_attached_app_subscriptions_by_app_service_id**](ApplicationServicesApi.md#search_attached_app_subscriptions_by_app_service_id) | **POST** /fabric/v4/appServices/{appServiceId}/appSubscriptions/search | Search Attached Subscriptions
+[**update_app_service_by_uuid**](ApplicationServicesApi.md#update_app_service_by_uuid) | **PATCH** /fabric/v4/appServices/{appServiceId} | Update Service
 
 
 # **create_app_service**
 > AppService create_app_service(app_service_post_request)
 
-Create App Service
+Create Service
 
-This API provides capability to create user's App Service
+This API provides capability to create user's Service
 
 ### Example
 
@@ -55,7 +55,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_post_request = equinix.services.fabricv4.AppServicePostRequest() # AppServicePostRequest | 
 
     try:
-        # Create App Service
+        # Create Service
         api_response = api_instance.create_app_service(app_service_post_request)
         print("The response of ApplicationServicesApi->create_app_service:\n")
         pprint(api_response)
@@ -101,9 +101,9 @@ Name | Type | Description  | Notes
 # **delete_app_service_by_uuid**
 > AppService delete_app_service_by_uuid(app_service_id)
 
-Delete App Service
+Delete Service
 
-This API provides capability to delete user's App Service
+This API provides capability to delete user's Service
 
 ### Example
 
@@ -138,7 +138,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_id = 'app_service_id_example' # str | App Service UUID
 
     try:
-        # Delete App Service
+        # Delete Service
         api_response = api_instance.delete_app_service_by_uuid(app_service_id)
         print("The response of ApplicationServicesApi->delete_app_service_by_uuid:\n")
         pprint(api_response)
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 # **get_app_service_by_uuid**
 > AppService get_app_service_by_uuid(app_service_id)
 
-Get App Service
+Get Service
 
-This API provides capability to retrieve user's App Service
+This API provides capability to retrieve user's Service
 
 ### Example
 
@@ -221,7 +221,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_id = 'app_service_id_example' # str | App Service UUID
 
     try:
-        # Get App Service
+        # Get Service
         api_response = api_instance.get_app_service_by_uuid(app_service_id)
         print("The response of ApplicationServicesApi->get_app_service_by_uuid:\n")
         pprint(api_response)
@@ -266,9 +266,9 @@ Name | Type | Description  | Notes
 # **get_attached_app_links_by_app_service_id**
 > AppServiceAttachedAppLinks get_attached_app_links_by_app_service_id(app_service_id, offset=offset, limit=limit, state=state, order=order, style=style)
 
-Get attached App Links for App Service
+Get Attached Links for Service
 
-This API provides capability to retrieve App Links attached to an App Service.
+This API provides capability to retrieve App Links attached to an App Service
 
 ### Example
 
@@ -311,7 +311,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     style = MEDIUM # Style | Detail level of the response. (optional) (default to MEDIUM)
 
     try:
-        # Get attached App Links for App Service
+        # Get Attached Links for Service
         api_response = api_instance.get_attached_app_links_by_app_service_id(app_service_id, offset=offset, limit=limit, state=state, order=order, style=style)
         print("The response of ApplicationServicesApi->get_attached_app_links_by_app_service_id:\n")
         pprint(api_response)
@@ -362,9 +362,9 @@ Name | Type | Description  | Notes
 # **get_attached_app_subscriptions_by_app_service_id**
 > AppServiceAttachedAppSubscriptions get_attached_app_subscriptions_by_app_service_id(app_service_id, offset=offset, limit=limit, state=state, order=order, style=style)
 
-Get attached App Subscriptions for App Service
+Get Attached Subscriptions for Service
 
-This API provides capability to retrieve App Subscriptions attached to an App Service.
+This API provides capability to retrieve App Subscriptions attached to an App Service
 
 ### Example
 
@@ -407,7 +407,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     style = MEDIUM # Style | Detail level of the response. (optional) (default to MEDIUM)
 
     try:
-        # Get attached App Subscriptions for App Service
+        # Get Attached Subscriptions for Service
         api_response = api_instance.get_attached_app_subscriptions_by_app_service_id(app_service_id, offset=offset, limit=limit, state=state, order=order, style=style)
         print("The response of ApplicationServicesApi->get_attached_app_subscriptions_by_app_service_id:\n")
         pprint(api_response)
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 # **search_app_services**
 > AppServiceSearchResponse search_app_services(app_service_search_request)
 
-Search App Services
+Search Services
 
 The API provides capability to get list of user's App Services using search criteria, including optional filtering, pagination and sorting
 
@@ -496,7 +496,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_search_request = equinix.services.fabricv4.AppServiceSearchRequest() # AppServiceSearchRequest | 
 
     try:
-        # Search App Services
+        # Search Services
         api_response = api_instance.search_app_services(app_service_search_request)
         print("The response of ApplicationServicesApi->search_app_services:\n")
         pprint(api_response)
@@ -542,9 +542,9 @@ Name | Type | Description  | Notes
 # **search_attached_app_subscriptions_by_app_service_id**
 > AppServiceAttachedAppSubscriptionSearchResponse search_attached_app_subscriptions_by_app_service_id(app_service_id, app_service_attached_app_subscription_search_request)
 
-Search attached App Subscriptions
+Search Attached Subscriptions
 
-The API provides capability to get list of App Subscriptions attached to an App Service using search criteria.
+The API provides capability to get list of App Subscriptions attached to an App Service using search criteria
 
 ### Example
 
@@ -581,7 +581,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_attached_app_subscription_search_request = equinix.services.fabricv4.AppServiceAttachedAppSubscriptionSearchRequest() # AppServiceAttachedAppSubscriptionSearchRequest | 
 
     try:
-        # Search attached App Subscriptions
+        # Search Attached Subscriptions
         api_response = api_instance.search_attached_app_subscriptions_by_app_service_id(app_service_id, app_service_attached_app_subscription_search_request)
         print("The response of ApplicationServicesApi->search_attached_app_subscriptions_by_app_service_id:\n")
         pprint(api_response)
@@ -628,9 +628,9 @@ Name | Type | Description  | Notes
 # **update_app_service_by_uuid**
 > AppService update_app_service_by_uuid(app_service_id, app_service_change_operation)
 
-Update App Service
+Update Service
 
-This API provides capability to update user's App Service
+This API provides capability to update user's Service
 
 ### Example
 
@@ -667,7 +667,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_service_change_operation = [equinix.services.fabricv4.AppServiceChangeOperation()] # List[AppServiceChangeOperation] | 
 
     try:
-        # Update App Service
+        # Update Service
         api_response = api_instance.update_app_service_by_uuid(app_service_id, app_service_change_operation)
         print("The response of ApplicationServicesApi->update_app_service_by_uuid:\n")
         pprint(api_response)

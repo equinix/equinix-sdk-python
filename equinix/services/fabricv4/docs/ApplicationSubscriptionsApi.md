@@ -4,19 +4,19 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_app_subscription**](ApplicationSubscriptionsApi.md#create_app_subscription) | **POST** /fabric/v4/appSubscriptions | Create App Subscription
-[**delete_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#delete_app_subscription_by_uuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete App Subscription
-[**get_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#get_app_subscription_by_uuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get App Subscription
-[**search_app_subscriptions**](ApplicationSubscriptionsApi.md#search_app_subscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search App Subscriptions
-[**update_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#update_app_subscription_by_uuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update App Subscription
+[**create_app_subscription**](ApplicationSubscriptionsApi.md#create_app_subscription) | **POST** /fabric/v4/appSubscriptions | Create Subscription
+[**delete_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#delete_app_subscription_by_uuid) | **DELETE** /fabric/v4/appSubscriptions/{appSubscriptionId} | Delete Subscription
+[**get_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#get_app_subscription_by_uuid) | **GET** /fabric/v4/appSubscriptions/{appSubscriptionId} | Get Subscription
+[**search_app_subscriptions**](ApplicationSubscriptionsApi.md#search_app_subscriptions) | **POST** /fabric/v4/appSubscriptions/search | Search Subscriptions
+[**update_app_subscription_by_uuid**](ApplicationSubscriptionsApi.md#update_app_subscription_by_uuid) | **PATCH** /fabric/v4/appSubscriptions/{appSubscriptionId} | Update Subscription
 
 
 # **create_app_subscription**
 > AppSubscription create_app_subscription(app_subscription_post_request)
 
-Create App Subscription
+Create Subscription
 
-This API provides capability to create user's App Subscription
+This API provides capability to create user's Subscription
 
 ### Example
 
@@ -52,7 +52,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_subscription_post_request = equinix.services.fabricv4.AppSubscriptionPostRequest() # AppSubscriptionPostRequest | 
 
     try:
-        # Create App Subscription
+        # Create Subscription
         api_response = api_instance.create_app_subscription(app_subscription_post_request)
         print("The response of ApplicationSubscriptionsApi->create_app_subscription:\n")
         pprint(api_response)
@@ -97,9 +97,9 @@ Name | Type | Description  | Notes
 # **delete_app_subscription_by_uuid**
 > AppSubscription delete_app_subscription_by_uuid(app_subscription_id)
 
-Delete App Subscription
+Delete Subscription
 
-This API provides capability to delete user's App Subscription
+This API provides capability to delete user's Subscription
 
 ### Example
 
@@ -134,7 +134,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_subscription_id = 'app_subscription_id_example' # str | App Subscription UUID
 
     try:
-        # Delete App Subscription
+        # Delete Subscription
         api_response = api_instance.delete_app_subscription_by_uuid(app_subscription_id)
         print("The response of ApplicationSubscriptionsApi->delete_app_subscription_by_uuid:\n")
         pprint(api_response)
@@ -180,9 +180,9 @@ Name | Type | Description  | Notes
 # **get_app_subscription_by_uuid**
 > AppSubscription get_app_subscription_by_uuid(app_subscription_id)
 
-Get App Subscription
+Get Subscription
 
-This API provides capability to retrieve user's App Subscription
+This API provides capability to retrieve user's Subscription
 
 ### Example
 
@@ -217,7 +217,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_subscription_id = 'app_subscription_id_example' # str | App Subscription UUID
 
     try:
-        # Get App Subscription
+        # Get Subscription
         api_response = api_instance.get_app_subscription_by_uuid(app_subscription_id)
         print("The response of ApplicationSubscriptionsApi->get_app_subscription_by_uuid:\n")
         pprint(api_response)
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 # **search_app_subscriptions**
 > AppSubscriptionSearchResponse search_app_subscriptions(app_subscription_search_request)
 
-Search App Subscriptions
+Search Subscriptions
 
 The API provides capability to get list of user's App Subscriptions using search criteria, including optional filtering, pagination and sorting
 
@@ -300,7 +300,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_subscription_search_request = equinix.services.fabricv4.AppSubscriptionSearchRequest() # AppSubscriptionSearchRequest | 
 
     try:
-        # Search App Subscriptions
+        # Search Subscriptions
         api_response = api_instance.search_app_subscriptions(app_subscription_search_request)
         print("The response of ApplicationSubscriptionsApi->search_app_subscriptions:\n")
         pprint(api_response)
@@ -346,9 +346,9 @@ Name | Type | Description  | Notes
 # **update_app_subscription_by_uuid**
 > AppSubscription update_app_subscription_by_uuid(app_subscription_id, app_subscription_change_operation)
 
-Update App Subscription
+Update Subscription
 
-This API provides capability to update user's App Subscription
+This API provides capability to update user's Subscription
 
 ### Example
 
@@ -385,7 +385,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     app_subscription_change_operation = [equinix.services.fabricv4.AppSubscriptionChangeOperation()] # List[AppSubscriptionChangeOperation] | 
 
     try:
-        # Update App Subscription
+        # Update Subscription
         api_response = api_instance.update_app_subscription_by_uuid(app_subscription_id, app_subscription_change_operation)
         print("The response of ApplicationSubscriptionsApi->update_app_subscription_by_uuid:\n")
         pprint(api_response)
