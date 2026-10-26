@@ -5,17 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customer_peer_ip** | **str** |  | [optional] 
-**domain_name** | **str** |  | [optional] 
-**primary_route_server_ip** | **str** |  | [optional] 
-**secondary_route_server_ip** | **str** |  | [optional] 
-**as_set** | **str** |  | [optional] 
-**mlpe_enabled** | **bool** |  | [optional] 
-**md5_auth_key** | **str** |  | [optional] 
-**rc_md5_auth_key** | **str** |  | [optional] 
+**customer_peer_ip** | **str** | Customer peer IP address | [optional] 
+**domain_name** | **str** | Domain name for BGP | [optional] 
+**primary_route_server_ip** | **str** | Primary route server IP address with prefix length | [optional] 
+**secondary_route_server_ip** | **str** | Secondary route server IP address with prefix length | [optional] 
+**as_set** | **str** | AS-SET used to filter the prefixes announced by the customer | [optional] 
+**mlpe_enabled** | **bool** | Whether Multi-Lateral Peering Exchange (MLPE) is enabled | [optional] 
+**md5_auth_key** | **str** | MD5 key for BGP | [optional] 
+**rc_md5_auth_key** | **str** | RC MD5 key for BGP | [optional] 
 **prefixes** | **List[str]** | List of IP prefix | [optional] 
-**max_prefix_limit** | **int** |  | [optional] 
-**prepend_self_enabled** | **bool** |  | [optional] 
+**max_prefix_limit** | **int** | Max Prefix Limit number | [optional] 
+**prepend_self_enabled** | **bool** | Prepend Self Enabled | [optional] 
 
 ## Example
 

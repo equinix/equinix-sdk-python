@@ -360,7 +360,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceToken:
-        """ServiceToken Actions
+        """Create Service Token Action
 
         This API provides capability to accept/reject user's servicetokens
 
@@ -435,7 +435,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceToken]:
-        """ServiceToken Actions
+        """Create Service Token Action
 
         This API provides capability to accept/reject user's servicetokens
 
@@ -510,7 +510,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """ServiceToken Actions
+        """Create Service Token Action
 
         This API provides capability to accept/reject user's servicetokens
 
@@ -660,9 +660,9 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceToken:
-        """Delete Token by uuid
+        """Delete Service Token by ID
 
-        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
 
         :param service_token_id: Service Token UUID (required)
         :type service_token_id: str
@@ -730,9 +730,9 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceToken]:
-        """Delete Token by uuid
+        """Delete Service Token by ID
 
-        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
 
         :param service_token_id: Service Token UUID (required)
         :type service_token_id: str
@@ -800,9 +800,9 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Token by uuid
+        """Delete Service Token by ID
 
-        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state.
+        Delete Service Tokens removes an Equinix Fabric service token corresponding to the specified uuid which are in INACTIVE state
 
         :param service_token_id: Service Token UUID (required)
         :type service_token_id: str
@@ -930,7 +930,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceToken:
-        """Get Token by uuid
+        """Get Service Token by ID
 
         Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.
 
@@ -1000,7 +1000,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceToken]:
-        """Get Token by uuid
+        """Get Service Token by ID
 
         Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.
 
@@ -1070,7 +1070,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Token by uuid
+        """Get Service Token by ID
 
         Get Specified Service Tokens uses the uuid of an Equinix Fabric service token to return details about the token's type, state, location, bandwidth, and other key properties.
 
@@ -1201,7 +1201,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceTokens:
-        """Get All Tokens
+        """Get Service Tokens
 
         Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.
 
@@ -1273,7 +1273,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceTokens]:
-        """Get All Tokens
+        """Get Service Tokens
 
         Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.
 
@@ -1345,7 +1345,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Tokens
+        """Get Service Tokens
 
         Get All ServiceTokens creates a list of all Equinix Fabric service tokens associated with the subscriber's account.
 
@@ -1485,7 +1485,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceTokens:
-        """Search servicetokens
+        """Search Service Tokens
 
         The API provides capability to get list of user's servicetokens using search criteria, including optional filtering, pagination and sorting
 
@@ -1564,7 +1564,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceTokens]:
-        """Search servicetokens
+        """Search Service Tokens
 
         The API provides capability to get list of user's servicetokens using search criteria, including optional filtering, pagination and sorting
 
@@ -1643,7 +1643,7 @@ class ServiceTokensApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search servicetokens
+        """Search Service Tokens
 
         The API provides capability to get list of user's servicetokens using search criteria, including optional filtering, pagination and sorting
 

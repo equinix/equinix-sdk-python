@@ -13,7 +13,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
@@ -33,8 +33,9 @@ class TagResponse(BaseModel):
     state: Optional[TagResponseState] = None
     notifications: Optional[List[SimplifiedNotification]] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
+    weight: Optional[StrictInt] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName", "state", "notifications", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "displayName", "state", "notifications", "changeLog", "weight"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +112,8 @@ class TagResponse(BaseModel):
             "displayName": obj.get("displayName"),
             "state": obj.get("state"),
             "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
-            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
+            "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None,
+            "weight": obj.get("weight")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -12,7 +12,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
@@ -26,17 +26,14 @@ from equinix.services.fabricv4.models.cloud_router_command import CloudRouterCom
 from equinix.services.fabricv4.models.cloud_router_command_post_request import CloudRouterCommandPostRequest
 from equinix.services.fabricv4.models.cloud_router_command_search_request import CloudRouterCommandSearchRequest
 from equinix.services.fabricv4.models.cloud_router_command_search_response import CloudRouterCommandSearchResponse
-from equinix.services.fabricv4.models.cloud_router_package import CloudRouterPackage
 from equinix.services.fabricv4.models.cloud_router_post_request import CloudRouterPostRequest
 from equinix.services.fabricv4.models.cloud_router_read_response import CloudRouterReadResponse
 from equinix.services.fabricv4.models.cloud_router_search_request import CloudRouterSearchRequest
 from equinix.services.fabricv4.models.connection_route_search_request import ConnectionRouteSearchRequest
 from equinix.services.fabricv4.models.connection_route_table_entry_search_response import ConnectionRouteTableEntrySearchResponse
 from equinix.services.fabricv4.models.get_all_cloud_router_commands import GetAllCloudRouterCommands
-from equinix.services.fabricv4.models.package_response import PackageResponse
 from equinix.services.fabricv4.models.route_table_entry_search_request import RouteTableEntrySearchRequest
 from equinix.services.fabricv4.models.route_table_entry_search_response import RouteTableEntrySearchResponse
-from equinix.services.fabricv4.models.router_package_code import RouterPackageCode
 from equinix.services.fabricv4.models.search_response import SearchResponse
 
 from equinix.services.fabricv4.api_client import ApiClient, RequestSerialized
@@ -75,9 +72,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CloudRouter:
-        """Create Routers
+        """Create Router
 
-        This API provides capability to create user's Cloud Routers
+        This API provides capability to create user's Cloud Router
 
         :param cloud_router_post_request: (required)
         :type cloud_router_post_request: CloudRouterPostRequest
@@ -151,9 +148,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CloudRouter]:
-        """Create Routers
+        """Create Router
 
-        This API provides capability to create user's Cloud Routers
+        This API provides capability to create user's Cloud Router
 
         :param cloud_router_post_request: (required)
         :type cloud_router_post_request: CloudRouterPostRequest
@@ -227,9 +224,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Routers
+        """Create Router
 
-        This API provides capability to create user's Cloud Routers
+        This API provides capability to create user's Cloud Router
 
         :param cloud_router_post_request: (required)
         :type cloud_router_post_request: CloudRouterPostRequest
@@ -688,7 +685,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CloudRouterCommand:
-        """Initiate Command
+        """Create Command
 
         This API provides capability to initiate Command
 
@@ -765,7 +762,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CloudRouterCommand]:
-        """Initiate Command
+        """Create Command
 
         This API provides capability to initiate Command
 
@@ -842,7 +839,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Initiate Command
+        """Create Command
 
         This API provides capability to initiate Command
 
@@ -994,9 +991,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """Delete Routers
+        """Delete Router
 
-        This API provides capability to delete user's Cloud Routers
+        This API provides capability to delete user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -1066,9 +1063,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """Delete Routers
+        """Delete Router
 
-        This API provides capability to delete user's Cloud Routers
+        This API provides capability to delete user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -1138,9 +1135,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Routers
+        """Delete Router
 
-        This API provides capability to delete user's Cloud Routers
+        This API provides capability to delete user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -2447,9 +2444,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CloudRouterReadResponse:
-        """Get Routers
+        """Get Router
 
-        This API provides capability to retrieve user's Cloud Routers
+        This API provides capability to retrieve user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -2518,9 +2515,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CloudRouterReadResponse]:
-        """Get Routers
+        """Get Router
 
-        This API provides capability to retrieve user's Cloud Routers
+        This API provides capability to retrieve user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -2589,9 +2586,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Routers
+        """Get Router
 
-        This API provides capability to retrieve user's Cloud Routers
+        This API provides capability to retrieve user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -2998,574 +2995,6 @@ class CloudRoutersApi:
 
 
     @validate_call
-    def get_cloud_router_package_by_code(
-        self,
-        router_package_code: Annotated[RouterPackageCode, Field(description="Equinix-assigned Cloud Router package identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CloudRouterPackage:
-        """Get Package Details
-
-        This API provides capability to retrieve user's Cloud Routers Package Details
-
-        :param router_package_code: Equinix-assigned Cloud Router package identifier (required)
-        :type router_package_code: RouterPackageCode
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_package_by_code_serialize(
-            router_package_code=router_package_code,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterPackage",
-            '400': "List[Error]",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_cloud_router_package_by_code_with_http_info(
-        self,
-        router_package_code: Annotated[RouterPackageCode, Field(description="Equinix-assigned Cloud Router package identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CloudRouterPackage]:
-        """Get Package Details
-
-        This API provides capability to retrieve user's Cloud Routers Package Details
-
-        :param router_package_code: Equinix-assigned Cloud Router package identifier (required)
-        :type router_package_code: RouterPackageCode
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_package_by_code_serialize(
-            router_package_code=router_package_code,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterPackage",
-            '400': "List[Error]",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_cloud_router_package_by_code_without_preload_content(
-        self,
-        router_package_code: Annotated[RouterPackageCode, Field(description="Equinix-assigned Cloud Router package identifier")],
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """Get Package Details
-
-        This API provides capability to retrieve user's Cloud Routers Package Details
-
-        :param router_package_code: Equinix-assigned Cloud Router package identifier (required)
-        :type router_package_code: RouterPackageCode
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_package_by_code_serialize(
-            router_package_code=router_package_code,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "CloudRouterPackage",
-            '400': "List[Error]",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_cloud_router_package_by_code_serialize(
-        self,
-        router_package_code,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        if router_package_code is not None:
-            _path_params['routerPackageCode'] = router_package_code.value
-        # process the query parameters
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'BearerAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/fabric/v4/routerPackages/{routerPackageCode}',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
-    def get_cloud_router_packages(
-        self,
-        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> PackageResponse:
-        """List Packages
-
-        This API provides capability to retrieve user's Cloud Routers Packages
-
-        :param offset: offset
-        :type offset: int
-        :param limit: number of records to fetch
-        :type limit: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_packages_serialize(
-            offset=offset,
-            limit=limit,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PackageResponse",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        ).data
-
-
-    @validate_call
-    def get_cloud_router_packages_with_http_info(
-        self,
-        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[PackageResponse]:
-        """List Packages
-
-        This API provides capability to retrieve user's Cloud Routers Packages
-
-        :param offset: offset
-        :type offset: int
-        :param limit: number of records to fetch
-        :type limit: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_packages_serialize(
-            offset=offset,
-            limit=limit,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PackageResponse",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        response_data.read()
-        return self.api_client.response_deserialize(
-            response_data=response_data,
-            response_types_map=_response_types_map,
-        )
-
-
-    @validate_call
-    def get_cloud_router_packages_without_preload_content(
-        self,
-        offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        _request_timeout: Union[
-            None,
-            Annotated[StrictFloat, Field(gt=0)],
-            Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
-        ] = None,
-        _request_auth: Optional[Dict[StrictStr, Any]] = None,
-        _content_type: Optional[StrictStr] = None,
-        _headers: Optional[Dict[StrictStr, Any]] = None,
-        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> RESTResponseType:
-        """List Packages
-
-        This API provides capability to retrieve user's Cloud Routers Packages
-
-        :param offset: offset
-        :type offset: int
-        :param limit: number of records to fetch
-        :type limit: int
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :type _request_timeout: int, tuple(int, int), optional
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the
-                              authentication in the spec for a single request.
-        :type _request_auth: dict, optional
-        :param _content_type: force content-type for the request.
-        :type _content_type: str, Optional
-        :param _headers: set to override the headers for a single
-                         request; this effectively ignores the headers
-                         in the spec for a single request.
-        :type _headers: dict, optional
-        :param _host_index: set to override the host_index for a single
-                            request; this effectively ignores the host_index
-                            in the spec for a single request.
-        :type _host_index: int, optional
-        :return: Returns the result object.
-        """ # noqa: E501
-
-        _param = self._get_cloud_router_packages_serialize(
-            offset=offset,
-            limit=limit,
-            _request_auth=_request_auth,
-            _content_type=_content_type,
-            _headers=_headers,
-            _host_index=_host_index
-        )
-
-        _response_types_map: Dict[str, Optional[str]] = {
-            '200': "PackageResponse",
-            '401': "List[Error]",
-            '403': "List[Error]",
-            '415': "List[Error]",
-            '500': "List[Error]",
-        }
-        response_data = self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
-        )
-        return response_data.response
-
-
-    def _get_cloud_router_packages_serialize(
-        self,
-        offset,
-        limit,
-        _request_auth,
-        _content_type,
-        _headers,
-        _host_index,
-    ) -> RequestSerialized:
-
-        _host = None
-
-        _collection_formats: Dict[str, str] = {
-        }
-
-        _path_params: Dict[str, str] = {}
-        _query_params: List[Tuple[str, str]] = []
-        _header_params: Dict[str, Optional[str]] = _headers or {}
-        _form_params: List[Tuple[str, str]] = []
-        _files: Dict[
-            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
-        ] = {}
-        _body_params: Optional[bytes] = None
-
-        # process the path parameters
-        # process the query parameters
-        if offset is not None:
-            
-            _query_params.append(('offset', offset))
-            
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
-        # process the header parameters
-        # process the form parameters
-        # process the body parameter
-
-
-        # set the HTTP header `Accept`
-        if 'Accept' not in _header_params:
-            _header_params['Accept'] = self.api_client.select_header_accept(
-                [
-                    'application/json'
-                ]
-            )
-
-
-        # authentication setting
-        _auth_settings: List[str] = [
-            'BearerAuth'
-        ]
-
-        return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/fabric/v4/routerPackages',
-            path_params=_path_params,
-            query_params=_query_params,
-            header_params=_header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            auth_settings=_auth_settings,
-            collection_formats=_collection_formats,
-            _host=_host,
-            _request_auth=_request_auth
-        )
-
-
-
-
-    @validate_call
     def search_cloud_router_commands(
         self,
         router_id: Annotated[StrictStr, Field(description="Router UUID")],
@@ -3890,7 +3319,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteTableEntrySearchResponse:
-        """Search Route Table
+        """Search Route Tables
 
         The API provides capability to get list of user's Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
 
@@ -3967,7 +3396,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteTableEntrySearchResponse]:
-        """Search Route Table
+        """Search Route Tables
 
         The API provides capability to get list of user's Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
 
@@ -4044,7 +3473,7 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search Route Table
+        """Search Route Tables
 
         The API provides capability to get list of user's Fabric Cloud Router route table entries using search criteria, including optional filtering, pagination and sorting
 
@@ -5395,9 +4824,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CloudRouter:
-        """Update Routers
+        """Update Router
 
-        This API provides capability to update user's Cloud Routers
+        This API provides capability to update user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -5472,9 +4901,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CloudRouter]:
-        """Update Routers
+        """Update Router
 
-        This API provides capability to update user's Cloud Routers
+        This API provides capability to update user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str
@@ -5549,9 +4978,9 @@ class CloudRoutersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update Routers
+        """Update Router
 
-        This API provides capability to update user's Cloud Routers
+        This API provides capability to update user's Cloud Router
 
         :param router_id: Cloud Router UUID (required)
         :type router_id: str

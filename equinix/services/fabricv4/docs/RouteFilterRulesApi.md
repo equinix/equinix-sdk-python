@@ -7,11 +7,11 @@ Method | HTTP request | Description
 [**create_route_filter_rule**](RouteFilterRulesApi.md#create_route_filter_rule) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Create Route Filter Rule
 [**create_route_filter_rules_in_bulk**](RouteFilterRulesApi.md#create_route_filter_rules_in_bulk) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/bulk | Bulk Create Route Filter Rules
 [**delete_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#delete_route_filter_rule_by_uuid) | **DELETE** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Delete Route Filter Rule
-[**get_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule By UUID
+[**get_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Get Route Filter Rule by ID
 [**get_route_filter_rule_change_by_uuid**](RouteFilterRulesApi.md#get_route_filter_rule_change_by_uuid) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes/{changeId} | Get Change By ID
-[**get_route_filter_rule_changes**](RouteFilterRulesApi.md#get_route_filter_rule_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get All Changes
+[**get_route_filter_rule_changes**](RouteFilterRulesApi.md#get_route_filter_rule_changes) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId}/changes | Get Route Filter Rule Changes
 [**get_route_filter_rules**](RouteFilterRulesApi.md#get_route_filter_rules) | **GET** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules | Get Route Filter Rules
-[**patch_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#patch_route_filter_rule_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Patch Route Filter Rule
+[**patch_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#patch_route_filter_rule_by_uuid) | **PATCH** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Update Route Filter Rule
 [**replace_route_filter_rule_by_uuid**](RouteFilterRulesApi.md#replace_route_filter_rule_by_uuid) | **PUT** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/{routeFilterRuleId} | Replace Route Filter Rule
 [**search_route_filter_rules**](RouteFilterRulesApi.md#search_route_filter_rules) | **POST** /fabric/v4/routeFilters/{routeFilterId}/routeFilterRules/search | Search Route Filter Rules
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_rule_by_uuid**
 > RouteFilterRulesData get_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
 
-Get Route Filter Rule By UUID
+Get Route Filter Rule by ID
 
 This API provides capability to view a Route Filter Rule by UUID
 
@@ -317,7 +317,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
 
     try:
-        # Get Route Filter Rule By UUID
+        # Get Route Filter Rule by ID
         api_response = api_instance.get_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id)
         print("The response of RouteFilterRulesApi->get_route_filter_rule_by_uuid:\n")
         pprint(api_response)
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 # **get_route_filter_rule_changes**
 > RouteFilterRulesChangeDataResponse get_route_filter_rule_changes(route_filter_id, route_filter_rule_id, offset=offset, limit=limit)
 
-Get All Changes
+Get Route Filter Rule Changes
 
 This API provides capability to retrieve all of a Route Filter Rule's Changes
 
@@ -492,7 +492,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get All Changes
+        # Get Route Filter Rule Changes
         api_response = api_instance.get_route_filter_rule_changes(route_filter_id, route_filter_rule_id, offset=offset, limit=limit)
         print("The response of RouteFilterRulesApi->get_route_filter_rule_changes:\n")
         pprint(api_response)
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 # **patch_route_filter_rule_by_uuid**
 > RouteFilterRulesData patch_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_patch_request_item)
 
-Patch Route Filter Rule
+Update Route Filter Rule
 
 This API provides capability to partially update a Route Filter Rule
 
@@ -668,7 +668,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_filter_rules_patch_request_item = [equinix.services.fabricv4.RouteFilterRulesPatchRequestItem()] # List[RouteFilterRulesPatchRequestItem] | 
 
     try:
-        # Patch Route Filter Rule
+        # Update Route Filter Rule
         api_response = api_instance.patch_route_filter_rule_by_uuid(route_filter_id, route_filter_rule_id, route_filter_rules_patch_request_item)
         print("The response of RouteFilterRulesApi->patch_route_filter_rule_by_uuid:\n")
         pprint(api_response)

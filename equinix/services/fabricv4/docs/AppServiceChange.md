@@ -7,7 +7,7 @@ Current state of latest AppService change
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Uniquely identifies a change | [optional] 
-**type** | [**AppServiceChangeType**](AppServiceChangeType.md) |  | 
+**type** | [**AppLinkAppServiceAttachmentChangeType**](AppLinkAppServiceAttachmentChangeType.md) |  | 
 **status** | [**PortChangeStatus**](PortChangeStatus.md) |  | [optional] 
 **created_date_time** | **datetime** | Set when change flow starts | [optional] 
 **updated_date_time** | **datetime** | Set when change object is updated | 

@@ -22,17 +22,17 @@ class ExchangeServiceResponseBgp(BaseModel):
     """
     ExchangeServiceResponseBgp
     """ # noqa: E501
-    customer_peer_ip: Optional[StrictStr] = Field(default=None, alias="customerPeerIp")
-    domain_name: Optional[StrictStr] = Field(default=None, alias="domainName")
-    primary_route_server_ip: Optional[StrictStr] = Field(default=None, alias="primaryRouteServerIp")
-    secondary_route_server_ip: Optional[StrictStr] = Field(default=None, alias="secondaryRouteServerIp")
-    as_set: Optional[StrictStr] = Field(default=None, alias="asSet")
-    mlpe_enabled: Optional[StrictBool] = Field(default=None, alias="mlpeEnabled")
-    md5_auth_key: Optional[StrictStr] = Field(default=None, alias="md5AuthKey")
-    rc_md5_auth_key: Optional[StrictStr] = Field(default=None, alias="rcMd5AuthKey")
+    customer_peer_ip: Optional[StrictStr] = Field(default=None, description="Customer peer IP address", alias="customerPeerIp")
+    domain_name: Optional[StrictStr] = Field(default=None, description="Domain name for BGP", alias="domainName")
+    primary_route_server_ip: Optional[StrictStr] = Field(default=None, description="Primary route server IP address with prefix length", alias="primaryRouteServerIp")
+    secondary_route_server_ip: Optional[StrictStr] = Field(default=None, description="Secondary route server IP address with prefix length", alias="secondaryRouteServerIp")
+    as_set: Optional[StrictStr] = Field(default=None, description="AS-SET used to filter the prefixes announced by the customer", alias="asSet")
+    mlpe_enabled: Optional[StrictBool] = Field(default=None, description="Whether Multi-Lateral Peering Exchange (MLPE) is enabled", alias="mlpeEnabled")
+    md5_auth_key: Optional[StrictStr] = Field(default=None, description="MD5 key for BGP", alias="md5AuthKey")
+    rc_md5_auth_key: Optional[StrictStr] = Field(default=None, description="RC MD5 key for BGP", alias="rcMd5AuthKey")
     prefixes: Optional[List[StrictStr]] = Field(default=None, description="List of IP prefix")
-    max_prefix_limit: Optional[StrictInt] = Field(default=None, alias="maxPrefixLimit")
-    prepend_self_enabled: Optional[StrictBool] = Field(default=None, alias="prependSelfEnabled")
+    max_prefix_limit: Optional[StrictInt] = Field(default=None, description="Max Prefix Limit number", alias="maxPrefixLimit")
+    prepend_self_enabled: Optional[StrictBool] = Field(default=None, description="Prepend Self Enabled", alias="prependSelfEnabled")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["customerPeerIp", "domainName", "primaryRouteServerIp", "secondaryRouteServerIp", "asSet", "mlpeEnabled", "md5AuthKey", "rcMd5AuthKey", "prefixes", "maxPrefixLimit", "prependSelfEnabled"]
 

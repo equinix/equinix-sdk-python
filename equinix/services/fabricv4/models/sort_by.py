@@ -47,6 +47,7 @@ class SortBy(str, Enum):
     SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME = '/changeLog/updatedDateTime'
     SLASH_OPERATION_SLASH_EQUINIX_STATUS = '/operation/equinixStatus'
     SLASH_OPERATION_SLASH_PROVIDER_STATUS = '/operation/providerStatus'
+    SLASH_OPERATION_SLASH_MAINTENANCE_STATUS = '/operation/maintenanceStatus'
     SLASH_REDUNDANCY_SLASH_PRIORITY = '/redundancy/priority'
 
     @classmethod

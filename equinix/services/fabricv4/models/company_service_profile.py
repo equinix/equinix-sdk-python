@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.service_profile_type_enum import ServiceProfileTypeEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,8 +25,9 @@ class CompanyServiceProfile(BaseModel):
     """ # noqa: E501
     href: Optional[StrictStr] = None
     uuid: Optional[StrictStr] = None
+    type: Optional[ServiceProfileTypeEnum] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +88,8 @@ class CompanyServiceProfile(BaseModel):
 
         _obj = cls.model_validate({
             "href": obj.get("href"),
-            "uuid": obj.get("uuid")
+            "uuid": obj.get("uuid"),
+            "type": obj.get("type")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

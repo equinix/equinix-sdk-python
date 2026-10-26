@@ -30,13 +30,13 @@ class ProviderEnvironment(BaseModel):
     type: Optional[ProviderEnvironmentTypeEnum] = None
     name: Optional[StrictStr] = Field(default=None, description="Provider environment name")
     description: Optional[StrictStr] = Field(default=None, description="Provider environment description")
-    region: Optional[StrictStr] = Field(default=None, description="Cloud provider region identifier")
+    seller_region: Optional[StrictStr] = Field(default=None, description="Cloud provider region identifier", alias="sellerRegion")
     supported_bandwidths: Optional[List[StrictInt]] = Field(default=None, description="Supported bandwidths in Mbps", alias="supportedBandwidths")
     metros: Optional[List[ServiceMetro]] = Field(default=None, description="Derived response attribute.")
     supported_features: Optional[List[StrictStr]] = Field(default=None, description="Supported Feature Types", alias="supportedFeatures")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "region", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "sellerRegion", "supportedBandwidths", "metros", "supportedFeatures", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,7 +113,7 @@ class ProviderEnvironment(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "region": obj.get("region"),
+            "sellerRegion": obj.get("sellerRegion"),
             "supportedBandwidths": obj.get("supportedBandwidths"),
             "metros": [ServiceMetro.from_dict(_item) for _item in obj["metros"]] if obj.get("metros") is not None else None,
             "supportedFeatures": obj.get("supportedFeatures"),

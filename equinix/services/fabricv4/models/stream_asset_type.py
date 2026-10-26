@@ -30,6 +30,7 @@ class StreamAssetType(str, Enum):
     XF_ROUTER = 'XF_ROUTER'
     ORGANIZATION = 'ORGANIZATION'
     PROJECT = 'PROJECT'
+    VIRTUAL_DEVICE = 'VIRTUAL_DEVICE'
     DATA = 'DATA'
     MGMT = 'MGMT'
     SSH = 'SSH'

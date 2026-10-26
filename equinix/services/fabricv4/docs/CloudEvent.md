@@ -6,7 +6,7 @@ Cloud Event object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**spec** | **str** | Cloud Event Open Telemetry specification | [optional] [readonly] 
+**specversion** | **str** | Cloud Event Open Telemetry specification | [optional] [readonly] 
 **source** | **str** | Cloud Event source | [optional] 
 **id** | **str** | Cloud Event identifier | [optional] 
 **type** | **str** | Equinix supported event type | [optional] 

@@ -5,18 +5,18 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_connection_route_aggregation**](RouteAggregationsApi.md#attach_connection_route_aggregation) | **PUT** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Attach Aggregation
-[**create_route_aggregation**](RouteAggregationsApi.md#create_route_aggregation) | **POST** /fabric/v4/routeAggregations | Create Aggregations
+[**create_route_aggregation**](RouteAggregationsApi.md#create_route_aggregation) | **POST** /fabric/v4/routeAggregations | Create Route Aggregation
 [**delete_route_aggregation_by_uuid**](RouteAggregationsApi.md#delete_route_aggregation_by_uuid) | **DELETE** /fabric/v4/routeAggregations/{routeAggregationId} | Delete Aggregation
 [**detach_connection_route_aggregation**](RouteAggregationsApi.md#detach_connection_route_aggregation) | **DELETE** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Detach Aggregation
 [**get_connection_route_aggregation_by_uuid**](RouteAggregationsApi.md#get_connection_route_aggregation_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations/{routeAggregationId} | Get Aggregation
-[**get_connection_route_aggregations**](RouteAggregationsApi.md#get_connection_route_aggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get All Aggregations
+[**get_connection_route_aggregations**](RouteAggregationsApi.md#get_connection_route_aggregations) | **GET** /fabric/v4/connections/{connectionId}/routeAggregations | Get Connection Route Aggregations
 [**get_route_aggregation_by_uuid**](RouteAggregationsApi.md#get_route_aggregation_by_uuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId} | Get Aggregation
 [**get_route_aggregation_change_by_uuid**](RouteAggregationsApi.md#get_route_aggregation_change_by_uuid) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes/{changeId} | Get Change By ID
-[**get_route_aggregation_changes**](RouteAggregationsApi.md#get_route_aggregation_changes) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get All Changes
-[**get_route_aggregation_connections**](RouteAggregationsApi.md#get_route_aggregation_connections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get All Connections on Route Aggregation
-[**patch_route_aggregation_by_uuid**](RouteAggregationsApi.md#patch_route_aggregation_by_uuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Patch Aggregation
+[**get_route_aggregation_changes**](RouteAggregationsApi.md#get_route_aggregation_changes) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/changes | Get Route Aggregation Changes
+[**get_route_aggregation_connections**](RouteAggregationsApi.md#get_route_aggregation_connections) | **GET** /fabric/v4/routeAggregations/{routeAggregationId}/connections | Get Route Aggregation Connections
+[**patch_route_aggregation_by_uuid**](RouteAggregationsApi.md#patch_route_aggregation_by_uuid) | **PATCH** /fabric/v4/routeAggregations/{routeAggregationId} | Update Route Aggregation
 [**search_cloud_router_route_aggregation_attachments**](RouteAggregationsApi.md#search_cloud_router_route_aggregation_attachments) | **POST** /fabric/v4/routers/{routerId}/routeAggregations/search | Search Cloud Router Route Aggregation Attachments
-[**search_route_aggregations**](RouteAggregationsApi.md#search_route_aggregations) | **POST** /fabric/v4/routeAggregations/search | Search Aggregations
+[**search_route_aggregations**](RouteAggregationsApi.md#search_route_aggregations) | **POST** /fabric/v4/routeAggregations/search | Search Route Aggregations
 
 
 # **attach_connection_route_aggregation**
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 # **create_route_aggregation**
 > RouteAggregationsData create_route_aggregation(route_aggregations_base)
 
-Create Aggregations
+Create Route Aggregation
 
 This API provides capability to create a Route Aggregation
 
@@ -146,7 +146,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_aggregations_base = equinix.services.fabricv4.RouteAggregationsBase() # RouteAggregationsBase | 
 
     try:
-        # Create Aggregations
+        # Create Route Aggregation
         api_response = api_instance.create_route_aggregation(route_aggregations_base)
         print("The response of RouteAggregationsApi->create_route_aggregation:\n")
         pprint(api_response)
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 # **get_connection_route_aggregations**
 > GetAllConnectionRouteAggregationsResponse get_connection_route_aggregations(connection_id)
 
-Get All Aggregations
+Get Connection Route Aggregations
 
 This API provides capability to view all Route Aggregations attached to a Connection
 
@@ -486,7 +486,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_id = 'connection_id_example' # str | Connection Id
 
     try:
-        # Get All Aggregations
+        # Get Connection Route Aggregations
         api_response = api_instance.get_connection_route_aggregations(connection_id)
         print("The response of RouteAggregationsApi->get_connection_route_aggregations:\n")
         pprint(api_response)
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 # **get_route_aggregation_changes**
 > RouteAggregationChangeDataResponse get_route_aggregation_changes(route_aggregation_id, offset=offset, limit=limit)
 
-Get All Changes
+Get Route Aggregation Changes
 
 This API provides capability to retrieve all of a Route Aggregation's Changes
 
@@ -741,7 +741,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get All Changes
+        # Get Route Aggregation Changes
         api_response = api_instance.get_route_aggregation_changes(route_aggregation_id, offset=offset, limit=limit)
         print("The response of RouteAggregationsApi->get_route_aggregation_changes:\n")
         pprint(api_response)
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 # **get_route_aggregation_connections**
 > GetRouteAggregationGetConnectionsResponse get_route_aggregation_connections(route_aggregation_id)
 
-Get All Connections on Route Aggregation
+Get Route Aggregation Connections
 
 This API provides capability to view all Connections using the Route Aggregation
 
@@ -826,7 +826,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
 
     try:
-        # Get All Connections on Route Aggregation
+        # Get Route Aggregation Connections
         api_response = api_instance.get_route_aggregation_connections(route_aggregation_id)
         print("The response of RouteAggregationsApi->get_route_aggregation_connections:\n")
         pprint(api_response)
@@ -873,7 +873,7 @@ Name | Type | Description  | Notes
 # **patch_route_aggregation_by_uuid**
 > RouteAggregationsData patch_route_aggregation_by_uuid(route_aggregation_id, route_aggregations_patch_request_item)
 
-Patch Aggregation
+Update Route Aggregation
 
 This API provides capability to partially update a Route Aggregation
 
@@ -912,7 +912,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_aggregations_patch_request_item = [equinix.services.fabricv4.RouteAggregationsPatchRequestItem()] # List[RouteAggregationsPatchRequestItem] | 
 
     try:
-        # Patch Aggregation
+        # Update Route Aggregation
         api_response = api_instance.patch_route_aggregation_by_uuid(route_aggregation_id, route_aggregations_patch_request_item)
         print("The response of RouteAggregationsApi->patch_route_aggregation_by_uuid:\n")
         pprint(api_response)
@@ -1047,7 +1047,7 @@ Name | Type | Description  | Notes
 # **search_route_aggregations**
 > RouteAggregationsSearchResponse search_route_aggregations(route_aggregations_search_request)
 
-Search Aggregations
+Search Route Aggregations
 
 This API provides capability to search Route Aggregations
 
@@ -1085,7 +1085,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     route_aggregations_search_request = equinix.services.fabricv4.RouteAggregationsSearchRequest() # RouteAggregationsSearchRequest | 
 
     try:
-        # Search Aggregations
+        # Search Route Aggregations
         api_response = api_instance.search_route_aggregations(route_aggregations_search_request)
         print("The response of RouteAggregationsApi->search_route_aggregations:\n")
         pprint(api_response)

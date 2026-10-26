@@ -37,7 +37,7 @@ class CloudRouterPostRequest(BaseModel):
     order: Optional[Order] = None
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None
-    notifications: Optional[List[SimplifiedNotification]] = Field(default=None, description="Preferences for notifications on connection configuration or status changes")
+    notifications: List[SimplifiedNotification] = Field(description="Preferences for notifications on connection configuration or status changes")
     marketplace_subscription: Optional[MarketplaceSubscription] = Field(default=None, alias="marketplaceSubscription")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "location", "package", "order", "project", "account", "notifications", "marketplaceSubscription"]

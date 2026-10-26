@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Product offering identifier | [optional] 
 **name** | **str** | Product offering name | [optional] 
+**billing_term** | [**ProductOfferingBillingTerm**](ProductOfferingBillingTerm.md) |  | [optional] 
 
 ## Example
 

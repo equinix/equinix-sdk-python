@@ -38,6 +38,7 @@ class ProviderStatus(str, Enum):
     DELETING = 'DELETING'
     PENDING_DELETE = 'PENDING DELETE'
     N_SLASH_A = 'N/A'
+    QUOTING = 'QUOTING'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

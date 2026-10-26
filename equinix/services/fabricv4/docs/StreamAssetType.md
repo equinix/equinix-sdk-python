@@ -20,6 +20,8 @@ Asset types
 
 * `PROJECT` (value: `'PROJECT'`)
 
+* `VIRTUAL_DEVICE` (value: `'VIRTUAL_DEVICE'`)
+
 * `DATA` (value: `'DATA'`)
 
 * `MGMT` (value: `'MGMT'`)

@@ -28,7 +28,7 @@ class InternetAccessOrder(BaseModel):
     billing_tier: Optional[StrictStr] = Field(default=None, description="Billing tier for connection bandwidth", alias="billingTier")
     order_id: Optional[StrictStr] = Field(default=None, description="Order Identification", alias="orderId")
     order_number: Optional[StrictStr] = Field(default=None, description="Order Reference Number", alias="orderNumber")
-    term_length: Optional[Annotated[int, Field(le=36, strict=True, ge=1)]] = Field(default=1, description="Term length in months, valid values are 1, 12, 24, 36 where 1 is the default value (for on-demand case).", alias="termLength")
+    term_length: Optional[Annotated[int, Field(le=60, strict=True, ge=1)]] = Field(default=1, description="Term length in months, valid values are 1, 12, 24, 36, 60 where 1 is the default value (for on-demand case).", alias="termLength")
     contracted_bandwidth: Optional[StrictInt] = Field(default=None, description="Contracted bandwidth", alias="contractedBandwidth")
     href: Optional[StrictStr] = Field(default=None, description="Order URI")
     additional_properties: Dict[str, Any] = {}

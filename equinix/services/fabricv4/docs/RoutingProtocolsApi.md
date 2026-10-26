@@ -4,15 +4,15 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_connection_routing_protocol**](RoutingProtocolsApi.md#create_connection_routing_protocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Protocol
-[**create_connection_routing_protocols_in_bulk**](RoutingProtocolsApi.md#create_connection_routing_protocols_in_bulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Protocol
+[**create_connection_routing_protocol**](RoutingProtocolsApi.md#create_connection_routing_protocol) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols | Create Routing Protocol
+[**create_connection_routing_protocols_in_bulk**](RoutingProtocolsApi.md#create_connection_routing_protocols_in_bulk) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/bulk | Bulk Create Routing Protocols
 [**delete_connection_routing_protocol_by_uuid**](RoutingProtocolsApi.md#delete_connection_routing_protocol_by_uuid) | **DELETE** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Delete Protocol
 [**get_connection_routing_protocol_all_bgp_actions**](RoutingProtocolsApi.md#get_connection_routing_protocol_all_bgp_actions) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Get BGP Actions
 [**get_connection_routing_protocol_by_uuid**](RoutingProtocolsApi.md#get_connection_routing_protocol_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Get Protocol
-[**get_connection_routing_protocols**](RoutingProtocolsApi.md#get_connection_routing_protocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | GetRoutingProtocols
+[**get_connection_routing_protocols**](RoutingProtocolsApi.md#get_connection_routing_protocols) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols | Get Routing Protocols
 [**get_connection_routing_protocols_bgp_action_by_uuid**](RoutingProtocolsApi.md#get_connection_routing_protocols_bgp_action_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions/{actionId} | Get BGP Action
 [**get_connection_routing_protocols_change_by_uuid**](RoutingProtocolsApi.md#get_connection_routing_protocols_change_by_uuid) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes/{changeId} | Get Change By ID
-[**get_connection_routing_protocols_changes**](RoutingProtocolsApi.md#get_connection_routing_protocols_changes) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Changes
+[**get_connection_routing_protocols_changes**](RoutingProtocolsApi.md#get_connection_routing_protocols_changes) | **GET** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/changes | Get Routing Protocol Changes
 [**patch_connection_routing_protocol_by_uuid**](RoutingProtocolsApi.md#patch_connection_routing_protocol_by_uuid) | **PATCH** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Patch Protocol
 [**post_connection_routing_protocol_bgp_action_by_uuid**](RoutingProtocolsApi.md#post_connection_routing_protocol_bgp_action_by_uuid) | **POST** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId}/actions | Clear/Reset BGP
 [**replace_connection_routing_protocol_by_uuid**](RoutingProtocolsApi.md#replace_connection_routing_protocol_by_uuid) | **PUT** /fabric/v4/connections/{connectionId}/routingProtocols/{routingProtocolId} | Replace Protocol
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 # **create_connection_routing_protocol**
 > RoutingProtocolData create_connection_routing_protocol(connection_id, routing_protocol_base)
 
-Create Protocol
+Create Routing Protocol
 
 This API provides capability to create Routing Protocol for connections
 
@@ -61,7 +61,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     routing_protocol_base = equinix.services.fabricv4.RoutingProtocolBase() # RoutingProtocolBase | 
 
     try:
-        # Create Protocol
+        # Create Routing Protocol
         api_response = api_instance.create_connection_routing_protocol(connection_id, routing_protocol_base)
         print("The response of RoutingProtocolsApi->create_connection_routing_protocol:\n")
         pprint(api_response)
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 # **create_connection_routing_protocols_in_bulk**
 > GetResponse create_connection_routing_protocols_in_bulk(connection_id, connection_routing_protocol_post_request)
 
-Bulk Create Protocol
+Bulk Create Routing Protocols
 
 This API provides capability to create Routing Protocol for connections
 
@@ -148,7 +148,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_routing_protocol_post_request = equinix.services.fabricv4.ConnectionRoutingProtocolPostRequest() # ConnectionRoutingProtocolPostRequest | 
 
     try:
-        # Bulk Create Protocol
+        # Bulk Create Routing Protocols
         api_response = api_instance.create_connection_routing_protocols_in_bulk(connection_id, connection_routing_protocol_post_request)
         print("The response of RoutingProtocolsApi->create_connection_routing_protocols_in_bulk:\n")
         pprint(api_response)
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 # **get_connection_routing_protocols**
 > GetResponse get_connection_routing_protocols(connection_id, offset=offset, limit=limit)
 
-GetRoutingProtocols
+Get Routing Protocols
 
 This API provides capability to get Routing Protocols for connections
 
@@ -497,7 +497,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # GetRoutingProtocols
+        # Get Routing Protocols
         api_response = api_instance.get_connection_routing_protocols(connection_id, offset=offset, limit=limit)
         print("The response of RoutingProtocolsApi->get_connection_routing_protocols:\n")
         pprint(api_response)
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 # **get_connection_routing_protocols_changes**
 > RoutingProtocolChangeDataResponse get_connection_routing_protocols_changes(connection_id, routing_protocol_id, offset=offset, limit=limit)
 
-Get Changes
+Get Routing Protocol Changes
 
 This API provides capability to retrieve user's Routing Protocol Changes
 
@@ -759,7 +759,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     limit = 10 # int | number of records to fetch (optional)
 
     try:
-        # Get Changes
+        # Get Routing Protocol Changes
         api_response = api_instance.get_connection_routing_protocols_changes(connection_id, routing_protocol_id, offset=offset, limit=limit)
         print("The response of RoutingProtocolsApi->get_connection_routing_protocols_changes:\n")
         pprint(api_response)

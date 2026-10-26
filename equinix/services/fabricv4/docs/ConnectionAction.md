@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **type** | [**Actions**](Actions.md) |  | 
 **href** | **str** | Connection action URI | [readonly] 
 **uuid** | **str** | Equinix-assigned connection identifier | 
+**state** | [**ConnectionActionState**](ConnectionActionState.md) |  | [optional] 
 **description** | **str** | Connection rejection reason detail | [optional] 
 **data** | [**ConnectionAcceptanceData**](ConnectionAcceptanceData.md) |  | 
 **change_log** | [**Changelog**](Changelog.md) |  | [optional] 

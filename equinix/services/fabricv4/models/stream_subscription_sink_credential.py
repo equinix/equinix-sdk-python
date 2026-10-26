@@ -29,8 +29,9 @@ class StreamSubscriptionSinkCredential(BaseModel):
     api_key: Optional[StrictStr] = Field(default=None, description="passed as Authorization header value", alias="apiKey")
     username: Optional[StrictStr] = Field(default=None, description="passed as Authorization header value")
     password: Optional[StrictStr] = Field(default=None, description="passed as Authorization header value")
+    api_token: Optional[StrictStr] = Field(default=None, description="passed as Authorization header value", alias="apiToken")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "accessToken", "integrationKey", "apiKey", "username", "password"]
+    __properties: ClassVar[List[str]] = ["type", "accessToken", "integrationKey", "apiKey", "username", "password", "apiToken"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +96,8 @@ class StreamSubscriptionSinkCredential(BaseModel):
             "integrationKey": obj.get("integrationKey"),
             "apiKey": obj.get("apiKey"),
             "username": obj.get("username"),
-            "password": obj.get("password")
+            "password": obj.get("password"),
+            "apiToken": obj.get("apiToken")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

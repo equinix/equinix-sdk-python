@@ -16,7 +16,7 @@ from typing_extensions import Self
 
 class SearchSimpleExpressionOperator(str, Enum):
     """
-    SearchSimpleExpressionOperator
+    \"~*\" is a case-insensitive glob match, equivalent to ILIKE - the same single \"*\" wildcard, not POSIX regex - kept as its own operator only because existing callers already send it. 
     """
 
     """
@@ -33,6 +33,7 @@ class SearchSimpleExpressionOperator(str, Enum):
     GREATER_THAN_EQUAL = '>='
     LESS_THAN = '<'
     LESS_THAN_EQUAL = '<='
+    TILDE_STAR = '~*'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

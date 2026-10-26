@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **group** | **str** | Redundancy group identifier (UUID of primary connection) | [optional] 
 **priority** | [**ConnectionPriority**](ConnectionPriority.md) |  | [optional] 
+**name** | **str** | Customer-provided name for the redundancy group | [optional] 
+**description** | **str** | Customer-provided description for the redundancy group | [optional] 
 
 ## Example
 

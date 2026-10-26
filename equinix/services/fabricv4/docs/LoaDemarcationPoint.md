@@ -7,6 +7,7 @@ Specifies the demarcation point. <br> For CAGE_LOA - cageUniqueSpaceId is requir
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cage_unique_space_id** | **str** | Unique identifier of the Cage. | [optional] 
+**cabinet_unique_space_id** | **str** | Unique identifier of the Cabinet. | [optional] 
 **patch_panel_id** | **str** | Unique identifier of the Patch Panel.  | [optional] 
 **patch_panel_port_a** | **int** | Specify the desired port number. &lt;br&gt; When ports are not provided, next available ports will be used.  | [optional] 
 **patch_panel_port_b** | **int** | Specify the desired port number. &lt;br&gt; When ports are not provided, next available ports will be used. &lt;br&gt; Required for Connector type FC and ST only.  | [optional] 

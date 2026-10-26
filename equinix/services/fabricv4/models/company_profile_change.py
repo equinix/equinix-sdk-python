@@ -16,6 +16,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.company_profile_change_item import CompanyProfileChangeItem
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class CompanyProfileChange(BaseModel):
     status: Optional[StrictStr] = None
     created_date_time: Optional[datetime] = Field(default=None, alias="createdDateTime")
     updated_date_time: Optional[datetime] = Field(default=None, alias="updatedDateTime")
-    data: Optional[Dict[str, Any]] = None
+    data: Optional[List[CompanyProfileChangeItem]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["uuid", "type", "status", "createdDateTime", "updatedDateTime", "data"]
 
@@ -73,6 +74,13 @@ class CompanyProfileChange(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item_data in self.data:
+                if _item_data:
+                    _items.append(_item_data.to_dict())
+            _dict['data'] = _items
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -95,7 +103,7 @@ class CompanyProfileChange(BaseModel):
             "status": obj.get("status"),
             "createdDateTime": obj.get("createdDateTime"),
             "updatedDateTime": obj.get("updatedDateTime"),
-            "data": obj.get("data")
+            "data": [CompanyProfileChangeItem.from_dict(_item) for _item in obj["data"]] if obj.get("data") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

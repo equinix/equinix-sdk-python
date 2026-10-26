@@ -27,7 +27,7 @@ class ExchangeServicePropertyExpression(BaseModel):
     """ # noqa: E501
     var_property: ExchangeServicePropertyExpressionProperty = Field(alias="property")
     operator: ExchangeServicePropertyExpressionOperator
-    values: Annotated[List[StrictStr], Field(min_length=1, max_length=1)]
+    values: Annotated[List[StrictStr], Field(min_length=1)]
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "operator", "values"]
 

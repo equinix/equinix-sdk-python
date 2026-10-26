@@ -24,7 +24,7 @@ class CloudEvent(BaseModel):
     """
     Cloud Event object
     """ # noqa: E501
-    spec: Optional[StrictStr] = Field(default=None, description="Cloud Event Open Telemetry specification")
+    specversion: Optional[StrictStr] = Field(default=None, description="Cloud Event Open Telemetry specification")
     source: Optional[StrictStr] = Field(default=None, description="Cloud Event source")
     id: Optional[StrictStr] = Field(default=None, description="Cloud Event identifier")
     type: Optional[StrictStr] = Field(default=None, description="Equinix supported event type")
@@ -43,7 +43,7 @@ class CloudEvent(BaseModel):
     tracestate: Optional[StrictStr] = Field(default=None, description="Cloud Event tracestate")
     data: Optional[CloudEventData] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["spec", "source", "id", "type", "subject", "time", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixalert", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"]
+    __properties: ClassVar[List[str]] = ["specversion", "source", "id", "type", "subject", "time", "dataschema", "datacontenttype", "severitynumber", "severitytext", "equinixalert", "equinixorganization", "equinixproject", "authtype", "authid", "traceparent", "tracestate", "data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,7 +79,7 @@ class CloudEvent(BaseModel):
         * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
-            "spec",
+            "specversion",
             "additional_properties",
         ])
 
@@ -108,7 +108,7 @@ class CloudEvent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "spec": obj.get("spec"),
+            "specversion": obj.get("specversion"),
             "source": obj.get("source"),
             "id": obj.get("id"),
             "type": obj.get("type"),

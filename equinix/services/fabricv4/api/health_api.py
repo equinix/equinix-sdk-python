@@ -48,9 +48,9 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> HealthResponse:
-        """Get service status
+        """Get Service Status
 
-        GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+        Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -111,9 +111,9 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[HealthResponse]:
-        """Get service status
+        """Get Service Status
 
-        GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+        Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -174,9 +174,9 @@ class HealthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get service status
+        """Get Service Status
 
-        GET All service health statys with an option query parameter to return all Equinix Fabric customer in which the customer has a presence.
+        Retrieves the operational health status of all Equinix Fabric services, enabling customers to monitor service availability and detect potential disruptions across regions where they have a presence. Supports an optional query parameter to filter results by customer
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

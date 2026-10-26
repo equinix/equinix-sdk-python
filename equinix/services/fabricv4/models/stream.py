@@ -17,6 +17,8 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.project import Project
+from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
+from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
 from equinix.services.fabricv4.models.stream_state import StreamState
 from equinix.services.fabricv4.models.stream_type import StreamType
 from typing import Optional, Set
@@ -32,13 +34,15 @@ class Stream(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Customer-provided stream name")
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided stream description")
     project: Optional[Project] = None
+    account: Optional[SimplifiedAccount] = None
+    notifications: Optional[List[SimplifiedNotification]] = Field(default=None, description="Preferences for stream notifications, set at creation")
     state: Optional[StreamState] = None
     assets_count: Optional[StrictInt] = Field(default=None, description="Stream assets count", alias="assetsCount")
     stream_subscriptions_count: Optional[StrictInt] = Field(default=None, description="Stream subscriptions count", alias="streamSubscriptionsCount")
     alert_rules_count: Optional[StrictInt] = Field(default=None, description="Stream alert rules count", alias="alertRulesCount")
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "project", "state", "assetsCount", "streamSubscriptionsCount", "alertRulesCount", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "description", "project", "account", "notifications", "state", "assetsCount", "streamSubscriptionsCount", "alertRulesCount", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +90,16 @@ class Stream(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of project
         if self.project:
             _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of account
+        if self.account:
+            _dict['account'] = self.account.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
+        _items = []
+        if self.notifications:
+            for _item_notifications in self.notifications:
+                if _item_notifications:
+                    _items.append(_item_notifications.to_dict())
+            _dict['notifications'] = _items
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -112,6 +126,8 @@ class Stream(BaseModel):
             "name": obj.get("name"),
             "description": obj.get("description"),
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
+            "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
+            "notifications": [SimplifiedNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
             "state": obj.get("state"),
             "assetsCount": obj.get("assetsCount"),
             "streamSubscriptionsCount": obj.get("streamSubscriptionsCount"),

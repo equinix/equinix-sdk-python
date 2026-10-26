@@ -6,7 +6,7 @@ App Domain change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
+**op** | [**AppDomainChangeOperationOp**](AppDomainChangeOperationOp.md) |  | 
 **path** | [**AppDomainChangeOperationPath**](AppDomainChangeOperationPath.md) |  | 
 **value** | **object** | new value for updated parameter | 
 

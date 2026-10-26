@@ -20,7 +20,6 @@ from equinix.services.fabricv4.models.access_point_role import AccessPointRole
 from equinix.services.fabricv4.models.access_point_type import AccessPointType
 from equinix.services.fabricv4.models.address import Address
 from equinix.services.fabricv4.models.cloud_router import CloudRouter
-from equinix.services.fabricv4.models.interconnect import Interconnect
 from equinix.services.fabricv4.models.interface import Interface
 from equinix.services.fabricv4.models.metal_interconnection import MetalInterconnection
 from equinix.services.fabricv4.models.peering_type import PeeringType
@@ -51,7 +50,6 @@ class AccessPoint(BaseModel):
     virtual_device: Optional[VirtualDevice] = Field(default=None, alias="virtualDevice")
     interface: Optional[Interface] = None
     network: Optional[SimplifiedNetwork] = None
-    interconnect: Optional[Interconnect] = None
     environment: Optional[ProviderEnvironment] = None
     seller_region: Optional[StrictStr] = Field(default=None, description="Access point seller region", alias="sellerRegion")
     peering_type: Optional[PeeringType] = Field(default=None, alias="peeringType")
@@ -66,7 +64,7 @@ class AccessPoint(BaseModel):
     provider_identifier: Optional[StrictStr] = Field(default=None, description="Provider identifier", alias="providerIdentifier")
     address: Optional[Address] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "interconnect", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"]
+    __properties: ClassVar[List[str]] = ["type", "account", "location", "port", "profile", "router", "linkProtocol", "virtualDevice", "interface", "network", "environment", "sellerRegion", "peeringType", "authenticationKey", "activationKey", "providerConnectionId", "virtualNetwork", "interconnection", "role", "productOffering", "bandwidthCommit", "providerIdentifier", "address"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -136,9 +134,6 @@ class AccessPoint(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of network
         if self.network:
             _dict['network'] = self.network.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of interconnect
-        if self.interconnect:
-            _dict['interconnect'] = self.interconnect.to_dict()
         # override the default output from pydantic by calling `to_dict()` of environment
         if self.environment:
             _dict['environment'] = self.environment.to_dict()
@@ -181,7 +176,6 @@ class AccessPoint(BaseModel):
             "virtualDevice": VirtualDevice.from_dict(obj["virtualDevice"]) if obj.get("virtualDevice") is not None else None,
             "interface": Interface.from_dict(obj["interface"]) if obj.get("interface") is not None else None,
             "network": SimplifiedNetwork.from_dict(obj["network"]) if obj.get("network") is not None else None,
-            "interconnect": Interconnect.from_dict(obj["interconnect"]) if obj.get("interconnect") is not None else None,
             "environment": ProviderEnvironment.from_dict(obj["environment"]) if obj.get("environment") is not None else None,
             "sellerRegion": obj.get("sellerRegion"),
             "peeringType": obj.get("peeringType"),

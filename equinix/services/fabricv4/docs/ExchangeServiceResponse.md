@@ -15,11 +15,12 @@ Name | Type | Description | Notes
 **location** | [**SimplifiedLocation**](SimplifiedLocation.md) |  | [optional] 
 **public_peering_connection** | [**PublicPeeringConnectionResponse**](PublicPeeringConnectionResponse.md) |  | [optional] 
 **routing_protocol** | [**RoutingProtocolResponse**](RoutingProtocolResponse.md) |  | [optional] 
-**order** | [**Order**](Order.md) |  | [optional] 
+**order** | [**ExchangeServiceOrder**](ExchangeServiceOrder.md) |  | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
 **account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
 **notifications** | [**List[ExchangeServiceNotification]**](ExchangeServiceNotification.md) | Preferences for notifications on Internet Exchange Service configuration or status changes | [optional] 
 **changelog** | [**PlatformChangelog**](PlatformChangelog.md) |  | [optional] 
+**additional_info** | [**ExchangeServiceAdditionalInfo**](ExchangeServiceAdditionalInfo.md) |  | [optional] 
 
 ## Example
 

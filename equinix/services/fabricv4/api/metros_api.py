@@ -56,7 +56,7 @@ class MetrosApi:
     ) -> Metro:
         """Get Metro by Code
 
-        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
+        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location
 
         :param metro_code: Metro Code (required)
         :type metro_code: str
@@ -126,7 +126,7 @@ class MetrosApi:
     ) -> ApiResponse[Metro]:
         """Get Metro by Code
 
-        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
+        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location
 
         :param metro_code: Metro Code (required)
         :type metro_code: str
@@ -196,7 +196,7 @@ class MetrosApi:
     ) -> RESTResponseType:
         """Get Metro by Code
 
-        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location.
+        GET Metros retrieves all Equinix Fabric metros, as well as latency data between each metro location
 
         :param metro_code: Metro Code (required)
         :type metro_code: str
@@ -326,9 +326,9 @@ class MetrosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MetroResponse:
-        """Get all Metros
+        """Get Metros
 
-        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
+        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location
 
         :param presence: User On Boarded Metros based on Fabric resource availability
         :type presence: Presence
@@ -404,9 +404,9 @@ class MetrosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[MetroResponse]:
-        """Get all Metros
+        """Get Metros
 
-        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
+        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location
 
         :param presence: User On Boarded Metros based on Fabric resource availability
         :type presence: Presence
@@ -482,9 +482,9 @@ class MetrosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get all Metros
+        """Get Metros
 
-        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location.
+        GET All Subscriber Metros with an option query parameter to return all Equinix Fabric metros in which the customer has a presence, as well as latency data for each location
 
         :param presence: User On Boarded Metros based on Fabric resource availability
         :type presence: Presence

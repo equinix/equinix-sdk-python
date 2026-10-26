@@ -2324,7 +2324,7 @@ class CompanyProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CompanyProfileResponse:
-        """Get Company Profile by UUID
+        """Get Company Profile by ID
 
         Get company profile details by UUID <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
@@ -2394,7 +2394,7 @@ class CompanyProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CompanyProfileResponse]:
-        """Get Company Profile by UUID
+        """Get Company Profile by ID
 
         Get company profile details by UUID <font color=\"red\"> <sup color='red'>Beta</sup></font>
 
@@ -2464,7 +2464,7 @@ class CompanyProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Company Profile by UUID
+        """Get Company Profile by ID
 
         Get company profile details by UUID <font color=\"red\"> <sup color='red'>Beta</sup></font>
 

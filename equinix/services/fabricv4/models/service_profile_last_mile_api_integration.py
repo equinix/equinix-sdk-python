@@ -28,8 +28,9 @@ class ServiceProfileLastMileApiIntegration(BaseModel):
     poq_enabled: Optional[StrictBool] = Field(default=None, description="Whether product qualification is enabled for the last-mile provider.", alias="poqEnabled")
     quote_enabled: Optional[StrictBool] = Field(default=None, description="Whether quote generation is enabled for the last-mile provider.", alias="quoteEnabled")
     place_order_enabled: Optional[StrictBool] = Field(default=None, description="Whether place order is enabled for the last-mile provider.", alias="placeOrderEnabled")
+    quote_via_aggregator_enabled: Optional[StrictBool] = Field(default=None, description="Whether quote via aggregator is enabled for the last-mile provider.", alias="quoteViaAggregatorEnabled")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["siteValidationEnabled", "dataCenterLocationEnabled", "productOfferingEnabled", "poqEnabled", "quoteEnabled", "placeOrderEnabled"]
+    __properties: ClassVar[List[str]] = ["siteValidationEnabled", "dataCenterLocationEnabled", "productOfferingEnabled", "poqEnabled", "quoteEnabled", "placeOrderEnabled", "quoteViaAggregatorEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,7 +95,8 @@ class ServiceProfileLastMileApiIntegration(BaseModel):
             "productOfferingEnabled": obj.get("productOfferingEnabled"),
             "poqEnabled": obj.get("poqEnabled"),
             "quoteEnabled": obj.get("quoteEnabled"),
-            "placeOrderEnabled": obj.get("placeOrderEnabled")
+            "placeOrderEnabled": obj.get("placeOrderEnabled"),
+            "quoteViaAggregatorEnabled": obj.get("quoteViaAggregatorEnabled")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

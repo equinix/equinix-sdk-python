@@ -17,7 +17,7 @@ from typing import List, Optional
 from typing_extensions import Annotated
 from equinix.services.fabricv4.models.environment_action_request import EnvironmentActionRequest
 from equinix.services.fabricv4.models.environment_action_response import EnvironmentActionResponse
-from equinix.services.fabricv4.models.get_service_profiles_view_point_parameter import GetServiceProfilesViewPointParameter
+from equinix.services.fabricv4.models.list_service_profiles_view_point_parameter import ListServiceProfilesViewPointParameter
 from equinix.services.fabricv4.models.provider_environments import ProviderEnvironments
 from equinix.services.fabricv4.models.service_metros import ServiceMetros
 from equinix.services.fabricv4.models.service_profile import ServiceProfile
@@ -63,9 +63,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfile:
-        """Create Profile
+        """Create Service Profile
 
-        Create Service Profile creates Equinix Fabric™ Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest
@@ -134,9 +134,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfile]:
-        """Create Profile
+        """Create Service Profile
 
-        Create Service Profile creates Equinix Fabric™ Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest
@@ -205,9 +205,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Profile
+        """Create Service Profile
 
-        Create Service Profile creates Equinix Fabric™ Service Profile.
+        Create Service Profile creates Equinix Fabric™ Service Profile
 
         :param service_profile_request: (required)
         :type service_profile_request: ServiceProfileRequest
@@ -351,7 +351,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfileActionResponse:
-        """Profile Actions
+        """Create Service Profile Action
 
         This API provides capability to accept/reject service profile update requests
 
@@ -427,7 +427,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfileActionResponse]:
-        """Profile Actions
+        """Create Service Profile Action
 
         This API provides capability to accept/reject service profile update requests
 
@@ -503,7 +503,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Profile Actions
+        """Create Service Profile Action
 
         This API provides capability to accept/reject service profile update requests
 
@@ -655,7 +655,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfile:
-        """Delete Profile
+        """Delete Service Profile
 
         delete Service Profile by UUID
 
@@ -727,7 +727,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfile]:
-        """Delete Profile
+        """Delete Service Profile
 
         delete Service Profile by UUID
 
@@ -799,7 +799,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Delete Profile
+        """Delete Service Profile
 
         delete Service Profile by UUID
 
@@ -919,7 +919,7 @@ class ServiceProfilesApi:
     def get_service_profile_by_uuid(
         self,
         service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -933,14 +933,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfile:
-        """Get Profile
+        """Get Service Profile
 
-        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.
+        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -994,7 +994,7 @@ class ServiceProfilesApi:
     def get_service_profile_by_uuid_with_http_info(
         self,
         service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1008,14 +1008,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfile]:
-        """Get Profile
+        """Get Service Profile
 
-        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.
+        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1069,7 +1069,7 @@ class ServiceProfilesApi:
     def get_service_profile_by_uuid_without_preload_content(
         self,
         service_profile_id: Annotated[StrictStr, Field(description="Service Profile UUID")],
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1083,14 +1083,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Profile
+        """Get Service Profile
 
-        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view.
+        Get service profile by UUID. View Point parameter if set to zSide will give seller's view of the profile otherwise buyer's view
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1225,9 +1225,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProviderEnvironments:
-        """Get Profile Environments
+        """Get Service Profile Environments
 
-        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>.
+        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1304,9 +1304,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProviderEnvironments]:
-        """Get Profile Environments
+        """Get Service Profile Environments
 
-        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>.
+        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1383,9 +1383,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Profile Environments
+        """Get Service Profile Environments
 
-        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>.
+        Get service profile provider environments by UUID <sup color='red'>Beta</sup></font>
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1533,9 +1533,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceMetros:
-        """Get Profile Metros
+        """Get Service Profile Metros
 
-        Get service profile metros by UUID.
+        Get service profile metros by UUID
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1612,9 +1612,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceMetros]:
-        """Get Profile Metros
+        """Get Service Profile Metros
 
-        Get service profile metros by UUID.
+        Get service profile metros by UUID
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1691,9 +1691,9 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get Profile Metros
+        """Get Service Profile Metros
 
-        Get service profile metros by UUID.
+        Get service profile metros by UUID
 
         :param service_profile_id: Service Profile UUID (required)
         :type service_profile_id: str
@@ -1823,11 +1823,11 @@ class ServiceProfilesApi:
 
 
     @validate_call
-    def get_service_profiles(
+    def list_service_profiles(
         self,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1841,16 +1841,16 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfiles:
-        """Get all Profiles
+        """List Service Profiles
 
-        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
 
         :param offset: offset
         :type offset: int
         :param limit: number of records to fetch
         :type limit: int
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1873,7 +1873,7 @@ class ServiceProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_service_profiles_serialize(
+        _param = self._list_service_profiles_serialize(
             offset=offset,
             limit=limit,
             view_point=view_point,
@@ -1902,11 +1902,11 @@ class ServiceProfilesApi:
 
 
     @validate_call
-    def get_service_profiles_with_http_info(
+    def list_service_profiles_with_http_info(
         self,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1920,16 +1920,16 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfiles]:
-        """Get all Profiles
+        """List Service Profiles
 
-        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
 
         :param offset: offset
         :type offset: int
         :param limit: number of records to fetch
         :type limit: int
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1952,7 +1952,7 @@ class ServiceProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_service_profiles_serialize(
+        _param = self._list_service_profiles_serialize(
             offset=offset,
             limit=limit,
             view_point=view_point,
@@ -1981,11 +1981,11 @@ class ServiceProfilesApi:
 
 
     @validate_call
-    def get_service_profiles_without_preload_content(
+    def list_service_profiles_without_preload_content(
         self,
         offset: Annotated[Optional[StrictInt], Field(description="offset")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="number of records to fetch")] = None,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1999,16 +1999,16 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get all Profiles
+        """List Service Profiles
 
-        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested.
+        The API request returns all Equinix Fabric Service Profiles in accordance with the view point requested
 
         :param offset: offset
         :type offset: int
         :param limit: number of records to fetch
         :type limit: int
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2031,7 +2031,7 @@ class ServiceProfilesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_service_profiles_serialize(
+        _param = self._list_service_profiles_serialize(
             offset=offset,
             limit=limit,
             view_point=view_point,
@@ -2055,7 +2055,7 @@ class ServiceProfilesApi:
         return response_data.response
 
 
-    def _get_service_profiles_serialize(
+    def _list_service_profiles_serialize(
         self,
         offset,
         limit,
@@ -2151,7 +2151,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfile:
-        """Replace Profile
+        """Replace Service Profile
 
         This API request replaces a service profile definition
 
@@ -2231,7 +2231,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfile]:
-        """Replace Profile
+        """Replace Service Profile
 
         This API request replaces a service profile definition
 
@@ -2311,7 +2311,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Replace Profile
+        """Replace Service Profile
 
         This API request replaces a service profile definition
 
@@ -2456,7 +2456,7 @@ class ServiceProfilesApi:
     def search_service_profiles(
         self,
         service_profile_search_request: ServiceProfileSearchRequest,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2470,14 +2470,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfiles:
-        """Profile Search
+        """Search Service Profiles
 
         Search service profiles by search criteria
 
         :param service_profile_search_request: (required)
         :type service_profile_search_request: ServiceProfileSearchRequest
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2530,7 +2530,7 @@ class ServiceProfilesApi:
     def search_service_profiles_with_http_info(
         self,
         service_profile_search_request: ServiceProfileSearchRequest,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2544,14 +2544,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfiles]:
-        """Profile Search
+        """Search Service Profiles
 
         Search service profiles by search criteria
 
         :param service_profile_search_request: (required)
         :type service_profile_search_request: ServiceProfileSearchRequest
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2604,7 +2604,7 @@ class ServiceProfilesApi:
     def search_service_profiles_without_preload_content(
         self,
         service_profile_search_request: ServiceProfileSearchRequest,
-        view_point: Annotated[Optional[GetServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
+        view_point: Annotated[Optional[ListServiceProfilesViewPointParameter], Field(description="flips view between buyer and seller representation")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2618,14 +2618,14 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Profile Search
+        """Search Service Profiles
 
         Search service profiles by search criteria
 
         :param service_profile_search_request: (required)
         :type service_profile_search_request: ServiceProfileSearchRequest
         :param view_point: flips view between buyer and seller representation
-        :type view_point: GetServiceProfilesViewPointParameter
+        :type view_point: ListServiceProfilesViewPointParameter
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2772,7 +2772,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EnvironmentActionResponse:
-        """Service Profile Environment Actions
+        """Create Service Profile Environment Action
 
         This API provides capability to perform actions on a service profile environment, such as validating an activation key.<sup color='red'>Beta</sup></font>
 
@@ -2851,7 +2851,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EnvironmentActionResponse]:
-        """Service Profile Environment Actions
+        """Create Service Profile Environment Action
 
         This API provides capability to perform actions on a service profile environment, such as validating an activation key.<sup color='red'>Beta</sup></font>
 
@@ -2930,7 +2930,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Service Profile Environment Actions
+        """Create Service Profile Environment Action
 
         This API provides capability to perform actions on a service profile environment, such as validating an activation key.<sup color='red'>Beta</sup></font>
 
@@ -3087,7 +3087,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ServiceProfile:
-        """Update Profile
+        """Update Service Profile
 
         Update Service Profile by UUID
 
@@ -3163,7 +3163,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ServiceProfile]:
-        """Update Profile
+        """Update Service Profile
 
         Update Service Profile by UUID
 
@@ -3239,7 +3239,7 @@ class ServiceProfilesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Update Profile
+        """Update Service Profile
 
         Update Service Profile by UUID
 

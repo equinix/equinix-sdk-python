@@ -4,17 +4,17 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_stream_alert_rules**](StreamAlertRulesApi.md#create_stream_alert_rules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rules
-[**delete_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#delete_stream_alert_rule_by_uuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rules
-[**get_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#get_stream_alert_rule_by_uuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rules
+[**create_stream_alert_rules**](StreamAlertRulesApi.md#create_stream_alert_rules) | **POST** /fabric/v4/streams/{streamId}/alertRules | Create Stream Alert Rule
+[**delete_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#delete_stream_alert_rule_by_uuid) | **DELETE** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Delete Stream Alert Rule
+[**get_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#get_stream_alert_rule_by_uuid) | **GET** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Get Stream Alert Rule
 [**get_stream_alert_rules**](StreamAlertRulesApi.md#get_stream_alert_rules) | **GET** /fabric/v4/streams/{streamId}/alertRules | Get Stream Alert Rules
-[**update_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#update_stream_alert_rule_by_uuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rules
+[**update_stream_alert_rule_by_uuid**](StreamAlertRulesApi.md#update_stream_alert_rule_by_uuid) | **PUT** /fabric/v4/streams/{streamId}/alertRules/{alertRuleId} | Update Stream Alert Rule
 
 
 # **create_stream_alert_rules**
 > StreamAlertRule create_stream_alert_rules(stream_id, alert_rule_post_request)
 
-Create Stream Alert Rules
+Create Stream Alert Rule
 
 This API provides capability to create user's Stream Alert Rules
 
@@ -53,7 +53,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     alert_rule_post_request = equinix.services.fabricv4.AlertRulePostRequest() # AlertRulePostRequest | 
 
     try:
-        # Create Stream Alert Rules
+        # Create Stream Alert Rule
         api_response = api_instance.create_stream_alert_rules(stream_id, alert_rule_post_request)
         print("The response of StreamAlertRulesApi->create_stream_alert_rules:\n")
         pprint(api_response)
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 # **delete_stream_alert_rule_by_uuid**
 > StreamAlertRule delete_stream_alert_rule_by_uuid(stream_id, alert_rule_id)
 
-Delete Stream Alert Rules
+Delete Stream Alert Rule
 
 This API provides capability to delete a user's stream alert rule
 
@@ -138,7 +138,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     alert_rule_id = 'alert_rule_id_example' # str | alert rule UUID
 
     try:
-        # Delete Stream Alert Rules
+        # Delete Stream Alert Rule
         api_response = api_instance.delete_stream_alert_rule_by_uuid(stream_id, alert_rule_id)
         print("The response of StreamAlertRulesApi->delete_stream_alert_rule_by_uuid:\n")
         pprint(api_response)
@@ -185,9 +185,9 @@ Name | Type | Description  | Notes
 # **get_stream_alert_rule_by_uuid**
 > StreamAlertRule get_stream_alert_rule_by_uuid(stream_id, alert_rule_id)
 
-Get Stream Alert Rules
+Get Stream Alert Rule
 
-This API provides capability to get user's stream alert rules
+This API provides capability to get user's stream alert rule
 
 ### Example
 
@@ -223,7 +223,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     alert_rule_id = 'alert_rule_id_example' # str | alert rule UUID
 
     try:
-        # Get Stream Alert Rules
+        # Get Stream Alert Rule
         api_response = api_instance.get_stream_alert_rule_by_uuid(stream_id, alert_rule_id)
         print("The response of StreamAlertRulesApi->get_stream_alert_rule_by_uuid:\n")
         pprint(api_response)
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 # **update_stream_alert_rule_by_uuid**
 > StreamAlertRule update_stream_alert_rule_by_uuid(stream_id, alert_rule_id, alert_rule_put_request)
 
-Update Stream Alert Rules
+Update Stream Alert Rule
 
 This API provides capability to update a user's stream alert rule
 
@@ -396,7 +396,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     alert_rule_put_request = equinix.services.fabricv4.AlertRulePutRequest() # AlertRulePutRequest | 
 
     try:
-        # Update Stream Alert Rules
+        # Update Stream Alert Rule
         api_response = api_instance.update_stream_alert_rule_by_uuid(stream_id, alert_rule_id, alert_rule_put_request)
         print("The response of StreamAlertRulesApi->update_stream_alert_rule_by_uuid:\n")
         pprint(api_response)

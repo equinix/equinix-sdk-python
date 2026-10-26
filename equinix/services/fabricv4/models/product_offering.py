@@ -15,6 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.product_offering_billing_term import ProductOfferingBillingTerm
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,8 +25,9 @@ class ProductOffering(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="Product offering identifier")
     name: Optional[StrictStr] = Field(default=None, description="Product offering name")
+    billing_term: Optional[ProductOfferingBillingTerm] = Field(default=None, alias="billingTerm")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["id", "name"]
+    __properties: ClassVar[List[str]] = ["id", "name", "billingTerm"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +88,8 @@ class ProductOffering(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "billingTerm": obj.get("billingTerm")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **str** | Last-mile provider or catalog identifier. | [optional] 
 **web_url** | **str** | Last-mile catalog or provider website URL. | [optional] 
 **delivery_date** | [**ServiceProfileLastMileDeliveryDateRange**](ServiceProfileLastMileDeliveryDateRange.md) |  | [optional] 
+**billing_terms** | [**List[ServiceProfileLastMileProductCatalogBillingTermsInner]**](ServiceProfileLastMileProductCatalogBillingTermsInner.md) | Available billing terms in months. | [optional] 
 **offerings** | [**List[ServiceProfileLastMileOffering]**](ServiceProfileLastMileOffering.md) | Available last-mile offerings. | [optional] 
 
 ## Example

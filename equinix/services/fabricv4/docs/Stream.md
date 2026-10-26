@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **name** | **str** | Customer-provided stream name | [optional] 
 **description** | **str** | Customer-provided stream description | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
+**account** | [**SimplifiedAccount**](SimplifiedAccount.md) |  | [optional] 
+**notifications** | [**List[SimplifiedNotification]**](SimplifiedNotification.md) | Preferences for stream notifications, set at creation | [optional] 
 **state** | [**StreamState**](StreamState.md) |  | [optional] 
 **assets_count** | **int** | Stream assets count | [optional] 
 **stream_subscriptions_count** | **int** | Stream subscriptions count | [optional] 

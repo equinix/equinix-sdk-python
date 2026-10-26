@@ -57,7 +57,7 @@ class LogosApi:
     ) -> LogoResponse:
         """Create Logo
 
-        Create Logo for Equinix Fabric™ Company Profile.
+        Create Logo for Equinix Fabric™ Company Profile
 
         :param logo: Logo image file (required)
         :type logo: bytearray
@@ -140,7 +140,7 @@ class LogosApi:
     ) -> ApiResponse[LogoResponse]:
         """Create Logo
 
-        Create Logo for Equinix Fabric™ Company Profile.
+        Create Logo for Equinix Fabric™ Company Profile
 
         :param logo: Logo image file (required)
         :type logo: bytearray
@@ -223,7 +223,7 @@ class LogosApi:
     ) -> RESTResponseType:
         """Create Logo
 
-        Create Logo for Equinix Fabric™ Company Profile.
+        Create Logo for Equinix Fabric™ Company Profile
 
         :param logo: Logo image file (required)
         :type logo: bytearray

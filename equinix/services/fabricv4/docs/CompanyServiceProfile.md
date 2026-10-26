@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **href** | **str** |  | [optional] 
 **uuid** | **str** |  | [optional] 
+**type** | [**ServiceProfileTypeEnum**](ServiceProfileTypeEnum.md) |  | [optional] 
 
 ## Example
 

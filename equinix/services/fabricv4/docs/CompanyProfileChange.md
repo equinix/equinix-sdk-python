@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **created_date_time** | **datetime** |  | [optional] 
 **updated_date_time** | **datetime** |  | [optional] 
-**data** | **object** |  | [optional] 
+**data** | [**List[CompanyProfileChangeItem]**](CompanyProfileChangeItem.md) |  | [optional] [default to []]
 
 ## Example
 

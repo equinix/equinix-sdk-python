@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.maintenance_state import MaintenanceState
 from equinix.services.fabricv4.models.port_operation_operational_status import PortOperationOperationalStatus
@@ -32,8 +32,9 @@ class PortOperation(BaseModel):
     access_vc_count: Optional[StrictInt] = Field(default=None, description="Total number of connections.", alias="accessVCCount")
     op_status_changed_at: Optional[datetime] = Field(default=None, description="Date and time at which port availability changed.", alias="opStatusChangedAt")
     maintenance_status: Optional[MaintenanceState] = Field(default=None, alias="maintenanceStatus")
+    lock_enabled: Optional[StrictBool] = Field(default=None, description="Indicates whether the port configuration is locked due to an ongoing or scheduled maintenance.", alias="lockEnabled")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus"]
+    __properties: ClassVar[List[str]] = ["operationalStatus", "connectionCount", "evplVCCount", "fgVCCount", "accessVCCount", "opStatusChangedAt", "maintenanceStatus", "lockEnabled"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,7 +100,8 @@ class PortOperation(BaseModel):
             "fgVCCount": obj.get("fgVCCount"),
             "accessVCCount": obj.get("accessVCCount"),
             "opStatusChangedAt": obj.get("opStatusChangedAt"),
-            "maintenanceStatus": obj.get("maintenanceStatus")
+            "maintenanceStatus": obj.get("maintenanceStatus"),
+            "lockEnabled": obj.get("lockEnabled")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

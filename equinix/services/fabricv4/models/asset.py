@@ -28,7 +28,6 @@ class Asset(str, Enum):
     METROS = 'metros'
     ORGANIZATIONS = 'organizations'
     PROJECTS = 'projects'
-    NETWORKEDGEDEVICES = 'networkEdgeDevices'
     COMPANYPROFILES = 'companyProfiles'
 
     @classmethod

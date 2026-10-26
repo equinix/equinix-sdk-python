@@ -25,8 +25,10 @@ class ConnectionRedundancy(BaseModel):
     """ # noqa: E501
     group: Optional[StrictStr] = Field(default=None, description="Redundancy group identifier (UUID of primary connection)")
     priority: Optional[ConnectionPriority] = None
+    name: Optional[StrictStr] = Field(default=None, description="Customer-provided name for the redundancy group")
+    description: Optional[StrictStr] = Field(default=None, description="Customer-provided description for the redundancy group")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["group", "priority"]
+    __properties: ClassVar[List[str]] = ["group", "priority", "name", "description"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,7 +89,9 @@ class ConnectionRedundancy(BaseModel):
 
         _obj = cls.model_validate({
             "group": obj.get("group"),
-            "priority": obj.get("priority")
+            "priority": obj.get("priority"),
+            "name": obj.get("name"),
+            "description": obj.get("description")
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

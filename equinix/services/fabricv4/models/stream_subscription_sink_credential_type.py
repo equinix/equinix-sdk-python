@@ -26,6 +26,7 @@ class StreamSubscriptionSinkCredentialType(str, Enum):
     INTEGRATION_KEY = 'INTEGRATION_KEY'
     API_KEY = 'API_KEY'
     USERNAME_PASSWORD = 'USERNAME_PASSWORD'
+    API_TOKEN = 'API_TOKEN'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

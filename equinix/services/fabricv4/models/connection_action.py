@@ -18,6 +18,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.actions import Actions
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.connection_acceptance_data import ConnectionAcceptanceData
+from equinix.services.fabricv4.models.connection_action_state import ConnectionActionState
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,11 +29,12 @@ class ConnectionAction(BaseModel):
     type: Actions
     href: StrictStr = Field(description="Connection action URI")
     uuid: StrictStr = Field(description="Equinix-assigned connection identifier")
+    state: Optional[ConnectionActionState] = None
     description: Optional[StrictStr] = Field(default=None, description="Connection rejection reason detail")
     data: ConnectionAcceptanceData
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "href", "uuid", "description", "data", "changeLog"]
+    __properties: ClassVar[List[str]] = ["type", "href", "uuid", "state", "description", "data", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +105,7 @@ class ConnectionAction(BaseModel):
             "type": obj.get("type"),
             "href": obj.get("href"),
             "uuid": obj.get("uuid"),
+            "state": obj.get("state"),
             "description": obj.get("description"),
             "data": ConnectionAcceptanceData.from_dict(obj["data"]) if obj.get("data") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None

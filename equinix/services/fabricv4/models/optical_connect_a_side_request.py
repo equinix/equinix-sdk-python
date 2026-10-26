@@ -13,9 +13,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.optical_connect_patch_panel_fields_connector_type import OpticalConnectPatchPanelFieldsConnectorType
+from equinix.services.fabricv4.models.optical_connect_demarcation_point import OpticalConnectDemarcationPoint
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,12 +23,9 @@ class OpticalConnectASideRequest(BaseModel):
     """
     A-Side configuration. Always a patch panel port from your cage. 
     """ # noqa: E501
-    patch_panel_id: Optional[StrictStr] = Field(default=None, description="Unique identifier of the patch panel.", alias="patchPanelId")
-    patch_panel_port_a: Optional[StrictStr] = Field(default=None, description="Specify the desired port number for Port A. <br> When ports are not provided, next available ports will be used. ", alias="patchPanelPortA")
-    patch_panel_port_b: Optional[StrictStr] = Field(default=None, description="Specify the desired port number for Port B. <br> When ports are not provided, next available ports will be used. <br> Required for Connector type FC, SC and ST only. ", alias="patchPanelPortB")
-    connector_type: Optional[OpticalConnectPatchPanelFieldsConnectorType] = Field(default=None, alias="connectorType")
+    demarcation_point: Optional[OpticalConnectDemarcationPoint] = Field(default=None, alias="demarcationPoint")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["patchPanelId", "patchPanelPortA", "patchPanelPortB", "connectorType"]
+    __properties: ClassVar[List[str]] = ["demarcationPoint"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +68,9 @@ class OpticalConnectASideRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of demarcation_point
+        if self.demarcation_point:
+            _dict['demarcationPoint'] = self.demarcation_point.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -88,10 +88,7 @@ class OpticalConnectASideRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "patchPanelId": obj.get("patchPanelId"),
-            "patchPanelPortA": obj.get("patchPanelPortA"),
-            "patchPanelPortB": obj.get("patchPanelPortB"),
-            "connectorType": obj.get("connectorType")
+            "demarcationPoint": OpticalConnectDemarcationPoint.from_dict(obj["demarcationPoint"]) if obj.get("demarcationPoint") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

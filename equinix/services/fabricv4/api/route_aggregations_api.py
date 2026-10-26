@@ -357,7 +357,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationsData:
-        """Create Aggregations
+        """Create Route Aggregation
 
         This API provides capability to create a Route Aggregation
 
@@ -430,7 +430,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationsData]:
-        """Create Aggregations
+        """Create Route Aggregation
 
         This API provides capability to create a Route Aggregation
 
@@ -503,7 +503,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Create Aggregations
+        """Create Route Aggregation
 
         This API provides capability to create a Route Aggregation
 
@@ -1516,7 +1516,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetAllConnectionRouteAggregationsResponse:
-        """Get All Aggregations
+        """Get Connection Route Aggregations
 
         This API provides capability to view all Route Aggregations attached to a Connection
 
@@ -1589,7 +1589,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetAllConnectionRouteAggregationsResponse]:
-        """Get All Aggregations
+        """Get Connection Route Aggregations
 
         This API provides capability to view all Route Aggregations attached to a Connection
 
@@ -1662,7 +1662,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Aggregations
+        """Get Connection Route Aggregations
 
         This API provides capability to view all Route Aggregations attached to a Connection
 
@@ -2367,7 +2367,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationChangeDataResponse:
-        """Get All Changes
+        """Get Route Aggregation Changes
 
         This API provides capability to retrieve all of a Route Aggregation's Changes
 
@@ -2447,7 +2447,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationChangeDataResponse]:
-        """Get All Changes
+        """Get Route Aggregation Changes
 
         This API provides capability to retrieve all of a Route Aggregation's Changes
 
@@ -2527,7 +2527,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Changes
+        """Get Route Aggregation Changes
 
         This API provides capability to retrieve all of a Route Aggregation's Changes
 
@@ -2675,7 +2675,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> GetRouteAggregationGetConnectionsResponse:
-        """Get All Connections on Route Aggregation
+        """Get Route Aggregation Connections
 
         This API provides capability to view all Connections using the Route Aggregation
 
@@ -2748,7 +2748,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[GetRouteAggregationGetConnectionsResponse]:
-        """Get All Connections on Route Aggregation
+        """Get Route Aggregation Connections
 
         This API provides capability to view all Connections using the Route Aggregation
 
@@ -2821,7 +2821,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Connections on Route Aggregation
+        """Get Route Aggregation Connections
 
         This API provides capability to view all Connections using the Route Aggregation
 
@@ -2955,7 +2955,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationsData:
-        """Patch Aggregation
+        """Update Route Aggregation
 
         This API provides capability to partially update a Route Aggregation
 
@@ -3032,7 +3032,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationsData]:
-        """Patch Aggregation
+        """Update Route Aggregation
 
         This API provides capability to partially update a Route Aggregation
 
@@ -3109,7 +3109,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Patch Aggregation
+        """Update Route Aggregation
 
         This API provides capability to partially update a Route Aggregation
 
@@ -3570,7 +3570,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RouteAggregationsSearchResponse:
-        """Search Aggregations
+        """Search Route Aggregations
 
         This API provides capability to search Route Aggregations
 
@@ -3643,7 +3643,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RouteAggregationsSearchResponse]:
-        """Search Aggregations
+        """Search Route Aggregations
 
         This API provides capability to search Route Aggregations
 
@@ -3716,7 +3716,7 @@ class RouteAggregationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Search Aggregations
+        """Search Route Aggregations
 
         This API provides capability to search Route Aggregations
 

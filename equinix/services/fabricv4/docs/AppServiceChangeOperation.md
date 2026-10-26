@@ -6,7 +6,7 @@ App Service change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
+**op** | [**AppDomainChangeOperationOp**](AppDomainChangeOperationOp.md) |  | 
 **path** | [**AppServiceChangeOperationPath**](AppServiceChangeOperationPath.md) |  | 
 **value** | **object** | new value for updated parameter | 
 

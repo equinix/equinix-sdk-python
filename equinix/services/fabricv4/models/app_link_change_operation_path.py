@@ -25,7 +25,7 @@ class AppLinkChangeOperationPath(str, Enum):
     SLASH_NAME = '/name'
     SLASH_DESCRIPTION = '/description'
     SLASH_BANDWIDTH = '/bandwidth'
-    SLASH_IPV4_ADDRESS = '/ipv4Address'
+    SLASH_IPV4_SUBNET = '/ipv4Subnet'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

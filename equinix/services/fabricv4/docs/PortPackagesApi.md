@@ -4,15 +4,15 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_port_packages**](PortPackagesApi.md#get_port_packages) | **GET** /fabric/v4/portPackages | Get All Port Packages
+[**get_port_packages**](PortPackagesApi.md#get_port_packages) | **GET** /fabric/v4/portPackages | List Port Packages
 
 
 # **get_port_packages**
 > AllPortPackagesResponse get_port_packages()
 
-Get All Port Packages
+List Port Packages
 
-Get All Port Packages returns details of all available port packages for the specified user credentials.
+Get All Port Packages returns details of all available port packages for the specified user credentials
 
 ### Example
 
@@ -46,7 +46,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.PortPackagesApi(api_client)
 
     try:
-        # Get All Port Packages
+        # List Port Packages
         api_response = api_instance.get_port_packages()
         print("The response of PortPackagesApi->get_port_packages:\n")
         pprint(api_response)

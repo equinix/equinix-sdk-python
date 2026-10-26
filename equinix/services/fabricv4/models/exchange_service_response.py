@@ -15,10 +15,11 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.exchange_service_additional_info import ExchangeServiceAdditionalInfo
 from equinix.services.fabricv4.models.exchange_service_notification import ExchangeServiceNotification
+from equinix.services.fabricv4.models.exchange_service_order import ExchangeServiceOrder
 from equinix.services.fabricv4.models.exchange_service_response_state import ExchangeServiceResponseState
 from equinix.services.fabricv4.models.exchange_service_response_type import ExchangeServiceResponseType
-from equinix.services.fabricv4.models.order import Order
 from equinix.services.fabricv4.models.platform_changelog import PlatformChangelog
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.public_peering_connection_response import PublicPeeringConnectionResponse
@@ -42,13 +43,14 @@ class ExchangeServiceResponse(BaseModel):
     location: Optional[SimplifiedLocation] = None
     public_peering_connection: Optional[PublicPeeringConnectionResponse] = Field(default=None, alias="publicPeeringConnection")
     routing_protocol: Optional[RoutingProtocolResponse] = Field(default=None, alias="routingProtocol")
-    order: Optional[Order] = None
+    order: Optional[ExchangeServiceOrder] = None
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None
     notifications: Optional[List[ExchangeServiceNotification]] = Field(default=None, description="Preferences for notifications on Internet Exchange Service configuration or status changes")
     changelog: Optional[PlatformChangelog] = None
+    additional_info: Optional[ExchangeServiceAdditionalInfo] = Field(default=None, alias="additionalInfo")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "bandwidth", "description", "state", "location", "publicPeeringConnection", "routingProtocol", "order", "project", "account", "notifications", "changelog"]
+    __properties: ClassVar[List[str]] = ["href", "uuid", "type", "name", "bandwidth", "description", "state", "location", "publicPeeringConnection", "routingProtocol", "order", "project", "account", "notifications", "changelog", "additionalInfo"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,9 @@ class ExchangeServiceResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of changelog
         if self.changelog:
             _dict['changelog'] = self.changelog.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of additional_info
+        if self.additional_info:
+            _dict['additionalInfo'] = self.additional_info.to_dict()
         # puts key-value pairs in additional_properties in the top level
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
@@ -146,11 +151,12 @@ class ExchangeServiceResponse(BaseModel):
             "location": SimplifiedLocation.from_dict(obj["location"]) if obj.get("location") is not None else None,
             "publicPeeringConnection": PublicPeeringConnectionResponse.from_dict(obj["publicPeeringConnection"]) if obj.get("publicPeeringConnection") is not None else None,
             "routingProtocol": RoutingProtocolResponse.from_dict(obj["routingProtocol"]) if obj.get("routingProtocol") is not None else None,
-            "order": Order.from_dict(obj["order"]) if obj.get("order") is not None else None,
+            "order": ExchangeServiceOrder.from_dict(obj["order"]) if obj.get("order") is not None else None,
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "notifications": [ExchangeServiceNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
-            "changelog": PlatformChangelog.from_dict(obj["changelog"]) if obj.get("changelog") is not None else None
+            "changelog": PlatformChangelog.from_dict(obj["changelog"]) if obj.get("changelog") is not None else None,
+            "additionalInfo": ExchangeServiceAdditionalInfo.from_dict(obj["additionalInfo"]) if obj.get("additionalInfo") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

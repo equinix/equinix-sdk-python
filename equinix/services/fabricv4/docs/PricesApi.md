@@ -4,13 +4,13 @@ All URIs are relative to *https://api.equinix.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search_prices**](PricesApi.md#search_prices) | **POST** /fabric/v4/prices/search | Get Prices
+[**search_prices**](PricesApi.md#search_prices) | **POST** /fabric/v4/prices/search | Search Prices
 
 
 # **search_prices**
 > PriceSearchResponse search_prices(filter_body)
 
-Get Prices
+Search Prices
 
 Search prices by search criteria
 
@@ -48,7 +48,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     filter_body = equinix.services.fabricv4.FilterBody() # FilterBody | 
 
     try:
-        # Get Prices
+        # Search Prices
         api_response = api_instance.search_prices(filter_body)
         print("The response of PricesApi->search_prices:\n")
         pprint(api_response)

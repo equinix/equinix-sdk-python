@@ -23,6 +23,14 @@ class ExchangeServicePropertyExpressionProperty(str, Enum):
     allowed enum values
     """
     SLASH_PROJECT_SLASH_PROJECT_ID = '/project/projectId'
+    SLASH_UUID = '/uuid'
+    SLASH_STATE = '/state'
+    SLASH_NAME = '/name'
+    SLASH_BANDWIDTH = '/bandwidth'
+    SLASH_CHANGELOG_SLASH_CREATED_DATE_TIME = '/changelog/createdDateTime'
+    SLASH_CHANGELOG_SLASH_UPDATED_DATE_TIME = '/changelog/updatedDateTime'
+    SLASH_CHANGELOG_SLASH_DELETED_DATE_TIME = '/changelog/deletedDateTime'
+    SLASH_LOCATION_SLASH_METRO_CODE = '/location/metroCode'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

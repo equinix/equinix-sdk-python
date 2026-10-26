@@ -5,11 +5,11 @@ All URIs are relative to *https://api.equinix.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_connection**](ConnectionsApi.md#create_connection) | **POST** /fabric/v4/connections | Create Connection
-[**create_connection_action**](ConnectionsApi.md#create_connection_action) | **POST** /fabric/v4/connections/{connectionId}/actions | Connection Actions
-[**delete_connection_by_uuid**](ConnectionsApi.md#delete_connection_by_uuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete by ID
+[**create_connection_action**](ConnectionsApi.md#create_connection_action) | **POST** /fabric/v4/connections/{connectionId}/actions | Create Connection Action
+[**delete_connection_by_uuid**](ConnectionsApi.md#delete_connection_by_uuid) | **DELETE** /fabric/v4/connections/{connectionId} | Delete Connection by ID
 [**get_connection_by_uuid**](ConnectionsApi.md#get_connection_by_uuid) | **GET** /fabric/v4/connections/{connectionId} | Get Connection by ID
-[**search_connections**](ConnectionsApi.md#search_connections) | **POST** /fabric/v4/connections/search | Search connections
-[**update_connection_by_uuid**](ConnectionsApi.md#update_connection_by_uuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update by ID
+[**search_connections**](ConnectionsApi.md#search_connections) | **POST** /fabric/v4/connections/search | Search Connections
+[**update_connection_by_uuid**](ConnectionsApi.md#update_connection_by_uuid) | **PATCH** /fabric/v4/connections/{connectionId} | Update Connection by ID
 [**validate_connections**](ConnectionsApi.md#validate_connections) | **POST** /fabric/v4/connections/validate | Validate Connection
 
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 # **create_connection_action**
 > ConnectionAction create_connection_action(connection_id, connection_action_request)
 
-Connection Actions
+Create Connection Action
 
 This API provides capability to accept/reject user's virtual connection
 
@@ -141,7 +141,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_action_request = equinix.services.fabricv4.ConnectionActionRequest() # ConnectionActionRequest | 
 
     try:
-        # Connection Actions
+        # Create Connection Action
         api_response = api_instance.create_connection_action(connection_id, connection_action_request)
         print("The response of ConnectionsApi->create_connection_action:\n")
         pprint(api_response)
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 # **delete_connection_by_uuid**
 > Connection delete_connection_by_uuid(connection_id)
 
-Delete by ID
+Delete Connection by ID
 
 Delete Connection by ID
 
@@ -224,7 +224,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     connection_id = 'connection_id_example' # str | Connection UUID
 
     try:
-        # Delete by ID
+        # Delete Connection by ID
         api_response = api_instance.delete_connection_by_uuid(connection_id)
         print("The response of ConnectionsApi->delete_connection_by_uuid:\n")
         pprint(api_response)
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 # **search_connections**
 > ConnectionSearchResponse search_connections(search_request)
 
-Search connections
+Search Connections
 
 The API provides capability to get list of user's virtual connections using search criteria, including optional filtering, pagination and sorting
 
@@ -392,7 +392,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     search_request = equinix.services.fabricv4.SearchRequest() # SearchRequest | 
 
     try:
-        # Search connections
+        # Search Connections
         api_response = api_instance.search_connections(search_request)
         print("The response of ConnectionsApi->search_connections:\n")
         pprint(api_response)
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 # **update_connection_by_uuid**
 > Connection update_connection_by_uuid(connection_id, connection_change_operation, dry_run=dry_run)
 
-Update by ID
+Update Connection by ID
 
 Update Connection by ID
 
@@ -477,7 +477,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
-        # Update by ID
+        # Update Connection by ID
         api_response = api_instance.update_connection_by_uuid(connection_id, connection_change_operation, dry_run=dry_run)
         print("The response of ConnectionsApi->update_connection_by_uuid:\n")
         pprint(api_response)

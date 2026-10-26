@@ -34,6 +34,8 @@ Possible field names to use on sorting
 
 * `SLASH_SERVICE_CODE` (value: `'/serviceCode'`)
 
+* `SLASH_OPERATION_SLASH_MAINTENANCE_STATUS` (value: `'/operation/maintenanceStatus'`)
+
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

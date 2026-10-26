@@ -33,8 +33,8 @@ class InternetAccessPatchOperationUpdate(BaseModel):
     @field_validator('path')
     def path_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if not re.match(r"^(\/bandwidth|\/bandwidthCommit|\/routingProtocol\/customerRoutes(?:\[@\.ipBlock\.uuid=[A-Fa-f0-9-]+\])?|\/order\/purchaseOrderNumber)$", value):
-            raise ValueError(r"must validate the regular expression /^(\/bandwidth|\/bandwidthCommit|\/routingProtocol\/customerRoutes(?:\[@\.ipBlock\.uuid=[A-Fa-f0-9-]+\])?|\/order\/purchaseOrderNumber)$/")
+        if not re.match(r"^(\/name|\/bandwidth|\/bandwidthCommit|\/routingProtocol\/customerRoutes(?:\[@\.ipBlock\.uuid=[A-Fa-f0-9-]+\])?|\/order\/purchaseOrderNumber)$", value):
+            raise ValueError(r"must validate the regular expression /^(\/name|\/bandwidth|\/bandwidthCommit|\/routingProtocol\/customerRoutes(?:\[@\.ipBlock\.uuid=[A-Fa-f0-9-]+\])?|\/order\/purchaseOrderNumber)$/")
         return value
 
     model_config = ConfigDict(

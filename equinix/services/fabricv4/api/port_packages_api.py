@@ -48,9 +48,9 @@ class PortPackagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AllPortPackagesResponse:
-        """Get All Port Packages
+        """List Port Packages
 
-        Get All Port Packages returns details of all available port packages for the specified user credentials.
+        Get All Port Packages returns details of all available port packages for the specified user credentials
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -115,9 +115,9 @@ class PortPackagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AllPortPackagesResponse]:
-        """Get All Port Packages
+        """List Port Packages
 
-        Get All Port Packages returns details of all available port packages for the specified user credentials.
+        Get All Port Packages returns details of all available port packages for the specified user credentials
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -182,9 +182,9 @@ class PortPackagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Get All Port Packages
+        """List Port Packages
 
-        Get All Port Packages returns details of all available port packages for the specified user credentials.
+        Get All Port Packages returns details of all available port packages for the specified user credentials
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

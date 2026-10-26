@@ -25,7 +25,8 @@ class MaintenanceState(str, Enum):
     SCHEDULED = 'SCHEDULED'
     IN_PROGRESS = 'IN_PROGRESS'
     COMPLETED = 'COMPLETED'
-    DEFERRED = 'DEFERRED'
+    CANCELLED = 'CANCELLED'
+    POSTPONED = 'POSTPONED'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **errors** | [**List[Error]**](Error.md) |  | [optional] 
 **op_status_changed_at** | **datetime** | When connection transitioned into current operational status | [optional] 
 **maintenance_status** | [**MaintenanceState**](MaintenanceState.md) |  | [optional] 
+**lock_enabled** | **bool** | Indicates whether the connection configuration is locked due to an ongoing or scheduled maintenance. | [optional] 
 
 ## Example
 
