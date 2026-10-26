@@ -29,8 +29,10 @@ class TestOMC:
                         bandwidth=10000,
                         connectionDestinationType=fabricv4.OpticalConnectPostRequestConnectionDestinationType.REMOTE,
                         aSide=fabricv4.OpticalConnectASideRequest(
-                            patchPanelId="PP:0000:1257117",
-                            connectorType=fabricv4.OpticalConnectPatchPanelFieldsConnectorType.SC,
+                            demarcationPoint=fabricv4.OpticalConnectDemarcationPoint(
+                                patchPanelId="PP:0000:1257117",
+                                connectorType=fabricv4.OpticalConnectDemarcationPointConnectorType.SC,
+                            ),
                         ),
                         zSide=fabricv4.OpticalConnectZSideRequest(
                             location=fabricv4.OpticalConnectLocation(ibxCode="SV2"),
@@ -52,8 +54,10 @@ class TestOMC:
                         bandwidth=10000,
                         connectionDestinationType=fabricv4.OpticalConnectPostRequestConnectionDestinationType.REMOTE,
                         aSide=fabricv4.OpticalConnectASideRequest(
-                            patchPanelId="PP:0001:1213749",
-                            connectorType=fabricv4.OpticalConnectPatchPanelFieldsConnectorType.SC,
+                            demarcationPoint=fabricv4.OpticalConnectDemarcationPoint(
+                                patchPanelId="PP:0001:1213749",
+                                connectorType=fabricv4.OpticalConnectDemarcationPointConnectorType.SC,
+                            ),
                         ),
                         zSide=fabricv4.OpticalConnectZSideRequest(
                             location=fabricv4.OpticalConnectLocation(ibxCode="SV2"),
@@ -82,8 +86,10 @@ class TestOMC:
                 bandwidth=10000,
                 connectionDestinationType=fabricv4.OpticalConnectPostRequestConnectionDestinationType.REMOTE,
                 aSide=fabricv4.OpticalConnectASideRequest(
-                    patchPanelId="PP:0000:1257117",
-                    connectorType=fabricv4.OpticalConnectPatchPanelFieldsConnectorType.SC,
+                    demarcationPoint=fabricv4.OpticalConnectDemarcationPoint(
+                        patchPanelId="PP:0000:1257117",
+                        connectorType=fabricv4.OpticalConnectDemarcationPointConnectorType.SC,
+                    ),
                 ),
                 zSide=fabricv4.OpticalConnectZSideRequest(
                     location=fabricv4.OpticalConnectLocation(ibxCode="SV2"),

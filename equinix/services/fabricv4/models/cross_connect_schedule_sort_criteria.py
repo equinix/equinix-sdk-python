@@ -25,7 +25,7 @@ class CrossConnectScheduleSortCriteria(BaseModel):
     CrossConnectScheduleSortCriteria
     """ # noqa: E501
     direction: Optional[CrossConnectSortCriteriaDirection] = CrossConnectSortCriteriaDirection.DESC
-    var_property: Optional[CrossConnectScheduleSortCriteriaProperty] = Field(default=CrossConnectScheduleSortCriteriaProperty.STARTDATETIME, alias="property")
+    var_property: Optional[CrossConnectScheduleSortCriteriaProperty] = Field(default=CrossConnectScheduleSortCriteriaProperty.SLASH_START_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -88,7 +88,7 @@ class CrossConnectScheduleSortCriteria(BaseModel):
 
         _obj = cls.model_validate({
             "direction": obj.get("direction") if obj.get("direction") is not None else CrossConnectSortCriteriaDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else CrossConnectScheduleSortCriteriaProperty.STARTDATETIME
+            "property": obj.get("property") if obj.get("property") is not None else CrossConnectScheduleSortCriteriaProperty.SLASH_START_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

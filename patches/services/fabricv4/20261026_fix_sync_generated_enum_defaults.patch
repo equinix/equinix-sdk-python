@@ -1,0 +1,66 @@
+diff --git a/equinix/services/fabricv4/models/cross_connect_schedule_sort_criteria.py b/equinix/services/fabricv4/models/cross_connect_schedule_sort_criteria.py
+index ec5c7aab..857fb004 100644
+--- a/equinix/services/fabricv4/models/cross_connect_schedule_sort_criteria.py
++++ b/equinix/services/fabricv4/models/cross_connect_schedule_sort_criteria.py
+@@ -25,7 +25,7 @@ class CrossConnectScheduleSortCriteria(BaseModel):
+     CrossConnectScheduleSortCriteria
+     """ # noqa: E501
+     direction: Optional[CrossConnectSortCriteriaDirection] = CrossConnectSortCriteriaDirection.DESC
+-    var_property: Optional[CrossConnectScheduleSortCriteriaProperty] = Field(default=CrossConnectScheduleSortCriteriaProperty.STARTDATETIME, alias="property")
++    var_property: Optional[CrossConnectScheduleSortCriteriaProperty] = Field(default=CrossConnectScheduleSortCriteriaProperty.SLASH_START_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class CrossConnectScheduleSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else CrossConnectSortCriteriaDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else CrossConnectScheduleSortCriteriaProperty.STARTDATETIME
++            "property": obj.get("property") if obj.get("property") is not None else CrossConnectScheduleSortCriteriaProperty.SLASH_START_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/cross_connect_sort_criteria.py b/equinix/services/fabricv4/models/cross_connect_sort_criteria.py
+index a02fa7f0..285778b9 100644
+--- a/equinix/services/fabricv4/models/cross_connect_sort_criteria.py
++++ b/equinix/services/fabricv4/models/cross_connect_sort_criteria.py
+@@ -25,7 +25,7 @@ class CrossConnectSortCriteria(BaseModel):
+     CrossConnectSortCriteria
+     """ # noqa: E501
+     direction: Optional[CrossConnectSortCriteriaDirection] = CrossConnectSortCriteriaDirection.DESC
+-    var_property: Optional[CrossConnectSortCriteriaProperty] = Field(default=CrossConnectSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
++    var_property: Optional[CrossConnectSortCriteriaProperty] = Field(default=CrossConnectSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["direction", "property"]
+ 
+@@ -88,7 +88,7 @@ class CrossConnectSortCriteria(BaseModel):
+ 
+         _obj = cls.model_validate({
+             "direction": obj.get("direction") if obj.get("direction") is not None else CrossConnectSortCriteriaDirection.DESC,
+-            "property": obj.get("property") if obj.get("property") is not None else CrossConnectSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
++            "property": obj.get("property") if obj.get("property") is not None else CrossConnectSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+         })
+         # store additional fields in additional_properties
+         for _key in obj.keys():
+diff --git a/equinix/services/fabricv4/models/internet_access_routing_protocol_bgp.py b/equinix/services/fabricv4/models/internet_access_routing_protocol_bgp.py
+index bba57d98..ddceb15e 100644
+--- a/equinix/services/fabricv4/models/internet_access_routing_protocol_bgp.py
++++ b/equinix/services/fabricv4/models/internet_access_routing_protocol_bgp.py
+@@ -34,7 +34,7 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
+     asn: Optional[InternetAccessRoutingProtocolBgpAsn] = None
+     customer_asn: Optional[StrictInt] = Field(default=None, description="Customer ASN. Valid range is 1-64495 or 131072-4199999999. Currently this option is only available for EIA over dedicated port.", alias="customerAsn")
+     bgp_auth_key: Optional[StrictStr] = Field(default=None, description="BGP authentication key. This field is deprecated and will be removed in future releases. Please use bgpAuthType instead to determine if a BGP authentication key is configured.", alias="bgpAuthKey")
+-    bgp_auth_type: Optional[InternetAccessBgpAuthType] = Field(default=InternetAccessBgpAuthType.NUMBER_NONE, alias="bgpAuthType")
++    bgp_auth_type: Optional[InternetAccessBgpAuthType] = Field(default=InternetAccessBgpAuthType.NONE, alias="bgpAuthType")
+     customer_asn_range: Optional[InternetAccessCustomerAsnRange] = Field(default=None, alias="customerAsnRange")
+     additional_properties: Dict[str, Any] = {}
+     __properties: ClassVar[List[str]] = ["type", "customerRoutes", "connections", "exportPolicy", "asn", "customerAsn", "bgpAuthKey", "bgpAuthType", "customerAsnRange"]
+@@ -121,7 +121,7 @@ class InternetAccessRoutingProtocolBgp(InternetAccessRoutingProtocol):
+             "asn": InternetAccessRoutingProtocolBgpAsn.from_dict(obj["asn"]) if obj.get("asn") is not None else None,
+             "customerAsn": obj.get("customerAsn"),
+             "bgpAuthKey": obj.get("bgpAuthKey"),
+-            "bgpAuthType": obj.get("bgpAuthType") if obj.get("bgpAuthType") is not None else InternetAccessBgpAuthType.NUMBER_NONE,
++            "bgpAuthType": obj.get("bgpAuthType") if obj.get("bgpAuthType") is not None else InternetAccessBgpAuthType.NONE,
+             "customerAsnRange": obj.get("customerAsnRange")
+         })
+         # store additional fields in additional_properties
