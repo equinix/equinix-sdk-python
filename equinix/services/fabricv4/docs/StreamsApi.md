@@ -57,7 +57,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_post_request = equinix.services.fabricv4.StreamPostRequest() # StreamPostRequest | 
+    stream_post_request = {"type":"TELEMETRY_STREAM","name":"splunk1","description":"subscription-1","project":{"projectId":"dadd3ab6-c0af-430c-8216-43d44f08c1c5"},"account":{"accountNumber":123456},"notifications":[{"type":"ALL","emails":["johndoe@equinix.com"]}]} # StreamPostRequest | 
 
     try:
         # Create Stream
@@ -141,9 +141,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    asset_id = 'asset_id_example' # str | asset UUID
+    asset_id = '757400f8-d360-11e9-bb65-2a2ae2dbcce6' # str | asset UUID
     asset = equinix.services.fabricv4.Asset() # Asset | asset
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
 
     try:
         # Detach Asset
@@ -228,7 +228,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
 
     try:
         # Delete Stream
@@ -311,8 +311,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    device_id = 'device_id_example' # str | Network Edge Device UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    device_id = '8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d' # str | Network Edge Device UUID
 
     try:
         # Detach Network Edge Device
@@ -397,9 +397,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    asset_id = 'asset_id_example' # str | asset UUID
+    asset_id = '757400f8-d360-11e9-bb65-2a2ae2dbcce6' # str | asset UUID
     asset = equinix.services.fabricv4.Asset() # Asset | asset
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
 
     try:
         # Get Asset
@@ -484,7 +484,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
 
     try:
         # Get Stream
@@ -567,8 +567,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    device_id = 'device_id_example' # str | Network Edge Device UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    device_id = '8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d' # str | Network Edge Device UUID
 
     try:
         # Get Network Edge Device
@@ -737,7 +737,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_asset_search_request = equinix.services.fabricv4.StreamAssetSearchRequest() # StreamAssetSearchRequest | 
+    stream_asset_search_request = {"filter":{"and":[{"property":"/uuid","operator":"IN","values":["8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d","9ac8ecfe-c7cb-4def-9f77-5ce93c19d83e"]},{"property":"/streamUuid","operator":"=","values":["4719e319-65ae-4001-aabf-ca5f107b9b29"]},{"property":"/attachmentStatus","operator":"IN","values":["ATTACHED","ATTACHING"]}]},"sort":[{"direction":"DESC","property":"/uuid"}],"pagination":{"offset":0,"limit":20}} # StreamAssetSearchRequest | 
 
     try:
         # Search Stream Assets
@@ -821,7 +821,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_search_request = equinix.services.fabricv4.StreamSearchRequest() # StreamSearchRequest |  (optional)
+    stream_search_request = {"filter":{"and":[{"property":"/project/projectId","operator":"IN","values":["2f7f1a59-2dbf-43f8-b1a4-3c1f4e4b55b5"]},{"or":[{"property":"/uuid","operator":"IN","values":["12f4d4a1-c7cb-4def-9f77-5ce93c19d999","8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d"]}]},{"property":"/state","operator":"=","values":["PROVISIONED"]}]},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}],"pagination":{"offset":0,"limit":20}} # StreamSearchRequest |  (optional)
 
     try:
         # Search Streams
@@ -905,10 +905,10 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    asset_id = 'asset_id_example' # str | asset UUID
+    asset_id = '757400f8-d360-11e9-bb65-2a2ae2dbcce6' # str | asset UUID
     asset = equinix.services.fabricv4.Asset() # Asset | asset
-    stream_id = 'stream_id_example' # str | Stream UUID
-    stream_asset_put_request = equinix.services.fabricv4.StreamAssetPutRequest() # StreamAssetPutRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    stream_asset_put_request = {"metricsEnabled":false} # StreamAssetPutRequest | 
 
     try:
         # Attach Asset
@@ -996,8 +996,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    stream_put_request = equinix.services.fabricv4.StreamPutRequest() # StreamPutRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    stream_put_request = {"name":"splunk1","description":"subscription 1"} # StreamPutRequest | 
 
     try:
         # Update Stream
@@ -1084,9 +1084,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    device_id = 'device_id_example' # str | Network Edge Device UUID
-    stream_device_put_request = equinix.services.fabricv4.StreamDevicePutRequest() # StreamDevicePutRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    device_id = '8a9b7c6d-1e2f-4a3b-9c4d-5e6f7a8b9c0d' # str | Network Edge Device UUID
+    stream_device_put_request = {"metricsEnabled":true,"interfaces":[{"id":3},{"id":5}]} # StreamDevicePutRequest | 
 
     try:
         # Attach Network Edge Device Interfaces

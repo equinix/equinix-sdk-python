@@ -6,7 +6,7 @@ Last-mile configuration for the service profile.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_integration** | [**ServiceProfileLastMileApiIntegration**](ServiceProfileLastMileApiIntegration.md) |  | [optional] 
+**api_integration** | [**ServiceProfileLastMileApiIntegration**](.md) |  | [optional] 
 **product_catalogs** | [**List[ServiceProfileLastMileProductCatalog]**](ServiceProfileLastMileProductCatalog.md) | Last-mile provider catalogs. | [optional] 
 
 ## Example

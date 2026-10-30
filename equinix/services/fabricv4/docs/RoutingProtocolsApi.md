@@ -57,8 +57,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    routing_protocol_base = equinix.services.fabricv4.RoutingProtocolBase() # RoutingProtocolBase | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    routing_protocol_base = {"type":"DIRECT","directIpv4":{"equinixIfaceIp":"192.168.100.1/30"},"directIpv6":{"equinixIfaceIp":"2001:7a9::34f4:0:f3dd:1/126"}} # RoutingProtocolBase | 
 
     try:
         # Create Routing Protocol
@@ -144,8 +144,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_routing_protocol_post_request = equinix.services.fabricv4.ConnectionRoutingProtocolPostRequest() # ConnectionRoutingProtocolPostRequest | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_routing_protocol_post_request = {"data":[{"type":"DIRECT","directIpv4":{"equinixIfaceIp":"192.168.100.1/30"},"directIpv6":{"equinixIfaceIp":"2001:7a9::34f4:0:f3dd:1/126"}}]} # ConnectionRoutingProtocolPostRequest | 
 
     try:
         # Bulk Create Routing Protocols
@@ -230,8 +230,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Delete Protocol
@@ -316,8 +316,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -406,8 +406,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Get Protocol
@@ -492,7 +492,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -579,9 +579,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    action_id = 'action_id_example' # str | BGP Action UUID
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    action_id = '86534014-34b4-53f6-45d6-4b94a92d8623' # str | BGP Action UUID
 
     try:
         # Get BGP Action
@@ -666,9 +666,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    change_id = 'change_id_example' # str | Routing Protocol Change UUID
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Routing Protocol Change UUID
 
     try:
         # Get Change By ID
@@ -753,8 +753,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -843,9 +843,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_change_operation = [equinix.services.fabricv4.ConnectionChangeOperation()] # List[ConnectionChangeOperation] | 
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_change_operation = [{"op":"replace","path":"/bgpIpv4/enabled","value":true}] # List[ConnectionChangeOperation] | 
 
     try:
         # Patch Protocol
@@ -932,9 +932,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
-    bgp_action_request = equinix.services.fabricv4.BGPActionRequest() # BGPActionRequest | 
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    bgp_action_request = {"type":"CLEAR_BGPIPV4"} # BGPActionRequest | 
 
     try:
         # Clear/Reset BGP
@@ -1021,9 +1021,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    routing_protocol_id = 'routing_protocol_id_example' # str | Routing Protocol Id
-    connection_id = 'connection_id_example' # str | Connection Id
-    routing_protocol_base = equinix.services.fabricv4.RoutingProtocolBase() # RoutingProtocolBase | 
+    routing_protocol_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Routing Protocol Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    routing_protocol_base = {"type":"DIRECT","directIpv4":{"equinixIfaceIp":"192.168.100.1/30"},"directIpv6":{"equinixIfaceIp":"2001:7a9::34f4:0:f3dd:1/126"}} # RoutingProtocolBase | 
 
     try:
         # Replace Protocol
@@ -1110,8 +1110,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RoutingProtocolsApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
-    validate_request = equinix.services.fabricv4.ValidateRequest() # ValidateRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
+    validate_request = {"filter":{"and":[{"property":"/directIpv4/equinixIfaceIp","operator":"=","values":["10.1.1.1/30"]},{"property":"/connection/uuid","operator":"=","values":["a96f16d3-e504-44a7-a628-4916b5750008"]}]}} # ValidateRequest | 
 
     try:
         # Validate Subnet

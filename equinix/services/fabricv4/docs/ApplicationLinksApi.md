@@ -64,8 +64,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
 
     try:
         # Attach Domain to Link
@@ -150,9 +150,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_processor_id = 'app_processor_id_example' # str | App Processor UUID
-    app_link_attach_processor_request = equinix.services.fabricv4.AppLinkAttachProcessorRequest() # AppLinkAttachProcessorRequest | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_processor_id = '90ee425c-9988-454c-96d9-1128bc16350f' # str | App Processor UUID
+    app_link_attach_processor_request = {"config":"bW9kZWxfbGlzdDoKICAtIG1vZGVsX25hbWU6IGdwdC00bwogICA..."} # AppLinkAttachProcessorRequest | 
 
     try:
         # Attach Processor to Link
@@ -239,9 +239,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_service_id = 'app_service_id_example' # str | App Service UUID
-    app_link_attach_service_request = equinix.services.fabricv4.AppLinkAttachServiceRequest() # AppLinkAttachServiceRequest | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
+    app_link_attach_service_request = {"geoScope":"GLOBAL","destinationIp":"10.10.1.110"} # AppLinkAttachServiceRequest | 
 
     try:
         # Attach Service to Link
@@ -326,7 +326,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_post_request = equinix.services.fabricv4.AppLinkPostRequest() # AppLinkPostRequest | 
+    app_link_post_request = {"type":"APP_LINK","name":"Atlassian App Link","description":"Atlassian App Link in SV","router":{"uuid":"36204584-2ae1-44f6-980f-08ecd555d9c6"},"ipv4Subnet":"192.168.10.0/29","bandwidth":1000,"project":{"projectId":"71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"}} # AppLinkPostRequest | 
 
     try:
         # Create Link
@@ -409,7 +409,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
 
     try:
         # Delete Link
@@ -492,8 +492,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
 
     try:
         # Detach Domain from Link
@@ -577,8 +577,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_processor_id = 'app_processor_id_example' # str | App Processor UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_processor_id = '90ee425c-9988-454c-96d9-1128bc16350f' # str | App Processor UUID
 
     try:
         # Detach App Processor from App Link
@@ -662,8 +662,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
 
     try:
         # Detach Service from Link
@@ -747,7 +747,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
 
     try:
         # Get Link
@@ -829,8 +829,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
 
     try:
         # Get Attached Domain for Link
@@ -916,7 +916,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     attachment_status = [equinix.services.fabricv4.AppLinkAttachState()] # List[AppLinkAttachState] | Filter attached App Domains by one or more attachment lifecycle states. (optional)
@@ -1009,8 +1009,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_processor_id = 'app_processor_id_example' # str | App Processor UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_processor_id = '90ee425c-9988-454c-96d9-1128bc16350f' # str | App Processor UUID
 
     try:
         # Get attached App Processor for App Link
@@ -1096,7 +1096,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     attachment_status = [equinix.services.fabricv4.AppLinkAttachState()] # List[AppLinkAttachState] | Filter attached App Processors by one or more attachment lifecycle states. (optional)
@@ -1189,8 +1189,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
 
     try:
         # Get Attached Service for Link
@@ -1276,7 +1276,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     attachment_status = [equinix.services.fabricv4.AppLinkAttachState()] # List[AppLinkAttachState] | Filter attached App Services by one or more attachment lifecycle states. (optional)
@@ -1370,7 +1370,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_search_request = equinix.services.fabricv4.AppLinkSearchRequest() # AppLinkSearchRequest | 
+    app_link_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"IN","values":["71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppLinkSearchRequest | 
 
     try:
         # Search Links
@@ -1454,8 +1454,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_link_attach_domain_search_request = equinix.services.fabricv4.AppLinkAttachDomainSearchRequest() # AppLinkAttachDomainSearchRequest | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_link_attach_domain_search_request = {"filter":{"and":[{"property":"/attachmentStatus","operator":"=","values":["ATTACHED"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppLinkAttachDomainSearchRequest | 
 
     try:
         # Search Attached Domains for Link
@@ -1540,8 +1540,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_link_attach_processor_search_request = equinix.services.fabricv4.AppLinkAttachProcessorSearchRequest() # AppLinkAttachProcessorSearchRequest | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_link_attach_processor_search_request = {"filter":{"and":[{"property":"/attachmentStatus","operator":"=","values":["ATTACHED"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppLinkAttachProcessorSearchRequest | 
 
     try:
         # Search attached Processors to Link
@@ -1626,8 +1626,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_link_attach_service_search_request = equinix.services.fabricv4.AppLinkAttachServiceSearchRequest() # AppLinkAttachServiceSearchRequest | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_link_attach_service_search_request = {"filter":{"and":[{"property":"/attachmentStatus","operator":"=","values":["ATTACHED"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppLinkAttachServiceSearchRequest | 
 
     try:
         # Search Attached Services for Link
@@ -1712,8 +1712,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_link_change_operation = [equinix.services.fabricv4.AppLinkChangeOperation()] # List[AppLinkChangeOperation] | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_link_change_operation = [{"op":"replace","path":"/name","value":"Updated Atlassian App Link"}] # List[AppLinkChangeOperation] | 
 
     try:
         # Update Link
@@ -1799,9 +1799,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationLinksApi(api_client)
-    app_link_id = 'app_link_id_example' # str | App Link UUID
-    app_service_id = 'app_service_id_example' # str | App Service UUID
-    app_link_app_service_attachment_change_operation = [equinix.services.fabricv4.AppLinkAppServiceAttachmentChangeOperation()] # List[AppLinkAppServiceAttachmentChangeOperation] | 
+    app_link_id = '23cd19ab-d3bb-478b-9f25-bd12a3af1914' # str | App Link UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
+    app_link_app_service_attachment_change_operation = [{"op":"replace","path":"/destinationIp","value":"10.10.1.120"}] # List[AppLinkAppServiceAttachmentChangeOperation] | 
 
     try:
         # Update Service Attachment for Link

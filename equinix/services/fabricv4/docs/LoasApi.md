@@ -54,7 +54,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    create_loa = equinix.services.fabricv4.CreateLoa() # CreateLoa | 
+    create_loa = {"type":"CAGE_LOA","name":"LOA-Equinix-SV1-2026","description":"Authorization for cage access to Equinix at SV1","authorizedProductType":"XC","expirationDateTime":"2026-12-31T23:59:59Z","requestor":{"email":"user@org1.com","orgId":95900,"orgName":"organizationName1"},"demarcationPoint":{"cageUniqueSpaceId":"AM7:0G:0202"}} # CreateLoa | 
 
     try:
         # Create Loa
@@ -138,8 +138,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
-    create_loa_note = equinix.services.fabricv4.CreateLoaNote() # CreateLoaNote | 
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
+    create_loa_note = {"comments":"LOA under review by our team. Expected response within 2 business days."} # CreateLoaNote | 
 
     try:
         # Create Loa Note
@@ -223,8 +223,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
-    action_id = 'action_id_example' # str | Action UUID
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
+    action_id = '30cc7878-54e3-4e1a-8651-87a61354bad4' # str | Action UUID
 
     try:
         # Get Loa Action by Action ID
@@ -308,7 +308,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
 
     try:
         # Get Loa
@@ -391,7 +391,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
 
     try:
         # Get Loa Consumers
@@ -474,7 +474,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
 
     try:
         # Get Loa Notes
@@ -558,8 +558,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
-    loa_action_request = equinix.services.fabricv4.LoaActionRequest() # LoaActionRequest | 
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
+    loa_action_request = {"type":"LOA_ISSUER_AUTHORIZATION","data":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":23,"patchPanelPortB":23,"connectorType":"SC"},"expirationDateTime":"2026-08-07T07:00:00Z"}} # LoaActionRequest | 
 
     try:
         # Create LOA Action
@@ -644,7 +644,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_search_request = equinix.services.fabricv4.LoaSearchRequest() # LoaSearchRequest | 
+    loa_search_request = {"filter":{"and":[{"property":"/name","operator":"ILIKE","values":["LOA-Equinix-SV1"]},{"property":"/type","operator":"=","values":["PATCH_PANEL_PORT_LOA"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # LoaSearchRequest | 
 
     try:
         # Search Loas
@@ -728,8 +728,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
-    loa_action_search_request = equinix.services.fabricv4.LoaActionSearchRequest() # LoaActionSearchRequest | 
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
+    loa_action_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["LOA_REQUESTOR_ACCEPTANCE"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/createdDateTime","direction":"DESC"}]} # LoaActionSearchRequest | 
 
     try:
         # Search Loa Actions
@@ -814,8 +814,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.LoasApi(api_client)
-    loa_id = 'loa_id_example' # str | Loa UUID
-    loa_replace_operation = [equinix.services.fabricv4.LoaReplaceOperation()] # List[LoaReplaceOperation] | 
+    loa_id = '29cc7878-54e3-4e1a-8651-87a61354bac2' # str | Loa UUID
+    loa_replace_operation = [{"op":"replace","path":"/demarcationPoint/patchPanelId","value":"CP:Demarc:1259685"}] # List[LoaReplaceOperation] | 
 
     try:
         # Update Loa

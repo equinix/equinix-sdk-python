@@ -52,7 +52,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_post_request = equinix.services.fabricv4.NetworkPostRequest() # NetworkPostRequest | 
+    network_post_request = {"type":"EVPLAN","name":"My-Network-1","scope":"GLOBAL","project":{"projectId":"d64fa54a-cfcb-4fb0-82ee-86cf47007fa2"},"notifications":[{"type":"ALL","emails":["test@equinix.com"]}]} # NetworkPostRequest | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -138,7 +138,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
 
     try:
         # Delete Network By ID
@@ -220,7 +220,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
 
     try:
         # Get Connections
@@ -302,7 +302,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
 
     try:
         # Get Network By ID
@@ -383,8 +383,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
-    change_id = 'change_id_example' # str | Network Change UUID
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Network Change UUID
 
     try:
         # Get Change By ID
@@ -467,7 +467,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
 
     try:
         # Get Network Changes
@@ -550,7 +550,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_search_request = equinix.services.fabricv4.NetworkSearchRequest() # NetworkSearchRequest | 
+    network_search_request = {"filter":{"and":[{"property":"/operation/equinixStatus","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"=","values":["1234567"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # NetworkSearchRequest | 
 
     try:
         # Search Networks
@@ -633,8 +633,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.NetworksApi(api_client)
-    network_id = 'network_id_example' # str | Network UUID
-    network_change_operation = [equinix.services.fabricv4.NetworkChangeOperation()] # List[NetworkChangeOperation] | 
+    network_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Network UUID
+    network_change_operation = [{"op":"replace","path":"/name","value":"NewName"}] # List[NetworkChangeOperation] | 
 
     try:
         # Update Network By ID

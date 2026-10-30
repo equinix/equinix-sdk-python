@@ -377,7 +377,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.IPBlocksApi(api_client)
-    submit_ip_block_request_body = equinix.services.fabricv4.SubmitIpBlockRequestBody() # SubmitIpBlockRequestBody | 
+    submit_ip_block_request_body = {"prefixLength":24,"location":{"metroCode":"SY"},"project":{"projectId":"52cb19be-63c4-434d-bec8-5e94636291fc"},"type":"IPV4_IP_BLOCK","regulations":{"addressingPlans":[{"purpose":"SERVERS","size":100},{"purpose":"ROUTERS","size":154}],"questions":{"privateSpaceConsidered":true,"refusedPreviously":true,"returningAddressSpace":false}},"account":{"accountNumber":"2-57689234"},"order":{"purchaseOrderNumber":"purchase-order123"}} # SubmitIpBlockRequestBody | 
 
     try:
         # Create IP Block

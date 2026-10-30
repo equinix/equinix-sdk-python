@@ -6,7 +6,7 @@ Filters
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_and** | [**List[ValidateRequestFilterAnd]**](ValidateRequestFilterAnd.md) |  | [optional] 
+**var_and** | [**List[ValidateRequestFilterAndInner]**](ValidateRequestFilterAndInner.md) |  | [optional] 
 
 ## Example
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**ExchangeServiceSearchSortCriteriaDirection**](ExchangeServiceSearchSortCriteriaDirection.md) |  | [optional] [default to ExchangeServiceSearchSortCriteriaDirection.DESC]
+**direction** | [**AsnSearchSortCriteriaDirection**](AsnSearchSortCriteriaDirection.md) |  | [optional] [default to AsnSearchSortCriteriaDirection.DESC]
 **var_property** | [**LoaActionSortCriteriaProperty**](LoaActionSortCriteriaProperty.md) |  | [optional] [default to LoaActionSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_CREATED_DATE_TIME]
 
 ## Example

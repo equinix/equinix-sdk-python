@@ -16,7 +16,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.route_aggregation_state import RouteAggregationState
 from equinix.services.fabricv4.models.route_aggregations_base_type import RouteAggregationsBaseType
 from equinix.services.fabricv4.models.route_aggregations_change import RouteAggregationsChange
 from equinix.services.fabricv4.models.route_aggregations_data_project import RouteAggregationsDataProject
@@ -32,14 +31,13 @@ class RouteAggregationsData(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Route Aggregation identifier")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided connection description")
-    state: Optional[RouteAggregationState] = None
     change: Optional[RouteAggregationsChange] = None
     connections_count: Optional[StrictInt] = Field(default=None, alias="connectionsCount")
     rules_count: Optional[StrictInt] = Field(default=None, alias="rulesCount")
     project: Optional[RouteAggregationsDataProject] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "state", "change", "connectionsCount", "rulesCount", "project", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "change", "connectionsCount", "rulesCount", "project", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,7 +111,6 @@ class RouteAggregationsData(BaseModel):
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "state": obj.get("state"),
             "change": RouteAggregationsChange.from_dict(obj["change"]) if obj.get("change") is not None else None,
             "connectionsCount": obj.get("connectionsCount"),
             "rulesCount": obj.get("rulesCount"),

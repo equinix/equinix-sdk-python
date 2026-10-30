@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **project** | [**Project**](Project.md) |  | 
 **order** | [**PortOrder**](PortOrder.md) |  | [optional] 
 **account** | [**SimplifiedAccountRequest**](SimplifiedAccountRequest.md) |  | 
-**service_type** | [**PortServiceType**](PortServiceType.md) |  | [optional] 
+**service_type** | [**SimplifiedPortServiceType**](SimplifiedPortServiceType.md) |  | [optional] 
 **service_code** | [**PortServiceCode**](PortServiceCode.md) |  | [optional] 
 **bandwidth** | **int** | Equinix assigned response attribute for Port bandwidth in Mbps | [optional] 
 **location** | [**SimplifiedLocationRequest**](SimplifiedLocationRequest.md) |  | 
@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **encapsulation** | [**PortEncapsulation**](PortEncapsulation.md) |  | 
 **lag_enabled** | **bool** | Indicates whether Link Aggregation Group (LAG) is enabled on this port | [optional] 
 **package** | [**Package**](Package.md) |  | [optional] 
-**settings** | [**PortSettings**](PortSettings.md) |  | [optional] 
 **notifications** | [**List[PortNotification]**](PortNotification.md) | Notification preferences | [optional] 
 **physical_ports** | [**List[PhysicalPort]**](PhysicalPort.md) | Physical ports that implement this port | [optional] 
 **loas** | [**List[PortLoa]**](PortLoa.md) | Port Loas | [optional] 

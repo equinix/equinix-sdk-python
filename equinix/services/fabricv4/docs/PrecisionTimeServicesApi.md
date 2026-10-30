@@ -51,7 +51,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    precision_time_service_request = equinix.services.fabricv4.PrecisionTimeServiceRequest() # PrecisionTimeServiceRequest | 
+    precision_time_service_request = {"type":"NTP","name":"EPT-NTP-Service","connections":[{"uuid":"06dbb0e3-e55d-4090-8aff-fc5654abaad0"}],"package":{"code":"NTP_STANDARD"},"ipv4":{"primary":"192.168.0.2","secondary":"192.168.0.3","networkMask":"255.255.255.255","defaultGateway":"192.167.0.1"}} # PrecisionTimeServiceRequest | 
 
     try:
         # Create Time Service
@@ -134,7 +134,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    service_id = 'service_id_example' # str | Service UUID
+    service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Service UUID
 
     try:
         # Delete Time Service by ID
@@ -218,8 +218,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    service_id = 'service_id_example' # str | Service UUID
-    precision_time_service_request = equinix.services.fabricv4.PrecisionTimeServiceRequest() # PrecisionTimeServiceRequest | 
+    service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Service UUID
+    precision_time_service_request = {"type":"NTP","name":"EPT-Standard-Service","connections":[{"uuid":"06dbb0e3-e55d-4090-8aff-fc5654abaad0"}],"package":{"code":"NTP_STANDARD"},"ipv4":{"primary":"192.168.0.2","secondary":"192.168.0.3","networkMask":"255.255.255.255","defaultGateway":"192.167.0.1"}} # PrecisionTimeServiceRequest | 
 
     try:
         # Update Time Service
@@ -304,7 +304,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    service_id = 'service_id_example' # str | Service UUID
+    service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Service UUID
 
     try:
         # Get Time Service by ID
@@ -388,7 +388,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    service_id = 'service_id_example' # str | Service UUID
+    service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Service UUID
 
     try:
         # Get Connection Links
@@ -471,7 +471,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    time_services_search_request = equinix.services.fabricv4.TimeServicesSearchRequest() # TimeServicesSearchRequest | 
+    time_services_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"=","values":["995072000433550"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # TimeServicesSearchRequest | 
 
     try:
         # Search Time Services
@@ -555,8 +555,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PrecisionTimeServicesApi(api_client)
-    service_id = 'service_id_example' # str | Service UUID
-    precision_time_change_operation = [equinix.services.fabricv4.PrecisionTimeChangeOperation()] # List[PrecisionTimeChangeOperation] | 
+    service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Service UUID
+    precision_time_change_operation = [{"op":"replace","path":"/name","value":"Updated-Service-Name"}] # List[PrecisionTimeChangeOperation] | 
 
     try:
         # Update Time Service by ID

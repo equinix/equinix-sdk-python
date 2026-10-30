@@ -1,6 +1,7 @@
 # flake8: noqa
 
 # import apis into api package
+from equinix.services.fabricv4.api.asns_api import ASNsApi
 from equinix.services.fabricv4.api.application_domains_api import ApplicationDomainsApi
 from equinix.services.fabricv4.api.application_links_api import ApplicationLinksApi
 from equinix.services.fabricv4.api.application_processors_api import ApplicationProcessorsApi

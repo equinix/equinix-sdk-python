@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.stream_asset_attachment_status import StreamAssetAttachmentStatus
+from equinix.services.fabricv4.models.stream_search_asset_attachment_status import StreamSearchAssetAttachmentStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class StreamSearchAsset(BaseModel):
     stream_uuid: Optional[StrictStr] = Field(default=None, description="Equinix-assigned access point identifier", alias="streamUuid")
     type: Optional[StrictStr] = Field(default=None, description="Asset type")
     metrics_enabled: Optional[StrictBool] = Field(default=None, description="enable metric", alias="metricsEnabled")
-    attachment_status: Optional[StreamAssetAttachmentStatus] = Field(default=None, alias="attachmentStatus")
+    attachment_status: Optional[StreamSearchAssetAttachmentStatus] = Field(default=None, alias="attachmentStatus")
     project_id: Optional[StrictStr] = Field(default=None, description="project ic", alias="projectId")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "uuid", "streamUuid", "type", "metricsEnabled", "attachmentStatus", "projectId"]

@@ -16,7 +16,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix.services.fabricv4.models.price_error_additional_info import PriceErrorAdditionalInfo
+from equinix.services.fabricv4.models.error_additional_info_inner import ErrorAdditionalInfoInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,7 +29,7 @@ class Error(BaseModel):
     correlation_id: Optional[StrictStr] = Field(default=None, alias="correlationId")
     details: Optional[StrictStr] = None
     help: Optional[StrictStr] = None
-    additional_info: Optional[List[PriceErrorAdditionalInfo]] = Field(default=None, alias="additionalInfo")
+    additional_info: Optional[List[ErrorAdditionalInfoInner]] = Field(default=None, alias="additionalInfo")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["errorCode", "errorMessage", "correlationId", "details", "help", "additionalInfo"]
 
@@ -110,7 +110,7 @@ class Error(BaseModel):
             "correlationId": obj.get("correlationId"),
             "details": obj.get("details"),
             "help": obj.get("help"),
-            "additionalInfo": [PriceErrorAdditionalInfo.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None
+            "additionalInfo": [ErrorAdditionalInfoInner.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

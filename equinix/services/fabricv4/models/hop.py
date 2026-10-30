@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.hop_probes import HopProbes
+from equinix.services.fabricv4.models.hop_probes_inner import HopProbesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,7 +24,7 @@ class Hop(BaseModel):
     Hop
     """ # noqa: E501
     hop: Optional[StrictInt] = None
-    probes: Optional[List[HopProbes]] = None
+    probes: Optional[List[HopProbesInner]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["hop", "probes"]
 
@@ -94,7 +94,7 @@ class Hop(BaseModel):
 
         _obj = cls.model_validate({
             "hop": obj.get("hop"),
-            "probes": [HopProbes.from_dict(_item) for _item in obj["probes"]] if obj.get("probes") is not None else None
+            "probes": [HopProbesInner.from_dict(_item) for _item in obj["probes"]] if obj.get("probes") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

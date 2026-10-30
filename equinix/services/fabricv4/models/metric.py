@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.metric_datapoints import MetricDatapoints
+from equinix.services.fabricv4.models.metric_datapoints_inner import MetricDatapointsInner
 from equinix.services.fabricv4.models.metric_resource import MetricResource
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class Metric(BaseModel):
     interval: Optional[StrictStr] = Field(default=None, description="Metric interval (set automatically based on search range)")
     resource: Optional[MetricResource] = None
     summary: Optional[StrictStr] = Field(default=None, description="Metric summary")
-    datapoints: Optional[List[MetricDatapoints]] = Field(default=None, description="Metric data points")
+    datapoints: Optional[List[MetricDatapointsInner]] = Field(default=None, description="Metric data points")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "name", "unit", "interval", "resource", "summary", "datapoints"]
 
@@ -108,7 +108,7 @@ class Metric(BaseModel):
             "interval": obj.get("interval"),
             "resource": MetricResource.from_dict(obj["resource"]) if obj.get("resource") is not None else None,
             "summary": obj.get("summary"),
-            "datapoints": [MetricDatapoints.from_dict(_item) for _item in obj["datapoints"]] if obj.get("datapoints") is not None else None
+            "datapoints": [MetricDatapointsInner.from_dict(_item) for _item in obj["datapoints"]] if obj.get("datapoints") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

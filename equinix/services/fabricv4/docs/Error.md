@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **correlation_id** | **str** |  | [optional] 
 **details** | **str** |  | [optional] 
 **help** | **str** |  | [optional] 
-**additional_info** | [**List[PriceErrorAdditionalInfo]**](PriceErrorAdditionalInfo.md) |  | [optional] 
+**additional_info** | [**List[ErrorAdditionalInfoInner]**](ErrorAdditionalInfoInner.md) |  | [optional] 
 
 ## Example
 

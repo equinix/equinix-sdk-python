@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | Uniquely identifies a change | [optional] 
 **type** | [**AppProcessorChangeType**](AppProcessorChangeType.md) |  | 
-**status** | [**PortChangeStatus**](PortChangeStatus.md) |  | [optional] 
+**status** | [**CloudRouterChangeStatus**](CloudRouterChangeStatus.md) |  | [optional] 
 **created_date_time** | **datetime** | Set when change flow starts | [optional] 
 **updated_date_time** | **datetime** | Set when change object is updated | 
 **data** | [**List[AppProcessorChangeOperation]**](AppProcessorChangeOperation.md) |  | [optional] 

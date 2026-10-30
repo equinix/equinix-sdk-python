@@ -55,7 +55,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
-    service_profile_request = equinix.services.fabricv4.ServiceProfileRequest() # ServiceProfileRequest | 
+    service_profile_request = {"name":"Service Profile 1","description":"Sample_description","type":"L2_PROFILE","notifications":[{"emails":["someone@sample.com"],"type":"BANDWIDTH_ALERT"}],"visibility":"PUBLIC","allowedEmails":["test@equinix.com","testagain@equinix.com"],"ports":[{"uuid":"c791f8cb-5cc9-cc90-8ce0-306a5c00a4ee","type":"XF_PORT","location":{"metroCode":"SY"}}],"marketingInfo":{"promotion":true},"accessPointTypeConfigs":[{"type":"COLO","connectionRedundancyRequired":false,"selectiveRedundancy":false,"allowBandwidthAutoApproval":false,"allowRemoteConnections":true,"connectionLabel":"Service Profile 1","enableAutoGenerateServiceKey":false,"bandwidthAlertThreshold":10,"allowCustomBandwidth":true,"apiConfig":{"apiAvailable":false,"equinixManagedVlan":false,"bandwidthFromApi":false,"integrationId":null,"equinixManagedPort":false},"authenticationKey":{"required":false,"label":"Service Key","description":"XYZ"},"supportedBandwidths":[100,500]}]} # ServiceProfileRequest | 
 
     try:
         # Create Service Profile
@@ -139,7 +139,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
-    service_profile_action_request = equinix.services.fabricv4.ServiceProfileActionRequest() # ServiceProfileActionRequest | 
+    service_profile_action_request = {"type":"PROFILE_UPDATE_ACCEPTANCE","description":"Approved to migrate to public"} # ServiceProfileActionRequest | 
 
     try:
         # Create Service Profile Action
@@ -653,7 +653,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
     if_match = 'if_match_example' # str | conditional request
-    service_profile_request = equinix.services.fabricv4.ServiceProfileRequest() # ServiceProfileRequest | 
+    service_profile_request = {"name":"Service Profile 2","description":"Sample_description","type":"L2_PROFILE","notifications":[{"emails":["someone@sample.com"],"type":"BANDWIDTH_ALERT"}],"visibility":"PUBLIC","allowedEmails":["test@equinix.com","testagain@equinix.com"],"ports":[{"uuid":"c791f8cb-5cc9-cc90-8ce0-306a5c00a4ee","type":"XF_PORT","location":{"metroCode":"SY"}}],"marketingInfo":{"promotion":true},"accessPointTypeConfigs":[{"type":"COLO","connectionRedundancyRequired":false,"selectiveRedundancy":false,"allowBandwidthAutoApproval":false,"allowRemoteConnections":false,"connectionLabel":"true1","enableAutoGenerateServiceKey":false,"bandwidthAlertThreshold":10,"allowCustomBandwidth":true,"apiConfig":{"apiAvailable":false,"equinixManagedVlan":true,"bandwidthFromApi":false,"integrationId":null,"equinixManagedPort":true},"authenticationKey":{"required":false,"label":"Service Key","description":"XYZ"},"supportedBandwidths":[100,500]}]} # ServiceProfileRequest | 
 
     try:
         # Replace Service Profile
@@ -740,7 +740,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
-    service_profile_search_request = equinix.services.fabricv4.ServiceProfileSearchRequest() # ServiceProfileSearchRequest | 
+    service_profile_search_request = {"filter":{"property":"/uuid","operator":"=","values":["13100b2d-234f-4425-ab5c-1449d4b806be"]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/updatedDateTime"}]} # ServiceProfileSearchRequest | 
     view_point = aSide # ListServiceProfilesViewPointParameter | flips view between buyer and seller representation (optional) (default to aSide)
 
     try:
@@ -912,7 +912,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceProfilesApi(api_client)
     service_profile_id = 'service_profile_id_example' # str | Service Profile UUID
-    service_profile_update_operation = [equinix.services.fabricv4.ServiceProfileUpdateOperation()] # List[ServiceProfileUpdateOperation] | 
+    service_profile_update_operation = [{"op":"add","path":"/tags","value":["sample_tag"]}] # List[ServiceProfileUpdateOperation] | 
 
     try:
         # Update Service Profile

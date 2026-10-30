@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**DetectionMethodType**](DetectionMethodType.md) |  | 
+**type** | [**DetectionMethodResponseType**](DetectionMethodResponseType.md) |  | 
 **window_size** | **str** | Stream alert rule metric window size | [optional] 
-**operand** | [**DetectionMethodOperand**](DetectionMethodOperand.md) |  | [optional] 
+**operand** | [**DetectionMethodResponseOperand**](DetectionMethodResponseOperand.md) |  | [optional] 
 **warning_threshold** | **str** | Stream alert rule metric warning threshold | [optional] 
 **critical_threshold** | **str** | Stream alert rule metric critical threshold | [optional] 
 

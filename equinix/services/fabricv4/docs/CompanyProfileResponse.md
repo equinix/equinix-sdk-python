@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **summary** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **state** | **str** | Company Profile State | [optional] 
-**account** | [**CompanyProfileResponseAccount**](CompanyProfileResponseAccount.md) |  | [optional] 
 **metros** | [**List[CompanyMetro]**](CompanyMetro.md) |  | [optional] 
 **logo** | [**CompanyLogo**](CompanyLogo.md) |  | [optional] 
 **tags** | [**List[TagResponse]**](TagResponse.md) |  | [optional] 

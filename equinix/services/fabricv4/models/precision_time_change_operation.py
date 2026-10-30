@@ -14,8 +14,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List
-from equinix.services.fabricv4.models.precision_time_change_operation_op import PrecisionTimeChangeOperationOp
+from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.cloud_router_change_operation_op import CloudRouterChangeOperationOp
 from equinix.services.fabricv4.models.precision_time_change_operation_path import PrecisionTimeChangeOperationPath
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,9 +24,9 @@ class PrecisionTimeChangeOperation(BaseModel):
     """
     Fabric Precision Timing change operation data
     """ # noqa: E501
-    op: PrecisionTimeChangeOperationOp
+    op: CloudRouterChangeOperationOp
     path: PrecisionTimeChangeOperationPath
-    value: Dict[str, Any] = Field(description="new value for updated parameter")
+    value: Optional[Any] = Field(description="new value for updated parameter")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["op", "path", "value"]
 
@@ -75,6 +75,11 @@ class PrecisionTimeChangeOperation(BaseModel):
         if self.additional_properties is not None:
             for _key, _value in self.additional_properties.items():
                 _dict[_key] = _value
+
+        # set to None if value (nullable) is None
+        # and model_fields_set contains the field
+        if self.value is None and "value" in self.model_fields_set:
+            _dict['value'] = None
 
         return _dict
 

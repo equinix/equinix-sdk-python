@@ -26,7 +26,6 @@ from equinix.services.fabricv4.models.port_interface import PortInterface
 from equinix.services.fabricv4.models.port_operation import PortOperation
 from equinix.services.fabricv4.models.port_redundancy import PortRedundancy
 from equinix.services.fabricv4.models.port_service_code import PortServiceCode
-from equinix.services.fabricv4.models.port_service_type import PortServiceType
 from equinix.services.fabricv4.models.port_settings import PortSettings
 from equinix.services.fabricv4.models.port_state import PortState
 from equinix.services.fabricv4.models.port_tether import PortTether
@@ -34,6 +33,7 @@ from equinix.services.fabricv4.models.port_type import PortType
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.simplified_account import SimplifiedAccount
 from equinix.services.fabricv4.models.simplified_location import SimplifiedLocation
+from equinix.services.fabricv4.models.simplified_port_service_type import SimplifiedPortServiceType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -53,7 +53,7 @@ class SimplifiedPort(BaseModel):
     state: Optional[PortState] = None
     operation: Optional[PortOperation] = None
     account: Optional[SimplifiedAccount] = None
-    service_type: Optional[PortServiceType] = Field(default=None, alias="serviceType")
+    service_type: Optional[SimplifiedPortServiceType] = Field(default=None, alias="serviceType")
     service_code: Optional[PortServiceCode] = Field(default=None, alias="serviceCode")
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port bandwidth in Mbps")
     available_bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port available bandwidth in Mbps", alias="availableBandwidth")

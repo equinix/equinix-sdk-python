@@ -21,7 +21,6 @@ from equinix.services.fabricv4.models.ipv4 import Ipv4
 from equinix.services.fabricv4.models.md5 import Md5
 from equinix.services.fabricv4.models.precision_time_order import PrecisionTimeOrder
 from equinix.services.fabricv4.models.precision_time_package_post_response import PrecisionTimePackagePostResponse
-from equinix.services.fabricv4.models.precision_time_price import PrecisionTimePrice
 from equinix.services.fabricv4.models.precision_time_service_response_state import PrecisionTimeServiceResponseState
 from equinix.services.fabricv4.models.precision_time_service_response_type import PrecisionTimeServiceResponseType
 from equinix.services.fabricv4.models.project import Project
@@ -50,10 +49,9 @@ class PrecisionTimeServiceResponse(BaseModel):
     project: Optional[Project] = None
     account: Optional[SimplifiedAccount] = None
     order: Optional[PrecisionTimeOrder] = None
-    pricing: Optional[PrecisionTimePrice] = None
     change_log: Optional[Changelog] = Field(default=None, alias="changeLog")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "pricing", "changeLog"]
+    __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "state", "operation", "package", "connections", "ipv4", "ntpAdvancedConfiguration", "ptpAdvancedConfiguration", "project", "account", "order", "changeLog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,9 +129,6 @@ class PrecisionTimeServiceResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of order
         if self.order:
             _dict['order'] = self.order.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of pricing
-        if self.pricing:
-            _dict['pricing'] = self.pricing.to_dict()
         # override the default output from pydantic by calling `to_dict()` of change_log
         if self.change_log:
             _dict['changeLog'] = self.change_log.to_dict()
@@ -168,7 +163,6 @@ class PrecisionTimeServiceResponse(BaseModel):
             "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None,
             "account": SimplifiedAccount.from_dict(obj["account"]) if obj.get("account") is not None else None,
             "order": PrecisionTimeOrder.from_dict(obj["order"]) if obj.get("order") is not None else None,
-            "pricing": PrecisionTimePrice.from_dict(obj["pricing"]) if obj.get("pricing") is not None else None,
             "changeLog": Changelog.from_dict(obj["changeLog"]) if obj.get("changeLog") is not None else None
         })
         # store additional fields in additional_properties

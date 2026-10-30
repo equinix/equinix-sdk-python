@@ -6,7 +6,7 @@ Time Service Product configuration
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**PrecisionTimeServiceRequestType**](PrecisionTimeServiceRequestType.md) |  | [optional] 
+**type** | [**TimeServicePriceType**](TimeServicePriceType.md) |  | [optional] 
 **package** | [**PrecisionTimePackageRequest**](PrecisionTimePackageRequest.md) |  | [optional] 
 **connection** | [**TimeServicePriceConnection**](TimeServicePriceConnection.md) |  | [optional] 
 

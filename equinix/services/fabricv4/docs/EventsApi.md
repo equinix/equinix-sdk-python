@@ -47,7 +47,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.EventsApi(api_client)
-    cloud_event_id = 'cloud_event_id_example' # str | Cloud Event UUID
+    cloud_event_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Event UUID
 
     try:
         # Get Cloud Event
@@ -131,7 +131,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.EventsApi(api_client)
     asset = equinix.services.fabricv4.CloudEventAssetType() # CloudEventAssetType | asset
-    asset_id = 'asset_id_example' # str | asset UUID
+    asset_id = '757400f8-d360-11e9-bb65-2a2ae2dbcce6' # str | asset UUID
     from_date_time = '2013-10-20T19:20:30+01:00' # datetime | Start date and time (optional)
     to_date_time = '2013-10-20T19:20:30+01:00' # datetime | End date and time (optional)
     offset = 0 # int | offset (optional) (default to 0)
@@ -223,7 +223,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.EventsApi(api_client)
-    cloud_event_search_request = equinix.services.fabricv4.CloudEventSearchRequest() # CloudEventSearchRequest | 
+    cloud_event_search_request = {"filter":{"and":[{"property":"/type","operator":"IN","values":["equinix.fabric.port.status.*"]},{"property":"/subject","operator":"IN","values":["/fabric/v4/ports/8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d*","/fabric/v4/ports/c8bba3be-5132-4669-bb47-7f1a8811359b*"]},{"property":"/equinixorganization","operator":"=","values":["526698000597331"]},{"property":"/equinixproject","operator":"=","values":["dadd3ab6-c0af-430c-8216-43d44f08c1c5"]},{"property":"/time","operator":">","values":["2018-04-05T17:31:00.000Z"]}]},"pagination":{"offset":0,"limit":20}} # CloudEventSearchRequest | 
 
     try:
         # Search Cloud Events
@@ -306,7 +306,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.EventsApi(api_client)
-    live_event_search_request = equinix.services.fabricv4.LiveEventSearchRequest() # LiveEventSearchRequest | 
+    live_event_search_request = {"filter":{"and":[{"property":"/subject","operator":"IN","values":["/fabric/v4/ports/8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d"]}]},"pagination":{"offset":0,"limit":2}} # LiveEventSearchRequest | 
 
     try:
         # Search last Operational Cloud Events
