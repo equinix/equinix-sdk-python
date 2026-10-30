@@ -53031,8 +53031,6 @@ components:
           description: Subscriber-assigned project ID
           type: string
           example: 44f4c4f8-2f39-494e-838c-d8e640591be5
-      required:
-        - projectId
     AsnRirRegion:
       type: string
       description: Regional Internet Registry region

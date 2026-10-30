@@ -14,7 +14,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -22,7 +22,7 @@ class Project(BaseModel):
     """
     Project
     """ # noqa: E501
-    project_id: StrictStr = Field(description="Subscriber-assigned project ID", alias="projectId")
+    project_id: Optional[StrictStr] = Field(default=None, description="Subscriber-assigned project ID", alias="projectId")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["projectId"]
 
