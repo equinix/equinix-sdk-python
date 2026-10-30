@@ -54,8 +54,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rules_base = equinix.services.fabricv4.RouteFilterRulesBase() # RouteFilterRulesBase | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rules_base = {"name":"Private-subnet-filter","description":"Test rule","prefix":"192.168.0.0/24","prefixMatch":"exact"} # RouteFilterRulesBase | 
 
     try:
         # Create Route Filter Rule
@@ -141,7 +141,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
     route_filter_rules_post_request = equinix.services.fabricv4.RouteFilterRulesPostRequest() # RouteFilterRulesPostRequest | 
 
     try:
@@ -227,8 +227,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
 
     try:
         # Delete Route Filter Rule
@@ -313,8 +313,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
 
     try:
         # Get Route Filter Rule by ID
@@ -399,9 +399,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
-    change_id = 'change_id_example' # str | Route Filter Rule Change UUID
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Route Filter Rule Change UUID
 
     try:
         # Get Change By ID
@@ -486,8 +486,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -575,7 +575,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -663,9 +663,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
-    route_filter_rules_patch_request_item = [equinix.services.fabricv4.RouteFilterRulesPatchRequestItem()] # List[RouteFilterRulesPatchRequestItem] | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
+    route_filter_rules_patch_request_item = [{"op":"replace","path":"/name","value":"test-route-filter-name-patch"}] # List[RouteFilterRulesPatchRequestItem] | 
 
     try:
         # Update Route Filter Rule
@@ -752,9 +752,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rule_id = 'route_filter_rule_id_example' # str | Route  Filter  Rules Id
-    route_filter_rules_base = equinix.services.fabricv4.RouteFilterRulesBase() # RouteFilterRulesBase | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route  Filter  Rules Id
+    route_filter_rules_base = {"name":"Private-subnet-filter-update","description":"Test rule","prefix":"192.168.0.0/24","prefixMatch":"exact"} # RouteFilterRulesBase | 
 
     try:
         # Replace Route Filter Rule
@@ -841,8 +841,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFilterRulesApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filter_rules_search_request = equinix.services.fabricv4.RouteFilterRulesSearchRequest() # RouteFilterRulesSearchRequest | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filter_rules_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_FILTER_RULE"]},{"property":"/state","operator":"=","values":["PROVISIONED"]},{"or":[{"property":"/name","operator":"LIKE","values":["%Demo%"]},{"property":"/name","operator":"LIKE","values":["%Production%"]}]},{"or":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"and":[{"property":"/prefix","operator":"=","values":["192.168.2.0/24"]},{"property":"/prefixMatch","operator":"=","values":["exact"]}]}]}]},"pagination":{"offset":0,"limit":20},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # RouteFilterRulesSearchRequest | 
 
     try:
         # Search Route Filter Rules

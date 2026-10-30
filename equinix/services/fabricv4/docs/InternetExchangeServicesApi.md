@@ -49,7 +49,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetExchangeServicesApi(api_client)
-    exchange_service_create_request = equinix.services.fabricv4.ExchangeServiceCreateRequest() # ExchangeServiceCreateRequest | 
+    exchange_service_create_request = {"type":"IX","name":"ix_exchange_service","publicPeeringConnection":{"uuid":"b44c6e6c-2c36-4488-b3f1-47064357b5b4"},"description":"ix_exchange_service","routingProtocol":{"customerAsn":5555,"macAddress":"00:11:22:33:44:55","bgpIpv4":{"domainName":"gw01.sin.example.net","asSet":"AS-EC-SV","mlpeEnabled":true,"md5AuthKey":"TESTMD5KEY12345","prefixes":["203.0.113.0/24"]},"bgpIpv6":{"domainName":"gw01.sin.example.net","asSet":"AS-EC-SV","mlpeEnabled":true,"md5AuthKey":"TESTMD5KEY123456","prefixes":["2001:DB8:123::/48"]}},"order":{"purchaseOrderNumber":"1-3456576"},"notifications":[{"type":"NOTIFICATION","registeredUsers":["jaguarsuser-port-order"]}],"project":{"projectId":"e275485c-7072-439f-943a-c923548b2be5"},"account":{"accountNumber":100179}} # ExchangeServiceCreateRequest | 
 
     try:
         # Create Internet Exchange Service
@@ -133,8 +133,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetExchangeServicesApi(api_client)
-    exchange_service_id = 'exchange_service_id_example' # str | Internet Exchange Service Id
-    exchange_service_action_request = equinix.services.fabricv4.ExchangeServiceActionRequest() # ExchangeServiceActionRequest | 
+    exchange_service_id = 'a8ba52de-faae-43b5-b0b1-6904d37ee011' # str | Internet Exchange Service Id
+    exchange_service_action_request = {"type":"EXCHANGE_SERVICE_ACTIVATE"} # ExchangeServiceActionRequest | 
 
     try:
         # Create Internet Exchange Service Action
@@ -218,7 +218,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetExchangeServicesApi(api_client)
-    exchange_service_id = 'exchange_service_id_example' # str | Internet Exchange Service Id
+    exchange_service_id = 'a8ba52de-faae-43b5-b0b1-6904d37ee011' # str | Internet Exchange Service Id
 
     try:
         # Get Internet Exchange Service
@@ -302,7 +302,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetExchangeServicesApi(api_client)
-    exchange_service_search_request = equinix.services.fabricv4.ExchangeServiceSearchRequest() # ExchangeServiceSearchRequest | 
+    exchange_service_search_request = {"filter":{"and":[{"property":"/project/projectId","operator":"=","values":["30ad25e2-53dc-11ed-bdc3-0242ac120002"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # ExchangeServiceSearchRequest | 
 
     try:
         # Search Internet Exchange Services
@@ -385,8 +385,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetExchangeServicesApi(api_client)
-    exchange_service_id = 'exchange_service_id_example' # str | Internet Exchange Service Id
-    exchange_service_replace_operation = [equinix.services.fabricv4.ExchangeServiceReplaceOperation()] # List[ExchangeServiceReplaceOperation] | 
+    exchange_service_id = 'a8ba52de-faae-43b5-b0b1-6904d37ee011' # str | Internet Exchange Service Id
+    exchange_service_replace_operation = [{"op":"replace","path":"/routingProtocol/macAddress","value":"00:1A:2B:3C:4D:5E"}] # List[ExchangeServiceReplaceOperation] | 
 
     try:
         # Update Internet Exchange Service

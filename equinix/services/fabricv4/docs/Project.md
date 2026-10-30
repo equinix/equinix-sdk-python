@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**project_id** | **str** | Subscriber-assigned project ID | [optional] 
+**project_id** | **str** | Subscriber-assigned project ID | 
 
 ## Example
 

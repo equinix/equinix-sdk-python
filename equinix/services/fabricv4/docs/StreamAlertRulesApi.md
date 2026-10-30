@@ -49,8 +49,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamAlertRulesApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    alert_rule_post_request = equinix.services.fabricv4.AlertRulePostRequest() # AlertRulePostRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    alert_rule_post_request = {"name":"metric-alert-1","type":"METRIC_ALERT","description":"metric-alert-1","enabled":true,"metricSelector":{"include":["equinix.fabric.connection.bandwidth_tx.usage"]},"resourceSelector":{"include":["/fabric/v4/connections/8b140c74-0331-46d1-9cb3-2981be84dd1b"]},"detectionMethod":{"type":"THRESHOLD","windowSize":"PT15M","warningThreshold":"35000000","criticalThreshold":"45000000"}} # AlertRulePostRequest | 
 
     try:
         # Create Stream Alert Rule
@@ -134,8 +134,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamAlertRulesApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    alert_rule_id = 'alert_rule_id_example' # str | alert rule UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    alert_rule_id = '0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15' # str | alert rule UUID
 
     try:
         # Delete Stream Alert Rule
@@ -219,8 +219,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamAlertRulesApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    alert_rule_id = 'alert_rule_id_example' # str | alert rule UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    alert_rule_id = '0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15' # str | alert rule UUID
 
     try:
         # Get Stream Alert Rule
@@ -304,7 +304,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamAlertRulesApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -391,9 +391,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamAlertRulesApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    alert_rule_id = 'alert_rule_id_example' # str | alert rule UUID
-    alert_rule_put_request = equinix.services.fabricv4.AlertRulePutRequest() # AlertRulePutRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    alert_rule_id = '0bbcea48-1333-4ad5-a7ea-e4d58a5fbd15' # str | alert rule UUID
+    alert_rule_put_request = {"name":"metric-alert-1","type":"METRIC_ALERT","description":"metric-alert-1","enabled":true,"metricSelector":{"include":["equinix.fabric.connection.bandwidth_tx.usage"]},"resourceSelector":{"include":["/fabric/v4/connections/8b140c74-0331-46d1-9cb3-2981be84dd1b"]},"detectionMethod":{"type":"THRESHOLD","windowSize":"PT15M","operand":"ABOVE","warningThreshold":"35000000","criticalThreshold":"45000000"}} # AlertRulePutRequest | 
 
     try:
         # Update Stream Alert Rule

@@ -56,7 +56,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    create_cross_connect = equinix.services.fabricv4.CreateCrossConnect() # CreateCrossConnect | 
+    create_cross_connect = {"type":"XC","name":"My-CC-service","aSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":35,"patchPanelPortB":32,"connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":12,"patchPanelPortB":24,"connectorType":"SC"}},"schedule":{"code":"STANDARD","requestedDateTime":"2026-02-27T07:21:39Z"}} # CreateCrossConnect | 
 
     try:
         # Create Cross Connect
@@ -141,7 +141,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    diverse_cross_connect_request = equinix.services.fabricv4.DiverseCrossConnectRequest() # DiverseCrossConnectRequest | 
+    diverse_cross_connect_request = {"data":[{"type":"XC","name":"My-CC-service-PRI","redundancy":{"priority":"PRIMARY"},"aSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":35,"patchPanelPortB":32,"connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":12,"patchPanelPortB":24,"connectorType":"SC"}},"schedule":{"code":"STANDARD","requestedDateTime":"2026-02-27T07:21:39Z"},"notifications":[{"type":"TECHNICAL","emails":["abc@test.com"],"phone":[{"type":"MOBILE","number":"+14085551234","contactPreference":{"timezone":"PST","availability":"ANYTIME"}}]}],"order":{"customerReferenceId":"12345"}},{"type":"XC","name":"My-CC-service-SEC","redundancy":{"priority":"SECONDARY"},"aSide":{"demarcationPoint":{"patchPanelId":"PP:Demarc:1260379","patchPanelPortA":14,"patchPanelPortB":15,"connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"PP:Demarc:1260379","patchPanelPortA":22,"patchPanelPortB":23,"connectorType":"SC"}},"schedule":{"code":"STANDARD","requestedDateTime":"2026-02-27T07:21:39Z"},"notifications":[{"type":"TECHNICAL","emails":["abc@test.com"],"phone":[{"type":"MOBILE","number":"+14085551234","contactPreference":{"timezone":"PST","availability":"ANYTIME"}}]}],"order":{"customerReferenceId":"12345"}}]} # DiverseCrossConnectRequest | 
 
     try:
         # Create Diverse Cross Connect
@@ -224,8 +224,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
-    action_id = 'action_id_example' # str | Cross Connect Action UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
+    action_id = '30cc7878-54e3-4e1a-8651-87a61354bad4' # str | Cross Connect Action UUID.
 
     try:
         # Get Cross Connect Action by Action ID
@@ -309,7 +309,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
 
     try:
         # Get Cross Connect Attachments
@@ -392,7 +392,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
 
     try:
         # Get Cross Connect
@@ -475,7 +475,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -562,7 +562,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
 
     try:
         # Get Cross Connect Schedules
@@ -645,7 +645,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
 
     try:
         # Get Cross Connect Services
@@ -730,8 +730,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
-    cross_connect_action_request = equinix.services.fabricv4.CrossConnectActionRequest() # CrossConnectActionRequest | 
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
+    cross_connect_action_request = {"type":"XC_SIGNATURE_SUBMISSION"} # CrossConnectActionRequest | 
 
     try:
         # Cross Connect Actions
@@ -816,8 +816,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_id = 'cross_connect_id_example' # str | Cross Connect UUID.
-    cross_connect_action_search_request = equinix.services.fabricv4.CrossConnectActionSearchRequest() # CrossConnectActionSearchRequest | 
+    cross_connect_id = '46bb1a31-c28f-4197-8b10-06e0e03d0743' # str | Cross Connect UUID.
+    cross_connect_action_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["XC_INFORMATION_UPDATE"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/createdDateTime","direction":"DESC"}]} # CrossConnectActionSearchRequest | 
 
     try:
         # Search Cross Connect Actions
@@ -903,7 +903,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_schedule_search_request = equinix.services.fabricv4.CrossConnectScheduleSearchRequest() # CrossConnectScheduleSearchRequest | 
+    cross_connect_schedule_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["XC_INSTALL_SCHEDULE"]},{"property":"/code","operator":"IN","values":["EXPEDITE","FLEXIBLE","STANDARD"]},{"property":"/aSide/location/ibxCode","operator":"=","values":["SV11"]},{"property":"/zSide/location/ibxCode","operator":"=","values":["SV11"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/startDateTime"}]} # CrossConnectScheduleSearchRequest | 
 
     try:
         # Search Cross Connect Schedules
@@ -987,7 +987,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CrossConnectsApi(api_client)
-    cross_connect_search_request = equinix.services.fabricv4.CrossConnectSearchRequest() # CrossConnectSearchRequest | 
+    cross_connect_search_request = {"filter":{"and":[{"property":"/name","operator":"LIKE","values":["My-CC-service"]},{"property":"/state","operator":"IN","values":["PENDING","PENDING_ACTION"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # CrossConnectSearchRequest | 
 
     try:
         # Search Cross Connects

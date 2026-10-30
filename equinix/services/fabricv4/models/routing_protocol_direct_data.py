@@ -21,7 +21,7 @@ from equinix.services.fabricv4.models.direct_connection_ipv6 import DirectConnec
 from equinix.services.fabricv4.models.routing_protocol_bgp_data_state import RoutingProtocolBGPDataState
 from equinix.services.fabricv4.models.routing_protocol_change import RoutingProtocolChange
 from equinix.services.fabricv4.models.routing_protocol_connection import RoutingProtocolConnection
-from equinix.services.fabricv4.models.routing_protocol_direct_type_type import RoutingProtocolDirectTypeType
+from equinix.services.fabricv4.models.routing_protocol_direct_data_type import RoutingProtocolDirectDataType
 from equinix.services.fabricv4.models.routing_protocol_operation import RoutingProtocolOperation
 from equinix.services.fabricv4.models.routing_protocol_project import RoutingProtocolProject
 from typing import Optional, Set
@@ -31,7 +31,7 @@ class RoutingProtocolDirectData(BaseModel):
     """
     RoutingProtocolDirectData
     """ # noqa: E501
-    type: Optional[RoutingProtocolDirectTypeType] = None
+    type: Optional[RoutingProtocolDirectDataType] = None
     name: Optional[StrictStr] = None
     direct_ipv4: Optional[DirectConnectionIpv4] = Field(default=None, alias="directIpv4")
     direct_ipv6: Optional[DirectConnectionIpv6] = Field(default=None, alias="directIpv6")

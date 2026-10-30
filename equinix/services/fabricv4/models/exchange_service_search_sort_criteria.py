@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.exchange_service_search_sort_criteria_direction import ExchangeServiceSearchSortCriteriaDirection
+from equinix.services.fabricv4.models.asn_search_sort_criteria_direction import AsnSearchSortCriteriaDirection
 from equinix.services.fabricv4.models.exchange_service_search_sort_criteria_property import ExchangeServiceSearchSortCriteriaProperty
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,8 +24,8 @@ class ExchangeServiceSearchSortCriteria(BaseModel):
     """
     ExchangeServiceSearchSortCriteria
     """ # noqa: E501
-    direction: Optional[ExchangeServiceSearchSortCriteriaDirection] = ExchangeServiceSearchSortCriteriaDirection.DESC
-    var_property: Optional[ExchangeServiceSearchSortCriteriaProperty] = Field(default=ExchangeServiceSearchSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
+    direction: Optional[AsnSearchSortCriteriaDirection] = AsnSearchSortCriteriaDirection.DESC
+    var_property: Optional[ExchangeServiceSearchSortCriteriaProperty] = Field(default=ExchangeServiceSearchSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["direction", "property"]
 
@@ -87,8 +87,8 @@ class ExchangeServiceSearchSortCriteria(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "direction": obj.get("direction") if obj.get("direction") is not None else ExchangeServiceSearchSortCriteriaDirection.DESC,
-            "property": obj.get("property") if obj.get("property") is not None else ExchangeServiceSearchSortCriteriaProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME
+            "direction": obj.get("direction") if obj.get("direction") is not None else AsnSearchSortCriteriaDirection.DESC,
+            "property": obj.get("property") if obj.get("property") is not None else ExchangeServiceSearchSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

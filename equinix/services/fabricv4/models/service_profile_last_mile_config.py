@@ -15,7 +15,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.service_profile_last_mile_api_integration import ServiceProfileLastMileApiIntegration
 from equinix.services.fabricv4.models.service_profile_last_mile_product_catalog import ServiceProfileLastMileProductCatalog
 from typing import Optional, Set
 from typing_extensions import Self
@@ -24,7 +23,7 @@ class ServiceProfileLastMileConfig(BaseModel):
     """
     Last-mile configuration for the service profile.
     """ # noqa: E501
-    api_integration: Optional[ServiceProfileLastMileApiIntegration] = Field(default=None, alias="apiIntegration")
+    api_integration: Optional[Dict[str, Any]] = Field(default=None, alias="apiIntegration")
     product_catalogs: Optional[List[ServiceProfileLastMileProductCatalog]] = Field(default=None, description="Last-mile provider catalogs.", alias="productCatalogs")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["apiIntegration", "productCatalogs"]

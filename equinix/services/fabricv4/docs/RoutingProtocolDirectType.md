@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**RoutingProtocolDirectTypeType**](RoutingProtocolDirectTypeType.md) |  | 
+**type** | [**RoutingProtocolDirectDataType**](RoutingProtocolDirectDataType.md) |  | 
 **name** | **str** |  | [optional] 
 **direct_ipv4** | [**DirectConnectionIpv4**](DirectConnectionIpv4.md) |  | [optional] 
 **direct_ipv6** | [**DirectConnectionIpv6**](DirectConnectionIpv6.md) |  | [optional] 

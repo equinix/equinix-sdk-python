@@ -50,7 +50,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
-    service_token = equinix.services.fabricv4.ServiceToken() # ServiceToken | 
+    service_token = {"type":"VC_TOKEN","name":"Az_Aside_Dot1Q_Pri_SV","description":"Az_Aside_Dot1Q_Pri_SV_Description","expirationDateTime":"2021-03-18T06:43:49.980Z","connection":{"type":"EVPL_VC","allowRemoteConnection":false,"bandwidthLimit":50,"allowCustomBandwidth":false,"aSide":{"accessPointSelectors":[{"type":"COLO","port":{"uuid":"b840a1db-5758-758f-97e0-328a5c00a874"},"linkProtocol":{"type":"QINQ","vlanCTag":1399,"vlanSTag":1388}}]}},"notifications":[{"type":"NOTIFICATION","emails":["abc@company.com","provider@company.com"]}]} # ServiceToken | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -136,7 +136,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
     service_token_id = 'service_token_id_example' # str | Service Token UUID
-    service_token_action_request = equinix.services.fabricv4.ServiceTokenActionRequest() # ServiceTokenActionRequest | 
+    service_token_action_request = {"type":"RESEND_EMAIL_NOTIFICATION"} # ServiceTokenActionRequest | 
 
     try:
         # Create Service Token Action
@@ -463,7 +463,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
-    service_token_search_request = equinix.services.fabricv4.ServiceTokenSearchRequest() # ServiceTokenSearchRequest | 
+    service_token_search_request = {"filter":{"and":[{"property":"/uuid","operator":"=","values":["407f8239-254c-4fe2-a378-458f197e17c4"]}]}} # ServiceTokenSearchRequest | 
     offset = 3.4 # float | offset (optional)
     limit = 3.4 # float | number of records to fetch (optional)
 
@@ -551,7 +551,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ServiceTokensApi(api_client)
     service_token_id = 'service_token_id_example' # str | Service Token UUID
-    service_token_change_operation = [equinix.services.fabricv4.ServiceTokenChangeOperation()] # List[ServiceTokenChangeOperation] | 
+    service_token_change_operation = [{"op":"replace","path":"/expirationDateTime","value":"2023-01-20T18:50:34.696Z"}] # List[ServiceTokenChangeOperation] | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:

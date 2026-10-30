@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.company_profile_contact_contacts import CompanyProfileContactContacts
+from equinix.services.fabricv4.models.company_profile_contact_contacts_inner import CompanyProfileContactContactsInner
 from equinix.services.fabricv4.models.company_profile_contact_type import CompanyProfileContactType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +25,7 @@ class CompanyProfileContact(BaseModel):
     CompanyProfileContact
     """ # noqa: E501
     type: Optional[CompanyProfileContactType] = None
-    contacts: Optional[List[CompanyProfileContactContacts]] = None
+    contacts: Optional[List[CompanyProfileContactContactsInner]] = None
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["type", "contacts"]
 
@@ -95,7 +95,7 @@ class CompanyProfileContact(BaseModel):
 
         _obj = cls.model_validate({
             "type": obj.get("type"),
-            "contacts": [CompanyProfileContactContacts.from_dict(_item) for _item in obj["contacts"]] if obj.get("contacts") is not None else None
+            "contacts": [CompanyProfileContactContactsInner.from_dict(_item) for _item in obj["contacts"]] if obj.get("contacts") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

@@ -22,7 +22,7 @@ from equinix.services.fabricv4.models.cross_connect_changelog import CrossConnec
 from equinix.services.fabricv4.models.cross_connect_link import CrossConnectLink
 from equinix.services.fabricv4.models.cross_connect_notification import CrossConnectNotification
 from equinix.services.fabricv4.models.cross_connect_redundancy import CrossConnectRedundancy
-from equinix.services.fabricv4.models.cross_connect_response_allowed_actions import CrossConnectResponseAllowedActions
+from equinix.services.fabricv4.models.cross_connect_response_allowed_actions_inner import CrossConnectResponseAllowedActionsInner
 from equinix.services.fabricv4.models.cross_connect_state import CrossConnectState
 from equinix.services.fabricv4.models.cross_connect_type import CrossConnectType
 from equinix.services.fabricv4.models.cross_connect_z_side_response import CrossConnectZSideResponse
@@ -39,7 +39,7 @@ class CrossConnectResponse(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Cross Connect Identifier.")
     name: Optional[StrictStr] = Field(default=None, description="A short, descriptive name for this Cross Connect.")
     state: Optional[CrossConnectState] = None
-    allowed_actions: Optional[List[CrossConnectResponseAllowedActions]] = Field(default=None, description="List of actions that can be performed on the Cross Connect based on its current state. Use these values to determine which action types are valid to submit to the actions endpoint. ", alias="allowedActions")
+    allowed_actions: Optional[List[CrossConnectResponseAllowedActionsInner]] = Field(default=None, description="List of actions that can be performed on the Cross Connect based on its current state. Use these values to determine which action types are valid to submit to the actions endpoint. ", alias="allowedActions")
     bmmr_type: Optional[BmmrType] = Field(default=None, alias="bmmrType")
     media_type: Optional[StrictStr] = Field(default=None, description="Media type of the Cross Connect.", alias="mediaType")
     media_sub_type: Optional[StrictStr] = Field(default=None, description="Media sub-type of the Cross Connect.", alias="mediaSubType")
@@ -164,7 +164,7 @@ class CrossConnectResponse(BaseModel):
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "state": obj.get("state"),
-            "allowedActions": [CrossConnectResponseAllowedActions.from_dict(_item) for _item in obj["allowedActions"]] if obj.get("allowedActions") is not None else None,
+            "allowedActions": [CrossConnectResponseAllowedActionsInner.from_dict(_item) for _item in obj["allowedActions"]] if obj.get("allowedActions") is not None else None,
             "bmmrType": obj.get("bmmrType"),
             "mediaType": obj.get("mediaType"),
             "mediaSubType": obj.get("mediaSubType"),

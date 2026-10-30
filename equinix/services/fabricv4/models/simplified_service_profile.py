@@ -23,7 +23,6 @@ from equinix.services.fabricv4.models.service_metro import ServiceMetro
 from equinix.services.fabricv4.models.service_profile_access_point_colo import ServiceProfileAccessPointCOLO
 from equinix.services.fabricv4.models.service_profile_access_point_type import ServiceProfileAccessPointType
 from equinix.services.fabricv4.models.service_profile_access_point_vd import ServiceProfileAccessPointVD
-from equinix.services.fabricv4.models.service_profile_last_mile_config import ServiceProfileLastMileConfig
 from equinix.services.fabricv4.models.service_profile_type_enum import ServiceProfileTypeEnum
 from equinix.services.fabricv4.models.service_profile_visibility_enum import ServiceProfileVisibilityEnum
 from equinix.services.fabricv4.models.simplified_notification import SimplifiedNotification
@@ -52,7 +51,7 @@ class SimplifiedServiceProfile(BaseModel):
     environments: Optional[List[ProviderEnvironment]] = Field(default=None, description="Provider environments associated with this IC_PROFILE service profile. <font color=\"red\"> <sup color='red'>Beta</sup></font>")
     self_profile: Optional[StrictBool] = Field(default=None, description="response attribute indicates whether the profile belongs to the same organization as the api-invoker.", alias="selfProfile")
     project_id: Optional[StrictStr] = Field(default=None, alias="projectId")
-    last_mile_config: Optional[ServiceProfileLastMileConfig] = Field(default=None, alias="lastMileConfig")
+    last_mile_config: Optional[Dict[str, Any]] = Field(default=None, alias="lastMileConfig")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["href", "type", "name", "uuid", "description", "notifications", "tags", "visibility", "allowedEmails", "accessPointTypeConfigs", "customFields", "marketingInfo", "ports", "virtualDevices", "metros", "environments", "selfProfile", "projectId", "lastMileConfig"]
 
