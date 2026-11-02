@@ -10,7 +10,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.21.0"
+__version__ = "0.22.0"
 
 # import apis into sdk package
 from equinix.services.fabricv4.api.asns_api import ASNsApi
