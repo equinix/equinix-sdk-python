@@ -18,7 +18,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.app_link_app_service_attachment_change_type import AppLinkAppServiceAttachmentChangeType
 from equinix.services.fabricv4.models.app_service_change_operation import AppServiceChangeOperation
-from equinix.services.fabricv4.models.port_change_status import PortChangeStatus
+from equinix.services.fabricv4.models.cloud_router_change_status import CloudRouterChangeStatus
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class AppServiceChange(BaseModel):
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="Uniquely identifies a change")
     type: AppLinkAppServiceAttachmentChangeType
-    status: Optional[PortChangeStatus] = None
+    status: Optional[CloudRouterChangeStatus] = None
     created_date_time: Optional[datetime] = Field(default=None, description="Set when change flow starts", alias="createdDateTime")
     updated_date_time: datetime = Field(description="Set when change object is updated", alias="updatedDateTime")
     data: Optional[List[AppServiceChangeOperation]] = None

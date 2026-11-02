@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **uuid** | **str** | Route filter identifier | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** | Customer-provided connection description | [optional] 
-**state** | [**RouteFilterState**](RouteFilterState.md) |  | [optional] 
 **change** | [**RouteFiltersChange**](RouteFiltersChange.md) |  | [optional] 
 **not_matched_rule_action** | [**RouteFiltersDataNotMatchedRuleAction**](RouteFiltersDataNotMatchedRuleAction.md) |  | [optional] 
 **connections_count** | **int** |  | [optional] 

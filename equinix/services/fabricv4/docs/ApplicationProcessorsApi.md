@@ -45,7 +45,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationProcessorsApi(api_client)
-    app_processor_id = 'app_processor_id_example' # str | App Processor UUID
+    app_processor_id = '90ee425c-9988-454c-96d9-1128bc16350f' # str | App Processor UUID
 
     try:
         # Get Processor
@@ -128,7 +128,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationProcessorsApi(api_client)
-    app_processor_search_request = equinix.services.fabricv4.AppProcessorSearchRequest() # AppProcessorSearchRequest | 
+    app_processor_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"IN","values":["71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppProcessorSearchRequest | 
 
     try:
         # Search Processors

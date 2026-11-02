@@ -50,8 +50,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    stream_subscription_post_request = equinix.services.fabricv4.StreamSubscriptionPostRequest() # StreamSubscriptionPostRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    stream_subscription_post_request = {"type":"STREAM_SUBSCRIPTION","name":"splunk1","description":"subscription-1","enabled":true,"sink":{"uri":"https://http-inputs-<host>.splunkcloud.com:<port>/services/collector/event","type":"SPLUNK_HEC","credential":{"type":"ACCESS_TOKEN","accessToken":"Splunk <my-access-token>"},"settings":{"source":"Equinix","eventIndex":"idx-hec-event","metricIndex":"idx-hec-metric"}}} # StreamSubscriptionPostRequest | 
 
     try:
         # Create Subscription
@@ -135,8 +135,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    subscription_id = 'subscription_id_example' # str | Stream Subscription UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    subscription_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Stream Subscription UUID
 
     try:
         # Delete Subscription
@@ -220,8 +220,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    subscription_id = 'subscription_id_example' # str | Stream Subscription UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    subscription_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Stream Subscription UUID
 
     try:
         # Get Subscription
@@ -305,7 +305,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -392,7 +392,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_subscription_search_request = equinix.services.fabricv4.StreamSubscriptionSearchRequest() # StreamSubscriptionSearchRequest | 
+    stream_subscription_search_request = {"filter":{"and":[{"property":"/streamUuid","operator":"=","values":["12f4d4a1-c7cb-4def-9f77-5ce93c19d999"]},{"or":[{"property":"/uuid","operator":"=","values":["8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d"]},{"property":"/name","operator":"ILIKE","values":["demo%"]}]}]},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}],"pagination":{"offset":0,"limit":20}} # StreamSubscriptionSearchRequest | 
 
     try:
         # Search Stream Subscriptions
@@ -476,9 +476,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.StreamSubscriptionsApi(api_client)
-    stream_id = 'stream_id_example' # str | Stream UUID
-    subscription_id = 'subscription_id_example' # str | Stream Subscription UUID
-    stream_subscription_put_request = equinix.services.fabricv4.StreamSubscriptionPutRequest() # StreamSubscriptionPutRequest | 
+    stream_id = '657400f8-d360-11e9-bb65-2a2ae2dbcce5' # str | Stream UUID
+    subscription_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Stream Subscription UUID
+    stream_subscription_put_request = {"type":"STREAM_SUBSCRIPTION","name":"splunk1","description":"subscription 1","enabled":true,"metricSelector":{"include":["equinix.fabric.connection.*"]},"eventSelector":{"include":["equinix.fabric.connection.*"]},"sink":{"uri":"https://xxxxxx","type":"SPLUNK_HEC","credential":{"type":"ACCESS_TOKEN","accessToken":"my-access-token"},"settings":{"source":"Equinix","eventIndex":"idx-hec-event","metricIndex":"idx-hec-metric"},"batchEnabled":false,"batchSizeMax":50,"batchWaitTimeMax":5}} # StreamSubscriptionPutRequest | 
 
     try:
         # Update Subscription

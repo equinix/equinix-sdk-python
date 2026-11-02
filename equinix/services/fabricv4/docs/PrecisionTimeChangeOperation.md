@@ -6,7 +6,7 @@ Fabric Precision Timing change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
+**op** | [**CloudRouterChangeOperationOp**](CloudRouterChangeOperationOp.md) |  | 
 **path** | [**PrecisionTimeChangeOperationPath**](PrecisionTimeChangeOperationPath.md) |  | 
 **value** | **object** | new value for updated parameter | 
 

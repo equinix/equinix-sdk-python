@@ -48,7 +48,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.MetricsApi(api_client)
     asset = equinix.services.fabricv4.MetricAssetType() # MetricAssetType | asset
-    asset_id = 'asset_id_example' # str | asset UUID
+    asset_id = '757400f8-d360-11e9-bb65-2a2ae2dbcce6' # str | asset UUID
     name = 'equinix.fabric.connection.bandwidth_rx.usage' # str | Name of the metric types:  - `equinix.fabric.connection.bandwidth_rx.usage` - `equinix.fabric.connection.bandwidth_tx.usage` - `equinix.fabric.connection.packets_dropped_rx_aside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_tx_aside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_rx_zside_rateexceeded.count` - `equinix.fabric.connection.packets_dropped_tx_zside_rateexceeded.count` - `equinix.fabric.connection.byte_rx.count` - `equinix.fabric.connection.byte_tx.count` - `equinix.fabric.connection.bandwidth_rx.usage_summary` - `equinix.fabric.connection.bandwidth_tx.usage_summary` - `equinix.fabric.port.bandwidth_rx.usage` - `equinix.fabric.port.bandwidth_tx.usage` - `equinix.fabric.port.packets_dropped_rx.count` - `equinix.fabric.port.packets_dropped_tx.count` - `equinix.fabric.port.packets_erred_rx.count` - `equinix.fabric.port.packets_erred_tx.count` - `equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.latency` - `equinix.fabric.metro.{SOURCE_METRO_CODE}_{DESTINATION_METRO_CODE}.jitter_avg` 
     from_date_time = '2013-10-20T19:20:30+01:00' # datetime | Start date and time (optional)
     to_date_time = '2013-10-20T19:20:30+01:00' # datetime | End date and time (optional)
@@ -230,7 +230,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.MetricsApi(api_client)
-    metrics_search_request = equinix.services.fabricv4.MetricsSearchRequest() # MetricsSearchRequest | 
+    metrics_search_request = {"filter":{"and":[{"property":"/subject","operator":"=","values":["/fabric/v4/ports/8ac8ecfe-c7cb-4def-9f77-5ce93c19d83d"]},{"property":"/name","operator":"IN","values":["equinix.fabric.port.bandwidth_rx.usage","equinix.fabric.port.bandwidth_tx.usage","equinix.fabric.port.packets_dropped_rx.count","equinix.fabric.port.packets_dropped_tx.count"]},{"property":"/dataPoints/endDateTime","operator":"BETWEEN","values":["2025-09-01T19:19:50Z","2025-09-03T19:19:50Z"]}]},"pagination":{"offset":0,"limit":10}} # MetricsSearchRequest | 
 
     try:
         # Search Metrics

@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.validate_request_filter_and import ValidateRequestFilterAnd
+from equinix.services.fabricv4.models.validate_request_filter_and_inner import ValidateRequestFilterAndInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -23,7 +23,7 @@ class ValidateRequestFilter(BaseModel):
     """
     Filters
     """ # noqa: E501
-    var_and: Optional[List[ValidateRequestFilterAnd]] = Field(default=None, alias="and")
+    var_and: Optional[List[ValidateRequestFilterAndInner]] = Field(default=None, alias="and")
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["and"]
 
@@ -92,7 +92,7 @@ class ValidateRequestFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "and": [ValidateRequestFilterAnd.from_dict(_item) for _item in obj["and"]] if obj.get("and") is not None else None
+            "and": [ValidateRequestFilterAndInner.from_dict(_item) for _item in obj["and"]] if obj.get("and") is not None else None
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

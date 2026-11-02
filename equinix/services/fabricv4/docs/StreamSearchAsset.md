@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **stream_uuid** | **str** | Equinix-assigned access point identifier | [optional] 
 **type** | **str** | Asset type | [optional] 
 **metrics_enabled** | **bool** | enable metric | [optional] 
-**attachment_status** | [**StreamAssetAttachmentStatus**](StreamAssetAttachmentStatus.md) |  | [optional] 
+**attachment_status** | [**StreamSearchAssetAttachmentStatus**](StreamSearchAssetAttachmentStatus.md) |  | [optional] 
 **project_id** | **str** | project ic | [optional] 
 
 ## Example

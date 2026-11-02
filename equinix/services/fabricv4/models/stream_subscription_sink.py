@@ -16,8 +16,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.stream_subscription_sink_credential import StreamSubscriptionSinkCredential
+from equinix.services.fabricv4.models.stream_subscription_sink_response_type import StreamSubscriptionSinkResponseType
 from equinix.services.fabricv4.models.stream_subscription_sink_setting import StreamSubscriptionSinkSetting
-from equinix.services.fabricv4.models.stream_subscription_sink_type import StreamSubscriptionSinkType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class StreamSubscriptionSink(BaseModel):
     Create Stream destination
     """ # noqa: E501
     uri: Optional[StrictStr] = Field(default=None, description="any publicly reachable http endpoint")
-    type: StreamSubscriptionSinkType
+    type: StreamSubscriptionSinkResponseType
     batch_enabled: Optional[StrictBool] = Field(default=None, description="batch mode on/off", alias="batchEnabled")
     batch_size_max: Optional[StrictInt] = Field(default=None, description="maximum batch size", alias="batchSizeMax")
     batch_wait_time_max: Optional[StrictInt] = Field(default=None, description="maximum batch waiting time", alias="batchWaitTimeMax")

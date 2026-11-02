@@ -16,7 +16,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.changelog import Changelog
-from equinix.services.fabricv4.models.route_filter_state import RouteFilterState
 from equinix.services.fabricv4.models.route_filters_base_type import RouteFiltersBaseType
 from equinix.services.fabricv4.models.route_filters_change import RouteFiltersChange
 from equinix.services.fabricv4.models.route_filters_data_not_matched_rule_action import RouteFiltersDataNotMatchedRuleAction
@@ -33,7 +32,6 @@ class RouteFiltersData(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Route filter identifier")
     name: Optional[StrictStr] = None
     description: Optional[StrictStr] = Field(default=None, description="Customer-provided connection description")
-    state: Optional[RouteFilterState] = None
     change: Optional[RouteFiltersChange] = None
     not_matched_rule_action: Optional[RouteFiltersDataNotMatchedRuleAction] = Field(default=None, alias="notMatchedRuleAction")
     connections_count: Optional[StrictInt] = Field(default=None, alias="connectionsCount")
@@ -41,7 +39,7 @@ class RouteFiltersData(BaseModel):
     project: Optional[RouteFiltersDataProject] = None
     changelog: Optional[Changelog] = None
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "state", "change", "notMatchedRuleAction", "connectionsCount", "rulesCount", "project", "changelog"]
+    __properties: ClassVar[List[str]] = ["href", "type", "uuid", "name", "description", "change", "notMatchedRuleAction", "connectionsCount", "rulesCount", "project", "changelog"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,7 +113,6 @@ class RouteFiltersData(BaseModel):
             "uuid": obj.get("uuid"),
             "name": obj.get("name"),
             "description": obj.get("description"),
-            "state": obj.get("state"),
             "change": RouteFiltersChange.from_dict(obj["change"]) if obj.get("change") is not None else None,
             "notMatchedRuleAction": obj.get("notMatchedRuleAction"),
             "connectionsCount": obj.get("connectionsCount"),

@@ -1,11 +1,11 @@
-diff --git a/spec/services/fabricv4/oas3.patched/openapi.yaml b/spec/services/fabricv4/oas3.patched/openapi.yaml
-index ff43d17..cdb5b92 100644
---- a/spec/services/fabricv4/oas3.patched/openapi.yaml
-+++ b/spec/services/fabricv4/oas3.patched/openapi.yaml
-@@ -17363,8 +17363,6 @@ components:
-             $ref: "#/components/schemas/ConnectionSideAdditionalInfo"
-       description: Connection configuration object for each side of multi-segment connection
-     Project:
+--- a/spec/services/fabricv4/oas3.patched/openapi.yaml	2026-10-30 12:13:04
++++ b/spec/services/fabricv4/oas3.patched/openapi.yaml	2026-10-30 12:13:05
+@@ -53031,8 +53031,6 @@
+           description: Subscriber-assigned project ID
+           type: string
+           example: 44f4c4f8-2f39-494e-838c-d8e640591be5
 -      required:
 -        - projectId
-       type: object
+     AsnRirRegion:
+       type: string
+       description: Regional Internet Registry region

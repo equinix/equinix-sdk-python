@@ -28,12 +28,11 @@ from equinix.services.fabricv4.models.port_redundancy import PortRedundancy
 from equinix.services.fabricv4.models.port_request_bmmr_type import PortRequestBmmrType
 from equinix.services.fabricv4.models.port_request_physical_ports_type import PortRequestPhysicalPortsType
 from equinix.services.fabricv4.models.port_service_code import PortServiceCode
-from equinix.services.fabricv4.models.port_service_type import PortServiceType
-from equinix.services.fabricv4.models.port_settings import PortSettings
 from equinix.services.fabricv4.models.port_type import PortType
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.simplified_account_request import SimplifiedAccountRequest
 from equinix.services.fabricv4.models.simplified_location_request import SimplifiedLocationRequest
+from equinix.services.fabricv4.models.simplified_port_service_type import SimplifiedPortServiceType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -50,7 +49,7 @@ class PortRequest(BaseModel):
     project: Project
     order: Optional[PortOrder] = None
     account: SimplifiedAccountRequest
-    service_type: Optional[PortServiceType] = Field(default=None, alias="serviceType")
+    service_type: Optional[SimplifiedPortServiceType] = Field(default=None, alias="serviceType")
     service_code: Optional[PortServiceCode] = Field(default=None, alias="serviceCode")
     bandwidth: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=None, description="Equinix assigned response attribute for Port bandwidth in Mbps")
     location: SimplifiedLocationRequest
@@ -61,12 +60,11 @@ class PortRequest(BaseModel):
     encapsulation: PortEncapsulation
     lag_enabled: Optional[StrictBool] = Field(default=None, description="Indicates whether Link Aggregation Group (LAG) is enabled on this port", alias="lagEnabled")
     package: Optional[Package] = None
-    settings: Optional[PortSettings] = None
     notifications: Optional[List[PortNotification]] = Field(default=None, description="Notification preferences")
     physical_ports: Optional[List[PhysicalPort]] = Field(default=None, description="Physical ports that implement this port", alias="physicalPorts")
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "settings", "notifications", "physicalPorts", "loas"]
+    __properties: ClassVar[List[str]] = ["type", "physicalPortsSpeed", "physicalPortsType", "physicalPortsCount", "connectivitySourceType", "bmmrType", "project", "order", "account", "serviceType", "serviceCode", "bandwidth", "location", "demarcationPointIbx", "tetherIbx", "demarcationPoint", "redundancy", "encapsulation", "lagEnabled", "package", "notifications", "physicalPorts", "loas"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -133,9 +131,6 @@ class PortRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of package
         if self.package:
             _dict['package'] = self.package.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of settings
-        if self.settings:
-            _dict['settings'] = self.settings.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
         _items = []
         if self.notifications:
@@ -194,7 +189,6 @@ class PortRequest(BaseModel):
             "encapsulation": PortEncapsulation.from_dict(obj["encapsulation"]) if obj.get("encapsulation") is not None else None,
             "lagEnabled": obj.get("lagEnabled"),
             "package": Package.from_dict(obj["package"]) if obj.get("package") is not None else None,
-            "settings": PortSettings.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
             "notifications": [PortNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
             "physicalPorts": [PhysicalPort.from_dict(_item) for _item in obj["physicalPorts"]] if obj.get("physicalPorts") is not None else None,
             "loas": [PortLoa.from_dict(_item) for _item in obj["loas"]] if obj.get("loas") is not None else None

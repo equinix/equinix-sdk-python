@@ -6,7 +6,7 @@ Create Precision Time Service Request Schema.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**PrecisionTimeServiceRequestType**](PrecisionTimeServiceRequestType.md) |  | 
+**type** | [**TimeServicePriceType**](TimeServicePriceType.md) |  | 
 **name** | **str** | Precision Time Service name. | 
 **package** | [**PrecisionTimePackageRequest**](PrecisionTimePackageRequest.md) |  | 
 **connections** | [**List[VirtualConnectionUuid]**](VirtualConnectionUuid.md) |  | 

@@ -49,7 +49,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.OpticalMetroConnectsApi(api_client)
-    bulk_optical_connect_request = equinix.services.fabricv4.BulkOpticalConnectRequest() # BulkOpticalConnectRequest | 
+    bulk_optical_connect_request = {"data":[{"type":"OC","bandwidth":100000,"connectionDestinationType":"COLO","pathType":"DUAL_DIVERSE","redundancy":{"priority":"PRIMARY"},"aSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":"10","patchPanelPortB":"11","connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259690","patchPanelPortA":"20","patchPanelPortB":"21","connectorType":"SC"}},"notifications":[{"type":"NOTIFICATION","emails":["test@test.com"],"registeredUsers":["test"]}]},{"type":"OC","bandwidth":100000,"connectionDestinationType":"COLO","pathType":"DUAL_DIVERSE","redundancy":{"priority":"SECONDARY"},"aSide":{"demarcationPoint":{"patchPanelId":"PP:Demarc:1260379","patchPanelPortA":"14","patchPanelPortB":"15","connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"PP:Demarc:1260385","patchPanelPortA":"24","patchPanelPortB":"25","connectorType":"SC"}},"notifications":[{"type":"NOTIFICATION","emails":["test@test.com"]}]}]} # BulkOpticalConnectRequest | 
 
     try:
         # Create Dual Diverse Optical Metro Connect Service
@@ -133,7 +133,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.OpticalMetroConnectsApi(api_client)
-    optical_connect_post_request = equinix.services.fabricv4.OpticalConnectPostRequest() # OpticalConnectPostRequest | 
+    optical_connect_post_request = {"type":"OC","bandwidth":100000,"connectionDestinationType":"COLO","pathType":"UNPROTECTED","aSide":{"demarcationPoint":{"patchPanelId":"CP:Demarc:1259684","patchPanelPortA":"9","patchPanelPortB":"10","connectorType":"SC"}},"zSide":{"demarcationPoint":{"patchPanelId":"PP:Demarc:1259695","patchPanelPortA":"20","patchPanelPortB":"21","connectorType":"SC"}},"order":{"purchaseOrderNumber":"156576"},"notifications":[{"type":"NOTIFICATION","emails":["test@test.com"]}]} # OpticalConnectPostRequest | 
 
     try:
         # Create Optical Metro Connect Service
@@ -216,7 +216,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.OpticalMetroConnectsApi(api_client)
-    optical_connect_id = 'optical_connect_id_example' # str | Unique identifier of an Optical Connect.
+    optical_connect_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Unique identifier of an Optical Connect.
 
     try:
         # Get Optical Metro Connect Service
@@ -300,7 +300,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.OpticalMetroConnectsApi(api_client)
-    optical_connect_search_request = equinix.services.fabricv4.OpticalConnectSearchRequest() # OpticalConnectSearchRequest | 
+    optical_connect_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/updatedDateTime"}]} # OpticalConnectSearchRequest | 
 
     try:
         # Search Optical Metro Connect Services

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**CompanyProfileContactType**](CompanyProfileContactType.md) |  | [optional] 
-**contacts** | [**List[CompanyProfileContactContacts]**](CompanyProfileContactContacts.md) |  | [optional] 
+**contacts** | [**List[CompanyProfileContactContactsInner]**](CompanyProfileContactContactsInner.md) |  | [optional] 
 
 ## Example
 

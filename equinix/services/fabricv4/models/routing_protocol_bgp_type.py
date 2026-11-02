@@ -18,7 +18,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.bgp_connection_ipv4 import BGPConnectionIpv4
 from equinix.services.fabricv4.models.bgp_connection_ipv6 import BGPConnectionIpv6
 from equinix.services.fabricv4.models.routing_protocol_bfd import RoutingProtocolBFD
-from equinix.services.fabricv4.models.routing_protocol_bgp_type_type import RoutingProtocolBGPTypeType
+from equinix.services.fabricv4.models.routing_protocol_bgp_data_type import RoutingProtocolBGPDataType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,7 @@ class RoutingProtocolBGPType(BaseModel):
     """
     RoutingProtocolBGPType
     """ # noqa: E501
-    type: RoutingProtocolBGPTypeType
+    type: RoutingProtocolBGPDataType
     name: Optional[StrictStr] = None
     bgp_ipv4: Optional[BGPConnectionIpv4] = Field(default=None, alias="bgpIpv4")
     bgp_ipv6: Optional[BGPConnectionIpv6] = Field(default=None, alias="bgpIpv6")

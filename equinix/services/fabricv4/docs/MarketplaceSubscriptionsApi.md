@@ -44,7 +44,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.MarketplaceSubscriptionsApi(api_client)
-    subscription_id = 'subscription_id_example' # str | Subscription UUID
+    subscription_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Subscription UUID
 
     try:
         # Get Subscription

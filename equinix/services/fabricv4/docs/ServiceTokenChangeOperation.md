@@ -6,7 +6,7 @@ Service Token change operation data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | [**PrecisionTimeChangeOperationOp**](PrecisionTimeChangeOperationOp.md) |  | 
+**op** | [**CloudRouterChangeOperationOp**](CloudRouterChangeOperationOp.md) |  | 
 **path** | **str** | path inside document leading to updated parameter | 
 **value** | **object** | new value for updated parameter | 
 

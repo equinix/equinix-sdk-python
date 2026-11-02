@@ -17,7 +17,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.direct_connection_ipv4 import DirectConnectionIpv4
 from equinix.services.fabricv4.models.direct_connection_ipv6 import DirectConnectionIpv6
-from equinix.services.fabricv4.models.routing_protocol_direct_type_type import RoutingProtocolDirectTypeType
+from equinix.services.fabricv4.models.routing_protocol_direct_data_type import RoutingProtocolDirectDataType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -25,7 +25,7 @@ class RoutingProtocolDirectType(BaseModel):
     """
     RoutingProtocolDirectType
     """ # noqa: E501
-    type: RoutingProtocolDirectTypeType
+    type: RoutingProtocolDirectDataType
     name: Optional[StrictStr] = None
     direct_ipv4: Optional[DirectConnectionIpv4] = Field(default=None, alias="directIpv4")
     direct_ipv6: Optional[DirectConnectionIpv6] = Field(default=None, alias="directIpv6")
