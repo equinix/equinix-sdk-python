@@ -45,7 +45,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PricesApi(api_client)
-    filter_body = equinix.services.fabricv4.FilterBody() # FilterBody | 
+    filter_body = {"filter":{"and":[{"property":"/type","operator":"=","values":["VIRTUAL_CONNECTION_PRODUCT"]},{"property":"/connection/type","operator":"=","values":["EVPL_VC"]},{"property":"/connection/bandwidth","operator":"IN","values":["100"]},{"property":"/connection/aSide/accessPoint/type","operator":"=","values":["COLO"]},{"property":"/connection/aSide/accessPoint/location/metroCode","operator":"=","values":["CH"]},{"property":"/connection/aSide/accessPoint/port/settings/buyout","operator":"=","values":["false"]},{"property":"/connection/zSide/accessPoint/location/metroCode","operator":"=","values":["CH"]},{"property":"/connection/zSide/accessPoint/type","operator":"=","values":["COLO"]}]}} # FilterBody | 
 
     try:
         # Search Prices

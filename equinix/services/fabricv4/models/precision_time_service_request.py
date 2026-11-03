@@ -19,9 +19,9 @@ from equinix.services.fabricv4.models.ipv4 import Ipv4
 from equinix.services.fabricv4.models.md5 import Md5
 from equinix.services.fabricv4.models.precision_time_order import PrecisionTimeOrder
 from equinix.services.fabricv4.models.precision_time_package_request import PrecisionTimePackageRequest
-from equinix.services.fabricv4.models.precision_time_service_request_type import PrecisionTimeServiceRequestType
 from equinix.services.fabricv4.models.project import Project
 from equinix.services.fabricv4.models.ptp_advance_configuration import PtpAdvanceConfiguration
+from equinix.services.fabricv4.models.time_service_price_type import TimeServicePriceType
 from equinix.services.fabricv4.models.virtual_connection_uuid import VirtualConnectionUuid
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +30,7 @@ class PrecisionTimeServiceRequest(BaseModel):
     """
     Create Precision Time Service Request Schema.
     """ # noqa: E501
-    type: PrecisionTimeServiceRequestType
+    type: TimeServicePriceType
     name: StrictStr = Field(description="Precision Time Service name.")
     package: PrecisionTimePackageRequest
     connections: List[VirtualConnectionUuid]

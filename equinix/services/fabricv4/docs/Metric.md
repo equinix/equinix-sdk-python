@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **interval** | **str** | Metric interval (set automatically based on search range) | [optional] 
 **resource** | [**MetricResource**](MetricResource.md) |  | [optional] 
 **summary** | **str** | Metric summary | [optional] 
-**datapoints** | [**List[MetricDatapoints]**](MetricDatapoints.md) | Metric data points | [optional] 
+**datapoints** | [**List[MetricDatapointsInner]**](MetricDatapointsInner.md) | Metric data points | [optional] 
 
 ## Example
 

@@ -49,7 +49,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetAccessServicesApi(api_client)
-    internet_access_post_request = equinix.services.fabricv4.InternetAccessPostRequest() # InternetAccessPostRequest | 
+    internet_access_post_request = {"type":"SINGLE_IA","name":"internet-access-primary","bandwidth":1000,"routingProtocol":{"type":"BGP","exportPolicy":"FULL","asn":{"uuid":"5dd81532-c313-35ba-8a0f-be05fb275fa1"},"connections":[{"uuid":"6f31ab8d-09f5-4ab1-b0b1-0f0e455ef671"}],"customerRoutes":[{"ipBlock":{"uuid":"fd8c5042-b553-4d5e-a2ac-c73bf6d4fd92"}}]},"billing":{"type":"FIXED"},"project":{"projectId":"44f4c4f8-2f39-494e-838c-d8e640591be5"},"account":{"accountNumber":"57689234"},"order":{"purchaseOrderNumber":"PO-98765"}} # InternetAccessPostRequest | 
 
     try:
         # Create Internet Access Service
@@ -291,7 +291,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetAccessServicesApi(api_client)
     uuid = 'uuid_example' # str | UUID of the EIA Service
-    internet_access_patch_operation_update = [equinix.services.fabricv4.InternetAccessPatchOperationUpdate()] # List[InternetAccessPatchOperationUpdate] | 
+    internet_access_patch_operation_update = [{"op":"add","path":"/routingProtocol/customerRoutes","value":{"ipBlock":{"uuid":"fd8c5042-b553-4d5e-a2ac-c73bf6d4fd92"}}},{"op":"remove","path":"/routingProtocol/customerRoutes[@.ipBlock.uuid=ad8c5042-b553-4d5e-a2ac-c73bf6d4fd91]"}] # List[InternetAccessPatchOperationUpdate] | 
 
     try:
         # Update Internet Access Service by ID
@@ -372,7 +372,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.InternetAccessServicesApi(api_client)
-    internet_access_search_request = equinix.services.fabricv4.InternetAccessSearchRequest() # InternetAccessSearchRequest | 
+    internet_access_search_request = {"filter":{"and":[{"property":"/project/projectId","operator":"=","values":["44f4c4f8-2f39-494e-838c-d8e640591be5"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/updatedDateTime"}]} # InternetAccessSearchRequest | 
 
     try:
         # Search Internet Access Services

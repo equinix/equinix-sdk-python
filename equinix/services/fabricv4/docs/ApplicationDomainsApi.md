@@ -50,7 +50,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_post_request = equinix.services.fabricv4.AppDomainPostRequest() # AppDomainPostRequest | 
+    app_domain_post_request = {"type":"APP_DOMAIN","name":"atlassian.net","description":"Atlassian Domain","project":{"projectId":"71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"}} # AppDomainPostRequest | 
 
     try:
         # Create Domain
@@ -133,7 +133,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
 
     try:
         # Delete Domain
@@ -216,7 +216,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
 
     try:
         # Get Domain
@@ -301,7 +301,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     state = [equinix.services.fabricv4.AppLinkState()] # List[AppLinkState] | Filter attached App Links by one or more lifecycle states. (optional)
@@ -395,7 +395,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_search_request = equinix.services.fabricv4.AppDomainSearchRequest() # AppDomainSearchRequest | 
+    app_domain_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"IN","values":["71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppDomainSearchRequest | 
 
     try:
         # Search Domains
@@ -479,8 +479,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationDomainsApi(api_client)
-    app_domain_id = 'app_domain_id_example' # str | App Domain UUID
-    app_domain_change_operation = [equinix.services.fabricv4.AppDomainChangeOperation()] # List[AppDomainChangeOperation] | 
+    app_domain_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Domain UUID
+    app_domain_change_operation = [{"op":"replace","path":"/description","value":"Updated Atlassian Domain"}] # List[AppDomainChangeOperation] | 
 
     try:
         # Update Domain

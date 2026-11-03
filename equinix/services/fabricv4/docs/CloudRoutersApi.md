@@ -61,7 +61,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    cloud_router_post_request = equinix.services.fabricv4.CloudRouterPostRequest() # CloudRouterPostRequest | 
+    cloud_router_post_request = {"type":"XF_ROUTER","name":"My-Cloud-Router","location":{"metroCode":"SV"},"package":{"code":"LAB"},"notifications":[{"type":"ALL","emails":["test@test.com"]}],"account":{"accountNumber":272010},"project":{"projectId":"995072000433550"}} # CloudRouterPostRequest | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -147,8 +147,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    cloud_router_action_request = equinix.services.fabricv4.CloudRouterActionRequest() # CloudRouterActionRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    cloud_router_action_request = {"type":"ROUTE_TABLE_ENTRY_UPDATE"} # CloudRouterActionRequest | 
 
     try:
         # Create Route Table Action
@@ -234,8 +234,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    cloud_router_command_post_request = equinix.services.fabricv4.CloudRouterCommandPostRequest() # CloudRouterCommandPostRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    cloud_router_command_post_request = {"type":"PING_COMMAND","name":"ping-test-1","description":"Testing FCR-SV-1","project":{"projectId":"b11d4cb5-978a-418a-8b13-bf19abb97938"},"request":{"destination":"8.8.8.8","sourceConnection":{"uuid":"1da3778c-6aa3-4e47-b2fe-83a0773dde18"},"timeout":2,"dataBytes":100}} # CloudRouterCommandPostRequest | 
 
     try:
         # Create Command
@@ -319,7 +319,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
 
     try:
         # Delete Router
@@ -399,8 +399,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    command_id = 'command_id_example' # str | Command UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    command_id = '37c10edc-ba2e-4240-a850-8a48f9c47d00' # str | Command UUID
 
     try:
         # Delete Command
@@ -482,7 +482,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
 
     try:
         # Get Commands
@@ -567,7 +567,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
     state = equinix.services.fabricv4.CloudRouterActionState() # CloudRouterActionState | Action state (optional)
 
     try:
@@ -654,8 +654,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    action_id = 'action_id_example' # str | Action UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    action_id = '457400f8-d360-11e9-bb65-2a2ae2dbcced' # str | Action UUID
     state = equinix.services.fabricv4.CloudRouterActionState() # CloudRouterActionState | Action state (optional)
 
     try:
@@ -742,7 +742,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
 
     try:
         # Get Router
@@ -824,8 +824,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    command_id = 'command_id_example' # str | Command UUID
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    command_id = '37c10edc-ba2e-4240-a850-8a48f9c47d00' # str | Command UUID
 
     try:
         # Get Command
@@ -911,8 +911,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    cloud_router_command_search_request = equinix.services.fabricv4.CloudRouterCommandSearchRequest() # CloudRouterCommandSearchRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    cloud_router_command_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["SUCCEEDED"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # CloudRouterCommandSearchRequest | 
 
     try:
         # Search Commands
@@ -998,8 +998,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    route_table_entry_search_request = equinix.services.fabricv4.RouteTableEntrySearchRequest() # RouteTableEntrySearchRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    route_table_entry_search_request = {"filter":{"and":[{"property":"/nextHop","operator":"=","values":["10.10.10.5"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # RouteTableEntrySearchRequest | 
 
     try:
         # Search Route Tables
@@ -1085,7 +1085,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    cloud_router_search_request = equinix.services.fabricv4.CloudRouterSearchRequest() # CloudRouterSearchRequest | 
+    cloud_router_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"=","values":["995072000433550"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # CloudRouterSearchRequest | 
 
     try:
         # Search Routers
@@ -1169,8 +1169,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_route_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["IPv4_BGP_ROUTE"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # ConnectionRouteSearchRequest | 
 
     try:
         # Search Advertised Routes
@@ -1254,8 +1254,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_route_search_request = equinix.services.fabricv4.ConnectionRouteSearchRequest() # ConnectionRouteSearchRequest | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_route_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["IPv4_BGP_ROUTE"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # ConnectionRouteSearchRequest | 
 
     try:
         # Search Received Routes
@@ -1339,8 +1339,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Router UUID
-    cloud_router_actions_search_request = equinix.services.fabricv4.CloudRouterActionsSearchRequest() # CloudRouterActionsSearchRequest | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Router UUID
+    cloud_router_actions_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["ROUTE_TABLE_ENTRY_UPDATE"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # CloudRouterActionsSearchRequest | 
 
     try:
         # Search Route Table Actions
@@ -1426,8 +1426,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.CloudRoutersApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
-    cloud_router_change_operation = [equinix.services.fabricv4.CloudRouterChangeOperation()] # List[CloudRouterChangeOperation] | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
+    cloud_router_change_operation = [{"op":"replace","path":"/package/code","value":"PREMIUM"}] # List[CloudRouterChangeOperation] | 
 
     try:
         # Update Router

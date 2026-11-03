@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **uuid** | **str** | Equinix-assigned access point identifier | [optional] 
 **type** | [**StreamAssetType**](StreamAssetType.md) |  | [optional] 
 **metrics_enabled** | **bool** | enable metric | [optional] 
-**attachment_status** | [**StreamAssetAttachmentStatus**](StreamAssetAttachmentStatus.md) |  | [optional] 
+**attachment_status** | [**StreamSearchAssetAttachmentStatus**](StreamSearchAssetAttachmentStatus.md) |  | [optional] 
 
 ## Example
 

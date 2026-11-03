@@ -54,8 +54,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rules_base = equinix.services.fabricv4.RouteAggregationRulesBase() # RouteAggregationRulesBase | 
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rules_base = {"name":"Private-subnet-aggregation","description":"Test rule","prefix":"192.168.0.0/24"} # RouteAggregationRulesBase | 
 
     try:
         # Create Route Aggregation Rule
@@ -141,7 +141,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
     route_aggregation_rules_post_request = equinix.services.fabricv4.RouteAggregationRulesPostRequest() # RouteAggregationRulesPostRequest | 
 
     try:
@@ -227,8 +227,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
 
     try:
         # Delete Route Aggregation Rule
@@ -313,8 +313,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
 
     try:
         # Get Route Aggregation Rule by ID
@@ -399,9 +399,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
-    change_id = 'change_id_example' # str | Route Aggregation Rule Change UUID
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Route Aggregation Rule Change UUID
 
     try:
         # Get Change By ID
@@ -486,8 +486,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -575,7 +575,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -663,9 +663,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
-    route_aggregation_rules_patch_request_item = [equinix.services.fabricv4.RouteAggregationRulesPatchRequestItem()] # List[RouteAggregationRulesPatchRequestItem] | 
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
+    route_aggregation_rules_patch_request_item = [{"op":"replace","path":"/name","value":"test-route-aggregation-name-patch"}] # List[RouteAggregationRulesPatchRequestItem] | 
 
     try:
         # Update Route Aggregation Rule
@@ -752,9 +752,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rule_id = 'route_aggregation_rule_id_example' # str | Route Aggregation Rules Id
-    route_aggregation_rules_base = equinix.services.fabricv4.RouteAggregationRulesBase() # RouteAggregationRulesBase | 
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rule_id = '65b025ef-022b-4180-85cf-82cfc1ab655b' # str | Route Aggregation Rules Id
+    route_aggregation_rules_base = {"name":"Private-subnet-aggregation-update","description":"Test rule","prefix":"192.168.0.0/24"} # RouteAggregationRulesBase | 
 
     try:
         # Replace Route Aggregation Rule
@@ -841,8 +841,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationRulesApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregation_rules_search_request = equinix.services.fabricv4.RouteAggregationRulesSearchRequest() # RouteAggregationRulesSearchRequest | 
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregation_rules_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_AGGREGATION_RULE"]},{"property":"/state","operator":"=","values":["PROVISIONED"]},{"or":[{"property":"/name","operator":"LIKE","values":["%Demo%"]},{"property":"/name","operator":"LIKE","values":["%Production%"]}]},{"or":[{"property":"/prefix","operator":"=","values":["192.168.2.0/24"]}]}]},"pagination":{"offset":0,"limit":20},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # RouteAggregationRulesSearchRequest | 
 
     try:
         # Search Route Aggregation Rules

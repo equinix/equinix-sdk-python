@@ -49,7 +49,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationSubscriptionsApi(api_client)
-    app_subscription_post_request = equinix.services.fabricv4.AppSubscriptionPostRequest() # AppSubscriptionPostRequest | 
+    app_subscription_post_request = {"type":"APP_SUBSCRIPTION","source":{"appLink":{"uuid":"e32c9c7a-0149-4582-8345-192b82aef972"},"ipSubnets":["192.168.100.0/24"]},"target":{"appService":{"uuid":"e18c15f4-c8aa-4c18-9e35-a7e9b288201d"},"geoScope":"GLOBAL","prioritization":"LATENCY"},"project":{"projectId":"71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"}} # AppSubscriptionPostRequest | 
 
     try:
         # Create Subscription
@@ -131,7 +131,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationSubscriptionsApi(api_client)
-    app_subscription_id = 'app_subscription_id_example' # str | App Subscription UUID
+    app_subscription_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Subscription UUID
 
     try:
         # Delete Subscription
@@ -214,7 +214,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationSubscriptionsApi(api_client)
-    app_subscription_id = 'app_subscription_id_example' # str | App Subscription UUID
+    app_subscription_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Subscription UUID
 
     try:
         # Get Subscription
@@ -297,7 +297,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationSubscriptionsApi(api_client)
-    app_subscription_search_request = equinix.services.fabricv4.AppSubscriptionSearchRequest() # AppSubscriptionSearchRequest | 
+    app_subscription_search_request = {"filter":{"and":[{"property":"/state","operator":"IN","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"IN","values":["71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppSubscriptionSearchRequest | 
 
     try:
         # Search Subscriptions
@@ -381,8 +381,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationSubscriptionsApi(api_client)
-    app_subscription_id = 'app_subscription_id_example' # str | App Subscription UUID
-    app_subscription_change_operation = [equinix.services.fabricv4.AppSubscriptionChangeOperation()] # List[AppSubscriptionChangeOperation] | 
+    app_subscription_id = '20f3ef8e-d670-4236-86fa-bb0038adcfc3' # str | App Subscription UUID
+    app_subscription_change_operation = [{"op":"add","path":"/source/ipSubnets","value":["192.168.200.0/24"]}] # List[AppSubscriptionChangeOperation] | 
 
     try:
         # Update Subscription

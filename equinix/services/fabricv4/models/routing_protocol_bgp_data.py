@@ -20,7 +20,7 @@ from equinix.services.fabricv4.models.bgp_connection_ipv6 import BGPConnectionIp
 from equinix.services.fabricv4.models.changelog import Changelog
 from equinix.services.fabricv4.models.routing_protocol_bfd import RoutingProtocolBFD
 from equinix.services.fabricv4.models.routing_protocol_bgp_data_state import RoutingProtocolBGPDataState
-from equinix.services.fabricv4.models.routing_protocol_bgp_type_type import RoutingProtocolBGPTypeType
+from equinix.services.fabricv4.models.routing_protocol_bgp_data_type import RoutingProtocolBGPDataType
 from equinix.services.fabricv4.models.routing_protocol_change import RoutingProtocolChange
 from equinix.services.fabricv4.models.routing_protocol_connection import RoutingProtocolConnection
 from equinix.services.fabricv4.models.routing_protocol_operation import RoutingProtocolOperation
@@ -32,7 +32,7 @@ class RoutingProtocolBGPData(BaseModel):
     """
     RoutingProtocolBGPData
     """ # noqa: E501
-    type: Optional[RoutingProtocolBGPTypeType] = None
+    type: Optional[RoutingProtocolBGPDataType] = None
     name: Optional[StrictStr] = None
     bgp_ipv4: Optional[BGPConnectionIpv4] = Field(default=None, alias="bgpIpv4")
     bgp_ipv6: Optional[BGPConnectionIpv6] = Field(default=None, alias="bgpIpv6")

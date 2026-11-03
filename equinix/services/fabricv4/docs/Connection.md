@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **uuid** | **str** | Equinix-assigned connection identifier | [optional] 
 **name** | **str** | Customer-provided connection name | 
 **description** | **str** | Customer-provided connection description | [optional] 
-**state** | [**ConnectionState**](ConnectionState.md) |  | [optional] 
 **change** | [**Change**](Change.md) |  | [optional] 
 **operation** | [**ConnectionOperation**](ConnectionOperation.md) |  | [optional] 
 **order** | [**Order**](Order.md) |  | [optional] 

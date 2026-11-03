@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **uuid** | **str** | Route Aggregation identifier | [optional] 
 **name** | **str** |  | [optional] 
 **description** | **str** | Customer-provided connection description | [optional] 
-**state** | [**RouteAggregationState**](RouteAggregationState.md) |  | [optional] 
 **change** | [**RouteAggregationsChange**](RouteAggregationsChange.md) |  | [optional] 
 **connections_count** | **int** |  | [optional] 
 **rules_count** | **int** |  | [optional] 

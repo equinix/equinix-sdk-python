@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **hop** | **int** |  | [optional] 
-**probes** | [**List[HopProbes]**](HopProbes.md) |  | [optional] 
+**probes** | [**List[HopProbesInner]**](HopProbesInner.md) |  | [optional] 
 
 ## Example
 

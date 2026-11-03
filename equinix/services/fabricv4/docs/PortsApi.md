@@ -53,7 +53,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
     port_id = 'port_id_example' # str | Port UUID
-    bulk_physical_port = equinix.services.fabricv4.BulkPhysicalPort() # BulkPhysicalPort | 
+    bulk_physical_port = {"data":[{"type":"XF_PHYSICAL_PORT","demarcationPoint":{"ibx":"AM1","cabinetUniqueSpaceId":"AM1:02:032575:0105","cageUniqueSpaceId":"AM1:02:032575","patchPanel":"PP:0105:1260379","patchPanelPortA":"14","patchPanelPortB":"15","connectorType":"LC"},"account":{"accountNumber":17829},"order":{"purchaseOrder":{"number":"156576","amount":"10","startDate":"2018-06-11T22:25:52.206Z","endDate":"2018-07-11T22:25:52.206Z","type":"NEW"},"signature":{"signatory":"DELEGATE","delegate":{"firstName":"John","lastName":"Doe","email":"john.doe@company.com"}}},"notifications":[{"registeredUsers":["jaguarsuser-port-order"],"type":"NOTIFICATION"}]},{"type":"XF_PHYSICAL_PORT","account":{"accountNumber":17829},"demarcationPoint":{"ibx":"AM1","cabinetUniqueSpaceId":"AM1:02:032575:0105","cageUniqueSpaceId":"AM1:02:032575","patchPanel":"PP:0105:1260379","patchPanelPortA":"16","patchPanelPortB":"17","connectorType":"LC"},"order":{"purchaseOrder":{"number":"156576","amount":"10","startDate":"2018-06-11T22:25:52.206Z","endDate":"2018-07-11T22:25:52.206Z","type":"NEW"},"signature":{"signatory":"DELEGATE","delegate":{"firstName":"John","lastName":"Doe","email":"john.doe@company.com"}}},"notifications":[{"registeredUsers":["jaguarsuser-port-order"],"type":"NOTIFICATION"}]}]} # BulkPhysicalPort | 
 
     try:
         # Add to Lag
@@ -137,7 +137,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
-    port_request = equinix.services.fabricv4.PortRequest() # PortRequest | 
+    port_request = {"type":"XF_PORT","physicalPortsSpeed":1000,"physicalPortsType":"1000BASE_LX","connectivitySourceType":"COLO","location":{"metroCode":"GV"},"demarcationPointIbx":"GV1","package":{"code":"STANDARD"},"lagEnabled":false,"encapsulation":{"type":"DOT1Q","tagProtocolId":"0x8100"},"project":{"projectId":"8f23b36f-db8f-44c8-a6e5-606e1b485931'"},"account":{"accountNumber":270848},"notifications":[{"registeredUsers":["jaguarsuser-port-order"],"type":"TECHNICAL"}],"order":{"purchaseOrder":{"number":"156576","amount":"10","startDate":"2018-06-11T22:25:52.206Z","endDate":"2018-07-11T22:25:52.206Z","type":"NEW"},"signature":{"signatory":"DELEGATE","delegate":{"firstName":"John","lastName":"Doe","email":"john.doe@company.com"}}},"physicalPorts":[{"demarcationPoint":{"ibx":"GV1","cabinetUniqueSpaceId":"Demarc","cageUniqueSpaceId":"GV1:01:002174","patchPanel":"CP:Demarc:1259684","connectorType":"SC"}}]} # PortRequest | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -468,7 +468,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
-    port_uuid = 'port_uuid_example' # str | Port UUID
+    port_uuid = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Port UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -553,7 +553,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
-    port_v4_search_request = equinix.services.fabricv4.PortV4SearchRequest() # PortV4SearchRequest | 
+    port_v4_search_request = {"filter":{"or":[{"and":[{"property":"/state","operator":"=","values":["ACTIVE","REPROVISIONING"]},{"property":"/settings/productCode","operator":"=","values":["CX"]},{"property":"/project/projectId","operator":"=","values":["66a2d2f7-b79b-49bc-8642-d2b3c1c138b4"]}]}]},"pagination":{"limit":1000,"offset":0},"sort":[{"property":"/device/name","direction":"DESC"}]} # PortV4SearchRequest | 
 
     try:
         # Search Ports
@@ -637,7 +637,7 @@ with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.PortsApi(api_client)
     port_id = 'port_id_example' # str | Port UUID
-    port_change_operation = [equinix.services.fabricv4.PortChangeOperation()] # List[PortChangeOperation] | 
+    port_change_operation = [{"op":"replace","path":"/name","value":"1234-ibx-port"}] # List[PortChangeOperation] | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:

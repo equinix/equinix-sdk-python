@@ -52,7 +52,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_post_request = equinix.services.fabricv4.AppServicePostRequest() # AppServicePostRequest | 
+    app_service_post_request = {"type":"APP_SERVICE","name":"Atlassian App Service","description":"Atlassian App Service in SV","endpoint":"equinixjira.atlassian.net","sourceDomains":["equinix.com"],"project":{"projectId":"71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"}} # AppServicePostRequest | 
 
     try:
         # Create Service
@@ -135,7 +135,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
 
     try:
         # Delete Service
@@ -218,7 +218,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
 
     try:
         # Get Service
@@ -303,7 +303,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     state = [equinix.services.fabricv4.AppLinkState()] # List[AppLinkState] | Filter attached App Links by one or more lifecycle states. (optional)
@@ -399,7 +399,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
     state = [equinix.services.fabricv4.AppSubscriptionState()] # List[AppSubscriptionState] | Filter attached App Subscriptions by one or more lifecycle states. (optional)
@@ -493,7 +493,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_search_request = equinix.services.fabricv4.AppServiceSearchRequest() # AppServiceSearchRequest | 
+    app_service_search_request = {"filter":{"and":[{"property":"/state","operator":"=","values":["PROVISIONED"]},{"property":"/project/projectId","operator":"IN","values":["71b55fef-fd2e-402f-ae3c-01d5f00bf2d4"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"direction":"DESC","property":"/changeLog/createdDateTime"}]} # AppServiceSearchRequest | 
 
     try:
         # Search Services
@@ -577,7 +577,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
     app_service_attached_app_subscription_search_request = equinix.services.fabricv4.AppServiceAttachedAppSubscriptionSearchRequest() # AppServiceAttachedAppSubscriptionSearchRequest | 
 
     try:
@@ -663,8 +663,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ApplicationServicesApi(api_client)
-    app_service_id = 'app_service_id_example' # str | App Service UUID
-    app_service_change_operation = [equinix.services.fabricv4.AppServiceChangeOperation()] # List[AppServiceChangeOperation] | 
+    app_service_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | App Service UUID
+    app_service_change_operation = [{"op":"replace","path":"/name","value":"Updated Atlassian App Service"}] # List[AppServiceChangeOperation] | 
 
     try:
         # Update Service

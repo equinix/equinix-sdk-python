@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.exchange_service_search_sort_criteria_direction import ExchangeServiceSearchSortCriteriaDirection
+from equinix.services.fabricv4.models.asn_search_sort_criteria_direction import AsnSearchSortCriteriaDirection
 from equinix.services.fabricv4.models.rf_attachment_sort_item_property import RfAttachmentSortItemProperty
 from typing import Optional, Set
 from typing_extensions import Self
@@ -25,7 +25,7 @@ class RfAttachmentSortItem(BaseModel):
     RfAttachmentSortItem
     """ # noqa: E501
     var_property: Optional[RfAttachmentSortItemProperty] = Field(default=RfAttachmentSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME, alias="property")
-    direction: Optional[ExchangeServiceSearchSortCriteriaDirection] = ExchangeServiceSearchSortCriteriaDirection.DESC
+    direction: Optional[AsnSearchSortCriteriaDirection] = AsnSearchSortCriteriaDirection.DESC
     additional_properties: Dict[str, Any] = {}
     __properties: ClassVar[List[str]] = ["property", "direction"]
 
@@ -88,7 +88,7 @@ class RfAttachmentSortItem(BaseModel):
 
         _obj = cls.model_validate({
             "property": obj.get("property") if obj.get("property") is not None else RfAttachmentSortItemProperty.SLASH_CHANGE_LOG_SLASH_UPDATED_DATE_TIME,
-            "direction": obj.get("direction") if obj.get("direction") is not None else ExchangeServiceSearchSortCriteriaDirection.DESC
+            "direction": obj.get("direction") if obj.get("direction") is not None else AsnSearchSortCriteriaDirection.DESC
         })
         # store additional fields in additional_properties
         for _key in obj.keys():

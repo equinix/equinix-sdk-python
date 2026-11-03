@@ -51,7 +51,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    connection_post_request = equinix.services.fabricv4.ConnectionPostRequest() # ConnectionPostRequest | 
+    connection_post_request = {"type":"EVPL_VC","name":"My-Port-2-Port-Connection-1","bandwidth":1000,"order":{"purchaseOrderNumber":"po1234","termLength":1},"aSide":{"accessPoint":{"type":"COLO","port":{"uuid":"a8ba52de-faae-43b5-b0b1-6904d37ee063"},"linkProtocol":{"type":"DOT1Q","vlanTag":1001}}},"zSide":{"accessPoint":{"type":"COLO","port":{"uuid":"a00cef6f-8e35-4794-9ff9-665e084e4e6d"},"linkProtocol":{"type":"DOT1Q","vlanTag":1001}}},"project":{"projectId":"ac4d34ca-0d9c-4bc2-9aab-1234567abcde"},"notifications":[{"type":"ALL","emails":["test@test.com"]}]} # ConnectionPostRequest | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -137,8 +137,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_action_request = equinix.services.fabricv4.ConnectionActionRequest() # ConnectionActionRequest | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_action_request = {"type":"CONNECTION_CREATION_ACCEPTANCE","data":{"zSide":{"accessPoint":{"type":"COLO","port":{"uuid":"20d32a80-0d61-4333-bc03-707b591ae2f4"},"linkProtocol":{"type":"QINQ","vlanSTag":1002,"vlanCTag":1001}}}}} # ConnectionActionRequest | 
 
     try:
         # Create Connection Action
@@ -305,7 +305,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
     direction = equinix.services.fabricv4.ConnectionDirection() # ConnectionDirection | Connection Direction (optional)
 
     try:
@@ -389,7 +389,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    search_request = equinix.services.fabricv4.SearchRequest() # SearchRequest | 
+    search_request = {"filter":{"and":[{"property":"/direction","operator":"=","values":["OUTGOING"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # SearchRequest | 
 
     try:
         # Search Connections
@@ -472,8 +472,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_change_operation = [equinix.services.fabricv4.ConnectionChangeOperation()] # List[ConnectionChangeOperation] | 
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_change_operation = [{"op":"replace","path":"/name","value":"Conn-Name-2"}] # List[ConnectionChangeOperation] | 
     dry_run = False # bool | option to verify that API calls will succeed (optional) (default to False)
 
     try:
@@ -560,7 +560,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.ConnectionsApi(api_client)
-    validate_request = equinix.services.fabricv4.ValidateRequest() # ValidateRequest | 
+    validate_request = {"filter":{"and":[{"property":"/zSide/accessPoint/authenticationKey","operator":"=","values":["xxx-xxx-xxx"]},{"property":"/zSide/accessPoint/profile/uuid","operator":"=","values":["xxx-xxx-xxx"]},{"property":"/zSide/accessPoint/sellerRegion","operator":"=","values":["San Jose 2"]}]}} # ValidateRequest | 
 
     try:
         # Validate Connection

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**direction** | [**ExchangeServiceSearchSortCriteriaDirection**](ExchangeServiceSearchSortCriteriaDirection.md) |  | [optional] [default to ExchangeServiceSearchSortCriteriaDirection.DESC]
+**direction** | [**AsnSearchSortCriteriaDirection**](AsnSearchSortCriteriaDirection.md) |  | [optional] [default to AsnSearchSortCriteriaDirection.DESC]
 **var_property** | [**ExchangeServiceSearchSortCriteriaProperty**](ExchangeServiceSearchSortCriteriaProperty.md) |  | [optional] [default to ExchangeServiceSearchSortCriteriaProperty.CHANGE_LOG_SLASH_UPDATED_DATE_TIME]
 
 ## Example

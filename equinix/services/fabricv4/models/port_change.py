@@ -16,8 +16,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from equinix.services.fabricv4.models.cloud_router_change_status import CloudRouterChangeStatus
 from equinix.services.fabricv4.models.port_change_operation import PortChangeOperation
-from equinix.services.fabricv4.models.port_change_status import PortChangeStatus
 from equinix.services.fabricv4.models.port_change_type import PortChangeType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class PortChange(BaseModel):
     """ # noqa: E501
     uuid: Optional[StrictStr] = Field(default=None, description="Uniquely identifies a change")
     type: Optional[PortChangeType] = None
-    status: Optional[PortChangeStatus] = None
+    status: Optional[CloudRouterChangeStatus] = None
     information: Optional[StrictStr] = Field(default=None, description="Additional information")
     data: Optional[PortChangeOperation] = None
     created_date_time: Optional[datetime] = Field(default=None, description="Set when change flow starts", alias="createdDateTime")

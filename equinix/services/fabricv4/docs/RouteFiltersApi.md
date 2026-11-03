@@ -57,9 +57,9 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    connection_id = 'connection_id_example' # str | Connection Id
-    connection_route_filters_base = equinix.services.fabricv4.ConnectionRouteFiltersBase() # ConnectionRouteFiltersBase | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
+    connection_route_filters_base = {"direction":"INBOUND"} # ConnectionRouteFiltersBase | 
 
     try:
         # Attach Route Filter
@@ -146,7 +146,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filters_base = equinix.services.fabricv4.RouteFiltersBase() # RouteFiltersBase | 
+    route_filters_base = {"type":"BGP_IPv4_PREFIX_FILTER","name":"My-route-filter-v4","description":"Test filter","project":{"projectId":"dadd3ab6-c0af-430c-8216-43d44f08c1c5"}} # RouteFiltersBase | 
 
     try:
         # Create Route Filter
@@ -230,7 +230,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
 
     try:
         # Delete Route Filter
@@ -314,8 +314,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Detach Route Filter
@@ -400,8 +400,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Get Route Filter
@@ -486,7 +486,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Get Connection Route Filters
@@ -570,7 +570,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
 
     try:
         # Get Route Filter by ID
@@ -654,8 +654,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    change_id = 'change_id_example' # str | Routing Protocol Change UUID
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Routing Protocol Change UUID
 
     try:
         # Get Change By ID
@@ -739,7 +739,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -826,7 +826,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
 
     try:
         # Get All Connections on Route Filter
@@ -911,8 +911,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filter_id = 'route_filter_id_example' # str | Route Filters Id
-    route_filters_patch_request_item = [equinix.services.fabricv4.RouteFiltersPatchRequestItem()] # List[RouteFiltersPatchRequestItem] | 
+    route_filter_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Filters Id
+    route_filters_patch_request_item = [{"op":"replace","path":"/name","value":"My-route-filter-v4-updated"}] # List[RouteFiltersPatchRequestItem] | 
 
     try:
         # Update Route Filter
@@ -998,8 +998,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
-    cloud_router_route_filters_search_base = equinix.services.fabricv4.CloudRouterRouteFiltersSearchBase() # CloudRouterRouteFiltersSearchBase | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
+    cloud_router_route_filters_search_base = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_FILTER"]},{"property":"/direction","operator":"=","values":["INBOUND"]},{"property":"/attachmentStatus","operator":"=","values":["ATTACHED"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # CloudRouterRouteFiltersSearchBase | 
 
     try:
         # Search Cloud Router Route Filter Attachments
@@ -1085,7 +1085,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteFiltersApi(api_client)
-    route_filters_search_request = equinix.services.fabricv4.RouteFiltersSearchRequest() # RouteFiltersSearchRequest | 
+    route_filters_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_FILTER"]},{"property":"/state","operator":"IN","values":["PROVISIONED","PROVISIONING"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # RouteFiltersSearchRequest | 
 
     try:
         # Search Route Filters

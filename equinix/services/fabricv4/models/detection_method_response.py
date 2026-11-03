@@ -15,8 +15,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from equinix.services.fabricv4.models.detection_method_operand import DetectionMethodOperand
-from equinix.services.fabricv4.models.detection_method_type import DetectionMethodType
+from equinix.services.fabricv4.models.detection_method_response_operand import DetectionMethodResponseOperand
+from equinix.services.fabricv4.models.detection_method_response_type import DetectionMethodResponseType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -24,9 +24,9 @@ class DetectionMethodResponse(BaseModel):
     """
     DetectionMethodResponse
     """ # noqa: E501
-    type: Optional[DetectionMethodType] = None
+    type: Optional[DetectionMethodResponseType] = None
     window_size: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric window size", alias="windowSize")
-    operand: Optional[DetectionMethodOperand] = None
+    operand: Optional[DetectionMethodResponseOperand] = None
     warning_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric warning threshold", alias="warningThreshold")
     critical_threshold: Optional[StrictStr] = Field(default=None, description="Stream alert rule metric critical threshold", alias="criticalThreshold")
     additional_properties: Dict[str, Any] = {}

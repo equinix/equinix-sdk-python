@@ -16,8 +16,8 @@ import json
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
 from equinix.services.fabricv4.models.precision_time_package_request import PrecisionTimePackageRequest
-from equinix.services.fabricv4.models.precision_time_service_request_type import PrecisionTimeServiceRequestType
 from equinix.services.fabricv4.models.time_service_price_connection import TimeServicePriceConnection
+from equinix.services.fabricv4.models.time_service_price_type import TimeServicePriceType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -25,7 +25,7 @@ class TimeServicePrice(BaseModel):
     """
     Time Service Product configuration
     """ # noqa: E501
-    type: Optional[PrecisionTimeServiceRequestType] = None
+    type: Optional[TimeServicePriceType] = None
     package: Optional[PrecisionTimePackageRequest] = None
     connection: Optional[TimeServicePriceConnection] = None
     additional_properties: Dict[str, Any] = {}

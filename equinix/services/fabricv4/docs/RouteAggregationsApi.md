@@ -56,8 +56,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Attach Aggregation
@@ -143,7 +143,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregations_base = equinix.services.fabricv4.RouteAggregationsBase() # RouteAggregationsBase | 
+    route_aggregations_base = {"type":"BGP_IPv4_PREFIX_AGGREGATION","name":"My-route-aggregation-v4","description":"Test aggregation","project":{"projectId":"dadd3ab6-c0af-430c-8216-43d44f08c1c5"}} # RouteAggregationsBase | 
 
     try:
         # Create Route Aggregation
@@ -227,7 +227,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
 
     try:
         # Delete Aggregation
@@ -311,8 +311,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Detach Aggregation
@@ -397,8 +397,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    connection_id = 'connection_id_example' # str | Connection Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Get Aggregation
@@ -483,7 +483,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    connection_id = 'connection_id_example' # str | Connection Id
+    connection_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Connection Id
 
     try:
         # Get Connection Route Aggregations
@@ -567,7 +567,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
 
     try:
         # Get Aggregation
@@ -651,8 +651,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    change_id = 'change_id_example' # str | Routing Protocol Change UUID
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    change_id = '6d500177-9404-41f2-99e8-2bf1a84d8db5' # str | Routing Protocol Change UUID
 
     try:
         # Get Change By ID
@@ -736,7 +736,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
     offset = 1 # int | offset (optional)
     limit = 10 # int | number of records to fetch (optional)
 
@@ -823,7 +823,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
 
     try:
         # Get Route Aggregation Connections
@@ -908,8 +908,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregation_id = 'route_aggregation_id_example' # str | Route Aggregations Id
-    route_aggregations_patch_request_item = [equinix.services.fabricv4.RouteAggregationsPatchRequestItem()] # List[RouteAggregationsPatchRequestItem] | 
+    route_aggregation_id = '695a8471-6595-4ac6-a2f4-b3d96ed3a59d' # str | Route Aggregations Id
+    route_aggregations_patch_request_item = [{"op":"replace","path":"/name","value":"My-route-aggregation-v4-updated"}] # List[RouteAggregationsPatchRequestItem] | 
 
     try:
         # Update Route Aggregation
@@ -995,8 +995,8 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    router_id = 'router_id_example' # str | Cloud Router UUID
-    cloud_router_route_aggregations_search_base = equinix.services.fabricv4.CloudRouterRouteAggregationsSearchBase() # CloudRouterRouteAggregationsSearchBase | 
+    router_id = '557400f8-d360-11e9-bb65-2a2ae2dbcce4' # str | Cloud Router UUID
+    cloud_router_route_aggregations_search_base = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_AGGREGATION"]},{"property":"/attachmentStatus","operator":"=","values":["ATTACHED"]}]},"pagination":{"limit":25,"offset":0},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # CloudRouterRouteAggregationsSearchBase | 
 
     try:
         # Search Cloud Router Route Aggregation Attachments
@@ -1082,7 +1082,7 @@ configuration = equinix.services.fabricv4.Configuration(
 with equinix.services.fabricv4.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = equinix.services.fabricv4.RouteAggregationsApi(api_client)
-    route_aggregations_search_request = equinix.services.fabricv4.RouteAggregationsSearchRequest() # RouteAggregationsSearchRequest | 
+    route_aggregations_search_request = {"filter":{"and":[{"property":"/type","operator":"=","values":["BGP_IPv4_PREFIX_AGGREGATION"]},{"property":"/state","operator":"IN","values":["PROVISIONED","DEPROVISIONING"]}]},"pagination":{"offset":0,"limit":20},"sort":[{"property":"/changeLog/updatedDateTime","direction":"DESC"}]} # RouteAggregationsSearchRequest | 
 
     try:
         # Search Route Aggregations

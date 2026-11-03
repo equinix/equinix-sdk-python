@@ -16,11 +16,9 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from equinix.services.fabricv4.models.physical_port_settings import PhysicalPortSettings
 from equinix.services.fabricv4.models.physical_port_type import PhysicalPortType
 from equinix.services.fabricv4.models.port_additional_info import PortAdditionalInfo
 from equinix.services.fabricv4.models.port_demarcation_point import PortDemarcationPoint
-from equinix.services.fabricv4.models.port_interface import PortInterface
 from equinix.services.fabricv4.models.port_loa import PortLoa
 from equinix.services.fabricv4.models.port_notification import PortNotification
 from equinix.services.fabricv4.models.port_operation import PortOperation
@@ -45,15 +43,13 @@ class PhysicalPort(BaseModel):
     uuid: Optional[StrictStr] = Field(default=None, description="Equinix assigned response attribute for physical port identifier")
     tether: Optional[PortTether] = None
     demarcation_point: Optional[PortDemarcationPoint] = Field(default=None, alias="demarcationPoint")
-    settings: Optional[PhysicalPortSettings] = None
-    interface: Optional[PortInterface] = None
     notifications: Optional[List[PortNotification]] = Field(default=None, description="Notification preferences")
     additional_info: Optional[List[PortAdditionalInfo]] = Field(default=None, description="Physical Port additional information", alias="additionalInfo")
     order: Optional[PortOrder] = None
     operation: Optional[PortOperation] = None
     loas: Optional[List[PortLoa]] = Field(default=None, description="Port Loas")
     additional_properties: Dict[str, Any] = {}
-    __properties: ClassVar[List[str]] = ["href", "type", "id", "state", "account", "interfaceSpeed", "interfaceType", "uuid", "tether", "demarcationPoint", "settings", "interface", "notifications", "additionalInfo", "order", "operation", "loas"]
+    __properties: ClassVar[List[str]] = ["href", "type", "id", "state", "account", "interfaceSpeed", "interfaceType", "uuid", "tether", "demarcationPoint", "notifications", "additionalInfo", "order", "operation", "loas"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,12 +103,6 @@ class PhysicalPort(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of demarcation_point
         if self.demarcation_point:
             _dict['demarcationPoint'] = self.demarcation_point.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of settings
-        if self.settings:
-            _dict['settings'] = self.settings.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of interface
-        if self.interface:
-            _dict['interface'] = self.interface.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in notifications (list)
         _items = []
         if self.notifications:
@@ -167,8 +157,6 @@ class PhysicalPort(BaseModel):
             "uuid": obj.get("uuid"),
             "tether": PortTether.from_dict(obj["tether"]) if obj.get("tether") is not None else None,
             "demarcationPoint": PortDemarcationPoint.from_dict(obj["demarcationPoint"]) if obj.get("demarcationPoint") is not None else None,
-            "settings": PhysicalPortSettings.from_dict(obj["settings"]) if obj.get("settings") is not None else None,
-            "interface": PortInterface.from_dict(obj["interface"]) if obj.get("interface") is not None else None,
             "notifications": [PortNotification.from_dict(_item) for _item in obj["notifications"]] if obj.get("notifications") is not None else None,
             "additionalInfo": [PortAdditionalInfo.from_dict(_item) for _item in obj["additionalInfo"]] if obj.get("additionalInfo") is not None else None,
             "order": PortOrder.from_dict(obj["order"]) if obj.get("order") is not None else None,
